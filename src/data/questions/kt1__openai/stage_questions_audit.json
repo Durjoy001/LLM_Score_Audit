@@ -1,0 +1,617 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt1__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt1__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 286,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by Rick Miller, a seasoned creator with a 25-year career in the arts, known for his work across multiple languages and continents. The play 'MONEY' features a cast of 8 prominent Canadian theatre stars, showcasing a strong collaborative effort in the produ ...",
+        "first_key_point_preview": "Rick Miller is the creator of the play 'MONEY' and has a diverse background as a writer, director, performer, musician, educator, and podcast host.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 21.31,
+        "raw_chars": 4517,
+        "usage": {
+          "prompt_tokens": 3335,
+          "completion_tokens": 977,
+          "total_tokens": 4312
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Rick Miller's career",
+        "theatre production experience",
+        "collaborative network",
+        "audience engagement strategies",
+        "project governance",
+        "team workload impact",
+        "validation experience",
+        "production quality assurance",
+        "risk management strategies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 2,
+          "governance_and_decision_making": 1,
+          "validation_and_compliance_experience": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Rick Miller's 25-year career in the arts and his diverse roles contribute to the project's potential success in reaching its intended audience and achieving its objectives?",
+          "question_en_preview": "How does Rick Miller's 25-year career in the arts and his diverse roles contribute to the project's potential success in reaching its intended audience and achieving its objectives?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific experiences from Rick Miller's past projects can be leveraged to enhance the production quality and audience engagement for the play 'MONEY'?",
+          "question_en_preview": "What specific experiences from Rick Miller's past projects can be leveraged to enhance the production quality and audience engagement for the play 'MONEY'?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the involvement of 8 prominent Canadian theatre stars in the cast strengthen the project's collaborative network and its potential for success?",
+          "question_en_preview": "How does the involvement of 8 prominent Canadian theatre stars in the cast strengthen the project's collaborative network and its potential for success?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, how might the current workload of the team impact their ability to deliver the play 'MONEY' on schedule and to the expected quality?",
+          "question_en_preview": "Given the limited risk information provided, how might the current workload of the team impact their ability to deliver the play 'MONEY' on schedule and to the expected quality?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What governance structures or decision-making processes are in place to ensure effective management of the project, especially considering the limited risk information provided?",
+          "question_en_preview": "What governance structures or decision-making processes are in place to ensure effective management of the project, especially considering the limited risk information provided?"
+        }
+      ],
+      "elapsed_sec": 21.31,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 320,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project titled 'MONEY' aims to create an engaging and interactive theatre production that explores the themes of money, values, and the future of humanity. Key milestones include the project's conception in 2021 and a national tour planned for 2027, with funding allocated for ...",
+        "first_key_point_preview": "The project 'MONEY' is described as the most ambitious project undertaken by Rick Miller.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 21.82,
+        "raw_chars": 3802,
+        "usage": {
+          "prompt_tokens": 3444,
+          "completion_tokens": 856,
+          "total_tokens": 4300
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "project milestones",
+        "audience engagement",
+        "success metrics",
+        "funding allocation",
+        "impact assessment",
+        "value creation logic",
+        "stakeholder behavior change",
+        "development workshops",
+        "national tour planning"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined are the overall goals of the project 'MONEY'? Are there any unrelated sub-goals that could distract from its main objectives?",
+          "question_en_preview": "How clearly defined are the overall goals of the project 'MONEY'? Are there any unrelated sub-goals that could distract from its main objectives?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the project 'MONEY' align with the stated unmet need regarding the themes of money and its impact on relationships? What evidence supports this alignment?",
+          "question_en_preview": "To what extent does the project 'MONEY' align with the stated unmet need regarding the themes of money and its impact on relationships? What evidence supports this alignment?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness of the project's milestones, particularly the timeline from conception in 2021 to the national tour planned for 2027. Are these milestones executable?",
+          "question_en_preview": "Evaluate the reasonableness of the project's milestones, particularly the timeline from conception in 2021 to the national tour planned for 2027. Are these milestones executable?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are defined for the project 'MONEY'? How will these metrics be used to assess the project's impact and success?",
+          "question_en_preview": "What clear and quantifiable success metrics are defined for the project 'MONEY'? How will these metrics be used to assess the project's impact and success?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project 'MONEY' create value and capture funding? What is the logic behind its objectives in terms of delivering impact and changing stakeholder behavior?",
+          "question_en_preview": "How does the project 'MONEY' create value and capture funding? What is the logic behind its objectives in terms of delivering impact and changing stakeholder behavior?"
+        }
+      ],
+      "elapsed_sec": 21.82,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 256,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to utilize funding for development workshops and support theatre artists, addressing audience demand for live performances. It plans to raise additional funds through government grants and sponsorships, with a clear timeline for execution.",
+        "first_key_point_preview": "The funding period for the project is from June 2, 2024, to August 1, 2024.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.7,
+        "raw_chars": 4043,
+        "usage": {
+          "prompt_tokens": 3508,
+          "completion_tokens": 891,
+          "total_tokens": 4399
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding strategy evidence",
+        "development workshop trade-offs",
+        "audience demand analysis",
+        "risk assessment for workshops",
+        "budget realism metrics",
+        "scaling strategy for live performances",
+        "producing partner engagement",
+        "government grant applications",
+        "sponsorship acquisition process",
+        "backer support evidence"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to secure the $90,000 funding through government grants and sponsorships, and what evidence supports the feasibility of this funding strategy?",
+          "question_en_preview": "How does the project plan to secure the $90,000 funding through government grants and sponsorships, and what evidence supports the feasibility of this funding strategy?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the decision to conduct 2 development workshops in 2024 and 2025, and how do these align with audience demand for live performances?",
+          "question_en_preview": "What are the major trade-offs considered in the decision to conduct 2 development workshops in 2024 and 2025, and how do these align with audience demand for live performances?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks could arise during the execution of the development workshops, and how might they impact the project's timeline?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks could arise during the execution of the development workshops, and how might they impact the project's timeline?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1-5, how realistic is the budget for the project considering the planned funding and the audience demand for live performances? Please provide evidence that would support a higher score.",
+          "question_en_preview": "On a scale of 1-5, how realistic is the budget for the project considering the planned funding and the audience demand for live performances? Please provide evidence that would support a higher score."
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What strategies does the project have in place to scale beyond the initial workshops, and what evidence supports the potential for broader audience engagement?",
+          "question_en_preview": "What strategies does the project have in place to scale beyond the initial workshops, and what evidence supports the potential for broader audience engagement?"
+        }
+      ],
+      "elapsed_sec": 14.7,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 314,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'MONEY' aims to innovate by integrating elements of chess, gaming, and financial transactions into an interactive show about the story of money. It features themes of AI and AGI, including a fictional AI character running for Prime Minister, with audience participatio ...",
+        "first_key_point_preview": "MONEY will incorporate elements of chess, gaming/gambling, and financial transactions in its design.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 21.3,
+        "raw_chars": 5411,
+        "usage": {
+          "prompt_tokens": 3420,
+          "completion_tokens": 1159,
+          "total_tokens": 4579
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "interactive show format",
+        "audience engagement metrics",
+        "AI-generated content effectiveness",
+        "intellectual property strategy",
+        "competitive analysis",
+        "scalability pathways",
+        "novel integration of themes",
+        "risk of obsolescence",
+        "evidence of audience participation impact"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 2,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the integration of chess, gaming, and financial transactions in MONEY differentiate it from existing interactive shows or entertainment formats? Please provide specific examples of novelty.",
+          "question_en_preview": "How does the integration of chess, gaming, and financial transactions in MONEY differentiate it from existing interactive shows or entertainment formats? Please provide specific examples of novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does MONEY offer compared to traditional financial education or entertainment formats in terms of audience engagement and educational value?",
+          "question_en_preview": "What specific advantages does MONEY offer compared to traditional financial education or entertainment formats in terms of audience engagement and educational value?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of using AI-generated content and audience participation in enhancing the storytelling of MONEY? How will this be measured?",
+          "question_en_preview": "What evidence supports the effectiveness of using AI-generated content and audience participation in enhancing the storytelling of MONEY? How will this be measured?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee for MONEY in terms of becoming obsolete or being copied by competitors? How might these risks impact the project's long-term viability?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee for MONEY in terms of becoming obsolete or being copied by competitors? How might these risks impact the project's long-term viability?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How can the concepts and technologies used in MONEY be extended to other customer segments or use cases beyond the initial show? What are the potential pathways for scalability?",
+          "question_en_preview": "How can the concepts and technologies used in MONEY be extended to other customer segments or use cases beyond the initial show? What are the potential pathways for scalability?"
+        }
+      ],
+      "elapsed_sec": 21.3,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 377,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to raise a total of $100,000, with $5,000 targeted through Kickstarter and the remaining funds sourced from government grants and larger sponsorships. The funds will be allocated to two development workshops in 2024 and 2025, directly benefiting theatre artists.  ...",
+        "first_key_point_preview": "The campaign aims to raise a total of $100,000, including $5,000 through Kickstarter.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 38.3,
+        "raw_chars": 3990,
+        "usage": {
+          "prompt_tokens": 3485,
+          "completion_tokens": 877,
+          "total_tokens": 4362
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding",
+        "government grants",
+        "development workshops",
+        "project timeline",
+        "backer support",
+        "implementation barriers",
+        "customer acceptance",
+        "budget allocation",
+        "risk identification",
+        "milestones"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "rating": 2,
+          "analysis": 4
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How realistic is the proposed budget allocation of $100,000 for the project, considering the funding sources mentioned, such as Kickstarter and government grants? Please provide evidence to support your assessment.",
+          "question_en_preview": "How realistic is the proposed budget allocation of $100,000 for the project, considering the funding sources mentioned, such as Kickstarter and government grants? Please provide evidence to support your assessment."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What key tasks and milestones are outlined in the project timeline from conception in 2021 to national touring in 2027? How clear and specific is the implementation plan?",
+          "question_en_preview": "What key tasks and milestones are outlined in the project timeline from conception in 2021 to national touring in 2027? How clear and specific is the implementation plan?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee in the project's feasibility, and how might these impact the project's success?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee in the project's feasibility, and how might these impact the project's success?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation might arise in the production and development workshops planned for 2024 and 2025, and how could these affect the project's timeline?",
+          "question_en_preview": "What barriers to implementation might arise in the production and development workshops planned for 2024 and 2025, and how could these affect the project's timeline?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How feasible is it for the project to secure customer acceptance and funding from the proposed sources, considering the current level of backing from 39 supporters?",
+          "question_en_preview": "How feasible is it for the project to secure customer acceptance and funding from the proposed sources, considering the current level of backing from 39 supporters?"
+        }
+      ],
+      "elapsed_sec": 38.3,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T18:34:38Z",
+  "elapsed_sec": 117.44,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt1__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt1__openai/generated_questions_detail.json"
+}

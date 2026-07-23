@@ -1,0 +1,616 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km34__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km34__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 216,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is associated with HDOKI, a creative production company based in Montreal. It also involves collaboration with Kickstarter, which promotes sustainable practices through its Environmental Resources Center.",
+        "first_key_point_preview": "HDOKI is a Montreal-based creative production company.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.05,
+        "raw_chars": 4265,
+        "usage": {
+          "prompt_tokens": 3258,
+          "completion_tokens": 941,
+          "total_tokens": 4199
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "HDOKI leadership experience",
+        "Kickstarter collaboration impact",
+        "creative production expertise",
+        "project governance structure",
+        "team workload management",
+        "execution risk assessment",
+        "collaboration stability",
+        "domain-specific validation",
+        "decision-making processes"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 2,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "governance_and_decision_making": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the prior execution record of the leadership team at HDOKI, and how does it position them to advance this project?",
+          "question_en_preview": "What is the prior execution record of the leadership team at HDOKI, and how does it position them to advance this project?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the team's expertise in creative production and collaboration with Kickstarter enhance their ability to address the project's objectives?",
+          "question_en_preview": "How does the team's expertise in creative production and collaboration with Kickstarter enhance their ability to address the project's objectives?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific roles do HDOKI and Kickstarter play in the project's execution, and how stable are these collaborations?",
+          "question_en_preview": "What specific roles do HDOKI and Kickstarter play in the project's execution, and how stable are these collaborations?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, how does the team plan to manage their current workload alongside this project?",
+          "question_en_preview": "Given the limited risk information provided, how does the team plan to manage their current workload alongside this project?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures are in place to ensure effective decision-making and conflict resolution within the team, especially given the lack of specified mitigation measures?",
+          "question_en_preview": "What governance structures are in place to ensure effective decision-making and conflict resolution within the team, especially given the lack of specified mitigation measures?"
+        }
+      ],
+      "elapsed_sec": 11.05,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 319,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop HDOKI-JOBS.COM, an advanced e-recruitment SaaS, which includes various subscription packs for recruiters and functionalities for candidates to create resumes. The overall goal is to enhance the tech environment to support the platform and release appli ...",
+        "first_key_point_preview": "The project aims to improve the tech environment to support the developed SaaS and release Windows, Android, and iOS apps.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The project aims to improve the tech environment to support the developed SaaS and release Windows, Android, and iOS apps."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.04,
+        "raw_chars": 3738,
+        "usage": {
+          "prompt_tokens": 3460,
+          "completion_tokens": 823,
+          "total_tokens": 4283
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "subscription packs for recruiters",
+        "user engagement metrics",
+        "job market alignment",
+        "milestone execution feasibility",
+        "value creation logic",
+        "quantifiable success metrics",
+        "tech environment enhancement",
+        "cross-platform application release",
+        "candidate functionalities"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "rating": 3,
+          "analysis": 3
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How clear and focused is the overall goal of developing HDOKI-JOBS.COM as an advanced e-recruitment SaaS, without introducing unrelated sub-goals?",
+          "question_en_preview": "How clear and focused is the overall goal of developing HDOKI-JOBS.COM as an advanced e-recruitment SaaS, without introducing unrelated sub-goals?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the objectives of HDOKI-JOBS.COM align with the stated unmet needs of recruiters and candidates in the job market?",
+          "question_en_preview": "To what extent do the objectives of HDOKI-JOBS.COM align with the stated unmet needs of recruiters and candidates in the job market?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Are the proposed milestones for enhancing the tech environment and releasing applications for multiple operating systems reasonable and executable within the given timeline?",
+          "question_en_preview": "Are the proposed milestones for enhancing the tech environment and releasing applications for multiple operating systems reasonable and executable within the given timeline?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are defined for the objectives of HDOKI-JOBS.COM, particularly regarding user engagement and subscription uptake?",
+          "question_en_preview": "What clear and quantifiable success metrics are defined for the objectives of HDOKI-JOBS.COM, particularly regarding user engagement and subscription uptake?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the initiative explain the value creation and revenue capture through its subscription packs for recruiters and functionalities for candidates?",
+          "question_en_preview": "How does the initiative explain the value creation and revenue capture through its subscription packs for recruiters and functionalities for candidates?"
+        }
+      ],
+      "elapsed_sec": 11.05,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 337,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The HDOKI JOBS project aims to provide a comprehensive e-recruitment platform with various subscription options and features tailored for both candidates and recruiters. The project includes a user-friendly interface for job postings and company profiles, and it is designed to op ...",
+        "first_key_point_preview": "HDOKI JOBS is an advanced e-recruitment SaaS platform that offers a range of services in entertainment, management, web and mobile technology, Search Engine Marketing, FinTech, and blockchain technology.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.46,
+        "raw_chars": 4652,
+        "usage": {
+          "prompt_tokens": 3550,
+          "completion_tokens": 1032,
+          "total_tokens": 4582
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "subscription pricing strategy",
+        "user adoption evidence",
+        "SaaS model rationale",
+        "validation steps",
+        "scaling risks",
+        "quality compliance standards",
+        "partnership criteria",
+        "market entry strategy",
+        "customer demand alignment",
+        "unit economics analysis"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 5,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the HDOKI JOBS project plan to position its subscription packs ('Start-Up', 'Premium', and 'Discovery') in the competitive e-recruitment market, and what evidence supports the expected adoption rates for these o ...",
+          "question_en_preview": "How does the HDOKI JOBS project plan to position its subscription packs ('Start-Up', 'Premium', and 'Discovery') in the competitive e-recruitment market, and what evidence supports the expected adoption rates for these o ..."
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the expected unit economics for the HDOKI JOBS platform, particularly regarding the pricing structure of its subscription packs, and how does this align with the projected customer demand?",
+          "question_en_preview": "What are the expected unit economics for the HDOKI JOBS platform, particularly regarding the pricing structure of its subscription packs, and how does this align with the projected customer demand?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What rationale supports the choice of a SaaS model for the HDOKI JOBS platform, and what alternatives were considered during the design process?",
+          "question_en_preview": "What rationale supports the choice of a SaaS model for the HDOKI JOBS platform, and what alternatives were considered during the design process?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What validation steps will be taken to ensure the HDOKI JOBS platform meets user needs and expectations before full-scale deployment?",
+          "question_en_preview": "What validation steps will be taken to ensure the HDOKI JOBS platform meets user needs and expectations before full-scale deployment?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current proposal's limited risk information, what potential risks do you foresee in scaling the HDOKI JOBS platform, and how might these impact its market entry strategy?",
+          "question_en_preview": "Given the current proposal's limited risk information, what potential risks do you foresee in scaling the HDOKI JOBS platform, and how might these impact its market entry strategy?"
+        }
+      ],
+      "elapsed_sec": 10.46,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 263,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project showcases innovation through the development of HDOKI-JOBS.COM, an advanced e-recruitment SaaS platform. Key features include a comprehensive analytics module, a free video meeting solution, and regular updates to user experience and interface design.",
+        "first_key_point_preview": "HDOKI-JOBS.COM is an advanced e-recruitment SaaS developed by HDOKI.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.7,
+        "raw_chars": 3781,
+        "usage": {
+          "prompt_tokens": 3386,
+          "completion_tokens": 886,
+          "total_tokens": 4272
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "e-recruitment SaaS innovation",
+        "analytics module effectiveness",
+        "competitive advantages",
+        "user satisfaction evidence",
+        "intellectual property strategy",
+        "scalability of features",
+        "risk of obsolescence",
+        "video meeting solution benefits",
+        "frequent updates to user experience"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does HDOKI-JOBS.COM's e-recruitment features compare to existing platforms in terms of innovation and technical novelty?",
+          "question_en_preview": "How does HDOKI-JOBS.COM's e-recruitment features compare to existing platforms in terms of innovation and technical novelty?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does HDOKI-JOBS.COM offer over alternative e-recruitment solutions, particularly regarding its analytics module and free video meeting solution?",
+          "question_en_preview": "What specific advantages does HDOKI-JOBS.COM offer over alternative e-recruitment solutions, particularly regarding its analytics module and free video meeting solution?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What evidence supports the effectiveness and user satisfaction of HDOKI-JOBS.COM's features, such as the analytics module and video meeting solution?",
+          "question_en_preview": "What evidence supports the effectiveness and user satisfaction of HDOKI-JOBS.COM's features, such as the analytics module and video meeting solution?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to HDOKI-JOBS.COM becoming obsolete or commoditized in the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to HDOKI-JOBS.COM becoming obsolete or commoditized in the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How scalable is HDOKI-JOBS.COM in terms of extending its features to other customer segments or use cases beyond e-recruitment?",
+          "question_en_preview": "How scalable is HDOKI-JOBS.COM in terms of extending its features to other customer segments or use cases beyond e-recruitment?"
+        }
+      ],
+      "elapsed_sec": 8.7,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 318,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the HDOKI project is supported by its SaaS solution, which allows candidates to create, edit, and share resumes easily. The project aims to enhance the tech environment and release applications across multiple platforms, while also addressing potential challeng ...",
+        "first_key_point_preview": "The HDOKI SaaS solution enables candidates to generate a public address for resumes that can be shared.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The HDOKI SaaS solution generates a public address for resumes that candidates can share."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.72,
+        "raw_chars": 4411,
+        "usage": {
+          "prompt_tokens": 3482,
+          "completion_tokens": 968,
+          "total_tokens": 4450
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "public address for resumes",
+        "Premium subscription features",
+        "operational cost allocation",
+        "implementation timeline",
+        "user adoption barriers",
+        "risk identification",
+        "Help and Support section",
+        "multi-platform release",
+        "customer acceptance feasibility",
+        "budget sustainability"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "resources_and_infrastructure": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the HDOKI project ensure that its SaaS solution is supported by sufficient operating resources and infrastructure for long-term stability?",
+          "question_en_preview": "How does the HDOKI project ensure that its SaaS solution is supported by sufficient operating resources and infrastructure for long-term stability?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the Premium subscription costs $120.00 per month, how does the HDOKI project plan to allocate its budget to ensure sustainability and cover operational costs?",
+          "question_en_preview": "Given that the Premium subscription costs $120.00 per month, how does the HDOKI project plan to allocate its budget to ensure sustainability and cover operational costs?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific tasks and timelines are outlined in the implementation plan for the HDOKI project to ensure the successful release of applications across multiple platforms?",
+          "question_en_preview": "What specific tasks and timelines are outlined in the implementation plan for the HDOKI project to ensure the successful release of applications across multiple platforms?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the identified risks associated with the HDOKI project, and how does the team plan to address the limited risk information provided in the proposal?",
+          "question_en_preview": "What are the identified risks associated with the HDOKI project, and how does the team plan to address the limited risk information provided in the proposal?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation have been considered for the HDOKI project, particularly in relation to user adoption and system integration?",
+          "question_en_preview": "What barriers to implementation have been considered for the HDOKI project, particularly in relation to user adoption and system integration?"
+        }
+      ],
+      "elapsed_sec": 9.73,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T22:20:18Z",
+  "elapsed_sec": 51.0,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km34__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km34__openai/generated_questions_detail.json"
+}

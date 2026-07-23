@@ -1,0 +1,620 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt60__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt60__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 242,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Monabbir Bhuiyan, who is the sole developer of MailTune, an email marketing toolkit. As the platform gains traction, there are considerations for hiring support staff or outsourcing tasks to enhance operational capacity.",
+        "first_key_point_preview": "Monabbir Bhuiyan is the creator and solo developer of MailTune.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.46,
+        "raw_chars": 4846,
+        "usage": {
+          "prompt_tokens": 3298,
+          "completion_tokens": 1058,
+          "total_tokens": 4356
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "solo developer experience",
+        "email marketing toolkit expertise",
+        "operational capacity enhancement",
+        "governance structures",
+        "partnership opportunities",
+        "team scaling challenges",
+        "risk management strategies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "team_capacity_and_bandwidth": 2,
+          "domain_expertise": 1,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Monabbir Bhuiyan's experience as the sole developer of MailTune position the project for successful execution and scaling?",
+          "question_en_preview": "How does Monabbir Bhuiyan's experience as the sole developer of MailTune position the project for successful execution and scaling?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that Monabbir Bhuiyan is currently the sole developer, what are the implications for team capacity as MailTune gains traction, and how might hiring support staff or outsourcing tasks address these challenges?",
+          "question_en_preview": "Given that Monabbir Bhuiyan is currently the sole developer, what are the implications for team capacity as MailTune gains traction, and how might hiring support staff or outsourcing tasks address these challenges?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific domain expertise does Monabbir Bhuiyan possess that enhances the credibility and potential success of MailTune in the email marketing toolkit space?",
+          "question_en_preview": "What specific domain expertise does Monabbir Bhuiyan possess that enhances the credibility and potential success of MailTune in the email marketing toolkit space?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures or decision-making processes are in place to ensure effective management of MailTune as it scales, especially considering the current reliance on a single developer?",
+          "question_en_preview": "What governance structures or decision-making processes are in place to ensure effective management of MailTune as it scales, especially considering the current reliance on a single developer?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What potential partnerships or collaborations could be pursued to enhance the operational capacity of MailTune as it gains traction, and how might these relationships mitigate the risks associated with being a solo devel ...",
+          "question_en_preview": "What potential partnerships or collaborations could be pursued to enhance the operational capacity of MailTune as it gains traction, and how might these relationships mitigate the risks associated with being a solo devel ..."
+        }
+      ],
+      "elapsed_sec": 17.46,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 350,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The objectives of the MailTune project focus on simplifying email marketing for businesses through a robust toolkit that includes automation, analytics, and compliance features. The project is currently in its final development stages, with a detailed plan outlining realistic mil ...",
+        "first_key_point_preview": "MailTune aims to simplify email marketing for modern businesses.",
+        "first_risk_preview": "The project may face delays, but a detailed development plan with realistic milestones has been created to mitigate this risk.",
+        "first_mitigation_preview": "A detailed development plan with realistic milestones has been created to mitigate risks associated with delays."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.2,
+        "raw_chars": 3995,
+        "usage": {
+          "prompt_tokens": 3421,
+          "completion_tokens": 857,
+          "total_tokens": 4278
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "email marketing simplification",
+        "realistic development milestones",
+        "market alignment urgency",
+        "quantifiable success metrics",
+        "value creation logic",
+        "automation workflows",
+        "Kickstarter funding strategy",
+        "user resource maximization",
+        "project timeline feasibility"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined are the objectives of the MailTune project in terms of simplifying email marketing for businesses? Are there any unrelated sub-goals that could distract from this primary objective?",
+          "question_en_preview": "How clearly defined are the objectives of the MailTune project in terms of simplifying email marketing for businesses? Are there any unrelated sub-goals that could distract from this primary objective?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the objectives of MailTune align with the stated unmet need in the email marketing space? Please evaluate the urgency of this alignment based on current market conditions.",
+          "question_en_preview": "To what extent do the objectives of MailTune align with the stated unmet need in the email marketing space? Please evaluate the urgency of this alignment based on current market conditions."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How reasonable and executable are the staged milestones outlined in the MailTune development plan? Are there any potential challenges that could hinder timely delivery?",
+          "question_en_preview": "How reasonable and executable are the staged milestones outlined in the MailTune development plan? Are there any potential challenges that could hinder timely delivery?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are included in the objectives of MailTune? How will these metrics be used to evaluate the project's performance post-launch?",
+          "question_en_preview": "What clear and quantifiable success metrics are included in the objectives of MailTune? How will these metrics be used to evaluate the project's performance post-launch?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the MailTune initiative create value and capture revenue through its objectives? Please explain the business or impact logic behind the proposed solution.",
+          "question_en_preview": "How does the MailTune initiative create value and capture revenue through its objectives? Please explain the business or impact logic behind the proposed solution."
+        }
+      ],
+      "elapsed_sec": 12.2,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 397,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "MailTune is an email marketing toolkit aimed at simplifying email marketing for small businesses and solo entrepreneurs. The project integrates ChatGPT to enhance user engagement and provides features like intuitive automation workflows, real-time suggestions, and built-in compli ...",
+        "first_key_point_preview": "MailTune is designed to help businesses design, automate, and analyze their email campaigns.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.27,
+        "raw_chars": 3981,
+        "usage": {
+          "prompt_tokens": 3506,
+          "completion_tokens": 862,
+          "total_tokens": 4368
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding strategy",
+        "user engagement features",
+        "email campaign automation",
+        "real-time content suggestions",
+        "scalable cloud infrastructure",
+        "market entry strategy",
+        "user feedback integration",
+        "compliance tools",
+        "partnership risks",
+        "validation path"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the design of MailTune's email marketing toolkit, particularly regarding the integration of ChatGPT for user engagement?",
+          "question_en_preview": "What are the major trade-offs considered in the design of MailTune's email marketing toolkit, particularly regarding the integration of ChatGPT for user engagement?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does MailTune plan to validate its features and ensure they meet user needs before full-scale launch, particularly after the Kickstarter campaign?",
+          "question_en_preview": "How does MailTune plan to validate its features and ensure they meet user needs before full-scale launch, particularly after the Kickstarter campaign?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the strategy for MailTune's market entry following the Kickstarter campaign, and how does it plan to attract small businesses and solo entrepreneurs?",
+          "question_en_preview": "What is the strategy for MailTune's market entry following the Kickstarter campaign, and how does it plan to attract small businesses and solo entrepreneurs?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1-5, how realistic is the budget for MailTune's development and marketing efforts through Kickstarter funding? What evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1-5, how realistic is the budget for MailTune's development and marketing efforts through Kickstarter funding? What evidence would increase your confidence in this assessment?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee in MailTune's partnership strategy for scaling its operations, and how might these impact its market entry?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee in MailTune's partnership strategy for scaling its operations, and how might these impact its market entry?"
+        }
+      ],
+      "elapsed_sec": 14.28,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 266,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "MailTune introduces innovative features aimed at simplifying email marketing for businesses, particularly small enterprises. It leverages ChatGPT to automate content tailoring and provides intuitive design tools, enhancing user experience and operational efficiency.",
+        "first_key_point_preview": "MailTune features intuitive automation workflows that can be set up in minutes.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.23,
+        "raw_chars": 3770,
+        "usage": {
+          "prompt_tokens": 3382,
+          "completion_tokens": 823,
+          "total_tokens": 4205
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "ChatGPT integration",
+        "intuitive automation workflows",
+        "real-time suggestions",
+        "built-in compliance features",
+        "scalability to other segments",
+        "intellectual property protection",
+        "competitive advantages",
+        "email marketing outcomes",
+        "risk of obsolescence"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does MailTune's integration of the ChatGPT API differentiate it from existing email marketing solutions in terms of innovation and user experience?",
+          "question_en_preview": "How does MailTune's integration of the ChatGPT API differentiate it from existing email marketing solutions in terms of innovation and user experience?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages do MailTune's intuitive automation workflows and built-in compliance features offer compared to traditional email marketing tools?",
+          "question_en_preview": "What specific advantages do MailTune's intuitive automation workflows and built-in compliance features offer compared to traditional email marketing tools?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of MailTune's real-time suggestions for subject lines and content adjustments in enhancing email marketing outcomes?",
+          "question_en_preview": "What evidence supports the effectiveness of MailTune's real-time suggestions for subject lines and content adjustments in enhancing email marketing outcomes?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee for MailTune in terms of obsolescence or commoditization within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee for MailTune in terms of obsolescence or commoditization within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How scalable is MailTune's solution in terms of extending its features to other customer segments or use cases beyond small enterprises?",
+          "question_en_preview": "How scalable is MailTune's solution in terms of extending its features to other customer segments or use cases beyond small enterprises?"
+        }
+      ],
+      "elapsed_sec": 12.23,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 342,
+        "key_points_count": 6,
+        "risks_count": 3,
+        "mitigations_count": 2,
+        "summary_preview": "The feasibility of the MailTune project is challenged by technical hurdles, design challenges, and the need for scalability to handle high user volumes. A detailed development plan with realistic milestones has been established to address potential delays, and load testing will b ...",
+        "first_key_point_preview": "Monabbir Bhuiyan faced technical hurdles and design challenges while building MailTune.",
+        "first_risk_preview": "The project faces technical hurdles and design challenges that may impact development timelines.",
+        "first_mitigation_preview": "A detailed development plan with realistic milestones has been created to mitigate risks associated with delays."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.59,
+        "raw_chars": 4465,
+        "usage": {
+          "prompt_tokens": 3546,
+          "completion_tokens": 981,
+          "total_tokens": 4527
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "technical hurdles",
+        "design challenges",
+        "development plan milestones",
+        "load testing results",
+        "Kickstarter campaign success",
+        "scalability resources",
+        "bottleneck resolution",
+        "customer acceptance evidence",
+        "procurement feasibility",
+        "staffing gaps"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "risk_management": 1,
+          "operational_execution_plan": 1,
+          "implementation_barriers": 1,
+          "funding_and_budget_planning": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "resources_and_infrastructure": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 2
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific technical hurdles and design challenges does the MailTune project face, and how might these impact the development timeline?",
+          "question_en_preview": "What specific technical hurdles and design challenges does the MailTune project face, and how might these impact the development timeline?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the detailed development plan with realistic milestones address the risks of delays in the MailTune project?",
+          "question_en_preview": "How does the detailed development plan with realistic milestones address the risks of delays in the MailTune project?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the anticipated bottlenecks identified through load testing, and how will resolving these bottlenecks contribute to the feasibility of MailTune's launch?",
+          "question_en_preview": "What are the anticipated bottlenecks identified through load testing, and how will resolving these bottlenecks contribute to the feasibility of MailTune's launch?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How critical is the success of the Kickstarter campaign for the completion of MailTune's development, and what are the implications if the campaign does not meet its goals?",
+          "question_en_preview": "How critical is the success of the Kickstarter campaign for the completion of MailTune's development, and what are the implications if the campaign does not meet its goals?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how aligned are the current timeline and resources for the MailTune project, considering potential bottleneck periods or staffing gaps? Please provide evidence that would justify a higher score.",
+          "question_en_preview": "On a scale of 1 to 5, how aligned are the current timeline and resources for the MailTune project, considering potential bottleneck periods or staffing gaps? Please provide evidence that would justify a higher score."
+        }
+      ],
+      "elapsed_sec": 12.59,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T20:26:14Z",
+  "elapsed_sec": 68.77,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt60__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt60__openai/generated_questions_detail.json"
+}

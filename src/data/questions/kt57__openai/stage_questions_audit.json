@@ -1,0 +1,613 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt57__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt57__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 190,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team is led by Govind Terly, who is the creator of the Rust Programming Crash Course and has 15 years of industry experience. His background suggests a strong foundation for the project.",
+        "first_key_point_preview": "Govind Terly is the creator of the Rust Programming Crash Course.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.07,
+        "raw_chars": 4285,
+        "usage": {
+          "prompt_tokens": 3267,
+          "completion_tokens": 926,
+          "total_tokens": 4193
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Govind Terly",
+        "Rust Programming Crash Course",
+        "industry experience",
+        "project leadership",
+        "domain expertise",
+        "validation experience",
+        "collaboration strategy",
+        "governance structure",
+        "resource allocation",
+        "risk management"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Govind Terly's 15 years of industry experience specifically prepare him to lead this project towards its intended application and commercialization?",
+          "question_en_preview": "How does Govind Terly's 15 years of industry experience specifically prepare him to lead this project towards its intended application and commercialization?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does Govind Terly possess in relation to the target customer problem and the operational model of the project?",
+          "question_en_preview": "What specific expertise does Govind Terly possess in relation to the target customer problem and the operational model of the project?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, how does the team plan to manage their current workload and ensure sufficient resources are allocated to this project?",
+          "question_en_preview": "Given the limited risk information provided, how does the team plan to manage their current workload and ensure sufficient resources are allocated to this project?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with domain-specific validation and compliance, and how does this relate to the project's success?",
+          "question_en_preview": "What experience does the team have with domain-specific validation and compliance, and how does this relate to the project's success?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What governance structures are in place to ensure effective decision-making and conflict-of-interest handling within the team?",
+          "question_en_preview": "What governance structures are in place to ensure effective decision-making and conflict-of-interest handling within the team?"
+        }
+      ],
+      "elapsed_sec": 19.07,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 370,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to educate readers on Rust programming through practical examples and hands-on exercises, focusing on writing clean, efficient, and maintainable code. It includes lessons on implementing algorithms in Rust and mastering essential programming concepts. However, th ...",
+        "first_key_point_preview": "The project was launched on July 11, 2023, with a funding period that ended on August 10, 2023.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.64,
+        "raw_chars": 3332,
+        "usage": {
+          "prompt_tokens": 3423,
+          "completion_tokens": 735,
+          "total_tokens": 4158
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "market demand for programming skills",
+        "success metrics for educational programs",
+        "milestones for project execution",
+        "funding goal achievement",
+        "clarity of project objectives",
+        "alignment with educational needs"
+      ],
+      "cleaned_question_count": 5,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 2,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the project's objective of educating readers on Rust programming align with the current demand for programming skills in the market? Please discuss any evidence of this demand.",
+          "question_en_preview": "How well does the project's objective of educating readers on Rust programming align with the current demand for programming skills in the market? Please discuss any evidence of this demand."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "To what extent is the overall goal of the project clear and focused on teaching Rust programming? Are there any unrelated sub-goals that could dilute its effectiveness?",
+          "question_en_preview": "To what extent is the overall goal of the project clear and focused on teaching Rust programming? Are there any unrelated sub-goals that could dilute its effectiveness?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the project was launched on July 11, 2023, and ended its funding period on August 10, 2023, how reasonable and executable are the proposed milestones for the next stages of the project?",
+          "question_en_preview": "Given that the project was launched on July 11, 2023, and ended its funding period on August 10, 2023, how reasonable and executable are the proposed milestones for the next stages of the project?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What specific success metrics should be established to evaluate the effectiveness of the Rust Programming Crash Course in achieving its educational goals?",
+          "question_en_preview": "What specific success metrics should be established to evaluate the effectiveness of the Rust Programming Crash Course in achieving its educational goals?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Considering the funding goal of $536 was not reached, how realistic are the project's objectives in terms of achieving its educational aims and securing future funding?",
+          "question_en_preview": "Considering the funding goal of $536 was not reached, how realistic are the project's objectives in terms of achieving its educational aims and securing future funding?"
+        }
+      ],
+      "elapsed_sec": 13.64,
+      "final_question_count": 5
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 207,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to achieve specific objectives within a defined funding period, which began on July 11, 2023, and ended on August 10, 2023. However, it was unsuccessful in reaching its funding goal of $536.",
+        "first_key_point_preview": "The project was launched on July 11, 2023.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.94,
+        "raw_chars": 4179,
+        "usage": {
+          "prompt_tokens": 3451,
+          "completion_tokens": 887,
+          "total_tokens": 4338
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding strategy",
+        "customer adoption",
+        "validation steps",
+        "business model adjustment",
+        "operational strategies",
+        "scaling strategy",
+        "quality compliance measures",
+        "partnership exploration",
+        "risk mitigation"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 7,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 3
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "solution_delivery_strategy": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project was unsuccessful in reaching its funding goal of $536, what strategies will the initiative employ to secure future funding or customer adoption?",
+          "question_en_preview": "Given that the project was unsuccessful in reaching its funding goal of $536, what strategies will the initiative employ to secure future funding or customer adoption?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific validation steps does the initiative plan to undertake to ensure that it can achieve its objectives within the defined funding period?",
+          "question_en_preview": "What specific validation steps does the initiative plan to undertake to ensure that it can achieve its objectives within the defined funding period?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the initiative plan to adjust its business model or pricing strategy in light of the unsuccessful funding attempt?",
+          "question_en_preview": "How does the initiative plan to adjust its business model or pricing strategy in light of the unsuccessful funding attempt?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternative delivery or operational strategies could the initiative consider to enhance its chances of success in future funding rounds?",
+          "question_en_preview": "What alternative delivery or operational strategies could the initiative consider to enhance its chances of success in future funding rounds?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "If the proposal does not provide sufficient details on the scaling strategy, please state this information gap and discuss its impact on the project's future viability.",
+          "question_en_preview": "If the proposal does not provide sufficient details on the scaling strategy, please state this information gap and discuss its impact on the project's future viability."
+        }
+      ],
+      "elapsed_sec": 16.95,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 175,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The proposal highlights the Rust programming language as a key innovation due to its speed and efficiency. This positions it as a competitive technology in the relevant field.",
+        "first_key_point_preview": "The Rust programming language is characterized as fast and highly efficient.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.08,
+        "raw_chars": 4573,
+        "usage": {
+          "prompt_tokens": 3297,
+          "completion_tokens": 985,
+          "total_tokens": 4282
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Rust programming language",
+        "speed and efficiency",
+        "competitive technology",
+        "customer value",
+        "performance advantages",
+        "risk of obsolescence",
+        "intellectual property protection",
+        "evidence for innovation",
+        "market validation",
+        "extensibility to use cases"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "evidence_strength_for_innovation": 2,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the speed and efficiency of the Rust programming language compare to existing technologies in the field, and what evidence supports its novelty?",
+          "question_en_preview": "How does the speed and efficiency of the Rust programming language compare to existing technologies in the field, and what evidence supports its novelty?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the Rust programming language offer over alternative programming languages in terms of customer value, performance, and scalability?",
+          "question_en_preview": "What specific advantages does the Rust programming language offer over alternative programming languages in terms of customer value, performance, and scalability?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the Rust programming language becoming obsolete or commoditized within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the Rust programming language becoming obsolete or commoditized within the next 3-5 years?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What types of evidence (experimental, operational, or market) are available to validate the claims regarding the Rust programming language's speed and efficiency?",
+          "question_en_preview": "What types of evidence (experimental, operational, or market) are available to validate the claims regarding the Rust programming language's speed and efficiency?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How can the innovation represented by the Rust programming language be extended to other customer segments or use cases beyond its current application?",
+          "question_en_preview": "How can the innovation represented by the Rust programming language be extended to other customer segments or use cases beyond its current application?"
+        }
+      ],
+      "elapsed_sec": 14.08,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 256,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aimed to raise $536 in funding but was unsuccessful, having only secured $178 from one backer. The funding period lasted from July 11, 2023, to August 10, 2023, during which backers were promised copies of draft chapters as they were completed.",
+        "first_key_point_preview": "The project had a funding goal of $536.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.96,
+        "raw_chars": 4842,
+        "usage": {
+          "prompt_tokens": 3415,
+          "completion_tokens": 1060,
+          "total_tokens": 4475
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding shortfall analysis",
+        "operational execution plan",
+        "customer acceptance barriers",
+        "risk profile assessment",
+        "timeline alignment",
+        "budget realism evidence",
+        "implementation bottlenecks",
+        "stakeholder buy-in",
+        "resource needs assessment"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 2,
+          "operational_execution_plan": 1,
+          "risk_management": 2,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project aimed to raise $536 but only secured $178 from one backer, how does this funding shortfall impact the project's feasibility and sustainability? Please analyze the implications of this funding gap.",
+          "question_en_preview": "Given that the project aimed to raise $536 but only secured $178 from one backer, how does this funding shortfall impact the project's feasibility and sustainability? Please analyze the implications of this funding gap."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific steps does the project plan to take to address the funding shortfall and ensure successful implementation? Please outline the operational execution plan and any adjustments needed.",
+          "question_en_preview": "What specific steps does the project plan to take to address the funding shortfall and ensure successful implementation? Please outline the operational execution plan and any adjustments needed."
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "The proposal indicates limited risk information. What are the potential risks associated with the project's current funding status, and how might these risks affect its feasibility?",
+          "question_en_preview": "The proposal indicates limited risk information. What are the potential risks associated with the project's current funding status, and how might these risks affect its feasibility?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the project's failure to meet its funding goal, what barriers to implementation might arise in the current funding environment, and how could these barriers impact customer acceptance?",
+          "question_en_preview": "Considering the project's failure to meet its funding goal, what barriers to implementation might arise in the current funding environment, and how could these barriers impact customer acceptance?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the timeline of the funding period from July 11, 2023, to August 10, 2023, align with the project's resource needs and implementation milestones? Are there any identified bottlenecks?",
+          "question_en_preview": "How does the timeline of the funding period from July 11, 2023, to August 10, 2023, align with the project's resource needs and implementation milestones? Are there any identified bottlenecks?"
+        }
+      ],
+      "elapsed_sec": 16.97,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T20:18:39Z",
+  "elapsed_sec": 80.72,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt57__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt57__openai/generated_questions_detail.json"
+}

@@ -1,0 +1,619 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km22__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km22__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 372,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by Anourak Bouavong, the creator of inBOLD Business Solutions, and includes members with diverse expertise in mobile development for both Android and Apple platforms, web development, and enterprise applications. The team demonstrates strong collaborative  ...",
+        "first_key_point_preview": "Anourak Bouavong is the creator of inBOLD Business Solutions.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.18,
+        "raw_chars": 3597,
+        "usage": {
+          "prompt_tokens": 3334,
+          "completion_tokens": 776,
+          "total_tokens": 4110
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Anourak Bouavong",
+        "inBOLD Business Solutions",
+        "mobile development expertise",
+        "collaborative capabilities",
+        "domain-specific validation",
+        "team capacity assessment",
+        "governance structures",
+        "decision-making processes",
+        "enterprise applications experience"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Anourak Bouavong's experience as the creator of inBOLD Business Solutions position the team to achieve the project's objectives?",
+          "question_en_preview": "How does Anourak Bouavong's experience as the creator of inBOLD Business Solutions position the team to achieve the project's objectives?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise do team members have in mobile development for Android and Apple, and how does this expertise contribute to the project's success?",
+          "question_en_preview": "What specific expertise do team members have in mobile development for Android and Apple, and how does this expertise contribute to the project's success?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity to commit to this project effectively?",
+          "question_en_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity to commit to this project effectively?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with domain-specific validation and compliance, and how does this experience mitigate potential risks in the project?",
+          "question_en_preview": "What experience does the team have with domain-specific validation and compliance, and how does this experience mitigate potential risks in the project?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the team's collaborative capability enhance their ability to meet project objectives, especially in terms of leveraging external partnerships?",
+          "question_en_preview": "How does the team's collaborative capability enhance their ability to meet project objectives, especially in terms of leveraging external partnerships?"
+        }
+      ],
+      "elapsed_sec": 9.18,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 323,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a customer support network and construct a better customer support system. It includes plans for an integrated application template marketplace and aims to enable application creation without hard coding knowledge. The team intends to complete all func ...",
+        "first_key_point_preview": "The project aims to develop a customer support network.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.88,
+        "raw_chars": 3961,
+        "usage": {
+          "prompt_tokens": 3389,
+          "completion_tokens": 823,
+          "total_tokens": 4212
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "customer support network",
+        "integrated application template marketplace",
+        "zero hard coding",
+        "functionality completion",
+        "quantifiable success metrics",
+        "urgency of customer need",
+        "milestones and timeline",
+        "value creation logic",
+        "impact metrics"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined are the overall goals of the project, particularly in relation to developing a customer support network and the integrated application template marketplace?",
+          "question_en_preview": "How clearly defined are the overall goals of the project, particularly in relation to developing a customer support network and the integrated application template marketplace?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the project's objectives align with the identified customer needs for a better customer support system, and how urgent is this need?",
+          "question_en_preview": "To what extent do the project's objectives align with the identified customer needs for a better customer support system, and how urgent is this need?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the project, and how reasonable and executable are they given the goal of completing all functionality and resolving bugs before launch?",
+          "question_en_preview": "What are the proposed milestones for the project, and how reasonable and executable are they given the goal of completing all functionality and resolving bugs before launch?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "What quantifiable success metrics are included in the project objectives, particularly regarding the functionality of the customer support network and application creation capabilities?",
+          "question_en_preview": "What quantifiable success metrics are included in the project objectives, particularly regarding the functionality of the customer support network and application creation capabilities?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Considering the project's ambition to enable application creation without hard coding knowledge, how realistic are the objectives in terms of feasibility and execution?",
+          "question_en_preview": "Considering the project's ambition to enable application creation without hard coding knowledge, how realistic are the objectives in terms of feasibility and execution?"
+        }
+      ],
+      "elapsed_sec": 11.88,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 282,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a customer support network and an integrated application template marketplace. It has a funding goal of $35,307, which was not met by the deadline of September 18, 2014, indicating challenges in securing necessary resources for its planned functionalit ...",
+        "first_key_point_preview": "The project aims to develop a customer support network.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.08,
+        "raw_chars": 5796,
+        "usage": {
+          "prompt_tokens": 3503,
+          "completion_tokens": 1202,
+          "total_tokens": 4705
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "customer support network",
+        "application template marketplace",
+        "funding goal",
+        "financial sustainability",
+        "validation steps",
+        "solution delivery strategy",
+        "compliance challenges",
+        "scaling strategy",
+        "customer acquisition",
+        "market entry strategy"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 2,
+          "business_model_and_unit_economics": 2,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project aims to develop a customer support network and an integrated application template marketplace, how does the initiative plan to secure customer adoption and sustain revenue? Please discuss any ident ...",
+          "question_en_preview": "Given that the project aims to develop a customer support network and an integrated application template marketplace, how does the initiative plan to secure customer adoption and sustain revenue? Please discuss any ident ..."
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the expected funding model for the project, considering it did not meet its funding goal of $35,307? How might this impact the project's financial sustainability and operational capacity?",
+          "question_en_preview": "What is the expected funding model for the project, considering it did not meet its funding goal of $35,307? How might this impact the project's financial sustainability and operational capacity?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps are planned to ensure the functionality of the customer support network and application template marketplace? How does the project intend to address the challenges faced in securing necessary resour ...",
+          "question_en_preview": "What validation steps are planned to ensure the functionality of the customer support network and application template marketplace? How does the project intend to address the challenges faced in securing necessary resour ..."
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternatives were considered for the solution delivery strategy, and what major trade-offs were identified in the development of the customer support network and integrated application template marketplace?",
+          "question_en_preview": "What alternatives were considered for the solution delivery strategy, and what major trade-offs were identified in the development of the customer support network and integrated application template marketplace?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "Given the limited risk information provided, what potential compliance or quality challenges could arise in the development of the customer support network and application template marketplace?",
+          "question_en_preview": "Given the limited risk information provided, what potential compliance or quality challenges could arise in the development of the customer support network and application template marketplace?"
+        }
+      ],
+      "elapsed_sec": 12.08,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 254,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to innovate by enabling 'zero hard coding' for website and web app creation, enhancing user accessibility. It is designed to leverage the familiar ease of use associated with spreadsheets, potentially broadening its appeal and usability.",
+        "first_key_point_preview": "The project includes planned functionality for 'zero hard coding' website and web app creation.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.42,
+        "raw_chars": 4516,
+        "usage": {
+          "prompt_tokens": 3336,
+          "completion_tokens": 988,
+          "total_tokens": 4324
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "zero hard coding functionality",
+        "user accessibility enhancement",
+        "spreadsheet ease of use",
+        "competitive advantages",
+        "intellectual property strategy",
+        "risk of obsolescence",
+        "evidence of effectiveness",
+        "customer segment extension",
+        "innovation validation",
+        "market differentiation"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the planned functionality for 'zero hard coding' website and web app creation compare to existing solutions in terms of innovation and user experience?",
+          "question_en_preview": "How does the planned functionality for 'zero hard coding' website and web app creation compare to existing solutions in terms of innovation and user experience?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the project offer over traditional website and web app creation methods, particularly regarding user accessibility and ease of use?",
+          "question_en_preview": "What specific advantages does the project offer over traditional website and web app creation methods, particularly regarding user accessibility and ease of use?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the claim that leveraging spreadsheet-like ease of use will enhance user accessibility, and how was this evidence gathered?",
+          "question_en_preview": "What evidence supports the claim that leveraging spreadsheet-like ease of use will enhance user accessibility, and how was this evidence gathered?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the project's obsolescence or commoditization within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the project's obsolescence or commoditization within the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property associated with the 'zero hard coding' functionality, and how do these strategies support long-term competition?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property associated with the 'zero hard coding' functionality, and how do these strategies support long-term competition?"
+        }
+      ],
+      "elapsed_sec": 9.42,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 267,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by the development of a working prototype and the capability of team members to collaborate effectively. However, the project faced challenges in achieving its funding goal and developing a consistent layout across devices.",
+        "first_key_point_preview": "The project has developed a working prototype and is nearing launch.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.29,
+        "raw_chars": 4536,
+        "usage": {
+          "prompt_tokens": 3417,
+          "completion_tokens": 947,
+          "total_tokens": 4364
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "working prototype development",
+        "funding challenges",
+        "consistent layout across devices",
+        "team collaboration capabilities",
+        "implementation obstacles",
+        "customer acceptance feasibility",
+        "resource alignment",
+        "risk identification",
+        "sustainability plan",
+        "operational execution tasks"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "implementation_barriers": 1,
+          "resources_and_infrastructure": 1,
+          "risk_management": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific challenges did the project face in reaching its funding goal of $35,307, and how might these challenges impact the project's long-term sustainability?",
+          "question_en_preview": "What specific challenges did the project face in reaching its funding goal of $35,307, and how might these challenges impact the project's long-term sustainability?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the development of a working prototype support the project's implementation plan, and what key tasks remain before the launch?",
+          "question_en_preview": "How does the development of a working prototype support the project's implementation plan, and what key tasks remain before the launch?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific obstacles related to developing a consistent layout across devices and platforms could hinder the project's deployment, and what strategies could be employed to overcome these obstacles?",
+          "question_en_preview": "What specific obstacles related to developing a consistent layout across devices and platforms could hinder the project's deployment, and what strategies could be employed to overcome these obstacles?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the team's skills and collaboration capabilities, how well-positioned is the project to leverage its resources for successful implementation and scalability?",
+          "question_en_preview": "Given the team's skills and collaboration capabilities, how well-positioned is the project to leverage its resources for successful implementation and scalability?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the limited risk information provided, what potential risks could arise during the project's execution, and how might these risks affect its feasibility?",
+          "question_en_preview": "Considering the limited risk information provided, what potential risks could arise during the project's execution, and how might these risks affect its feasibility?"
+        }
+      ],
+      "elapsed_sec": 12.29,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T22:04:14Z",
+  "elapsed_sec": 54.85,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km22__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km22__openai/generated_questions_detail.json"
+}

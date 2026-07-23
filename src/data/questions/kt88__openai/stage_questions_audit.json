@@ -1,0 +1,620 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt88__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt88__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 173,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is developed by Voidborn Industries, which is united by a shared vision. It promotes deeper thinking, suggesting a collaborative and innovative team environment.",
+        "first_key_point_preview": "The project is being built by Voidborn Industries.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.21,
+        "raw_chars": 4316,
+        "usage": {
+          "prompt_tokens": 3263,
+          "completion_tokens": 914,
+          "total_tokens": 4177
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership experience",
+        "domain expertise",
+        "collaboration networks",
+        "validation experience",
+        "governance structure",
+        "team capacity",
+        "execution risks",
+        "decision-making process",
+        "shared vision",
+        "project objectives"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the leadership experience of the team at Voidborn Industries align with the project's goals and execution requirements?",
+          "question_en_preview": "How does the leadership experience of the team at Voidborn Industries align with the project's goals and execution requirements?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that is relevant to the project's objectives, and how does this expertise enhance the project's potential for success?",
+          "question_en_preview": "What specific domain expertise does the team possess that is relevant to the project's objectives, and how does this expertise enhance the project's potential for success?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the current workload and potential parallel projects, does the team at Voidborn Industries have sufficient capacity to commit to this project effectively?",
+          "question_en_preview": "Given the current workload and potential parallel projects, does the team at Voidborn Industries have sufficient capacity to commit to this project effectively?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing collaboration networks does Voidborn Industries leverage to enhance the project's execution, and how stable are these relationships?",
+          "question_en_preview": "What existing collaboration networks does Voidborn Industries leverage to enhance the project's execution, and how stable are these relationships?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What experience does the team have with validation and compliance in relation to the project's objectives, and how might this impact the project's success?",
+          "question_en_preview": "What experience does the team have with validation and compliance in relation to the project's objectives, and how might this impact the project's success?"
+        }
+      ],
+      "elapsed_sec": 15.21,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 372,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to deliver a working early-access version of the Mind Upload app, focusing on creating a platform for users to upload their consciousness and interact with AI clones. Key objectives include expanding features based on user feedback, establishing a community aroun ...",
+        "first_key_point_preview": "The campaign is focused on delivering a working early-access version of the Mind Upload app.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Feature expansion and improvement will occur over the funding period based on feedback."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.76,
+        "raw_chars": 4184,
+        "usage": {
+          "prompt_tokens": 3428,
+          "completion_tokens": 885,
+          "total_tokens": 4313
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "early-access version",
+        "user feedback integration",
+        "community engagement",
+        "user privacy and data security",
+        "success metrics definition",
+        "value creation strategy",
+        "feature expansion timeline",
+        "unmet need for digital consciousness",
+        "risk management strategies"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined are the overall goals of the project, particularly in relation to delivering the early-access version of the Mind Upload app? Are there any unrelated sub-goals that could distract from this primary ob ...",
+          "question_en_preview": "How clearly defined are the overall goals of the project, particularly in relation to delivering the early-access version of the Mind Upload app? Are there any unrelated sub-goals that could distract from this primary ob ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the project's objectives align with the stated unmet need for users who do not trust social media to hold their real thoughts? What evidence supports this alignment?",
+          "question_en_preview": "To what extent do the project's objectives align with the stated unmet need for users who do not trust social media to hold their real thoughts? What evidence supports this alignment?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Are the proposed milestones for feature expansion and improvement based on user feedback realistic and executable within the funding period? Please evaluate the feasibility of these timelines.",
+          "question_en_preview": "Are the proposed milestones for feature expansion and improvement based on user feedback realistic and executable within the funding period? Please evaluate the feasibility of these timelines."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics will be used to evaluate the effectiveness of the Mind Upload app once it is launched? How will these metrics inform future development and feature expansion?",
+          "question_en_preview": "What specific success metrics will be used to evaluate the effectiveness of the Mind Upload app once it is launched? How will these metrics inform future development and feature expansion?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the initiative plan to create value and capture revenue through the Mind Upload app? What are the expected impacts on user behavior and community engagement?",
+          "question_en_preview": "How does the initiative plan to create value and capture revenue through the Mind Upload app? What are the expected impacts on user behavior and community engagement?"
+        }
+      ],
+      "elapsed_sec": 11.76,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 360,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop the Mind Upload platform, allowing users to create digital versions of themselves that learn and interact based on their own mind data. The campaign focuses on delivering an early-access version of the app, funding infrastructure, and fostering a commu ...",
+        "first_key_point_preview": "The platform allows users to upload their consciousness, one thought at a time.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Feature expansion and improvement will occur over the funding period based on feedback."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.69,
+        "raw_chars": 5064,
+        "usage": {
+          "prompt_tokens": 3510,
+          "completion_tokens": 1042,
+          "total_tokens": 4552
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "cloud infrastructure funding",
+        "AI compute allocation",
+        "user privacy measures",
+        "community engagement strategy",
+        "prototype validation milestones",
+        "go-to-market pricing strategy",
+        "partnership collaboration model",
+        "scaling risks assessment",
+        "feature expansion feedback",
+        "digital consciousness community"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the rationale behind the chosen delivery model for the Mind Upload platform, and what alternatives were considered? Please discuss any major trade-offs involved.",
+          "question_en_preview": "What is the rationale behind the chosen delivery model for the Mind Upload platform, and what alternatives were considered? Please discuss any major trade-offs involved."
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How will the development and validation of the Mind Upload platform be staged, particularly regarding prototype validation and customer qualification? What specific milestones will be used to assess readiness for broader ...",
+          "question_en_preview": "How will the development and validation of the Mind Upload platform be staged, particularly regarding prototype validation and customer qualification? What specific milestones will be used to assess readiness for broader ..."
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the planned go-to-market strategy for the Mind Upload platform, including pricing and funding logic? How does this strategy align with the identified community around digital consciousness?",
+          "question_en_preview": "What is the planned go-to-market strategy for the Mind Upload platform, including pricing and funding logic? How does this strategy align with the identified community around digital consciousness?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic is the proposed budget for the Mind Upload platform, considering the funding allocation for cloud infrastructure, AI compute, and security? What evidence would increase your confidence ...",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the proposed budget for the Mind Upload platform, considering the funding allocation for cloud infrastructure, AI compute, and security? What evidence would increase your confidence ..."
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What partnerships or collaborations are envisioned to support the development and rollout of the Mind Upload platform? How will these partnerships enhance the platform's competitive position?",
+          "question_en_preview": "What partnerships or collaborations are envisioned to support the development and rollout of the Mind Upload platform? How will these partnerships enhance the platform's competitive position?"
+        }
+      ],
+      "elapsed_sec": 13.69,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 364,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces innovative features in the Mind Upload system, including strong encryption, a zero-knowledge architecture, and a private prototype that enhances user interaction with AI clones. It aims to create a digital version of users that learns and evolves based on t ...",
+        "first_key_point_preview": "The Mind Upload system is built with strong encryption and a zero-knowledge architecture.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.22,
+        "raw_chars": 5072,
+        "usage": {
+          "prompt_tokens": 3421,
+          "completion_tokens": 1116,
+          "total_tokens": 4537
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "strong encryption",
+        "zero-knowledge architecture",
+        "private prototype effectiveness",
+        "user memory upload",
+        "competitive edge analysis",
+        "intellectual property strategy",
+        "risk of obsolescence",
+        "platform extensibility",
+        "customer interaction innovation",
+        "AI clone personalization"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "evidence_strength_for_innovation": 2,
+          "differentiation_and_competitive_edge": 1,
+          "risk_of_obsolescence_or_commoditization": 2,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Mind Upload system's strong encryption and zero-knowledge architecture differentiate it from existing digital interaction systems?",
+          "question_en_preview": "How does the Mind Upload system's strong encryption and zero-knowledge architecture differentiate it from existing digital interaction systems?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What evidence supports the effectiveness of the private prototype of the Mind Upload system in enhancing user interaction with AI clones?",
+          "question_en_preview": "What evidence supports the effectiveness of the private prototype of the Mind Upload system in enhancing user interaction with AI clones?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "In what ways does the ability for users to upload their memories and emotions to their AI clone provide a competitive edge over traditional AI systems?",
+          "question_en_preview": "In what ways does the ability for users to upload their memories and emotions to their AI clone provide a competitive edge over traditional AI systems?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of the Mind Upload system within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of the Mind Upload system within the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property associated with the Mind Upload system, particularly regarding its unique features like the zero-knowledge architecture?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property associated with the Mind Upload system, particularly regarding its unique features like the zero-knowledge architecture?"
+        }
+      ],
+      "elapsed_sec": 14.22,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 367,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project 'Mind Upload' is supported by a structured budget that includes funding for essential components such as AI compute, security enhancements, app deployment, and moderation. The project is currently based in Toronto, Canada, and aims to create a platf ...",
+        "first_key_point_preview": "The project budget includes allocations for AI compute and storage, security and privacy hardening, app deployment, and moderation.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Feature expansion and improvement will occur over the funding period based on feedback."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.09,
+        "raw_chars": 3794,
+        "usage": {
+          "prompt_tokens": 3462,
+          "completion_tokens": 818,
+          "total_tokens": 4280
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "budget allocation",
+        "funding strategies",
+        "user acceptance",
+        "privacy measures",
+        "implementation barriers",
+        "risk identification",
+        "feature expansion timeline",
+        "data security compliance",
+        "operational needs assessment"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "resources_and_infrastructure": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project is currently 9% funded, what strategies are in place to secure the remaining funding needed for successful implementation?",
+          "question_en_preview": "Given that the project is currently 9% funded, what strategies are in place to secure the remaining funding needed for successful implementation?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the budget allocation for AI compute, security enhancements, app deployment, and moderation ensure the project can meet its operational needs in the long term?",
+          "question_en_preview": "How does the budget allocation for AI compute, security enhancements, app deployment, and moderation ensure the project can meet its operational needs in the long term?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific risks arise from the limited detailed risk information provided in the proposal, and how might these impact the project's feasibility?",
+          "question_en_preview": "What specific risks arise from the limited detailed risk information provided in the proposal, and how might these impact the project's feasibility?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation might arise from the need for users to agree to terms of service and provide their mind data, and how can these be mitigated?",
+          "question_en_preview": "What barriers to implementation might arise from the need for users to agree to terms of service and provide their mind data, and how can these be mitigated?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How feasible is customer acceptance of the platform given the privacy and data security measures in place, and what evidence supports this?",
+          "question_en_preview": "How feasible is customer acceptance of the platform given the privacy and data security measures in place, and what evidence supports this?"
+        }
+      ],
+      "elapsed_sec": 10.09,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T21:13:48Z",
+  "elapsed_sec": 64.99,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt88__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt88__openai/generated_questions_detail.json"
+}

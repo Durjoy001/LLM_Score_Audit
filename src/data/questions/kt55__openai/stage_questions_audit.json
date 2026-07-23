@@ -1,0 +1,615 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt55__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt55__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 284,
+        "key_points_count": 3,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by Emad Jafari, who is responsible for overseeing the initiative. Key risks identified include the challenge of building a reliable MVP quickly and ensuring that the AI accurately matches roles, as well as the need to gain trust from actors and early adopt ...",
+        "first_key_point_preview": "The project is led by Emad Jafari.",
+        "first_risk_preview": "Main risks include building a reliable MVP quickly and ensuring AI matches roles accurately.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.97,
+        "raw_chars": 4326,
+        "usage": {
+          "prompt_tokens": 3310,
+          "completion_tokens": 944,
+          "total_tokens": 4254
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "MVP development experience",
+        "AI role matching expertise",
+        "collaboration networks",
+        "trust-building strategies",
+        "leadership track record",
+        "domain-specific validation",
+        "governance processes",
+        "team capacity assessment"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 7,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Emad Jafari's prior execution record and leadership experience position the team to effectively build a reliable MVP quickly?",
+          "question_en_preview": "How does Emad Jafari's prior execution record and leadership experience position the team to effectively build a reliable MVP quickly?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that will help ensure the AI accurately matches roles and addresses the challenges identified?",
+          "question_en_preview": "What specific domain expertise does the team possess that will help ensure the AI accurately matches roles and addresses the challenges identified?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity to meet the challenges of building a reliable MVP and gaining trust from early adopters?",
+          "question_en_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity to meet the challenges of building a reliable MVP and gaining trust from early adopters?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing collaboration networks does the team have that could support the initiative in gaining trust from actors and early adopters?",
+          "question_en_preview": "What existing collaboration networks does the team have that could support the initiative in gaining trust from actors and early adopters?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation and compliance experience does the team have that could mitigate the risks associated with ensuring the AI matches roles accurately?",
+          "question_en_preview": "What validation and compliance experience does the team have that could mitigate the risks associated with ensuring the AI matches roles accurately?"
+        }
+      ],
+      "elapsed_sec": 19.97,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 346,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop CastAI, an AI-powered casting assistant designed to help actors find and apply for roles more efficiently. Key objectives include launching a minimum viable product (MVP) within the first three months, followed by a beta release and a full launch, each ...",
+        "first_key_point_preview": "CastAI aims to help actors book more auditions quickly by finding the right roles across major casting platforms.",
+        "first_risk_preview": "Securing sufficient funding for development and marketing is also a challenge.",
+        "first_mitigation_preview": "Feedback-driven improvements are part of the project."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.69,
+        "raw_chars": 4036,
+        "usage": {
+          "prompt_tokens": 3448,
+          "completion_tokens": 891,
+          "total_tokens": 4339
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "MVP launch timeline",
+        "actor audition needs",
+        "user feedback integration",
+        "success metrics definition",
+        "funding strategy",
+        "roadmap phases",
+        "value proposition clarity",
+        "user engagement metrics",
+        "market opportunity urgency"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined are the overall goals of the CastAI project, particularly in relation to its aim of helping actors find and apply for roles efficiently? Are there any unrelated sub-goals that could dilute focus?",
+          "question_en_preview": "How clearly defined are the overall goals of the CastAI project, particularly in relation to its aim of helping actors find and apply for roles efficiently? Are there any unrelated sub-goals that could dilute focus?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the objectives of CastAI align with the stated unmet need of actors seeking to book auditions quickly? What evidence supports the urgency of this need?",
+          "question_en_preview": "To what extent do the objectives of CastAI align with the stated unmet need of actors seeking to book auditions quickly? What evidence supports the urgency of this need?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness and executability of the staged milestones outlined for CastAI, particularly the timeline for launching the MVP and subsequent phases. What factors could impact this timeline?",
+          "question_en_preview": "Evaluate the reasonableness and executability of the staged milestones outlined for CastAI, particularly the timeline for launching the MVP and subsequent phases. What factors could impact this timeline?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are included in the objectives for CastAI? How do these metrics align with the goals of improving user experience and engagement?",
+          "question_en_preview": "What clear and quantifiable success metrics are included in the objectives for CastAI? How do these metrics align with the goals of improving user experience and engagement?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the CastAI initiative create value for its users and stakeholders? What logic is presented regarding revenue capture or funding sustainability?",
+          "question_en_preview": "How does the CastAI initiative create value for its users and stakeholders? What logic is presented regarding revenue capture or funding sustainability?"
+        }
+      ],
+      "elapsed_sec": 16.69,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 316,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 2,
+        "summary_preview": "The strategy for the project includes leveraging AI to enhance user experience through personalized coaching and automated role submissions. The roadmap outlines three phases: an MVP launch, a Beta release, and a full launch, each with specific features aimed at improving user en ...",
+        "first_key_point_preview": "The project utilizes AI to analyze actor profiles and generate casting-type suggestions.",
+        "first_risk_preview": "Securing sufficient funding for development and marketing is a challenge.",
+        "first_mitigation_preview": "Engaging early users for feedback is part of the strategy to improve accuracy and user experience."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.03,
+        "raw_chars": 3942,
+        "usage": {
+          "prompt_tokens": 3547,
+          "completion_tokens": 839,
+          "total_tokens": 4386
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "MVP launch metrics",
+        "user engagement feedback",
+        "funding strategy",
+        "automation trade-offs",
+        "platform coverage expansion",
+        "budget realism evidence",
+        "compliance with platform rules",
+        "user insights enhancement",
+        "operational efficiency metrics",
+        "performance notes generation"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the initiative plan to secure sufficient funding for development and marketing, given the identified challenge in this area?",
+          "question_en_preview": "How does the initiative plan to secure sufficient funding for development and marketing, given the identified challenge in this area?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific metrics or feedback mechanisms will be used to evaluate the success of the MVP launch and subsequent phases, particularly in relation to user engagement and operational efficiency?",
+          "question_en_preview": "What specific metrics or feedback mechanisms will be used to evaluate the success of the MVP launch and subsequent phases, particularly in relation to user engagement and operational efficiency?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the major trade-offs considered in the solution delivery strategy, particularly regarding the automation of role submissions and user experience enhancements?",
+          "question_en_preview": "What are the major trade-offs considered in the solution delivery strategy, particularly regarding the automation of role submissions and user experience enhancements?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget for the initiative, considering the funding challenges mentioned? Please provide evidence that would increase your confidence in this assessment.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget for the initiative, considering the funding challenges mentioned? Please provide evidence that would increase your confidence in this assessment."
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the long-term strategy for scaling the initiative beyond the initial phases, particularly in terms of expanding platform coverage and enhancing user insights?",
+          "question_en_preview": "What is the long-term strategy for scaling the initiative beyond the initial phases, particularly in terms of expanding platform coverage and enhancing user insights?"
+        }
+      ],
+      "elapsed_sec": 14.03,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 221,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project leverages AI technology to enhance the casting process in the entertainment industry. Key innovations include AI-driven role discovery, automatic application submissions, and personalized dashboards for users.",
+        "first_key_point_preview": "AI will be used to analyze an actor's profile and generate casting-type suggestions.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.9,
+        "raw_chars": 5077,
+        "usage": {
+          "prompt_tokens": 3356,
+          "completion_tokens": 1134,
+          "total_tokens": 4490
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "AI-driven role discovery",
+        "automatic application submissions",
+        "personalized dashboards",
+        "user feedback",
+        "competitive advantage",
+        "intellectual property strategy",
+        "scalability potential",
+        "pilot results",
+        "evidence strength",
+        "risk of obsolescence"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 7,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 2,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the AI-driven role discovery and automatic application submission compare to existing solutions in the casting process? Please provide specific examples of novelty.",
+          "question_en_preview": "How does the AI-driven role discovery and automatic application submission compare to existing solutions in the casting process? Please provide specific examples of novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does CastAI offer over traditional casting methods or competing platforms in terms of user experience and efficiency?",
+          "question_en_preview": "What clear advantages does CastAI offer over traditional casting methods or competing platforms in terms of user experience and efficiency?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the AI-driven features like role discovery and actor coaching? Are there any pilot results or user feedback available?",
+          "question_en_preview": "What evidence supports the effectiveness of the AI-driven features like role discovery and actor coaching? Are there any pilot results or user feedback available?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of CastAI's offerings within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of CastAI's offerings within the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property associated with the AI technologies used in CastAI? How does this support long-term competitive advantage?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property associated with the AI technologies used in CastAI? How does this support long-term competitive advantage?"
+        }
+      ],
+      "elapsed_sec": 16.9,
+      "final_question_count": 9
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 360,
+        "key_points_count": 6,
+        "risks_count": 3,
+        "mitigations_count": 2,
+        "summary_preview": "The feasibility of the project is challenged by risks such as the need to build a reliable MVP quickly, ensuring accurate AI role matching, and securing sufficient funding for development and marketing. The project plans to engage early users for feedback and utilize AI for gener ...",
+        "first_key_point_preview": "Main risks include building a reliable MVP quickly and ensuring AI matches roles accurately.",
+        "first_risk_preview": "Main risks include building a reliable MVP quickly and ensuring AI matches roles accurately.",
+        "first_mitigation_preview": "Engaging early users for feedback is part of the strategy to improve accuracy and user experience."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.03,
+        "raw_chars": 3642,
+        "usage": {
+          "prompt_tokens": 3516,
+          "completion_tokens": 816,
+          "total_tokens": 4332
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "MVP development timeline",
+        "AI role matching accuracy",
+        "funding strategy",
+        "early user feedback",
+        "implementation barriers",
+        "customer acceptance evidence",
+        "risk mitigation strategies",
+        "staffing alignment",
+        "trust-building with users"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "funding_and_budget_planning": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 4,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to build and launch the MVP quickly, and what specific tasks and timelines are outlined to achieve this?",
+          "question_en_preview": "How does the project plan to build and launch the MVP quickly, and what specific tasks and timelines are outlined to achieve this?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What strategies are in place to mitigate the risks associated with building a reliable MVP and ensuring accurate AI role matching?",
+          "question_en_preview": "What strategies are in place to mitigate the risks associated with building a reliable MVP and ensuring accurate AI role matching?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the current status of funding for development and marketing, and what plans are in place to secure additional funding?",
+          "question_en_preview": "What is the current status of funding for development and marketing, and what plans are in place to secure additional funding?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation have been identified, particularly in gaining trust from actors and early adopters, and how does the project plan to address these?",
+          "question_en_preview": "What barriers to implementation have been identified, particularly in gaining trust from actors and early adopters, and how does the project plan to address these?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How realistic is the feasibility of customer acceptance and engagement with the MVP, and what evidence supports this assessment?",
+          "question_en_preview": "How realistic is the feasibility of customer acceptance and engagement with the MVP, and what evidence supports this assessment?"
+        }
+      ],
+      "elapsed_sec": 12.03,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T20:18:40Z",
+  "elapsed_sec": 79.63,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt55__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt55__openai/generated_questions_detail.json"
+}

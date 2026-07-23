@@ -1,0 +1,612 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt16__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt16__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 326,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team for the project includes Bill Woo, who is the creator of 'Rise of the Penguins GB for Gameboy', and Lindsay, who is responsible for the project 'Laughing Gull Chocolates Take Flight'. Currently, there is no designated individual for creating the music for the game, indic ...",
+        "first_key_point_preview": "Bill Woo is the creator of 'Rise of the Penguins GB for Gameboy'.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.28,
+        "raw_chars": 3943,
+        "usage": {
+          "prompt_tokens": 3318,
+          "completion_tokens": 872,
+          "total_tokens": 4190
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Bill Woo's game development experience",
+        "Lindsay's project management skills",
+        "music creation gap",
+        "collaboration strategies",
+        "decision-making processes",
+        "team capacity assessment"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Bill Woo's experience as the creator of 'Rise of the Penguins GB for Gameboy' prepare him to lead this project, and what specific skills does he bring that are relevant to its success?",
+          "question_en_preview": "How does Bill Woo's experience as the creator of 'Rise of the Penguins GB for Gameboy' prepare him to lead this project, and what specific skills does he bring that are relevant to its success?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What relevant domain expertise does Lindsay bring from her project 'Laughing Gull Chocolates Take Flight' that could contribute to the success of this initiative?",
+          "question_en_preview": "What relevant domain expertise does Lindsay bring from her project 'Laughing Gull Chocolates Take Flight' that could contribute to the success of this initiative?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current team composition, including the absence of a designated music creator, how does the team plan to address this gap to ensure project milestones are met?",
+          "question_en_preview": "Given the current team composition, including the absence of a designated music creator, how does the team plan to address this gap to ensure project milestones are met?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What strategies does the team have in place to build a collaboration network that could fill the current gap in music creation and enhance the project's overall execution?",
+          "question_en_preview": "What strategies does the team have in place to build a collaboration network that could fill the current gap in music creation and enhance the project's overall execution?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the team plan to manage decision-making processes and conflict of interest, especially considering the limited information on risk management in the proposal?",
+          "question_en_preview": "How does the team plan to manage decision-making processes and conflict of interest, especially considering the limited information on risk management in the proposal?"
+        }
+      ],
+      "elapsed_sec": 12.29,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 345,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "'Rise of the Penguins GB' aims to be a 2D side-scrolling platformer for the Game Boy, featuring 6 levels with various enemies and simple controls. The Kickstarter campaign seeks to raise CA$ 300 to overhaul the game's backgrounds, with a funding period from September 23, 2024, to ...",
+        "first_key_point_preview": "The main goal of the Kickstarter project is to raise CA$ 300 to overhaul all of the backgrounds of the 6 main levels in the game.",
+        "first_risk_preview": "The game features 4 simple difficulty settings to adjust checkpoints, which may impact player experience.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.67,
+        "raw_chars": 4020,
+        "usage": {
+          "prompt_tokens": 3484,
+          "completion_tokens": 948,
+          "total_tokens": 4432
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding goal",
+        "2D platformer market demand",
+        "success metrics tracking",
+        "download targets",
+        "project timeline feasibility",
+        "background overhaul",
+        "game level design",
+        "player experience impact",
+        "difficulty settings"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused is the main goal of raising CA$ 300 to overhaul the backgrounds of the 6 levels in 'Rise of the Penguins GB'? Are there any unrelated sub-goals that could distract from this objective?",
+          "question_en_preview": "How clear and focused is the main goal of raising CA$ 300 to overhaul the backgrounds of the 6 levels in 'Rise of the Penguins GB'? Are there any unrelated sub-goals that could distract from this objective?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the objective of achieving 5000-10,000 downloads align with the current market demand for 2D platformers? What evidence supports this alignment?",
+          "question_en_preview": "To what extent does the objective of achieving 5000-10,000 downloads align with the current market demand for 2D platformers? What evidence supports this alignment?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Are the proposed funding period and timeline for the Kickstarter campaign from September 23, 2024, to October 23, 2024, reasonable and executable? What factors could influence this timeline?",
+          "question_en_preview": "Are the proposed funding period and timeline for the Kickstarter campaign from September 23, 2024, to October 23, 2024, reasonable and executable? What factors could influence this timeline?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics can be established to measure the achievement of the goal of 5000-10,000 downloads? How will these metrics be tracked and reported?",
+          "question_en_preview": "What specific success metrics can be established to measure the achievement of the goal of 5000-10,000 downloads? How will these metrics be tracked and reported?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Considering the goal of raising CA$ 300 and achieving 5000-10,000 downloads, how realistic are these objectives given the current gaming market? Are they too ambitious or conservative?",
+          "question_en_preview": "Considering the goal of raising CA$ 300 and achieving 5000-10,000 downloads, how realistic are these objectives given the current gaming market? Are they too ambitious or conservative?"
+        }
+      ],
+      "elapsed_sec": 17.68,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 333,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "'Rise of the Penguins GB' is a 2D side-scrolling platformer for the Game Boy, inspired by classic games and featuring simple controls and challenging gameplay. The project aims to utilize AI-generated content and plans to port the game to Steam using the bubble wrap tool, despite ...",
+        "first_key_point_preview": "'Rise of the Penguins GB' is a 2D side-scrolling platformer for the Game Boy.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.11,
+        "raw_chars": 3542,
+        "usage": {
+          "prompt_tokens": 3531,
+          "completion_tokens": 812,
+          "total_tokens": 4343
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "AI-generated content rationale",
+        "gameplay validation strategy",
+        "Steam rollout strategy",
+        "revenue model for Steam",
+        "scaling challenges",
+        "quality assurance measures"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the choice of using AI-generated content in 'Rise of the Penguins GB', and what alternatives were considered for content creation?",
+          "question_en_preview": "What rationale supports the choice of using AI-generated content in 'Rise of the Penguins GB', and what alternatives were considered for content creation?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to validate the gameplay experience and performance of 'Rise of the Penguins GB' before its release on Steam?",
+          "question_en_preview": "How does the project plan to validate the gameplay experience and performance of 'Rise of the Penguins GB' before its release on Steam?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the strategy for rolling out 'Rise of the Penguins GB' on Steam, and how does it plan to attract users to the game?",
+          "question_en_preview": "What is the strategy for rolling out 'Rise of the Penguins GB' on Steam, and how does it plan to attract users to the game?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given that 'Rise of the Penguins GB' is available for free online, what is the anticipated revenue model for the game once it is ported to Steam?",
+          "question_en_preview": "Given that 'Rise of the Penguins GB' is available for free online, what is the anticipated revenue model for the game once it is ported to Steam?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What potential challenges does the project foresee in scaling 'Rise of the Penguins GB' from a free online game to a commercial product on Steam?",
+          "question_en_preview": "What potential challenges does the project foresee in scaling 'Rise of the Penguins GB' from a free online game to a commercial product on Steam?"
+        }
+      ],
+      "elapsed_sec": 11.12,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 344,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'Rise of the Penguins GB' incorporates innovative elements by utilizing AI-generated content for game assets and cover art, enhancing the overall aesthetic appeal. The decision to update backgrounds rather than overhaul sprites is a cost-effective strategy aimed at at ...",
+        "first_key_point_preview": "The game features AI-generated content for assets and cover art.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Changing the backgrounds is seen as a cost-effective way to improve the game's appearance."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.9,
+        "raw_chars": 3887,
+        "usage": {
+          "prompt_tokens": 3400,
+          "completion_tokens": 871,
+          "total_tokens": 4271
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "AI-generated content",
+        "game aesthetic appeal",
+        "retro game inspiration",
+        "customer value advantages",
+        "evidence of effectiveness",
+        "risk of obsolescence",
+        "platform extensibility",
+        "cost-effective strategy",
+        "game development practices"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the use of AI-generated content for game assets and cover art in 'Rise of the Penguins GB' represent true novelty compared to existing game development practices?",
+          "question_en_preview": "How does the use of AI-generated content for game assets and cover art in 'Rise of the Penguins GB' represent true novelty compared to existing game development practices?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does 'Rise of the Penguins GB' offer over similar retro games, particularly in terms of customer value and aesthetic appeal?",
+          "question_en_preview": "What clear advantages does 'Rise of the Penguins GB' offer over similar retro games, particularly in terms of customer value and aesthetic appeal?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the AI-generated content in enhancing the game's aesthetic appeal and attracting new audiences?",
+          "question_en_preview": "What evidence supports the effectiveness of the AI-generated content in enhancing the game's aesthetic appeal and attracting new audiences?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the game's innovative elements within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the game's innovative elements within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How might the innovation of using AI-generated content extend to other customer segments or use cases beyond the current game offering?",
+          "question_en_preview": "How might the innovation of using AI-generated content extend to other customer segments or use cases beyond the current game offering?"
+        }
+      ],
+      "elapsed_sec": 11.91,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 367,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project 'Rise of the Penguins GB for Gameboy' is supported by its funding status and clear budget goals. The project aims to raise $300 to overhaul backgrounds, with a stretch goal of $500 for a Steam release. However, there are risks regarding the quality  ...",
+        "first_key_point_preview": "The main goal of the Kickstarter project is to raise $300 to overhaul all of the backgrounds of the 6 main levels in the game.",
+        "first_risk_preview": "There is a risk that the background art may look worse than the original backgrounds, though this is considered highly unlikely.",
+        "first_mitigation_preview": "Changing the backgrounds is seen as a cost-effective way to improve the game's appearance."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.19,
+        "raw_chars": 3653,
+        "usage": {
+          "prompt_tokens": 3511,
+          "completion_tokens": 800,
+          "total_tokens": 4311
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "104% funding status",
+        "budget goals alignment",
+        "artist task timeline",
+        "quality control measures",
+        "implementation barriers",
+        "Steam release stretch goal",
+        "risk assessment gaps",
+        "background art quality",
+        "cost-effective improvements"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 2,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the current funding status of 104% support the project's budget goals, and what implications does this have for future funding needs?",
+          "question_en_preview": "How does the current funding status of 104% support the project's budget goals, and what implications does this have for future funding needs?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for the artist to create the new backgrounds, and how do these align with the project's overall goals?",
+          "question_en_preview": "What specific tasks and timelines are outlined for the artist to create the new backgrounds, and how do these align with the project's overall goals?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified risk that the new background art may look worse than the originals, what specific measures are in place to ensure quality control during the art creation process?",
+          "question_en_preview": "Given the identified risk that the new background art may look worse than the originals, what specific measures are in place to ensure quality control during the art creation process?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation exist in the production of the new backgrounds, and how might these impact the project's timeline?",
+          "question_en_preview": "What potential barriers to implementation exist in the production of the new backgrounds, and how might these impact the project's timeline?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How realistic is the stretch goal of raising $500 for a Steam release, and what evidence supports the likelihood of achieving this goal?",
+          "question_en_preview": "How realistic is the stretch goal of raising $500 for a Steam release, and what evidence supports the likelihood of achieving this goal?"
+        }
+      ],
+      "elapsed_sec": 12.19,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T19:00:14Z",
+  "elapsed_sec": 65.19,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt16__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt16__openai/generated_questions_detail.json"
+}

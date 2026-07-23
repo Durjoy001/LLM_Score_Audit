@@ -1,0 +1,621 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt20__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt20__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 212,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is initiated by OWMG, indicating a defined leadership structure. However, there is limited information regarding the composition of the core team or any collaborative efforts with other organizations.",
+        "first_key_point_preview": "The project was initiated by OWMG.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.57,
+        "raw_chars": 4472,
+        "usage": {
+          "prompt_tokens": 3243,
+          "completion_tokens": 938,
+          "total_tokens": 4181
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership structure",
+        "domain expertise",
+        "project governance",
+        "collaborative partnerships",
+        "team capacity assessment",
+        "validation experience",
+        "decision-making process",
+        "conflict-of-interest handling",
+        "execution scalability",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "validation_and_compliance_experience": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 2,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the leadership structure initiated by OWMG support the project's advancement towards its intended application and commercialization path?",
+          "question_en_preview": "How does the leadership structure initiated by OWMG support the project's advancement towards its intended application and commercialization path?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the core team possess that is relevant to the project's objectives, and how does this expertise enhance the project's feasibility?",
+          "question_en_preview": "What specific domain expertise does the core team possess that is relevant to the project's objectives, and how does this expertise enhance the project's feasibility?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited information on the core team, what potential risks does this create regarding their capacity to manage the project effectively?",
+          "question_en_preview": "Given the limited information on the core team, what potential risks does this create regarding their capacity to manage the project effectively?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What collaborative efforts or partnerships does the team have in place, and how might the absence of this information impact the project's execution and scalability?",
+          "question_en_preview": "What collaborative efforts or partnerships does the team have in place, and how might the absence of this information impact the project's execution and scalability?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the project governance structure ensure effective decision-making and conflict-of-interest handling, especially given the limited information provided?",
+          "question_en_preview": "How does the project governance structure ensure effective decision-making and conflict-of-interest handling, especially given the limited information provided?"
+        }
+      ],
+      "elapsed_sec": 14.58,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 372,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to create a fully featured open-source Document Translations Portal that connects translators with clients, eliminating high costs associated with traditional translation agencies. It seeks to provide essential translation services to individuals who cannot affor ...",
+        "first_key_point_preview": "The portal is designed to be a fully featured open-source Document Translations Portal.",
+        "first_risk_preview": "The only risk anticipated is not being able to secure enough funding within a month.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.9,
+        "raw_chars": 4657,
+        "usage": {
+          "prompt_tokens": 3442,
+          "completion_tokens": 1013,
+          "total_tokens": 4455
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "open-source Document Translations Portal",
+        "affordable translation services",
+        "funding goal of $4,942",
+        "quantifiable success metrics",
+        "user accessibility",
+        "cost-effectiveness",
+        "project milestones",
+        "unmet need for translation",
+        "execution feasibility"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 2,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused is the overall goal of creating a fully featured open-source Document Translations Portal, and are there any unrelated sub-goals that could distract from this objective?",
+          "question_en_preview": "How clear and focused is the overall goal of creating a fully featured open-source Document Translations Portal, and are there any unrelated sub-goals that could distract from this objective?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the project align with the stated unmet need for affordable translation services, and how urgent is this need among potential users?",
+          "question_en_preview": "To what extent does the project align with the stated unmet need for affordable translation services, and how urgent is this need among potential users?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the project, and how reasonable and executable are they given the current funding situation?",
+          "question_en_preview": "What are the proposed milestones for the project, and how reasonable and executable are they given the current funding situation?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics are defined for the Document Translations Portal, and how will these metrics demonstrate the project's impact on accessibility and cost-effectiveness?",
+          "question_en_preview": "What quantifiable success metrics are defined for the Document Translations Portal, and how will these metrics demonstrate the project's impact on accessibility and cost-effectiveness?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Considering the funding goal of $4,942 was not reached, how realistic are the project's objectives in terms of funding and execution, and what adjustments might be necessary to improve feasibility?",
+          "question_en_preview": "Considering the funding goal of $4,942 was not reached, how realistic are the project's objectives in terms of funding and execution, and what adjustments might be necessary to improve feasibility?"
+        }
+      ],
+      "elapsed_sec": 15.9,
+      "final_question_count": 8
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 306,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project strategy focuses on creating a unique open-source Document Translations Portal that connects translators and clients directly, eliminating high agency fees. It aims to optimize user experience through proprietary algorithms and features, ensuring confidentiality and s ...",
+        "first_key_point_preview": "The portal intends to eliminate high prices charged by translation agencies.",
+        "first_risk_preview": "The only risk anticipated is not being able to secure enough funding within a month.",
+        "first_mitigation_preview": "The platform is optimized for search engines using a unique proprietary algorithm that features any posted project in real time."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.12,
+        "raw_chars": 5137,
+        "usage": {
+          "prompt_tokens": 3501,
+          "completion_tokens": 1067,
+          "total_tokens": 4568
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user acquisition strategy",
+        "revenue model impact",
+        "algorithm validation steps",
+        "funding contingency plans",
+        "data protection compliance",
+        "search engine optimization",
+        "success metrics for demand",
+        "translator bidding process",
+        "client project posting",
+        "security measures in communications"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 4,
+          "2": 4
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 2,
+          "business_model_and_unit_economics": 1,
+          "development_and_validation_path": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "solution_delivery_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to attract clients to post their projects for free on the Document Translations Portal, and what strategies are in place to ensure a steady flow of qualified translators bidding on these project ...",
+          "question_en_preview": "How does the project plan to attract clients to post their projects for free on the Document Translations Portal, and what strategies are in place to ensure a steady flow of qualified translators bidding on these project ..."
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the expected impact of eliminating high agency fees on the overall pricing strategy of the Document Translations Portal, and how will this affect the platform's revenue model?",
+          "question_en_preview": "What is the expected impact of eliminating high agency fees on the overall pricing strategy of the Document Translations Portal, and how will this affect the platform's revenue model?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps are planned to ensure the effectiveness of the proprietary algorithms and features in optimizing user experience on the Document Translations Portal?",
+          "question_en_preview": "What validation steps are planned to ensure the effectiveness of the proprietary algorithms and features in optimizing user experience on the Document Translations Portal?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the anticipated risk of not securing enough funding within a month, what contingency plans or alternative funding strategies does the project have to ensure continued development and scaling of the Document Transla ...",
+          "question_en_preview": "Given the anticipated risk of not securing enough funding within a month, what contingency plans or alternative funding strategies does the project have to ensure continued development and scaling of the Document Transla ..."
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the Document Translations Portal ensure confidentiality and security in communications between clients and translators, and what compliance measures are in place to protect user data?",
+          "question_en_preview": "How does the Document Translations Portal ensure confidentiality and security in communications between clients and translators, and what compliance measures are in place to protect user data?"
+        }
+      ],
+      "elapsed_sec": 15.12,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 328,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces an innovative open-source Document Translations Portal designed with a user-friendly interface and a comprehensive set of features. It incorporates unique proprietary systems, including a financial management system and an Escrow system, to enhance project  ...",
+        "first_key_point_preview": "The portal is designed to be a fully featured open-source Document Translations Portal.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The platform is optimized for search engines using a unique proprietary algorithm that features any posted project in real time."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.23,
+        "raw_chars": 4669,
+        "usage": {
+          "prompt_tokens": 3408,
+          "completion_tokens": 997,
+          "total_tokens": 4405
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "open-source Document Translations Portal",
+        "proprietary financial management system",
+        "Escrow system for project management",
+        "unique proprietary algorithm",
+        "search engine optimization effectiveness",
+        "scalability of translation features",
+        "risk of commoditization",
+        "competitive protection strategies",
+        "user-friendly interface",
+        "evidence of innovation"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the open-source Document Translations Portal differentiate itself from existing translation platforms in terms of features and user experience?",
+          "question_en_preview": "How does the open-source Document Translations Portal differentiate itself from existing translation platforms in terms of features and user experience?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the proprietary financial management system provide over traditional project management tools in the context of translation services?",
+          "question_en_preview": "What specific advantages does the proprietary financial management system provide over traditional project management tools in the context of translation services?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the unique proprietary algorithm used for search engine optimization in the Document Translations Portal?",
+          "question_en_preview": "What evidence supports the effectiveness of the unique proprietary algorithm used for search engine optimization in the Document Translations Portal?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the commoditization of the Document Translations Portal within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the commoditization of the Document Translations Portal within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How scalable is the Document Translations Portal in terms of extending its features to other languages or types of documents, and what are the potential barriers to this scalability?",
+          "question_en_preview": "How scalable is the Document Translations Portal in terms of extending its features to other languages or types of documents, and what are the potential barriers to this scalability?"
+        }
+      ],
+      "elapsed_sec": 14.24,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 369,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is based in Toronto, Canada, and aims to create a fully featured open-source Document Translations Portal. The team has been working on the translation technology for some time and expresses optimism about the project's outcome. However, the project faces a significan ...",
+        "first_key_point_preview": "The project is based in Toronto, Canada.",
+        "first_risk_preview": "The only risk anticipated is not being able to secure enough funding within a month.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.58,
+        "raw_chars": 4071,
+        "usage": {
+          "prompt_tokens": 3459,
+          "completion_tokens": 862,
+          "total_tokens": 4321
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding sources identified",
+        "budget allocation details",
+        "implementation timeline",
+        "contingency plans",
+        "Escrow payment system",
+        "customer acceptance measures",
+        "barriers to implementation",
+        "resource alignment",
+        "risk mitigation strategies",
+        "translator compensation model"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific funding sources are being pursued to ensure the project's financial viability within the next month, and how does the budget allocation reflect the urgency of securing these funds?",
+          "question_en_preview": "What specific funding sources are being pursued to ensure the project's financial viability within the next month, and how does the budget allocation reflect the urgency of securing these funds?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Can you detail the key tasks and timeline for the implementation of the Document Translations Portal, and how these align with the urgency of securing funding?",
+          "question_en_preview": "Can you detail the key tasks and timeline for the implementation of the Document Translations Portal, and how these align with the urgency of securing funding?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified risk of not securing enough funding within a month, what contingency plans or alternative funding strategies are in place to mitigate this risk?",
+          "question_en_preview": "Given the identified risk of not securing enough funding within a month, what contingency plans or alternative funding strategies are in place to mitigate this risk?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation have been identified for the Document Translations Portal, particularly in terms of customer acceptance and integration into existing workflows?",
+          "question_en_preview": "What potential barriers to implementation have been identified for the Document Translations Portal, particularly in terms of customer acceptance and integration into existing workflows?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How feasible is the proposed Escrow payment system for compensating translators, and what measures are in place to ensure customer acceptance of this payment model?",
+          "question_en_preview": "How feasible is the proposed Escrow payment system for compensating translators, and what measures are in place to ensure customer acceptance of this payment model?"
+        }
+      ],
+      "elapsed_sec": 16.58,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T19:01:03Z",
+  "elapsed_sec": 76.43,
+  "total_questions": 38,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt20__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt20__openai/generated_questions_detail.json"
+}

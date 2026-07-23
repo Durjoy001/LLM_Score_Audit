@@ -1,0 +1,1039 @@
+{
+  "system": "You are a senior venture, product, technical, financial, and operating diligence advisor for world-class startup, corporate innovation, product, service, platform, and operating-business reviews. Before writing any assessment, infer the closest business archetype from the evidence: SaaS/software, AI/data product, marketplace, consumer brand, B2B service, professional services, education/training, healthcare/life science, industrial/manufacturing, hardware/device, energy/climate, logistics/supply-chain, fintech/financial service, real estate/infrastructure, agriculture/food, media/content, nonprofit/public-sector program, research commercialization, internal corporate transformation, or mixed model. Use that archetype only to choose relevant diligence standards; do not output an archetype label unless it is useful and clearly supported. The system will provide five dimensions: team, objectives, strategy, innovation, and feasibility. For each dimension you will receive: a label; qualitative score/consistency/drift signals; strength/risk phrases extracted by metrics; top_evidence_phrases from post-processing, which are evidence directions rather than complete evidence; dimension-level and question-level general_insights, which are industry-context benchmarks and not project achievements; and sample-level provenance flags such as selection_mode and fallback_used, which indicate whether the selected answer came from the normal filtered path or a fallback rescue path; dim_general_insights_covered, meaning general industry points partly reflected in the selected QA; dim_general_insights_missing, meaning important industry points barely covered in the selected QA; and several QA samples. Your task:\n1. For each dimension, write an investment/scale-up-grade assessment based on QA content, metric phrases, evidence directions, and general insights. The standard of proof must match the inferred archetype: software needs adoption, retention, security, integration, and support evidence; services need repeatability, staffing, service quality, utilization, and margin evidence; consumer businesses need channel economics, repeat purchase, brand differentiation, and working-capital evidence; marketplaces need liquidity, trust, acquisition, take-rate, and disintermediation evidence; manufacturing/hardware needs BOM, yield, reliability, certification, supply chain, inventory, and warranty evidence; public/nonprofit programs need theory of change, funding durability, implementation partners, and measurable outcomes; research commercialization needs IP rights, validation milestones, partner route, and capital-intensity evidence. Strengths must connect concrete proposal facts to a business or execution implication: why this could improve defensibility, speed, cost, customer adoption, compliance readiness, operating readiness, delivery readiness, or capital efficiency. Concerns must explain the decision impact, not just say information is limited. Specify whether the gap affects problem proof, customer/user proof, buyer/payer/funder proof, product/service proof, technical proof, commercial proof, operating proof, financial proof, legal/compliance proof, impact proof, or governance proof. Recommendations must be diligence-ready asks: name the exact material to add, such as customer interviews, pilot results, LOIs, usage/retention data, service quality metrics, benchmark test results, IP claim charts, channel economics, unit-economics assumptions, capacity/resource plan, staffing model, supply-chain plan, budget use-of-funds, risk register, owner/timeline/RACI, procurement path, compliance pathway, impact measurement plan, or partner agreements when applicable.\n2. Each strength/concern must be causal and explanatory: say why it is good or risky, not just what exists. Vary sentence openings and avoid generic phrases such as 'aligns with industry expectations' unless you also name the concrete project fact and decision implication.\n3. You may cite key QA information, but do not invent organizations, registration numbers, customer data, production data, or concrete data.\nDo not assume any sector, customer type, business model, regulated pathway, or delivery model unless the QA content supports it; use validation, quality, customer qualification, operating scaling, adoption, security, procurement, funding, implementation, impact, or compliance language when that better fits the project.\n4. Do not output question IDs, numeric scores, percentages, or internal metric names such as alignment, coverage, authority, drift, overall_score, confidence, or Jaccard.\n5. If a dimension has limited information or many fallback-selected samples, provide conservative conclusions and separate 'what is promising' from 'what must be proven before scale-up or investment'.\nReturn strict JSON. For each dimension provide summary (2-4 sentences), strengths (3-5 items), concerns (3-5 items), and recommendations (3-5 items).",
+  "user": {
+    "pid": "p4__openai",
+    "task": "dimension_level_expert_opinion",
+    "note": "Return only the dimensions field. Other fields are added by the system.",
+    "dimensions": {
+      "team": {
+        "dimension": "team",
+        "label": "Team and governance",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers differ substantially; conclusions for this dimension are unstable.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [],
+        "metric_risk_phrases": [],
+        "metric_top_evidence_phrases": [
+          "与医院合作的具体项目成果或影响评估，可能需要进一步的文档支持。",
+          "与医院的具体合作协议或项目计划。",
+          "关于合作预期成果的详细描述。"
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "在类似项目中，通常需要明确的商业化路线图和市场进入策略。",
+          "领导团队的经验和背景通常是成功商业化的关键因素。",
+          "缺乏具体的实施计划和风险管理策略可能会导致项目延误或失败。",
+          "在医疗设备领域，通常需要清晰的审批路径和合规性计划。",
+          "成功的医疗设备项目通常依赖于团队的专业知识和经验。",
+          "缺乏具体的审批案例和经验可能会导致项目面临较高的风险。",
+          "在医疗设备项目中，通常需要强有力的临床合作以支持产品的验证和推广。",
+          "成功的市场进入策略通常依赖于与医疗机构的有效合作。",
+          "缺乏具体的合作内容和成果预期可能会导致项目的执行风险。",
+          "在类似项目中，团队的时间管理和优先级安排是成功的关键因素。"
+        ],
+        "dim_general_insights_covered": [],
+        "dim_general_insights_missing": [
+          "在类似项目中，通常需要明确的商业化路线图和市场进入策略。",
+          "领导团队的经验和背景通常是成功商业化的关键因素。",
+          "缺乏具体的实施计划和风险管理策略可能会导致项目延误或失败。",
+          "在医疗设备领域，通常需要清晰的审批路径和合规性计划。",
+          "成功的医疗设备项目通常依赖于团队的专业知识和经验。",
+          "缺乏具体的审批案例和经验可能会导致项目面临较高的风险。",
+          "在医疗设备项目中，通常需要强有力的临床合作以支持产品的验证和推广。",
+          "成功的市场进入策略通常依赖于与医疗机构的有效合作。",
+          "缺乏具体的合作内容和成果预期可能会导致项目的执行风险。",
+          "在类似项目中，团队的时间管理和优先级安排是成功的关键因素。"
+        ],
+        "qa_samples": [
+          {
+            "question": "How does the leadership experience of Dr. Palti, a founding member of Novocure, contribute to the team's ability to advance the project towards commercialization?",
+            "answer": "1. Dr. Palti的领导经验为团队提供了商业化知识，尤其是在医疗设备领域，这对项目的推进可能具有重要影响。\n2. 他在Novocure的经验表明他具备将技术转化为市场产品的能力，这可能有助于团队制定有效的商业策略。\n3. 团队的多样化背景和强大的研发能力可能增强项目的市场竞争力，特别是在医疗设备的复杂性方面。\n4. 然而，提案中缺乏关于团队如何具体利用Dr. Palti的经验来应对商业化过程中的挑战的详细信息，这需要进一步补充。",
+            "key_claims": [
+              "Dr. Palti的经验可能会提高项目的商业化成功率。",
+              "团队的多样化技能组合可能为项目的推进提供支持。",
+              "提案缺乏关于如何具体利用领导经验的详细计划。"
+            ],
+            "evidence_hints": [
+              "团队成员的具体角色和责任，特别是Dr. Palti在项目中的具体贡献。",
+              "关于商业化策略的详细计划或框架。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，通常需要明确的商业化路线图和市场进入策略。",
+              "领导团队的经验和背景通常是成功商业化的关键因素。",
+              "缺乏具体的实施计划和风险管理策略可能会导致项目延误或失败。"
+            ]
+          },
+          {
+            "question": "What specific expertise does the team possess in medical device approvals, and how does this expertise enhance the project's feasibility?",
+            "answer": "1. 团队在医疗设备审批方面的专业知识主要来自于其成员在相关领域的学术和实践经验，但提案未提供具体的成功案例。\n2. 提案中提到团队具有强大的研发能力，这可能有助于加速医疗设备的审批流程，但缺乏详细的策略说明。\n3. 团队的多样化技能组合（如物理学、电子学和成像技术）为医疗设备的开发和审批提供了必要的支持，但具体如何应用这些技能尚未明确。\n4. 提案未详细说明团队在医疗设备审批方面的具体成功案例或经验，这可能影响项目的可行性评估。",
+            "key_claims": [
+              "团队的研发能力可能加速医疗设备的审批过程，但缺乏具体的实施策略。",
+              "缺乏具体的审批成功案例可能影响项目的可行性。",
+              "团队的多样化技能组合为医疗设备的开发提供了支持，但具体应用尚不明确。"
+            ],
+            "evidence_hints": [
+              "团队在医疗设备审批方面的具体成功案例或经验。",
+              "关于团队如何应对审批流程的详细策略和实施计划。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在医疗设备领域，通常需要清晰的审批路径和合规性计划。",
+              "成功的医疗设备项目通常依赖于团队的专业知识和经验。",
+              "缺乏具体的审批案例和经验可能会导致项目面临较高的风险。"
+            ]
+          },
+          {
+            "question": "How do the collaborations with multiple top-tier hospitals in China support the project's execution and market entry strategy?",
+            "answer": "1. 与中国多家顶级医院的合作为项目的执行提供了重要的临床支持和市场验证。\n2. 这些合作关系可能有助于团队获取临床数据，验证产品的有效性和安全性，从而增强市场进入策略的可信度。\n3. 然而，提案中未详细说明这些合作的具体内容和预期成果，这需要进一步补充信息以评估项目的执行力。\n4. 团队的医院合作网络可能为产品推广和用户反馈提供了宝贵的渠道，但具体的合作模式和反馈机制尚未明确。",
+            "key_claims": [
+              "与顶级医院的合作可能增强项目的市场进入策略。",
+              "缺乏具体的合作内容和预期成果可能影响项目的执行力，需要进一步补充。",
+              "医院合作网络为产品推广提供了渠道，但具体的合作模式尚未明确。"
+            ],
+            "evidence_hints": [
+              "与医院的具体合作协议或项目计划。",
+              "关于合作预期成果的详细描述。",
+              "医院合作的反馈机制和推广策略的具体信息。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在医疗设备项目中，通常需要强有力的临床合作以支持产品的验证和推广。",
+              "成功的市场进入策略通常依赖于与医疗机构的有效合作。",
+              "缺乏具体的合作内容和成果预期可能会导致项目的执行风险。"
+            ]
+          },
+          {
+            "question": "Given the team's diverse skill set and affiliations with prestigious institutions, do you believe they have the capacity to manage this project alongside other commitments? Please explain your reasoning.",
+            "answer": "1. 团队成员来自于清华大学和北京大学等知名机构，具有强大的研发能力和多样化的技能组合，这表明他们在管理项目方面具备一定的能力。\n2. 团队中的教授和企业家在医疗设备审批方面的经验，可能为项目的成功提供了基础，但具体的成功案例和相关经验尚未详细列出。\n3. 目前提案中未详细说明项目的具体工作安排及团队成员的其他承诺，这可能影响他们的时间管理和项目专注度。\n4. 建议提供团队成员的时间分配、项目优先级以及具体的工作安排，以便更好地评估其管理能力。",
+            "key_claims": [
+              "团队具备强大的研发能力和多样化的技能组合。",
+              "团队成员在医疗设备审批方面有实战经验，但缺乏具体案例支持。",
+              "缺乏关于团队时间管理和项目优先级的详细信息。"
+            ],
+            "evidence_hints": [
+              "团队概述中提到的成员背景和经验",
+              "提案中关于项目管理和时间分配的具体信息"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，团队的时间管理和优先级安排是成功的关键因素。",
+              "确保团队成员的承诺与项目需求相匹配，以避免资源分散。",
+              "常见的陷阱包括团队成员过度承诺，导致项目延误或质量下降。"
+            ]
+          },
+          {
+            "question": "What are the potential risks associated with the lack of detailed risk information provided in the proposal, particularly regarding team experience in validation and compliance?",
+            "answer": "1. 提案中缺乏详细的风险信息，这可能导致对团队在验证和合规方面经验的误判，需要补充具体的风险评估数据。\n2. 虽然团队的经验背景强大，但未明确说明在医疗设备审批和合规方面的具体案例，建议提供相关成功案例以增强可信度。\n3. 由于信息缺失，投资者和合作伙伴可能对项目的可行性产生疑虑，需加强沟通以提升透明度。\n4. 缺乏风险评估可能导致项目在实施过程中面临合规性挑战，建议在项目早期阶段进行全面的风险评估。",
+            "key_claims": [
+              "缺乏详细风险信息可能导致对团队能力的误判，需要补充具体的风险评估数据。",
+              "团队在医疗设备审批方面的具体经验未被充分展示，建议提供相关成功案例以增强可信度。"
+            ],
+            "evidence_hints": [
+              "提案中的主要风险或不确定性部分未提供详细信息，需进一步了解团队在合规方面的具体经验。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在医疗设备领域，合规性和验证是成功的关键，缺乏相关经验可能导致项目失败。",
+              "常见的风险包括未能满足监管要求和缺乏必要的验证数据。",
+              "建议在项目早期阶段进行全面的风险评估，以识别潜在的合规性问题。"
+            ]
+          },
+          {
+            "question": "How might the absence of specified mitigation measures impact the governance and decision-making processes within the team?",
+            "answer": "1. 缺乏具体的缓解措施可能导致团队在决策过程中缺乏清晰的方向，需要补充相关信息以明确团队的治理结构和决策流程。\n2. 治理和决策过程可能会受到不确定性的影响，尤其是在面对挑战时，建议团队考虑如何应对这些不确定性。\n3. 团队可能需要建立更明确的沟通和决策框架，以应对潜在的风险和挑战，具体措施尚未在提案中列出。\n4. 缺乏缓解措施的说明可能使团队在面对问题时反应不够迅速和有效，需进一步阐明应对策略。",
+            "key_claims": [
+              "缺乏缓解措施可能影响团队的决策过程，需要进一步补充信息。",
+              "团队需要建立更明确的沟通和决策框架，以应对潜在的风险和挑战。"
+            ],
+            "evidence_hints": [
+              "提案中关于现有缓解措施的部分未提供具体信息，需进一步了解团队的治理结构和决策流程。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在项目管理中，明确的缓解措施和决策框架是应对风险的关键。",
+              "常见的治理挑战包括缺乏透明度和决策延误，可能导致项目进展缓慢。",
+              "建议团队在项目初期制定详细的风险管理计划，以增强决策能力。"
+            ]
+          }
+        ]
+      },
+      "objectives": {
+        "dimension": "objectives",
+        "label": "Project objectives",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers differ substantially; conclusions for this dimension are unstable.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [
+          "Q4: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.44)"
+        ],
+        "metric_risk_phrases": [],
+        "metric_top_evidence_phrases": [
+          "关于原型测试和工程开发进展的具体信息。",
+          "原型测试的具体结果和数据，若有的话。",
+          "对各阶段成果的详细分析和评估报告。"
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "在医疗技术开发中，清晰的目标有助于资源的有效分配和团队的协作。",
+          "确保项目目标与市场需求一致是成功的关键。",
+          "避免无关子目标可以减少项目的复杂性和风险。",
+          "在技术开发项目中，识别和管理风险是确保项目成功的重要组成部分。",
+          "项目里程碑的紧凑性可以提高项目的执行效率，但也需要确保每个阶段的可行性和资源配置。",
+          "医疗产品的成功往往依赖于对未满足需求的准确识别。",
+          "市场调研和需求分析是确保项目成功的基础。",
+          "及时响应市场变化可以提高产品的竞争力。",
+          "合理的里程碑设置有助于项目管理和风险控制。",
+          "在技术开发中，原型测试是验证设计有效性的关键步骤。"
+        ],
+        "dim_general_insights_covered": [],
+        "dim_general_insights_missing": [
+          "在医疗技术开发中，清晰的目标有助于资源的有效分配和团队的协作。",
+          "确保项目目标与市场需求一致是成功的关键。",
+          "避免无关子目标可以减少项目的复杂性和风险。",
+          "在技术开发项目中，识别和管理风险是确保项目成功的重要组成部分。",
+          "项目里程碑的紧凑性可以提高项目的执行效率，但也需要确保每个阶段的可行性和资源配置。",
+          "医疗产品的成功往往依赖于对未满足需求的准确识别。",
+          "市场调研和需求分析是确保项目成功的基础。",
+          "及时响应市场变化可以提高产品的竞争力。",
+          "合理的里程碑设置有助于项目管理和风险控制。",
+          "在技术开发中，原型测试是验证设计有效性的关键步骤。"
+        ],
+        "qa_samples": [
+          {
+            "question": "How clearly defined are the overall goals of the project, particularly in relation to the development of the second-generation tumor treatment electric field solution? Are there any unrelated sub-goals that could distract from the primary objective?",
+            "answer": "1. 项目的总体目标清晰，专注于开发第二代肿瘤治疗电场解决方案，目标明确且与主要目标一致。\n2. 没有提及与主要目标无关的子目标，确保了项目的专注性。\n3. 项目的里程碑结构紧凑，显示出与许多模仿公司相比的独特性，增强了目标的可执行性，但仍需补充关于潜在风险和不确定性的详细信息。",
+            "key_claims": [
+              "项目目标明确，专注于第二代肿瘤治疗电场解决方案的开发。",
+              "没有发现与主要目标无关的子目标，确保了项目的专注性。",
+              "项目的里程碑结构紧凑，显示出与许多模仿公司相比的独特性。"
+            ],
+            "evidence_hints": [
+              "项目目标概述部分，特别是关于第二代肿瘤治疗电场解决方案的描述",
+              "项目的里程碑结构和时间表"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在医疗技术开发中，清晰的目标有助于资源的有效分配和团队的协作。",
+              "确保项目目标与市场需求一致是成功的关键。",
+              "避免无关子目标可以减少项目的复杂性和风险。",
+              "在技术开发项目中，识别和管理风险是确保项目成功的重要组成部分。",
+              "项目里程碑的紧凑性可以提高项目的执行效率，但也需要确保每个阶段的可行性和资源配置。"
+            ]
+          },
+          {
+            "question": "To what extent do the project's objectives align with the identified unmet need for tumor treatment solutions? Please evaluate the urgency of this alignment based on the current market opportunity.",
+            "answer": "1. 项目的目标与肿瘤治疗解决方案的未满足需求存在一定关联，但需要更多证据来支持这一点，以确认市场对此类产品的具体需求。\n2. 当前市场机会的紧迫性体现在对新疗法的需求上，尤其是在现有治疗手段有限的情况下，但具体的市场分析和数据仍需补充。\n3. 项目的目标与市场需求的对接可能增强其商业化潜力，尤其是在中国市场，但尚需进一步的市场验证和用户反馈。",
+            "key_claims": [
+              "项目目标与肿瘤治疗的未满足需求存在一定关联，但需更多证据支持。",
+              "市场对新疗法的需求表明项目的商业化潜力，但具体数据仍需补充。"
+            ],
+            "evidence_hints": [
+              "项目目标概述部分，特别是关于市场机会和未满足需求的描述"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "医疗产品的成功往往依赖于对未满足需求的准确识别。",
+              "市场调研和需求分析是确保项目成功的基础。",
+              "及时响应市场变化可以提高产品的竞争力。"
+            ]
+          },
+          {
+            "question": "Evaluate the reasonableness and executability of the proposed milestones, particularly the foundational systems and prototype testing at T+0 and the completion phases at T+6 to T+12. What evidence supports your assessment?",
+            "answer": "1. 提议的里程碑合理，尤其是T+0的基础系统和原型测试，显示出项目的可执行性，但仍需进一步的风险评估信息以确认项目的整体可行性。\n2. T+6至T+12的完成阶段符合工程开发的常规时间框架，表明项目进展的可控性，但缺乏详细的风险管理策略。\n3. 项目已完成核心算法和先进设计工作，原型实验显示出显著的有效性提升，这为里程碑的执行提供了支持，但仍需补充后续阶段的具体实施计划和预期成果。",
+            "key_claims": [
+              "提议的里程碑合理，符合工程开发的常规时间框架，但需补充风险管理信息。",
+              "项目的核心算法和设计工作已完成，为后续阶段提供了支持，但后续实施计划尚不明确。"
+            ],
+            "evidence_hints": [
+              "项目的关键里程碑时间表，特别是T+0和T+6至T+12的描述，以及核心算法和设计工作的完成情况"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "合理的里程碑设置有助于项目管理和风险控制。",
+              "在技术开发中，原型测试是验证设计有效性的关键步骤。",
+              "及时评估和调整里程碑可以提高项目的成功率。"
+            ]
+          },
+          {
+            "question": "What clear and quantifiable success metrics are included in the project's objectives? How do these metrics relate to the effectiveness improvements shown in prototype experiments?",
+            "answer": "1. 提案中没有明确列出可量化的成功指标，尽管提到原型实验显示出显著的有效性改善，但缺乏具体的量化数据来支持这些改善的程度，因此需要补充相关数据。\n2. 由于缺乏具体的成功指标，原型实验的有效性改善与项目目标之间的直接联系尚不明确，需要更多的定量数据来验证目标的实际效果。\n3. 项目目标的实现依赖于后续的原型测试和工程开发进展，但目前缺乏对成功标准的清晰定义，这可能影响项目的可行性评估，因此建议明确成功标准。",
+            "key_claims": [
+              "项目目标缺乏明确的可量化成功指标，影响评估。",
+              "原型实验的有效性改善未与具体目标相联系，需更多数据支持。",
+              "项目的成功依赖于后续的测试和开发进展，当前信息不足以评估可行性。"
+            ],
+            "evidence_hints": [
+              "提案中的目标概述部分，特别是关于有效性改善的描述。",
+              "原型测试的具体结果和数据，若有的话。",
+              "成功标准的定义或缺失的相关信息。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在医疗器械开发中，明确的成功指标通常包括临床试验结果、患者反馈和市场接受度。",
+              "缺乏量化指标可能导致项目目标过于理想化，影响投资者信心。",
+              "建议在项目早期阶段建立清晰的评估标准，以便在后续开发中进行有效监控。"
+            ]
+          },
+          {
+            "question": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too idealistically, or do they reflect a realistic approach to development and commercialization?",
+            "answer": "1. 项目的目标在时间上设定较为紧凑，涵盖了从2021年到2024年的多个开发阶段，显示出一定的雄心，但需要进一步的信息来支持其可行性。\n2. 目标的可行性受到原型测试和工程开发进展的影响，当前信息不足以全面评估其现实性，建议补充关于原型测试的具体进展和时间表。\n3. 项目在工程开发方面显示出一定的优势，已完成核心算法和先进设计工作，但仍需更多验证以确保目标的可实现性，建议提供更多关于验证过程和结果的信息。",
+            "key_claims": [
+              "项目目标在时间上设定紧凑，显示出雄心，但需更多信息支持。",
+              "目标的可行性受到开发进展的影响，建议补充原型测试的具体信息。",
+              "核心算法和设计工作已完成，但需进一步验证，建议提供验证过程的信息。"
+            ],
+            "evidence_hints": [
+              "提案中的时间线和里程碑部分。",
+              "关于原型测试和工程开发进展的具体信息。",
+              "项目目标的具体描述和预期成果。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在技术开发项目中，目标的设定应考虑技术成熟度和市场需求。",
+              "过于理想化的目标可能导致资源浪费和项目延误。",
+              "建议在项目初期进行详细的市场调研，以确保目标的现实性。"
+            ]
+          },
+          {
+            "question": "For the cited key project points, what concrete proposal evidence supports each point, what remains unverified, and how should those gaps affect the evaluation?",
+            "answer": "1. 项目的关键点包括从2021年到2024年的工程开发里程碑，这一时间框架在提案中得到了明确支持。\n2. 提案指出，2021年专注于电场解决方案的设计，2022年转向原型机器的开发，2023年则优先考虑第二代软件和硬件的开发，这些信息在提案中都有明确的描述。\n3. 然而，提案未提供关于各个阶段的具体成果或验证数据，这使得对项目进展的评估变得不够全面，建议补充各阶段的具体成果和验证数据，以增强项目的透明度和可信度。",
+            "key_claims": [
+              "项目的时间框架和关键点在提案中得到了明确支持。",
+              "各阶段的开发重点在提案中有清晰描述。",
+              "缺乏各阶段具体成果或验证数据的支持，建议补充相关信息。"
+            ],
+            "evidence_hints": [
+              "提案中关于各个开发阶段的具体描述和成果。",
+              "项目进展的验证数据或实验结果。",
+              "对各阶段成果的详细分析和评估报告。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，通常需要对每个开发阶段的成果进行详细记录和分析，以便评估项目的进展。",
+              "成功的医疗技术项目通常会在每个里程碑后进行评估，以确保项目按计划推进。",
+              "缺乏具体成果的记录可能导致项目在融资和市场接受度方面的困难。"
+            ]
+          }
+        ]
+      },
+      "strategy": {
+        "dimension": "strategy",
+        "label": "Implementation path and strategy",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers differ substantially; conclusions for this dimension are unstable.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [],
+        "metric_risk_phrases": [],
+        "metric_top_evidence_phrases": [
+          "关于合作伙伴的具体计划或意向书",
+          "关于验证有效性的具体里程碑需要进一步的详细计划或时间表，以确保可行性。",
+          "合规策略的详细说明"
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "在硬件和软件产品开发中，常见的权衡包括性能、成本、可扩展性和用户体验。",
+          "验证产品有效性通常需要明确的里程碑和阶段性测试，以确保符合预期的功能和效果。",
+          "竞争定位需要深入的市场研究和对比分析，以识别差异化优势和潜在市场机会。",
+          "在产品开发中，通常需要设定明确的验证里程碑，以确保产品的有效性和安全性。",
+          "缺乏详细的验证计划可能导致临床试验的延误或失败。",
+          "验证过程应包括实验室测试、原型验证和临床前研究等多个阶段。",
+          "在市场竞争中，通常需要通过技术优势和清晰的市场定位来提升竞争力。",
+          "缺乏市场分析可能导致项目无法有效应对竞争对手的挑战。",
+          "项目应定期评估市场动态和竞争环境，以调整其战略。",
+          "在医疗设备开发中，预算通常需要详细的成本构成和资金使用计划。"
+        ],
+        "dim_general_insights_covered": [],
+        "dim_general_insights_missing": [
+          "在硬件和软件产品开发中，常见的权衡包括性能、成本、可扩展性和用户体验。",
+          "验证产品有效性通常需要明确的里程碑和阶段性测试，以确保符合预期的功能和效果。",
+          "竞争定位需要深入的市场研究和对比分析，以识别差异化优势和潜在市场机会。",
+          "在产品开发中，通常需要设定明确的验证里程碑，以确保产品的有效性和安全性。",
+          "缺乏详细的验证计划可能导致临床试验的延误或失败。",
+          "验证过程应包括实验室测试、原型验证和临床前研究等多个阶段。",
+          "在市场竞争中，通常需要通过技术优势和清晰的市场定位来提升竞争力。",
+          "缺乏市场分析可能导致项目无法有效应对竞争对手的挑战。",
+          "项目应定期评估市场动态和竞争环境，以调整其战略。",
+          "在医疗设备开发中，预算通常需要详细的成本构成和资金使用计划。"
+        ],
+        "qa_samples": [
+          {
+            "question": "What are the major trade-offs considered in the design of the second-generation TTF product, particularly in relation to the hardware and software components?",
+            "answer": "1. 提案中未明确列出第二代TTF产品在硬件和软件组件设计中的主要权衡，但可以推测，设计可能需要在性能、成本和技术复杂性之间进行权衡，这需要进一步的具体说明。\n2. 项目计划在进行人类试点试验之前，完成电参数测量和电场模式设计的研究，以验证第二代TTF产品的有效性，具体的研究计划和时间表尚需补充。\n3. 该项目的竞争定位可能依赖于其在美国最新技术进展的利用，但提案中缺乏详细的竞争策略和市场分析，需进一步补充相关信息。",
+            "key_claims": [
+              "提案未提供关于第二代TTF产品设计权衡的具体信息，需补充相关细节。",
+              "项目计划进行的电参数测量和电场模式设计是验证产品有效性的关键步骤，但缺乏具体的实施计划。",
+              "项目的竞争定位依赖于对最新技术的利用，但缺乏详细的市场分析和竞争策略。"
+            ],
+            "evidence_hints": [
+              "提案中的策略概述部分可以提供关于设计权衡的更多信息，需进一步补充。",
+              "关于验证有效性的具体里程碑需要进一步的详细计划或时间表，以确保可行性。",
+              "市场竞争定位的具体策略需要市场分析或竞争对手比较的支持材料，需补充相关数据。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在硬件和软件产品开发中，常见的权衡包括性能、成本、可扩展性和用户体验。",
+              "验证产品有效性通常需要明确的里程碑和阶段性测试，以确保符合预期的功能和效果。",
+              "竞争定位需要深入的市场研究和对比分析，以识别差异化优势和潜在市场机会。"
+            ]
+          },
+          {
+            "question": "How does the project plan to validate the effectiveness of the second-generation TTF product before human pilot trials, and what specific milestones are set for this validation?",
+            "answer": "1. 项目计划在进行人类试点试验之前，进行电参数测量和电场模式设计的研究，以支持第二代TTF产品的有效性验证。\n2. 提案中未明确列出具体的验证里程碑，缺乏对验证过程的详细描述，需要补充相关信息。\n3. 需要设定明确的里程碑，包括实验室测试、原型验证和临床前研究等阶段，以确保项目的顺利推进。\n4. 项目应考虑建立一个详细的验证计划，以确保产品在进入临床试验前的有效性和安全性。",
+            "key_claims": [
+              "项目计划进行电参数测量和电场模式设计的研究，但未明确验证里程碑。",
+              "缺乏详细的验证计划可能导致项目在临床试验前面临不确定性。",
+              "需要建立明确的验证步骤，以确保产品的有效性和安全性。"
+            ],
+            "evidence_hints": [
+              "提案中的关键点部分，特别是关于电参数测量和电场模式设计的描述。",
+              "需要更多关于验证计划和里程碑的支持材料。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在产品开发中，通常需要设定明确的验证里程碑，以确保产品的有效性和安全性。",
+              "缺乏详细的验证计划可能导致临床试验的延误或失败。",
+              "验证过程应包括实验室测试、原型验证和临床前研究等多个阶段。"
+            ]
+          },
+          {
+            "question": "Given the pre-financing valuation of 200 million yuan, how does the project plan to position itself competitively against similar projects in the market?",
+            "answer": "1. 项目目前的预融资估值为2亿人民币，考虑到与类似项目的比较，可能被视为较低的估值，这可能影响其市场吸引力。\n2. 项目计划利用最新的技术进步来增强其市场竞争力，但未详细说明具体的竞争策略，需补充相关信息。\n3. 需要明确如何通过技术优势、市场定位和客户获取策略来提升竞争力，建议制定相应的计划。\n4. 项目应考虑制定详细的市场分析和竞争对手评估，以支持其竞争定位，确保在市场中具备竞争优势。",
+            "key_claims": [
+              "项目的预融资估值被认为较低，可能影响其市场吸引力。",
+              "缺乏详细的竞争策略可能导致项目在市场中面临挑战，需补充相关信息。",
+              "需要明确的市场分析和竞争对手评估，以增强项目的竞争力，建议制定相应的计划。"
+            ],
+            "evidence_hints": [
+              "提案中的战略概述部分，特别是关于市场定位和技术进步的描述。",
+              "需要更多关于市场分析和竞争策略的支持材料。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在市场竞争中，通常需要通过技术优势和清晰的市场定位来提升竞争力。",
+              "缺乏市场分析可能导致项目无法有效应对竞争对手的挑战。",
+              "项目应定期评估市场动态和竞争环境，以调整其战略。"
+            ]
+          },
+          {
+            "question": "On a scale of 1 to 5, how realistic is the budget of 25 million yuan for completing the necessary work before human pilot trials, and what evidence would increase your confidence in this assessment?",
+            "answer": "1. 25百万人民币的预算在完成必要工作之前的人体试验阶段看起来较为乐观，但缺乏具体的成本细分和预算依据，建议提供详细的预算分配和支出预测，以增强透明度。\n2. 项目目前未提供关于预算合理性的具体证据，缺乏对成本构成的透明度，这可能影响投资者的信心，建议补充相关数据以支持预算评估。\n3. 为提高预算评估的可信度，建议提供类似项目的成本比较数据和详细的资金使用计划，以便于投资者进行合理的判断。",
+            "key_claims": [
+              "预算25百万人民币的合理性缺乏详细支持。",
+              "缺乏对预算分配和支出的具体细分信息。",
+              "需要提供类似项目的成本比较数据以增强可信度。"
+            ],
+            "evidence_hints": [
+              "预算细分和支出预测的详细信息",
+              "类似项目的成本比较数据"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在医疗设备开发中，预算通常需要详细的成本构成和资金使用计划。",
+              "缺乏透明度的预算可能导致投资者信心不足。",
+              "行业内常见的预算评估标准包括成本效益分析和风险评估。"
+            ]
+          },
+          {
+            "question": "What partnerships or collaborations does the project foresee as essential for the successful development and deployment of the second-generation TTF product, and how are these partnerships being pursued?",
+            "answer": "1. 项目未明确列出所需的合作伙伴或协作关系，缺乏对合作策略的具体描述，建议在后续材料中补充相关信息。\n2. 可能需要与医疗机构、技术开发公司和临床试验组织建立合作关系，但当前材料未提供这些合作的进展或计划，建议明确这些潜在合作的具体步骤。\n3. 建议项目团队在后续材料中列出潜在合作伙伴及其角色，以及如何推动这些合作关系的建立，以增强项目的可行性。",
+            "key_claims": [
+              "缺乏关于合作伙伴或协作关系的具体信息。",
+              "未提供合作策略的详细描述。",
+              "需要明确潜在合作伙伴及其角色。"
+            ],
+            "evidence_hints": [
+              "关于合作伙伴的具体计划或意向书",
+              "项目团队的合作策略说明"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "成功的医疗设备开发通常依赖于强有力的合作伙伴关系。",
+              "缺乏合作策略可能导致资源分配不均和开发延误。",
+              "行业内常见的合作伙伴包括医疗机构、技术提供商和研究机构。"
+            ]
+          },
+          {
+            "question": "What specific quality and compliance strategies are in place to ensure the second-generation TTF product meets regulatory requirements, especially in the context of clinical trials?",
+            "answer": "1. 项目未提供关于质量和合规策略的具体信息，这可能影响产品的临床试验和市场准入。\n2. 需要明确如何确保第二代TTF产品符合监管要求，尤其是在临床试验的上下文中。\n3. 建议项目团队制定详细的质量管理计划，并在后续材料中提供合规策略的具体细节。",
+            "key_claims": [
+              "缺乏关于质量和合规策略的具体信息。",
+              "未提供确保产品符合监管要求的详细计划。",
+              "需要制定质量管理计划以支持临床试验。"
+            ],
+            "evidence_hints": [
+              "质量管理计划的草案",
+              "合规策略的详细说明"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "医疗设备开发必须遵循严格的质量和合规标准。",
+              "缺乏合规策略可能导致临床试验失败和市场准入障碍。",
+              "行业内常见的合规要求包括FDA批准和ISO认证。"
+            ]
+          }
+        ]
+      },
+      "innovation": {
+        "dimension": "innovation",
+        "label": "Technology and product innovation",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers differ substantially; conclusions for this dimension are unstable.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [],
+        "metric_risk_phrases": [
+          "Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended",
+          "Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended"
+        ],
+        "metric_top_evidence_phrases": [
+          "与医疗机构或研究机构的合作协议或意向书，当前缺乏具体信息。",
+          "关于技术扩展应用的市场调研报告，需补充具体计划或数据。",
+          "关于核心专利的详细信息和市场竞争分析的补充材料。"
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "在医疗技术领域，创新的疗效和安全性是评估新技术的关键指标。",
+          "常见的证据需求包括临床试验数据和患者反馈，以验证疗效和安全性。",
+          "技术的独特性和专利持有情况可提升市场竞争力，但需确保持续的技术验证和合规性。",
+          "在医疗技术中，患者结果的改善是评估新技术成功的关键指标。",
+          "安全性和有效性数据的透明度对于获得监管批准至关重要。",
+          "临床试验设计应包括多样化的患者群体，以确保结果的普遍适用性。",
+          "在医疗技术领域，专利保护是确保市场竞争力的重要因素。",
+          "常见的证据需求包括市场分析、专利审查和技术验证数据。",
+          "技术的独特性和专利持有情况需与市场需求和竞争环境相结合，以实现商业成功。",
+          "在医疗技术领域，通常需要提供临床试验数据和对照组的比较来验证有效性和安全性。"
+        ],
+        "dim_general_insights_covered": [],
+        "dim_general_insights_missing": [
+          "在医疗技术领域，创新的疗效和安全性是评估新技术的关键指标。",
+          "常见的证据需求包括临床试验数据和患者反馈，以验证疗效和安全性。",
+          "技术的独特性和专利持有情况可提升市场竞争力，但需确保持续的技术验证和合规性。",
+          "在医疗技术中，患者结果的改善是评估新技术成功的关键指标。",
+          "安全性和有效性数据的透明度对于获得监管批准至关重要。",
+          "临床试验设计应包括多样化的患者群体，以确保结果的普遍适用性。",
+          "在医疗技术领域，专利保护是确保市场竞争力的重要因素。",
+          "常见的证据需求包括市场分析、专利审查和技术验证数据。",
+          "技术的独特性和专利持有情况需与市场需求和竞争环境相结合，以实现商业成功。",
+          "在医疗技术领域，通常需要提供临床试验数据和对照组的比较来验证有效性和安全性。"
+        ],
+        "qa_samples": [
+          {
+            "question": "How does the second-generation TTF technology's advanced electrical field designs compare to existing treatments in terms of innovation and efficacy?",
+            "answer": "1. 第二代TTF技术的先进电场设计在创新和疗效方面相较于现有治疗方法具有显著优势，展示了核心算法和设计工作的完成，但仍需提供具体的临床试验数据以验证其有效性。\n2. 该技术声称在患者生存率和伤害降低方面表现出显著改善，表明其在临床效果上的创新性，但缺乏详细的患者数据支持这些声明。\n3. 多维优化的电场设计增强了抑制效果，进一步提升了治疗的有效性和安全性，建议提供更多关于优化过程的具体信息。\n4. 项目的技术图表和图形展示了效率改进和性能声明，支持其创新性和疗效的主张，但需要更多的实证数据来加强这些主张的可信度。",
+            "key_claims": [
+              "第二代TTF技术在疗效上优于传统治疗方法，但需更多证据支持。",
+              "该技术在患者生存率和安全性方面表现出显著改善，需提供详细数据验证。",
+              "项目展示了核心算法和设计工作的完成，支持其创新性，但需进一步的临床验证。"
+            ],
+            "evidence_hints": [
+              "创新概述部分提到的核心算法和设计工作",
+              "关键点部分关于生存率和伤害降低的声明，需更多数据支持",
+              "技术图表和图形的展示，需结合实证数据"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在医疗技术领域，创新的疗效和安全性是评估新技术的关键指标。",
+              "常见的证据需求包括临床试验数据和患者反馈，以验证疗效和安全性。",
+              "技术的独特性和专利持有情况可提升市场竞争力，但需确保持续的技术验证和合规性。"
+            ]
+          },
+          {
+            "question": "What specific advantages does the second-generation TTF technology offer over traditional methods in terms of patient outcomes and safety?",
+            "answer": "1. 第二代TTF技术在患者结果方面的优势包括显著提高生存率和降低患者伤害，这些都是基于提案中提供的有效性改进。\n2. 该技术的先进架构增强了治疗的合规性和安全性，显示出其在患者护理中的潜在优势。\n3. 提案中缺乏对患者结果具体数据的详细说明，需补充以全面评估其安全性和有效性。\n4. 需要进一步的临床数据来支持其在不同患者群体中的安全性和效果，以增强项目的可信度。",
+            "key_claims": [
+              "第二代TTF技术提高了生存率并降低了患者伤害。",
+              "该技术在合规性和安全性方面具有潜在优势。",
+              "缺乏具体的患者结果数据，影响全面评估。"
+            ],
+            "evidence_hints": [
+              "提案中的关键点部分，特别是关于生存率和患者伤害的描述。",
+              "需要收集临床数据以支持患者结果的具体优势。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在医疗技术中，患者结果的改善是评估新技术成功的关键指标。",
+              "安全性和有效性数据的透明度对于获得监管批准至关重要。",
+              "临床试验设计应包括多样化的患者群体，以确保结果的普遍适用性。"
+            ]
+          },
+          {
+            "question": "How does holding 100% of the core patents for the second-generation TTF technology impact the project's competitive position in the market?",
+            "answer": "1. 持有100%核心专利的第二代TTF技术在市场上的竞争地位显著提升，确保了技术的独特性，但仍需提供市场竞争环境的具体分析以支持这一结论。\n2. 专利的完全拥有使项目在中国市场中具备了独特的竞争优势，能够有效防止竞争对手的模仿，但需要进一步验证技术的市场接受度。\n3. 项目需关注持续的技术验证和市场反馈，以维持其竞争优势，并应提供相关数据支持。",
+            "key_claims": [
+              "项目在市场上具有独特的竞争优势，因其持有核心专利。",
+              "专利保护有助于防止竞争对手模仿该技术。",
+              "持续的技术验证和市场反馈是维持竞争优势的关键。"
+            ],
+            "evidence_hints": [
+              "关键点部分关于核心专利的声明",
+              "创新概述中提到的技术独特性",
+              "市场竞争分析的相关信息"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在医疗技术领域，专利保护是确保市场竞争力的重要因素。",
+              "常见的证据需求包括市场分析、专利审查和技术验证数据。",
+              "技术的独特性和专利持有情况需与市场需求和竞争环境相结合，以实现商业成功。"
+            ]
+          },
+          {
+            "question": "What types of evidence are provided to support the claims of improved efficacy and safety for the second-generation TTF technology, and how robust is this evidence?",
+            "answer": "1. 提案中展示了第二代TTF技术在患者结果改善方面的创新，尤其是在生存率和患者伤害降低方面的有效性提升，但仍需提供详细的临床试验数据以支持这些声明。\n2. 提案提供了核心算法和先进设计工作的完成情况，但缺乏独立验证的结果来进一步确认有效性和安全性。\n3. 技术图表和图形展示了效率提升和性能声明，但未提供具体的量化数据或对照组的比较，需补充相关信息以增强说服力。\n4. 该项目声称拥有100%的核心专利，表明其在中国的独特性，但未提供市场竞争分析或用户反馈数据，建议补充相关市场研究。",
+            "key_claims": [
+              "第二代TTF技术在生存率和患者伤害降低方面的有效性得到支持，但缺乏详细的临床试验数据。",
+              "项目的核心专利所有权为其提供了竞争优势，但市场分析不足。",
+              "技术图表展示了效率提升，但缺乏量化数据来验证这些声明。"
+            ],
+            "evidence_hints": [
+              "提案中的创新概述部分，特别是关于患者结果改善的具体数据。",
+              "关于核心专利的详细信息和市场竞争分析的补充材料。",
+              "技术图表和图形的具体数据支持，可能需要附加的临床试验结果。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在医疗技术领域，通常需要提供临床试验数据和对照组的比较来验证有效性和安全性。",
+              "知识产权的清晰界定和市场分析是吸引投资和合作的重要因素。",
+              "技术图表和图形应包含具体的量化数据，以增强项目的说服力和透明度。"
+            ]
+          },
+          {
+            "question": "Given the limited risk information provided, what potential risks do you foresee that could affect the longevity and relevance of the second-generation TTF technology?",
+            "answer": "1. 提案未详细列出潜在风险，但可以推测技术的长期有效性可能受到市场接受度、竞争对手的反应和监管变化的影响，需要进一步补充相关信息。\n2. 由于缺乏详细的风险评估，无法准确判断技术在不同市场条件下的适应能力，建议进行相关分析以补充此信息。\n3. 可能的技术风险包括对新治疗方法的患者接受度和医疗机构的采纳意愿，这些因素需要通过市场调研来验证。\n4. 监管环境的变化可能影响技术的推广和应用，特别是在不同国家或地区的合规要求，建议提前进行相关合规性研究。",
+            "key_claims": [
+              "提案缺乏详细的风险信息，可能影响技术的长期有效性和市场适应性。",
+              "市场接受度和监管变化是潜在的主要风险因素，需进一步分析。",
+              "技术的推广可能面临患者和医疗机构的采纳意愿的挑战，需通过调研确认。"
+            ],
+            "evidence_hints": [
+              "提案中的主要风险或不确定性部分，尽管信息有限，需补充详细分析。",
+              "需要进行市场调研和监管环境分析，以识别潜在风险。",
+              "建议收集关于患者接受度和医疗机构反馈的调查数据，以支持决策。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "医疗技术项目通常需要进行全面的风险评估，以识别可能影响项目成功的因素。",
+              "市场调研和用户反馈是评估技术接受度的重要步骤，建议在项目初期进行。",
+              "监管合规性是医疗技术推广的关键，需提前了解不同市场的要求，以确保顺利进入市场。"
+            ]
+          },
+          {
+            "question": "How might the second-generation TTF technology be adapted or extended to other use cases or customer segments beyond its current application?",
+            "answer": "1. 第二代TTF技术可能通过适应不同类型的癌症治疗或其他疾病治疗来扩展其应用领域，但需要进一步的市场验证和研究支持。\n2. 该技术的多维优化电场设计可能在其他医疗设备或治疗方法中找到应用，尚需探索具体的应用场景和潜在市场。\n3. 需要进行市场调研以识别其他潜在客户群体和应用场景，当前材料未提供相关市场调研的具体计划或数据。\n4. 建议探索与医疗机构或研究机构的合作，以验证技术在其他领域的适用性，当前缺乏具体的合作意向或协议信息。",
+            "key_claims": [
+              "第二代TTF技术有潜力扩展到其他类型的癌症或疾病治疗，但需进一步验证。",
+              "多维优化电场设计可能在其他医疗设备中应用，尚需具体应用场景的探索。",
+              "需要市场调研以识别新的客户群体和应用场景，当前材料未提供相关计划。"
+            ],
+            "evidence_hints": [
+              "关于技术扩展应用的市场调研报告，需补充具体计划或数据。",
+              "与医疗机构或研究机构的合作协议或意向书，当前缺乏具体信息。",
+              "技术适用性验证的相关数据或案例研究，需进一步补充。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "医疗技术的适应性和扩展性是成功的重要因素，通常需要市场验证。",
+              "市场调研可以帮助识别新的客户群体和应用场景，通常是产品开发的重要步骤。",
+              "与研究机构的合作可以加速技术验证和市场进入，通常需要明确的合作框架和协议。"
+            ]
+          }
+        ]
+      },
+      "feasibility": {
+        "dimension": "feasibility",
+        "label": "Resources and feasibility",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers differ substantially; conclusions for this dimension are unstable.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [],
+        "metric_risk_phrases": [],
+        "metric_top_evidence_phrases": [
+          "关于客户需求和接受度的市场调研报告。",
+          "合理估值和零法律风险",
+          "天使融资目标为2500万人民币"
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "通常，项目需要清晰的资金使用计划和预算分配。",
+          "在类似项目中，资金与研究成果的直接关联是关键。",
+          "项目应提供详细的资金使用和研究进展的证明。",
+          "资金分配的透明度有助于增强投资者信心。",
+          "这些是一般行业考虑，并不意味着项目已经满足这些要求。",
+          "通常，项目需要明确的里程碑和时间表以确保可行性。",
+          "一般来说，预算分配应涵盖研发、市场推广和运营成本。",
+          "在类似项目中，风险缓解措施的缺失可能会影响投资者信心。",
+          "成功的项目通常需要客户反馈和市场验证。",
+          "这些是一般行业考虑，并不意味着该项目已经满足这些要求。"
+        ],
+        "dim_general_insights_covered": [],
+        "dim_general_insights_missing": [
+          "通常，项目需要清晰的资金使用计划和预算分配。",
+          "在类似项目中，资金与研究成果的直接关联是关键。",
+          "项目应提供详细的资金使用和研究进展的证明。",
+          "资金分配的透明度有助于增强投资者信心。",
+          "这些是一般行业考虑，并不意味着项目已经满足这些要求。",
+          "通常，项目需要明确的里程碑和时间表以确保可行性。",
+          "一般来说，预算分配应涵盖研发、市场推广和运营成本。",
+          "在类似项目中，风险缓解措施的缺失可能会影响投资者信心。",
+          "成功的项目通常需要客户反馈和市场验证。",
+          "这些是一般行业考虑，并不意味着该项目已经满足这些要求。"
+        ],
+        "qa_samples": [
+          {
+            "question": "How does the angel financing target of 25 million yuan align with the overall budget allocation, particularly the 50% earmarked for research through external technical cooperation?",
+            "answer": "1. 项目设定了2500万人民币的天使融资目标，以支持项目的完成。\n2. 预算中50%用于外部技术合作的研究，表明对技术开发的重视。\n3. 资金分配与研究目标之间的具体关联尚不明确，需要进一步阐明。\n4. 需要更多关于资金使用和研究成果的具体细节，以增强项目的可行性。",
+            "key_claims": [
+              "项目有明确的2500万人民币的融资目标。",
+              "预算中50%用于外部技术合作的研究。",
+              "项目声称没有法律风险，且有合理估值。"
+            ],
+            "evidence_hints": [
+              "天使融资目标为2500万人民币",
+              "预算分配50%用于研究",
+              "合理估值和零法律风险"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "通常，项目需要清晰的资金使用计划和预算分配。",
+              "在类似项目中，资金与研究成果的直接关联是关键。",
+              "项目应提供详细的资金使用和研究进展的证明。",
+              "资金分配的透明度有助于增强投资者信心。",
+              "这些是一般行业考虑，并不意味着项目已经满足这些要求。"
+            ]
+          },
+          {
+            "question": "What specific milestones are outlined in the timeline for the project, and how do they contribute to the overall feasibility of transitioning from foundational systems to commercial operations?",
+            "answer": "1. 项目设定了从基础系统到商业运营的里程碑，需进一步明确每个里程碑的具体目标和评估标准。\n2. 关键里程碑包括T+0的原型测试和后续阶段，建议提供详细的测试计划和预期成果。\n3. 预算分配合理，有助于项目的可行性，但需进一步说明如何确保资金的有效使用。\n4. 目前缺乏对风险缓解措施的详细说明，建议补充相关策略以增强项目的可行性。",
+            "key_claims": [
+              "项目设定了明确的时间表和里程碑，但需补充具体的评估标准。",
+              "预算中50%用于外部技术合作，支持可行性，但需说明资金使用的具体计划。",
+              "项目声称没有法律风险，且有合理估值，需提供支持该估值的具体依据。"
+            ],
+            "evidence_hints": [
+              "详细时间表概述关键里程碑，需进一步明确每个里程碑的目标。",
+              "预算分配的50%用于研究，需说明资金的具体使用计划。",
+              "项目声称零法律风险，需提供相关法律咨询或审查的证明。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "通常，项目需要明确的里程碑和时间表以确保可行性。",
+              "一般来说，预算分配应涵盖研发、市场推广和运营成本。",
+              "在类似项目中，风险缓解措施的缺失可能会影响投资者信心。",
+              "成功的项目通常需要客户反馈和市场验证。",
+              "这些是一般行业考虑，并不意味着该项目已经满足这些要求。"
+            ]
+          },
+          {
+            "question": "Given the project's claim of zero legal risks, what evidence supports this assertion, and how does it impact the overall risk profile of the initiative?",
+            "answer": "1. 项目声称没有法律风险，但仍需提供具体证据以支持这一声明。\n2. 预算和融资计划清晰，能够帮助降低财务风险，但需进一步说明资金使用的具体细节。\n3. 里程碑时间表合理，显示出实施的结构化方法，但应明确各阶段的具体责任分配。",
+            "key_claims": [
+              "项目声称没有法律风险，但仍需提供具体证据以支持这一声明。",
+              "项目有明确的预算和融资计划，但需进一步说明资金使用的具体细节。",
+              "项目的里程碑时间表显示出结构化的实施方法，但应明确各阶段的具体责任分配。"
+            ],
+            "evidence_hints": [
+              "零法律风险",
+              "明确的预算和融资计划",
+              "详细时间表"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "一般而言，法律风险评估应包括合规性审查。",
+              "项目应提供法律意见书以支持无风险声明。",
+              "通常需要详细的风险缓解计划来应对潜在问题。",
+              "财务可行性分析应包括现金流预测和成本分析。",
+              "实施计划应清晰，包含关键里程碑和责任分配。",
+              "这些是一般行业考虑，并不意味着项目已经满足这些要求。"
+            ]
+          },
+          {
+            "question": "What potential barriers to implementation in real production or operational settings have been identified, and how might they affect the project's feasibility?",
+            "answer": "1. 当前提案未明确识别实施过程中的潜在障碍，这可能会影响项目的可行性，特别是在实际生产或运营环境中，需要补充相关分析。\n2. 尽管提案中提到有合理的估值和零法律风险，但缺乏对实施障碍的具体分析，可能导致对项目成功的预期过于乐观，需要进一步的市场调研和风险评估。\n3. 由于没有详细的风险缓解措施，项目可能面临未预见的挑战，这会影响其在实际环境中的适应能力，建议制定相应的风险管理计划。\n4. 需要进行更深入的市场调研，以识别潜在的实施障碍和客户接受度问题，确保项目的可行性和市场适应性。",
+            "key_claims": [
+              "提案未识别实施障碍，可能影响项目可行性。",
+              "缺乏风险缓解措施可能导致项目面临未预见的挑战。"
+            ],
+            "evidence_hints": [
+              "提案中的风险或不确定性部分需要进一步分析。",
+              "实施障碍的识别和缓解措施的详细信息。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，识别潜在实施障碍是成功的关键。",
+              "缺乏市场调研可能导致客户接受度低，影响项目的可行性。",
+              "制定清晰的风险缓解计划可以提高项目的成功率。"
+            ]
+          },
+          {
+            "question": "On a scale of 1 to 5, how well do you believe the timeline aligns with the allocated resources, particularly in terms of staffing and budget for research? Please provide evidence that would support a higher score.",
+            "answer": "1. 根据提案，项目的时间表与预算分配在一定程度上是合理的，尤其是在研究人员的预算分配上。需要进一步验证预算是否足够支持所有关键里程碑的实现。\n2. 提案中提到的时间表包括从基础系统到商业运营的关键里程碑，显示出结构化的实施方法，但缺乏对各阶段具体任务的详细说明。\n3. 然而，提案未详细说明人力资源的具体配置，可能影响时间表的可行性评分，建议补充人力资源配置的具体计划。",
+            "key_claims": [
+              "项目时间表与预算分配在一定程度上是合理的，但需验证预算的充分性。",
+              "缺乏对各阶段具体任务的详细说明，可能影响实施的清晰度。",
+              "缺乏对人力资源具体配置的详细说明，可能影响时间表的可行性评分。"
+            ],
+            "evidence_hints": [
+              "提案中的时间表和预算分配部分，特别是关于研究人员的预算分配"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "通常，项目时间表应与资源分配相匹配，以确保按时完成。",
+              "在类似项目中，详细的人力资源计划和预算分配是成功的关键因素。",
+              "项目应定期评估时间表与资源的对齐情况，以便及时调整。"
+            ]
+          },
+          {
+            "question": "If the proposal does not provide sufficient details on customer acceptance or procurement processes, please state this information gap and discuss its impact on the feasibility assessment.",
+            "answer": "1. 提案未提供关于客户接受度或采购流程的详细信息，这构成了信息缺口，需要进一步补充。\n2. 客户接受度的缺乏分析可能会影响项目的市场适应性，尤其是在商业化阶段，因此需要进行相关研究。\n3. 采购流程的缺乏透明度可能导致潜在客户对项目的信心不足，从而影响销售和市场推广，建议明确相关流程。\n4. 需要进行市场调研，以评估客户需求和接受度，以增强项目的可行性，确保项目能够满足市场需求。",
+            "key_claims": [
+              "缺乏客户接受度和采购流程的详细信息，影响项目的市场适应性。",
+              "信息缺口可能导致潜在客户对项目的信心不足。"
+            ],
+            "evidence_hints": [
+              "提案中关于市场调研和客户反馈的部分需要进一步补充。",
+              "关于客户需求和接受度的市场调研报告。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，客户接受度的评估是成功商业化的关键。",
+              "缺乏对采购流程的透明度可能导致市场推广的困难。",
+              "进行市场调研可以帮助识别客户需求，增强项目的可行性。"
+            ]
+          }
+        ]
+      }
+    },
+    "output_schema_hint": {
+      "type": "object",
+      "required": [
+        "dimensions"
+      ],
+      "properties": {
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "team": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "objectives": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "strategy": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "innovation": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "feasibility": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

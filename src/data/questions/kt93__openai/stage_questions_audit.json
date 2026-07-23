@@ -1,0 +1,613 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt93__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt93__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 159,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Brandon Koussa, who is also associated with the InSite project. His involvement indicates a focused leadership within the team structure.",
+        "first_key_point_preview": "Brandon Koussa is the creator of the project.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.77,
+        "raw_chars": 4337,
+        "usage": {
+          "prompt_tokens": 3256,
+          "completion_tokens": 942,
+          "total_tokens": 4198
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Brandon Koussa leadership",
+        "InSite project involvement",
+        "domain expertise",
+        "team capacity assessment",
+        "validation experience",
+        "governance structure",
+        "decision-making process",
+        "risk management",
+        "execution capability",
+        "project compliance"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Brandon Koussa's leadership experience and association with the InSite project position the team to effectively advance this initiative?",
+          "question_en_preview": "How does Brandon Koussa's leadership experience and association with the InSite project position the team to effectively advance this initiative?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does Brandon Koussa bring to the project, and how does this expertise address the target customer problem?",
+          "question_en_preview": "What specific domain expertise does Brandon Koussa bring to the project, and how does this expertise address the target customer problem?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited information on the team's current workload, how might this impact their capacity to execute the project effectively?",
+          "question_en_preview": "Given the limited information on the team's current workload, how might this impact their capacity to execute the project effectively?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance in relation to the project's objectives, and how might this influence project success?",
+          "question_en_preview": "What experience does the team have with validation and compliance in relation to the project's objectives, and how might this influence project success?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the governance structure and decision-making process within the team support effective project execution, especially given the lack of detailed risk information?",
+          "question_en_preview": "How does the governance structure and decision-making process within the team support effective project execution, especially given the lack of detailed risk information?"
+        }
+      ],
+      "elapsed_sec": 13.77,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 347,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 2,
+        "summary_preview": "The project, InSite, aims to create a peer-to-peer news and information sharing platform that addresses biases in news reporting and promotes a democratic flow of information. It seeks to enhance user education, empower individuals to share news collectively, and improve public a ...",
+        "first_key_point_preview": "InSite aims to address biases in popular news corporations and information conglomerates.",
+        "first_risk_preview": "The project aimed to address issues related to information sourcing from social media platforms.",
+        "first_mitigation_preview": "The project aims to address biases in popular news corporations and information conglomerates."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.25,
+        "raw_chars": 4027,
+        "usage": {
+          "prompt_tokens": 3445,
+          "completion_tokens": 858,
+          "total_tokens": 4303
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "unbiased news reporting",
+        "user education metrics",
+        "milestone feasibility",
+        "collective news sharing",
+        "diverse information access",
+        "risk prioritization strategies"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "scope_and_prioritization": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does InSite's objective to address biases in popular news corporations align with the current unmet need for unbiased news reporting? Please evaluate the urgency of this need.",
+          "question_en_preview": "How well does InSite's objective to address biases in popular news corporations align with the current unmet need for unbiased news reporting? Please evaluate the urgency of this need."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "To what extent are InSite's goals clear and focused, particularly regarding enhancing public access to diverse sources of information? Are there any unrelated sub-goals that could dilute the project's focus?",
+          "question_en_preview": "To what extent are InSite's goals clear and focused, particularly regarding enhancing public access to diverse sources of information? Are there any unrelated sub-goals that could dilute the project's focus?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for InSite, and how reasonable and executable are they within the defined funding period? Please assess the feasibility of achieving these milestones.",
+          "question_en_preview": "What are the proposed milestones for InSite, and how reasonable and executable are they within the defined funding period? Please assess the feasibility of achieving these milestones."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "What specific success metrics does InSite plan to use to measure the impact of its objectives on user education and information sharing? Are these metrics clear and quantifiable?",
+          "question_en_preview": "What specific success metrics does InSite plan to use to measure the impact of its objectives on user education and information sharing? Are these metrics clear and quantifiable?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does InSite's objective to empower individuals to share news collectively create value and capture revenue or funding? Please analyze the business logic behind this objective.",
+          "question_en_preview": "How does InSite's objective to empower individuals to share news collectively create value and capture revenue or funding? Please analyze the business logic behind this objective."
+        }
+      ],
+      "elapsed_sec": 13.25,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 311,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "InSite is a decentralized peer-to-peer news and information sharing app that empowers users to control the dissemination of news and information. The project aims to enhance user education and create a platform for sharing experiences, while addressing challenges posed by social  ...",
+        "first_key_point_preview": "InSite allows users to share posts and control what gets reported on, shifting news dissemination from centralized structures to individuals.",
+        "first_risk_preview": "The project is positioned as a response to the challenges posed by social media in spreading information.",
+        "first_mitigation_preview": "InSite aims to improve user education on various situations occurring around them."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.08,
+        "raw_chars": 4693,
+        "usage": {
+          "prompt_tokens": 3549,
+          "completion_tokens": 1010,
+          "total_tokens": 4559
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user engagement metrics",
+        "location-based verification",
+        "cryptocurrency incentives",
+        "user education programs",
+        "market positioning strategy",
+        "scaling barriers",
+        "content verification compliance",
+        "development milestones",
+        "trade-off analysis",
+        "user density risk management"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 2,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does InSite plan to position itself in the market to effectively combat the challenges posed by social media in spreading information, and what specific strategies will be employed to ensure user adoption?",
+          "question_en_preview": "How does InSite plan to position itself in the market to effectively combat the challenges posed by social media in spreading information, and what specific strategies will be employed to ensure user adoption?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the revenue model for InSite, particularly regarding the built-in cryptocurrency system, and how does it ensure sustainable user engagement and content verification?",
+          "question_en_preview": "What is the revenue model for InSite, particularly regarding the built-in cryptocurrency system, and how does it ensure sustainable user engagement and content verification?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key milestones for the development and validation of InSite, particularly in terms of user education and the effectiveness of the location-based verification system?",
+          "question_en_preview": "What are the key milestones for the development and validation of InSite, particularly in terms of user education and the effectiveness of the location-based verification system?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternatives were considered for the solution delivery of InSite, and what major trade-offs were made in choosing the current approach?",
+          "question_en_preview": "What alternatives were considered for the solution delivery of InSite, and what major trade-offs were made in choosing the current approach?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What strategies does InSite have in place to scale from initial user engagement to a larger user base, and what potential barriers to scaling have been identified?",
+          "question_en_preview": "What strategies does InSite have in place to scale from initial user engagement to a larger user base, and what potential barriers to scaling have been identified?"
+        }
+      ],
+      "elapsed_sec": 13.08,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 264,
+        "key_points_count": 5,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to innovate news reporting by addressing biases, polarization, and underreported issues in mainstream media. It introduces features like a location-based verification system and an anonymous posting mode to enhance reliability and user engagement.",
+        "first_key_point_preview": "The project seeks to counteract the polarization of issues in news reporting.",
+        "first_risk_preview": "The project highlights the issue of personal biases of reporters and the ideologies of their funders.",
+        "first_mitigation_preview": "The project addresses the problem of key issues being underreported or ignored in mainstream media."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.05,
+        "raw_chars": 4164,
+        "usage": {
+          "prompt_tokens": 3412,
+          "completion_tokens": 909,
+          "total_tokens": 4321
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "location-based verification system",
+        "anonymous posting mode",
+        "evidence of user engagement",
+        "polarization in news reporting",
+        "intellectual property strategy",
+        "risks of reporter biases",
+        "underreported issues",
+        "competitive advantages",
+        "extensibility to other segments",
+        "innovation effectiveness evidence"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project specifically counteract the polarization of issues in news reporting compared to existing solutions?",
+          "question_en_preview": "How does the project specifically counteract the polarization of issues in news reporting compared to existing solutions?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the location-based verification system provide over traditional news verification methods?",
+          "question_en_preview": "What clear advantages does the location-based verification system provide over traditional news verification methods?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the anonymous posting mode in enhancing user engagement and reliability?",
+          "question_en_preview": "What evidence supports the effectiveness of the anonymous posting mode in enhancing user engagement and reliability?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific risks do the personal biases of reporters and their funders pose to the project's innovation, and how might these risks be mitigated?",
+          "question_en_preview": "What specific risks do the personal biases of reporters and their funders pose to the project's innovation, and how might these risks be mitigated?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How can the features of the project be extended to other customer segments or use cases beyond news reporting?",
+          "question_en_preview": "How can the features of the project be extended to other customer segments or use cases beyond news reporting?"
+        }
+      ],
+      "elapsed_sec": 9.06,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 443,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the InSite project is challenged by user density, which poses a risk of the app failing if insufficient users engage. Despite this, the team does not anticipate any issues with the launch, and they are actively working on user education to enhance engagement. T ...",
+        "first_key_point_preview": "The main risk for InSite is user density, which could lead to the app 'fizzling out'.",
+        "first_risk_preview": "The main risk for InSite is user density, as insufficient users could lead to the app 'fizzling out'.",
+        "first_mitigation_preview": "InSite aims to improve user education on various situations occurring around them."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.13,
+        "raw_chars": 4789,
+        "usage": {
+          "prompt_tokens": 3475,
+          "completion_tokens": 1032,
+          "total_tokens": 4507
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user engagement strategies",
+        "funding acquisition plan",
+        "implementation timeline",
+        "customer acceptance metrics",
+        "barriers to adoption",
+        "resource allocation",
+        "user education initiatives",
+        "market penetration",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "risk_management": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "resources_and_infrastructure": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the team plan to address the risk of user density potentially causing the app to 'fizzle out'? What specific strategies are in place to ensure sufficient user engagement?",
+          "question_en_preview": "How does the team plan to address the risk of user density potentially causing the app to 'fizzle out'? What specific strategies are in place to ensure sufficient user engagement?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that only $459 has been pledged towards the project and there are no backers, what is the team's plan for securing additional funding? How realistic is the budget allocation for the next phases of development?",
+          "question_en_preview": "Given that only $459 has been pledged towards the project and there are no backers, what is the team's plan for securing additional funding? How realistic is the budget allocation for the next phases of development?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific tasks and timelines are outlined in the implementation plan for the InSite project? How does the team ensure that these tasks are aligned with the overall project goals?",
+          "question_en_preview": "What specific tasks and timelines are outlined in the implementation plan for the InSite project? How does the team ensure that these tasks are aligned with the overall project goals?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence does the team have to support the feasibility of customer acceptance and engagement with the InSite app? How will they measure success in this area?",
+          "question_en_preview": "What evidence does the team have to support the feasibility of customer acceptance and engagement with the InSite app? How will they measure success in this area?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What potential barriers to implementation does the team foresee in real production settings, especially regarding user adoption and system integration? How do they plan to overcome these barriers?",
+          "question_en_preview": "What potential barriers to implementation does the team foresee in real production settings, especially regarding user adoption and system integration? How do they plan to overcome these barriers?"
+        }
+      ],
+      "elapsed_sec": 14.14,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T21:21:28Z",
+  "elapsed_sec": 63.31,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt93__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt93__openai/generated_questions_detail.json"
+}

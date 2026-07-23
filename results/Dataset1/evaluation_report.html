@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YangtzeDelta — Proposal Evaluation Technical Guide</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #222636;
+    --border: #2e3250;
+    --accent1: #4f8ef7; /* blue — kappa */
+    --accent2: #34c98a; /* green — groundedness */
+    --accent3: #f5a623; /* orange — sensitivity */
+    --accent4: #a78bfa; /* purple — sweep */
+    --accent5: #60a5fa; /* infra */
+    --text: #e2e8f0;
+    --muted: #8892b0;
+    --code-bg: #131722;
+    --formula-bg: #0d1520;
+    --good: #34c98a;
+    --warn: #f5a623;
+    --bad: #f87171;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ── cover ── */
+  .cover {
+    background: linear-gradient(135deg, #0f1117 0%, #1a1d27 50%, #0d1a35 100%);
+    border-bottom: 2px solid var(--border);
+    padding: 72px 64px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(79,142,247,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover-tag {
+    display: inline-block;
+    background: rgba(79,142,247,0.15);
+    color: var(--accent1);
+    border: 1px solid rgba(79,142,247,0.3);
+    border-radius: 4px;
+    padding: 3px 12px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .cover h1 {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    background: linear-gradient(90deg, #e2e8f0, #a0aec0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .cover-sub {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .cover-meta-item .label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .cover-meta-item .value {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ── layout ── */
+  .container {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  /* ── nav ── */
+  .toc {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 48px;
+  }
+  .toc h2 {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    transition: background 0.15s;
+  }
+  .toc-item:hover { background: var(--surface2); }
+  .toc-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── sections ── */
+  section {
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  section:last-child { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .section-icon {
+    width: 48px; height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .section-header-text h2 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+  }
+  .section-header-text p {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 680px;
+  }
+
+  /* ── exec summary ── */
+  .exec-intro {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin-bottom: 36px;
+    font-size: 15.5px;
+    color: #c8d0e0;
+    line-height: 1.75;
+  }
+
+  /* ── strategy cards ── */
+  .strategy-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .strategy-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 20px 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .strategy-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 10px 10px 0 0;
+  }
+  .card-num {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .card-file {
+    font-family: 'Consolas', 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--code-bg);
+    padding: 3px 7px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .card-desc {
+    font-size: 13.5px;
+    color: #a0aec0;
+    line-height: 1.6;
+  }
+
+  /* ── subsections ── */
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 36px 0 14px;
+    color: var(--text);
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 24px 0 10px;
+  }
+  p { margin-bottom: 12px; color: #c8d0e0; }
+
+  /* ── tables ── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 16px 0 24px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  thead th {
+    background: var(--surface2);
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody tr { border-bottom: 1px solid var(--border); }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(255,255,255,0.02); }
+  tbody td {
+    padding: 12px 16px;
+    color: #c8d0e0;
+    vertical-align: top;
+  }
+  tbody td:first-child { color: var(--text); font-weight: 500; }
+
+  /* ── formula blocks ── */
+  .formula-block {
+    background: var(--formula-bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid;
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin: 14px 0 20px;
+    font-family: 'Consolas', 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 2;
+    overflow-x: auto;
+  }
+  .formula-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+  }
+  .f-var { color: #93c5fd; }
+  .f-op  { color: #f9a8d4; }
+  .f-num { color: #6ee7b7; }
+  .f-comment { color: #6b7280; font-style: italic; }
+
+  /* ── code ── */
+  code {
+    font-family: 'Consolas', 'JetBrains Mono', monospace;
+    font-size: 13px;
+    background: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #a5f3fc;
+  }
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 22px;
+    overflow-x: auto;
+    font-family: 'Consolas', 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.65;
+    margin: 12px 0 20px;
+    color: #a5f3fc;
+  }
+
+  /* ── badges ── */
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 2px;
+  }
+  .badge-good  { background: rgba(52,201,138,0.15); color: var(--good); }
+  .badge-warn  { background: rgba(245,166,35,0.15);  color: var(--warn); }
+  .badge-bad   { background: rgba(248,113,113,0.15); color: var(--bad);  }
+  .badge-blue  { background: rgba(79,142,247,0.15);  color: var(--accent1); }
+  .badge-purple{ background: rgba(167,139,250,0.15); color: var(--accent4); }
+
+  /* ── info boxes ── */
+  .info-box {
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 1.65;
+    display: flex;
+    gap: 12px;
+  }
+  .info-box .icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .info-box.blue  { background: rgba(79,142,247,0.08);  border: 1px solid rgba(79,142,247,0.2);  color: #93bbf7; }
+  .info-box.green { background: rgba(52,201,138,0.08); border: 1px solid rgba(52,201,138,0.2); color: #6ee7b7; }
+  .info-box.orange{ background: rgba(245,166,35,0.08);  border: 1px solid rgba(245,166,35,0.2);  color: #fbbf24; }
+  .info-box.purple{ background: rgba(167,139,250,0.08); border: 1px solid rgba(167,139,250,0.2); color: #c4b5fd; }
+
+  /* ── process steps ── */
+  .steps { list-style: none; margin: 14px 0 20px; }
+  .steps li {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    align-items: flex-start;
+  }
+  .steps li:last-child { border-bottom: none; }
+  .step-num {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-content { flex: 1; }
+  .step-title { font-weight: 600; font-size: 14.5px; margin-bottom: 3px; }
+  .step-desc  { color: var(--muted); font-size: 13.5px; }
+
+  /* ── two-col ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 16px 0;
+  }
+  @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+  .metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .metric-card h5 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .metric-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.55;
+  }
+
+  /* ── provider pills ── */
+  .provider-list {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 12px 0 20px;
+  }
+  .provider-pill {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .provider-pill span { color: var(--muted); font-size: 12px; margin-left: 6px; }
+
+  /* ── prompt strategy cards ── */
+  .prompt-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 16px 0;
+  }
+  @media (max-width: 800px) { .prompt-cards { grid-template-columns: 1fr; } }
+  .prompt-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .prompt-card-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .prompt-card h4 {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 15px;
+    color: var(--text);
+    margin: 0 0 8px;
+  }
+  .prompt-card ul {
+    list-style: none;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .prompt-card ul li::before { content: '→ '; color: var(--muted); }
+
+  /* ── footer ── */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 32px 48px;
+    color: var(--muted);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* ── print ── */
+  @media print {
+    body { background: #fff; color: #111; }
+    .cover { background: #f8f9fa; border-bottom: 2px solid #dee2e6; }
+    .cover h1 { -webkit-text-fill-color: #111; color: #111; }
+    section { page-break-inside: avoid; }
+    .table-wrap { border: 1px solid #dee2e6; }
+    thead th { background: #f1f3f5; color: #495057; }
+    tbody td { color: #333; }
+    .formula-block { background: #f8f9fa; border: 1px solid #dee2e6; }
+    pre, code { background: #f8f9fa; color: #333; }
+    .strategy-card, .metric-card, .prompt-card, .info-box, .exec-intro {
+      background: #f8f9fa; border: 1px solid #dee2e6;
+    }
+    .badge-good  { background: #d1fae5; color: #065f46; }
+    .badge-warn  { background: #fef3c7; color: #92400e; }
+    .badge-bad   { background: #fee2e2; color: #991b1b; }
+    .badge-blue  { background: #dbeafe; color: #1e40af; }
+    .badge-purple{ background: #ede9fe; color: #5b21b6; }
+    .toc, footer { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ COVER ═══════════════════════ -->
+<div class="cover">
+  <div class="container" style="max-width:1060px;margin:0 auto;padding:0;">
+    <div class="cover-tag">Technical Reference</div>
+    <h1>YangtzeDelta Proposal Evaluation<br>Technical Guide</h1>
+    <p class="cover-sub">A comprehensive reference for the four evaluation strategies used to assess AI-generated proposal reports — covering methodology, metrics, formulas, inputs, and outputs.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="label">Project</span>
+        <span class="value">YangtzeDeltaApplication</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Pipeline Stages</span>
+        <span class="value">9-Stage LLM Pipeline</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Core Strategies</span>
+        <span class="value">3 Core + 1 Supporting</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Generated</span>
+        <span class="value">June 2026</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ TOC ═══════════════════════ -->
+<div class="toc">
+  <h2>Contents</h2>
+  <div class="toc-grid">
+    <a href="#overview" class="toc-item"><span class="toc-dot" style="background:#4f8ef7"></span>Executive Overview</a>
+    <a href="#kappa" class="toc-item"><span class="toc-dot" style="background:#4f8ef7"></span>1 · Cohen's Kappa Agreement</a>
+    <a href="#groundedness" class="toc-item"><span class="toc-dot" style="background:#34c98a"></span>2 · Groundedness Evaluation</a>
+    <a href="#sensitivity" class="toc-item"><span class="toc-dot" style="background:#f5a623"></span>3 · Sensitivity Analysis</a>
+    <a href="#sweep" class="toc-item"><span class="toc-dot" style="background:#a78bfa"></span>4 · Sweep Consistency</a>
+    <a href="#infra" class="toc-item"><span class="toc-dot" style="background:#60a5fa"></span>5 · Supporting Infrastructure</a>
+    <a href="#llm-judge" class="toc-item"><span class="toc-dot" style="background:#f472b6"></span>6 · LLM-as-a-Judge Pattern</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BODY ═══════════════════════ -->
+<div class="container">
+
+<!-- ── OVERVIEW ── -->
+<section id="overview">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(79,142,247,0.12);">📊</div>
+    <div class="section-header-text">
+      <h2>Executive Overview</h2>
+      <p>Pipeline architecture, evaluation goals, and the relationship between the four strategies.</p>
+    </div>
+  </div>
+
+  <div class="exec-intro">
+    The YangtzeDelta pipeline is a 9-stage AI system that evaluates business, startup, and research proposals across five dimensions — <strong>team, objectives, strategy, advantages, and feasibility</strong>. Each proposal passes through fact extraction, question generation, LLM answering, expert opinion synthesis, and final report generation. To measure the quality of these AI-generated evaluations, four complementary strategies are applied: an agreement test against human expert scores, a hallucination detection pass, a logical coherence test under controlled proposal changes, and a stochastic stability sweep. Together they form a multi-dimensional quality assurance framework.
+  </div>
+
+  <div class="strategy-cards">
+    <div class="strategy-card">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent1);border-radius:10px 10px 0 0;"></div>
+      <div class="card-num">Strategy 1 · Core</div>
+      <div class="card-title" style="color:var(--accent1)">Cohen's Kappa Agreement</div>
+      <div class="card-file">evaluate_cohens_kappa.py</div>
+      <div class="card-desc">Measures inter-rater reliability between human expert scores and AI-generated scores across all evaluation dimensions.</div>
+    </div>
+    <div class="strategy-card">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent2);border-radius:10px 10px 0 0;"></div>
+      <div class="card-num">Strategy 2 · Core</div>
+      <div class="card-title" style="color:var(--accent2)">Groundedness Evaluation</div>
+      <div class="card-file">evaluate_groundedness.py</div>
+      <div class="card-desc">Detects hallucinations by verifying that every factual claim in the AI report is traceable back to the original proposal text.</div>
+    </div>
+    <div class="strategy-card">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent3);border-radius:10px 10px 0 0;"></div>
+      <div class="card-num">Strategy 3 · Core</div>
+      <div class="card-title" style="color:var(--accent3)">Sensitivity Analysis</div>
+      <div class="card-file">evaluate_sensitivity.py</div>
+      <div class="card-desc">Tests logical coherence — whether AI scores respond correctly in direction, magnitude, and dimension when the proposal is deliberately varied.</div>
+    </div>
+    <div class="strategy-card">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent4);border-radius:10px 10px 0 0;"></div>
+      <div class="card-num">Strategy 4 · Supporting</div>
+      <div class="card-title" style="color:var(--accent4)">Sweep Consistency</div>
+      <div class="card-file">evaluate_sweep.py</div>
+      <div class="card-desc">Quantifies stochastic variance by running the pipeline (or score extraction) multiple times on the same proposal and measuring score stability.</div>
+    </div>
+  </div>
+
+  <h3>Pipeline Stage Map</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Stage</th><th>Script</th><th>Output</th><th>Feeds Into</th></tr></thead>
+      <tbody>
+        <tr><td>Stage 0</td><td><code>prepare_proposal_text.py</code></td><td>Cleaned full text</td><td>Stage 1</td></tr>
+        <tr><td>Stage 1</td><td><code>extract_facts_by_chunk.py</code></td><td>Fact chunks per dimension</td><td>Stage 2</td></tr>
+        <tr><td>Stage 2</td><td><code>build_dimensions_from_facts.py</code></td><td><code>dimensions_v2.json</code></td><td>Stage 3, 4</td></tr>
+        <tr><td>Stage 3</td><td><code>generate_questions.py</code></td><td>Question set per dimension</td><td>Stage 4</td></tr>
+        <tr><td>Stage 4</td><td><code>llm_answering.py</code></td><td>Structured answers (CoT/ReAct/SC)</td><td>Stage 5</td></tr>
+        <tr><td>Stage 5</td><td><code>post_processing.py</code></td><td>Refined answer payload</td><td>Stage 6</td></tr>
+        <tr><td>Stage 6</td><td><code>ai_expert_opinion.py</code></td><td>Expert opinion JSON</td><td>Stage 7, 8</td></tr>
+        <tr><td>Stage 7</td><td><code>generate_final_report.py</code></td><td><code>&lt;pid&gt;_final_report.md</code></td><td>Eval 1, 2, 3, 4</td></tr>
+        <tr><td>Stage 8</td><td><code>generate_llm_scores.py</code></td><td><code>llm_scores.json</code></td><td>Eval 1, 3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Unified Score Scale</h3>
+  <p>All four evaluation strategies operate on a shared <strong>0–1 normalized scale</strong> to enable cross-strategy comparison. The mapping rules are:</p>
+  <div class="two-col">
+    <div class="metric-card">
+      <h5>Human Ordinal Scores (1–5)</h5>
+      <p>Applies to dimensions: team, objective, strategy, advantages, feasibility</p>
+      <div class="formula-block" style="border-left-color:var(--accent1);padding:10px 16px;margin:8px 0 0;font-size:13px;">
+        <span class="f-var">normalized</span> <span class="f-op">=</span> (<span class="f-var">score</span> <span class="f-op">−</span> <span class="f-num">1</span>) <span class="f-op">/</span> <span class="f-num">4</span>
+      </div>
+    </div>
+    <div class="metric-card">
+      <h5>Ranking Scores (1–20)</h5>
+      <p>Applies to the overall_ranking dimension only</p>
+      <div class="formula-block" style="border-left-color:var(--accent1);padding:10px 16px;margin:8px 0 0;font-size:13px;">
+        <span class="f-var">normalized</span> <span class="f-op">=</span> (<span class="f-var">score</span> <span class="f-op">−</span> <span class="f-num">1</span>) <span class="f-op">/</span> <span class="f-num">19</span>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:4px;">AI float scores extracted from <code>final_report.md</code> are already on the 0–1 scale and used directly without transformation.</p>
+</section>
+
+
+<!-- ── STRATEGY 1 · KAPPA ── -->
+<section id="kappa">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(79,142,247,0.12);">📐</div>
+    <div class="section-header-text">
+      <h2 style="color:var(--accent1)">Strategy 1 — Cohen's Kappa Agreement</h2>
+      <p>Measures statistical agreement between AI-generated scores and human expert scores to quantify inter-rater reliability.</p>
+    </div>
+  </div>
+
+  <div class="info-box blue">
+    <span class="icon">ℹ</span>
+    <div><strong>Goal:</strong> Determine whether the AI evaluation system produces scores that a human expert would endorse. A high kappa means the AI can reliably substitute for (or augment) a human reviewer.</div>
+  </div>
+
+  <h3>Inputs & Outputs</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Type</th><th>Path</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Input</td><td><code>src/data/evaluations/human/human_scores.xlsx</code></td><td>Ground truth scores from human reviewers, one row per proposal</td></tr>
+        <tr><td>Input (primary)</td><td><code>src/data/llm_scores/&lt;pid&gt;/llm_scores.json</code></td><td>Integer scores (1–5 / 1–20) generated by Stage 8 LLM scoring</td></tr>
+        <tr><td>Input (fallback)</td><td><code>src/data/reports/&lt;pid&gt;_final_report.md</code></td><td>Float scores (0–1) extracted via regex from the report markdown table</td></tr>
+        <tr><td>Output</td><td><code>src/data/evaluations/runs/&lt;run_id&gt;/evaluation_summary.json</code></td><td>Aggregated metrics in JSON</td></tr>
+        <tr><td>Output</td><td><code>src/data/evaluations/runs/&lt;run_id&gt;/evaluation_report.xlsx</code></td><td>Multi-sheet Excel: summary, metrics, bias, rank_order, per_item</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Dimensions Evaluated</h3>
+  <p>Six scoring dimensions plus one binary verdict are evaluated:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dimension</th><th>Human Scale</th><th>Normalized Range</th><th>Primary Metric</th></tr></thead>
+      <tbody>
+        <tr><td>team</td><td>1 – 5 ordinal</td><td>0.00 – 1.00</td><td>Weighted Cohen's κ</td></tr>
+        <tr><td>objective</td><td>1 – 5 ordinal</td><td>0.00 – 1.00</td><td>Weighted Cohen's κ</td></tr>
+        <tr><td>strategy</td><td>1 – 5 ordinal</td><td>0.00 – 1.00</td><td>Weighted Cohen's κ</td></tr>
+        <tr><td>advantages</td><td>1 – 5 ordinal</td><td>0.00 – 1.00</td><td>Weighted Cohen's κ</td></tr>
+        <tr><td>feasibility</td><td>1 – 5 ordinal</td><td>0.00 – 1.00</td><td>Weighted Cohen's κ</td></tr>
+        <tr><td>overall_ranking</td><td>1 – 20 ranking</td><td>0.00 – 1.00</td><td>ICC(2,1) + Spearman</td></tr>
+        <tr><td>verdict</td><td>Y / N binary</td><td>categorical</td><td>Exact match accuracy</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Binning for Kappa Computation</h3>
+  <p>Continuous 0–1 scores are discretized into 5 equal bins before computing kappa, mapping to the label set <code>{0.0, 0.25, 0.5, 0.75, 1.0}</code>:</p>
+  <div class="formula-block" style="border-left-color:var(--accent1);">
+    <div class="formula-label" style="color:var(--accent1)">5-bin discretization</div>
+    <span class="f-var">bin</span> <span class="f-op">=</span> round(<span class="f-var">score</span> <span class="f-op">×</span> <span class="f-num">4</span>) <span class="f-op">/</span> <span class="f-num">4</span>
+    <br>
+    <span class="f-comment">→ maps [0.0–0.125) → 0.0, [0.125–0.375) → 0.25, ... [0.875–1.0] → 1.0</span>
+  </div>
+
+  <h3>Statistical Metrics</h3>
+  <div class="two-col">
+    <div class="metric-card">
+      <h5>Weighted Cohen's κ</h5>
+      <p>Primary agreement metric. Uses linear weights so adjacent-bin disagreements count less than extreme disagreements. Range: −1 to +1. κ ≥ 0.61 = substantial agreement.</p>
+    </div>
+    <div class="metric-card">
+      <h5>Unweighted Cohen's κ</h5>
+      <p>Treats all disagreements equally. More conservative than weighted κ. Useful for detecting systematic misclassification patterns.</p>
+    </div>
+    <div class="metric-card">
+      <h5>ICC(2,1) — Intraclass Correlation</h5>
+      <p>Applied to <code>overall_ranking</code> only. Two-way random effects model for absolute agreement. Preferred over kappa for continuous rankings.</p>
+    </div>
+    <div class="metric-card">
+      <h5>Spearman ρ + p-value</h5>
+      <p>Non-parametric rank correlation. Captures monotonic agreement without assuming a linear relationship. Reported with two-tailed p-value.</p>
+    </div>
+    <div class="metric-card">
+      <h5>95% Bootstrap CI</h5>
+      <p>Confidence intervals for kappa and ICC computed via 1000-iteration bootstrap resampling. Quantifies estimation uncertainty for small sample sizes.</p>
+    </div>
+    <div class="metric-card">
+      <h5>Bias Analysis</h5>
+      <p>Mean difference (AI − Human) per dimension. Paired t-test p-value tests whether the mean difference is significantly non-zero (systematic over- or under-scoring).</p>
+    </div>
+  </div>
+
+  <h3>Core Formula</h3>
+  <div class="formula-block" style="border-left-color:var(--accent1);">
+    <div class="formula-label" style="color:var(--accent1)">Weighted Cohen's Kappa</div>
+    <span class="f-var">κ</span> <span class="f-op">=</span> (<span class="f-var">p_o</span> <span class="f-op">−</span> <span class="f-var">p_e</span>) <span class="f-op">/</span> (<span class="f-num">1</span> <span class="f-op">−</span> <span class="f-var">p_e</span>)
+    <br><br>
+    <span class="f-var">p_o</span> <span class="f-op">=</span> observed agreement proportion (weighted)
+    <br>
+    <span class="f-var">p_e</span> <span class="f-op">=</span> expected agreement by chance (weighted)
+    <br><br>
+    <span class="f-comment">Bias:  mean_diff = mean(AI_scores) − mean(Human_scores)</span>
+    <br>
+    <span class="f-comment">T-test: H₀: mean_diff = 0  →  p &lt; 0.05 = significant bias</span>
+  </div>
+
+  <h3>Interpreting Kappa Values</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>κ Range</th><th>Interpretation</th><th>Badge</th></tr></thead>
+      <tbody>
+        <tr><td>&lt; 0.20</td><td>Slight agreement</td><td><span class="badge badge-bad">Poor</span></td></tr>
+        <tr><td>0.21 – 0.40</td><td>Fair agreement</td><td><span class="badge badge-warn">Fair</span></td></tr>
+        <tr><td>0.41 – 0.60</td><td>Moderate agreement</td><td><span class="badge badge-warn">Moderate</span></td></tr>
+        <tr><td>0.61 – 0.80</td><td>Substantial agreement</td><td><span class="badge badge-good">Substantial</span></td></tr>
+        <tr><td>0.81 – 1.00</td><td>Almost perfect agreement</td><td><span class="badge badge-good">Excellent</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ── STRATEGY 2 · GROUNDEDNESS ── -->
+<section id="groundedness">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(52,201,138,0.12);">🔍</div>
+    <div class="section-header-text">
+      <h2 style="color:var(--accent2)">Strategy 2 — Groundedness Evaluation</h2>
+      <p>Verifies that AI-generated report claims are traceable to the source proposal text, measuring factual accuracy and hallucination rate.</p>
+    </div>
+  </div>
+
+  <div class="info-box green">
+    <span class="icon">ℹ</span>
+    <div><strong>Goal:</strong> Detect hallucinations — claims made by the AI that are absent from, or contradict, the original proposal. A high groundedness score means the report faithfully reflects the proposal content.</div>
+  </div>
+
+  <h3>Inputs & Outputs</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Type</th><th>Path</th><th>Limit</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Input</td><td><code>src/data/prepared/&lt;pid&gt;/full_text.txt</code></td><td>24 000 chars</td><td>Original proposal — the ground truth reference corpus</td></tr>
+        <tr><td>Input</td><td><code>src/data/reports/&lt;pid&gt;_final_report.md</code></td><td>20 000 chars</td><td>Sections 0 &amp; 1 only — factual summary sections (Q&amp;A evidence excluded)</td></tr>
+        <tr><td>Output</td><td><code>src/data/evaluations/runs/&lt;run_id&gt;/groundedness_result.json</code></td><td>—</td><td>Per-claim verdict with supporting proposal quotes</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Two-Stage Process</h3>
+  <ul class="steps">
+    <li>
+      <div class="step-num" style="background:rgba(52,201,138,0.2);color:var(--accent2);">1</div>
+      <div class="step-content">
+        <div class="step-title">Claim Extraction</div>
+        <div class="step-desc">LLM call at <strong>temperature 0.0</strong>, max_tokens 1800. The model reads Sections 0 &amp; 1 of the final report and extracts a flat list of distinct factual claims (e.g., "The team has 15 years of combined experience in biotech"). Deterministic settings ensure reproducible extraction.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num" style="background:rgba(52,201,138,0.2);color:var(--accent2);">2</div>
+      <div class="step-content">
+        <div class="step-title">Claim Classification</div>
+        <div class="step-desc">Each extracted claim is classified against the proposal text into one of three categories. For supported and inferred claims, the exact proposal quote is stored as evidence. Classification LLM also runs at temperature 0.0 to minimize inconsistency.</div>
+      </div>
+    </li>
+  </ul>
+
+  <h3>Classification Categories</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Category</th><th>Definition</th><th>Weight in lenient score</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-good">supported</span></td><td>Claim is explicitly stated in the proposal text — a direct quote or paraphrase can be found.</td><td>1.0</td></tr>
+        <tr><td><span class="badge badge-warn">inferred</span></td><td>Claim is a reasonable implication from the proposal context but is not explicitly written. Represents reasonable interpretation rather than fabrication.</td><td>0.5</td></tr>
+        <tr><td><span class="badge badge-bad">unsupported</span></td><td>Claim is absent from the proposal, contradicts it, or introduces information not found anywhere in the source text. Hallucination risk.</td><td>0.0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Score Formulas</h3>
+  <div class="formula-block" style="border-left-color:var(--accent2);">
+    <div class="formula-label" style="color:var(--accent2)">Three groundedness metrics</div>
+    <span class="f-var">groundedness_score</span> <span class="f-op">=</span> <span class="f-var">n_supported</span> <span class="f-op">/</span> <span class="f-var">n_total</span>
+    <span class="f-comment">          ← strict: only explicit support counts</span>
+    <br><br>
+    <span class="f-var">lenient_score</span>       <span class="f-op">=</span> (<span class="f-var">n_supported</span> <span class="f-op">+</span> <span class="f-num">0.5</span> <span class="f-op">×</span> <span class="f-var">n_inferred</span>) <span class="f-op">/</span> <span class="f-var">n_total</span>
+    <span class="f-comment">  ← partial credit for reasonable inferences</span>
+    <br><br>
+    <span class="f-var">hallucination_rate</span>   <span class="f-op">=</span> <span class="f-var">n_unsupported</span> <span class="f-op">/</span> <span class="f-var">n_total</span>
+    <span class="f-comment">     ← fraction of claims with no proposal basis</span>
+  </div>
+
+  <h3>Output Structure</h3>
+  <p>The <code>groundedness_result.json</code> contains a record for every extracted claim:</p>
+  <pre>{
+  "claim": "The founding team holds three FDA 510(k) clearances.",
+  "classification": "supported",
+  "evidence_quote": "Our team secured three 510(k) clearances between 2019 and 2022...",
+  "groundedness_score": 0.82,
+  "lenient_score": 0.89,
+  "hallucination_rate": 0.11
+}</pre>
+
+  <h3>Text Truncation Rationale</h3>
+  <p>Proposal text is capped at <strong>24 000 characters</strong> and report text at <strong>20 000 characters</strong> before LLM calls. This controls API cost and prevents context overflow on long proposals, while retaining the factual density sections most likely to contain verifiable claims.</p>
+</section>
+
+
+<!-- ── STRATEGY 3 · SENSITIVITY ── -->
+<section id="sensitivity">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(245,166,35,0.12);">⚡</div>
+    <div class="section-header-text">
+      <h2 style="color:var(--accent3)">Strategy 3 — Sensitivity Analysis</h2>
+      <p>Tests whether AI scores respond logically and proportionally to deliberate, controlled changes in proposal content.</p>
+    </div>
+  </div>
+
+  <div class="info-box orange">
+    <span class="icon">ℹ</span>
+    <div><strong>Goal:</strong> Verify that the evaluation pipeline is not outputting scores arbitrarily — when a proposal is modified to strengthen or weaken a specific dimension, only the appropriate dimensions should change, in the correct direction and by a proportional magnitude.</div>
+  </div>
+
+  <h3>Inputs & Outputs</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Type</th><th>Path</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Input</td><td><code>src/data/reports/&lt;baseline_pid&gt;_final_report.md</code></td><td>Report from the original (unmodified) proposal</td></tr>
+        <tr><td>Input</td><td><code>src/data/reports/&lt;variant_pid&gt;_final_report.md</code></td><td>Report from the modified proposal (one or more variants)</td></tr>
+        <tr><td>Input</td><td><code>src/data/llm_scores/&lt;pid&gt;/llm_scores.json</code></td><td>Numeric scores for baseline and each variant</td></tr>
+        <tr><td>Output</td><td><code>src/data/evaluations/runs/&lt;run_id&gt;/sensitivity_summary.json</code></td><td>Per-variant sensitivity verdict in JSON</td></tr>
+        <tr><td>Output</td><td><code>src/data/evaluations/runs/&lt;run_id&gt;/sensitivity_report.xlsx</code></td><td>Tabular breakdown of score deltas and LLM assessment</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Analysis Process</h3>
+  <ul class="steps">
+    <li>
+      <div class="step-num" style="background:rgba(245,166,35,0.2);color:var(--accent3);">1</div>
+      <div class="step-content">
+        <div class="step-title">Score Delta Computation</div>
+        <div class="step-desc">For each evaluation dimension, compute <code>delta = variant_score − baseline_score</code> on the 0–1 scale. Deltas with absolute value &lt; 0.01 are treated as noise and filtered out (MIN_DELTA_THRESHOLD).</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num" style="background:rgba(245,166,35,0.2);color:var(--accent3);">2</div>
+      <div class="step-content">
+        <div class="step-title">Report Excerpt Preparation</div>
+        <div class="step-desc">Sections 0 &amp; 1 of both reports are extracted (capped at 16 000 chars each) and passed to the LLM for contextual comparison alongside the numeric deltas.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num" style="background:rgba(245,166,35,0.2);color:var(--accent3);">3</div>
+      <div class="step-content">
+        <div class="step-title">LLM Coherence Assessment</div>
+        <div class="step-desc">An LLM call at <strong>temperature 0.1</strong>, max_tokens 800 judges the pattern of changes. It is given the intended modification description, the score deltas, and report excerpts, then assesses whether the changes make logical sense.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num" style="background:rgba(245,166,35,0.2);color:var(--accent3);">4</div>
+      <div class="step-content">
+        <div class="step-title">Verdict Aggregation</div>
+        <div class="step-desc">Per-variant results are aggregated into an overall sensitivity rating using a weighted point scheme.</div>
+      </div>
+    </li>
+  </ul>
+
+  <h3>LLM Assessment Fields</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Field</th><th>Type</th><th>Values</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>sensitivity_quality</code></td><td>enum</td><td><span class="badge badge-good">good</span> <span class="badge badge-warn">partial</span> <span class="badge badge-bad">poor</span></td><td>Overall quality of the sensitivity response</td></tr>
+        <tr><td><code>direction_assessment</code></td><td>enum</td><td><span class="badge badge-good">correct</span> <span class="badge badge-warn">mixed</span> <span class="badge badge-bad">incorrect</span></td><td>Whether score changes went in the right direction</td></tr>
+        <tr><td><code>appropriately_sensitive</code></td><td>bool</td><td>true / false</td><td>Whether overall change magnitude was proportional</td></tr>
+        <tr><td><code>correctly_affected</code></td><td>list</td><td>dimension names</td><td>Dimensions that changed correctly</td></tr>
+        <tr><td><code>unexpected_changes</code></td><td>list</td><td>dimension names</td><td>Dimensions that changed when they should not have</td></tr>
+        <tr><td><code>missed_changes</code></td><td>list</td><td>dimension names</td><td>Dimensions that should have changed but did not</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Scoring & Thresholds</h3>
+  <div class="formula-block" style="border-left-color:var(--accent3);">
+    <div class="formula-label" style="color:var(--accent3)">Sensitivity point scheme &amp; aggregation</div>
+    <span class="f-comment">Per-variant points:</span>
+    <br>
+    <span class="f-var">sensitivity_quality</span> == "good"    → <span class="f-num">2</span> pts
+    <br>
+    <span class="f-var">sensitivity_quality</span> == "partial" → <span class="f-num">1</span> pt
+    <br>
+    <span class="f-var">sensitivity_quality</span> == "poor"    → <span class="f-num">0</span> pts
+    <br><br>
+    <span class="f-comment">Overall rating from average points:</span>
+    <br>
+    avg <span class="f-op">≥</span> <span class="f-num">1.7</span>  →  <span class="badge badge-good">good</span>
+    <br>
+    avg <span class="f-op">≥</span> <span class="f-num">0.8</span>  →  <span class="badge badge-warn">partial</span>
+    <br>
+    avg <span class="f-op">&lt;</span>  <span class="f-num">0.8</span>  →  <span class="badge badge-bad">poor</span>
+    <br><br>
+    <span class="f-comment">Noise floor:  |delta| &lt; 0.01  →  ignored</span>
+  </div>
+
+  <h3>Example Variant Types</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Modification</th><th>Expected dimension change</th><th>Expected direction</th></tr></thead>
+      <tbody>
+        <tr><td>Increased TAM from $50M to $500M</td><td>strategy, advantages</td><td>↑ upward</td></tr>
+        <tr><td>Removed PhD from team bio</td><td>team</td><td>↓ downward</td></tr>
+        <tr><td>Added regulatory approval milestone</td><td>feasibility</td><td>↑ upward</td></tr>
+        <tr><td>Removed financial projections section</td><td>strategy, feasibility</td><td>↓ downward</td></tr>
+        <tr><td>Changed objective from research to commercial</td><td>objective</td><td>↔ context-dependent</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ── STRATEGY 4 · SWEEP ── -->
+<section id="sweep">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(167,139,250,0.12);">🔄</div>
+    <div class="section-header-text">
+      <h2 style="color:var(--accent4)">Strategy 4 — Sweep Consistency</h2>
+      <p>Quantifies stochastic variance by running the same proposal through the pipeline multiple times and measuring score stability.</p>
+    </div>
+  </div>
+
+  <div class="info-box purple">
+    <span class="icon">ℹ</span>
+    <div><strong>Goal:</strong> Determine how much the pipeline's outputs vary due to LLM non-determinism. Low variance (high consistency) means users can trust that a single run is representative. High variance flags that multiple runs should be averaged before making decisions.</div>
+  </div>
+
+  <h3>Inputs & Outputs</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Type</th><th>Path</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Input</td><td><code>src/data/prepared/&lt;pid&gt;/</code></td><td>Pre-processed proposal directory used as the fixed seed for all runs</td></tr>
+        <tr><td>Input</td><td><code>src/data/reports/&lt;pid&gt;_final_report.md</code></td><td>Existing report (used if <code>--scores_only</code> flag is set)</td></tr>
+        <tr><td>Output</td><td><code>src/data/evaluations/runs/&lt;run_id&gt;/sweep_summary.json</code></td><td>Aggregated statistics across all runs</td></tr>
+        <tr><td>Output</td><td><code>src/data/evaluations/runs/&lt;run_id&gt;/sweep_report.xlsx</code></td><td>Per-run and aggregated score table</td></tr>
+        <tr><td>Output</td><td><code>src/data/evaluations/runs/&lt;run_id&gt;/sweep_bundle.zip</code></td><td>Archive of all run artifacts for audit</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Run Modes</h3>
+  <div class="two-col">
+    <div class="metric-card">
+      <h5>Full Pipeline Mode (default)</h5>
+      <p>Runs Stages 1–7 (or 1–8 with <code>--use_llm</code>) in full for each sweep iteration. Captures end-to-end variance including fact extraction, answer generation, and report synthesis. Each run's <code>final_report.md</code> is archived to <code>run_N/</code>.</p>
+    </div>
+    <div class="metric-card">
+      <h5>Scores-Only Mode (<code>--scores_only</code>)</h5>
+      <p>Re-extracts scores from the existing <code>final_report.md</code> without re-running the pipeline. Score extraction is deterministic (regex-based), so this mode always produces zero variance — used only to confirm the extraction mechanism is stable.</p>
+    </div>
+  </div>
+
+  <h3>Metrics per Dimension</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th>Formula</th><th>Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td>Mean</td><td><code>Σ(scores) / N</code></td><td>Average score across N runs — the best point estimate</td></tr>
+        <tr><td>Std Dev (σ)</td><td><code>√(Σ(xᵢ − x̄)² / N)</code></td><td>Absolute spread of scores — lower is more stable</td></tr>
+        <tr><td>CV (Coeff. of Variation)</td><td><code>σ / mean</code></td><td>Relative spread — enables comparison across dimensions with different means</td></tr>
+        <tr><td>Min / Max / Range</td><td><code>max − min</code></td><td>Worst-case spread across all runs</td></tr>
+        <tr><td>Mode</td><td>most frequent value</td><td>Most likely output for deterministic reporting</td></tr>
+        <tr><td>Exact match count</td><td>runs where score == mode</td><td>How often the pipeline reproduces the same result</td></tr>
+        <tr><td>All-exact-match</td><td>boolean</td><td>True only if every run produced an identical score</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Stability Interpretation Guidelines</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>CV Range</th><th>Stability</th><th>Recommendation</th></tr></thead>
+      <tbody>
+        <tr><td>0.00 – 0.05</td><td><span class="badge badge-good">Excellent</span></td><td>Single run is reliable for reporting</td></tr>
+        <tr><td>0.05 – 0.10</td><td><span class="badge badge-good">Good</span></td><td>Single run is acceptable; confirm with 2–3 runs for critical decisions</td></tr>
+        <tr><td>0.10 – 0.20</td><td><span class="badge badge-warn">Moderate</span></td><td>Average 3–5 runs before reporting final scores</td></tr>
+        <tr><td>&gt; 0.20</td><td><span class="badge badge-bad">High Variance</span></td><td>Pipeline is unstable for this dimension; investigate prompt or temperature settings</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="formula-block" style="border-left-color:var(--accent4);">
+    <div class="formula-label" style="color:var(--accent4)">CV formula for sweep analysis</div>
+    <span class="f-var">CV</span> <span class="f-op">=</span> <span class="f-var">σ</span> <span class="f-op">/</span> <span class="f-var">mean</span>
+    <br><br>
+    <span class="f-comment">Default runs: N = 5</span>
+    <br>
+    <span class="f-comment">Score scale: 0–1 float (extracted from final_report.md markdown table)</span>
+    <br>
+    <span class="f-comment">Verdict: mode + exact_match_rate (categorical, not numeric)</span>
+  </div>
+</section>
+
+
+<!-- ── SECTION 5 · INFRASTRUCTURE ── -->
+<section id="infra">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(96,165,250,0.12);">⚙️</div>
+    <div class="section-header-text">
+      <h2 style="color:var(--accent5)">Supporting Infrastructure</h2>
+      <p>Prompt strategies, LLM providers, score extraction, and multi-provider orchestration that underpin all four evaluation strategies.</p>
+    </div>
+  </div>
+
+  <h3>Stage 4 Prompt Strategies</h3>
+  <p>Three reasoning frameworks are available in <code>src/tools/prompt_templates.py</code>, selectable per pipeline run:</p>
+
+  <div class="prompt-cards">
+    <div class="prompt-card">
+      <div class="prompt-card-tag" style="background:rgba(79,142,247,0.15);color:var(--accent1);">CoT</div>
+      <h4>Chain-of-Thought</h4>
+      <ul>
+        <li>7-step structured evaluation</li>
+        <li>Understand → Team → Objectives → Strategy → Advantages → Feasibility → Synthesize</li>
+        <li>Confidence range: 0.50 – 0.92</li>
+        <li>Output: answer, claims, evidence_hints, general_insights, topic_tags</li>
+      </ul>
+    </div>
+    <div class="prompt-card">
+      <div class="prompt-card-tag" style="background:rgba(52,201,138,0.15);color:var(--accent2);">ReAct</div>
+      <h4>ReAct-Inspired</h4>
+      <ul>
+        <li>Internal Thought → Action → Observation loop</li>
+        <li>5 attributes: Team, Objective, Strategy, Advantages, Feasibility</li>
+        <li>Evidence: CONFIRMED / PARTIAL / PLANS / NOT VISIBLE</li>
+        <li>Risk tiers: CRITICAL / IMPORTANT / MINOR</li>
+      </ul>
+    </div>
+    <div class="prompt-card">
+      <div class="prompt-card-tag" style="background:rgba(167,139,250,0.15);color:var(--accent4);">SC</div>
+      <h4>Self-Consistency</h4>
+      <ul>
+        <li>5 internal perspectives checked silently</li>
+        <li>Factual, Attribute, Risk, Stakeholder, Action</li>
+        <li>Aggregated to single JSON answer</li>
+        <li>Handles nuanced / mixed results gracefully</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>LLM Providers</h3>
+  <p>All pipeline stages and evaluation tools support three providers, configured via <code>.env</code>:</p>
+  <div class="provider-list">
+    <div class="provider-pill">OpenAI <span>gpt-4o-mini · JSON mode ✓ · Batch ✓</span></div>
+    <div class="provider-pill">Gemini <span>gemini-2.5-flash · JSON mode ✓ · Batch ✓</span></div>
+    <div class="provider-pill">DeepSeek <span>deepseek-chat · JSON mode ✗ · Single-question only</span></div>
+  </div>
+
+  <h3>Score Extraction (<code>score_extraction.py</code>)</h3>
+  <p>Scores are extracted from the final report's markdown table using regex patterns. This is the fallback input for all evaluation strategies when <code>llm_scores.json</code> is not available.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dimension</th><th>Regex Pattern</th><th>Default if missing</th></tr></thead>
+      <tbody>
+        <tr><td>team</td><td><code>(team)\s*\|\s*([\d.]+)</code></td><td>0.5</td></tr>
+        <tr><td>objective</td><td><code>(objectives)\s*\|\s*([\d.]+)</code></td><td>0.5</td></tr>
+        <tr><td>strategy</td><td><code>(strategy)\s*\|\s*([\d.]+)</code></td><td>0.5</td></tr>
+        <tr><td>advantages</td><td><code>(innovation)\s*\|\s*([\d.]+)</code></td><td>0.5</td></tr>
+        <tr><td>feasibility</td><td><code>(feasibility)\s*\|\s*([\d.]+)</code></td><td>0.5</td></tr>
+        <tr><td>verdict</td><td><code>GO</code> → "Y", <code>NO-GO</code>/<code>HOLD</code> → "N"</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Multi-Provider Orchestration</h3>
+  <p><code>run_multi_provider_lifecycle.py</code> runs the full Stage 0–8 cycle independently for each configured provider in parallel using <code>ThreadPoolExecutor</code>. Each provider gets a unique proposal ID suffix:</p>
+  <pre>&lt;base_pid&gt;__openai
+&lt;base_pid&gt;__gemini
+&lt;base_pid&gt;__deepseek</pre>
+  <p>After all runs complete, the preferred provider (from <code>PROVIDER</code> env var) is promoted to the canonical compatibility path. A lifecycle summary is written to <code>provider_lifecycles/&lt;pid&gt;/provider_lifecycle_summary.json</code>.</p>
+
+  <h3>Concurrency Configuration</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Env Variable</th><th>Default</th><th>Controls</th></tr></thead>
+      <tbody>
+        <tr><td><code>STAGE4_DIM_WORKERS</code></td><td>2</td><td>Parallel dimensions per provider in Stage 4</td></tr>
+        <tr><td><code>STAGE4_VARIANT_WORKERS</code></td><td>3</td><td>Parallel variants (default/risk/implementation) per batch</td></tr>
+        <tr><td><code>STAGE4_REFINE_WORKERS</code></td><td>3</td><td>Parallel refinement passes</td></tr>
+        <tr><td><code>STAGE4_PROVIDER_WORKERS</code></td><td>3</td><td>Parallel providers in multi-provider mode</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Answer Normalization Pipeline (Stage 4)</h3>
+  <p>Before scores are extracted, Stage 4 answers go through a 5-step normalization chain in <code>llm_answering.py</code>:</p>
+  <ul class="steps">
+    <li>
+      <div class="step-num" style="background:rgba(96,165,250,0.2);color:var(--accent5);">1</div>
+      <div class="step-content">
+        <div class="step-title">Candidate Normalization</div>
+        <div class="step-desc">Converts list/dict answers to numbered bullet format. Calibrates confidence to 0.50–0.92 range.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num" style="background:rgba(96,165,250,0.2);color:var(--accent5);">2</div>
+      <div class="step-content">
+        <div class="step-title">Redline Detection</div>
+        <div class="step-desc">Moves concrete facts (dates, money amounts, trial IDs like NCT numbers, DOIs, patents, ISO standards) from <code>claims</code> → <code>evidence_hints</code> to prevent overly specific unverified assertions.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num" style="background:rgba(96,165,250,0.2);color:var(--accent5);">3</div>
+      <div class="step-content">
+        <div class="step-title">General Insights Scrubbing</div>
+        <div class="step-desc">Ensures <code>general_insights</code> contains only baseline/practice statements, moving specific facts to <code>evidence_hints</code>.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num" style="background:rgba(96,165,250,0.2);color:var(--accent5);">4</div>
+      <div class="step-content">
+        <div class="step-title">Bullet Formatting</div>
+        <div class="step-desc">Normalizes to "1. 2. 3." numbered format. Removes Markdown markers. Caps at 8 bullets per answer.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num" style="background:rgba(96,165,250,0.2);color:var(--accent5);">5</div>
+      <div class="step-content">
+        <div class="step-title">Deduplication</div>
+        <div class="step-desc">Uses simhash on answer text to remove near-duplicate answers across variants. Eliminates low-confidence duplicates first.</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+
+<!-- ── SECTION 6 · LLM-AS-A-JUDGE ── -->
+<section id="llm-judge">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(244,114,182,0.12);">⚖️</div>
+    <div class="section-header-text">
+      <h2 style="color:#f472b6">LLM-as-a-Judge Pattern</h2>
+      <p>Two evaluation strategies use a second LLM to assess the quality and correctness of the primary pipeline's outputs — a pattern known as LLM-as-a-Judge.</p>
+    </div>
+  </div>
+
+  <div class="info-box" style="background:rgba(244,114,182,0.08);border:1px solid rgba(244,114,182,0.2);color:#f9a8d4;">
+    <span class="icon">ℹ</span>
+    <div><strong>What is LLM-as-a-Judge?</strong> Instead of relying only on statistical metrics or human labels, an LLM is given both the AI-generated output <em>and</em> a reference source, then asked to render a structured verdict on whether the output is correct, faithful, or coherent. The judge LLM never sees the intermediate reasoning — only the final artifact and the reference material it should be grounded in.</div>
+  </div>
+
+  <h3>Where the Pattern Appears</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Strategy</th><th>File</th><th>LLM-as-Judge?</th><th>What Is Judged</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Groundedness</td>
+          <td><code>evaluate_groundedness.py</code></td>
+          <td><span class="badge badge-good">Yes</span></td>
+          <td>Are report claims traceable to the proposal?</td>
+        </tr>
+        <tr>
+          <td>Sensitivity Analysis</td>
+          <td><code>evaluate_sensitivity.py</code></td>
+          <td><span class="badge badge-good">Yes</span></td>
+          <td>Are score changes logically coherent?</td>
+        </tr>
+        <tr>
+          <td>LLM Scoring (Stage 8)</td>
+          <td><code>generate_llm_scores.py</code></td>
+          <td><span class="badge badge-warn">No — LLM-as-Scorer</span></td>
+          <td>Applies a rubric directly to the proposal; does not assess another LLM's output</td>
+        </tr>
+        <tr>
+          <td>Cohen's Kappa</td>
+          <td><code>evaluate_cohens_kappa.py</code></td>
+          <td><span class="badge badge-bad">No — Statistics only</span></td>
+          <td>Pure math (κ, ICC, Spearman) — zero LLM calls</td>
+        </tr>
+        <tr>
+          <td>Sweep Consistency</td>
+          <td><code>evaluate_sweep.py</code></td>
+          <td><span class="badge badge-bad">No — Variance analysis</span></td>
+          <td>Score stability across runs — no judgement</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Architecture</h3>
+  <div style="background:var(--code-bg);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin:16px 0 24px;font-family:'Consolas','JetBrains Mono',monospace;font-size:13px;line-height:2;overflow-x:auto;">
+    <span style="color:#6b7280;">── Groundedness Judge ──────────────────────────────────────────</span><br>
+    <span style="color:#6ee7b7;">Proposal Text (ground truth)</span> <span style="color:#f9a8d4;">──────────────────────────┐</span><br>
+    <span style="color:#93bbf7;">Stage 4–7 pipeline</span> <span style="color:#f9a8d4;">──→</span> <span style="color:#fbbf24;">Final Report</span> <span style="color:#f9a8d4;">──→ Judge LLM ──→</span> <span style="color:#f472b6;">supported / inferred / unsupported</span><br>
+    <br>
+    <span style="color:#6b7280;">── Sensitivity Judge ───────────────────────────────────────────</span><br>
+    <span style="color:#6ee7b7;">Baseline Report</span> <span style="color:#f9a8d4;">──────────────────────────────────────────┐</span><br>
+    <span style="color:#93bbf7;">Variant Report + score deltas</span> <span style="color:#f9a8d4;">──────────────────────→ Judge LLM ──→</span> <span style="color:#f472b6;">good / partial / poor</span>
+  </div>
+
+  <h3>Judge 1 — Groundedness: Exact Prompts</h3>
+  <p>Two sequential LLM calls, both at <strong>temperature 0.0</strong> (fully deterministic) in <code>evaluate_groundedness.py</code>:</p>
+
+  <h4>Call 1 — Claim Extraction</h4>
+  <div class="formula-block" style="border-left-color:#f472b6;font-family:'Consolas','JetBrains Mono',monospace;font-size:13px;line-height:1.7;">
+    <div class="formula-label" style="color:#f472b6;font-family:'Segoe UI',system-ui,sans-serif;">System prompt</div>
+    <span style="color:#f9a8d4;">"You are a claim extraction evaluator. Your task: extract factual claims</span><br>
+    <span style="color:#f9a8d4;"> that the PROPOSAL ITSELF explicitly makes, as reported in the evaluation summary."</span>
+    <br><br>
+    <div class="formula-label" style="color:#f472b6;font-family:'Segoe UI',system-ui,sans-serif;">User prompt (abbreviated)</div>
+    <span style="color:#a5f3fc;">"Extract factual claims that the PROPOSAL explicitly states, as summarised</span><br>
+    <span style="color:#a5f3fc;"> in the evaluation report below...</span><br>
+    <span style="color:#a5f3fc;"> Return exactly this JSON: {"claims": [{"claim_id": 1, "claim": "string"}]}"</span>
+  </div>
+
+  <h4>Call 2 — Claim Classification</h4>
+  <div class="formula-block" style="border-left-color:#f472b6;font-family:'Consolas','JetBrains Mono',monospace;font-size:13px;line-height:1.7;">
+    <div class="formula-label" style="color:#f472b6;font-family:'Segoe UI',system-ui,sans-serif;">System prompt</div>
+    <span style="color:#f9a8d4;">"You are a groundedness evaluator. Verify whether each claim is grounded</span><br>
+    <span style="color:#f9a8d4;"> in the provided business proposal text. Use ONLY the proposal text —</span><br>
+    <span style="color:#f9a8d4;"> no outside knowledge. Classify each claim as exactly one of:</span><br>
+    <span style="color:#f9a8d4;"> 'supported', 'inferred', or 'unsupported'..."</span>
+    <br><br>
+    <div class="formula-label" style="color:#f472b6;font-family:'Segoe UI',system-ui,sans-serif;">Returns per claim</div>
+    <span style="color:#a5f3fc;">{"claim_id", "claim", "classification": "supported|inferred|unsupported",</span><br>
+    <span style="color:#a5f3fc;"> "supporting_quote": "&lt;exact quote from proposal&gt;", "reason": "..."}</span>
+  </div>
+
+  <h3>Judge 2 — Sensitivity: Exact Prompt</h3>
+  <p>Single LLM call at <strong>temperature 0.1</strong> (near-deterministic) in <code>evaluate_sensitivity.py</code>:</p>
+
+  <div class="formula-block" style="border-left-color:#f472b6;font-family:'Consolas','JetBrains Mono',monospace;font-size:13px;line-height:1.7;">
+    <div class="formula-label" style="color:#f472b6;font-family:'Segoe UI',system-ui,sans-serif;">System prompt</div>
+    <span style="color:#f9a8d4;">"You are an expert evaluator assessing whether an AI proposal-analysis</span><br>
+    <span style="color:#f9a8d4;"> system is appropriately sensitive to changes in business proposal content</span><br>
+    <span style="color:#f9a8d4;"> and metrics. You will receive: 1. Score changes (variant minus baseline)</span><br>
+    <span style="color:#f9a8d4;"> across rubric dimensions, 2. A baseline report excerpt,</span><br>
+    <span style="color:#f9a8d4;"> 3. A variant report excerpt. Your job: judge whether the score shifts</span><br>
+    <span style="color:#f9a8d4;"> are logically coherent with the differences visible in the two reports</span><br>
+    <span style="color:#f9a8d4;"> — as a domain expert would expect."</span>
+    <br><br>
+    <div class="formula-label" style="color:#f472b6;font-family:'Segoe UI',system-ui,sans-serif;">User prompt asks the judge to assess</div>
+    <span style="color:#a5f3fc;">1. Are score changes directionally correct?</span><br>
+    <span style="color:#a5f3fc;">2. Did the RIGHT dimensions change?</span><br>
+    <span style="color:#a5f3fc;">3. Did any dimension change for NO visible reason?</span><br>
+    <span style="color:#a5f3fc;">4. Did any dimension FAIL to change when it clearly should have?</span><br>
+    <span style="color:#a5f3fc;">5. Is magnitude proportional?</span>
+    <br><br>
+    <div class="formula-label" style="color:#f472b6;font-family:'Segoe UI',system-ui,sans-serif;">Returns</div>
+    <span style="color:#a5f3fc;">{"sensitivity_quality": "good|partial|poor",</span><br>
+    <span style="color:#a5f3fc;"> "direction_assessment": "correct|mixed|incorrect",</span><br>
+    <span style="color:#a5f3fc;"> "appropriately_sensitive": true|false,</span><br>
+    <span style="color:#a5f3fc;"> "dimensions_correctly_affected": [...],</span><br>
+    <span style="color:#a5f3fc;"> "unexpected_changes": [...],</span><br>
+    <span style="color:#a5f3fc;"> "missed_changes": [...],</span><br>
+    <span style="color:#a5f3fc;"> "key_observations": [...],</span><br>
+    <span style="color:#a5f3fc;"> "overall_verdict": "..."}</span>
+  </div>
+
+  <h3>Temperature Design Rationale</h3>
+  <div class="two-col">
+    <div class="metric-card">
+      <h5>Groundedness: temp = 0.0</h5>
+      <p>Claim classification is a factual lookup task — either the quote is in the proposal or it isn't. Temperature 0.0 gives a deterministic result, ensuring that running the evaluator twice on the same proposal yields identical claim verdicts. Reproducibility is essential for audit trails.</p>
+    </div>
+    <div class="metric-card">
+      <h5>Sensitivity: temp = 0.1</h5>
+      <p>Coherence judgment requires some interpretive flexibility — the judge must reason about <em>why</em> a dimension should or should not change, which benefits from slight variability to avoid rigid pattern-matching. A small non-zero temperature allows more natural reasoning while remaining nearly deterministic.</p>
+    </div>
+  </div>
+
+  <h3>Key Design Principles</h3>
+  <ul class="steps">
+    <li>
+      <div class="step-num" style="background:rgba(244,114,182,0.2);color:#f472b6;">1</div>
+      <div class="step-content">
+        <div class="step-title">Separation of concerns</div>
+        <div class="step-desc">The judge LLM is a different call from the pipeline LLM. It receives only the artifact and reference — never the intermediate prompt chain that produced the artifact.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num" style="background:rgba(244,114,182,0.2);color:#f472b6;">2</div>
+      <div class="step-content">
+        <div class="step-title">Structured outputs only</div>
+        <div class="step-desc">Both judge calls return strict JSON schemas. This enables downstream statistical aggregation (groundedness score, kappa inputs) rather than free-text summaries that require further parsing.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num" style="background:rgba(244,114,182,0.2);color:#f472b6;">3</div>
+      <div class="step-content">
+        <div class="step-title">No outside knowledge</div>
+        <div class="step-desc">The groundedness judge is explicitly instructed: "Use ONLY the proposal text — no outside knowledge." This prevents the judge from hallucinating support for claims based on general domain knowledge rather than the actual proposal.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num" style="background:rgba(244,114,182,0.2);color:#f472b6;">4</div>
+      <div class="step-content">
+        <div class="step-title">Provider-agnostic</div>
+        <div class="step-desc">Both judge calls use the same <code>llm_provider.py</code> abstraction as the pipeline. The judge can run on OpenAI, Gemini, or DeepSeek — configurable via <code>GROUNDEDNESS_MODEL</code> env var or provider default.</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+
+</div><!-- /container -->
+
+<footer>
+  <span>YangtzeDelta Proposal Evaluation — Technical Guide</span>
+  <span>Generated June 2026 · YangtzeDeltaApplication</span>
+</footer>
+
+</body>
+</html>

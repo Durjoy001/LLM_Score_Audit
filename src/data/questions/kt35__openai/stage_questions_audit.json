@@ -1,0 +1,621 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt35__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt35__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 311,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team is led by Gianna Edwards, the founder of the Haven App, who has extensive experience in corporate Human Resources and a personal connection to the project's mission. The team emphasizes open communication with community backers to address any potential issues affecting t ...",
+        "first_key_point_preview": "Gianna Edwards is the founder and creator of the Haven App.",
+        "first_risk_preview": "The team is committed to open communication with community backers regarding any issues that may affect the App's deployment and launch.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.96,
+        "raw_chars": 3976,
+        "usage": {
+          "prompt_tokens": 3350,
+          "completion_tokens": 844,
+          "total_tokens": 4194
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Gianna Edwards experience",
+        "user needs understanding",
+        "Build Me App partnership",
+        "open communication strategy",
+        "deployment issue management",
+        "validation experience gaps",
+        "governance structure",
+        "team capacity assessment",
+        "collaboration stability"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Gianna Edwards' decade of experience in corporate Human Resources enhance the team's ability to execute the Haven App project effectively?",
+          "question_en_preview": "How does Gianna Edwards' decade of experience in corporate Human Resources enhance the team's ability to execute the Haven App project effectively?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What evidence supports Gianna Edwards' understanding of user needs based on her conversations with families seeking solutions, and how does this inform the team's approach to the Haven App?",
+          "question_en_preview": "What evidence supports Gianna Edwards' understanding of user needs based on her conversations with families seeking solutions, and how does this inform the team's approach to the Haven App?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the partnership with Build Me App in Toronto contribute to the team's capacity to deliver the Haven App, and what are the potential risks associated with this collaboration?",
+          "question_en_preview": "How does the partnership with Build Me App in Toronto contribute to the team's capacity to deliver the Haven App, and what are the potential risks associated with this collaboration?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the team's commitment to open communication with community backers regarding deployment issues, how might this affect their overall capacity and bandwidth for the Haven App project?",
+          "question_en_preview": "Given the team's commitment to open communication with community backers regarding deployment issues, how might this affect their overall capacity and bandwidth for the Haven App project?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What specific validation or compliance experience does the team possess that would support the successful launch and operation of the Haven App, and what gaps exist in this area?",
+          "question_en_preview": "What specific validation or compliance experience does the team possess that would support the successful launch and operation of the Haven App, and what gaps exist in this area?"
+        }
+      ],
+      "elapsed_sec": 14.96,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 350,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Haven App project aims to address the lack of support for mothers and families, starting in Canada, by creating a community-networking platform. The project is currently in MVP development, with a planned launch in 2026, and focuses on building localized villages to provide e ...",
+        "first_key_point_preview": "The Haven App aims to help mitigate the lack of village support for mothers and families.",
+        "first_risk_preview": "The project faces the challenge of addressing the prevalent issue of lack of support for mothers.",
+        "first_mitigation_preview": "The Haven App aims to help mitigate the lack of village support for mothers and families."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.23,
+        "raw_chars": 3428,
+        "usage": {
+          "prompt_tokens": 3441,
+          "completion_tokens": 766,
+          "total_tokens": 4207
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "MVP development timeline",
+        "community support features",
+        "success metrics for tools",
+        "local village concept",
+        "urgency of support need",
+        "business impact logic",
+        "milestone execution feasibility",
+        "user engagement strategies",
+        "AI-powered guidance effectiveness"
+      ],
+      "cleaned_question_count": 5,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "overall_goal_clarity": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How effectively does the Haven App address the identified lack of support for mothers and families in Canada? Please evaluate the urgency of this unmet need based on the proposal's context.",
+          "question_en_preview": "How effectively does the Haven App address the identified lack of support for mothers and families in Canada? Please evaluate the urgency of this unmet need based on the proposal's context."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Considering the Haven App is currently in MVP development with a planned launch in 2026, how realistic and executable are the proposed milestones for the next 12-36 months?",
+          "question_en_preview": "Considering the Haven App is currently in MVP development with a planned launch in 2026, how realistic and executable are the proposed milestones for the next 12-36 months?"
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "To what extent is the overall goal of the Haven App clear and focused on addressing the support needs of mothers and families, without diverging into unrelated sub-goals?",
+          "question_en_preview": "To what extent is the overall goal of the Haven App clear and focused on addressing the support needs of mothers and families, without diverging into unrelated sub-goals?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics does the Haven App propose to measure the effectiveness of its support tools, such as Daily Emotional Check-ins and AI-Powered Guidance?",
+          "question_en_preview": "What specific success metrics does the Haven App propose to measure the effectiveness of its support tools, such as Daily Emotional Check-ins and AI-Powered Guidance?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the Haven App plan to create value and capture revenue or funding while delivering impact to mothers and families? Please discuss the business or impact logic presented in the proposal.",
+          "question_en_preview": "How does the Haven App plan to create value and capture revenue or funding while delivering impact to mothers and families? Please discuss the business or impact logic presented in the proposal."
+        }
+      ],
+      "elapsed_sec": 14.23,
+      "final_question_count": 5
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 436,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Haven project aims to create a community-networking app designed to support mothers and families, addressing significant market needs. The app features various functionalities, including AI-powered guidance, community support, and resources for emotional well-being. The proje ...",
+        "first_key_point_preview": "Haven is a community-networking app designed to support mothers and families.",
+        "first_risk_preview": "The project may face challenges in effectively implementing all app features as planned.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.63,
+        "raw_chars": 4560,
+        "usage": {
+          "prompt_tokens": 3521,
+          "completion_tokens": 940,
+          "total_tokens": 4461
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "market positioning strategy",
+        "competitive landscape analysis",
+        "user engagement metrics",
+        "feature implementation challenges",
+        "financial sustainability evidence",
+        "partnership collaboration plans",
+        "scaling strategy details",
+        "user experience trade-offs",
+        "community support mechanisms",
+        "emergency resource accessibility"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Haven project plan to position itself in the market to effectively reach the over 9 million mothers in Canada? Please discuss the competitive landscape and any unique selling propositions that differentiate  ...",
+          "question_en_preview": "How does the Haven project plan to position itself in the market to effectively reach the over 9 million mothers in Canada? Please discuss the competitive landscape and any unique selling propositions that differentiate  ..."
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the design and delivery of the Haven app's features, such as Daily Emotional Check-ins and AI-Powered Guidance? How will these trade-offs impact user experience and engagement?",
+          "question_en_preview": "What are the major trade-offs considered in the design and delivery of the Haven app's features, such as Daily Emotional Check-ins and AI-Powered Guidance? How will these trade-offs impact user experience and engagement?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the proposed validation path for the Haven app to ensure that all features are effectively implemented? How will the project address potential challenges in this implementation?",
+          "question_en_preview": "What is the proposed validation path for the Haven app to ensure that all features are effectively implemented? How will the project address potential challenges in this implementation?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic is the funding model for the Haven project, considering it has reached its Kickstarter goal? What evidence would increase your confidence in the project's financial sustainability?",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the funding model for the Haven project, considering it has reached its Kickstarter goal? What evidence would increase your confidence in the project's financial sustainability?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What partnerships or collaborations does the Haven project foresee as critical to its success in reaching underserved markets? How will these partnerships enhance the app's offerings?",
+          "question_en_preview": "What partnerships or collaborations does the Haven project foresee as critical to its success in reaching underserved markets? How will these partnerships enhance the app's offerings?"
+        }
+      ],
+      "elapsed_sec": 13.63,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 280,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Haven App introduces several innovative features aimed at enhancing community support and parental guidance. Key innovations include AI-powered guidance, local community engagement, and various support resources designed to address the needs of mothers and families in crisis.",
+        "first_key_point_preview": "The Haven App features Daily Emotional Check-ins and AI-Powered Guidance for questions on parenthood.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.44,
+        "raw_chars": 4526,
+        "usage": {
+          "prompt_tokens": 3386,
+          "completion_tokens": 981,
+          "total_tokens": 4367
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "AI-powered guidance effectiveness",
+        "community engagement advantages",
+        "Daily Emotional Check-ins evidence",
+        "risk of obsolescence",
+        "platform extensibility",
+        "intellectual property protection strategies",
+        "customer segment adaptation",
+        "innovation evidence strength",
+        "support resources for families",
+        "Kindness Pledge Challenge impact"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the AI-powered guidance feature of The Haven App compare to existing solutions in terms of innovation and effectiveness in addressing parental questions?",
+          "question_en_preview": "How does the AI-powered guidance feature of The Haven App compare to existing solutions in terms of innovation and effectiveness in addressing parental questions?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does The Haven App's community engagement functionality provide over traditional support systems for families in crisis?",
+          "question_en_preview": "What specific advantages does The Haven App's community engagement functionality provide over traditional support systems for families in crisis?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the Daily Emotional Check-ins and AI-Powered Guidance features in improving parental support outcomes?",
+          "question_en_preview": "What evidence supports the effectiveness of the Daily Emotional Check-ins and AI-Powered Guidance features in improving parental support outcomes?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee for The Haven App in terms of obsolescence or commoditization within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee for The Haven App in terms of obsolescence or commoditization within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How could The Haven App's innovative features be adapted or extended to serve other customer segments or use cases beyond parental guidance?",
+          "question_en_preview": "How could The Haven App's innovative features be adapted or extended to serve other customer segments or use cases beyond parental guidance?"
+        }
+      ],
+      "elapsed_sec": 19.44,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 377,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Haven App project is supported by its current development status, funding efforts, and identified risks. The project is approximately halfway completed, with a Kickstarter goal of $60,000, and has received community backing. However, it faces risks related  ...",
+        "first_key_point_preview": "The Haven App is currently in the testing phase and is approximately halfway completed.",
+        "first_risk_preview": "Safety and liability are highlighted as important risks due to the sensitive nature of maternal and family wellness.",
+        "first_mitigation_preview": "The project has identified risks and challenges and has taken steps to mitigate them."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.46,
+        "raw_chars": 3872,
+        "usage": {
+          "prompt_tokens": 3503,
+          "completion_tokens": 860,
+          "total_tokens": 4363
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding goal",
+        "safety and liability risks",
+        "Canadian legal protocols",
+        "implementation barriers",
+        "development timeline",
+        "community backing",
+        "risk mitigation strategies",
+        "customer acceptance",
+        "operational execution plan",
+        "resource alignment"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "operational_execution_plan": 1,
+          "funding_and_budget_planning": 1,
+          "risk_management": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific steps and timeline are outlined for the Haven App's completion and launch in 2026, and how do they align with the current development status?",
+          "question_en_preview": "What specific steps and timeline are outlined for the Haven App's completion and launch in 2026, and how do they align with the current development status?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How realistic is the Kickstarter funding goal of $60,000 in relation to the project's overall budget and funding strategy, and what additional funding sources are being considered?",
+          "question_en_preview": "How realistic is the Kickstarter funding goal of $60,000 in relation to the project's overall budget and funding strategy, and what additional funding sources are being considered?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific safety and liability risks have been identified for the Haven App, and what measures are in place to mitigate these risks effectively?",
+          "question_en_preview": "What specific safety and liability risks have been identified for the Haven App, and what measures are in place to mitigate these risks effectively?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What steps are being taken to ensure compliance with Canadian legal protocols for user safety, and how might this impact customer acceptance and adoption of the Haven App?",
+          "question_en_preview": "What steps are being taken to ensure compliance with Canadian legal protocols for user safety, and how might this impact customer acceptance and adoption of the Haven App?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation have been identified for the Haven App in real-world settings, and how does the project plan to address these barriers?",
+          "question_en_preview": "What potential barriers to implementation have been identified for the Haven App in real-world settings, and how does the project plan to address these barriers?"
+        }
+      ],
+      "elapsed_sec": 15.46,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T19:31:26Z",
+  "elapsed_sec": 77.73,
+  "total_questions": 34,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt35__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt35__openai/generated_questions_detail.json"
+}

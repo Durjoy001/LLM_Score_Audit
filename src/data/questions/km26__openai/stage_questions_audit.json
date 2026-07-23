@@ -1,0 +1,611 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km26__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km26__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 257,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by an individual named Malcolm and includes talented young individuals skilled in various technical fields such as software development and engineering. The project leader expresses confidence in overcoming implementation challenges.",
+        "first_key_point_preview": "The project is led by an individual named Malcolm.",
+        "first_risk_preview": "The project leader acknowledges a challenge of implementation.",
+        "first_mitigation_preview": "The project leader believes the challenge of implementation can be overcome."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.44,
+        "raw_chars": 3721,
+        "usage": {
+          "prompt_tokens": 3271,
+          "completion_tokens": 778,
+          "total_tokens": 4049
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Malcolm's leadership experience",
+        "technical skills of team members",
+        "implementation challenges",
+        "validation and compliance experience",
+        "partnership stability",
+        "decision-making processes",
+        "team capacity assessment",
+        "project execution strategy"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "yes_no": 1,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Malcolm's leadership experience and prior execution record position the team to effectively address the implementation challenges identified in the proposal?",
+          "question_en_preview": "How does Malcolm's leadership experience and prior execution record position the team to effectively address the implementation challenges identified in the proposal?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific technical skills do the young individuals on the team possess, and how do these skills align with the project's objectives and implementation needs?",
+          "question_en_preview": "What specific technical skills do the young individuals on the team possess, and how do these skills align with the project's objectives and implementation needs?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "yes_no",
+          "priority": 2,
+          "question_preview": "Given the current workload and the team's composition, do you believe the team has sufficient capacity to successfully execute the project? Please explain your reasoning.",
+          "question_en_preview": "Given the current workload and the team's composition, do you believe the team has sufficient capacity to successfully execute the project? Please explain your reasoning."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance in similar projects, and how might this experience mitigate the identified implementation challenge?",
+          "question_en_preview": "What experience does the team have with validation and compliance in similar projects, and how might this experience mitigate the identified implementation challenge?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What existing partnerships or collaborations does the team have that could support the project, and how stable are these relationships?",
+          "question_en_preview": "What existing partnerships or collaborations does the team have that could support the project, and how stable are these relationships?"
+        }
+      ],
+      "elapsed_sec": 9.44,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 312,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to create an interactive game designed to help secondary students learn math and physics through real-life scenarios. It reflects on the inefficiencies of traditional teaching methods and seeks to engage distracted students by incorporating a story that highlight ...",
+        "first_key_point_preview": "The game 'Lets get physical game math science school technology' aims to help secondary students learn math and physics in a fun and interactive way.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The game will require school tools to solve everyday problems."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.09,
+        "raw_chars": 3995,
+        "usage": {
+          "prompt_tokens": 3423,
+          "completion_tokens": 871,
+          "total_tokens": 4294
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "engagement strategies",
+        "educational impact metrics",
+        "real-life scenario integration",
+        "student learning outcomes",
+        "funding goals",
+        "project milestones",
+        "value proposition clarity",
+        "alignment with educational needs",
+        "success measurement framework",
+        "risk management strategies"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined is the overall goal of the project to create an interactive game for secondary students to learn math and physics? Are there any unrelated sub-goals that could dilute focus?",
+          "question_en_preview": "How clearly defined is the overall goal of the project to create an interactive game for secondary students to learn math and physics? Are there any unrelated sub-goals that could dilute focus?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the project align with the stated unmet need of engaging distracted students in learning math and physics? What evidence supports the urgency of this need?",
+          "question_en_preview": "To what extent does the project align with the stated unmet need of engaging distracted students in learning math and physics? What evidence supports the urgency of this need?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the project, and how realistic are they in terms of execution within a defined timeline? Are there specific timeframes for development and testing?",
+          "question_en_preview": "What are the proposed milestones for the project, and how realistic are they in terms of execution within a defined timeline? Are there specific timeframes for development and testing?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are defined for the project? How will the effectiveness of the game in teaching math and physics be measured?",
+          "question_en_preview": "What clear and quantifiable success metrics are defined for the project? How will the effectiveness of the game in teaching math and physics be measured?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project articulate its value creation and impact logic? In what ways does it plan to capture revenue or funding while delivering educational impact?",
+          "question_en_preview": "How does the project articulate its value creation and impact logic? In what ways does it plan to capture revenue or funding while delivering educational impact?"
+        }
+      ],
+      "elapsed_sec": 11.09,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 193,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aimed to secure funding of $17,653 within a specified period from October 21, 2014, to November 20, 2014. However, it was unsuccessful in reaching this funding goal by the deadline.",
+        "first_key_point_preview": "The project's funding goal was set at $17,653.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.13,
+        "raw_chars": 4812,
+        "usage": {
+          "prompt_tokens": 3448,
+          "completion_tokens": 1054,
+          "total_tokens": 4502
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding acquisition strategies",
+        "business model alignment",
+        "validation steps",
+        "solution route rationale",
+        "scaling risks",
+        "market conditions",
+        "funding goal feasibility",
+        "evidence of effectiveness",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 2,
+          "business_model_and_unit_economics": 2,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "scaling_and_globalization": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project aimed to secure funding of $17,653 within a specific period, what strategies were considered for market entry and funding acquisition? Please evaluate the effectiveness of these strategies.",
+          "question_en_preview": "Given that the project aimed to secure funding of $17,653 within a specific period, what strategies were considered for market entry and funding acquisition? Please evaluate the effectiveness of these strategies."
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the funding goal of $17,653 align with the overall business model and unit economics of the project? What evidence supports the feasibility of achieving this funding goal?",
+          "question_en_preview": "How does the funding goal of $17,653 align with the overall business model and unit economics of the project? What evidence supports the feasibility of achieving this funding goal?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps were planned to ensure the project could meet its funding goal by the specified deadline? If these steps were not detailed, please discuss the implications of this gap.",
+          "question_en_preview": "What validation steps were planned to ensure the project could meet its funding goal by the specified deadline? If these steps were not detailed, please discuss the implications of this gap."
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What rationale was provided for the chosen solution route to secure the funding of $17,653, and what alternatives were considered? How might these choices affect the project's success?",
+          "question_en_preview": "What rationale was provided for the chosen solution route to secure the funding of $17,653, and what alternatives were considered? How might these choices affect the project's success?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "Considering the project did not achieve its funding goal, what are the potential risks for scaling or expanding the initiative in the future? What strategies could mitigate these risks?",
+          "question_en_preview": "Considering the project did not achieve its funding goal, what are the potential risks for scaling or expanding the initiative in the future? What strategies could mitigate these risks?"
+        }
+      ],
+      "elapsed_sec": 11.13,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 6,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 124,
+        "key_points_count": 0,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The proposal contains limited explicit information about the innovation dimension, so a detailed summary cannot be produced.",
+        "first_key_point_preview": "<none>",
+        "first_risk_preview": "The proposal provides limited detail for the innovation dimension, which may affect evaluation quality.",
+        "first_mitigation_preview": "The proposal does not specify how to address or mitigate this information gap."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.86,
+        "raw_chars": 4109,
+        "usage": {
+          "prompt_tokens": 3154,
+          "completion_tokens": 887,
+          "total_tokens": 4041
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "competitive advantages",
+        "evidence types",
+        "innovation novelty",
+        "risk of obsolescence",
+        "intellectual property strategy",
+        "market differentiation",
+        "extension opportunities",
+        "customer validation",
+        "operational metrics",
+        "proof of concept"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6
+        },
+        "priorities": {
+          "1": 2,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 0,
+        "linked_to_risks": 6,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited information provided in the proposal, how does the innovation compare to existing solutions in terms of novelty? Please identify any specific areas where the innovation may differ from the state of the  ...",
+          "question_en_preview": "Given the limited information provided in the proposal, how does the innovation compare to existing solutions in terms of novelty? Please identify any specific areas where the innovation may differ from the state of the  ..."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What competitive advantages does the innovation claim to have over existing alternatives, and how can these be substantiated given the lack of detailed information in the proposal?",
+          "question_en_preview": "What competitive advantages does the innovation claim to have over existing alternatives, and how can these be substantiated given the lack of detailed information in the proposal?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What types of evidence could strengthen the case for the innovation, and how might the absence of such evidence impact the project's credibility?",
+          "question_en_preview": "What types of evidence could strengthen the case for the innovation, and how might the absence of such evidence impact the project's credibility?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the identified risk of limited detail in the proposal, how might this contribute to the risk of obsolescence or commoditization of the innovation within the next 3-5 years?",
+          "question_en_preview": "Considering the identified risk of limited detail in the proposal, how might this contribute to the risk of obsolescence or commoditization of the innovation within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What potential extensions or applications of the innovation could be envisioned, and how does the lack of detail in the proposal affect the assessment of these opportunities?",
+          "question_en_preview": "What potential extensions or applications of the innovation could be envisioned, and how does the lack of detail in the proposal affect the assessment of these opportunities?"
+        }
+      ],
+      "elapsed_sec": 12.86,
+      "final_question_count": 6
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 337,
+        "key_points_count": 5,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is challenged by uncertainties regarding total development costs and the implementation of technology in school systems. Despite these challenges, the project leader expresses confidence in overcoming the implementation hurdles, and the project is s ...",
+        "first_key_point_preview": "The project is based in Montreal, Canada.",
+        "first_risk_preview": "There is uncertainty about the total cost to develop the project.",
+        "first_mitigation_preview": "The project leader believes the challenge of implementation can be overcome."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.21,
+        "raw_chars": 3886,
+        "usage": {
+          "prompt_tokens": 3428,
+          "completion_tokens": 837,
+          "total_tokens": 4265
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding strategy implications",
+        "implementation challenges",
+        "operational execution clarity",
+        "development cost uncertainty",
+        "timeline-resource alignment",
+        "customer acceptance processes"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "implementation_barriers": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project had a funding goal of $17,653 but was unsuccessful in reaching it, what are the implications for future funding strategies and budget allocations?",
+          "question_en_preview": "Given that the project had a funding goal of $17,653 but was unsuccessful in reaching it, what are the implications for future funding strategies and budget allocations?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific challenges does the project face in implementing technology in school systems, and how does the project leader plan to address these challenges?",
+          "question_en_preview": "What specific challenges does the project face in implementing technology in school systems, and how does the project leader plan to address these challenges?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How clear and specific is the operational execution plan for the project, particularly regarding key tasks, owners, and timelines for development during the summer?",
+          "question_en_preview": "How clear and specific is the operational execution plan for the project, particularly regarding key tasks, owners, and timelines for development during the summer?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project plan to quantify and manage the uncertainty regarding total development costs, and what specific measures are in place to mitigate this risk?",
+          "question_en_preview": "How does the project plan to quantify and manage the uncertainty regarding total development costs, and what specific measures are in place to mitigate this risk?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how aligned are the project timeline and resources for the summer development phase, and what evidence would increase your confidence in this alignment?",
+          "question_en_preview": "On a scale of 1 to 5, how aligned are the project timeline and resources for the summer development phase, and what evidence would increase your confidence in this alignment?"
+        }
+      ],
+      "elapsed_sec": 10.21,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T22:09:11Z",
+  "elapsed_sec": 54.74,
+  "total_questions": 34,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km26__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km26__openai/generated_questions_detail.json"
+}

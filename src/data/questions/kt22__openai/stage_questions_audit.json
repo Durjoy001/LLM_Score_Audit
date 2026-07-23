@@ -1,0 +1,622 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt22__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt22__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 256,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Shahin Talaei, who is the sole founder and creator of InsightAI, a cognitive AI designed to run on personal hardware. The project is based in Toronto, Canada, and has evolved from the founder's experimentation with various AI systems.",
+        "first_key_point_preview": "The project is created and led by Shahin Talaei as a solo founder.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.21,
+        "raw_chars": 3920,
+        "usage": {
+          "prompt_tokens": 3341,
+          "completion_tokens": 839,
+          "total_tokens": 4180
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "solo founder experience",
+        "AI capabilities shift",
+        "personal hardware deployment",
+        "project execution capacity",
+        "collaboration networks",
+        "domain expertise",
+        "resource allocation",
+        "validation experience",
+        "market entry strategy"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Shahin Talaei's experience as a solo founder and creator of InsightAI position the project for success in its intended application and commercialization path?",
+          "question_en_preview": "How does Shahin Talaei's experience as a solo founder and creator of InsightAI position the project for success in its intended application and commercialization path?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does Shahin Talaei possess that is relevant to the development and deployment of InsightAI, particularly in relation to the shift in AI capabilities?",
+          "question_en_preview": "What specific domain expertise does Shahin Talaei possess that is relevant to the development and deployment of InsightAI, particularly in relation to the shift in AI capabilities?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that Shahin Talaei is the sole founder, how does the current workload and resource allocation impact the team's capacity to advance the project effectively?",
+          "question_en_preview": "Given that Shahin Talaei is the sole founder, how does the current workload and resource allocation impact the team's capacity to advance the project effectively?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation or compliance experience does Shahin Talaei have that could support the successful deployment of InsightAI on personal hardware?",
+          "question_en_preview": "What validation or compliance experience does Shahin Talaei have that could support the successful deployment of InsightAI on personal hardware?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What potential collaboration networks or partnerships could enhance the project's execution and market entry, considering the current lack of specified partners?",
+          "question_en_preview": "What potential collaboration networks or partnerships could enhance the project's execution and market entry, considering the current lack of specified partners?"
+        }
+      ],
+      "elapsed_sec": 14.21,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 380,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop InsightAI as a sovereign, self-hosted cognitive AI that emphasizes user ownership and operates on existing hardware. It seeks to deliver a digital product with no physical packaging, ensuring a zero transportation footprint and no returns logistics. Th ...",
+        "first_key_point_preview": "InsightAI is designed to operate on the user's hardware, eliminating the need for additional data-center load.",
+        "first_risk_preview": "The creator expresses a willingness to take risks in the development of InsightAI.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.8,
+        "raw_chars": 3808,
+        "usage": {
+          "prompt_tokens": 3458,
+          "completion_tokens": 830,
+          "total_tokens": 4288
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user ownership emphasis",
+        "operational efficiency",
+        "4-6 month shipping timeline",
+        "quantifiable success metrics",
+        "risk assessment",
+        "value creation strategy",
+        "cognitive AI performance",
+        "stakeholder alignment",
+        "funding goal clarity"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused are the overall goals of the InsightAI project, particularly in relation to its emphasis on user ownership and operation on existing hardware?",
+          "question_en_preview": "How clear and focused are the overall goals of the InsightAI project, particularly in relation to its emphasis on user ownership and operation on existing hardware?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the objectives of InsightAI align with the stated unmet needs of users regarding cognitive AI ownership and operational efficiency?",
+          "question_en_preview": "To what extent do the objectives of InsightAI align with the stated unmet needs of users regarding cognitive AI ownership and operational efficiency?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed timeline of 4-6 months for shipping InsightAI post-funding. What factors could affect this timeline?",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed timeline of 4-6 months for shipping InsightAI post-funding. What factors could affect this timeline?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics could be established for the InsightAI project to measure its performance and user satisfaction upon release?",
+          "question_en_preview": "What quantifiable success metrics could be established for the InsightAI project to measure its performance and user satisfaction upon release?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in the InsightAI project's objectives, particularly regarding the creator's willingness to take risks. Are these risks justified?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the InsightAI project's objectives, particularly regarding the creator's willingness to take risks. Are these risks justified?"
+        }
+      ],
+      "elapsed_sec": 11.8,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 321,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy for InsightAI focuses on delivering a digital product that operates on users' existing hardware, ensuring no additional data-center load. The project aims to adapt to user preferences while maintaining data privacy, with a funding goal of $17,653 and a realistic ship ...",
+        "first_key_point_preview": "InsightAI operates entirely on the user's hardware, eliminating central server dependency.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.28,
+        "raw_chars": 3766,
+        "usage": {
+          "prompt_tokens": 3520,
+          "completion_tokens": 830,
+          "total_tokens": 4350
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user hardware operation",
+        "customer acquisition strategy",
+        "one-time payment model",
+        "user preference adaptation",
+        "funding goal realism",
+        "scaling risks",
+        "licensing impact",
+        "open-weight model",
+        "delivery strategy",
+        "market presence expansion"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "commercialization_and_market_entry": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the strategy of operating InsightAI entirely on users' hardware impact its delivery and adoption compared to traditional cloud-based solutions?",
+          "question_en_preview": "How does the strategy of operating InsightAI entirely on users' hardware impact its delivery and adoption compared to traditional cloud-based solutions?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that users pay once for InsightAI and own it forever, how does this pricing model affect customer acquisition and retention strategies?",
+          "question_en_preview": "Given that users pay once for InsightAI and own it forever, how does this pricing model affect customer acquisition and retention strategies?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps are planned to ensure that InsightAI effectively adapts to user writing preferences and rejections?",
+          "question_en_preview": "What validation steps are planned to ensure that InsightAI effectively adapts to user writing preferences and rejections?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is the funding goal of $17,653 for InsightAI, considering the current funding status and projected shipping timeline? Please provide evidence that would increase your score.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the funding goal of $17,653 for InsightAI, considering the current funding status and projected shipping timeline? Please provide evidence that would increase your score."
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential risks do you foresee in scaling InsightAI from its current funding status to a larger market presence, given the limited risk information provided?",
+          "question_en_preview": "What potential risks do you foresee in scaling InsightAI from its current funding status to a larger market presence, given the limited risk information provided?"
+        }
+      ],
+      "elapsed_sec": 11.28,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 321,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "InsightAI introduces innovative features such as persistent memory and expert specialization, aiming to enhance user experience by retaining knowledge over time. The platform operates entirely on user hardware, eliminating the need for central server dependency and reducing envir ...",
+        "first_key_point_preview": "InsightAI is a cognitive AI that accumulates knowledge and has persistent memory.",
+        "first_risk_preview": "Existing AI models have limitations when the tab is closed, which may affect InsightAI's performance.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.88,
+        "raw_chars": 4281,
+        "usage": {
+          "prompt_tokens": 3420,
+          "completion_tokens": 895,
+          "total_tokens": 4315
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "persistent memory",
+        "expert specialization",
+        "user hardware efficiency",
+        "environmental impact",
+        "behavioral learning",
+        "intellectual property strategy",
+        "scalability",
+        "competitive advantages",
+        "AI model limitations",
+        "evidence of effectiveness"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does InsightAI's persistent memory and expert specialization compare to existing AI models in terms of user experience and functionality? Please provide specific evidence from the proposal to support your assessment.",
+          "question_en_preview": "How does InsightAI's persistent memory and expert specialization compare to existing AI models in terms of user experience and functionality? Please provide specific evidence from the proposal to support your assessment."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does InsightAI offer over existing AI solutions, particularly regarding environmental impact and hardware efficiency? Please cite specific key points from the proposal.",
+          "question_en_preview": "What clear advantages does InsightAI offer over existing AI solutions, particularly regarding environmental impact and hardware efficiency? Please cite specific key points from the proposal."
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of InsightAI's persistent memory and behavioral learning features? How does this evidence compare to benchmarks in the AI field?",
+          "question_en_preview": "What evidence supports the effectiveness of InsightAI's persistent memory and behavioral learning features? How does this evidence compare to benchmarks in the AI field?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the identified risk that existing AI models have limitations when the tab is closed, how might this affect InsightAI's long-term viability? What strategies could mitigate this risk?",
+          "question_en_preview": "Given the identified risk that existing AI models have limitations when the tab is closed, how might this affect InsightAI's long-term viability? What strategies could mitigate this risk?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How scalable is InsightAI's architecture for future enhancements or extensions to other customer segments or use cases? What evidence from the proposal supports your assessment?",
+          "question_en_preview": "How scalable is InsightAI's architecture for future enhancements or extensions to other customer segments or use cases? What evidence from the proposal supports your assessment?"
+        }
+      ],
+      "elapsed_sec": 11.88,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 302,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the InsightAI project is supported by its operational platform, which is currently running and documented. However, there are risks related to potential changes in licensing terms by providers and the dependency on a solo founder, which could jeopardize the pro ...",
+        "first_key_point_preview": "The InsightAI platform is currently operational and documented.",
+        "first_risk_preview": "There is a risk that Meta or another provider may materially change their license terms.",
+        "first_mitigation_preview": "The codebase is documented and the architecture is mapped to address solo founder risk."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 27.54,
+        "raw_chars": 4583,
+        "usage": {
+          "prompt_tokens": 3479,
+          "completion_tokens": 996,
+          "total_tokens": 4475
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "operational platform stability",
+        "funding sustainability",
+        "licensing terms risk",
+        "codebase documentation",
+        "customer acceptance evidence",
+        "timeline resource alignment",
+        "implementation barriers",
+        "solo founder risk mitigation",
+        "operational execution plan",
+        "budget allocation reasonableness"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "resources_and_infrastructure": 1,
+          "funding_and_budget_planning": 1,
+          "risk_management": 1,
+          "operational_execution_plan": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "implementation_barriers": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the operational status of the InsightAI platform support its long-term feasibility, and what evidence is there to confirm its stability?",
+          "question_en_preview": "How does the operational status of the InsightAI platform support its long-term feasibility, and what evidence is there to confirm its stability?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project has raised $923 from 14 backers but did not meet its funding goal of $17,653, what are the implications for future funding and budget sustainability?",
+          "question_en_preview": "Given that the project has raised $923 from 14 backers but did not meet its funding goal of $17,653, what are the implications for future funding and budget sustainability?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific strategies are in place to mitigate the risk of potential changes in licensing terms by providers, and how effective are these strategies?",
+          "question_en_preview": "What specific strategies are in place to mitigate the risk of potential changes in licensing terms by providers, and how effective are these strategies?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the documentation of the codebase and architecture contribute to the project's operational execution plan, particularly in addressing the risk of the solo founder's incapacitation?",
+          "question_en_preview": "How does the documentation of the codebase and architecture contribute to the project's operational execution plan, particularly in addressing the risk of the solo founder's incapacitation?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence is available to assess the feasibility of customer acceptance and procurement for the InsightAI platform, and what gaps exist in this evidence?",
+          "question_en_preview": "What evidence is available to assess the feasibility of customer acceptance and procurement for the InsightAI platform, and what gaps exist in this evidence?"
+        }
+      ],
+      "elapsed_sec": 27.54,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T19:08:09Z",
+  "elapsed_sec": 76.73,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt22__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt22__openai/generated_questions_detail.json"
+}

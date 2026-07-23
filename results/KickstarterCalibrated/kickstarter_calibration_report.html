@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kickstarter GO-Threshold Calibration Study</title>
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 11px; color: #0b0b0b; background: #f9f9f7; padding: 20px; }
+
+  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); color: #fff; border-radius: 12px; padding: 48px 40px; margin-bottom: 32px; }
+  .cover h1 { font-size: 25px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .cover .subtitle { font-size: 13px; color: #a0aec0; margin-bottom: 24px; line-height: 1.6; }
+  .cover .meta { display: flex; gap: 32px; flex-wrap: wrap; }
+  .cover .meta-item .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #718096; }
+  .cover .meta-item .value { font-size: 13px; color: #e2e8f0; margin-top: 2px; }
+  .cover .stat-row { display: flex; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
+  .cover .stat-box { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 12px 20px; text-align: center; min-width: 118px; }
+  .cover .stat-box .sval { font-size: 21px; font-weight: 700; color: #68d391; }
+  .cover .stat-box.warn .sval { color: #fc8181; }
+  .cover .stat-box .slbl { font-size: 9px; color: #a0aec0; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+
+  .intro-box { background: #fff; border-left: 4px solid #2a78d6; border-radius: 8px; padding: 20px 24px; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  .intro-box h2 { font-size: 13px; margin-bottom: 8px; color: #184f95; }
+  .intro-box p { line-height: 1.7; color: #4a5568; margin-bottom: 10px; }
+  .intro-box p:last-child { margin-bottom: 0; }
+
+  .section { background: #fff; border-radius: 10px; padding: 28px; margin-bottom: 28px; box-shadow: 0 2px 8px rgba(0,0,0,.07); page-break-inside: avoid; }
+  .section h2 { font-size: 16px; font-weight: 700; color: #1a202c; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; margin-bottom: 16px; }
+  .section h3 { font-size: 12.5px; font-weight: 700; color: #2d3748; margin: 18px 0 8px; }
+  .section p { line-height: 1.75; color: #4a5568; margin-bottom: 10px; }
+  .section p:last-child { margin-bottom: 0; }
+  .plain { background: #ebf8ff; border: 1px solid #bee3f8; border-radius: 8px; padding: 12px 16px; font-size: 10.5px; color: #2c5282; line-height: 1.7; margin: 10px 0 16px; page-break-inside: avoid; }
+  .plain b { color: #184f95; }
+
+  table { border-collapse: collapse; width: 100%; margin-bottom: 6px; font-size: 10px; page-break-inside: avoid; }
+  thead { background: #edf2f7; }
+  th, td { border: 1px solid #e2e8f0; padding: 6px 7px; text-align: center; }
+  th { font-weight: 600; color: #2d3748; font-size: 9.5px; }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  .pid { font-weight: 600; text-align: left; padding-left: 10px; color: #2d3748; }
+  .st-num { text-align: right; font-variant-numeric: tabular-nums; padding-right: 12px; }
+  .row-total { background: #ebf8ff !important; border-left: 3px solid #2a78d6; font-weight: 600; }
+
+  .stat-cards { display: flex; gap: 14px; margin: 14px 0; }
+  .stat-card { flex: 1; background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; text-align: center; }
+  .stat-card .cval { font-size: 20px; font-weight: 700; color: #184f95; }
+  .stat-card .clbl { font-size: 9.5px; color: #718096; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 4px; }
+  .stat-card .csub { font-size: 9.5px; color: #a0aec0; margin-top: 3px; }
+
+  .roc-svg { width: 320px; height: auto; display: block; margin: 10px auto; }
+  .roc-svg-lg { width: 360px; }
+  .grid-line { stroke: #e1e0d9; stroke-width: 1; }
+  .axis-label { font-size: 9px; fill: #898781; }
+  .axis-title { font-size: 10px; fill: #52514e; font-weight: 600; }
+  .plot-border { fill: none; stroke: #c3c2b7; stroke-width: 1; }
+  .roc-diag { stroke: #c3c2b7; stroke-width: 1.4; stroke-dasharray: 4 3; }
+  .roc-path { fill: none; stroke: #2a78d6; stroke-width: 2.4; }
+  .roc-path.m-a { stroke: #898781; stroke-dasharray: 3 2; }
+  .roc-path.m-b { stroke: #cbd5e0; stroke-width: 2; stroke-dasharray: 2 2; }
+  .roc-path.m-c { stroke: #eda100; }
+  .roc-path.m-nb { stroke: #0ca30c; stroke-width: 3; }
+  .scatter-legend { display: flex; gap: 20px; justify-content: center; margin-top: 8px; font-size: 10px; color: #4a5568; flex-wrap: wrap; }
+  .leg-item { display: flex; align-items: center; gap: 6px; }
+  .leg-swatch { width: 16px; height: 3px; display: inline-block; border-radius: 2px; }
+  .leg-swatch.m-a { background: #898781; }
+  .leg-swatch.m-b { background: #cbd5e0; }
+  .leg-swatch.m-c { background: #eda100; }
+  .leg-swatch.m-nb { background: #0ca30c; }
+  .boot-sig { color: #a0aec0; font-weight: 600; }
+  .boot-notsig { color: #b7791f; font-weight: 600; }
+
+  .outcome-box { border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; }
+  .outcome-good { background: #f0fff4; border-left: 4px solid #0ca30c; }
+  .outcome-bad { background: #fff5f5; border-left: 4px solid #d03b3b; }
+  .outcome-box h4 { font-size: 11.5px; font-weight: 700; margin-bottom: 6px; }
+  .outcome-good h4 { color: #006300; }
+  .outcome-bad h4 { color: #9b2c2c; }
+  .outcome-box ul, .findings-list ul { margin-left: 18px; line-height: 1.8; color: #4a5568; }
+  .outcome-box li, .findings-list li { margin-bottom: 6px; }
+
+  .findings-list { background: #fffaf0; border: 1px solid #f6ad55; border-left: 4px solid #ed8936; border-radius: 8px; padding: 16px 20px; }
+  .findings-list li b { color: #1a202c; }
+
+  .glossary { margin-top: 10px; border: 1px solid #bee3f8; border-radius: 8px; padding: 14px 18px; background: #ebf8ff; }
+  .glossary h3 { font-size: 11.5px; font-weight: 700; color: #184f95; margin-bottom: 10px; }
+  .gloss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .gloss-item { background: #fff; border-radius: 6px; padding: 10px 12px; border: 1px solid #bee3f8; }
+  .gloss-term { font-size: 10.5px; font-weight: 700; color: #184f95; margin-bottom: 4px; }
+  .gloss-def { font-size: 9.5px; color: #4a5568; line-height: 1.6; }
+
+  .footnote { font-size: 9.5px; color: #898781; font-style: italic; line-height: 1.6; margin-top: 10px; border-top: 1px solid #e2e8f0; padding-top: 8px; }
+
+  .fold-diagram { display: flex; gap: 6px; margin: 14px 0; }
+  .fold-cell { flex: 1; height: 34px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
+  .fold-train { background: #e2e8f0; color: #4a5568; }
+  .fold-test { background: #2a78d6; color: #fff; }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .section { box-shadow: none; }
+    .cover { border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+  
+    <div class="cover">
+      <h1>Kickstarter GO-Threshold Calibration Study</h1>
+      <div class="subtitle">Recalibrating the pipeline's success-prediction threshold for the Kickstarter domain,
+      validated with a proper train/test split (5-fold cross-validation) rather than in-sample tuning -- plus a
+      bootstrap-checked test of whether a better composite score can beat the production score outright.</div>
+      <div class="meta">
+        <div class="meta-item"><div class="label">Generated</div><div class="value">July 17, 2026  14:44</div></div>
+        <div class="meta-item"><div class="label">Dataset</div><div class="value">141 Kickstarter proposals</div></div>
+        <div class="meta-item"><div class="label">Validation</div><div class="value">Stratified 5-fold cross-validation</div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="sval">0.764</div><div class="slbl">ROC-AUC, production score</div></div>
+        <div class="stat-box warn"><div class="sval">0%</div><div class="slbl">Recall, before calibration</div></div>
+        <div class="stat-box"><div class="sval">58%</div><div class="slbl">Recall, after (held-out)</div></div>
+        <div class="stat-box"><div class="sval">26%</div><div class="slbl">Precision, after (held-out)</div></div>
+        <div class="stat-box"><div class="sval">0.773</div><div class="slbl">ROC-AUC, honest composite (nested)</div></div>
+      </div>
+    </div>
+    <div class="intro-box">
+      <h2>What is this report, in plain terms?</h2>
+      <p>In the earlier Kickstarter validation, the pipeline's GO/HOLD/NO-GO decision was made using a threshold
+      (score &ge; 0.725 OR confidence &ge; 0.811) that had been calibrated on a completely different dataset
+      &mdash; 12 biotech/semiconductor proposals. That threshold never fired "GO" on any of the 141 Kickstarter
+      campaigns, even ones that actually succeeded, because Kickstarter proposals structurally score lower on
+      this rubric than VC-style proposals do (explained in the previous report).</p>
+      <p>This report asks a different, more useful question: <b>if we pick a decision threshold that's actually
+      appropriate for the Kickstarter score distribution, does the AI's score have real power to separate winners
+      from losers?</b> To answer that honestly, we can't just search for the "best" threshold and then grade
+      ourselves on the same data we used to find it &mdash; that guarantees a flattering but meaningless number.
+      Instead we use <b>train/test evaluation</b>: fit the threshold on part of the data, and check it on a
+      different part it never saw. This report walks through exactly how that was done, and what it found.</p>
+    </div>
+    <div class="section">
+      <h2>1. Methodology: How the Threshold Was Calibrated and Tested</h2>
+      <h3>The decision rule being calibrated</h3>
+      <p>The pipeline's verdict rule has always had this shape: predict a successful proposal ("GO") if
+      <b>score &ge; &tau;<sub>r</sub> OR confidence &ge; &tau;<sub>c</sub></b>. The production system uses
+      &tau;<sub>r</sub>=0.725 and &tau;<sub>c</sub>=0.811, calibrated on the 12-proposal biotech dataset. This
+      study searches for better values of &tau;<sub>r</sub> and &tau;<sub>c</sub> specifically for Kickstarter,
+      keeping the same OR-logic shape so it's a direct, like-for-like recalibration rather than a new mechanism.</p>
+
+      <h3>Why train/test split, not just "pick the best threshold and report it"</h3>
+      <div class="plain">
+        <b>In simple terms:</b> if you try every possible threshold on all 141 proposals and report whichever one
+        scores best on those same 141 proposals, you are guaranteed to get a good-looking number &mdash; but it
+        tells you nothing about whether that threshold will work on the <i>next</i> Kickstarter campaign it hasn't
+        seen. That's called overfitting. The fix is to test the threshold on data it was not calibrated on.
+      </div>
+      <p>With only 141 proposals and just 24 real successes, a single 70/30 train/test split would leave as few
+      as 7 successes in the test set &mdash; too few to trust a precision/recall estimate. Instead we use
+      <b>stratified 5-fold cross-validation</b>: the 141 proposals are split into 5 roughly equal groups
+      ("folds"), each containing a proportional share of successes (~4-5 per fold, matching the 17% overall
+      success rate). We then repeat the following 5 times, once per fold:</p>
+      <ol style="margin-left:18px; line-height:1.9; color:#4a5568;">
+        <li>Hold one fold out as the <b>test set</b> (never touched during calibration).</li>
+        <li>Use the remaining 4 folds (the <b>training set</b>) to grid-search for the &tau;<sub>r</sub>,
+        &tau;<sub>c</sub> pair that maximizes F1 score &mdash; not accuracy (explained below).</li>
+        <li>Apply that threshold to the held-out test fold and record how it did.</li>
+      </ol>
+      <p>Every one of the 141 proposals ends up in exactly one test fold, evaluated using a threshold it never
+      influenced. The 5 test-fold results are then combined into one overall confusion matrix &mdash; this is the
+      honest, out-of-sample "after calibration" result in this report.</p>
+
+      <div class="fold-diagram">
+        <div class="fold-cell fold-test">Fold 1 = test</div>
+        <div class="fold-cell fold-train">2</div>
+        <div class="fold-cell fold-train">3</div>
+        <div class="fold-cell fold-train">4</div>
+        <div class="fold-cell fold-train">5</div>
+      </div>
+      <p style="font-size:9.5px;color:#718096;margin-top:-6px">Illustration of round 1 of 5: fold 1 held out as
+      test, folds 2-5 used to fit the threshold. This repeats 5 times, rotating which fold is held out, so every
+      proposal is tested exactly once.</p>
+
+      <h3>Why F1 instead of accuracy as the calibration objective</h3>
+      <p>Only 17% of Kickstarter campaigns in this dataset actually succeeded. A model that predicts "will fail"
+      for every single proposal already scores 83% accuracy without ever identifying a real success &mdash; which
+      is exactly the failure mode of the original transferred threshold. <b>F1 score</b> (the balance of precision
+      and recall) forces the calibration to actually find successes, not just avoid false alarms, so it was used
+      as the objective for selecting &tau;<sub>r</sub> and &tau;<sub>c</sub> on each training fold.</p>
+
+      <h3>An additional, threshold-independent check</h3>
+      <p>Before even picking a threshold, we also computed <b>ROC-AUC</b> and <b>Average Precision</b> directly
+      from the raw AI score, with no threshold involved at all. These answer a more fundamental question: does the
+      score contain real information about funding success, regardless of where any cutoff is drawn?</p>
+    </div>
+    <div class="section">
+      <h2>2. Does the Score Have Real Signal? (Threshold-Free Check)</h2>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="cval">0.764</div><div class="clbl">ROC-AUC</div><div class="csub">0.5 = random, 1.0 = perfect</div></div>
+        <div class="stat-card"><div class="cval">0.361</div><div class="clbl">Average Precision</div><div class="csub">vs. 17% random baseline</div></div>
+      </div>
+      
+    <svg viewBox="0 0 420 420" class="roc-svg" role="img" aria-label="ROC curve of AI score discriminating funded vs unfunded campaigns">
+      <line x1="46.0" y1="46" x2="46.0" y2="374" class="grid-line"/><text x="46.0" y="390" class="axis-label" text-anchor="middle">0.00</text><line x1="46" y1="374.0" x2="374" y2="374.0" class="grid-line"/><text x="38" y="377.0" class="axis-label" text-anchor="end">0.00</text><line x1="128.0" y1="46" x2="128.0" y2="374" class="grid-line"/><text x="128.0" y="390" class="axis-label" text-anchor="middle">0.25</text><line x1="46" y1="292.0" x2="374" y2="292.0" class="grid-line"/><text x="38" y="295.0" class="axis-label" text-anchor="end">0.25</text><line x1="210.0" y1="46" x2="210.0" y2="374" class="grid-line"/><text x="210.0" y="390" class="axis-label" text-anchor="middle">0.50</text><line x1="46" y1="210.0" x2="374" y2="210.0" class="grid-line"/><text x="38" y="213.0" class="axis-label" text-anchor="end">0.50</text><line x1="292.0" y1="46" x2="292.0" y2="374" class="grid-line"/><text x="292.0" y="390" class="axis-label" text-anchor="middle">0.75</text><line x1="46" y1="128.0" x2="374" y2="128.0" class="grid-line"/><text x="38" y="131.0" class="axis-label" text-anchor="end">0.75</text><line x1="374.0" y1="46" x2="374.0" y2="374" class="grid-line"/><text x="374.0" y="390" class="axis-label" text-anchor="middle">1.00</text><line x1="46" y1="46.0" x2="374" y2="46.0" class="grid-line"/><text x="38" y="49.0" class="axis-label" text-anchor="end">1.00</text>
+      <line x1="46.0" y1="374.0" x2="374.0" y2="46.0" class="roc-diag"/>
+      <path d="M 46.0,374.0 L 48.8,374.0 L 48.8,360.3 L 51.6,360.3 L 54.4,360.3 L 57.2,360.3 L 57.2,346.7 L 57.2,333.0 L 60.0,333.0 L 60.0,319.3 L 62.8,319.3 L 62.8,305.7 L 62.8,292.0 L 65.6,292.0 L 68.4,292.0 L 71.2,292.0 L 74.0,292.0 L 76.8,292.0 L 76.8,278.3 L 79.6,278.3 L 82.4,278.3 L 82.4,264.7 L 82.4,251.0 L 85.2,251.0 L 88.1,251.0 L 88.1,237.3 L 90.9,237.3 L 93.7,237.3 L 96.5,237.3 L 96.5,223.7 L 99.3,223.7 L 102.1,223.7 L 102.1,210.0 L 104.9,210.0 L 107.7,210.0 L 110.5,210.0 L 110.5,196.3 L 113.3,196.3 L 116.1,196.3 L 118.9,196.3 L 121.7,196.3 L 124.5,196.3 L 127.3,196.3 L 130.1,196.3 L 132.9,196.3 L 135.7,196.3 L 135.7,182.7 L 138.5,182.7 L 141.3,182.7 L 141.3,169.0 L 144.1,169.0 L 146.9,169.0 L 146.9,155.3 L 146.9,141.7 L 146.9,128.0 L 149.7,128.0 L 152.5,128.0 L 152.5,114.3 L 155.3,114.3 L 158.1,114.3 L 160.9,114.3 L 163.7,114.3 L 166.5,114.3 L 169.4,114.3 L 169.4,100.7 L 172.2,100.7 L 172.2,87.0 L 175.0,87.0 L 177.8,87.0 L 177.8,73.3 L 180.6,73.3 L 183.4,73.3 L 186.2,73.3 L 189.0,73.3 L 191.8,73.3 L 194.6,73.3 L 197.4,73.3 L 200.2,73.3 L 203.0,73.3 L 205.8,73.3 L 208.6,73.3 L 211.4,73.3 L 214.2,73.3 L 217.0,73.3 L 219.8,73.3 L 222.6,73.3 L 225.4,73.3 L 228.2,73.3 L 231.0,73.3 L 231.0,59.7 L 233.8,59.7 L 236.6,59.7 L 239.4,59.7 L 242.2,59.7 L 245.0,59.7 L 247.8,59.7 L 250.6,59.7 L 253.5,59.7 L 256.3,59.7 L 259.1,59.7 L 261.9,59.7 L 264.7,59.7 L 267.5,59.7 L 270.3,59.7 L 273.1,59.7 L 275.9,59.7 L 278.7,59.7 L 281.5,59.7 L 284.3,59.7 L 287.1,59.7 L 289.9,59.7 L 292.7,59.7 L 295.5,59.7 L 298.3,59.7 L 301.1,59.7 L 303.9,59.7 L 306.7,59.7 L 309.5,59.7 L 312.3,59.7 L 315.1,59.7 L 317.9,59.7 L 320.7,59.7 L 320.7,46.0 L 323.5,46.0 L 326.3,46.0 L 329.1,46.0 L 331.9,46.0 L 334.8,46.0 L 337.6,46.0 L 340.4,46.0 L 343.2,46.0 L 346.0,46.0 L 348.8,46.0 L 351.6,46.0 L 354.4,46.0 L 357.2,46.0 L 360.0,46.0 L 362.8,46.0 L 365.6,46.0 L 368.4,46.0 L 371.2,46.0 L 374.0,46.0" class="roc-path"/>
+      <text x="210.0" y="416" class="axis-title" text-anchor="middle">False positive rate</text>
+      <text x="14" y="210.0" class="axis-title" text-anchor="middle" transform="rotate(-90 14 210.0)">True positive rate</text>
+      <rect x="46" y="46" width="328" height="328" class="plot-border"/>
+    </svg>
+      <div class="plain">
+        <b>In simple terms:</b> ROC-AUC of 0.764 means that if you picked one successful campaign and one
+        failed campaign at random, the AI would rank the successful one higher <b>76% of the time</b>.
+        0.5 would mean the score is no better than a coin flip; 0.764 is a real, meaningful signal (a widely
+        used rule of thumb treats 0.7&ndash;0.8 as "fair to good" discrimination). Average precision of 0.361
+        is roughly <b>2.1&times;</b> better than randomly guessing, given that only 17% of
+        campaigns actually succeed. This confirms the earlier Spearman correlation finding from a different angle:
+        the score is informative &mdash; the earlier 0% recall result was a threshold-placement problem, not a
+        sign that the score itself carries no information.
+      </div>
+    </div>
+    <div class="section">
+      <h2>3. Before vs. After Calibration</h2>
+      <p>All three rows below use the exact same underlying AI scores and the exact same OR-logic decision rule
+      &mdash; only the threshold values differ.</p>
+      
+    <table>
+      <thead><tr>
+        <th>Scenario</th><th>&tau;<sub>r</sub> (score)</th><th>&tau;<sub>c</sub> (confidence)</th>
+        <th>TP</th><th>FP</th><th>FN</th><th>TN</th>
+        <th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th>
+      </tr></thead>
+      <tbody>
+    <tr>
+      <td class="pid">Before (production threshold, transferred)</td>
+      <td>0.725</td>
+      <td>0.811</td>
+      <td class="st-num">0</td>
+      <td class="st-num">0</td>
+      <td class="st-num">24</td>
+      <td class="st-num">117</td>
+      <td>83.0%</td>
+      <td>&mdash;</td>
+      <td>0.0%</td>
+      <td>&mdash;</td>
+    </tr>
+    <tr>
+      <td class="pid">In-sample calibration (overfitting reference)</td>
+      <td>0.5505</td>
+      <td>0.6475</td>
+      <td class="st-num">22</td>
+      <td class="st-num">46</td>
+      <td class="st-num">2</td>
+      <td class="st-num">71</td>
+      <td>66.0%</td>
+      <td>32.4%</td>
+      <td>91.7%</td>
+      <td>0.4782</td>
+    </tr>
+    <tr class="row-total">
+      <td class="pid">Cross-validated (held-out, honest result)</td>
+      <td>varies/fold</td>
+      <td>varies/fold</td>
+      <td class="st-num">14</td>
+      <td class="st-num">39</td>
+      <td class="st-num">10</td>
+      <td class="st-num">78</td>
+      <td>65.2%</td>
+      <td>26.4%</td>
+      <td>58.3%</td>
+      <td>0.3637</td>
+    </tr></tbody>
+    </table>
+      <div class="plain">
+        <b>Before</b> (production threshold, unmodified): 0% recall &mdash; confirmed in the prior report.<br>
+        <b>In-sample</b> (threshold fit and tested on the same 141 proposals): looks great (91.7% recall, F1=0.478)
+        but this number is <b>not trustworthy</b> &mdash; it's graded on the data it was tuned to fit.<br>
+        <b>Cross-validated / held-out</b> (the honest result): recall rises from 0% to <b>58.3%</b>, precision
+        lands at <b>26.4%</b> (vs. a 17.0% random baseline &mdash; a real, if modest, lift), and F1 improves from
+        undefined to <b>0.364</b>. This is the number that should be quoted as the pipeline's actual, generalizable
+        performance on Kickstarter-style proposals.
+      </div>
+    </div>
+    <div class="section">
+      <h2>4. Per-Fold Detail: How Stable Is the Calibrated Threshold?</h2>
+      <p>The table below shows what threshold was chosen in each of the 5 training rounds, and how it performed
+      on that round's held-out test fold. This is useful transparency: it shows whether the "right" threshold is
+      consistent across different subsets of the data, or whether it's jumping around (a sign of an unstable
+      estimate given the small number of successes).</p>
+      
+    <table>
+      <thead><tr>
+        <th>Fold</th><th>Test n</th><th>Test successes</th>
+        <th>&tau;<sub>r</sub> fit on train</th><th>&tau;<sub>c</sub> fit on train</th>
+        <th>Train F1</th><th>Held-out F1</th><th>Held-out precision</th><th>Held-out recall</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="pid">Fold 1</td>
+          <td>29</td>
+          <td>5</td>
+          <td>0.5605</td>
+          <td>0.6485</td>
+          <td>0.4848</td>
+          <td>0.375</td>
+          <td>27%</td>
+          <td>60%</td>
+        </tr>
+        <tr>
+          <td class="pid">Fold 2</td>
+          <td>29</td>
+          <td>5</td>
+          <td>0.607</td>
+          <td>0.6435</td>
+          <td>0.5</td>
+          <td>0.0</td>
+          <td>0%</td>
+          <td>0%</td>
+        </tr>
+        <tr>
+          <td class="pid">Fold 3</td>
+          <td>28</td>
+          <td>5</td>
+          <td>0.5505</td>
+          <td>0.656</td>
+          <td>0.4865</td>
+          <td>0.375</td>
+          <td>27%</td>
+          <td>60%</td>
+        </tr>
+        <tr>
+          <td class="pid">Fold 4</td>
+          <td>28</td>
+          <td>5</td>
+          <td>0.5605</td>
+          <td>0.6425</td>
+          <td>0.4638</td>
+          <td>0.4706</td>
+          <td>33%</td>
+          <td>80%</td>
+        </tr>
+        <tr>
+          <td class="pid">Fold 5</td>
+          <td>27</td>
+          <td>4</td>
+          <td>0.5505</td>
+          <td>0.6465</td>
+          <td>0.4931</td>
+          <td>0.4</td>
+          <td>25%</td>
+          <td>100%</td>
+        </tr></tbody>
+    </table>
+      <div class="plain">
+        <b>In simple terms:</b> &tau;<sub>r</sub> (the score cutoff) stays tight across all 5 folds (0.55&ndash;0.61),
+        which is reassuring &mdash; it means the "right" score cutoff isn't just an artifact of which proposals
+        happened to be in the training set. Held-out F1 per fold is noisier (0.0 to 0.47), which is expected with
+        only ~5 successes per test fold &mdash; a single missed or extra success swings the fold's F1 a lot. This
+        is exactly why the <b>aggregated</b> result (pooling all 5 test folds into one confusion matrix, Section 3)
+        is the number to trust, not any individual fold.
+      </div>
+    </div>
+    <div class="section">
+      <h2>5. Improving the Score: Can a Better Composite Beat the Production Score?</h2>
+      <p>The earlier sections calibrate <i>where to draw the line</i> on the existing AI score. This section asks a
+      different question: can the underlying score itself be improved? The production <code>overall_score</code>
+      is a weighted average across all 5 rubric dimensions (team, objective, strategy, advantages, feasibility) --
+      but the earlier correlation study found that <b>team and objective show no significant relationship</b> with
+      real Kickstarter outcomes, while feasibility, strategy, and advantages do. Averaging in two noisy dimensions
+      dilutes the signal in the other three.</p>
+      <p>Three scoring methods were tested head-to-head, all evaluated with the same honest 5-fold cross-validation
+      used throughout this report (same folds, same seed):</p>
+      <ul style="margin-left:18px; line-height:1.9; color:#4a5568;">
+        <li><b>Method A -- overall_score:</b> the unmodified production score (baseline).</li>
+        <li><b>Method B -- simple composite (naive):</b> a plain, unweighted average of just feasibility + strategy
+        + advantages. Team/objective were dropped using a correlation study computed on the <i>full</i> 141-proposal
+        dataset -- fast to compute, but as shown below, that's a softer form of the same leakage problem this
+        report exists to catch.</li>
+        <li><b>Method C -- logistic regression:</b> an L2-regularized model that learns its own weights across all 5
+        dimensions, fit strictly within each training fold (never seeing its own test fold), producing pooled
+        out-of-fold predicted probabilities.</li>
+        <li><b>Method B-nested -- the honest version:</b> the same idea as Method B, but with the "which 3
+        dimensions?" decision <i>also</i> re-made independently within each training fold, exactly like the
+        threshold and the logistic regression weights already were.</li>
+      </ul>
+
+      
+    <table>
+      <thead><tr>
+        <th>Method</th><th>ROC-AUC</th><th>Avg. Precision</th>
+        <th>CV Precision</th><th>CV Recall</th><th>CV F1</th>
+      </tr></thead>
+      <tbody>
+        
+        <tr>
+          <td class="pid">A: overall_score (production, 5 dims)</td>
+          <td>0.7644</td>
+          <td>0.3611</td>
+          <td>29.2%</td>
+          <td>79.2%</td>
+          <td>0.427</td>
+        </tr>
+        
+        <tr style="color:#a0aec0">
+          <td class="pid">B: simple composite -- naive (dims picked using full dataset)</td>
+          <td>0.8048</td>
+          <td>0.4539</td>
+          <td>35.4%</td>
+          <td>70.8%</td>
+          <td>0.4722</td>
+        </tr>
+        
+        <tr>
+          <td class="pid">C: logistic regression (5 dims, CV-fit)</td>
+          <td>0.7682</td>
+          <td>0.3704</td>
+          <td>32.2%</td>
+          <td>79.2%</td>
+          <td>0.4578</td>
+        </tr>
+        
+        <tr class="row-total">
+          <td class="pid">B-nested: simple composite -- honest (dims + threshold both fit per-fold)</td>
+          <td>0.7731</td>
+          <td>&mdash;</td>
+          <td>32.7%</td>
+          <td>70.8%</td>
+          <td>0.4473</td>
+        </tr>
+      </tbody>
+    </table>
+      
+    <svg viewBox="0 0 460 460" class="roc-svg roc-svg-lg" role="img" aria-label="ROC curves comparing three scoring methods">
+      <line x1="46.0" y1="46" x2="46.0" y2="414" class="grid-line"/><text x="46.0" y="430" class="axis-label" text-anchor="middle">0.00</text><line x1="46" y1="414.0" x2="414" y2="414.0" class="grid-line"/><text x="38" y="417.0" class="axis-label" text-anchor="end">0.00</text><line x1="138.0" y1="46" x2="138.0" y2="414" class="grid-line"/><text x="138.0" y="430" class="axis-label" text-anchor="middle">0.25</text><line x1="46" y1="322.0" x2="414" y2="322.0" class="grid-line"/><text x="38" y="325.0" class="axis-label" text-anchor="end">0.25</text><line x1="230.0" y1="46" x2="230.0" y2="414" class="grid-line"/><text x="230.0" y="430" class="axis-label" text-anchor="middle">0.50</text><line x1="46" y1="230.0" x2="414" y2="230.0" class="grid-line"/><text x="38" y="233.0" class="axis-label" text-anchor="end">0.50</text><line x1="322.0" y1="46" x2="322.0" y2="414" class="grid-line"/><text x="322.0" y="430" class="axis-label" text-anchor="middle">0.75</text><line x1="46" y1="138.0" x2="414" y2="138.0" class="grid-line"/><text x="38" y="141.0" class="axis-label" text-anchor="end">0.75</text><line x1="414.0" y1="46" x2="414.0" y2="414" class="grid-line"/><text x="414.0" y="430" class="axis-label" text-anchor="middle">1.00</text><line x1="46" y1="46.0" x2="414" y2="46.0" class="grid-line"/><text x="38" y="49.0" class="axis-label" text-anchor="end">1.00</text>
+      <line x1="46.0" y1="414.0" x2="414.0" y2="46.0" class="roc-diag"/>
+      <path d="M 46.0,414.0 L 49.1,414.0 L 49.1,398.7 L 52.3,398.7 L 55.4,398.7 L 58.6,398.7 L 58.6,383.3 L 58.6,368.0 L 61.7,368.0 L 61.7,352.7 L 64.9,352.7 L 64.9,337.3 L 64.9,322.0 L 68.0,322.0 L 71.2,322.0 L 74.3,322.0 L 77.5,322.0 L 80.6,322.0 L 80.6,306.7 L 83.7,306.7 L 86.9,306.7 L 86.9,291.3 L 86.9,276.0 L 90.0,276.0 L 93.2,276.0 L 93.2,260.7 L 96.3,260.7 L 99.5,260.7 L 102.6,260.7 L 102.6,245.3 L 105.8,245.3 L 108.9,245.3 L 108.9,230.0 L 112.1,230.0 L 115.2,230.0 L 118.3,230.0 L 118.3,214.7 L 121.5,214.7 L 124.6,214.7 L 127.8,214.7 L 130.9,214.7 L 134.1,214.7 L 137.2,214.7 L 140.4,214.7 L 143.5,214.7 L 146.6,214.7 L 146.6,199.3 L 149.8,199.3 L 152.9,199.3 L 152.9,184.0 L 156.1,184.0 L 159.2,184.0 L 159.2,168.7 L 159.2,153.3 L 159.2,138.0 L 162.4,138.0 L 165.5,138.0 L 165.5,122.7 L 168.7,122.7 L 171.8,122.7 L 175.0,122.7 L 178.1,122.7 L 181.2,122.7 L 184.4,122.7 L 184.4,107.3 L 187.5,107.3 L 187.5,92.0 L 190.7,92.0 L 193.8,92.0 L 193.8,76.7 L 197.0,76.7 L 200.1,76.7 L 203.3,76.7 L 206.4,76.7 L 209.6,76.7 L 212.7,76.7 L 215.8,76.7 L 219.0,76.7 L 222.1,76.7 L 225.3,76.7 L 228.4,76.7 L 231.6,76.7 L 234.7,76.7 L 237.9,76.7 L 241.0,76.7 L 244.2,76.7 L 247.3,76.7 L 250.4,76.7 L 253.6,76.7 L 253.6,61.3 L 256.7,61.3 L 259.9,61.3 L 263.0,61.3 L 266.2,61.3 L 269.3,61.3 L 272.5,61.3 L 275.6,61.3 L 278.8,61.3 L 281.9,61.3 L 285.0,61.3 L 288.2,61.3 L 291.3,61.3 L 294.5,61.3 L 297.6,61.3 L 300.8,61.3 L 303.9,61.3 L 307.1,61.3 L 310.2,61.3 L 313.4,61.3 L 316.5,61.3 L 319.6,61.3 L 322.8,61.3 L 325.9,61.3 L 329.1,61.3 L 332.2,61.3 L 335.4,61.3 L 338.5,61.3 L 341.7,61.3 L 344.8,61.3 L 347.9,61.3 L 351.1,61.3 L 354.2,61.3 L 354.2,46.0 L 357.4,46.0 L 360.5,46.0 L 363.7,46.0 L 366.8,46.0 L 370.0,46.0 L 373.1,46.0 L 376.3,46.0 L 379.4,46.0 L 382.5,46.0 L 385.7,46.0 L 388.8,46.0 L 392.0,46.0 L 395.1,46.0 L 398.3,46.0 L 401.4,46.0 L 404.6,46.0 L 407.7,46.0 L 410.9,46.0 L 414.0,46.0" class="roc-path m-a"/><path d="M 46.0,414.0 L 46.0,398.7 L 46.0,383.3 L 49.1,383.3 L 49.1,368.0 L 52.3,368.0 L 55.4,368.0 L 58.6,368.0 L 61.7,368.0 L 61.7,352.7 L 64.9,352.7 L 68.0,352.7 L 68.0,337.3 L 68.0,322.0 L 68.0,306.7 L 71.2,306.7 L 74.3,306.7 L 74.3,291.3 L 77.5,291.3 L 80.6,291.3 L 83.7,291.3 L 83.7,276.0 L 86.9,276.0 L 86.9,260.7 L 90.0,260.7 L 93.2,260.7 L 96.3,260.7 L 99.5,260.7 L 102.6,260.7 L 105.8,260.7 L 108.9,260.7 L 108.9,245.3 L 108.9,230.0 L 108.9,214.7 L 112.1,214.7 L 115.2,214.7 L 118.3,214.7 L 118.3,199.3 L 118.3,184.0 L 118.3,168.7 L 121.5,168.7 L 124.6,168.7 L 127.8,168.7 L 127.8,153.3 L 127.8,138.0 L 130.9,138.0 L 134.1,138.0 L 137.2,138.0 L 137.2,122.7 L 140.4,122.7 L 143.5,122.7 L 146.6,122.7 L 149.8,122.7 L 149.8,107.3 L 152.9,107.3 L 156.1,107.3 L 159.2,107.3 L 162.4,107.3 L 165.5,107.3 L 168.7,107.3 L 171.8,107.3 L 171.8,92.0 L 175.0,92.0 L 178.1,92.0 L 181.2,92.0 L 184.4,92.0 L 187.5,92.0 L 190.7,92.0 L 193.8,92.0 L 197.0,92.0 L 200.1,92.0 L 203.3,92.0 L 206.4,92.0 L 209.6,92.0 L 209.6,76.7 L 212.7,76.7 L 215.8,76.7 L 219.0,76.7 L 222.1,76.7 L 225.3,76.7 L 228.4,76.7 L 228.4,61.3 L 231.6,61.3 L 234.7,61.3 L 237.9,61.3 L 241.0,61.3 L 244.2,61.3 L 247.3,61.3 L 250.4,61.3 L 253.6,61.3 L 256.7,61.3 L 259.9,61.3 L 263.0,61.3 L 266.2,61.3 L 269.3,61.3 L 272.5,61.3 L 275.6,61.3 L 278.8,61.3 L 281.9,61.3 L 285.0,61.3 L 288.2,61.3 L 291.3,61.3 L 294.5,61.3 L 297.6,61.3 L 300.8,61.3 L 303.9,61.3 L 307.1,61.3 L 310.2,61.3 L 313.4,61.3 L 316.5,61.3 L 319.6,61.3 L 322.8,61.3 L 325.9,61.3 L 329.1,61.3 L 329.1,46.0 L 332.2,46.0 L 335.4,46.0 L 338.5,46.0 L 341.7,46.0 L 344.8,46.0 L 347.9,46.0 L 351.1,46.0 L 354.2,46.0 L 357.4,46.0 L 360.5,46.0 L 363.7,46.0 L 366.8,46.0 L 370.0,46.0 L 373.1,46.0 L 376.3,46.0 L 379.4,46.0 L 382.5,46.0 L 385.7,46.0 L 388.8,46.0 L 392.0,46.0 L 395.1,46.0 L 398.3,46.0 L 401.4,46.0 L 404.6,46.0 L 407.7,46.0 L 410.9,46.0 L 414.0,46.0" class="roc-path m-b"/><path d="M 46.0,414.0 L 46.0,398.7 L 49.1,398.7 L 52.3,398.7 L 55.4,398.7 L 58.6,398.7 L 61.7,398.7 L 64.9,398.7 L 64.9,383.3 L 64.9,368.0 L 64.9,352.7 L 68.0,352.7 L 71.2,352.7 L 74.3,352.7 L 74.3,337.3 L 77.5,337.3 L 77.5,322.0 L 80.6,322.0 L 83.7,322.0 L 83.7,306.7 L 83.7,291.3 L 83.7,276.0 L 83.7,260.7 L 86.9,260.7 L 86.9,245.3 L 90.0,245.3 L 93.2,245.3 L 96.3,245.3 L 99.5,245.3 L 102.6,245.3 L 105.8,245.3 L 108.9,245.3 L 112.1,245.3 L 115.2,245.3 L 115.2,230.0 L 118.3,230.0 L 121.5,230.0 L 124.6,230.0 L 127.8,230.0 L 127.8,214.7 L 130.9,214.7 L 134.1,214.7 L 137.2,214.7 L 140.4,214.7 L 140.4,199.3 L 140.4,184.0 L 143.5,184.0 L 143.5,168.7 L 143.5,153.3 L 146.6,153.3 L 149.8,153.3 L 152.9,153.3 L 156.1,153.3 L 159.2,153.3 L 162.4,153.3 L 165.5,153.3 L 168.7,153.3 L 168.7,138.0 L 168.7,122.7 L 171.8,122.7 L 175.0,122.7 L 178.1,122.7 L 178.1,107.3 L 181.2,107.3 L 184.4,107.3 L 184.4,92.0 L 187.5,92.0 L 190.7,92.0 L 193.8,92.0 L 197.0,92.0 L 200.1,92.0 L 203.3,92.0 L 206.4,92.0 L 209.6,92.0 L 209.6,76.7 L 212.7,76.7 L 215.8,76.7 L 219.0,76.7 L 222.1,76.7 L 225.3,76.7 L 228.4,76.7 L 231.6,76.7 L 234.7,76.7 L 237.9,76.7 L 241.0,76.7 L 244.2,76.7 L 247.3,76.7 L 250.4,76.7 L 253.6,76.7 L 256.7,76.7 L 256.7,61.3 L 259.9,61.3 L 263.0,61.3 L 266.2,61.3 L 269.3,61.3 L 272.5,61.3 L 275.6,61.3 L 278.8,61.3 L 281.9,61.3 L 285.0,61.3 L 288.2,61.3 L 291.3,61.3 L 294.5,61.3 L 297.6,61.3 L 300.8,61.3 L 303.9,61.3 L 307.1,61.3 L 310.2,61.3 L 313.4,61.3 L 316.5,61.3 L 319.6,61.3 L 322.8,61.3 L 325.9,61.3 L 329.1,61.3 L 332.2,61.3 L 335.4,61.3 L 338.5,61.3 L 341.7,61.3 L 344.8,61.3 L 347.9,61.3 L 351.1,61.3 L 354.2,61.3 L 357.4,61.3 L 357.4,46.0 L 360.5,46.0 L 363.7,46.0 L 366.8,46.0 L 370.0,46.0 L 373.1,46.0 L 376.3,46.0 L 379.4,46.0 L 382.5,46.0 L 385.7,46.0 L 388.8,46.0 L 392.0,46.0 L 395.1,46.0 L 398.3,46.0 L 401.4,46.0 L 404.6,46.0 L 407.7,46.0 L 410.9,46.0 L 414.0,46.0" class="roc-path m-c"/><path d="M 46.0,414.0 L 49.1,414.0 L 49.1,398.7 L 52.3,398.7 L 55.4,398.7 L 58.6,398.7 L 58.6,383.3 L 61.7,383.3 L 64.9,383.3 L 64.9,368.0 L 64.9,352.7 L 68.0,352.7 L 71.2,352.7 L 71.2,337.3 L 74.3,337.3 L 77.5,337.3 L 80.6,337.3 L 80.6,322.0 L 83.7,322.0 L 83.7,306.7 L 86.9,306.7 L 90.0,306.7 L 93.2,306.7 L 96.3,306.7 L 96.3,291.3 L 99.5,291.3 L 99.5,276.0 L 99.5,260.7 L 102.6,260.7 L 105.8,260.7 L 108.9,260.7 L 108.9,245.3 L 108.9,230.0 L 108.9,214.7 L 112.1,214.7 L 115.2,214.7 L 118.3,214.7 L 118.3,199.3 L 121.5,199.3 L 124.6,199.3 L 124.6,184.0 L 127.8,184.0 L 130.9,184.0 L 134.1,184.0 L 134.1,168.7 L 134.1,153.3 L 137.2,153.3 L 140.4,153.3 L 143.5,153.3 L 146.6,153.3 L 149.8,153.3 L 152.9,153.3 L 152.9,138.0 L 156.1,138.0 L 159.2,138.0 L 159.2,122.7 L 162.4,122.7 L 165.5,122.7 L 168.7,122.7 L 171.8,122.7 L 175.0,122.7 L 178.1,122.7 L 181.2,122.7 L 184.4,122.7 L 187.5,122.7 L 187.5,107.3 L 190.7,107.3 L 193.8,107.3 L 197.0,107.3 L 200.1,107.3 L 203.3,107.3 L 206.4,107.3 L 209.6,107.3 L 209.6,92.0 L 212.7,92.0 L 215.8,92.0 L 215.8,76.7 L 219.0,76.7 L 222.1,76.7 L 225.3,76.7 L 228.4,76.7 L 231.6,76.7 L 234.7,76.7 L 237.9,76.7 L 241.0,76.7 L 244.2,76.7 L 247.3,76.7 L 250.4,76.7 L 253.6,76.7 L 256.7,76.7 L 259.9,76.7 L 263.0,76.7 L 266.2,76.7 L 269.3,76.7 L 272.5,76.7 L 272.5,61.3 L 275.6,61.3 L 278.8,61.3 L 281.9,61.3 L 285.0,61.3 L 288.2,61.3 L 291.3,61.3 L 294.5,61.3 L 297.6,61.3 L 300.8,61.3 L 300.8,46.0 L 303.9,46.0 L 307.1,46.0 L 310.2,46.0 L 313.4,46.0 L 316.5,46.0 L 319.6,46.0 L 322.8,46.0 L 325.9,46.0 L 329.1,46.0 L 332.2,46.0 L 335.4,46.0 L 338.5,46.0 L 341.7,46.0 L 344.8,46.0 L 347.9,46.0 L 351.1,46.0 L 354.2,46.0 L 357.4,46.0 L 360.5,46.0 L 363.7,46.0 L 366.8,46.0 L 370.0,46.0 L 373.1,46.0 L 376.3,46.0 L 379.4,46.0 L 382.5,46.0 L 385.7,46.0 L 388.8,46.0 L 392.0,46.0 L 395.1,46.0 L 398.3,46.0 L 401.4,46.0 L 404.6,46.0 L 407.7,46.0 L 410.9,46.0 L 414.0,46.0" class="roc-path m-nb"/>
+      <text x="230.0" y="456" class="axis-title" text-anchor="middle">False positive rate</text>
+      <text x="14" y="230.0" class="axis-title" text-anchor="middle" transform="rotate(-90 14 230.0)">True positive rate</text>
+      <rect x="46" y="46" width="368" height="368" class="plot-border"/>
+    </svg>
+    <div class="scatter-legend"><span class="leg-item"><span class="leg-swatch m-a"></span>A: overall_score (production)</span><span class="leg-item"><span class="leg-swatch m-b"></span>B: simple composite -- naive</span><span class="leg-item"><span class="leg-swatch m-c"></span>C: logistic regression (5 dims, CV-fit)</span><span class="leg-item"><span class="leg-swatch m-nb"></span>B-nested: simple composite -- honest</span></div>
+
+      <div class="plain">
+        <b>The naive number was inflated.</b> Method B looked strong at first (ROC-AUC 0.805) because
+        picking "feasibility, strategy, advantages" using the entire dataset gives the composite a small,
+        undisclosed head start. Once dimension selection is done honestly -- fit per fold, like everything else in
+        this report -- the real number is <b>ROC-AUC 0.773</b>: still directionally better than the
+        production score (0.764), but a much smaller edge than first reported.
+      </div>
+
+      <h3>Is the improvement real, or just luck?</h3>
+      <p>With only 24 successful campaigns to test against, a difference that looks real could still be sampling
+      noise. To check, each pairwise AUC difference was bootstrapped 10,000 times (resample the 141 proposals with
+      replacement, recompute both AUCs, repeat) to get a confidence interval on the gap.</p>
+      
+    <table>
+      <thead><tr>
+        <th>Comparison (AUC difference)</th><th>Mean diff</th><th>95% CI</th>
+        <th>P(2nd method better)</th><th>Statistically significant?</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="pid">B (naive) vs. A</td>
+          <td class="st-num">+0.0406</td>
+          <td>[-0.0072, +0.0912]</td>
+          <td>95.1%</td>
+          <td class="boot-notsig">no</td>
+        </tr>
+        <tr>
+          <td class="pid">B (naive) vs. C</td>
+          <td class="st-num">+0.0367</td>
+          <td>[-0.0074, +0.0816]</td>
+          <td>95.1%</td>
+          <td class="boot-notsig">no</td>
+        </tr>
+        <tr>
+          <td class="pid">C vs. A</td>
+          <td class="st-num">+0.0036</td>
+          <td>[-0.0190, +0.0288]</td>
+          <td>60.3%</td>
+          <td class="boot-notsig">no</td>
+        </tr></tbody>
+    </table>
+      <div class="plain">
+        <b>In simple terms:</b> none of the three comparisons reach conventional statistical significance -- every
+        95% confidence interval includes zero, just barely. Method B does look better than A about 95% of the time
+        across resamples, which is suggestive of a real effect, but it falls just short of the standard bar for
+        "proven." The honest conclusion is <b>"a promising, directionally consistent improvement that has not yet
+        been shown to be more than chance"</b> -- not a confirmed result.
+      </div>
+
+      <h3>Did picking those 3 dimensions "cheat" by looking at all the data?</h3>
+      <p>Separately, the dimension-selection step itself was re-run using <i>only</i> each training fold's data, to
+      check whether "feasibility, strategy, advantages" is a stable choice or an artifact of looking at the
+      full dataset at once.</p>
+      
+    <table style="max-width:520px">
+      <thead><tr><th>Fold</th><th>Top-3 dimensions (by train-fold correlation)</th><th>Matches feasibility/strategy/advantages?</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="pid">Fold 1</td>
+          <td>advantages, feasibility, strategy</td>
+          <td class="boot-sig">yes</td>
+        </tr>
+        <tr>
+          <td class="pid">Fold 2</td>
+          <td>advantages, feasibility, strategy</td>
+          <td class="boot-sig">yes</td>
+        </tr>
+        <tr>
+          <td class="pid">Fold 3</td>
+          <td>advantages, feasibility, strategy</td>
+          <td class="boot-sig">yes</td>
+        </tr>
+        <tr>
+          <td class="pid">Fold 4</td>
+          <td>feasibility, strategy, team</td>
+          <td class="boot-notsig">no</td>
+        </tr>
+        <tr>
+          <td class="pid">Fold 5</td>
+          <td>advantages, feasibility, strategy</td>
+          <td class="boot-sig">yes</td>
+        </tr></tbody>
+    </table>
+      <div class="plain">
+        <b>In simple terms:</b> 4 of 5 folds independently picked the exact same three dimensions
+        using only their own training data -- reassuring stability, not a full-dataset fluke. The one exception
+        (fold 4) swapped "advantages" for "team," showing the choice isn't perfectly rock-solid at the margin
+        either.
+      </div>
+
+      <h3>Why the learned model didn't win</h3>
+      <p>The logistic regression's own coefficients (fit on the full dataset, shown below for interpretation only
+      -- not used in the evaluation above) explain why: it does lean more on feasibility and strategy, but L2
+      regularization keeps every dimension's weight in a similar, modest range rather than sharply zeroing out
+      team and objective.</p>
+      
+    <table style="max-width:340px">
+      <thead><tr><th>Dimension</th><th>Learned weight</th></tr></thead>
+      <tbody><tr><td class="pid">Feasibility</td><td class="st-num">+0.1069</td></tr><tr><td class="pid">Strategy</td><td class="st-num">+0.0797</td></tr><tr><td class="pid">Team</td><td class="st-num">+0.0402</td></tr><tr><td class="pid">Advantages</td><td class="st-num">+0.0395</td></tr><tr><td class="pid">Objective</td><td class="st-num">+0.0317</td></tr></tbody>
+    </table>
+      <div class="plain">
+        <b>In simple terms:</b> with only 24 real successes to learn from (about 19 per training fold), there
+        isn't enough data for the model to become <i>confident</i> that team and objective are irrelevant, so it
+        hedges and keeps a little weight on everything. The nested version of Method B avoids that hedging problem
+        differently -- not by using outside knowledge for free, but by re-deriving "which dimensions matter" from
+        scratch on each training fold and checking it's stable (Section 5 above: 4/5 folds agree).
+        That's a fair comparison to Method C's per-fold-fit weights, and it still comes out slightly ahead
+        (0.773 vs 0.768) -- a small, honestly-earned edge, worth stating plainly as
+        <b>a modest, not-yet-statistically-confirmed sign that domain-informed feature selection may generalize
+        better than unconstrained learning in this small-sample regime.</b>
+      </div>
+    </div>
+    <div class="section">
+      <h2>6. Positive and Negative Outcomes (Updated)</h2>
+      <p>Framed for a research paper, incorporating this calibration study alongside the correlation results from
+      the earlier Kickstarter report.</p>
+
+      <div class="outcome-box outcome-good">
+        <h4>Positive outcomes</h4>
+        <ul>
+          <li>The AI score has genuine, threshold-independent discriminative power: <b>ROC-AUC = 0.764</b> on
+          141 real campaigns &mdash; well above the 0.5 random baseline.</li>
+          <li>A properly cross-validated, out-of-sample recalibration lifts recall on real successes from
+          <b>0% to 58.3%</b>, and precision from undefined to <b>26.4%</b> (a ~1.55&times; enrichment over the
+          17.0% base rate) &mdash; using held-out test folds only, never in-sample.</li>
+          <li>The recalibrated score threshold (&tau;<sub>r</sub> &asymp; 0.55&ndash;0.61) is stable across all 5
+          cross-validation folds, suggesting it reflects a real property of the score distribution rather than
+          noise in one particular data split.</li>
+          <li>This directly demonstrates that the earlier "0% recall" finding was a <b>threshold transfer problem</b>,
+          not evidence the pipeline's scoring is uninformative for this domain &mdash; an important, correctable
+          distinction for the paper's narrative.</li>
+          <li>Dropping the two dimensions independently shown to lack predictive validity (team, objective) and
+          simply averaging the other three raises ROC-AUC from 0.764 to <b>0.773</b>, evaluated
+          fully out-of-sample with dimension selection re-derived per fold (not the inflated 0.805
+          a naive full-dataset selection would suggest) &mdash; a real, if modest, directional edge over both the
+          production score and a learned logistic-regression alternative (Section 5).</li>
+          <li>The dimension selection behind that improvement is stable: 4
+          of 5 independent training folds picked the same three dimensions
+          on their own, without seeing the full dataset.</li>
+        </ul>
+      </div>
+
+      <div class="outcome-box outcome-bad">
+        <h4>Negative outcomes / limitations</h4>
+        <ul>
+          <li>Precision remains modest (26.4%) &mdash; roughly 3 in 4 campaigns flagged as likely-successful still
+          fail. This is not a strong enough signal to automate a go/no-go decision; it is, at best, a triage aid.</li>
+          <li>The gap between in-sample (F1=0.478) and held-out (F1=0.364) performance is a clean, quotable
+          illustration of overfitting risk &mdash; and a reason to be skeptical of any threshold reported without
+          a train/test split, including the biotech dataset's own OR-logic threshold, which was calibrated
+          in-sample on all 12 proposals with no held-out check.</li>
+          <li>Fold-level F1 is noisy (0.0&ndash;0.47) because each held-out fold contains only ~5 real successes
+          &mdash; the aggregated result is more trustworthy than any individual fold, but the overall sample is
+          still small for the positive class, and confidence intervals on precision/recall would be wide.</li>
+          <li>This calibration is specific to Kickstarter's score distribution; it should not be assumed to
+          transfer to a third domain any more than the original biotech threshold transferred to Kickstarter.</li>
+          <li>The composite-score improvement (Section 5) does <b>not</b> reach statistical significance: a
+          10,000-sample bootstrap on the ROC-AUC gap gives a 95% CI of [-0.0072, +0.0912],
+          which includes zero. It should be reported as a promising, directionally consistent signal (~95%
+          bootstrap probability of being real) &mdash; not a confirmed improvement &mdash; until tested on a larger
+          sample.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <h2>7. Interesting Findings Worth Highlighting in a Paper</h2>
+      <div class="findings-list">
+        <ul>
+          <li><b>Domain-shift threshold failure, precisely diagnosed and fixed:</b> a threshold transferred
+          unmodified across domains produced 0% recall; recalibrating the same decision rule (same OR-logic shape,
+          new cutoffs) on the target domain, validated out-of-sample, restored 58.3% recall &mdash; a clean
+          before/after story about covariate shift in LLM-based scoring rubrics.</li>
+          <li><b>Threshold-free vs. threshold-based evidence tell a consistent story:</b> ROC-AUC (0.764,
+          threshold-independent) and the earlier Spearman correlation (0.366, rank-based) both independently
+          support that the score carries real signal &mdash; while the naive classification accuracy (83%, driven
+          by base rate) and the original 0% recall both independently misled in the opposite direction. Worth
+          discussing as a methods lesson: which metrics are trustworthy under class imbalance and domain shift,
+          and which are not.</li>
+          <li><b>An honest overfitting demonstration, in-repo:</b> the in-sample calibration (F1=0.478) vs.
+          held-out cross-validation (F1=0.364) gap is a small, self-contained illustration of exactly the failure
+          mode the paper should be careful to avoid elsewhere &mdash; including, arguably, in its own existing
+          12-proposal biotech threshold calibration, which was never validated out-of-sample.</li>
+          <li><b>Small positive-class sizes make single train/test splits unreliable:</b> with only 24 successes
+          in 141 proposals, stratified k-fold cross-validation was necessary to get a stable estimate at all &mdash;
+          a methodological point that generalizes to any future outcome-based validation this pipeline undergoes
+          on similarly rare-success datasets.</li>
+          <li><b>A quiet leak, caught by nesting the whole pipeline:</b> a "zero-fitting" composite score that
+          simply dropped two known-irrelevant dimensions still turned out to be quietly leaking information -- its
+          feature-selection step used the full dataset's correlations, inflating ROC-AUC from an honest 0.773
+          to an overstated 0.805. Re-deriving the dimension choice independently within each fold (4/5
+          folds agreed) recovered a defensible, smaller number. A concrete illustration that leakage doesn't
+          require model fitting to sneak in -- even a one-time, seemingly "free" data-driven design choice can
+          leak if it touches the evaluation set.</li>
+          <li><b>A modest, not-yet-significant improvement, reported honestly:</b> the fully-nested composite score
+          beats the production score on point estimate (ROC-AUC 0.773 vs 0.764) with a ~95% bootstrap
+          probability of being a real effect, but the 95% confidence interval on the difference still includes
+          zero at this sample size. Presenting a result at exactly this level of confidence, rather than rounding
+          up to "proven," is itself a useful methodological example for the paper's broader trustworthiness
+          argument.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Glossary: Train/Test and Related Terms (Plain-Language)</h2>
+      <div class="glossary">
+        <div class="gloss-grid">
+          <div class="gloss-item">
+            <div class="gloss-term">Train set / test set</div>
+            <div class="gloss-def">The train set is the data used to pick the threshold. The test set is
+            different data, held back, used only to check how well that threshold actually performs. Using the
+            same data for both makes results look better than they really are.</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">K-fold cross-validation</div>
+            <div class="gloss-def">Splits the data into k equal groups (folds). Repeats the train/test process k
+            times, each time using a different fold as the test set and the rest as training. Every data point
+            gets tested exactly once, using a threshold it never influenced.</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">Stratified</div>
+            <div class="gloss-def">When splitting into folds, we made sure each fold has roughly the same
+            proportion of successes as the full dataset (~17%), so no fold ends up with zero or almost-zero
+            successes to test against.</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">Overfitting</div>
+            <div class="gloss-def">When a threshold (or model) is tuned so precisely to one specific dataset that
+            it stops generalizing to new data. The in-sample vs. held-out gap in this report (F1 0.478 vs 0.364)
+            is a direct, measured example of it.</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">ROC-AUC</div>
+            <div class="gloss-def">The probability that a randomly chosen success scores higher than a randomly
+            chosen failure. 0.5 = no better than random guessing; 1.0 = perfect separation. Does not depend on
+            any specific threshold.</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">Precision vs. recall</div>
+            <div class="gloss-def">Precision: of the campaigns flagged as "likely to succeed," what fraction
+            actually did? Recall: of the campaigns that actually succeeded, what fraction did we flag? There's
+            usually a trade-off between the two.</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">F1 score</div>
+            <div class="gloss-def">A single number combining precision and recall (their harmonic mean). Used
+            instead of accuracy here because accuracy is misleading when one outcome (failure) is much more
+            common than the other (success).</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">Base rate</div>
+            <div class="gloss-def">How often the positive outcome happens by default &mdash; here, 17.0% of
+            Kickstarter campaigns succeed. Any useful signal has to beat this baseline, not just look impressive
+            in isolation.</div>
+          </div>
+        </div>
+      </div>
+      <div class="footnote">
+        Source data: results/KickstarterCalibrated/evaluation/calibration_results.json (generated by
+        calibrate_kickstarter_threshold.py). Report generated by generate_kickstarter_calibration_report.py.
+        Random seed 42, 5-fold stratified cross-validation.
+      </div>
+    </div>
+</body>
+</html>

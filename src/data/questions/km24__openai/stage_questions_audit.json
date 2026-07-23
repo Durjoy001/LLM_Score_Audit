@@ -1,0 +1,617 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km24__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km24__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 184,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'Speedy cleaner' is led by Bryan DaMorada Boudreault, who is identified as a core team member. The information provided focuses solely on the leadership aspect of the team.",
+        "first_key_point_preview": "Bryan DaMorada Boudreault is the creator of the project 'Speedy cleaner'.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.26,
+        "raw_chars": 4440,
+        "usage": {
+          "prompt_tokens": 3258,
+          "completion_tokens": 971,
+          "total_tokens": 4229
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership experience",
+        "domain expertise",
+        "execution capacity",
+        "governance structure",
+        "collaboration potential",
+        "validation experience",
+        "risk mitigation strategies",
+        "project timeline",
+        "team workload",
+        "decision-making process"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Bryan DaMorada Boudreault's prior execution record and leadership experience position the project 'Speedy cleaner' for success in its intended application?",
+          "question_en_preview": "How does Bryan DaMorada Boudreault's prior execution record and leadership experience position the project 'Speedy cleaner' for success in its intended application?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does Bryan DaMorada Boudreault bring to the project, and how does this expertise address the target customer problem?",
+          "question_en_preview": "What specific domain expertise does Bryan DaMorada Boudreault bring to the project, and how does this expertise address the target customer problem?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited information provided, how might the current workload of Bryan DaMorada Boudreault impact the project's execution capacity and timeline?",
+          "question_en_preview": "Given the limited information provided, how might the current workload of Bryan DaMorada Boudreault impact the project's execution capacity and timeline?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures or decision-making processes are in place to support the project 'Speedy cleaner', and how do they mitigate potential risks associated with limited team information?",
+          "question_en_preview": "What governance structures or decision-making processes are in place to support the project 'Speedy cleaner', and how do they mitigate potential risks associated with limited team information?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What potential partnerships or collaborations could enhance the project's execution, and how does the team plan to establish these relationships?",
+          "question_en_preview": "What potential partnerships or collaborations could enhance the project's execution, and how does the team plan to establish these relationships?"
+        }
+      ],
+      "elapsed_sec": 16.26,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 307,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "'Speedy cleaner' aims to be an all-in-one, user-friendly cleaning, updating, and anti-malware program that is completely free to use. The project had a funding goal of $1,412, but it was unsuccessful in reaching this target by the deadline of March 6, 2015, and relies on ad reven ...",
+        "first_key_point_preview": "'Speedy cleaner' is designed as an all-in-one cleaner, updater, and anti-malware program.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.67,
+        "raw_chars": 4556,
+        "usage": {
+          "prompt_tokens": 3429,
+          "completion_tokens": 1047,
+          "total_tokens": 4476
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user-friendly interface",
+        "ad revenue model",
+        "funding goal",
+        "success metrics",
+        "cleaning and anti-malware",
+        "project milestones",
+        "value creation",
+        "market need",
+        "sustainability challenges"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 2,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused is the overall goal of 'Speedy cleaner' as an all-in-one cleaning, updating, and anti-malware program? Are there any unrelated sub-goals that could distract from this primary objective?",
+          "question_en_preview": "How clear and focused is the overall goal of 'Speedy cleaner' as an all-in-one cleaning, updating, and anti-malware program? Are there any unrelated sub-goals that could distract from this primary objective?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does 'Speedy cleaner' align with the stated unmet need for a user-friendly cleaning and anti-malware solution? What evidence supports the urgency of this need?",
+          "question_en_preview": "To what extent does 'Speedy cleaner' align with the stated unmet need for a user-friendly cleaning and anti-malware solution? What evidence supports the urgency of this need?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the funding goal for 'Speedy cleaner' was not met, how reasonable and executable are the proposed milestones and timelines for achieving the project's objectives?",
+          "question_en_preview": "Given that the funding goal for 'Speedy cleaner' was not met, how reasonable and executable are the proposed milestones and timelines for achieving the project's objectives?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are defined for 'Speedy cleaner'? How do these metrics relate to the project's goals and the expected outcomes for users?",
+          "question_en_preview": "What clear and quantifiable success metrics are defined for 'Speedy cleaner'? How do these metrics relate to the project's goals and the expected outcomes for users?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does 'Speedy cleaner' create value and capture revenue through its ad-based model, given that it is offered for free? What are the implications for its long-term sustainability?",
+          "question_en_preview": "How does 'Speedy cleaner' create value and capture revenue through its ad-based model, given that it is offered for free? What are the implications for its long-term sustainability?"
+        }
+      ],
+      "elapsed_sec": 14.67,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 283,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop 'Speedy cleaner', a freeware-based all-in-one cleaning, updating, and anti-malware program. The funding goal was set at $1,412, but the project did not meet this target by the deadline of March 6, 2015, which raises concerns about its financial viabili ...",
+        "first_key_point_preview": "'Speedy cleaner' is designed as an easy-to-use cleaner, updater, and anti-malware program.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.82,
+        "raw_chars": 5498,
+        "usage": {
+          "prompt_tokens": 3492,
+          "completion_tokens": 1202,
+          "total_tokens": 4694
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "ad revenue model",
+        "user retention strategy",
+        "financial viability assessment",
+        "validation steps",
+        "quality assurance measures",
+        "scalability concerns",
+        "go-to-market strategy",
+        "trade-offs in freeware design",
+        "funding strategy alternatives",
+        "user experience impact"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 2,
+          "business_model_and_unit_economics": 2,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that 'Speedy cleaner' relies on ad revenue for funding, how does the project plan to attract and retain users to ensure a sustainable revenue stream?",
+          "question_en_preview": "Given that 'Speedy cleaner' relies on ad revenue for funding, how does the project plan to attract and retain users to ensure a sustainable revenue stream?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Considering the initial funding goal of $1,412 was not achieved, what are the implications for the project's financial viability and what alternative funding strategies could be considered?",
+          "question_en_preview": "Considering the initial funding goal of $1,412 was not achieved, what are the implications for the project's financial viability and what alternative funding strategies could be considered?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps are planned to ensure that 'Speedy cleaner' meets user needs and performs effectively as a cleaner, updater, and anti-malware program?",
+          "question_en_preview": "What validation steps are planned to ensure that 'Speedy cleaner' meets user needs and performs effectively as a cleaner, updater, and anti-malware program?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the major trade-offs considered in the design of 'Speedy cleaner' as a freeware-based solution, and how do these trade-offs impact user experience and market competitiveness?",
+          "question_en_preview": "What are the major trade-offs considered in the design of 'Speedy cleaner' as a freeware-based solution, and how do these trade-offs impact user experience and market competitiveness?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What quality assurance measures are in place to ensure that 'Speedy cleaner' complies with relevant standards and effectively addresses user concerns regarding malware?",
+          "question_en_preview": "What quality assurance measures are in place to ensure that 'Speedy cleaner' complies with relevant standards and effectively addresses user concerns regarding malware?"
+        }
+      ],
+      "elapsed_sec": 13.82,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 248,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "'Speedy cleaner' represents an innovative approach as an all-in-one cleaner, updater, and anti-malware program, emphasizing ease of use. This product aims to streamline user experience by integrating multiple functionalities into a single solution.",
+        "first_key_point_preview": "'Speedy cleaner' combines cleaning, updating, and anti-malware features into one product.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.82,
+        "raw_chars": 4383,
+        "usage": {
+          "prompt_tokens": 3335,
+          "completion_tokens": 1000,
+          "total_tokens": 4335
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user-friendly design",
+        "integrated functionalities",
+        "real-world effectiveness",
+        "competitive advantages",
+        "intellectual property strategy",
+        "market differentiation",
+        "risk of commoditization",
+        "evidence of performance",
+        "customer accessibility",
+        "extension to new segments"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does 'Speedy cleaner' demonstrate true novelty compared to existing cleaning, updating, and anti-malware solutions in the market?",
+          "question_en_preview": "How does 'Speedy cleaner' demonstrate true novelty compared to existing cleaning, updating, and anti-malware solutions in the market?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does 'Speedy cleaner' offer over existing similar products in terms of user experience, performance, and accessibility?",
+          "question_en_preview": "What clear advantages does 'Speedy cleaner' offer over existing similar products in terms of user experience, performance, and accessibility?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness and user-friendliness of 'Speedy cleaner' in real-world applications, and how does this evidence compare to industry standards?",
+          "question_en_preview": "What evidence supports the effectiveness and user-friendliness of 'Speedy cleaner' in real-world applications, and how does this evidence compare to industry standards?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee for 'Speedy cleaner' in terms of obsolescence or commoditization within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee for 'Speedy cleaner' in terms of obsolescence or commoditization within the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property of 'Speedy cleaner', and how do these strategies support its competitive position?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property of 'Speedy cleaner', and how do these strategies support its competitive position?"
+        }
+      ],
+      "elapsed_sec": 8.82,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 330,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is challenged by competition and reliance on advertisement revenue. The project aims to fund resources such as a server and a domain, and it seeks to enable the creator to work full-time on the program. However, the funding goal was not met, which r ...",
+        "first_key_point_preview": "The project faced risks and challenges from competition and advertisement revenue.",
+        "first_risk_preview": "The project faced risks and challenges from competition and advertisement revenue.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.99,
+        "raw_chars": 4026,
+        "usage": {
+          "prompt_tokens": 3425,
+          "completion_tokens": 861,
+          "total_tokens": 4286
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding shortfall impact",
+        "critical resource acquisition",
+        "competition risk strategies",
+        "advertisement revenue barriers",
+        "timeline-resource alignment",
+        "customer acceptance strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "resources_and_infrastructure": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project's funding goal was not met by March 6, 2015, what impact does this have on the project's long-term sustainability and ability to secure necessary resources?",
+          "question_en_preview": "Given that the project's funding goal was not met by March 6, 2015, what impact does this have on the project's long-term sustainability and ability to secure necessary resources?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific resources (e.g., server, domain) are critical for the project's success, and how does the failure to secure funding affect their acquisition and long-term stability?",
+          "question_en_preview": "What specific resources (e.g., server, domain) are critical for the project's success, and how does the failure to secure funding affect their acquisition and long-term stability?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the identified risk from competition and reliance on advertisement revenue impact the project's feasibility, and what specific strategies could be employed to mitigate these risks?",
+          "question_en_preview": "How does the identified risk from competition and reliance on advertisement revenue impact the project's feasibility, and what specific strategies could be employed to mitigate these risks?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation exist due to the project's reliance on advertisement revenue, and how might these barriers affect customer acceptance and overall project viability?",
+          "question_en_preview": "What barriers to implementation exist due to the project's reliance on advertisement revenue, and how might these barriers affect customer acceptance and overall project viability?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how well-aligned are the project's timeline and resource needs given the current funding shortfall? What evidence would increase your confidence in this alignment?",
+          "question_en_preview": "On a scale of 1 to 5, how well-aligned are the project's timeline and resource needs given the current funding shortfall? What evidence would increase your confidence in this alignment?"
+        }
+      ],
+      "elapsed_sec": 12.99,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T22:04:57Z",
+  "elapsed_sec": 66.57,
+  "total_questions": 38,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km24__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km24__openai/generated_questions_detail.json"
+}

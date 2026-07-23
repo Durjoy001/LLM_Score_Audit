@@ -1,0 +1,621 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt44__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt44__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 187,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team consists of Taseen Ahmed, a university student studying electrical engineering. However, Taseen's ADHD impacts his concentration, resulting in gaps in his studying and knowledge.",
+        "first_key_point_preview": "Taseen Ahmed is a university student studying electrical engineering.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 20.5,
+        "raw_chars": 4555,
+        "usage": {
+          "prompt_tokens": 3269,
+          "completion_tokens": 985,
+          "total_tokens": 4254
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership experience",
+        "electrical engineering background",
+        "validation processes",
+        "ADHD support strategies",
+        "governance structures",
+        "collaboration networks",
+        "team capacity assessment",
+        "project execution challenges",
+        "decision-making processes"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "validation_and_compliance_experience": 1,
+          "team_capacity_and_bandwidth": 2,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that Taseen Ahmed is a university student, what prior leadership or execution experience does he have that would support the advancement of this project?",
+          "question_en_preview": "Given that Taseen Ahmed is a university student, what prior leadership or execution experience does he have that would support the advancement of this project?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Taseen Ahmed's background in electrical engineering equip him to address the specific challenges and needs of the project?",
+          "question_en_preview": "How does Taseen Ahmed's background in electrical engineering equip him to address the specific challenges and needs of the project?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does Taseen Ahmed have with validation or compliance processes relevant to the project, especially considering his current educational status?",
+          "question_en_preview": "What experience does Taseen Ahmed have with validation or compliance processes relevant to the project, especially considering his current educational status?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering Taseen Ahmed's ADHD and its impact on his concentration, how does the team plan to ensure that he has the necessary support and resources to effectively contribute to the project?",
+          "question_en_preview": "Considering Taseen Ahmed's ADHD and its impact on his concentration, how does the team plan to ensure that he has the necessary support and resources to effectively contribute to the project?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What governance structures or decision-making processes are in place to address the potential risks associated with Taseen Ahmed's concentration challenges?",
+          "question_en_preview": "What governance structures or decision-making processes are in place to address the potential risks associated with Taseen Ahmed's concentration challenges?"
+        }
+      ],
+      "elapsed_sec": 20.5,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 308,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The AI Tutor project aims to develop a personal learning assistant software that helps students learn by asking questions and receiving explanations. The project is designed to become smarter over time as more users interact with it, ultimately changing how people learn and makin ...",
+        "first_key_point_preview": "The AI Tutor project has a funding goal of $70,614.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.4,
+        "raw_chars": 3905,
+        "usage": {
+          "prompt_tokens": 3402,
+          "completion_tokens": 877,
+          "total_tokens": 4279
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "learning needs assessment",
+        "funding goal clarity",
+        "milestone feasibility",
+        "success metrics definition",
+        "value creation logic",
+        "impact on education accessibility",
+        "user engagement strategy",
+        "project timeline evaluation",
+        "alignment with educational objectives"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of the AI Tutor project align with the stated learning needs of students? Please evaluate the urgency of this alignment.",
+          "question_en_preview": "How well do the objectives of the AI Tutor project align with the stated learning needs of students? Please evaluate the urgency of this alignment."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "To what extent are the overall goals of the AI Tutor project clear and focused? Are there any unrelated sub-goals that could detract from its primary mission?",
+          "question_en_preview": "To what extent are the overall goals of the AI Tutor project clear and focused? Are there any unrelated sub-goals that could detract from its primary mission?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the AI Tutor project, and how reasonable and executable do you find them given the funding period from September 28, 2022, to October 28, 2022?",
+          "question_en_preview": "What are the proposed milestones for the AI Tutor project, and how reasonable and executable do you find them given the funding period from September 28, 2022, to October 28, 2022?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics could be established for the AI Tutor project to measure its impact on learning accessibility and effectiveness?",
+          "question_en_preview": "What quantifiable success metrics could be established for the AI Tutor project to measure its impact on learning accessibility and effectiveness?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the AI Tutor project plan to create value and capture funding or revenue while delivering its educational impact? Please discuss the business logic behind its objectives.",
+          "question_en_preview": "How does the AI Tutor project plan to create value and capture funding or revenue while delivering its educational impact? Please discuss the business logic behind its objectives."
+        }
+      ],
+      "elapsed_sec": 15.4,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 366,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The AI Tutor project aims to develop an AI software that assists users with various questions and topics, becoming increasingly intelligent through user interactions. The project has a funding goal of $70,614 and a defined funding period from September 28, 2022, to October 28, 20 ...",
+        "first_key_point_preview": "The AI Tutor project aims to help users with any question or topic they struggle with.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 24.02,
+        "raw_chars": 4815,
+        "usage": {
+          "prompt_tokens": 3519,
+          "completion_tokens": 1037,
+          "total_tokens": 4556
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "go-to-market strategy",
+        "user engagement channels",
+        "fund allocation plan",
+        "unit economics",
+        "validation stages",
+        "quality compliance measures",
+        "scaling risks",
+        "strategic partnerships",
+        "pilot deployments",
+        "user testing phases"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 2,
+          "development_and_validation_path": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the AI Tutor project plan to reach its target users and secure adoption? Please discuss the proposed go-to-market strategy and any identified channels for user engagement.",
+          "question_en_preview": "How does the AI Tutor project plan to reach its target users and secure adoption? Please discuss the proposed go-to-market strategy and any identified channels for user engagement."
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the funding goal of $70,614, how does the AI Tutor project plan to allocate these funds to ensure effective development and market entry? What are the expected unit economics and revenue model?",
+          "question_en_preview": "Given the funding goal of $70,614, how does the AI Tutor project plan to allocate these funds to ensure effective development and market entry? What are the expected unit economics and revenue model?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation stages does the AI Tutor project plan to implement to ensure the software meets user needs and performs effectively? Please outline any proposed pilot deployments or user testing phases.",
+          "question_en_preview": "What validation stages does the AI Tutor project plan to implement to ensure the software meets user needs and performs effectively? Please outline any proposed pilot deployments or user testing phases."
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quality and compliance strategies are in place for the AI Tutor project to ensure the software adheres to relevant standards and regulations? Are there any specific compliance measures identified?",
+          "question_en_preview": "What quality and compliance strategies are in place for the AI Tutor project to ensure the software adheres to relevant standards and regulations? Are there any specific compliance measures identified?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the limited risk information provided, what potential risks do you foresee in scaling the AI Tutor project, and how might these impact its long-term viability?",
+          "question_en_preview": "Considering the limited risk information provided, what potential risks do you foresee in scaling the AI Tutor project, and how might these impact its long-term viability?"
+        }
+      ],
+      "elapsed_sec": 24.02,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 397,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The AI Tutor software represents an innovative approach to education by utilizing artificial intelligence to enhance learning experiences. It is designed to be reusable and does not require physical materials, making it accessible and adaptable for various users. Additionally, th ...",
+        "first_key_point_preview": "The AI Tutor software is designed to help students learn by asking questions and receiving explanations.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.53,
+        "raw_chars": 4628,
+        "usage": {
+          "prompt_tokens": 3388,
+          "completion_tokens": 1009,
+          "total_tokens": 4397
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user engagement metrics",
+        "educational technology comparison",
+        "intellectual property strategy",
+        "adaptability to user segments",
+        "evidence of effectiveness",
+        "risk of commoditization",
+        "digital learning solutions",
+        "accessibility advantages",
+        "innovation validation studies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the AI Tutor software's approach to enhancing learning experiences compare to existing educational technologies? Please provide specific examples of its novelty.",
+          "question_en_preview": "How does the AI Tutor software's approach to enhancing learning experiences compare to existing educational technologies? Please provide specific examples of its novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the AI Tutor software offer over traditional educational methods or other digital learning solutions in terms of accessibility and user engagement?",
+          "question_en_preview": "What clear advantages does the AI Tutor software offer over traditional educational methods or other digital learning solutions in terms of accessibility and user engagement?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the claim that the AI Tutor software will improve its effectiveness over time as it interacts with more users? What metrics or studies can validate this?",
+          "question_en_preview": "What evidence supports the claim that the AI Tutor software will improve its effectiveness over time as it interacts with more users? What metrics or studies can validate this?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the AI Tutor software becoming obsolete or commoditized within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the AI Tutor software becoming obsolete or commoditized within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How can the AI Tutor software be adapted for different educational contexts or user segments? What are the potential challenges in extending its use?",
+          "question_en_preview": "How can the AI Tutor software be adapted for different educational contexts or user segments? What are the potential challenges in extending its use?"
+        }
+      ],
+      "elapsed_sec": 16.53,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 280,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is challenged by funding risks and the need for significant computational resources for training the machine learning model. The project has faced difficulties in meeting its funding goals, which may impact its overall execution and cost management.",
+        "first_key_point_preview": "The project has risks related to funding, which could affect its development.",
+        "first_risk_preview": "There are risks involved with developing the project, particularly related to funding.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 20.53,
+        "raw_chars": 4648,
+        "usage": {
+          "prompt_tokens": 3432,
+          "completion_tokens": 985,
+          "total_tokens": 4417
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding risks",
+        "computational resources",
+        "operational execution plan",
+        "customer acceptance",
+        "implementation barriers",
+        "timeline alignment",
+        "cost management",
+        "resource acquisition",
+        "risk identification",
+        "project execution challenges"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "resources_and_infrastructure": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific steps are being taken to address the funding risks mentioned, particularly in light of the project's failure to meet its funding goal by the deadline of October 28, 2022?",
+          "question_en_preview": "What specific steps are being taken to address the funding risks mentioned, particularly in light of the project's failure to meet its funding goal by the deadline of October 28, 2022?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How will the project secure the significant computational resources required for training the machine learning model, and what are the potential impacts if these resources are not obtained?",
+          "question_en_preview": "How will the project secure the significant computational resources required for training the machine learning model, and what are the potential impacts if these resources are not obtained?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the challenges in funding and resource acquisition, what is the detailed operational execution plan to ensure the project remains on track, including key tasks and timelines?",
+          "question_en_preview": "Given the challenges in funding and resource acquisition, what is the detailed operational execution plan to ensure the project remains on track, including key tasks and timelines?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific risks have been identified related to funding, and how might they impact the project's overall execution and cost management?",
+          "question_en_preview": "What specific risks have been identified related to funding, and how might they impact the project's overall execution and cost management?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What barriers to implementation have been identified, particularly in relation to customer acceptance and procurement, and how does the project plan to overcome these barriers?",
+          "question_en_preview": "What barriers to implementation have been identified, particularly in relation to customer acceptance and procurement, and how does the project plan to overcome these barriers?"
+        }
+      ],
+      "elapsed_sec": 20.53,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T19:44:56Z",
+  "elapsed_sec": 97.0,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt44__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt44__openai/generated_questions_detail.json"
+}

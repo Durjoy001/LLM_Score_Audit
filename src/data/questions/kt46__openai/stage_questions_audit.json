@@ -1,0 +1,608 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt46__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt46__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 304,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team consists of Logica Analysis Inc. and Maple Intercontinental Trade Inc., with plans to hire software engineering students and a Chartered Financial Analyst. The project is based in Toronto, Canada, and aims to provide a downloadable SDK for developers interested i ...",
+        "first_key_point_preview": "Logica Analysis Inc. plans to hire software engineer students and a Chartered financial analyst.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 43.45,
+        "raw_chars": 5264,
+        "usage": {
+          "prompt_tokens": 3331,
+          "completion_tokens": 1087,
+          "total_tokens": 4418
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership experience",
+        "domain expertise in trading algorithms",
+        "capacity for project execution",
+        "collaboration with financial analysts",
+        "compliance with financial regulations",
+        "software engineering student recruitment",
+        "partnership stability",
+        "project governance",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the prior experience of the leadership team at Logica Analysis Inc. and Maple Intercontinental Trade Inc. position them to successfully execute this project, particularly in developing the Fast Robot Trader soft ...",
+          "question_en_preview": "How does the prior experience of the leadership team at Logica Analysis Inc. and Maple Intercontinental Trade Inc. position them to successfully execute this project, particularly in developing the Fast Robot Trader soft ..."
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that is relevant to the development of the trading algorithm and the downloadable SDK, and how does this expertise enhance the project's feasibility?",
+          "question_en_preview": "What specific domain expertise does the team possess that is relevant to the development of the trading algorithm and the downloadable SDK, and how does this expertise enhance the project's feasibility?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the current workload and the plan to hire software engineering students and a Chartered Financial Analyst, does the team have sufficient capacity to meet the project's demands? Please evaluate any potential r ...",
+          "question_en_preview": "Considering the current workload and the plan to hire software engineering students and a Chartered Financial Analyst, does the team have sufficient capacity to meet the project's demands? Please evaluate any potential r ..."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance in the context of developing financial software, and how does this experience mitigate potential risks associated with regulatory requirements?",
+          "question_en_preview": "What experience does the team have with validation and compliance in the context of developing financial software, and how does this experience mitigate potential risks associated with regulatory requirements?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What existing collaborations or partnerships does the team have that could support the development and distribution of the Fast Robot Trader software and SDK, and how stable are these relationships?",
+          "question_en_preview": "What existing collaborations or partnerships does the team have that could support the development and distribution of the Fast Robot Trader software and SDK, and how stable are these relationships?"
+        }
+      ],
+      "elapsed_sec": 43.45,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 367,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop the Fast Robot Trader software, which will enable users to automate complex trading strategies across various financial markets. Key milestones include securing funding, hiring a software engineering team, and developing the algorithm, with a funding g ...",
+        "first_key_point_preview": "The overall goal is to develop the Fast Robot Trader software for automating trading strategies.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.21,
+        "raw_chars": 3131,
+        "usage": {
+          "prompt_tokens": 3431,
+          "completion_tokens": 699,
+          "total_tokens": 4130
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "automated trading strategies",
+        "funding milestones",
+        "success metrics",
+        "market alignment",
+        "execution timeline",
+        "risk assessment",
+        "goal clarity",
+        "project feasibility",
+        "stakeholder needs"
+      ],
+      "cleaned_question_count": 5,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined is the overall goal of developing the Fast Robot Trader software, and are there any unrelated sub-goals that could distract from this objective?",
+          "question_en_preview": "How clearly defined is the overall goal of developing the Fast Robot Trader software, and are there any unrelated sub-goals that could distract from this objective?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the project align with the urgent need for automating trading strategies in financial markets, and what evidence supports this alignment?",
+          "question_en_preview": "To what extent does the project align with the urgent need for automating trading strategies in financial markets, and what evidence supports this alignment?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness and executability of the key milestones outlined, such as securing funding and hiring a software engineering team. Are these timelines realistic?",
+          "question_en_preview": "Evaluate the reasonableness and executability of the key milestones outlined, such as securing funding and hiring a software engineering team. Are these timelines realistic?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics are defined for the Fast Robot Trader project, and how do they align with the overall objectives?",
+          "question_en_preview": "What quantifiable success metrics are defined for the Fast Robot Trader project, and how do they align with the overall objectives?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too high or too low given the current funding status?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too high or too low given the current funding status?"
+        }
+      ],
+      "elapsed_sec": 14.21,
+      "final_question_count": 5
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 360,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Fast Robot Trader project aims to automate complex trading strategies across various financial markets, with a funding goal of $141,228. The project has a defined funding period from July 20, 2014, to August 24, 2014, and has achieved 107% of its funding goal. Users can inves ...",
+        "first_key_point_preview": "The project allows users to automate trading strategies in forex, options, futures, stocks, ETFs, and commodities markets.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 37.8,
+        "raw_chars": 5181,
+        "usage": {
+          "prompt_tokens": 3519,
+          "completion_tokens": 1144,
+          "total_tokens": 4663
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "automated trading strategies",
+        "funding model",
+        "user demand evidence",
+        "validation stages",
+        "regulatory compliance",
+        "competitive positioning",
+        "scaling strategy",
+        "tiered support model",
+        "budget realism",
+        "trade-offs in design"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 2,
+          "business_model_and_unit_economics": 2,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Fast Robot Trader project plan to reach its users and secure funding from backers, particularly in terms of its tiered support model?",
+          "question_en_preview": "How does the Fast Robot Trader project plan to reach its users and secure funding from backers, particularly in terms of its tiered support model?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project has achieved 107% of its funding goal, what evidence supports the sustainability of its revenue model and user demand for automated trading strategies?",
+          "question_en_preview": "Given that the project has achieved 107% of its funding goal, what evidence supports the sustainability of its revenue model and user demand for automated trading strategies?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the major trade-offs considered in the design of the Fast Robot Trader's automated trading solution, and how have these been validated?",
+          "question_en_preview": "What are the major trade-offs considered in the design of the Fast Robot Trader's automated trading solution, and how have these been validated?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation stages does the Fast Robot Trader project plan to implement to ensure the effectiveness of its trading strategies before full deployment?",
+          "question_en_preview": "What validation stages does the Fast Robot Trader project plan to implement to ensure the effectiveness of its trading strategies before full deployment?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What quality and compliance measures are in place to ensure that the Fast Robot Trader adheres to regulatory standards in the financial markets?",
+          "question_en_preview": "What quality and compliance measures are in place to ensure that the Fast Robot Trader adheres to regulatory standards in the financial markets?"
+        }
+      ],
+      "elapsed_sec": 37.8,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 316,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Fast Robot Trader represents an innovative approach to high-frequency trading by utilizing advanced software that learns from live news and analyzes big data for trading decisions. This technology aims to provide a cost-effective alternative to existing high-cost trading solution ...",
+        "first_key_point_preview": "Fast Robot Trader is similar to expensive software developed by banks or stock exchanges.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 29.74,
+        "raw_chars": 5445,
+        "usage": {
+          "prompt_tokens": 3365,
+          "completion_tokens": 1176,
+          "total_tokens": 4541
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "high-frequency trading technology",
+        "live news analysis",
+        "big data trading decisions",
+        "cost-effective trading solutions",
+        "competitive differentiation",
+        "intellectual property strategy",
+        "evidence of effectiveness",
+        "risk of commoditization",
+        "market extension potential"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 2,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Fast Robot Trader's approach to high-frequency trading differ from existing solutions used by banks and stock exchanges? Please provide specific examples of its novelty.",
+          "question_en_preview": "How does Fast Robot Trader's approach to high-frequency trading differ from existing solutions used by banks and stock exchanges? Please provide specific examples of its novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does Fast Robot Trader offer over traditional high-cost trading solutions in terms of customer value, performance, and cost-effectiveness?",
+          "question_en_preview": "What specific advantages does Fast Robot Trader offer over traditional high-cost trading solutions in terms of customer value, performance, and cost-effectiveness?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of Fast Robot Trader's technology in making trading decisions based on live news and big data analysis? Please detail any experimental or operational evidence available.",
+          "question_en_preview": "What evidence supports the effectiveness of Fast Robot Trader's technology in making trading decisions based on live news and big data analysis? Please detail any experimental or operational evidence available."
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to Fast Robot Trader becoming obsolete or commoditized within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to Fast Robot Trader becoming obsolete or commoditized within the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What strategies does Fast Robot Trader have in place for protecting its intellectual property, and how do these strategies support its competitive position in the high-frequency trading market?",
+          "question_en_preview": "What strategies does Fast Robot Trader have in place for protecting its intellectual property, and how do these strategies support its competitive position in the high-frequency trading market?"
+        }
+      ],
+      "elapsed_sec": 29.74,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 443,
+        "key_points_count": 6,
+        "risks_count": 4,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Fast Robot Trader project is challenged by various risks, including insufficient funding, product obsolescence, competition, and third-party credit risks. The project has a funding goal of $141,228, but it was unsuccessful in reaching this target by the dea ...",
+        "first_key_point_preview": "The project faces business risks, including insufficient funds to accomplish management's immediate objectives.",
+        "first_risk_preview": "The project faces business risks, including insufficient funds to accomplish management's immediate objectives.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.99,
+        "raw_chars": 4075,
+        "usage": {
+          "prompt_tokens": 3491,
+          "completion_tokens": 893,
+          "total_tokens": 4384
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding goal",
+        "financial sustainability",
+        "risk mitigation strategies",
+        "key employee reliance",
+        "implementation barriers",
+        "customer acceptance",
+        "competition risks",
+        "resource alignment",
+        "budget allocation",
+        "third-party credit risk"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "risk_management": 1,
+          "operational_execution_plan": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project was initially unable to reach its funding goal of $141,228 by the deadline, how does the current status of being reported as 107% funded impact the project's financial sustainability and budget all ...",
+          "question_en_preview": "Given that the project was initially unable to reach its funding goal of $141,228 by the deadline, how does the current status of being reported as 107% funded impact the project's financial sustainability and budget all ..."
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies can be implemented to mitigate the identified risks of insufficient funds, product obsolescence, competition, and third-party credit risks?",
+          "question_en_preview": "What specific strategies can be implemented to mitigate the identified risks of insufficient funds, product obsolescence, competition, and third-party credit risks?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the reliance on key employees affect the operational execution plan, and what contingency plans are in place to address potential gaps in personnel?",
+          "question_en_preview": "How does the reliance on key employees affect the operational execution plan, and what contingency plans are in place to address potential gaps in personnel?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation have been identified in the proposal, particularly regarding customer acceptance and competition, and how can these be addressed?",
+          "question_en_preview": "What barriers to implementation have been identified in the proposal, particularly regarding customer acceptance and competition, and how can these be addressed?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how well aligned are the project's timeline and resources, considering the identified risks? Please provide evidence that would increase your score.",
+          "question_en_preview": "On a scale of 1-5, how well aligned are the project's timeline and resources, considering the identified risks? Please provide evidence that would increase your score."
+        }
+      ],
+      "elapsed_sec": 15.99,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T19:59:14Z",
+  "elapsed_sec": 141.21,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt46__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt46__openai/generated_questions_detail.json"
+}

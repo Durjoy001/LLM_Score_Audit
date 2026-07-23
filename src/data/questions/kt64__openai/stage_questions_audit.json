@@ -1,0 +1,619 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt64__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt64__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 319,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Falak Shah, who is the creator of the Meghnad application. Despite having no technical background or coding experience, Shah actively participated in the development process by focusing on user journey and pain points, as well as creating user personas and g ...",
+        "first_key_point_preview": "Falak Shah is the creator and leader of the Meghnad application.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.07,
+        "raw_chars": 3417,
+        "usage": {
+          "prompt_tokens": 3331,
+          "completion_tokens": 709,
+          "total_tokens": 4040
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "user journey analysis",
+        "pain point identification",
+        "user persona development",
+        "feedback collection methods",
+        "leadership track record",
+        "domain-specific expertise",
+        "validation experience",
+        "collaboration stability",
+        "team capacity assessment"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "validation_and_compliance_experience": 1,
+          "team_capacity_and_bandwidth": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Falak Shah's leadership experience with the Meghnad application position the team to advance this project, considering his lack of technical background?",
+          "question_en_preview": "How does Falak Shah's leadership experience with the Meghnad application position the team to advance this project, considering his lack of technical background?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that can effectively address the user journey and pain points identified during the development of the Meghnad application?",
+          "question_en_preview": "What specific domain expertise does the team possess that can effectively address the user journey and pain points identified during the development of the Meghnad application?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential challenges could arise from the team's lack of experience in validation and compliance for the Meghnad application?",
+          "question_en_preview": "Given the limited risk information provided, what potential challenges could arise from the team's lack of experience in validation and compliance for the Meghnad application?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Considering the current workload and the absence of detailed risk information, does the team have sufficient capacity to manage the development and potential scaling of the Meghnad application?",
+          "question_en_preview": "Considering the current workload and the absence of detailed risk information, does the team have sufficient capacity to manage the development and potential scaling of the Meghnad application?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What existing collaboration networks or partnerships does the team have that could support the development and deployment of the Meghnad application, and how stable are these relationships?",
+          "question_en_preview": "What existing collaboration networks or partnerships does the team have that could support the development and deployment of the Meghnad application, and how stable are these relationships?"
+        }
+      ],
+      "elapsed_sec": 9.07,
+      "final_question_count": 6
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 423,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a QR code-based payment application named Meghnad, focusing on the North American market. Its primary objectives include protecting users from credit/debit card fraud, saving transaction fees for small vendors, and providing a hassle-free payment solut ...",
+        "first_key_point_preview": "The project is a QR code-based payment application called Meghnad.",
+        "first_risk_preview": "The main challenge for the initial days is going to be awareness and acceptance of new types of mobile payment applications.",
+        "first_mitigation_preview": "The creator educated themselves about the problem they were trying to solve and how QR codes were used in the payment industry."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.95,
+        "raw_chars": 4207,
+        "usage": {
+          "prompt_tokens": 3453,
+          "completion_tokens": 931,
+          "total_tokens": 4384
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user protection from fraud",
+        "transaction fee savings",
+        "hassle-free payment solution",
+        "funding goal of $61,455",
+        "awareness and acceptance challenge",
+        "success metrics tracking",
+        "milestones for next 12 months",
+        "business logic for revenue capture",
+        "clear prioritization of objectives"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1,
+          "scope_and_prioritization": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of the Meghnad application align with the identified needs of busy, tech-savvy users seeking a hassle-free payment solution? Please discuss any gaps in this alignment.",
+          "question_en_preview": "How well do the objectives of the Meghnad application align with the identified needs of busy, tech-savvy users seeking a hassle-free payment solution? Please discuss any gaps in this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the funding goal of $61,455 and the current funding status of 107%, what are the proposed milestones for the Meghnad application in the next 12 months, and how realistic are these milestones?",
+          "question_en_preview": "Given the funding goal of $61,455 and the current funding status of 107%, what are the proposed milestones for the Meghnad application in the next 12 months, and how realistic are these milestones?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics will be used to evaluate the performance of the Meghnad application in protecting users from fraud and saving transaction fees for vendors? How will these metrics be tracked?",
+          "question_en_preview": "What specific success metrics will be used to evaluate the performance of the Meghnad application in protecting users from fraud and saving transaction fees for vendors? How will these metrics be tracked?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Considering the challenge of awareness and acceptance of new mobile payment applications, how realistic are the objectives set for the Meghnad application? Are they too ambitious or appropriately scaled?",
+          "question_en_preview": "Considering the challenge of awareness and acceptance of new mobile payment applications, how realistic are the objectives set for the Meghnad application? Are they too ambitious or appropriately scaled?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the Meghnad application plan to create value and capture revenue while addressing the stated objectives? Please provide insights into the business logic behind these objectives.",
+          "question_en_preview": "How does the Meghnad application plan to create value and capture revenue while addressing the stated objectives? Please provide insights into the business logic behind these objectives."
+        }
+      ],
+      "elapsed_sec": 11.95,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 350,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Meghnad project is a QR code-based payment application targeting the North American market, aiming to enhance user security against credit/debit card fraud. The project has faced challenges in raising awareness and acceptance of mobile payment applications, but the creator ha ...",
+        "first_key_point_preview": "The Meghnad project is a QR code-based payment application focused on the North American market.",
+        "first_risk_preview": "The main challenge for the initial days is going to be awareness and acceptance of new types of mobile payment applications.",
+        "first_mitigation_preview": "The creator educated themselves about the problem they were trying to solve and how QR codes were used in the payment industry."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.52,
+        "raw_chars": 4727,
+        "usage": {
+          "prompt_tokens": 3536,
+          "completion_tokens": 999,
+          "total_tokens": 4535
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user adoption strategy",
+        "revenue model analysis",
+        "QR code security measures",
+        "market entry strategy",
+        "validation steps",
+        "partnership opportunities",
+        "trade-offs in design",
+        "funding success metrics",
+        "awareness campaigns",
+        "compliance strategies"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 5,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "quality_compliance_strategy": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Meghnad project plan to raise awareness and acceptance of its QR code-based payment application in the North American market, and what specific strategies will be employed to overcome this challenge?",
+          "question_en_preview": "How does the Meghnad project plan to raise awareness and acceptance of its QR code-based payment application in the North American market, and what specific strategies will be employed to overcome this challenge?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the Meghnad project has achieved 107% funding, what are the projected revenue models and unit economics that will sustain its operations and growth in the competitive mobile payment landscape?",
+          "question_en_preview": "Given that the Meghnad project has achieved 107% funding, what are the projected revenue models and unit economics that will sustain its operations and growth in the competitive mobile payment landscape?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternatives were considered in the design of the Meghnad QR code-based payment application, and what major trade-offs were made during its development?",
+          "question_en_preview": "What alternatives were considered in the design of the Meghnad QR code-based payment application, and what major trade-offs were made during its development?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific validation steps will the Meghnad project undertake to ensure the effectiveness and security of its QR code payment solution before full market launch?",
+          "question_en_preview": "What specific validation steps will the Meghnad project undertake to ensure the effectiveness and security of its QR code payment solution before full market launch?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quality and compliance strategies are in place for the Meghnad QR code payment application to address potential security concerns related to credit/debit card fraud?",
+          "question_en_preview": "What quality and compliance strategies are in place for the Meghnad QR code payment application to address potential security concerns related to credit/debit card fraud?"
+        }
+      ],
+      "elapsed_sec": 14.53,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 270,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces an innovative mobile payment application that utilizes QR codes to enhance the payment process. It features a user-friendly interface designed to build trust through secure transactions, allowing users to complete payments quickly and efficiently.",
+        "first_key_point_preview": "The application allows payments through a simple scan of a QR code.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.84,
+        "raw_chars": 4254,
+        "usage": {
+          "prompt_tokens": 3377,
+          "completion_tokens": 929,
+          "total_tokens": 4306
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "QR code payment process",
+        "user-friendly interface",
+        "trust in transactions",
+        "payment speed",
+        "user feedback",
+        "intellectual property strategy",
+        "competitive advantages",
+        "evidence of effectiveness",
+        "risk of obsolescence",
+        "customer segment extension"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the mobile payment application utilizing QR codes compare to existing payment solutions in terms of innovation and user experience?",
+          "question_en_preview": "How does the mobile payment application utilizing QR codes compare to existing payment solutions in terms of innovation and user experience?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the application offer over traditional payment methods, particularly regarding speed and user trust?",
+          "question_en_preview": "What specific advantages does the application offer over traditional payment methods, particularly regarding speed and user trust?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the user-friendly interface in enhancing user experience and building trust in the payment process?",
+          "question_en_preview": "What evidence supports the effectiveness of the user-friendly interface in enhancing user experience and building trust in the payment process?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of this mobile payment application?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of this mobile payment application?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How could the mobile payment application be extended to other customer segments or use cases beyond its current design?",
+          "question_en_preview": "How could the mobile payment application be extended to other customer segments or use cases beyond its current design?"
+        }
+      ],
+      "elapsed_sec": 12.84,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 350,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Meghnad project, a QR code-based payment application, is influenced by several factors including technical challenges and user acceptance. The project has faced bugs and usability issues during development, and there is a significant challenge in raising aw ...",
+        "first_key_point_preview": "The project has encountered bugs, minor usability issues, and technical glitches during development.",
+        "first_risk_preview": "The project has faced bugs, minor usability issues, and technical glitches during development.",
+        "first_mitigation_preview": "The creator educated themselves about the problem they were trying to solve and how QR codes were used in the payment industry."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.86,
+        "raw_chars": 4133,
+        "usage": {
+          "prompt_tokens": 3490,
+          "completion_tokens": 884,
+          "total_tokens": 4374
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user acceptance strategy",
+        "technical challenges",
+        "funding allocation",
+        "implementation barriers",
+        "usability issues",
+        "customer adoption metrics",
+        "risk mitigation sufficiency",
+        "awareness campaigns",
+        "budget sustainability",
+        "project timeline alignment"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "risk_management": 2,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "funding_and_budget_planning": 1,
+          "timeline_and_resource_alignment": 1,
+          "implementation_barriers": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 4,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific technical challenges and usability issues have been identified during the development of the Meghnad project, and how do these affect the project's feasibility?",
+          "question_en_preview": "What specific technical challenges and usability issues have been identified during the development of the Meghnad project, and how do these affect the project's feasibility?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to overcome the challenges of achieving user awareness and acceptance of the Meghnad mobile payment application?",
+          "question_en_preview": "How does the project plan to overcome the challenges of achieving user awareness and acceptance of the Meghnad mobile payment application?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the Meghnad project was initially unsuccessful in reaching its funding goal but is currently 107% funded, what are the implications for its budget allocation and sustainability plan?",
+          "question_en_preview": "Given that the Meghnad project was initially unsuccessful in reaching its funding goal but is currently 107% funded, what are the implications for its budget allocation and sustainability plan?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how well does the current timeline align with the resources available for the Meghnad project, considering the technical challenges and funding status? What evidence would increase your confidence i ...",
+          "question_en_preview": "On a scale of 1 to 5, how well does the current timeline align with the resources available for the Meghnad project, considering the technical challenges and funding status? What evidence would increase your confidence i ..."
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation in real production settings have been identified for the Meghnad project, and how might these impact customer adoption?",
+          "question_en_preview": "What barriers to implementation in real production settings have been identified for the Meghnad project, and how might these impact customer adoption?"
+        }
+      ],
+      "elapsed_sec": 14.86,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T20:33:09Z",
+  "elapsed_sec": 63.25,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt64__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt64__openai/generated_questions_detail.json"
+}

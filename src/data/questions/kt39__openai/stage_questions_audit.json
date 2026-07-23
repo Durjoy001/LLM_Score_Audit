@@ -1,0 +1,617 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt39__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt39__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 279,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 2,
+        "summary_preview": "The team structure is designed to enhance coordination and collaboration through various features of the Stafferin platform. It allows for unlimited administrator access and role-based permissions, facilitating clear responsibilities and seamless oversight among multiple admins.",
+        "first_key_point_preview": "The project is based in Toronto, Canada, and was initially created on Kickstarter.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Progress Updates provide instant views of completion status, improving coordination."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.5,
+        "raw_chars": 4374,
+        "usage": {
+          "prompt_tokens": 3338,
+          "completion_tokens": 919,
+          "total_tokens": 4257
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership track record",
+        "domain-specific expertise",
+        "compliance challenges",
+        "collaboration networks",
+        "team capacity assessment",
+        "governance structures",
+        "project oversight mechanisms",
+        "role-based permissions",
+        "execution milestones"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 4,
+          "2": 4
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "governance_and_decision_making": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 2,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the leadership team's prior execution record support the project's advancement towards its intended application and commercialization path?",
+          "question_en_preview": "How does the leadership team's prior execution record support the project's advancement towards its intended application and commercialization path?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that aligns with the functionalities of the Stafferin platform, particularly in enhancing coordination and collaboration?",
+          "question_en_preview": "What specific domain expertise does the team possess that aligns with the functionalities of the Stafferin platform, particularly in enhancing coordination and collaboration?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, how does the team plan to address potential compliance and validation challenges as the project scales?",
+          "question_en_preview": "Given the limited risk information provided, how does the team plan to address potential compliance and validation challenges as the project scales?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing collaboration networks does the team leverage to enhance the effectiveness of the Stafferin platform, and how stable are these partnerships?",
+          "question_en_preview": "What existing collaboration networks does the team leverage to enhance the effectiveness of the Stafferin platform, and how stable are these partnerships?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How does the team ensure they have sufficient capacity and bandwidth to manage the ongoing development and operational needs of the Stafferin platform?",
+          "question_en_preview": "How does the team ensure they have sufficient capacity and bandwidth to manage the ongoing development and operational needs of the Stafferin platform?"
+        }
+      ],
+      "elapsed_sec": 13.51,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 292,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The objectives of the Stafferin project focus on providing a cost-effective, intuitive workforce management solution tailored for small businesses. The platform aims to enhance operational efficiency, reduce stress, and ensure legal compliance while promoting transparency and acc ...",
+        "first_key_point_preview": "Stafferin aims to help businesses reduce stress, save time, and operate more efficiently.",
+        "first_risk_preview": "The project was unsuccessful in reaching its funding goal by March 24, 2025.",
+        "first_mitigation_preview": "Stafferin is a fully functional platform that helps businesses reduce stress, save time, and operate more efficiently."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.71,
+        "raw_chars": 3875,
+        "usage": {
+          "prompt_tokens": 3416,
+          "completion_tokens": 853,
+          "total_tokens": 4269
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "workforce management solution",
+        "operational efficiency metrics",
+        "legal compliance objectives",
+        "milestone execution feasibility",
+        "success metrics definition",
+        "business continuity focus",
+        "automated conflict alerts",
+        "detailed tracking capabilities",
+        "funding goal achievement",
+        "stress reduction for businesses"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1,
+          "scope_and_prioritization": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of the Stafferin project align with the stated needs of small businesses for workforce management solutions? Please evaluate the urgency of this alignment.",
+          "question_en_preview": "How well do the objectives of the Stafferin project align with the stated needs of small businesses for workforce management solutions? Please evaluate the urgency of this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the proposed milestones for the Stafferin project, and how reasonable and executable do you find them given the current objectives?",
+          "question_en_preview": "What are the proposed milestones for the Stafferin project, and how reasonable and executable do you find them given the current objectives?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear and quantifiable success metrics are defined for the Stafferin project, and how do they relate to the objectives of enhancing operational efficiency and ensuring legal compliance?",
+          "question_en_preview": "What clear and quantifiable success metrics are defined for the Stafferin project, and how do they relate to the objectives of enhancing operational efficiency and ensuring legal compliance?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Considering the objectives of the Stafferin project, do you believe there is a balance between ambition and feasibility? Are the goals set too idealistic or too conservative?",
+          "question_en_preview": "Considering the objectives of the Stafferin project, do you believe there is a balance between ambition and feasibility? Are the goals set too idealistic or too conservative?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How effectively does the Stafferin project explain how its objectives create value for small businesses and capture revenue or funding?",
+          "question_en_preview": "How effectively does the Stafferin project explain how its objectives create value for small businesses and capture revenue or funding?"
+        }
+      ],
+      "elapsed_sec": 14.71,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 400,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Stafferin's strategy focuses on providing an affordable, user-friendly workforce management solution tailored for small and mid-sized businesses. The platform employs a cloud-native architecture for scalability and integrates advanced technologies to enhance performance and reduc ...",
+        "first_key_point_preview": "Stafferin targets small and mid-sized businesses that find current workforce management solutions cost-prohibitive or overly complex.",
+        "first_risk_preview": "Stafferin identifies risks and defines clear mitigation strategies to prepare for challenges in workforce management.",
+        "first_mitigation_preview": "Reminders can be used to ensure urgent tasks are addressed."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.41,
+        "raw_chars": 4981,
+        "usage": {
+          "prompt_tokens": 3542,
+          "completion_tokens": 1031,
+          "total_tokens": 4573
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "cloud-native architecture",
+        "user feedback mechanisms",
+        "scalability trade-offs",
+        "partnership strategy",
+        "budget realism",
+        "performance monitoring",
+        "user-friendly design",
+        "mitigation strategies",
+        "market positioning",
+        "cost-prohibitive solutions"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Stafferin plan to position its workforce management solution to effectively reach small and mid-sized businesses that currently find existing solutions cost-prohibitive or overly complex?",
+          "question_en_preview": "How does Stafferin plan to position its workforce management solution to effectively reach small and mid-sized businesses that currently find existing solutions cost-prohibitive or overly complex?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What alternatives were considered in the design of Stafferin's cloud-native architecture, and what major trade-offs were made in selecting this approach for scalability?",
+          "question_en_preview": "What alternatives were considered in the design of Stafferin's cloud-native architecture, and what major trade-offs were made in selecting this approach for scalability?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific metrics or feedback mechanisms does Stafferin use to evaluate the performance and user-friendliness of its workforce management solution during the development and validation stages?",
+          "question_en_preview": "What specific metrics or feedback mechanisms does Stafferin use to evaluate the performance and user-friendliness of its workforce management solution during the development and validation stages?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is Stafferin's budget for scaling its workforce management solution, considering the anticipated costs of technology integration and user support? Please provide evidence that would in ...",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is Stafferin's budget for scaling its workforce management solution, considering the anticipated costs of technology integration and user support? Please provide evidence that would in ..."
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What partnerships or collaborations does Stafferin foresee as critical to its go-to-market strategy, and how will these partnerships enhance its competitive position in the workforce management space?",
+          "question_en_preview": "What partnerships or collaborations does Stafferin foresee as critical to its go-to-market strategy, and how will these partnerships enhance its competitive position in the workforce management space?"
+        }
+      ],
+      "elapsed_sec": 19.41,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 323,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Stafferin introduces innovative solutions to streamline workforce management by automating processes such as shift scheduling and attendance tracking. The platform enhances operational efficiency, promotes transparency, and minimizes environmental impact through digital delivery  ...",
+        "first_key_point_preview": "Stafferin automates essential processes, significantly reducing administrative overhead.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Stafferin's design reduces the need for new hardware, extending the lifecycle of existing technology and minimizing e-waste."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 28.29,
+        "raw_chars": 4238,
+        "usage": {
+          "prompt_tokens": 3401,
+          "completion_tokens": 921,
+          "total_tokens": 4322
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "administrative overhead reduction",
+        "operational efficiency metrics",
+        "evidence of transparency",
+        "competitive advantages",
+        "intellectual property strategy",
+        "scalability potential",
+        "customer segment extension",
+        "environmental impact reduction",
+        "automation effectiveness",
+        "risk assessment framework"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Stafferin's automation of shift scheduling and attendance tracking compare to existing solutions in terms of novelty and effectiveness?",
+          "question_en_preview": "How does Stafferin's automation of shift scheduling and attendance tracking compare to existing solutions in terms of novelty and effectiveness?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does Stafferin offer over traditional workforce management solutions, particularly in terms of operational efficiency and transparency?",
+          "question_en_preview": "What specific advantages does Stafferin offer over traditional workforce management solutions, particularly in terms of operational efficiency and transparency?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the claims of reduced administrative overhead and enhanced operational efficiency provided by Stafferin?",
+          "question_en_preview": "What evidence supports the claims of reduced administrative overhead and enhanced operational efficiency provided by Stafferin?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could affect the long-term viability of Stafferin's innovation?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could affect the long-term viability of Stafferin's innovation?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How scalable is Stafferin's solution in terms of extending to other customer segments or use cases beyond workforce management?",
+          "question_en_preview": "How scalable is Stafferin's solution in terms of extending to other customer segments or use cases beyond workforce management?"
+        }
+      ],
+      "elapsed_sec": 28.29,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 432,
+        "key_points_count": 6,
+        "risks_count": 4,
+        "mitigations_count": 2,
+        "summary_preview": "The feasibility of the project is challenged by limited resources and the need for numerous iterations. Stafferin faces risks related to a crowded market, potential overloading of functionalities, and infrastructure demands that may exceed initial projections. However, the projec ...",
+        "first_key_point_preview": "The project faces challenges such as limited resources and the need for countless iterations.",
+        "first_risk_preview": "The project faces challenges such as limited resources and the need for countless iterations.",
+        "first_mitigation_preview": "Stafferin implements robust performance monitoring and alert systems to quickly identify and resolve performance bottlenecks."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.63,
+        "raw_chars": 4350,
+        "usage": {
+          "prompt_tokens": 3560,
+          "completion_tokens": 926,
+          "total_tokens": 4486
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "performance monitoring systems",
+        "cost-effectiveness",
+        "HR and scheduling software market",
+        "infrastructure demands",
+        "functionality overload risk",
+        "customer acceptance evidence",
+        "implementation barriers",
+        "budget allocation realism",
+        "efficiency gains",
+        "resource limitations"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "resources_and_infrastructure": 1,
+          "risk_management": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific resources are currently limited for Stafferin, and how might these limitations impact the project's ability to scale effectively?",
+          "question_en_preview": "What specific resources are currently limited for Stafferin, and how might these limitations impact the project's ability to scale effectively?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Stafferin plan to address the risk of overloading the platform with functionalities that could dilute its simplicity and efficiency?",
+          "question_en_preview": "How does Stafferin plan to address the risk of overloading the platform with functionalities that could dilute its simplicity and efficiency?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How realistic is the budget allocation for Stafferin, considering the emphasis on cost savings and efficiency gains? What evidence supports this assessment?",
+          "question_en_preview": "How realistic is the budget allocation for Stafferin, considering the emphasis on cost savings and efficiency gains? What evidence supports this assessment?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key tasks and timelines outlined in Stafferin's implementation plan, and how do they align with the identified risks and mitigation strategies?",
+          "question_en_preview": "What are the key tasks and timelines outlined in Stafferin's implementation plan, and how do they align with the identified risks and mitigation strategies?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "What evidence exists to support the feasibility of customer acceptance and procurement for Stafferin in a crowded HR and scheduling software market?",
+          "question_en_preview": "What evidence exists to support the feasibility of customer acceptance and procurement for Stafferin in a crowded HR and scheduling software market?"
+        }
+      ],
+      "elapsed_sec": 16.63,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T19:36:22Z",
+  "elapsed_sec": 92.57,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt39__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt39__openai/generated_questions_detail.json"
+}

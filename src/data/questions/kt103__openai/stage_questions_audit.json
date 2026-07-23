@@ -1,0 +1,612 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt103__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt103__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 191,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Mike Wen, who is also the creator of the Multi-currency rewards generator for Kickstarter projects. His leadership and experience are central to the team's capabilities.",
+        "first_key_point_preview": "Mike Wen is the creator of the Multi-currency rewards generator for Kickstarter projects.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.63,
+        "raw_chars": 4696,
+        "usage": {
+          "prompt_tokens": 3259,
+          "completion_tokens": 986,
+          "total_tokens": 4245
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Mike Wen leadership experience",
+        "Multi-currency rewards generator",
+        "team capacity evaluation",
+        "governance processes",
+        "collaboration networks",
+        "validation experience",
+        "risk assessment",
+        "project execution capability"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 2,
+        "linked_to_risks": 4,
+        "linked_to_mitigations": 2
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Mike Wen's experience as the creator of the Multi-currency rewards generator for Kickstarter projects position him to lead this initiative effectively?",
+          "question_en_preview": "How does Mike Wen's experience as the creator of the Multi-currency rewards generator for Kickstarter projects position him to lead this initiative effectively?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that aligns with the objectives of this project, and how does this expertise enhance the project's potential for success?",
+          "question_en_preview": "What specific domain expertise does the team possess that aligns with the objectives of this project, and how does this expertise enhance the project's potential for success?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity and bandwidth to commit to this initiative? Please evaluate any risks associated with this capacity.",
+          "question_en_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity and bandwidth to commit to this initiative? Please evaluate any risks associated with this capacity."
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance and decision-making processes are in place to ensure effective oversight and quality control for this project, and how might the lack of specified mitigations impact these processes?",
+          "question_en_preview": "What governance and decision-making processes are in place to ensure effective oversight and quality control for this project, and how might the lack of specified mitigations impact these processes?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What existing collaboration networks does the team leverage to enhance project execution, and how might the absence of detailed risk information affect these collaborations?",
+          "question_en_preview": "What existing collaboration networks does the team leverage to enhance project execution, and how might the absence of detailed risk information affect these collaborations?"
+        }
+      ],
+      "elapsed_sec": 15.63,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 330,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 2,
+        "summary_preview": "The project aims to create a multi-currency rewards generator for Kickstarter projects, addressing the inconvenience for backers needing to convert currencies. It seeks to enhance user experience by adding features such as real-time currency look-up and automatic refilling of the ...",
+        "first_key_point_preview": "The project is focused on developing a software initiative for a multi-currency rewards generator.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The project was created to address the inconvenience for backers who need to convert currencies."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.19,
+        "raw_chars": 4009,
+        "usage": {
+          "prompt_tokens": 3425,
+          "completion_tokens": 862,
+          "total_tokens": 4287
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "multi-currency rewards generator",
+        "user experience enhancement",
+        "Kickstarter backer needs",
+        "milestone execution timeline",
+        "quantifiable success metrics",
+        "fundraising for new features",
+        "scope prioritization",
+        "realism vs ambition",
+        "currency conversion convenience"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined is the overall goal of creating a multi-currency rewards generator for Kickstarter projects? Are there any unrelated sub-goals that could dilute focus?",
+          "question_en_preview": "How clearly defined is the overall goal of creating a multi-currency rewards generator for Kickstarter projects? Are there any unrelated sub-goals that could dilute focus?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the project address the stated inconvenience for backers needing to convert currencies? How urgent is this need in the context of the Kickstarter platform?",
+          "question_en_preview": "To what extent does the project address the stated inconvenience for backers needing to convert currencies? How urgent is this need in the context of the Kickstarter platform?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the project, particularly regarding the addition of more currencies and features? Are these milestones realistic and executable within the specified timeline?",
+          "question_en_preview": "What are the proposed milestones for the project, particularly regarding the addition of more currencies and features? Are these milestones realistic and executable within the specified timeline?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics will be used to evaluate the effectiveness of the multi-currency rewards generator? How will these metrics reflect user experience improvements?",
+          "question_en_preview": "What quantifiable success metrics will be used to evaluate the effectiveness of the multi-currency rewards generator? How will these metrics reflect user experience improvements?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How does the project balance ambition with feasibility, particularly in terms of raising additional funds for new features? Are the goals set too high or too low?",
+          "question_en_preview": "How does the project balance ambition with feasibility, particularly in terms of raising additional funds for new features? Are the goals set too high or too low?"
+        }
+      ],
+      "elapsed_sec": 11.19,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 439,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to enhance its software by adding features such as real-time currency look-up and the ability to automatically refill the base country code from the user's IP address. It is currently funded at 107% of its goal, which was set at $141, with 10 days remaining in th ...",
+        "first_key_point_preview": "The project is currently funded at 107% of its $141 goal with 10 days left in the campaign.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "More funds raised will help add features such as automatically refilling the base country code from the user's IP address."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.05,
+        "raw_chars": 4511,
+        "usage": {
+          "prompt_tokens": 3577,
+          "completion_tokens": 980,
+          "total_tokens": 4557
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding impact analysis",
+        "trade-offs in feature development",
+        "user validation steps",
+        "financial model sustainability",
+        "regulatory compliance measures",
+        "scalability assessment",
+        "partnership opportunities",
+        "customer acquisition strategy",
+        "real-time feature implementation",
+        "cancellation impact on operations"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 3
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project is currently funded at 107% of its $141 goal, how does this funding level impact the project's go-to-market strategy and customer acquisition plans?",
+          "question_en_preview": "Given that the project is currently funded at 107% of its $141 goal, how does this funding level impact the project's go-to-market strategy and customer acquisition plans?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the decision to add features like real-time currency look-up and automatic refilling of the base country code from the user's IP address?",
+          "question_en_preview": "What are the major trade-offs considered in the decision to add features like real-time currency look-up and automatic refilling of the base country code from the user's IP address?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps will the project undertake to ensure the new features, such as real-time currency look-up, meet user needs and expectations?",
+          "question_en_preview": "What validation steps will the project undertake to ensure the new features, such as real-time currency look-up, meet user needs and expectations?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the cancellation of funding on May 12, 2016, affect the project's financial model and its ability to sustain operations moving forward?",
+          "question_en_preview": "How does the cancellation of funding on May 12, 2016, affect the project's financial model and its ability to sustain operations moving forward?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What quality and compliance measures are in place to ensure that the software meets regulatory standards, especially with the addition of new features?",
+          "question_en_preview": "What quality and compliance measures are in place to ensure that the software meets regulatory standards, especially with the addition of new features?"
+        }
+      ],
+      "elapsed_sec": 9.05,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 271,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project focuses on developing innovative software that automates the generation of approximate currency amounts for rewards. This approach leverages the creator's programming skills and introduces a clever technique for including currency amounts directly in rewards.",
+        "first_key_point_preview": "The project aims to create software that generates approximate amounts in other currencies for rewards.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.1,
+        "raw_chars": 3844,
+        "usage": {
+          "prompt_tokens": 3362,
+          "completion_tokens": 815,
+          "total_tokens": 4177
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "currency generation technique",
+        "user experience advantages",
+        "user feedback evidence",
+        "intellectual property strategy",
+        "scalability potential",
+        "competitive differentiation"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the software's approach to generating approximate currency amounts for rewards compare to existing solutions in the market? Please provide specific examples of its novelty.",
+          "question_en_preview": "How does the software's approach to generating approximate currency amounts for rewards compare to existing solutions in the market? Please provide specific examples of its novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the software offer over existing methods for generating currency amounts in rewards, particularly in terms of user experience and efficiency?",
+          "question_en_preview": "What clear advantages does the software offer over existing methods for generating currency amounts in rewards, particularly in terms of user experience and efficiency?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the clever technique for including currency amounts directly in rewards? Are there any user feedback or testing results available?",
+          "question_en_preview": "What evidence supports the effectiveness of the clever technique for including currency amounts directly in rewards? Are there any user feedback or testing results available?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the software becoming obsolete or commoditized within the next few years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the software becoming obsolete or commoditized within the next few years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property of the software, and how do these strategies support long-term competitive advantage?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property of the software, and how do these strategies support long-term competitive advantage?"
+        }
+      ],
+      "elapsed_sec": 8.1,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 248,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project demonstrates strong feasibility with minimal associated risks and a solid funding status. It is based in Toronto, Canada, and has developed a prototype that has been utilized by the creator, indicating readiness for further development.",
+        "first_key_point_preview": "The project is based in Toronto, Canada.",
+        "first_risk_preview": "The project currently faces very little risk.",
+        "first_mitigation_preview": "More funds raised will help add features such as automatically refilling the base country code from the user's IP address."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.97,
+        "raw_chars": 4158,
+        "usage": {
+          "prompt_tokens": 3414,
+          "completion_tokens": 868,
+          "total_tokens": 4282
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding status analysis",
+        "prototype utilization timeline",
+        "risk assessment criteria",
+        "implementation barriers",
+        "customer acceptance evidence",
+        "feature enhancement funding"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 2,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project is currently funded at 107% with 10 days left in the campaign, how does this funding status align with the projected budget allocation for future development? Please discuss any potential gaps or a ...",
+          "question_en_preview": "Given that the project is currently funded at 107% with 10 days left in the campaign, how does this funding status align with the projected budget allocation for future development? Please discuss any potential gaps or a ..."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for the next phases of development following the prototype's utilization? How do these align with the project's overall goals?",
+          "question_en_preview": "What specific tasks and timelines are outlined for the next phases of development following the prototype's utilization? How do these align with the project's overall goals?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "The proposal states that there is very little risk associated with the project at this time. What criteria were used to assess this risk level, and how might this assessment change as the project progresses?",
+          "question_en_preview": "The proposal states that there is very little risk associated with the project at this time. What criteria were used to assess this risk level, and how might this assessment change as the project progresses?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation could arise as the project moves from prototype to full-scale development, particularly in terms of customer acceptance and integration?",
+          "question_en_preview": "What potential barriers to implementation could arise as the project moves from prototype to full-scale development, particularly in terms of customer acceptance and integration?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How realistic is the expectation for customer acceptance and procurement of the solution based on the current prototype? What evidence supports this expectation?",
+          "question_en_preview": "How realistic is the expectation for customer acceptance and procurement of the solution based on the current prototype? What evidence supports this expectation?"
+        }
+      ],
+      "elapsed_sec": 8.97,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T21:37:02Z",
+  "elapsed_sec": 52.95,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt103__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt103__openai/generated_questions_detail.json"
+}

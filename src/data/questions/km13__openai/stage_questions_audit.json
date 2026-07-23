@@ -1,0 +1,627 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km13__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km13__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 362,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Julian Tinoco, who is also the creator and founder of OLA and Lacetech. The team is rapidly growing and operates across multiple countries, including Canada, Australia, and Colombia, while testing OLA with a global user base. Tinoco has extensive experience  ...",
+        "first_key_point_preview": "Julian Tinoco is the creator of OLA and the founder of Lacetech.",
+        "first_risk_preview": "The project faces issues labeled 'NO RESPONSIVE' and 'DIFFERENT IMAGES BETWEEN BROWSERS' as identified in webpage comparisons.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 29.26,
+        "raw_chars": 4610,
+        "usage": {
+          "prompt_tokens": 3385,
+          "completion_tokens": 1008,
+          "total_tokens": 4393
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Julian Tinoco's leadership",
+        "software development expertise",
+        "test automation skills",
+        "team workload management",
+        "cross-country collaboration",
+        "project governance structures",
+        "issue resolution experience",
+        "capacity assessment metrics",
+        "global user testing",
+        "rapid team growth"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Julian Tinoco's experience as the creator of OLA and founder of Lacetech position the team to advance this project towards its intended application and commercialization?",
+          "question_en_preview": "How does Julian Tinoco's experience as the creator of OLA and founder of Lacetech position the team to advance this project towards its intended application and commercialization?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific software development and test automation skills does the team possess that are critical for the successful execution of the project?",
+          "question_en_preview": "What specific software development and test automation skills does the team possess that are critical for the successful execution of the project?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the rapid growth of Lacetech's team across multiple countries, how does the team plan to manage its workload and ensure sufficient resources are allocated to this project?",
+          "question_en_preview": "Given the rapid growth of Lacetech's team across multiple countries, how does the team plan to manage its workload and ensure sufficient resources are allocated to this project?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have in addressing the identified issues of 'NO RESPONSIVE' and 'DIFFERENT IMAGES BETWEEN BROWSERS', and how might this impact the project's execution?",
+          "question_en_preview": "What experience does the team have in addressing the identified issues of 'NO RESPONSIVE' and 'DIFFERENT IMAGES BETWEEN BROWSERS', and how might this impact the project's execution?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What governance structures or decision-making processes does the team have in place to handle potential conflicts of interest and ensure quality control as the project scales?",
+          "question_en_preview": "What governance structures or decision-making processes does the team have in place to handle potential conflicts of interest and ensure quality control as the project scales?"
+        }
+      ],
+      "elapsed_sec": 29.26,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 330,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The OLA project aims to enhance web design efficiency by significantly reducing execution time and manual testing requirements. Key objectives include gathering user feedback during a Kickstarter campaign to refine features and ensuring the tool effectively addresses the needs of ...",
+        "first_key_point_preview": "OLA 2.0 plans to reduce execution time by 75% from the current execution time.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "During the 30 days on Kickstarter, feedback will be gathered from backers to improve and add relevant features to OLA."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.46,
+        "raw_chars": 3950,
+        "usage": {
+          "prompt_tokens": 3436,
+          "completion_tokens": 873,
+          "total_tokens": 4309
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter feedback",
+        "execution time reduction",
+        "manual testing reduction",
+        "web designer needs",
+        "success metrics",
+        "milestone feasibility",
+        "business logic",
+        "value creation",
+        "scope clarity",
+        "objective prioritization"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the OLA project align with the stated need for reducing the time web designers spend on checking website responsiveness? Please evaluate the urgency of this need based on current market trends.",
+          "question_en_preview": "How well does the OLA project align with the stated need for reducing the time web designers spend on checking website responsiveness? Please evaluate the urgency of this need based on current market trends."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Are the planned milestones, including the Kickstarter campaign and the release date of June 17th, 2019, reasonable and executable? What factors could affect their execution?",
+          "question_en_preview": "Are the planned milestones, including the Kickstarter campaign and the release date of June 17th, 2019, reasonable and executable? What factors could affect their execution?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics should be established to evaluate the effectiveness of OLA in reducing execution time and manual testing requirements? How can these metrics be quantified?",
+          "question_en_preview": "What specific success metrics should be established to evaluate the effectiveness of OLA in reducing execution time and manual testing requirements? How can these metrics be quantified?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the OLA project create value for web designers and capture revenue or funding? Please explain the business logic behind the objectives.",
+          "question_en_preview": "How does the OLA project create value for web designers and capture revenue or funding? Please explain the business logic behind the objectives."
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Considering the ambitious goal of reducing execution time by 75%, how realistic do you find this objective? What evidence would increase confidence in achieving this goal?",
+          "question_en_preview": "Considering the ambitious goal of reducing execution time by 75%, how realistic do you find this objective? What evidence would increase confidence in achieving this goal?"
+        }
+      ],
+      "elapsed_sec": 14.46,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 395,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy for OLA focuses on enhancing user experience through automated cross-browser testing and responsive website validation. The project aims to gather user feedback during its Kickstarter campaign to refine features and reduce execution time significantly. OLA's technica ...",
+        "first_key_point_preview": "OLA aims to reduce execution time by 75% from the current execution time.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "OLA plans to gather feedback from backers during the Kickstarter campaign to improve features."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 24.96,
+        "raw_chars": 4854,
+        "usage": {
+          "prompt_tokens": 3525,
+          "completion_tokens": 1056,
+          "total_tokens": 4581
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Kickstarter feedback mechanisms",
+        "execution time reduction",
+        "user experience enhancement",
+        "market entry strategy",
+        "scalability risks",
+        "quality compliance standards",
+        "customer retention impact",
+        "snapshot analysis",
+        "node tree validation",
+        "funding goal achievement"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 2,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 2
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does OLA's strategy of breaking websites into a tree of nodes and taking snapshots enhance the solution's delivery and validation path? Please provide evidence to support your analysis.",
+          "question_en_preview": "How does OLA's strategy of breaking websites into a tree of nodes and taking snapshots enhance the solution's delivery and validation path? Please provide evidence to support your analysis."
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific feedback mechanisms will OLA implement during the Kickstarter campaign to ensure that the features developed align with user needs? How will this feedback influence the project's validation path?",
+          "question_en_preview": "What specific feedback mechanisms will OLA implement during the Kickstarter campaign to ensure that the features developed align with user needs? How will this feedback influence the project's validation path?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that OLA has a funding goal of $6,002 on Kickstarter, what is the planned strategy for market entry and customer acquisition post-campaign? How does this align with the project's overall objectives?",
+          "question_en_preview": "Given that OLA has a funding goal of $6,002 on Kickstarter, what is the planned strategy for market entry and customer acquisition post-campaign? How does this align with the project's overall objectives?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does OLA plan to achieve a 75% reduction in execution time, and what impact will this have on the project's unit economics and customer retention?",
+          "question_en_preview": "How does OLA plan to achieve a 75% reduction in execution time, and what impact will this have on the project's unit economics and customer retention?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the potential risks associated with OLA's limited risk information, and how might these affect the project's scalability and long-term growth?",
+          "question_en_preview": "What are the potential risks associated with OLA's limited risk information, and how might these affect the project's scalability and long-term growth?"
+        }
+      ],
+      "elapsed_sec": 24.96,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 406,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces OLA (Online Layout Analyzer), a cross-browser testing tool designed to enhance the efficiency of web designers by automating the identification of display discrepancies and validating website responsiveness. OLA's innovative features include simultaneous te ...",
+        "first_key_point_preview": "OLA is a cross-browser testing tool that automates the identification of display discrepancies and validates website responsiveness.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 18.51,
+        "raw_chars": 3591,
+        "usage": {
+          "prompt_tokens": 3442,
+          "completion_tokens": 793,
+          "total_tokens": 4235
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "cross-browser testing tool",
+        "automation of display discrepancies",
+        "intuitive user interface",
+        "comprehensive reporting",
+        "time-saving features",
+        "competitive advantages",
+        "evidence of effectiveness",
+        "intellectual property strategy",
+        "scalability to other segments",
+        "market competition risks"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does OLA's approach to cross-browser testing differ from existing tools in the market, particularly in terms of automation and efficiency?",
+          "question_en_preview": "How does OLA's approach to cross-browser testing differ from existing tools in the market, particularly in terms of automation and efficiency?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does OLA offer over alternative cross-browser testing solutions, particularly regarding time savings and report clarity?",
+          "question_en_preview": "What specific advantages does OLA offer over alternative cross-browser testing solutions, particularly regarding time savings and report clarity?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the claims of OLA's effectiveness in identifying display discrepancies and validating website responsiveness?",
+          "question_en_preview": "What evidence supports the claims of OLA's effectiveness in identifying display discrepancies and validating website responsiveness?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee for OLA in terms of market competition and technological advancements?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee for OLA in terms of market competition and technological advancements?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How scalable is OLA in terms of extending its features to other customer segments or use cases beyond cross-browser testing?",
+          "question_en_preview": "How scalable is OLA in terms of extending its features to other customer segments or use cases beyond cross-browser testing?"
+        }
+      ],
+      "elapsed_sec": 18.51,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 247,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by a fully funded budget and a structured approach to testing and validation. However, challenges exist, such as the lengthy manual testing process and the need for effective error correction mechanisms.",
+        "first_key_point_preview": "The project is 107% funded, indicating a solid financial base.",
+        "first_risk_preview": "The visual content includes side-by-side webpage comparisons highlighting issues and fixes, indicating potential challenges in error detection and resolution.",
+        "first_mitigation_preview": "OLA 2.0 plans to reduce execution time by 75% from the current execution time, which may help mitigate efficiency-related risks."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 21.73,
+        "raw_chars": 4449,
+        "usage": {
+          "prompt_tokens": 3457,
+          "completion_tokens": 970,
+          "total_tokens": 4427
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "107% funding",
+        "manual testing challenges",
+        "OLA 2.0 execution time",
+        "error detection mechanisms",
+        "implementation barriers",
+        "customer acceptance processes",
+        "resource alignment",
+        "testing and validation infrastructure",
+        "procurement strategies",
+        "risk mitigation effectiveness"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "resources_and_infrastructure": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project's 107% funding support its long-term sustainability and what additional funding sources are being considered?",
+          "question_en_preview": "How does the project's 107% funding support its long-term sustainability and what additional funding sources are being considered?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific steps are being taken to address the challenges of the lengthy manual testing process, and how will OLA 2.0's planned improvements impact the execution timeline?",
+          "question_en_preview": "What specific steps are being taken to address the challenges of the lengthy manual testing process, and how will OLA 2.0's planned improvements impact the execution timeline?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified risk related to error detection and resolution in the visual content, how effective are the proposed mitigations in addressing this risk?",
+          "question_en_preview": "Given the identified risk related to error detection and resolution in the visual content, how effective are the proposed mitigations in addressing this risk?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation have been identified in the proposal, and how does the team plan to overcome them during the rollout of OLA?",
+          "question_en_preview": "What barriers to implementation have been identified in the proposal, and how does the team plan to overcome them during the rollout of OLA?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1-5, how well aligned are the project timelines with the available resources, and what evidence would increase your confidence in this alignment?",
+          "question_en_preview": "On a scale of 1-5, how well aligned are the project timelines with the available resources, and what evidence would increase your confidence in this alignment?"
+        }
+      ],
+      "elapsed_sec": 21.73,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T17:35:36Z",
+  "elapsed_sec": 108.93,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km13__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km13__openai/generated_questions_detail.json"
+}

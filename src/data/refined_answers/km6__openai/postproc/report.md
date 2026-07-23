@@ -1,0 +1,194 @@
+# Post-Processing Report - km6__openai
+
+- Generated at: 2026-07-15 17:48:45
+- Metadata: {"generated_at": "2026-07-15 17:48:44", "pid": "km6__openai", "schema": "refined_items.v2.proposal_aware_with_general_insights", "args": {"refine": true, "max_tokens": 2200, "group_size": 3}}
+
+## Overview
+- Overall score (0-1): **0.485**  ##########----------
+- Overall confidence (0-1): **0.617**  ############--------
+- Global consistency (mean Jaccard): **0.396**
+- Global contradiction (mean): **0.056**
+- Estimated placeholder-noise share: 0.0%
+- Estimated few-bullets share: 0.0%
+- Fallback selection share: 0.0%
+- Provider statistics: openai: selected=36 | avg_alpha=0.666 | avg_final=0.461
+
+## Dimension Breakdown
+### team - score 0.546  ###########---------
+- Reference hints, not facts: game development experience; collaboration with professionals; project leadership skills; quality control processes; team workload assessment; validation experience; conflict resolution mechanisms; Matt Dalpé is the creator of the project and has a strong background in gaming.
+- Mean alignment / drift: **0.60 / 0.01**
+- Main score contributors: length, structure, claims
+- Main penalty factors: dimension_drift
+- **Top evidence phrases, authority hits first**:
+  - Any mention of partnership agreements or the roles of external collaborators.
+  - Current workload assessment or team capacity analysis could provide insights into the team's ability to meet milestones.
+  - Details about past projects or team members' qualifications could be included in a team bios section.
+- **General insights, not project achievements**:
+  - Effective leadership in game development often requires a blend of technical expertise and creative vision.
+  - Collaboration with diverse professionals can enhance project quality and address potential skill gaps.
+  - Common pitfalls in game development include insufficient market research and failure to adapt to player feedback.
+  - In similar projects, having team members with diverse skill sets is crucial for addressing various challenges in game development.
+  - Common pitfalls include over-reliance on individuals with multiple roles, which can lead to burnout or quality issues if not managed properly.
+- **Strengths**:
+  - Q1: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.63)
+  - Q2: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.49)
+  - Q3: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.49)
+  - Q5: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.59)
+  - Q6: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.55)
+- **Risks**:
+  - Q3: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+- **Representative snippets**:
+  - Q1: Matt Dalpé's background in gaming and experience in game modding provide him with a foundational understanding of player engagement and game mechanics, which is...
+  - Q2: Mathieu Dalpé's roles as Lead Designer, Programmer, and Artist suggest a multifaceted skill set that is important for the game's development, potentially facili...
+  - Q3: The proposal indicates a strategy of collaborating with skilled professionals to enhance the game's quality, reflecting an understanding of the importance of ex...
+  - Q4: The proposal does not provide detailed information about the team's current workload, which raises questions regarding their capacity to effectively meet projec...
+  - Q5: The proposal does not specify any validation or compliance experience that the team possesses, which raises questions about their readiness for a successful lau...
+  - Q6: The proposal does not outline any governance structures or decision-making processes, which raises concerns about quality control and conflict resolution within...
+- Median bullet count, estimated: 4
+
+### objectives - score 0.456  #########-----------
+- Reference hints, not facts: funding milestones; exceptional gaming experience; success metrics; value creation; revenue capture; goal clarity; unmet gamer needs; ambition vs feasibility
+- Mean alignment / drift: **0.42 / 0.09**
+- Main score contributors: length, structure, claims
+- Main penalty factors: dimension_drift
+- **Top evidence phrases, authority hits first**:
+  - Additional market research or competitive analysis that could provide benchmarks for the gaming experience.
+  - Key points section discussing funding goals and their intended features.
+  - Key points section discussing the emphasis on immersive storytelling and gameplay.
+- **General insights, not project achievements**:
+  - Clear goal definition is crucial for attracting investment and guiding project execution.
+  - Structured funding milestones can enhance investor confidence and project feasibility.
+  - Common pitfalls include vague objectives and poorly defined funding paths, which can hinder project success.
+  - Understanding gamer needs through market research is critical for product development.
+  - Addressing unmet needs can facilitate faster adoption and funding.
+- **Strengths**:
+  - Q1: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.47)
+  - Q5: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.46)
+  - Q6: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.45)
+  - Q7: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.55)
+- **Risks**:
+  - Q3: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q6: possible cross-dimension drift (drift=0.40); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q7: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+- **Representative snippets**:
+  - Q1: The project articulates a goal of developing the single-player, story-driven FPS game Incoherence, emphasizing the creation of an exceptional gaming experience....
+  - Q2: The objectives of Incoherence aim to address the needs of gamers seeking an immersive gaming experience by focusing on storytelling and gameplay elements.
+The g...
+  - Q3: The proposed funding milestones are structured logically, reflecting common practices in game development funding, with incremental goals that build upon each o...
+  - Q4: The proposal establishes clear funding milestones as success metrics: $50k for a full immersive experience, $70k for expanded language support, and additional g...
+  - Q5: The objectives of Incoherence indicate potential value creation through enhanced gaming features, such as immersive experiences and expanded language support, w...
+  - Q6: The objectives set for Incoherence outline clear funding goals that align with typical crowdfunding practices, indicating a structured approach to achieving an ...
+- Median bullet count, estimated: 4
+
+### strategy - score 0.463  #########-----------
+- Reference hints, not facts: Kickstarter funding strategy; alternative funding sources; game quality validation; Steam Deck market research; budget realism assessment; partnership collaborations; character modeling talent; soundtrack production
+- Mean alignment / drift: **0.48 / 0.21**
+- Main score contributors: length, structure, alignment
+- Main penalty factors: dimension_drift
+- **Top evidence phrases, authority hits first**:
+  - Market research data on the Steam Deck's user base and potential demand for the game would be beneficial.
+  - Details on the marketing strategy for the Kickstarter campaign, including outreach plans and target audience analysis, a
+  - Details on user demographics and preferences for games on the Steam Deck would be beneficial.
+- **General insights, not project achievements**:
+  - Typically, successful game development projects have multiple funding sources, including crowdfunding, private investment, and grants.
+  - Common pitfalls include reliance on a single funding source without backup plans.
+  - Evidence requirements often include a detailed financial plan, alternative funding strategies, and potential partnerships.
+  - In similar projects, it's common to evaluate multiple funding platforms based on audience reach, fees, and success rates.
+  - Common pitfalls include failing to justify platform choices or neglecting to explore alternative funding methods.
+- **Strengths**:
+  - Q3: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.61)
+  - Q5: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.69)
+  - Q6: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.45)
+  - Q7: enough claims with good structure/alignment (auth=0.33, cover=0.40, align=0.68)
+- **Risks**:
+  - Q1: possible cross-dimension drift (drift=0.25); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q2: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q3: possible cross-dimension drift (drift=0.25); review dimension boundary manually
+- **Representative snippets**:
+  - Q1: The proposal indicates that the funding goal of $35,307 was not reached, which leaves the team without immediate financial support for development. This highlig...
+  - Q2: The proposal does not provide a clear rationale for selecting Kickstarter as the funding platform, nor does it mention any alternative platforms that were consi...
+  - Q3: The proposal does not detail specific steps the team plans to take to validate the game concept or ensure quality in the game's development, which is essential ...
+  - Q4: The proposal does not provide specific plans for scaling the project if a Steam Deck version is developed, nor does it include market research to support this d...
+  - Q5: The unsuccessful funding attempt of $35,307 raises concerns about the feasibility of the budget for hiring talent and producing the game, suggesting the need fo...
+  - Q6: The proposal does not specify any partnerships or collaborations that could enhance the quality of 'Incoherence', which is a key aspect of the funding strategy....
+- Median bullet count, estimated: 4
+
+### innovation - score 0.482  ##########----------
+- Reference hints, not facts: ray-tracing technology; open source engine; FPS game innovation; customer engagement metrics; competitive differentiation; evidence of immersive experience; intellectual property strategy; extensibility to other genres
+- Mean alignment / drift: **0.55 / 0.06**
+- Main score contributors: length, claims, structure
+- Main penalty factors: dimension_drift
+- **Top evidence phrases, authority hits first**:
+  - Market research data or competitor analysis reports that could highlight Incoherence's positioning.
+  - User engagement metrics, player feedback reports, or comparative studies with similar FPS games.
+  - A risk assessment section or market analysis could provide insights into potential obsolescence risks.
+- **General insights, not project achievements**:
+  - Successful genre-blending games often provide clear mechanics that showcase how different elements interact.
+  - Consumer feedback and playtesting can validate the appeal of novel game mechanics.
+  - Documentation of genre conventions can help in identifying how Incoherence diverges from norms.
+  - Demonstrating the impact of advanced graphics technologies like ray-tracing typically requires user testing and comparative analysis.
+  - Evidence of immersive experience should include player feedback and engagement metrics.
+- **Strengths**:
+  - Q2: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.52)
+  - Q3: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.70)
+  - Q4: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.64)
+  - Q5: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.41)
+  - Q6: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.53)
+- **Risks**:
+  - Q3: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q4: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q5: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+- **Representative snippets**:
+  - Q1: Incoherence's combination of survival, horror, comedy, and retro-futurism elements presents a distinctive narrative and gameplay experience that may differentia...
+  - Q2: The proposal states that Incoherence utilizes ray-tracing technology for realistic lighting and reflections, which is known to enhance immersion in gaming envir...
+  - Q3: Incoherence offers potential customer value through its blend of survival, horror, comedy, and retro-futurism genres, which may appeal to players seeking divers...
+  - Q4: The proposal states that Incoherence is built on an open-source engine, which may present challenges in protecting intellectual property (IP) and maintaining a ...
+  - Q5: The proposal does not explicitly outline potential risks of obsolescence or commoditization, which represents a gap in understanding the long-term viability of ...
+  - Q6: The proposal suggests that Incoherence's unique blend of genres could appeal to various customer segments beyond traditional FPS players, but it lacks specific ...
+- Median bullet count, estimated: 4
+
+### feasibility - score 0.482  ##########----------
+- Reference hints, not facts: Kickstarter campaign milestones; budget allocation realism; player interaction challenges; local support resources; repair and hack mechanics; timeline alignment evidence; The project has a current budget of $4,267 towards a goal of $50,000 for full game development.; The Kickstarter campaign is essential for expanding the team and delivering the game.
+- Mean alignment / drift: **0.47 / 0.13**
+- Main score contributors: length, structure, claims
+- Main penalty factors: dimension_drift
+- **Top evidence phrases, authority hits first**:
+  - A detailed budget plan, campaign timeline, and marketing strategy for the Kickstarter campaign.
+  - Details on how feedback will be integrated into the development process to ensure responsiveness.
+  - Details on playtesting results, community feedback mechanisms, or design documents outlining the repair and hack mechani
+- **General insights, not project achievements**:
+  - Common industry practice suggests detailed budget breakdowns are essential for assessing feasibility.
+  - Many projects encounter challenges due to underestimating funding needs or over-relying on crowdfunding.
+  - Establishing a clear financial plan with milestones can help in securing investor confidence.
+  - In similar projects, clear milestones and tasks for crowdfunding campaigns are essential for maintaining backer engagement and ensuring transparency.
+  - Common pitfalls include vague campaign plans that do not specify how funds will be utilized or how backer feedback will be incorporated into development.
+- **Strengths**:
+  - Q1: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.62)
+  - Q2: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.50)
+  - Q3: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.41)
+  - Q4: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.41)
+  - Q6: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.66)
+- **Risks**:
+  - Q2: possible cross-dimension drift (drift=0.25); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q3: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q4: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+- **Representative snippets**:
+  - Q1: The budget of $4,267 towards a goal of $50,000 for full game development indicates a significant funding gap that needs to be addressed to ensure project viabil...
+  - Q2: The proposal states that the Kickstarter campaign is essential for expanding the team and delivering the game, but it lacks specific tasks and milestones planne...
+  - Q3: The proposal identifies potential challenges related to player interactions with robots and security systems, which could impact gameplay and user experience.
+T...
+  - Q4: The proposed mitigation of allowing players to repair and hack robots and security systems addresses the identified risk by providing interactive gameplay eleme...
+  - Q5: Being based in Montreal, Canada, may provide access to a vibrant gaming community, local talent, and potential funding opportunities through local grants or ini...
+  - Q6: On a scale of 1 to 5, the alignment of current resources and timeline for achieving the $50,000 goal for the Kickstarter campaign could be rated at a 2, given t...
+- Median bullet count, estimated: 4
+
+> Note: this report is based only on structured candidate-answer metrics, including length, claims, evidence hints, authority/coverage diagnostics, structure, consistency, confidence, and dimension alignment. General insights are industry-context suggestions and do not mean the project has already met those requirements. Before final use, manually check alignment with the original proposal and supporting evidence.

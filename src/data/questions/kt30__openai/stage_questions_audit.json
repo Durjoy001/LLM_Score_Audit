@@ -1,0 +1,627 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt30__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt30__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 267,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team is led by Stanley Ezenwafor, the founder of AfriDish, who possesses a degree in Computer Networks and Telecommunications. He has seven years of experience in project management and software development, indicating a strong background for leading the project.",
+        "first_key_point_preview": "Stanley Ezenwafor is the founder of AfriDish.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.9,
+        "raw_chars": 3725,
+        "usage": {
+          "prompt_tokens": 3322,
+          "completion_tokens": 758,
+          "total_tokens": 4080
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "project management experience",
+        "software development background",
+        "domain-specific expertise",
+        "validation challenges",
+        "resource allocation concerns",
+        "collaboration partnerships",
+        "team capacity assessment",
+        "risk mitigation strategies",
+        "execution capability"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "validation_and_compliance_experience": 1,
+          "team_capacity_and_bandwidth": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Stanley Ezenwafor's seven years of experience in project management and software development position him to lead the initiative effectively? Please provide specific examples of past projects that demonstrate hi ...",
+          "question_en_preview": "How does Stanley Ezenwafor's seven years of experience in project management and software development position him to lead the initiative effectively? Please provide specific examples of past projects that demonstrate hi ..."
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does Stanley Ezenwafor bring to the project, particularly in relation to the objectives of AfriDish? How does this expertise enhance the team's ability to address the target customer proble ...",
+          "question_en_preview": "What specific domain expertise does Stanley Ezenwafor bring to the project, particularly in relation to the objectives of AfriDish? How does this expertise enhance the team's ability to address the target customer proble ..."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential challenges could arise from the team's lack of specified mitigation measures for validation and compliance? How might this impact the project's execution?",
+          "question_en_preview": "Given the limited risk information provided, what potential challenges could arise from the team's lack of specified mitigation measures for validation and compliance? How might this impact the project's execution?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Considering the current workload and potential parallel projects, does the team have sufficient capacity and bandwidth to commit to this initiative? Please evaluate any concerns regarding resource allocation.",
+          "question_en_preview": "Considering the current workload and potential parallel projects, does the team have sufficient capacity and bandwidth to commit to this initiative? Please evaluate any concerns regarding resource allocation."
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What existing collaborations or partnerships does the team have that could support the objectives of AfriDish? How stable and complementary are these relationships?",
+          "question_en_preview": "What existing collaborations or partnerships does the team have that could support the objectives of AfriDish? How stable and complementary are these relationships?"
+        }
+      ],
+      "elapsed_sec": 11.91,
+      "final_question_count": 6
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 317,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "AfriDish aims to empower African and Caribbean food businesses in Canada by providing a marketplace that enhances visibility, value, and profitability. The project has set specific milestones, including the launch of its e-commerce platform by April, and seeks to diversify revenu ...",
+        "first_key_point_preview": "AfriDish serves as a marketplace for African food businesses to reach millions of customers in Canada.",
+        "first_risk_preview": "The project aims to mitigate risks by diversifying revenue streams and market segments to maintain steady growth.",
+        "first_mitigation_preview": "Continuous improvement based on user feedback will be part of the onboarding strategy."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.71,
+        "raw_chars": 4233,
+        "usage": {
+          "prompt_tokens": 3406,
+          "completion_tokens": 905,
+          "total_tokens": 4311
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "market opportunity analysis",
+        "success metrics definition",
+        "revenue diversification strategy",
+        "milestone feasibility assessment",
+        "stakeholder value creation",
+        "scope prioritization risks",
+        "user feedback integration",
+        "e-commerce platform launch",
+        "profitability enhancement strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the objective of enhancing visibility, value, and profitability for African and Caribbean food businesses align with the identified market opportunity in Canada? Please discuss any gaps in this alignment.",
+          "question_en_preview": "How well does the objective of enhancing visibility, value, and profitability for African and Caribbean food businesses align with the identified market opportunity in Canada? Please discuss any gaps in this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness of the milestone to launch the e-commerce platform by April. What factors could impact this timeline, and how might they affect the overall objectives?",
+          "question_en_preview": "Evaluate the reasonableness of the milestone to launch the e-commerce platform by April. What factors could impact this timeline, and how might they affect the overall objectives?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics should AfriDish establish to measure the effectiveness of its marketplace in enhancing profitability for food businesses? How can these metrics be quantified?",
+          "question_en_preview": "What specific success metrics should AfriDish establish to measure the effectiveness of its marketplace in enhancing profitability for food businesses? How can these metrics be quantified?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Discuss how AfriDish's objectives create value for its stakeholders and how this aligns with its revenue diversification strategy. Are there any potential weaknesses in this logic?",
+          "question_en_preview": "Discuss how AfriDish's objectives create value for its stakeholders and how this aligns with its revenue diversification strategy. Are there any potential weaknesses in this logic?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how realistic do you find AfriDish's objectives in terms of ambition versus feasibility? Please provide evidence that would increase your confidence in the project's success.",
+          "question_en_preview": "On a scale of 1-5, how realistic do you find AfriDish's objectives in terms of ambition versus feasibility? Please provide evidence that would increase your confidence in the project's success."
+        }
+      ],
+      "elapsed_sec": 15.71,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 348,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "AfriDish's strategy focuses on creating a marketplace for African food businesses in Canada, aiming to enhance visibility and profitability for these businesses. The project emphasizes continuous innovation and user feedback to adapt to market dynamics, while also exploring diver ...",
+        "first_key_point_preview": "AfriDish serves as a marketplace for African food businesses to reach millions of customers in Canada.",
+        "first_risk_preview": "The proposal identifies the need to diversify revenue streams and market segments to mitigate risks and maintain steady growth.",
+        "first_mitigation_preview": "Continuous improvement based on user feedback will be part of the onboarding strategy to address potential challenges."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.69,
+        "raw_chars": 4618,
+        "usage": {
+          "prompt_tokens": 3536,
+          "completion_tokens": 996,
+          "total_tokens": 4532
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "partnership strategy",
+        "revenue diversification",
+        "scalability design",
+        "user feedback integration",
+        "budget realism",
+        "market visibility",
+        "continuous innovation",
+        "operational readiness",
+        "value proposition",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 2,
+          "business_model_and_unit_economics": 2,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does AfriDish plan to secure partnerships with key stakeholders to enhance its value proposition and extend its reach in the Canadian market?",
+          "question_en_preview": "How does AfriDish plan to secure partnerships with key stakeholders to enhance its value proposition and extend its reach in the Canadian market?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies will AfriDish implement to diversify its revenue streams and market segments, and how will these strategies mitigate risks to maintain steady growth?",
+          "question_en_preview": "What specific strategies will AfriDish implement to diversify its revenue streams and market segments, and how will these strategies mitigate risks to maintain steady growth?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "In what ways does AfriDish's marketplace design facilitate scalability to handle increased traffic and transaction volumes, and what are the major trade-offs considered in this design?",
+          "question_en_preview": "In what ways does AfriDish's marketplace design facilitate scalability to handle increased traffic and transaction volumes, and what are the major trade-offs considered in this design?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the plan for continuous innovation based on user feedback, and how will this be integrated into the onboarding strategy to address potential challenges?",
+          "question_en_preview": "What is the plan for continuous innovation based on user feedback, and how will this be integrated into the onboarding strategy to address potential challenges?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "If the proposal does not provide sufficient details on the scaling strategy from early validation to large-scale rollout, please state this information gap and discuss its impact on the assessment.",
+          "question_en_preview": "If the proposal does not provide sufficient details on the scaling strategy from early validation to large-scale rollout, please state this information gap and discuss its impact on the assessment."
+        }
+      ],
+      "elapsed_sec": 17.69,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 262,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project identifies a significant gap in support for African food businesses in Canada, highlighting an opportunity for innovation in this sector. This observation suggests a potential for developing unique solutions tailored to the needs of these businesses.",
+        "first_key_point_preview": "Stanley Ezenwafor observed a significant gap in the support for African food businesses in Canada.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.43,
+        "raw_chars": 4673,
+        "usage": {
+          "prompt_tokens": 3317,
+          "completion_tokens": 1010,
+          "total_tokens": 4327
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "gap in support",
+        "African food businesses",
+        "competitive advantage",
+        "intellectual property strategy",
+        "evidence of innovation",
+        "scalability potential",
+        "risk of obsolescence",
+        "customer segment extension",
+        "unique solutions",
+        "market differentiation"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project’s identification of the gap in support for African food businesses in Canada represent true novelty compared to existing solutions in the market?",
+          "question_en_preview": "How does the project’s identification of the gap in support for African food businesses in Canada represent true novelty compared to existing solutions in the market?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the proposed solution offer over existing support mechanisms for food businesses, particularly those serving African communities in Canada?",
+          "question_en_preview": "What clear advantages does the proposed solution offer over existing support mechanisms for food businesses, particularly those serving African communities in Canada?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence can be provided to support the innovation proposed for addressing the gap in support for African food businesses in Canada, and how robust is this evidence?",
+          "question_en_preview": "What evidence can be provided to support the innovation proposed for addressing the gap in support for African food businesses in Canada, and how robust is this evidence?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the proposed solution within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the proposed solution within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How might the innovation extend beyond the current focus on African food businesses in Canada to other customer segments or geographies, and what factors would support this scalability?",
+          "question_en_preview": "How might the innovation extend beyond the current focus on African food businesses in Canada to other customer segments or geographies, and what factors would support this scalability?"
+        }
+      ],
+      "elapsed_sec": 15.43,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 415,
+        "key_points_count": 7,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the AfriDish project is challenged by various operational risks, including cybersecurity threats, regulatory compliance issues, logistical challenges, and user onboarding difficulties. The project has outlined specific mitigation strategies to address these ris ...",
+        "first_key_point_preview": "AfriDish faces cybersecurity threats as an operational risk.",
+        "first_risk_preview": "The proposal identifies multiple operational risks, including cybersecurity threats, regulatory compliance issues, logistical challenges, and user onboarding difficulties.",
+        "first_mitigation_preview": "AfriDish will implement robust cybersecurity measures, regular audits, user education, and collaboration with experts to mitigate cybersecurity threats."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.17,
+        "raw_chars": 4349,
+        "usage": {
+          "prompt_tokens": 3485,
+          "completion_tokens": 917,
+          "total_tokens": 4402
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "cybersecurity measures",
+        "logistics partnerships",
+        "user onboarding resources",
+        "regulatory compliance strategies",
+        "budget allocation",
+        "customer acceptance evidence",
+        "operational risk mitigation",
+        "implementation timeline",
+        "resource alignment",
+        "risk quantification"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "risk_management": 2,
+          "implementation_barriers": 1,
+          "funding_and_budget_planning": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "resources_and_infrastructure": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies does AfriDish have in place to address the identified operational risks, particularly regarding cybersecurity threats and regulatory compliance issues?",
+          "question_en_preview": "What specific strategies does AfriDish have in place to address the identified operational risks, particularly regarding cybersecurity threats and regulatory compliance issues?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does AfriDish plan to overcome the logistical challenges and user onboarding difficulties identified as significant risks in the proposal?",
+          "question_en_preview": "How does AfriDish plan to overcome the logistical challenges and user onboarding difficulties identified as significant risks in the proposal?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the budget allocation for implementing the cybersecurity measures and logistics partnerships, and how does AfriDish ensure the reasonableness of these allocations?",
+          "question_en_preview": "What is the budget allocation for implementing the cybersecurity measures and logistics partnerships, and how does AfriDish ensure the reasonableness of these allocations?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What evidence does AfriDish have to support the feasibility of customer acceptance and procurement in light of the operational risks identified?",
+          "question_en_preview": "What evidence does AfriDish have to support the feasibility of customer acceptance and procurement in light of the operational risks identified?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does AfriDish plan to align its timeline with the resources required to implement the proposed mitigations for operational risks?",
+          "question_en_preview": "How does AfriDish plan to align its timeline with the resources required to implement the proposed mitigations for operational risks?"
+        }
+      ],
+      "elapsed_sec": 15.17,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T19:18:05Z",
+  "elapsed_sec": 75.91,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt30__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt30__openai/generated_questions_detail.json"
+}

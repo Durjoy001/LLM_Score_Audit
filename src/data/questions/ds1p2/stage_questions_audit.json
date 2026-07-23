@@ -1,0 +1,620 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "ds1p2",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/ds1p2/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 498,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team comprises members from various institutions, including East China Normal University and New York University (Shanghai), with expertise in enzyme technology and bioprocessing. Key team members include Dr. Zhang Lu Jia, the founder and chairman, and Dr. Feng Ying H ...",
+        "first_key_point_preview": "Dr. Zhang Lu Jia is the founder and chairman of the company, affiliated with East China Normal University as a professor.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Images are annotated with numerical labels relating to specific applications, such as improving animal feed digestion and dairy manufacturing."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.35,
+        "raw_chars": 4304,
+        "usage": {
+          "prompt_tokens": 3446,
+          "completion_tokens": 932,
+          "total_tokens": 4378
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Dr. Zhang Lu Jia",
+        "Dr. Feng Ying Hui",
+        "enzyme technology expertise",
+        "bioprocessing experience",
+        "partnerships with industry",
+        "national research projects",
+        "customer relationship management",
+        "validation experience",
+        "governance structures",
+        "team capacity assessment"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 5
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 2,
+          "team_capacity_and_bandwidth": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How do the leadership experiences of Dr. Zhang Lu Jia and Dr. Feng Ying Hui position the team to advance the project towards its intended application and commercialization?",
+          "question_en_preview": "How do the leadership experiences of Dr. Zhang Lu Jia and Dr. Feng Ying Hui position the team to advance the project towards its intended application and commercialization?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does the team possess in enzyme technology and bioprocessing that will contribute to the project's success?",
+          "question_en_preview": "What specific expertise does the team possess in enzyme technology and bioprocessing that will contribute to the project's success?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How do the partnerships with Ningxia Xiasheng Industrial Group and Shanghai Didi Biotechnology Co., Ltd. enhance the team's capabilities in enzyme development and application?",
+          "question_en_preview": "How do the partnerships with Ningxia Xiasheng Industrial Group and Shanghai Didi Biotechnology Co., Ltd. enhance the team's capabilities in enzyme development and application?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the team's involvement in over 10 major national research projects, what validation or compliance experiences can be leveraged for this project?",
+          "question_en_preview": "Given the team's involvement in over 10 major national research projects, what validation or compliance experiences can be leveraged for this project?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Does the team currently have sufficient capacity and bandwidth to manage this project alongside their existing commitments? If not, what are the implications?",
+          "question_en_preview": "Does the team currently have sufficient capacity and bandwidth to manage this project alongside their existing commitments? If not, what are the implications?"
+        }
+      ],
+      "elapsed_sec": 12.35,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 490,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 2,
+        "summary_preview": "The project aims to effectively hydrolyze soybean protein to extract peptides with blood pressure-lowering functions, addressing significant market demands in enzyme preparation. Key objectives include developing high-performance enzyme products, improving food utilization effici ...",
+        "first_key_point_preview": "The project seeks to hydrolyze soybean protein to extract peptides with blood pressure-lowering functions.",
+        "first_risk_preview": "Effectively and accurately hydrolyzing soybean protein to extract peptides with blood pressure-lowering function remains an issue.",
+        "first_mitigation_preview": "The targeted bioprocessing aims to improve the efficiency of food utilization."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.16,
+        "raw_chars": 4207,
+        "usage": {
+          "prompt_tokens": 3493,
+          "completion_tokens": 893,
+          "total_tokens": 4386
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "market demand evidence",
+        "customer validation",
+        "milestone execution",
+        "success metrics",
+        "value creation strategy",
+        "enzyme supply shortages",
+        "food utilization efficiency",
+        "risk of broad scope",
+        "ambition vs feasibility"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the project align with the urgent need for effective hydrolysis of soybean protein to extract peptides with blood pressure-lowering functions? Please discuss any evidence of market demand or customer valida ...",
+          "question_en_preview": "How well does the project align with the urgent need for effective hydrolysis of soybean protein to extract peptides with blood pressure-lowering functions? Please discuss any evidence of market demand or customer valida ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness and executability of the project's milestones, such as the completion of software development and the development of enzyme products. What evidence supports your assessment?",
+          "question_en_preview": "Evaluate the reasonableness and executability of the project's milestones, such as the completion of software development and the development of enzyme products. What evidence supports your assessment?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics does the project propose to measure the effectiveness of the enzyme products and their impact on food utilization efficiency? Are these metrics realistic?",
+          "question_en_preview": "What clear and quantifiable success metrics does the project propose to measure the effectiveness of the enzyme products and their impact on food utilization efficiency? Are these metrics realistic?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project articulate its value creation and revenue capture strategy, particularly in relation to addressing enzyme supply shortages and improving food utilization efficiency?",
+          "question_en_preview": "How does the project articulate its value creation and revenue capture strategy, particularly in relation to addressing enzyme supply shortages and improving food utilization efficiency?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too idealistic or too conservative given the current challenges in hydrolyzing soybean protein?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too idealistic or too conservative given the current challenges in hydrolyzing soybean protein?"
+        }
+      ],
+      "elapsed_sec": 11.16,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 293,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project strategy focuses on addressing complex challenges in enzyme development and the maturation of AI technologies. It aims to create high-performance enzyme products and improve customer solutions through strong partnerships and innovative approaches in enzyme design and  ...",
+        "first_key_point_preview": "The project emphasizes challenges such as complexity and computational difficulty in enzyme development.",
+        "first_risk_preview": "The project faces challenges related to complexity and computational difficulties in enzyme development.",
+        "first_mitigation_preview": "The project includes the design of highly selective proteases and the optimization of conditions for their use as a mitigation strategy."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.75,
+        "raw_chars": 4217,
+        "usage": {
+          "prompt_tokens": 3519,
+          "completion_tokens": 885,
+          "total_tokens": 4404
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "enzyme development challenges",
+        "highly selective proteases",
+        "salt-reducing enzyme",
+        "funding allocation strategy",
+        "partnerships for enzyme design",
+        "scaling strategy for enzyme products",
+        "market entry strategy",
+        "computational difficulties in enzyme optimization",
+        "customer demand for enzyme solutions"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to address the complexity and computational difficulties in enzyme development, as highlighted in the key points? What alternatives were considered in the solution route design?",
+          "question_en_preview": "How does the project plan to address the complexity and computational difficulties in enzyme development, as highlighted in the key points? What alternatives were considered in the solution route design?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific validation stages will the project undergo to ensure the effectiveness of the highly selective proteases and their optimized conditions for use?",
+          "question_en_preview": "What specific validation stages will the project undergo to ensure the effectiveness of the highly selective proteases and their optimized conditions for use?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the emphasis on developing a salt-reducing enzyme, what is the proposed go-to-market strategy for this product, and how does it address customer demand?",
+          "question_en_preview": "Given the emphasis on developing a salt-reducing enzyme, what is the proposed go-to-market strategy for this product, and how does it address customer demand?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how realistic is the funding allocation strategy for improvements in computing and experimental platforms, production process optimization, and market development? What evidence would increase your con ...",
+          "question_en_preview": "On a scale of 1-5, how realistic is the funding allocation strategy for improvements in computing and experimental platforms, production process optimization, and market development? What evidence would increase your con ..."
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What partnerships are being pursued to enhance the enzyme design services and mitigate supply disruptions in enzyme preparations, as mentioned in the key points?",
+          "question_en_preview": "What partnerships are being pursued to enhance the enzyme design services and mitigate supply disruptions in enzyme preparations, as mentioned in the key points?"
+        }
+      ],
+      "elapsed_sec": 12.75,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 406,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces innovative bioprocessing techniques that address inefficiencies in traditional food processing. It features the development of novel enzymes and methodologies, including the first all-aqueous biocatalyst for peptide bond synthesis, which breaks a long-stand ...",
+        "first_key_point_preview": "The enzyme 新 肽合成酶 is the first all-aqueous biocatalyst for peptide bond synthesis, breaking a 30-year industry bottleneck.",
+        "first_risk_preview": "Traditional non-targeted food processing faces challenges such as low utilization, heavy waste, poor taste, and nutrition loss.",
+        "first_mitigation_preview": "The activity of proteases has been improved by 2 times."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.25,
+        "raw_chars": 3923,
+        "usage": {
+          "prompt_tokens": 3489,
+          "completion_tokens": 873,
+          "total_tokens": 4362
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "all-aqueous biocatalyst",
+        "targeted bioprocessing",
+        "SMART platform advantages",
+        "AI integration in enzyme design",
+        "protease activity improvement",
+        "competitive edge in food processing",
+        "intellectual property strategies",
+        "experimental evidence for fermentation",
+        "risk of commoditization"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "evidence_strength_for_innovation": 2,
+          "differentiation_and_competitive_edge": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the enzyme 新 肽合成酶's all-aqueous biocatalyst for peptide bond synthesis compare to existing solutions in terms of addressing industry bottlenecks?",
+          "question_en_preview": "How does the enzyme 新 肽合成酶's all-aqueous biocatalyst for peptide bond synthesis compare to existing solutions in terms of addressing industry bottlenecks?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What experimental or operational evidence supports the claim that the targeted bioprocessing using fermentation enhances quality and efficiency?",
+          "question_en_preview": "What experimental or operational evidence supports the claim that the targeted bioprocessing using fermentation enhances quality and efficiency?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific advantages does the SMART platform offer over traditional enzyme design platforms, particularly in terms of AI integration and control point calculations?",
+          "question_en_preview": "What specific advantages does the SMART platform offer over traditional enzyme design platforms, particularly in terms of AI integration and control point calculations?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the challenges faced by traditional food processing, how might the proposed innovations risk becoming obsolete or commoditized within the next few years?",
+          "question_en_preview": "Given the challenges faced by traditional food processing, how might the proposed innovations risk becoming obsolete or commoditized within the next few years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property related to the novel enzymes and methodologies developed in this project?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property related to the novel enzymes and methodologies developed in this project?"
+        }
+      ],
+      "elapsed_sec": 9.25,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 435,
+        "key_points_count": 6,
+        "risks_count": 4,
+        "mitigations_count": 2,
+        "summary_preview": "The feasibility of the project is challenged by high time consumption and low success rates in enzyme development, particularly in the first generation. Additionally, there are significant issues with the utilization and processing methods of soybeans, leading to waste in agricul ...",
+        "first_key_point_preview": "The enzyme development process faces challenges such as high time consumption and low success rates in the first generation.",
+        "first_risk_preview": "The enzyme development process faces challenges such as high time consumption and low success rates in the first generation.",
+        "first_mitigation_preview": "The funding allocation for the current round includes 40% for computing and experimental platform improvement, 25% for production process optimization and expansion trials, 20% for market development and business expansion, and 15% for R&D personnel investment and core team build ..."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.26,
+        "raw_chars": 5123,
+        "usage": {
+          "prompt_tokens": 3619,
+          "completion_tokens": 1056,
+          "total_tokens": 4675
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding allocation breakdown",
+        "enzyme development challenges",
+        "operational execution plan",
+        "customer acceptance evidence",
+        "implementation barriers",
+        "waste in agricultural processing",
+        "risk mitigation strategies",
+        "resource alignment timeline",
+        "product series acceptance",
+        "computational difficulties"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 2,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 4,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the structured funding allocation, which includes 40% for computing and experimental platform improvement, 25% for production process optimization, and 20% for market development, support the project's feasibili ...",
+          "question_en_preview": "How does the structured funding allocation, which includes 40% for computing and experimental platform improvement, 25% for production process optimization, and 20% for market development, support the project's feasibili ..."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific steps and timelines are outlined in the operational execution plan to mitigate the risks associated with high time consumption and low success rates in the first generation of enzyme development?",
+          "question_en_preview": "What specific steps and timelines are outlined in the operational execution plan to mitigate the risks associated with high time consumption and low success rates in the first generation of enzyme development?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Considering the identified risks related to complexity and computational difficulty in the second generation of enzyme development, how effective are the proposed mitigations in addressing these challenges?",
+          "question_en_preview": "Considering the identified risks related to complexity and computational difficulty in the second generation of enzyme development, how effective are the proposed mitigations in addressing these challenges?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation have been identified in the proposal regarding the utilization and processing methods of soybeans, and how does the project plan to overcome these barriers?",
+          "question_en_preview": "What barriers to implementation have been identified in the proposal regarding the utilization and processing methods of soybeans, and how does the project plan to overcome these barriers?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence is available to support the feasibility of customer acceptance and procurement for the product series, including the blood pressure-reducing oral liquid and soy milk?",
+          "question_en_preview": "What evidence is available to support the feasibility of customer acceptance and procurement for the product series, including the blood pressure-reducing oral liquid and soy milk?"
+        }
+      ],
+      "elapsed_sec": 12.26,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-06-10T18:47:54Z",
+  "elapsed_sec": 57.78,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p2/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p2/generated_questions_detail.json"
+}

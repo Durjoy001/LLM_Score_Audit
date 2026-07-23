@@ -1,0 +1,625 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt19__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt19__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 222,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'The Agreement Paradox' is led by Dragan Kopunović, who is the sole identified team member. The project is presented on Kickstarter, indicating a focus on community engagement and funding through this platform.",
+        "first_key_point_preview": "Dragan Kopunović is the creator and leader of 'The Agreement Paradox'.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 28.93,
+        "raw_chars": 4547,
+        "usage": {
+          "prompt_tokens": 3278,
+          "completion_tokens": 1019,
+          "total_tokens": 4297
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "project leadership experience",
+        "team capacity assessment",
+        "collaboration network strategy",
+        "governance structure",
+        "domain expertise relevance",
+        "workload management",
+        "community engagement strategy",
+        "risk identification",
+        "execution record",
+        "project advancement capability"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is Dragan Kopunović's prior execution record in leading similar projects, and how does this experience position him to advance 'The Agreement Paradox' to its intended application?",
+          "question_en_preview": "What is Dragan Kopunović's prior execution record in leading similar projects, and how does this experience position him to advance 'The Agreement Paradox' to its intended application?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Dragan Kopunović's expertise relate to the specific challenges and needs of the target audience for 'The Agreement Paradox'?",
+          "question_en_preview": "How does Dragan Kopunović's expertise relate to the specific challenges and needs of the target audience for 'The Agreement Paradox'?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that Dragan Kopunović is the sole identified team member, how does he plan to manage his workload and ensure sufficient capacity to execute 'The Agreement Paradox' effectively?",
+          "question_en_preview": "Given that Dragan Kopunović is the sole identified team member, how does he plan to manage his workload and ensure sufficient capacity to execute 'The Agreement Paradox' effectively?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What strategies does Dragan Kopunović have in place to build a collaboration network that could support 'The Agreement Paradox', especially considering the limited team size?",
+          "question_en_preview": "What strategies does Dragan Kopunović have in place to build a collaboration network that could support 'The Agreement Paradox', especially considering the limited team size?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the governance structure for 'The Agreement Paradox' ensure effective decision-making and conflict resolution, given the limited team composition?",
+          "question_en_preview": "How does the governance structure for 'The Agreement Paradox' ensure effective decision-making and conflict resolution, given the limited team composition?"
+        }
+      ],
+      "elapsed_sec": 28.93,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 333,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to transform consumer brand agreements and address issues related to their logical consistency. It includes a funding goal of CA$ 25,000 and plans to expand beyond the current pilot phase. The project also features a user interface design that enhances user inter ...",
+        "first_key_point_preview": "The project aims to transform consumer brand agreements.",
+        "first_risk_preview": "The project aims to address issues with consumer agreements that are not logically sound.",
+        "first_mitigation_preview": "The project will prioritize addressing scalability if the number of backers approaches the limits of the technology."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 47.41,
+        "raw_chars": 4358,
+        "usage": {
+          "prompt_tokens": 3430,
+          "completion_tokens": 932,
+          "total_tokens": 4362
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "consumer brand agreements",
+        "logical consistency",
+        "funding goal CA$ 25,000",
+        "scalability prioritization",
+        "user interface design",
+        "quantifiable success metrics",
+        "milestones beyond pilot phase",
+        "value creation logic",
+        "stakeholder impact",
+        "execution realism"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "business_or_impact_logic": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the project's objective of transforming consumer brand agreements align with the identified issues of logical consistency in these agreements? Please discuss any evidence of urgency or demand for this trans ...",
+          "question_en_preview": "How well does the project's objective of transforming consumer brand agreements align with the identified issues of logical consistency in these agreements? Please discuss any evidence of urgency or demand for this trans ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the proposed milestones for the project beyond the current pilot phase, and how realistic are these milestones in terms of execution? Please provide specific examples.",
+          "question_en_preview": "What are the proposed milestones for the project beyond the current pilot phase, and how realistic are these milestones in terms of execution? Please provide specific examples."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What quantifiable success metrics does the project plan to use to measure the effectiveness of the transformed consumer brand agreements? How will these metrics inform stakeholders about the project's impact?",
+          "question_en_preview": "What quantifiable success metrics does the project plan to use to measure the effectiveness of the transformed consumer brand agreements? How will these metrics inform stakeholders about the project's impact?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic do you find the project's funding goal of CA$ 25,000 in relation to its objectives? What evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1 to 5, how realistic do you find the project's funding goal of CA$ 25,000 in relation to its objectives? What evidence would increase your confidence in this assessment?"
+        },
+        {
+          "aspect": "scope_and_prioritization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the project's focus on enhancing user interaction through its user interface design, how well does it prioritize addressing scalability as the number of backers increases? What risks might arise if scalability is n ...",
+          "question_en_preview": "Given the project's focus on enhancing user interaction through its user interface design, how well does it prioritize addressing scalability as the number of backers increases? What risks might arise if scalability is n ..."
+        }
+      ],
+      "elapsed_sec": 47.41,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 359,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to achieve a funding goal of CA$ 25,000 and channels all agreement transformation efforts through the Market For Services. It includes a user interface design with various sections and features to enhance user interaction. The project has already received CA$ 41, ...",
+        "first_key_point_preview": "The funding goal for the project is CA$ 25,000.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 24.11,
+        "raw_chars": 3959,
+        "usage": {
+          "prompt_tokens": 3525,
+          "completion_tokens": 912,
+          "total_tokens": 4437
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding goal CA$ 25,000",
+        "Market For Services",
+        "user interface design",
+        "vendor resolution strategy",
+        "backing CA$ 41,471",
+        "trade-offs in design",
+        "risk assessment",
+        "collaboration strategies",
+        "scalability details",
+        "evidence of user interaction"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to achieve its funding goal of CA$ 25,000 through the Market For Services, and what evidence supports the viability of this channel?",
+          "question_en_preview": "How does the project plan to achieve its funding goal of CA$ 25,000 through the Market For Services, and what evidence supports the viability of this channel?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the user interface design, and how do these trade-offs enhance user interaction?",
+          "question_en_preview": "What are the major trade-offs considered in the user interface design, and how do these trade-offs enhance user interaction?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee in the project's approach to resolving vendor issues on a case-by-case basis?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee in the project's approach to resolving vendor issues on a case-by-case basis?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget for achieving the funding goal of CA$ 25,000, considering the current backing of CA$ 41,471 from 81 backers? Please provide evidence that would increase your score.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget for achieving the funding goal of CA$ 25,000, considering the current backing of CA$ 41,471 from 81 backers? Please provide evidence that would increase your score."
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What strategies are in place to ensure effective collaboration with vendors, and how will these strategies mitigate the risks associated with vendor issues?",
+          "question_en_preview": "What strategies are in place to ensure effective collaboration with vendors, and how will these strategies mitigate the risks associated with vendor issues?"
+        }
+      ],
+      "elapsed_sec": 24.12,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 311,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces innovative processes for both Service Requestors and Service Providers, including a new technology that allows for varied interpretations of legally binding terms. Additionally, it features a redesigned user interface with multiple interactive sections aime ...",
+        "first_key_point_preview": "The Service Requestor processes include registering, requesting service, selecting a provider, contracting, monitoring, approving, paying, and endorsing.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 20.63,
+        "raw_chars": 4896,
+        "usage": {
+          "prompt_tokens": 3442,
+          "completion_tokens": 1041,
+          "total_tokens": 4483
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "legally binding terms interpretation",
+        "user interface design sketches",
+        "Service Requestor processes",
+        "Service Provider processes",
+        "evidence from pilot programs",
+        "intellectual property protection strategy",
+        "competitive advantages",
+        "risk of commoditization",
+        "platform extensibility",
+        "user feedback validation"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the technology developed in this project introduce a new variable for interpreting legally binding terms compared to existing solutions? Please provide specific examples of its novelty.",
+          "question_en_preview": "How does the technology developed in this project introduce a new variable for interpreting legally binding terms compared to existing solutions? Please provide specific examples of its novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the redesigned user interface offer over current user interfaces in similar services? How do features like 'Sort', 'Filter', and 'Topic in Focus' enhance user experience?",
+          "question_en_preview": "What clear advantages does the redesigned user interface offer over current user interfaces in similar services? How do features like 'Sort', 'Filter', and 'Topic in Focus' enhance user experience?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the new processes for Service Requestors and Service Providers? Are there any pilot programs or user feedback that validate these innovations?",
+          "question_en_preview": "What evidence supports the effectiveness of the new processes for Service Requestors and Service Providers? Are there any pilot programs or user feedback that validate these innovations?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the obsolescence or commoditization of the technology and processes introduced in this project?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the obsolescence or commoditization of the technology and processes introduced in this project?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property associated with the innovative technology and user interface design? How do these strategies support long-term competition?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property associated with the innovative technology and user interface design? How do these strategies support long-term competition?"
+        }
+      ],
+      "elapsed_sec": 20.63,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 277,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project's feasibility is supported by its funding of CA$ 41,471 from 81 backers and its base in Toronto, Canada. However, it faces risks related to the legal binding of terms in consumer agreements and emphasizes the need for scalability as the number of backers increases.",
+        "first_key_point_preview": "The project has received CA$ 41,471 from 81 backers.",
+        "first_risk_preview": "The project faces risks and challenges related to the legal binding of terms in consumer agreements.",
+        "first_mitigation_preview": "The project will prioritize addressing scalability if the number of backers approaches the limits of the technology."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 23.86,
+        "raw_chars": 3813,
+        "usage": {
+          "prompt_tokens": 3449,
+          "completion_tokens": 825,
+          "total_tokens": 4274
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding sources diversity",
+        "legal compliance challenges",
+        "scalability strategy",
+        "consumer agreement terms",
+        "implementation barriers",
+        "risk mitigation strategies",
+        "budget allocation realism",
+        "customer acceptance feasibility",
+        "operational execution clarity",
+        "resource alignment with timeline"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "implementation_barriers": 1,
+          "risk_management": 1,
+          "resources_and_infrastructure": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the funding of CA$ 41,471 from 81 backers support the project's long-term financial sustainability and budget allocation?",
+          "question_en_preview": "How does the funding of CA$ 41,471 from 81 backers support the project's long-term financial sustainability and budget allocation?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific barriers to implementation might arise from the legal binding of terms in consumer agreements, and how could these impact project execution?",
+          "question_en_preview": "What specific barriers to implementation might arise from the legal binding of terms in consumer agreements, and how could these impact project execution?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the identified risk related to legal binding of terms in consumer agreements, what specific mitigation strategies are in place to address this risk?",
+          "question_en_preview": "Given the identified risk related to legal binding of terms in consumer agreements, what specific mitigation strategies are in place to address this risk?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project's emphasis on scalability prepare it for potential challenges as the number of backers increases?",
+          "question_en_preview": "How does the project's emphasis on scalability prepare it for potential challenges as the number of backers increases?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how aligned are the current resources and timeline with the project's goals for scalability? Please provide evidence that would justify a higher score.",
+          "question_en_preview": "On a scale of 1 to 5, how aligned are the current resources and timeline with the project's goals for scalability? Please provide evidence that would justify a higher score."
+        }
+      ],
+      "elapsed_sec": 23.86,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T17:34:32Z",
+  "elapsed_sec": 144.95,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt19__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt19__openai/generated_questions_detail.json"
+}

@@ -1,0 +1,617 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt94__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt94__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 213,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team is led by Ayo Elutilo, the Founder of Marshmallow Studios, which is a startup that created LearnActive. The core team is associated with Marshmallow Studios, indicating a focused organizational structure.",
+        "first_key_point_preview": "Ayo Elutilo is the Founder of Marshmallow Studios.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.06,
+        "raw_chars": 4539,
+        "usage": {
+          "prompt_tokens": 3277,
+          "completion_tokens": 972,
+          "total_tokens": 4249
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Ayo Elutilo",
+        "Marshmallow Studios",
+        "LearnActive development",
+        "team expertise",
+        "project governance",
+        "capacity assessment",
+        "validation experience",
+        "compliance processes",
+        "leadership track record"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Ayo Elutilo's experience as the Founder of Marshmallow Studios position the team to advance the project towards its intended application and commercialization?",
+          "question_en_preview": "How does Ayo Elutilo's experience as the Founder of Marshmallow Studios position the team to advance the project towards its intended application and commercialization?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does the core team associated with Marshmallow Studios bring to the development and execution of LearnActive, and how does this expertise address the target customer problem?",
+          "question_en_preview": "What specific expertise does the core team associated with Marshmallow Studios bring to the development and execution of LearnActive, and how does this expertise address the target customer problem?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited information on the team's current workload, how might this impact their capacity to effectively execute the project, and what are the potential risks associated with this?",
+          "question_en_preview": "Given the limited information on the team's current workload, how might this impact their capacity to effectively execute the project, and what are the potential risks associated with this?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with domain-specific validation and compliance processes that are necessary for the successful launch of LearnActive?",
+          "question_en_preview": "What experience does the team have with domain-specific validation and compliance processes that are necessary for the successful launch of LearnActive?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the governance structure within Marshmallow Studios support effective decision-making and conflict resolution in the context of this project?",
+          "question_en_preview": "How does the governance structure within Marshmallow Studios support effective decision-making and conflict resolution in the context of this project?"
+        }
+      ],
+      "elapsed_sec": 13.06,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 322,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The LearnActive project aims to connect individuals with instructors globally, facilitating easy access to learning various active sports without unnecessary risks. The platform is designed to support a wide range of sports and serves as a job search tool for instructors while al ...",
+        "first_key_point_preview": "The mission is to connect individuals to instructors all over the world.",
+        "first_risk_preview": "The challenges will not affect the mission to connect individuals to instructors all over the world.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.16,
+        "raw_chars": 3792,
+        "usage": {
+          "prompt_tokens": 3454,
+          "completion_tokens": 833,
+          "total_tokens": 4287
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "global instructor connection",
+        "active sports learning",
+        "user engagement metrics",
+        "milestone execution timeline",
+        "value creation strategy",
+        "stakeholder impact assessment",
+        "risk management strategies"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined is the overall goal of the LearnActive project in connecting individuals with instructors globally? Are there any unrelated sub-goals that could dilute focus?",
+          "question_en_preview": "How clearly defined is the overall goal of the LearnActive project in connecting individuals with instructors globally? Are there any unrelated sub-goals that could dilute focus?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the LearnActive project align with the stated unmet need for easy access to learning various active sports? What evidence supports the urgency of this need?",
+          "question_en_preview": "To what extent does the LearnActive project align with the stated unmet need for easy access to learning various active sports? What evidence supports the urgency of this need?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Are the proposed milestones for the LearnActive project reasonable and executable within the next 0-12 months and 12-36 months? What specific milestones are outlined?",
+          "question_en_preview": "Are the proposed milestones for the LearnActive project reasonable and executable within the next 0-12 months and 12-36 months? What specific milestones are outlined?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics does the LearnActive project include to measure its impact on users and instructors? How will these metrics be tracked?",
+          "question_en_preview": "What clear and quantifiable success metrics does the LearnActive project include to measure its impact on users and instructors? How will these metrics be tracked?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the LearnActive project explain its value creation and revenue capture strategy? What are the expected impacts on stakeholders?",
+          "question_en_preview": "How does the LearnActive project explain its value creation and revenue capture strategy? What are the expected impacts on stakeholders?"
+        }
+      ],
+      "elapsed_sec": 11.16,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 386,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The LearnActive project aims to connect users with sports instructors, addressing the challenges independent instructors face in client acquisition. The project had a funding goal of $70,614 but was canceled shortly after its funding period. The platform competes with other servi ...",
+        "first_key_point_preview": "LearnActive helps users find the perfect instructor for their sports activities.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.4,
+        "raw_chars": 4438,
+        "usage": {
+          "prompt_tokens": 3488,
+          "completion_tokens": 928,
+          "total_tokens": 4416
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "client acquisition strategy",
+        "revenue generation model",
+        "validation steps",
+        "alternative solutions",
+        "scaling risks",
+        "quality compliance strategy",
+        "partnership collaborations",
+        "competitive landscape",
+        "unit economics",
+        "market entry strategy"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 7,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 5,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies does the LearnActive project propose to attract and retain clients, given the competitive landscape mentioned in the key points?",
+          "question_en_preview": "What specific strategies does the LearnActive project propose to attract and retain clients, given the competitive landscape mentioned in the key points?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the LearnActive project plan to generate revenue, and what are the expected unit economics to support its sustainability, especially considering the canceled funding?",
+          "question_en_preview": "How does the LearnActive project plan to generate revenue, and what are the expected unit economics to support its sustainability, especially considering the canceled funding?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps were planned for the LearnActive project to ensure its solution effectively meets the needs of independent instructors and users?",
+          "question_en_preview": "What validation steps were planned for the LearnActive project to ensure its solution effectively meets the needs of independent instructors and users?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the challenges faced by independent instructors in client acquisition, what alternative solutions were considered by the LearnActive project, and what trade-offs were identified?",
+          "question_en_preview": "Given the challenges faced by independent instructors in client acquisition, what alternative solutions were considered by the LearnActive project, and what trade-offs were identified?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the potential risks associated with scaling the LearnActive project, particularly in light of the limited risk information provided in the proposal?",
+          "question_en_preview": "What are the potential risks associated with scaling the LearnActive project, particularly in light of the limited risk information provided in the proposal?"
+        }
+      ],
+      "elapsed_sec": 11.4,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 254,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "LearnActive is an innovative platform designed to connect active-sports enthusiasts with professional instructors, enhancing the way individuals engage in sports activities. This approach represents a novel integration of technology and sports education.",
+        "first_key_point_preview": "LearnActive connects active-sports enthusiasts with professional instructors, showcasing innovation in the sports education sector.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.34,
+        "raw_chars": 4746,
+        "usage": {
+          "prompt_tokens": 3312,
+          "completion_tokens": 1005,
+          "total_tokens": 4317
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "sports education innovation",
+        "competitive advantages",
+        "customer engagement metrics",
+        "scalability factors",
+        "intellectual property strategy",
+        "market evidence",
+        "risk of obsolescence",
+        "platform extensibility",
+        "performance benchmarks"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does LearnActive's approach to connecting active-sports enthusiasts with professional instructors differ from existing platforms in the sports education sector? Please provide specific examples of its novelty.",
+          "question_en_preview": "How does LearnActive's approach to connecting active-sports enthusiasts with professional instructors differ from existing platforms in the sports education sector? Please provide specific examples of its novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does LearnActive offer compared to existing sports education platforms in terms of customer value, performance, or cost? How do these advantages position it competitively?",
+          "question_en_preview": "What specific advantages does LearnActive offer compared to existing sports education platforms in terms of customer value, performance, or cost? How do these advantages position it competitively?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of LearnActive's innovative platform in enhancing engagement in sports activities? Please discuss any experimental, operational, or market evidence available.",
+          "question_en_preview": "What evidence supports the effectiveness of LearnActive's innovative platform in enhancing engagement in sports activities? Please discuss any experimental, operational, or market evidence available."
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to LearnActive's offering becoming obsolete or commoditized within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to LearnActive's offering becoming obsolete or commoditized within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How scalable is LearnActive's platform in terms of extending its services to other customer segments or geographies? What factors could influence its scalability?",
+          "question_en_preview": "How scalable is LearnActive's platform in terms of extending its services to other customer segments or geographies? What factors could influence its scalability?"
+        }
+      ],
+      "elapsed_sec": 13.35,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 400,
+        "key_points_count": 6,
+        "risks_count": 3,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the LearnActive project is challenged by several key risks, including the need to develop a user-friendly platform, build a user base, and establish relationships with instructors. Additionally, the project faces competition from similar platforms and the risk  ...",
+        "first_key_point_preview": "The LearnActive project is based in Toronto, Canada.",
+        "first_risk_preview": "There are risks and challenges associated with starting a new business.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.35,
+        "raw_chars": 4415,
+        "usage": {
+          "prompt_tokens": 3470,
+          "completion_tokens": 939,
+          "total_tokens": 4409
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user-friendly platform development",
+        "building user base strategies",
+        "funding sources diversity",
+        "competition analysis",
+        "operational execution clarity",
+        "customer acceptance evidence",
+        "risk mitigation strategies",
+        "timeline alignment",
+        "instructor relationship building",
+        "resource stability planning"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "funding_and_budget_planning": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "operational_execution_plan": 1,
+          "resources_and_infrastructure": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies does the project have in place to address the key risks associated with developing a user-friendly platform and building a user base?",
+          "question_en_preview": "What specific strategies does the project have in place to address the key risks associated with developing a user-friendly platform and building a user base?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the competition from similar platforms, what barriers does the project foresee in establishing relationships with instructors, and how does it plan to overcome them?",
+          "question_en_preview": "Given the competition from similar platforms, what barriers does the project foresee in establishing relationships with instructors, and how does it plan to overcome them?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "With only $70 pledged from 2 backers, how does the project plan to secure additional funding to support its development and operational needs?",
+          "question_en_preview": "With only $70 pledged from 2 backers, how does the project plan to secure additional funding to support its development and operational needs?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project plan to align its timeline with the necessary resources for platform development and user acquisition, especially given the identified risks?",
+          "question_en_preview": "How does the project plan to align its timeline with the necessary resources for platform development and user acquisition, especially given the identified risks?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "What evidence does the project have to support the feasibility of customer acceptance and procurement in the competitive landscape it is entering?",
+          "question_en_preview": "What evidence does the project have to support the feasibility of customer acceptance and procurement in the competitive landscape it is entering?"
+        }
+      ],
+      "elapsed_sec": 12.36,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T21:24:09Z",
+  "elapsed_sec": 61.34,
+  "total_questions": 38,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt94__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt94__openai/generated_questions_detail.json"
+}

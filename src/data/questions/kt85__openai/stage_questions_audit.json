@@ -1,0 +1,623 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt85__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt85__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 284,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Shariq Naqvi, who is also responsible for developing the Recruitment Opportunity Management System. The initiative, known as 'Hired Square', aims to integrate with potential partners and offers a modular platform compatible with existing software and techniq ...",
+        "first_key_point_preview": "The project is created and led by Shariq Naqvi.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.66,
+        "raw_chars": 4070,
+        "usage": {
+          "prompt_tokens": 3313,
+          "completion_tokens": 858,
+          "total_tokens": 4171
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "leadership experience",
+        "domain expertise",
+        "partnership integration",
+        "team capacity",
+        "validation experience",
+        "governance processes",
+        "risk management",
+        "execution record",
+        "modular platform capabilities"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Shariq Naqvi's leadership experience and prior execution record contribute to the project's potential for success in the recruitment technology space?",
+          "question_en_preview": "How does Shariq Naqvi's leadership experience and prior execution record contribute to the project's potential for success in the recruitment technology space?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does Shariq Naqvi bring to the development of the Recruitment Opportunity Management System, and how does this expertise enhance the project's credibility?",
+          "question_en_preview": "What specific domain expertise does Shariq Naqvi bring to the development of the Recruitment Opportunity Management System, and how does this expertise enhance the project's credibility?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential partners has the team identified for Hired Square, and how does the integration with these partners enhance the project's market positioning?",
+          "question_en_preview": "What potential partners has the team identified for Hired Square, and how does the integration with these partners enhance the project's market positioning?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Given the current workload and responsibilities of Shariq Naqvi, does the team have sufficient capacity and bandwidth to effectively execute the Hired Square initiative? Please evaluate any potential risks associated wit ...",
+          "question_en_preview": "Given the current workload and responsibilities of Shariq Naqvi, does the team have sufficient capacity and bandwidth to effectively execute the Hired Square initiative? Please evaluate any potential risks associated wit ..."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation and compliance experience does the team possess that is relevant to the development and deployment of the Recruitment Opportunity Management System, and how does this experience mitigate potential risks?",
+          "question_en_preview": "What validation and compliance experience does the team possess that is relevant to the development and deployment of the Recruitment Opportunity Management System, and how does this experience mitigate potential risks?"
+        }
+      ],
+      "elapsed_sec": 11.66,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 301,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to address significant inefficiencies in recruitment that cost the global economy approximately $150 billion. Hired Square seeks to enhance talent matching and optimize business performance for clients, potentially unlocking up to $130 billion in productivity acr ...",
+        "first_key_point_preview": "The proposal identifies a problem worth USD$150 billion that has not been effectively addressed.",
+        "first_risk_preview": "Hired Square is a technological response to the challenges recruitment agencies face.",
+        "first_mitigation_preview": "The software aims to lower significant opportunity costs associated with recruitment."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.22,
+        "raw_chars": 3677,
+        "usage": {
+          "prompt_tokens": 3419,
+          "completion_tokens": 822,
+          "total_tokens": 4241
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "recruitment inefficiency",
+        "value creation logic",
+        "success metrics clarity",
+        "milestone execution",
+        "scope prioritization",
+        "ambition vs feasibility balance",
+        "productivity unlocking potential",
+        "competitive edge",
+        "opportunity cost reduction"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "yes_no": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "business_or_impact_logic": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How effectively does the proposal align its objectives with the identified $150 billion inefficiency in recruitment? Please discuss any gaps in this alignment.",
+          "question_en_preview": "How effectively does the proposal align its objectives with the identified $150 billion inefficiency in recruitment? Please discuss any gaps in this alignment."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the logic behind how Hired Square's objectives will create value and capture revenue? Are there any missing elements in this logic?",
+          "question_en_preview": "What is the logic behind how Hired Square's objectives will create value and capture revenue? Are there any missing elements in this logic?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific milestones should Hired Square set to ensure the successful execution of its objectives? Are these milestones realistic given the project's scope?",
+          "question_en_preview": "What specific milestones should Hired Square set to ensure the successful execution of its objectives? Are these milestones realistic given the project's scope?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how clear and quantifiable are the success metrics associated with Hired Square's objectives? What evidence would increase your confidence in these metrics?",
+          "question_en_preview": "On a scale of 1-5, how clear and quantifiable are the success metrics associated with Hired Square's objectives? What evidence would increase your confidence in these metrics?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "yes_no",
+          "priority": 2,
+          "question_preview": "Do you believe that Hired Square's objectives strike a good balance between ambition and feasibility? Please explain your reasoning.",
+          "question_en_preview": "Do you believe that Hired Square's objectives strike a good balance between ambition and feasibility? Please explain your reasoning."
+        }
+      ],
+      "elapsed_sec": 11.23,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 365,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy of the project focuses on leveraging sophisticated software to enhance recruitment processes, aiming to provide clients with a competitive edge and optimize business performance. The project seeks to address significant productivity losses due to talent mismatches, w ...",
+        "first_key_point_preview": "The software aims to solve complex recruitment problems and provide clients with tools to better manage their organizations.",
+        "first_risk_preview": "The project faces risks related to the potential productivity losses due to talent mismatches, which could amount to $130 billion across 11 markets.",
+        "first_mitigation_preview": "Improved talent matching could unlock significant productivity gains, addressing the risks associated with recruitment issues."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.91,
+        "raw_chars": 4268,
+        "usage": {
+          "prompt_tokens": 3564,
+          "completion_tokens": 900,
+          "total_tokens": 4464
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "recruitment process optimization",
+        "productivity gains evidence",
+        "market entry strategy",
+        "customer acquisition plan",
+        "validation steps",
+        "compliance and quality assurance",
+        "scaling challenges",
+        "partnership collaborations",
+        "talent matching software",
+        "competitive edge"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 3
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "development_and_validation_path": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to leverage sophisticated software to enhance recruitment processes, and what alternatives were considered during the solution design?",
+          "question_en_preview": "How does the project plan to leverage sophisticated software to enhance recruitment processes, and what alternatives were considered during the solution design?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the funding goal of $105,921 was not met, what is the revised strategy for market entry and customer acquisition to ensure the project's viability?",
+          "question_en_preview": "Given the funding goal of $105,921 was not met, what is the revised strategy for market entry and customer acquisition to ensure the project's viability?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the claim that improved talent matching could unlock significant productivity gains, and how does this translate into the project's business model?",
+          "question_en_preview": "What evidence supports the claim that improved talent matching could unlock significant productivity gains, and how does this translate into the project's business model?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What validation steps will the project undertake to ensure the software effectively addresses the complex recruitment problems identified?",
+          "question_en_preview": "What validation steps will the project undertake to ensure the software effectively addresses the complex recruitment problems identified?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "How does the project plan to ensure compliance and quality in the software's integration with existing recruitment processes and tools?",
+          "question_en_preview": "How does the project plan to ensure compliance and quality in the software's integration with existing recruitment processes and tools?"
+        }
+      ],
+      "elapsed_sec": 15.91,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 381,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces Hired Square, a recruitment opportunity management system that leverages business intelligence to address inefficiencies in the recruitment process. It features a patent-pending algorithm and a unique interface that enhances user engagement and integrates w ...",
+        "first_key_point_preview": "Hired Square is designed to go beyond traditional Applicant Tracking Systems (ATS) by integrating business intelligence.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The software is intended to give clients a competitive edge through its sophistication and ability to solve complex recruitment problems."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.55,
+        "raw_chars": 4414,
+        "usage": {
+          "prompt_tokens": 3436,
+          "completion_tokens": 985,
+          "total_tokens": 4421
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "business intelligence integration",
+        "patent-pending algorithm",
+        "user engagement metrics",
+        "recruitment process efficiency",
+        "competitive edge analysis",
+        "scalability factors",
+        "evidence of effectiveness",
+        "obsolescence risk assessment",
+        "unique interface design"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "ip_and_protection": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Hired Square's integration of business intelligence differentiate it from traditional Applicant Tracking Systems (ATS)?",
+          "question_en_preview": "How does Hired Square's integration of business intelligence differentiate it from traditional Applicant Tracking Systems (ATS)?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does Hired Square offer over existing recruitment platforms, particularly in terms of user engagement and problem-solving capabilities?",
+          "question_en_preview": "What specific advantages does Hired Square offer over existing recruitment platforms, particularly in terms of user engagement and problem-solving capabilities?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the strategy for protecting the patent-pending algorithm, and how does this contribute to Hired Square's long-term competitive position?",
+          "question_en_preview": "What is the strategy for protecting the patent-pending algorithm, and how does this contribute to Hired Square's long-term competitive position?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of Hired Square in addressing recruitment inefficiencies, and how does this evidence compare to existing solutions?",
+          "question_en_preview": "What evidence supports the effectiveness of Hired Square in addressing recruitment inefficiencies, and how does this evidence compare to existing solutions?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee for Hired Square in terms of obsolescence or commoditization within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee for Hired Square in terms of obsolescence or commoditization within the next 3-5 years?"
+        }
+      ],
+      "elapsed_sec": 11.56,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 338,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by its current funding status, operational capabilities, and the development of a sophisticated software tool aimed at improving recruitment processes. However, there are risks associated with low barriers to entry in the recruitment so ...",
+        "first_key_point_preview": "The project is based in Toronto, Canada.",
+        "first_risk_preview": "There are low barriers to entry for those with simplified ATS and recruitment software.",
+        "first_mitigation_preview": "Hired Square offers a competitive edge through sophisticated software that solves complex recruitment problems."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.02,
+        "raw_chars": 4465,
+        "usage": {
+          "prompt_tokens": 3446,
+          "completion_tokens": 932,
+          "total_tokens": 4378
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Kickstarter funding status",
+        "operational capabilities development",
+        "competitive positioning strategies",
+        "customer acceptance metrics",
+        "implementation barriers",
+        "resource alignment evidence",
+        "recruitment software integration",
+        "market entry risks",
+        "sophisticated software advantages"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "resources_and_infrastructure": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the current funding status of 107% on Kickstarter impact the project's long-term financial sustainability and budget allocation?",
+          "question_en_preview": "How does the current funding status of 107% on Kickstarter impact the project's long-term financial sustainability and budget allocation?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific operational capabilities does Hired Square need to develop to ensure successful implementation and scaling of the recruitment software?",
+          "question_en_preview": "What specific operational capabilities does Hired Square need to develop to ensure successful implementation and scaling of the recruitment software?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the identified risk of low barriers to entry in the recruitment software market, what additional strategies could Hired Square implement to strengthen its competitive positioning?",
+          "question_en_preview": "Given the identified risk of low barriers to entry in the recruitment software market, what additional strategies could Hired Square implement to strengthen its competitive positioning?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation could arise as Hired Square seeks to integrate its sophisticated software into existing recruitment processes?",
+          "question_en_preview": "What potential barriers to implementation could arise as Hired Square seeks to integrate its sophisticated software into existing recruitment processes?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How realistic is the expectation of customer acceptance for Hired Square's software, considering the competitive landscape and the complexity of recruitment challenges it addresses?",
+          "question_en_preview": "How realistic is the expectation of customer acceptance for Hired Square's software, considering the competitive landscape and the complexity of recruitment challenges it addresses?"
+        }
+      ],
+      "elapsed_sec": 10.02,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T21:07:39Z",
+  "elapsed_sec": 60.39,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt85__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt85__openai/generated_questions_detail.json"
+}

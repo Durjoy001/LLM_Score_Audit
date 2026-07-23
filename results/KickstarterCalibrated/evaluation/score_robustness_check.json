@@ -1,0 +1,780 @@
+{
+  "generated_at": "2026-07-17 14:39:47",
+  "bootstrap": {
+    "n_boot": 10000,
+    "method_note": "Paired bootstrap over the 141 proposals (resample rows, recompute AUC for both methods on the same resample, repeat). Each method's per-proposal score is treated as fixed: either a closed-form composite formula (A, B), or Method C's pooled out-of-fold CV predictions. 95% CI excluding 0 = statistically significant difference at alpha=0.05.",
+    "B_vs_A": {
+      "comparison": "B minus A",
+      "n_boot_valid": 10000,
+      "mean_diff": 0.0406,
+      "ci_95_lower": -0.0072,
+      "ci_95_upper": 0.0912,
+      "prob_method_2_better": 0.9508,
+      "significant_at_0.05": false
+    },
+    "B_vs_C": {
+      "comparison": "B minus C",
+      "n_boot_valid": 10000,
+      "mean_diff": 0.0367,
+      "ci_95_lower": -0.0074,
+      "ci_95_upper": 0.0816,
+      "prob_method_2_better": 0.9514,
+      "significant_at_0.05": false
+    },
+    "C_vs_A": {
+      "comparison": "C minus A",
+      "n_boot_valid": 10000,
+      "mean_diff": 0.0036,
+      "ci_95_lower": -0.019,
+      "ci_95_upper": 0.0288,
+      "prob_method_2_better": 0.6034,
+      "significant_at_0.05": false
+    }
+  },
+  "dimension_stability": {
+    "fixed_selection_used_in_report": [
+      "advantages",
+      "feasibility",
+      "strategy"
+    ],
+    "n_folds_matching_fixed_selection": 4,
+    "k_folds": 5,
+    "per_fold": [
+      {
+        "fold": 1,
+        "rhos_on_train": {
+          "team": {
+            "rho": 0.1274,
+            "p_value": 0.1807
+          },
+          "objective": {
+            "rho": 0.0643,
+            "p_value": 0.5006
+          },
+          "strategy": {
+            "rho": 0.2805,
+            "p_value": 0.0027
+          },
+          "advantages": {
+            "rho": 0.1893,
+            "p_value": 0.0456
+          },
+          "feasibility": {
+            "rho": 0.3494,
+            "p_value": 0.0002
+          }
+        },
+        "top3_selected": [
+          "advantages",
+          "feasibility",
+          "strategy"
+        ],
+        "matches_fixed_selection": true
+      },
+      {
+        "fold": 2,
+        "rhos_on_train": {
+          "team": {
+            "rho": 0.1762,
+            "p_value": 0.0631
+          },
+          "objective": {
+            "rho": 0.158,
+            "p_value": 0.0962
+          },
+          "strategy": {
+            "rho": 0.2277,
+            "p_value": 0.0158
+          },
+          "advantages": {
+            "rho": 0.2561,
+            "p_value": 0.0064
+          },
+          "feasibility": {
+            "rho": 0.3518,
+            "p_value": 0.0001
+          }
+        },
+        "top3_selected": [
+          "advantages",
+          "feasibility",
+          "strategy"
+        ],
+        "matches_fixed_selection": true
+      },
+      {
+        "fold": 3,
+        "rhos_on_train": {
+          "team": {
+            "rho": 0.1785,
+            "p_value": 0.0586
+          },
+          "objective": {
+            "rho": 0.0531,
+            "p_value": 0.5765
+          },
+          "strategy": {
+            "rho": 0.2352,
+            "p_value": 0.0122
+          },
+          "advantages": {
+            "rho": 0.1998,
+            "p_value": 0.0339
+          },
+          "feasibility": {
+            "rho": 0.4026,
+            "p_value": 0.0
+          }
+        },
+        "top3_selected": [
+          "advantages",
+          "feasibility",
+          "strategy"
+        ],
+        "matches_fixed_selection": true
+      },
+      {
+        "fold": 4,
+        "rhos_on_train": {
+          "team": {
+            "rho": 0.1731,
+            "p_value": 0.0667
+          },
+          "objective": {
+            "rho": 0.1202,
+            "p_value": 0.2049
+          },
+          "strategy": {
+            "rho": 0.2559,
+            "p_value": 0.0062
+          },
+          "advantages": {
+            "rho": 0.1648,
+            "p_value": 0.0811
+          },
+          "feasibility": {
+            "rho": 0.3123,
+            "p_value": 0.0008
+          }
+        },
+        "top3_selected": [
+          "feasibility",
+          "strategy",
+          "team"
+        ],
+        "matches_fixed_selection": false
+      },
+      {
+        "fold": 5,
+        "rhos_on_train": {
+          "team": {
+            "rho": 0.1536,
+            "p_value": 0.1028
+          },
+          "objective": {
+            "rho": 0.048,
+            "p_value": 0.6122
+          },
+          "strategy": {
+            "rho": 0.2668,
+            "p_value": 0.0041
+          },
+          "advantages": {
+            "rho": 0.1966,
+            "p_value": 0.0361
+          },
+          "feasibility": {
+            "rho": 0.3037,
+            "p_value": 0.001
+          }
+        },
+        "top3_selected": [
+          "advantages",
+          "feasibility",
+          "strategy"
+        ],
+        "matches_fixed_selection": true
+      }
+    ]
+  },
+  "nested_method_b": {
+    "description": "Method B re-evaluated with dimension selection AND threshold both fit within each training fold only (fully nested, most rigorous version -- no part of this number was computed using the full 141-proposal dataset).",
+    "roc_auc": 0.7731,
+    "cv_aggregated_held_out": {
+      "tp": 17,
+      "fp": 35,
+      "fn": 7,
+      "tn": 82,
+      "accuracy": 0.7021,
+      "precision": 0.3269,
+      "recall": 0.7083,
+      "f1": 0.4473
+    },
+    "per_proposal_scores": [
+      {
+        "pid": "kt1",
+        "nested_score": 0.62
+      },
+      {
+        "pid": "kt2",
+        "nested_score": 0.5867
+      },
+      {
+        "pid": "kt3",
+        "nested_score": 0.636
+      },
+      {
+        "pid": "kt4",
+        "nested_score": 0.6073
+      },
+      {
+        "pid": "kt5",
+        "nested_score": 0.6063
+      },
+      {
+        "pid": "kt6",
+        "nested_score": 0.6573
+      },
+      {
+        "pid": "kt7",
+        "nested_score": 0.5093
+      },
+      {
+        "pid": "kt8",
+        "nested_score": 0.589
+      },
+      {
+        "pid": "kt9",
+        "nested_score": 0.661
+      },
+      {
+        "pid": "kt10",
+        "nested_score": 0.6573
+      },
+      {
+        "pid": "kt11",
+        "nested_score": 0.614
+      },
+      {
+        "pid": "kt12",
+        "nested_score": 0.547
+      },
+      {
+        "pid": "kt13",
+        "nested_score": 0.6583
+      },
+      {
+        "pid": "kt14",
+        "nested_score": 0.6393
+      },
+      {
+        "pid": "kt15",
+        "nested_score": 0.542
+      },
+      {
+        "pid": "kt16",
+        "nested_score": 0.6407
+      },
+      {
+        "pid": "kt17",
+        "nested_score": 0.6367
+      },
+      {
+        "pid": "kt18",
+        "nested_score": 0.4597
+      },
+      {
+        "pid": "kt19",
+        "nested_score": 0.6087
+      },
+      {
+        "pid": "kt20",
+        "nested_score": 0.5283
+      },
+      {
+        "pid": "kt21",
+        "nested_score": 0.5887
+      },
+      {
+        "pid": "kt22",
+        "nested_score": 0.6097
+      },
+      {
+        "pid": "kt23",
+        "nested_score": 0.6587
+      },
+      {
+        "pid": "kt24",
+        "nested_score": 0.587
+      },
+      {
+        "pid": "kt25",
+        "nested_score": 0.576
+      },
+      {
+        "pid": "kt26",
+        "nested_score": 0.4587
+      },
+      {
+        "pid": "kt27",
+        "nested_score": 0.651
+      },
+      {
+        "pid": "kt28",
+        "nested_score": 0.284
+      },
+      {
+        "pid": "kt29",
+        "nested_score": 0.59
+      },
+      {
+        "pid": "kt30",
+        "nested_score": 0.5973
+      },
+      {
+        "pid": "kt31",
+        "nested_score": 0.3867
+      },
+      {
+        "pid": "kt32",
+        "nested_score": 0.637
+      },
+      {
+        "pid": "kt33",
+        "nested_score": 0.658
+      },
+      {
+        "pid": "kt34",
+        "nested_score": 0.6097
+      },
+      {
+        "pid": "kt35",
+        "nested_score": 0.6517
+      },
+      {
+        "pid": "kt36",
+        "nested_score": 0.659
+      },
+      {
+        "pid": "kt37",
+        "nested_score": 0.493
+      },
+      {
+        "pid": "kt38",
+        "nested_score": 0.3987
+      },
+      {
+        "pid": "kt39",
+        "nested_score": 0.607
+      },
+      {
+        "pid": "kt40",
+        "nested_score": 0.4027
+      },
+      {
+        "pid": "kt41",
+        "nested_score": 0.6077
+      },
+      {
+        "pid": "kt42",
+        "nested_score": 0.6437
+      },
+      {
+        "pid": "kt43",
+        "nested_score": 0.3993
+      },
+      {
+        "pid": "kt44",
+        "nested_score": 0.3497
+      },
+      {
+        "pid": "kt45",
+        "nested_score": 0.5247
+      },
+      {
+        "pid": "kt46",
+        "nested_score": 0.593
+      },
+      {
+        "pid": "kt47",
+        "nested_score": 0.3967
+      },
+      {
+        "pid": "kt48",
+        "nested_score": 0.525
+      },
+      {
+        "pid": "kt49",
+        "nested_score": 0.6583
+      },
+      {
+        "pid": "kt50",
+        "nested_score": 0.5283
+      },
+      {
+        "pid": "kt51",
+        "nested_score": 0.596
+      },
+      {
+        "pid": "kt52",
+        "nested_score": 0.6613
+      },
+      {
+        "pid": "kt53",
+        "nested_score": 0.4577
+      },
+      {
+        "pid": "kt54",
+        "nested_score": 0.53
+      },
+      {
+        "pid": "kt55",
+        "nested_score": 0.522
+      },
+      {
+        "pid": "kt56",
+        "nested_score": 0.5357
+      },
+      {
+        "pid": "kt57",
+        "nested_score": 0.2897
+      },
+      {
+        "pid": "kt58",
+        "nested_score": 0.274
+      },
+      {
+        "pid": "kt59",
+        "nested_score": 0.5873
+      },
+      {
+        "pid": "kt60",
+        "nested_score": 0.5903
+      },
+      {
+        "pid": "kt61",
+        "nested_score": 0.607
+      },
+      {
+        "pid": "kt62",
+        "nested_score": 0.6587
+      },
+      {
+        "pid": "kt63",
+        "nested_score": 0.624
+      },
+      {
+        "pid": "kt64",
+        "nested_score": 0.5873
+      },
+      {
+        "pid": "kt65",
+        "nested_score": 0.6347
+      },
+      {
+        "pid": "kt66",
+        "nested_score": 0.4627
+      },
+      {
+        "pid": "kt67",
+        "nested_score": 0.6533
+      },
+      {
+        "pid": "kt68",
+        "nested_score": 0.399
+      },
+      {
+        "pid": "kt69",
+        "nested_score": 0.652
+      },
+      {
+        "pid": "kt70",
+        "nested_score": 0.6373
+      },
+      {
+        "pid": "kt71",
+        "nested_score": 0.6093
+      },
+      {
+        "pid": "kt72",
+        "nested_score": 0.3443
+      },
+      {
+        "pid": "kt73",
+        "nested_score": 0.397
+      },
+      {
+        "pid": "kt74",
+        "nested_score": 0.5383
+      },
+      {
+        "pid": "kt75",
+        "nested_score": 0.5083
+      },
+      {
+        "pid": "kt76",
+        "nested_score": 0.5877
+      },
+      {
+        "pid": "kt77",
+        "nested_score": 0.2287
+      },
+      {
+        "pid": "kt78",
+        "nested_score": 0.5333
+      },
+      {
+        "pid": "kt79",
+        "nested_score": 0.414
+      },
+      {
+        "pid": "kt80",
+        "nested_score": 0.6393
+      },
+      {
+        "pid": "kt81",
+        "nested_score": 0.3433
+      },
+      {
+        "pid": "kt82",
+        "nested_score": 0.5273
+      },
+      {
+        "pid": "kt83",
+        "nested_score": 0.292
+      },
+      {
+        "pid": "kt84",
+        "nested_score": 0.4013
+      },
+      {
+        "pid": "kt85",
+        "nested_score": 0.638
+      },
+      {
+        "pid": "kt86",
+        "nested_score": 0.5287
+      },
+      {
+        "pid": "kt87",
+        "nested_score": 0.485
+      },
+      {
+        "pid": "kt88",
+        "nested_score": 0.5873
+      },
+      {
+        "pid": "kt89",
+        "nested_score": 0.398
+      },
+      {
+        "pid": "kt90",
+        "nested_score": 0.2303
+      },
+      {
+        "pid": "kt91",
+        "nested_score": 0.4553
+      },
+      {
+        "pid": "kt92",
+        "nested_score": 0.3887
+      },
+      {
+        "pid": "kt93",
+        "nested_score": 0.6083
+      },
+      {
+        "pid": "kt94",
+        "nested_score": 0.466
+      },
+      {
+        "pid": "kt95",
+        "nested_score": 0.457
+      },
+      {
+        "pid": "kt96",
+        "nested_score": 0.5537
+      },
+      {
+        "pid": "kt97",
+        "nested_score": 0.527
+      },
+      {
+        "pid": "kt98",
+        "nested_score": 0.554
+      },
+      {
+        "pid": "kt99",
+        "nested_score": 0.456
+      },
+      {
+        "pid": "kt100",
+        "nested_score": 0.586
+      },
+      {
+        "pid": "kt101",
+        "nested_score": 0.6387
+      },
+      {
+        "pid": "kt102",
+        "nested_score": 0.587
+      },
+      {
+        "pid": "kt103",
+        "nested_score": 0.5783
+      },
+      {
+        "pid": "kt104",
+        "nested_score": 0.4567
+      },
+      {
+        "pid": "km1",
+        "nested_score": 0.5907
+      },
+      {
+        "pid": "km2",
+        "nested_score": 0.6373
+      },
+      {
+        "pid": "km3",
+        "nested_score": 0.652
+      },
+      {
+        "pid": "km4",
+        "nested_score": 0.61
+      },
+      {
+        "pid": "km5",
+        "nested_score": 0.603
+      },
+      {
+        "pid": "km6",
+        "nested_score": 0.5453
+      },
+      {
+        "pid": "km7",
+        "nested_score": 0.5257
+      },
+      {
+        "pid": "km8",
+        "nested_score": 0.519
+      },
+      {
+        "pid": "km9",
+        "nested_score": 0.592
+      },
+      {
+        "pid": "km10",
+        "nested_score": 0.3973
+      },
+      {
+        "pid": "km11",
+        "nested_score": 0.4127
+      },
+      {
+        "pid": "km12",
+        "nested_score": 0.528
+      },
+      {
+        "pid": "km13",
+        "nested_score": 0.5853
+      },
+      {
+        "pid": "km14",
+        "nested_score": 0.398
+      },
+      {
+        "pid": "km15",
+        "nested_score": 0.5873
+      },
+      {
+        "pid": "km16",
+        "nested_score": 0.473
+      },
+      {
+        "pid": "km17",
+        "nested_score": 0.587
+      },
+      {
+        "pid": "km18",
+        "nested_score": 0.5863
+      },
+      {
+        "pid": "km19",
+        "nested_score": 0.607
+      },
+      {
+        "pid": "km20",
+        "nested_score": 0.547
+      },
+      {
+        "pid": "km21",
+        "nested_score": 0.296
+      },
+      {
+        "pid": "km22",
+        "nested_score": 0.4753
+      },
+      {
+        "pid": "km23",
+        "nested_score": 0.468
+      },
+      {
+        "pid": "km24",
+        "nested_score": 0.3487
+      },
+      {
+        "pid": "km25",
+        "nested_score": 0.526
+      },
+      {
+        "pid": "km26",
+        "nested_score": 0.3037
+      },
+      {
+        "pid": "km27",
+        "nested_score": 0.5187
+      },
+      {
+        "pid": "km28",
+        "nested_score": 0.64
+      },
+      {
+        "pid": "km29",
+        "nested_score": 0.6287
+      },
+      {
+        "pid": "km30",
+        "nested_score": 0.5407
+      },
+      {
+        "pid": "km31",
+        "nested_score": 0.327
+      },
+      {
+        "pid": "km32",
+        "nested_score": 0.4593
+      },
+      {
+        "pid": "km33",
+        "nested_score": 0.4733
+      },
+      {
+        "pid": "km34",
+        "nested_score": 0.6017
+      },
+      {
+        "pid": "km35",
+        "nested_score": 0.3507
+      },
+      {
+        "pid": "km36",
+        "nested_score": 0.599
+      },
+      {
+        "pid": "km37",
+        "nested_score": 0.3473
+      }
+    ]
+  }
+}

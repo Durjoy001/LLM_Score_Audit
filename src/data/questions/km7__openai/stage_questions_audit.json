@@ -1,0 +1,630 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km7__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km7__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 216,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'Services At Your Door' is led by Lama Baali, who is identified as the creator. The team structure appears to be centered around this key individual, indicating a potentially singular leadership approach.",
+        "first_key_point_preview": "Lama Baali is the creator of the project 'Services At Your Door'.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 26.5,
+        "raw_chars": 4680,
+        "usage": {
+          "prompt_tokens": 3256,
+          "completion_tokens": 999,
+          "total_tokens": 4255
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership experience",
+        "team capacity",
+        "domain expertise",
+        "validation experience",
+        "governance structure",
+        "collaboration risks",
+        "execution credibility",
+        "conflict-of-interest handling",
+        "project management",
+        "operational bandwidth"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "team_capacity_and_bandwidth": 2,
+          "domain_expertise": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 2,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Lama Baali's leadership experience and prior execution record position the project 'Services At Your Door' for success in its intended application?",
+          "question_en_preview": "How does Lama Baali's leadership experience and prior execution record position the project 'Services At Your Door' for success in its intended application?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the team structure appears centered around Lama Baali, what is the current workload of the team, and do they have sufficient capacity to manage the project effectively?",
+          "question_en_preview": "Given that the team structure appears centered around Lama Baali, what is the current workload of the team, and do they have sufficient capacity to manage the project effectively?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific domain expertise does Lama Baali bring to the project 'Services At Your Door', and how does this expertise address the target customer problem?",
+          "question_en_preview": "What specific domain expertise does Lama Baali bring to the project 'Services At Your Door', and how does this expertise address the target customer problem?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance processes relevant to the project, and how might the lack of specified mitigation measures impact the project's credibility?",
+          "question_en_preview": "What experience does the team have with validation and compliance processes relevant to the project, and how might the lack of specified mitigation measures impact the project's credibility?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the governance structure of the project 'Services At Your Door' ensure effective decision-making and conflict-of-interest handling, especially given the singular leadership approach?",
+          "question_en_preview": "How does the governance structure of the project 'Services At Your Door' ensure effective decision-making and conflict-of-interest handling, especially given the singular leadership approach?"
+        }
+      ],
+      "elapsed_sec": 26.5,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 317,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to create a platform called 'Services At Your Door' that connects users with local service providers such as plumbers and electricians. It focuses on providing transparent pricing, user ratings, and availability of professionals, while also benefiting local busin ...",
+        "first_key_point_preview": "The platform connects individuals with various local services offered at selected times.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 43.83,
+        "raw_chars": 4349,
+        "usage": {
+          "prompt_tokens": 3385,
+          "completion_tokens": 935,
+          "total_tokens": 4320
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "local service providers",
+        "transparent pricing",
+        "user ratings",
+        "milestones timeline",
+        "success metrics",
+        "value creation strategy",
+        "market demand",
+        "user feedback",
+        "impact on local businesses"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused is the overall goal of the project to create a platform called 'Services At Your Door' that connects users with local service providers? Are there any unrelated sub-goals that could dilute this focu ...",
+          "question_en_preview": "How clear and focused is the overall goal of the project to create a platform called 'Services At Your Door' that connects users with local service providers? Are there any unrelated sub-goals that could dilute this focu ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the project align with the stated unmet need for connecting users with local service providers? Please evaluate the urgency of this need based on market demand and user feedback.",
+          "question_en_preview": "To what extent does the project align with the stated unmet need for connecting users with local service providers? Please evaluate the urgency of this need based on market demand and user feedback."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the project, and how reasonable and executable are they within the defined timelines? Are there specific phases outlined for the development and launch of the platform?",
+          "question_en_preview": "What are the proposed milestones for the project, and how reasonable and executable are they within the defined timelines? Are there specific phases outlined for the development and launch of the platform?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics does the project include to measure the effectiveness of the platform in connecting users with local service providers? How will these metrics be tracked and reported?",
+          "question_en_preview": "What clear and quantifiable success metrics does the project include to measure the effectiveness of the platform in connecting users with local service providers? How will these metrics be tracked and reported?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project explain its value creation and revenue capture strategy through the platform? What impact is expected on local businesses and users, and how is this articulated in the objectives?",
+          "question_en_preview": "How does the project explain its value creation and revenue capture strategy through the platform? What impact is expected on local businesses and users, and how is this articulated in the objectives?"
+        }
+      ],
+      "elapsed_sec": 43.83,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 297,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to create a platform that connects users with various service providers, including plumbers and electricians, while ensuring transparent pricing and user satisfaction. The funding goal was set at $9,603, but the project did not meet this target by the deadline of ...",
+        "first_key_point_preview": "The platform allows users to find services such as plumbers, electricians, gardeners, handymen, tow trucks, and painters.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 27.85,
+        "raw_chars": 5142,
+        "usage": {
+          "prompt_tokens": 3505,
+          "completion_tokens": 1085,
+          "total_tokens": 4590
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "user satisfaction metrics",
+        "service provider ratings",
+        "pricing transparency",
+        "revenue generation adjustments",
+        "validation steps",
+        "scaling risks",
+        "quality compliance measures",
+        "partnership strategies",
+        "customer feedback utilization",
+        "operational data analysis"
+      ],
+      "cleaned_question_count": 10,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 5,
+          "3": 3
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "partnership_and_business_model": 1,
+          "data_and_real_world_evidence_strategy": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the platform plan to attract users to find services such as plumbers and electricians, and what strategies are in place to ensure user satisfaction and retention?",
+          "question_en_preview": "How does the platform plan to attract users to find services such as plumbers and electricians, and what strategies are in place to ensure user satisfaction and retention?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the funding goal of $9,603 and the failure to meet this target, what adjustments to the business model or pricing strategy are being considered to enhance revenue generation?",
+          "question_en_preview": "Given the funding goal of $9,603 and the failure to meet this target, what adjustments to the business model or pricing strategy are being considered to enhance revenue generation?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the major trade-offs considered in the design of the platform that connects users with service providers, and how do these trade-offs impact the overall user experience?",
+          "question_en_preview": "What are the major trade-offs considered in the design of the platform that connects users with service providers, and how do these trade-offs impact the overall user experience?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps are planned to ensure that the platform effectively meets user needs and expectations, particularly in terms of service quality and pricing transparency?",
+          "question_en_preview": "What validation steps are planned to ensure that the platform effectively meets user needs and expectations, particularly in terms of service quality and pricing transparency?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the limited risk information provided, what potential risks do you foresee in scaling the platform, and how might these risks affect the project's long-term viability?",
+          "question_en_preview": "Considering the limited risk information provided, what potential risks do you foresee in scaling the platform, and how might these risks affect the project's long-term viability?"
+        }
+      ],
+      "elapsed_sec": 27.85,
+      "final_question_count": 10
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 282,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces an innovative platform that enhances user interaction with service providers through features like ratings, availability, and private chat. It emphasizes transparency in pricing, aiming to eliminate hidden fees, which distinguishes it from existing solution ...",
+        "first_key_point_preview": "The platform allows professionals to have ratings and provide their availability.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.14,
+        "raw_chars": 4489,
+        "usage": {
+          "prompt_tokens": 3341,
+          "completion_tokens": 967,
+          "total_tokens": 4308
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user engagement metrics",
+        "competitive analysis",
+        "intellectual property strategy",
+        "customer feedback",
+        "market differentiation",
+        "scalability potential",
+        "evidence of effectiveness",
+        "risk assessment",
+        "pricing transparency",
+        "feature adoption rates"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the platform's feature set, including ratings, availability, and private chat, represent true novelty compared to existing solutions in the market?",
+          "question_en_preview": "How does the platform's feature set, including ratings, availability, and private chat, represent true novelty compared to existing solutions in the market?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the platform offer over existing solutions, particularly regarding transparency in pricing and elimination of hidden fees?",
+          "question_en_preview": "What specific advantages does the platform offer over existing solutions, particularly regarding transparency in pricing and elimination of hidden fees?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the platform's innovative features, such as user engagement through private chats and service bookings?",
+          "question_en_preview": "What evidence supports the effectiveness of the platform's innovative features, such as user engagement through private chats and service bookings?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the platform becoming obsolete or commoditized within the next few years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the platform becoming obsolete or commoditized within the next few years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property associated with the platform's innovative features, and how do these strategies support long-term competition?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property associated with the platform's innovative features, and how do these strategies support long-term competition?"
+        }
+      ],
+      "elapsed_sec": 19.15,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 391,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is challenged by the need to insure various skills under one umbrella insurance. The project was launched on Kickstarter and is currently 81% funded with 10 days remaining in the campaign, although it previously failed to meet its funding goal. The  ...",
+        "first_key_point_preview": "The project is hosted on Kickstarter and is currently 81% funded with 10 days left in the campaign.",
+        "first_risk_preview": "A main challenge of the project is insuring the different skills under one umbrella insurance.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 22.76,
+        "raw_chars": 4200,
+        "usage": {
+          "prompt_tokens": 3469,
+          "completion_tokens": 876,
+          "total_tokens": 4345
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding status",
+        "insurance for skilled services",
+        "transparent pricing model",
+        "customer acceptance metrics",
+        "operational scalability barriers",
+        "resource allocation alignment",
+        "risk identification strategies",
+        "project funding implications",
+        "service provider connections",
+        "user satisfaction evidence"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "risk_management": 2,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project is currently 81% funded with 10 days remaining in the Kickstarter campaign, what is the plan if the funding goal of $9,603 is not met? Please discuss the implications of this funding gap on the pro ...",
+          "question_en_preview": "Given that the project is currently 81% funded with 10 days remaining in the Kickstarter campaign, what is the plan if the funding goal of $9,603 is not met? Please discuss the implications of this funding gap on the pro ..."
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific challenges does the need to insure various skills under one umbrella insurance present for the project, and how might these challenges impact operational execution?",
+          "question_en_preview": "What specific challenges does the need to insure various skills under one umbrella insurance present for the project, and how might these challenges impact operational execution?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the platform's approach to providing transparent pricing and user satisfaction influence customer acceptance and procurement feasibility? What evidence supports this?",
+          "question_en_preview": "How does the platform's approach to providing transparent pricing and user satisfaction influence customer acceptance and procurement feasibility? What evidence supports this?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation exist in connecting users with service providers, and how might these barriers affect the project's operational scalability?",
+          "question_en_preview": "What potential barriers to implementation exist in connecting users with service providers, and how might these barriers affect the project's operational scalability?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how aligned are the project's timeline and resource allocation with its operational goals? What specific evidence would increase your confidence in this alignment?",
+          "question_en_preview": "On a scale of 1 to 5, how aligned are the project's timeline and resource allocation with its operational goals? What specific evidence would increase your confidence in this alignment?"
+        }
+      ],
+      "elapsed_sec": 22.76,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T17:34:37Z",
+  "elapsed_sec": 140.08,
+  "total_questions": 40,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km7__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km7__openai/generated_questions_detail.json"
+}

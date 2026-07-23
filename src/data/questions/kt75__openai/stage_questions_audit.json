@@ -1,0 +1,618 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt75__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt75__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 223,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The TalePrints project is led by Naim Louati, who is identified as the creator. The project structure includes a system where each group involved will appoint a leader, either chosen by the group or designated by a teacher.",
+        "first_key_point_preview": "Naim Louati is the creator of the TalePrints project.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.18,
+        "raw_chars": 4212,
+        "usage": {
+          "prompt_tokens": 3278,
+          "completion_tokens": 931,
+          "total_tokens": 4209
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership experience",
+        "project management capacity",
+        "collaboration networks",
+        "validation experience",
+        "decision-making process",
+        "conflict of interest mitigation",
+        "team workload assessment",
+        "project execution evidence"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Naim Louati's prior experience as the creator of the TalePrints project position him to lead this initiative effectively?",
+          "question_en_preview": "How does Naim Louati's prior experience as the creator of the TalePrints project position him to lead this initiative effectively?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the project structure allows each group to appoint a leader, how does this impact the team's capacity and ability to manage parallel projects effectively?",
+          "question_en_preview": "Given the project structure allows each group to appoint a leader, how does this impact the team's capacity and ability to manage parallel projects effectively?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific validation or compliance experience does the team possess that would support the successful execution of the TalePrints project?",
+          "question_en_preview": "What specific validation or compliance experience does the team possess that would support the successful execution of the TalePrints project?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing collaboration networks does the team have that could enhance the execution of the TalePrints project, and how stable are these relationships?",
+          "question_en_preview": "What existing collaboration networks does the team have that could enhance the execution of the TalePrints project, and how stable are these relationships?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the decision-making process within the project structure mitigate potential conflicts of interest among group leaders?",
+          "question_en_preview": "How does the decision-making process within the project structure mitigate potential conflicts of interest among group leaders?"
+        }
+      ],
+      "elapsed_sec": 12.18,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 381,
+        "key_points_count": 5,
+        "risks_count": 2,
+        "mitigations_count": 2,
+        "summary_preview": "The TalePrints project aims to enhance children's imagination and improve their writing and reading skills by providing a structured storytelling program. It addresses the decline in imagination among future generations and the distractions posed by superficial media. The project ...",
+        "first_key_point_preview": "The project aims to address the decline in imagination among future generations.",
+        "first_risk_preview": "The project faces the risk of children being distracted by movies, games, and superficial media.",
+        "first_mitigation_preview": "TalePrints is designed to address the decline in imagination among future generations."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.32,
+        "raw_chars": 4363,
+        "usage": {
+          "prompt_tokens": 3458,
+          "completion_tokens": 936,
+          "total_tokens": 4394
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "children's imagination enhancement",
+        "writing and reading skills improvement",
+        "classroom collaboration",
+        "success metrics for educational programs",
+        "impact of superficial media",
+        "milestones for educational initiatives",
+        "project scope clarity",
+        "engagement strategies for children",
+        "evaluation of program effectiveness"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "business_or_impact_logic": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the TalePrints project align with the stated need to enhance children's imagination and improve their writing and reading skills? Please evaluate the urgency of this need based on current trends in children ...",
+          "question_en_preview": "How well does the TalePrints project align with the stated need to enhance children's imagination and improve their writing and reading skills? Please evaluate the urgency of this need based on current trends in children ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the proposed milestones for the TalePrints project over the next 12 to 36 months, and how realistic are these milestones given the project's objectives and the potential distractions faced by children?",
+          "question_en_preview": "What are the proposed milestones for the TalePrints project over the next 12 to 36 months, and how realistic are these milestones given the project's objectives and the potential distractions faced by children?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific success metrics will be used to evaluate the effectiveness of the TalePrints program in enhancing children's imagination and writing skills? How will these metrics be measured?",
+          "question_en_preview": "What specific success metrics will be used to evaluate the effectiveness of the TalePrints program in enhancing children's imagination and writing skills? How will these metrics be measured?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how balanced is the ambition of the TalePrints project against its feasibility? Please provide evidence that would support a higher score.",
+          "question_en_preview": "On a scale of 1 to 5, how balanced is the ambition of the TalePrints project against its feasibility? Please provide evidence that would support a higher score."
+        }
+      ],
+      "elapsed_sec": 13.33,
+      "final_question_count": 8
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 377,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The TalePrints project aims to develop a computer program designed for educational use in schools, specifically targeting children aged 11 to 12 years. The project involves group activities where students select a leader to guide their collaborative writing process. Despite an in ...",
+        "first_key_point_preview": "TalePrints is a computer program designed to work with schools.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.46,
+        "raw_chars": 3980,
+        "usage": {
+          "prompt_tokens": 3496,
+          "completion_tokens": 884,
+          "total_tokens": 4380
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "educational program design",
+        "validation stages",
+        "go-to-market strategy",
+        "differentiation from competitors",
+        "revenue model",
+        "partnership strategy",
+        "scaling strategy",
+        "target age group",
+        "collaborative writing activities",
+        "overfunding impact"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the design of the TalePrints program for educational use in schools, and what alternatives were considered during its development?",
+          "question_en_preview": "What rationale supports the design of the TalePrints program for educational use in schools, and what alternatives were considered during its development?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What validation stages are planned for the TalePrints program to ensure its effectiveness in educational settings, particularly for the target age group of 11 to 12 years?",
+          "question_en_preview": "What validation stages are planned for the TalePrints program to ensure its effectiveness in educational settings, particularly for the target age group of 11 to 12 years?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the TalePrints project has achieved overfunding, what is the proposed go-to-market strategy for rolling out the program in schools, and how does it plan to differentiate itself from similar projects?",
+          "question_en_preview": "Given that the TalePrints project has achieved overfunding, what is the proposed go-to-market strategy for rolling out the program in schools, and how does it plan to differentiate itself from similar projects?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What is the expected revenue model for the TalePrints program, and how does it plan to sustain funding and adoption in the educational sector?",
+          "question_en_preview": "What is the expected revenue model for the TalePrints program, and how does it plan to sustain funding and adoption in the educational sector?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What types of partnerships does the TalePrints project envision to enhance its delivery and adoption in schools, and what role will these partners play?",
+          "question_en_preview": "What types of partnerships does the TalePrints project envision to enhance its delivery and adoption in schools, and what role will these partners play?"
+        }
+      ],
+      "elapsed_sec": 15.46,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 6,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 124,
+        "key_points_count": 0,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The proposal contains limited explicit information about the innovation dimension, so a detailed summary cannot be produced.",
+        "first_key_point_preview": "<none>",
+        "first_risk_preview": "The proposal provides limited detail for the innovation dimension, which may affect evaluation quality.",
+        "first_mitigation_preview": "The proposal does not specify how to address or mitigate this information gap."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.36,
+        "raw_chars": 4333,
+        "usage": {
+          "prompt_tokens": 3154,
+          "completion_tokens": 915,
+          "total_tokens": 4069
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "competitive advantages",
+        "market validation",
+        "intellectual property strategy",
+        "customer value proposition",
+        "risk mitigation strategies",
+        "extension to new segments",
+        "evidence for innovation",
+        "obsolescence risk",
+        "differentiation factors"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "platform_and_extensibility": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 0,
+        "linked_to_risks": 5,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited detail provided in the proposal, how does the innovation compare to existing products or services in terms of novelty? Please identify any specific areas where the innovation may stand out.",
+          "question_en_preview": "Given the limited detail provided in the proposal, how does the innovation compare to existing products or services in terms of novelty? Please identify any specific areas where the innovation may stand out."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What competitive advantages does the innovation offer compared to existing alternatives, considering the lack of detailed information in the proposal? Please discuss potential areas of customer value or performance enhan ...",
+          "question_en_preview": "What competitive advantages does the innovation offer compared to existing alternatives, considering the lack of detailed information in the proposal? Please discuss potential areas of customer value or performance enhan ..."
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the absence of explicit evidence in the proposal, what types of experimental or market validation would strengthen the case for the innovation? How could these be incorporated moving forward?",
+          "question_en_preview": "Given the absence of explicit evidence in the proposal, what types of experimental or market validation would strengthen the case for the innovation? How could these be incorporated moving forward?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How might the innovation be adapted or extended to other customer segments or use cases, given the current lack of detail in the proposal? What are the potential barriers to such extensions?",
+          "question_en_preview": "How might the innovation be adapted or extended to other customer segments or use cases, given the current lack of detail in the proposal? What are the potential barriers to such extensions?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the potential risks of obsolescence or commoditization for the innovation, considering the limited information provided? How might these risks be mitigated?",
+          "question_en_preview": "What are the potential risks of obsolescence or commoditization for the innovation, considering the limited information provided? How might these risks be mitigated?"
+        }
+      ],
+      "elapsed_sec": 9.36,
+      "final_question_count": 6
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 295,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the TalePrints project is supported by its funding efforts on Kickstarter, where it has achieved 107% of its funding goal with 10 days remaining. However, there are anticipated challenges with publishing companies, which are considered minor and easily solvable ...",
+        "first_key_point_preview": "The TalePrints project was launched on Kickstarter.",
+        "first_risk_preview": "The project anticipates potential challenges with the publishing companies used to print the books.",
+        "first_mitigation_preview": "The challenges with publishing companies are considered minor and easily solvable if they arise."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.02,
+        "raw_chars": 3638,
+        "usage": {
+          "prompt_tokens": 3434,
+          "completion_tokens": 771,
+          "total_tokens": 4205
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding success",
+        "budget allocation strategy",
+        "publishing company challenges",
+        "task timelines and responsibilities",
+        "risk mitigation effectiveness",
+        "customer acceptance metrics",
+        "implementation barriers management",
+        "resource alignment with timeline",
+        "financial sustainability planning"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 2
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does achieving 107% of the funding goal on Kickstarter impact the project's long-term financial sustainability and budget allocation?",
+          "question_en_preview": "How does achieving 107% of the funding goal on Kickstarter impact the project's long-term financial sustainability and budget allocation?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for addressing the anticipated challenges with publishing companies, and who is responsible for these tasks?",
+          "question_en_preview": "What specific tasks and timelines are outlined for addressing the anticipated challenges with publishing companies, and who is responsible for these tasks?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the identified risk regarding publishing companies, how effective are the proposed mitigations in ensuring project feasibility?",
+          "question_en_preview": "Given the identified risk regarding publishing companies, how effective are the proposed mitigations in ensuring project feasibility?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers might arise during the implementation phase related to publishing companies, and how can these be proactively managed?",
+          "question_en_preview": "What barriers might arise during the implementation phase related to publishing companies, and how can these be proactively managed?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How does the current timeline align with the resources available for the project, particularly in relation to the printing process?",
+          "question_en_preview": "How does the current timeline align with the resources available for the project, particularly in relation to the printing process?"
+        }
+      ],
+      "elapsed_sec": 16.02,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T20:53:49Z",
+  "elapsed_sec": 66.35,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt75__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt75__openai/generated_questions_detail.json"
+}

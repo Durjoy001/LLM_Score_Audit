@@ -1,0 +1,611 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt28__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt28__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 192,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by Jeff Doner, who is identified as the creator of the social networking platform. His role suggests a central position in the development and execution of the project.",
+        "first_key_point_preview": "Jeff Doner is the creator of the social networking platform, indicating his leadership role in the project.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.4,
+        "raw_chars": 4883,
+        "usage": {
+          "prompt_tokens": 3255,
+          "completion_tokens": 1012,
+          "total_tokens": 4267
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership experience",
+        "domain expertise",
+        "project governance",
+        "team capacity",
+        "validation experience",
+        "execution record",
+        "conflict of interest",
+        "regulatory challenges",
+        "decision-making process",
+        "collaboration stability"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "governance_and_decision_making": 1,
+          "validation_and_compliance_experience": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 2,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Jeff Doner's experience as the creator of the social networking platform equip him to lead this project effectively? Please provide specific examples of his prior execution record that support this.",
+          "question_en_preview": "How does Jeff Doner's experience as the creator of the social networking platform equip him to lead this project effectively? Please provide specific examples of his prior execution record that support this."
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that is relevant to the development and execution of the social networking platform? How does this expertise address the target customer problem?",
+          "question_en_preview": "What specific domain expertise does the team possess that is relevant to the development and execution of the social networking platform? How does this expertise address the target customer problem?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity and bandwidth to commit to this initiative? If not, what impact could this have on project execution?",
+          "question_en_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity and bandwidth to commit to this initiative? If not, what impact could this have on project execution?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures and decision-making processes are in place to ensure effective project management? How do these structures mitigate potential conflicts of interest?",
+          "question_en_preview": "What governance structures and decision-making processes are in place to ensure effective project management? How do these structures mitigate potential conflicts of interest?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What experience does the team have with validation and compliance in the context of social networking platforms? How does this experience prepare the team for potential regulatory challenges?",
+          "question_en_preview": "What experience does the team have with validation and compliance in the context of social networking platforms? How does this experience prepare the team for potential regulatory challenges?"
+        }
+      ],
+      "elapsed_sec": 15.4,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 460,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a social networking platform specifically designed for individuals with special needs, particularly those with physical and developmental disabilities. Key objectives include enabling users to meet peers, make connections, and grow friendships, while f ...",
+        "first_key_point_preview": "The project is a social networking platform for people with special needs.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.28,
+        "raw_chars": 4126,
+        "usage": {
+          "prompt_tokens": 3431,
+          "completion_tokens": 867,
+          "total_tokens": 4298
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user engagement metrics",
+        "beta site launch timeline",
+        "success measurement framework",
+        "stakeholder impact assessment",
+        "user connection facilitation",
+        "scope prioritization strategy"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1,
+          "scope_and_prioritization": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the project's objective of creating a social networking platform for individuals with special needs align with the identified unmet needs of this demographic? Please discuss any evidence supporting the urge ...",
+          "question_en_preview": "How well does the project's objective of creating a social networking platform for individuals with special needs align with the identified unmet needs of this demographic? Please discuss any evidence supporting the urge ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness of the proposed timeline for launching the beta site within one year. What specific milestones should be established to ensure successful execution?",
+          "question_en_preview": "Evaluate the reasonableness of the proposed timeline for launching the beta site within one year. What specific milestones should be established to ensure successful execution?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics should be established to measure the effectiveness of the platform in enabling users to meet peers and grow friendships? How can these metrics be tracked?",
+          "question_en_preview": "What clear and quantifiable success metrics should be established to measure the effectiveness of the platform in enabling users to meet peers and grow friendships? How can these metrics be tracked?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set for the platform too idealistic or appropriately ambitious given the current resources and timeline?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set for the platform too idealistic or appropriately ambitious given the current resources and timeline?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the initiative explain its value creation and impact delivery to the target audience of individuals with special needs? What evidence supports the business logic behind these objectives?",
+          "question_en_preview": "How does the initiative explain its value creation and impact delivery to the target audience of individuals with special needs? What evidence supports the business logic behind these objectives?"
+        }
+      ],
+      "elapsed_sec": 12.28,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 213,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aimed to secure $35,307 in funding but was unsuccessful in reaching this goal. The funding period was set from February 20, 2015, to March 22, 2015, indicating a defined timeline for financial support.",
+        "first_key_point_preview": "The project had a funding goal of $35,307.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 18.54,
+        "raw_chars": 4801,
+        "usage": {
+          "prompt_tokens": 3448,
+          "completion_tokens": 1036,
+          "total_tokens": 4484
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding strategy",
+        "financial model",
+        "risk assessment",
+        "solution delivery alternatives",
+        "market entry challenges",
+        "scalability assessment",
+        "stakeholder confidence",
+        "funding viability",
+        "development path",
+        "validation strategy"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 2,
+          "business_model_and_unit_economics": 2,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "scaling_and_globalization": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project was unsuccessful in reaching its funding goal of $35,307, what strategies will be implemented to secure funding in future attempts, and how will these strategies address potential market entry chal ...",
+          "question_en_preview": "Given that the project was unsuccessful in reaching its funding goal of $35,307, what strategies will be implemented to secure funding in future attempts, and how will these strategies address potential market entry chal ..."
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the funding period from February 20, 2015, to March 22, 2015, impact the project's financial model and its ability to sustain operations moving forward?",
+          "question_en_preview": "How does the funding period from February 20, 2015, to March 22, 2015, impact the project's financial model and its ability to sustain operations moving forward?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the implications of the limited risk information provided in the proposal on the project's development and validation path, and how might this affect stakeholder confidence?",
+          "question_en_preview": "What are the implications of the limited risk information provided in the proposal on the project's development and validation path, and how might this affect stakeholder confidence?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternative strategies could be considered for the solution delivery, given the project's previous funding challenges, and how would these alternatives mitigate the identified risks?",
+          "question_en_preview": "What alternative strategies could be considered for the solution delivery, given the project's previous funding challenges, and how would these alternatives mitigate the identified risks?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "If the proposal does not provide sufficient details on the scalability of the project, please first state this information gap and then discuss its impact on the project's long-term viability.",
+          "question_en_preview": "If the proposal does not provide sufficient details on the scalability of the project, please first state this information gap and then discuss its impact on the project's long-term viability."
+        }
+      ],
+      "elapsed_sec": 18.54,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 6,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 124,
+        "key_points_count": 0,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The proposal contains limited explicit information about the innovation dimension, so a detailed summary cannot be produced.",
+        "first_key_point_preview": "<none>",
+        "first_risk_preview": "The proposal provides limited detail for the innovation dimension, which may affect evaluation quality.",
+        "first_mitigation_preview": "The proposal does not specify how to address or mitigate this information gap."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.58,
+        "raw_chars": 4087,
+        "usage": {
+          "prompt_tokens": 3154,
+          "completion_tokens": 881,
+          "total_tokens": 4035
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "competitive advantages",
+        "evidence of effectiveness",
+        "scalability potential",
+        "intellectual property strategy",
+        "risk of obsolescence",
+        "novelty compared to alternatives",
+        "market readiness evidence",
+        "differentiation claims",
+        "innovation effectiveness",
+        "customer segment extension"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "platform_and_extensibility": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 0,
+        "linked_to_risks": 6,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited information provided in the proposal, how does the innovation compare to existing solutions in terms of novelty? Please identify any specific areas where it may differ significantly.",
+          "question_en_preview": "Given the limited information provided in the proposal, how does the innovation compare to existing solutions in terms of novelty? Please identify any specific areas where it may differ significantly."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What competitive advantages does the innovation claim to have over existing alternatives, and how credible are these claims given the lack of detailed evidence in the proposal?",
+          "question_en_preview": "What competitive advantages does the innovation claim to have over existing alternatives, and how credible are these claims given the lack of detailed evidence in the proposal?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the absence of key points in the proposal, what types of evidence would be necessary to substantiate the innovation's effectiveness and market readiness?",
+          "question_en_preview": "Considering the absence of key points in the proposal, what types of evidence would be necessary to substantiate the innovation's effectiveness and market readiness?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How might the innovation be extended to other customer segments or use cases, and what evidence supports this potential for scalability given the current lack of detail in the proposal?",
+          "question_en_preview": "How might the innovation be extended to other customer segments or use cases, and what evidence supports this potential for scalability given the current lack of detail in the proposal?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific risks does the lack of detailed innovation information pose in terms of potential obsolescence or commoditization of the offering within the next 3-5 years?",
+          "question_en_preview": "What specific risks does the lack of detailed innovation information pose in terms of potential obsolescence or commoditization of the offering within the next 3-5 years?"
+        }
+      ],
+      "elapsed_sec": 13.58,
+      "final_question_count": 6
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 251,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is challenged by the need for capable partners to develop an advanced platform with international reach. Additionally, the project was unable to meet its funding goal, which may impact its overall viability and timeline.",
+        "first_key_point_preview": "The project anticipates challenges in ensuring that partners can build a platform with international reach.",
+        "first_risk_preview": "The project anticipates challenges in ensuring that partners can build a platform with international reach.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 23.68,
+        "raw_chars": 4776,
+        "usage": {
+          "prompt_tokens": 3430,
+          "completion_tokens": 997,
+          "total_tokens": 4427
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "international platform development",
+        "funding goal implications",
+        "beta site launch timeline",
+        "partner capabilities",
+        "implementation barriers",
+        "customer acceptance feasibility",
+        "risk mitigation strategies",
+        "operational dependencies",
+        "resource alignment evidence"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "resources_and_infrastructure": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific challenges does the project face in ensuring that partners can build a platform with international reach, and how might these challenges impact the project's feasibility?",
+          "question_en_preview": "What specific challenges does the project face in ensuring that partners can build a platform with international reach, and how might these challenges impact the project's feasibility?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project was unable to meet its funding goal of $35,307, what are the implications for the project's overall viability and timeline, and what alternative funding strategies could be considered?",
+          "question_en_preview": "Given that the project was unable to meet its funding goal of $35,307, what are the implications for the project's overall viability and timeline, and what alternative funding strategies could be considered?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the timeline for having a beta site ready for launch in one year's time, and what key tasks and dependencies are critical to achieving this milestone?",
+          "question_en_preview": "What is the timeline for having a beta site ready for launch in one year's time, and what key tasks and dependencies are critical to achieving this milestone?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project plan to address the identified risk of challenges in ensuring that partners can build a platform with international reach, and what additional risks might arise from this situation?",
+          "question_en_preview": "How does the project plan to address the identified risk of challenges in ensuring that partners can build a platform with international reach, and what additional risks might arise from this situation?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What potential barriers to implementation in real production settings does the project foresee, particularly in relation to partner capabilities and platform development?",
+          "question_en_preview": "What potential barriers to implementation in real production settings does the project foresee, particularly in relation to partner capabilities and platform development?"
+        }
+      ],
+      "elapsed_sec": 23.68,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T19:16:26Z",
+  "elapsed_sec": 83.5,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt28__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt28__openai/generated_questions_detail.json"
+}

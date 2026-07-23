@@ -1,0 +1,610 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt25__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt25__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 369,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Serendipity Team is the core group behind the project, demonstrating a strong commitment and technical capability. The team is engaged in exploring the relationship between first impressions and perceived value, contributing to relevant discussions and literature in this area ...",
+        "first_key_point_preview": "The project is created and led by the Serendipity Team.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.72,
+        "raw_chars": 4458,
+        "usage": {
+          "prompt_tokens": 3355,
+          "completion_tokens": 923,
+          "total_tokens": 4278
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "leadership experience",
+        "domain expertise",
+        "project execution record",
+        "collaboration networks",
+        "validation experience",
+        "capacity assessment",
+        "commitment evaluation",
+        "project credibility",
+        "team bandwidth"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the leadership experience of the Serendipity Team align with the project's focus on the relationship between first impressions and perceived value? Please provide specific examples of prior execution records tha ...",
+          "question_en_preview": "How does the leadership experience of the Serendipity Team align with the project's focus on the relationship between first impressions and perceived value? Please provide specific examples of prior execution records tha ..."
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the Serendipity Team possess that is relevant to exploring first impressions and perceived value? How does this expertise enhance the project's potential for success?",
+          "question_en_preview": "What specific domain expertise does the Serendipity Team possess that is relevant to exploring first impressions and perceived value? How does this expertise enhance the project's potential for success?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the current workload and parallel projects, does the Serendipity Team have sufficient capacity and bandwidth to effectively execute this project? Please evaluate any potential risks associated with their curr ...",
+          "question_en_preview": "Considering the current workload and parallel projects, does the Serendipity Team have sufficient capacity and bandwidth to effectively execute this project? Please evaluate any potential risks associated with their curr ..."
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing collaboration networks does the Serendipity Team have that could support the project's exploration of first impressions and perceived value? How stable and complementary are these collaborations?",
+          "question_en_preview": "What existing collaboration networks does the Serendipity Team have that could support the project's exploration of first impressions and perceived value? How stable and complementary are these collaborations?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the Serendipity Team have with validation and compliance in their research area? How might this experience contribute to the project's credibility and acceptance?",
+          "question_en_preview": "What experience does the Serendipity Team have with validation and compliance in their research area? How might this experience contribute to the project's credibility and acceptance?"
+        }
+      ],
+      "elapsed_sec": 13.73,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 398,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project titled 'Improve Your First Impression: The Serendipity Experiment' aims to enhance first impressions through conversations and user feedback. It encourages participants to utilize ratings from others to refine their projected image, with the Serendipity app serving as ...",
+        "first_key_point_preview": "The project focuses on improving first impressions through conversations.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The project includes strategies to improve first impressions through user feedback and ratings."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.97,
+        "raw_chars": 3760,
+        "usage": {
+          "prompt_tokens": 3427,
+          "completion_tokens": 847,
+          "total_tokens": 4274
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "first impression improvement",
+        "user feedback integration",
+        "iOS release timeline",
+        "success metrics tracking",
+        "stakeholder value creation",
+        "project scope prioritization"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the project align with the stated need for improving first impressions through conversations? Please evaluate the urgency of this need based on the proposal's context.",
+          "question_en_preview": "How well does the project align with the stated need for improving first impressions through conversations? Please evaluate the urgency of this need based on the proposal's context."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Assess the reasonableness of the proposed milestone of an iOS release by late September. What factors could impact the feasibility of this timeline?",
+          "question_en_preview": "Assess the reasonableness of the proposed milestone of an iOS release by late September. What factors could impact the feasibility of this timeline?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics could be established to measure the effectiveness of the Serendipity app in improving users' first impressions? How would these metrics be tracked?",
+          "question_en_preview": "What quantifiable success metrics could be established to measure the effectiveness of the Serendipity app in improving users' first impressions? How would these metrics be tracked?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Explain how the objectives of the project create value for users and stakeholders. What is the expected impact of the Serendipity app on user behavior?",
+          "question_en_preview": "Explain how the objectives of the project create value for users and stakeholders. What is the expected impact of the Serendipity app on user behavior?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic are the project's goals given the current information provided? What evidence would increase your confidence in the project's feasibility?",
+          "question_en_preview": "On a scale of 1 to 5, how realistic are the project's goals given the current information provided? What evidence would increase your confidence in the project's feasibility?"
+        }
+      ],
+      "elapsed_sec": 13.97,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 399,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop the Serendipity app, which allows users to understand how they are perceived by others through anonymous feedback. The app facilitates four-minute text-chat conversations where users rank each other on various attributes, contributing to a clearer prof ...",
+        "first_key_point_preview": "The Serendipity app helps users understand their perceptions through feedback.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 20.26,
+        "raw_chars": 4998,
+        "usage": {
+          "prompt_tokens": 3524,
+          "completion_tokens": 1138,
+          "total_tokens": 4662
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "user engagement metrics",
+        "feedback accuracy",
+        "financial sustainability",
+        "data privacy strategy",
+        "scalability risks",
+        "go-to-market strategy",
+        "revenue streams",
+        "validation stages",
+        "user anonymity",
+        "funding goal realism"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 2,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 2,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Serendipity app's design for scalability influence its go-to-market strategy, particularly regarding user acquisition and retention?",
+          "question_en_preview": "How does the Serendipity app's design for scalability influence its go-to-market strategy, particularly regarding user acquisition and retention?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the development of the Serendipity app, particularly in balancing user anonymity with feedback accuracy?",
+          "question_en_preview": "What are the major trade-offs considered in the development of the Serendipity app, particularly in balancing user anonymity with feedback accuracy?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation stages will the Serendipity app undergo to ensure its effectiveness in helping users understand their perceptions through feedback?",
+          "question_en_preview": "What validation stages will the Serendipity app undergo to ensure its effectiveness in helping users understand their perceptions through feedback?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the funding goal of $17,653, how does the Serendipity app plan to achieve financial sustainability and what are the expected revenue streams?",
+          "question_en_preview": "Given the funding goal of $17,653, how does the Serendipity app plan to achieve financial sustainability and what are the expected revenue streams?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What quality and compliance strategies are being considered for the Serendipity app to ensure user data privacy and security?",
+          "question_en_preview": "What quality and compliance strategies are being considered for the Serendipity app to ensure user data privacy and security?"
+        }
+      ],
+      "elapsed_sec": 20.26,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 338,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces innovative elements through the Serendipity app, which leverages concepts from 'The Wisdom of the Crowds' and aims to enhance first impressions using a unique circular rating scale. The core engine is designed for scalability and resource efficiency, with s ...",
+        "first_key_point_preview": "The Serendipity app is influenced by James Surowiecki's book, 'The Wisdom of the Crowds.'",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The visual content of the project includes a circular flow with steps for improving first impressions."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.38,
+        "raw_chars": 4557,
+        "usage": {
+          "prompt_tokens": 3418,
+          "completion_tokens": 1024,
+          "total_tokens": 4442
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "circular rating scale",
+        "first impressions improvement",
+        "scalability of core engine",
+        "intellectual property protections",
+        "customer value differentiation",
+        "evidence of effectiveness",
+        "competitive advantage analysis",
+        "risk of obsolescence",
+        "platform neutrality",
+        "unique features validation"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Serendipity app's circular rating scale represent true novelty compared to existing approaches in enhancing first impressions?",
+          "question_en_preview": "How does the Serendipity app's circular rating scale represent true novelty compared to existing approaches in enhancing first impressions?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the Serendipity app offer over existing methods for improving first impressions, particularly regarding customer value and scalability?",
+          "question_en_preview": "What clear advantages does the Serendipity app offer over existing methods for improving first impressions, particularly regarding customer value and scalability?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the Serendipity app's innovative features, particularly the circular rating scale and its impact on first impressions?",
+          "question_en_preview": "What evidence supports the effectiveness of the Serendipity app's innovative features, particularly the circular rating scale and its impact on first impressions?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the Serendipity app's features?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the Serendipity app's features?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How scalable is the core engine of the Serendipity app, and what potential customer segments or use cases could it extend to beyond enhancing first impressions?",
+          "question_en_preview": "How scalable is the core engine of the Serendipity app, and what potential customer segments or use cases could it extend to beyond enhancing first impressions?"
+        }
+      ],
+      "elapsed_sec": 13.38,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 385,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is challenged by the risk of insufficient participant engagement, which could hinder the effectiveness of the Serendipity Experiment. The project has a defined budget with contribution tiers and aims for scalability across platforms, but it has not  ...",
+        "first_key_point_preview": "The project includes contribution tiers of $50 and $60, providing access to various features.",
+        "first_risk_preview": "The fundamental risk posed by the start-up is that not enough people will participate in Serendipity.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.01,
+        "raw_chars": 4250,
+        "usage": {
+          "prompt_tokens": 3487,
+          "completion_tokens": 937,
+          "total_tokens": 4424
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding goal shortfall",
+        "participant engagement strategy",
+        "budget allocation plan",
+        "server component completion",
+        "implementation barriers",
+        "customer acceptance evidence",
+        "resource alignment",
+        "risk mitigation strategies",
+        "project timeline",
+        "contribution tiers"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "resources_and_infrastructure": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the funding goal of $17,653 was not reached, how does this impact the project's budget allocation and sustainability plan?",
+          "question_en_preview": "Given that the funding goal of $17,653 was not reached, how does this impact the project's budget allocation and sustainability plan?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined to ensure participant engagement in the Serendipity Experiment, and who is responsible for these tasks?",
+          "question_en_preview": "What specific tasks and timelines are outlined to ensure participant engagement in the Serendipity Experiment, and who is responsible for these tasks?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project plan to address the fundamental risk of insufficient participant engagement in the Serendipity Experiment?",
+          "question_en_preview": "How does the project plan to address the fundamental risk of insufficient participant engagement in the Serendipity Experiment?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the server component is 70% complete, what resources are still needed to finalize the project, and how will these be secured?",
+          "question_en_preview": "Considering the server component is 70% complete, what resources are still needed to finalize the project, and how will these be secured?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation might arise due to the current funding shortfall, and how could these affect the project's timeline?",
+          "question_en_preview": "What barriers to implementation might arise due to the current funding shortfall, and how could these affect the project's timeline?"
+        }
+      ],
+      "elapsed_sec": 14.01,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T19:09:52Z",
+  "elapsed_sec": 75.36,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt25__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt25__openai/generated_questions_detail.json"
+}

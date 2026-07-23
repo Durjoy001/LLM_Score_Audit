@@ -1,0 +1,615 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "pB__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/pB__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 240,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team at 大瞬科技 consists of over 70 experienced engineers, predominantly holding master's degrees. The organization has a strong track record in mass production, with a history of timely delivery and a low defective parts per million rate.",
+        "first_key_point_preview": "The team comprises over 70 experienced engineers, with a majority holding master's degrees.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 36.35,
+        "raw_chars": 4530,
+        "usage": {
+          "prompt_tokens": 3328,
+          "completion_tokens": 1004,
+          "total_tokens": 4332
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "DPPM rate",
+        "timely delivery",
+        "mass production experience",
+        "engineering expertise",
+        "customer collaboration",
+        "operational capacity",
+        "risk mitigation strategies",
+        "leadership track record",
+        "project execution",
+        "quality control systems"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the leadership experience of the team at 大瞬科技 contribute to their ability to deliver projects on time and maintain a low defective parts per million rate?",
+          "question_en_preview": "How does the leadership experience of the team at 大瞬科技 contribute to their ability to deliver projects on time and maintain a low defective parts per million rate?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise do the over 70 experienced engineers at 大瞬科技 possess that enables them to achieve a DPPM rate of less than 5?",
+          "question_en_preview": "What specific domain expertise do the over 70 experienced engineers at 大瞬科技 possess that enables them to achieve a DPPM rate of less than 5?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the current workload and the number of projects, does the team at 大瞬科技 have sufficient capacity to maintain their track record of timely delivery and low defect rates? Please evaluate any potential risks asso ...",
+          "question_en_preview": "Considering the current workload and the number of projects, does the team at 大瞬科技 have sufficient capacity to maintain their track record of timely delivery and low defect rates? Please evaluate any potential risks asso ..."
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What role do the 20 world-class customers of 大瞬科技 play in enhancing the team's operational capabilities and market position?",
+          "question_en_preview": "What role do the 20 world-class customers of 大瞬科技 play in enhancing the team's operational capabilities and market position?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential challenges could arise from the lack of specified mitigation measures for the team's operational execution?",
+          "question_en_preview": "Given the limited risk information provided, what potential challenges could arise from the lack of specified mitigation measures for the team's operational execution?"
+        }
+      ],
+      "elapsed_sec": 36.35,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 355,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "大瞬科技 aims to develop a range of advanced products, including high-end fast charging chips, precision power meters, and power management solutions for foldable phones. The company envisions supporting Chinese smartphone manufacturers in achieving technological independence and bre ...",
+        "first_key_point_preview": "大瞬科技's product offerings include smartphones, smart speakers, shared bicycles, laptops, desktop computers, TWS earphones, and power banks.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.6,
+        "raw_chars": 4290,
+        "usage": {
+          "prompt_tokens": 3451,
+          "completion_tokens": 924,
+          "total_tokens": 4375
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "technological independence",
+        "market disruption strategy",
+        "success metrics",
+        "product development milestones",
+        "competitive landscape analysis",
+        "value creation logic",
+        "urgency of unmet need",
+        "execution timeline feasibility",
+        "ambition versus realism"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of 大瞬科技 align with the stated need for technological independence among Chinese smartphone manufacturers? Please evaluate the urgency of this need and its impact on the project's success.",
+          "question_en_preview": "How well do the objectives of 大瞬科技 align with the stated need for technological independence among Chinese smartphone manufacturers? Please evaluate the urgency of this need and its impact on the project's success."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent are the overall goals of 大瞬科技 clear and focused, particularly regarding its aim to disrupt Western dominance in the power management market? Are there any unrelated sub-goals that could dilute focus?",
+          "question_en_preview": "To what extent are the overall goals of 大瞬科技 clear and focused, particularly regarding its aim to disrupt Western dominance in the power management market? Are there any unrelated sub-goals that could dilute focus?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the development of 大瞬科技's advanced products, and how reasonable and executable are these timelines? Are there any potential challenges that could affect these timelines?",
+          "question_en_preview": "What are the proposed milestones for the development of 大瞬科技's advanced products, and how reasonable and executable are these timelines? Are there any potential challenges that could affect these timelines?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics does 大瞬科技 plan to use to measure the impact of its products in the market? How will these metrics inform the project's progress and success?",
+          "question_en_preview": "What clear and quantifiable success metrics does 大瞬科技 plan to use to measure the impact of its products in the market? How will these metrics inform the project's progress and success?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Evaluate the balance between ambition and feasibility in 大瞬科技's objectives. Are the goals set too idealistically, or do they reflect a realistic approach to achieving market disruption?",
+          "question_en_preview": "Evaluate the balance between ambition and feasibility in 大瞬科技's objectives. Are the goals set too idealistically, or do they reflect a realistic approach to achieving market disruption?"
+        }
+      ],
+      "elapsed_sec": 11.6,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 386,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "大瞬科技's strategy focuses on expanding its market presence in various sectors, including mobile devices and shared bicycles, while leveraging its upgraded battery technology. The company aims to target next-generation products such as precision power meters and power management for ...",
+        "first_key_point_preview": "大瞬科技's overall effective market includes mobile phones, laptops, and shared bicycles, with a total addressable market of approximately 100 billion RMB per year.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.3,
+        "raw_chars": 5388,
+        "usage": {
+          "prompt_tokens": 3563,
+          "completion_tokens": 1199,
+          "total_tokens": 4762
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "market penetration strategy",
+        "unit economics analysis",
+        "validation stages",
+        "partnership roles",
+        "quality compliance measures",
+        "scaling risks",
+        "deep learning optimization",
+        "revenue growth projections",
+        "customer base validation",
+        "market entry strategy"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 2,
+          "development_and_validation_path": 1,
+          "partnership_and_business_model": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "solution_delivery_strategy": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does 大瞬科技 plan to penetrate the mobile devices and shared bicycles market segments, and what specific strategies will be employed to attract and retain customers in these sectors?",
+          "question_en_preview": "How does 大瞬科技 plan to penetrate the mobile devices and shared bicycles market segments, and what specific strategies will be employed to attract and retain customers in these sectors?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the projected total addressable market of approximately 100 billion RMB per year, what are the expected unit economics for 大瞬科技's products, and how do they plan to achieve profitability?",
+          "question_en_preview": "Given the projected total addressable market of approximately 100 billion RMB per year, what are the expected unit economics for 大瞬科技's products, and how do they plan to achieve profitability?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation stages has 大瞬科技 implemented to ensure the performance and market readiness of its next-generation products, such as precision power meters and power management for foldable phones?",
+          "question_en_preview": "What validation stages has 大瞬科技 implemented to ensure the performance and market readiness of its next-generation products, such as precision power meters and power management for foldable phones?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "With over 20 world-class customers already in mass production, what role do partnerships play in 大瞬科技's strategy for scaling its operations and expanding its market presence?",
+          "question_en_preview": "With over 20 world-class customers already in mass production, what role do partnerships play in 大瞬科技's strategy for scaling its operations and expanding its market presence?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What quality and compliance strategies does 大瞬科技 have in place to address potential regulatory challenges in the development of its BLE AI MESH technology?",
+          "question_en_preview": "What quality and compliance strategies does 大瞬科技 have in place to address potential regulatory challenges in the development of its BLE AI MESH technology?"
+        }
+      ],
+      "elapsed_sec": 13.3,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 349,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project demonstrates significant innovation through proprietary technologies and patents, including advancements in power management and Bluetooth connectivity. Key innovations include a solar charging solution for shared bicycles, a highly efficient Charge Pump for mobile sy ...",
+        "first_key_point_preview": "The project holds multiple patents, including CN108574120 and CN200810007736.6, showcasing its intellectual property assets.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.47,
+        "raw_chars": 4743,
+        "usage": {
+          "prompt_tokens": 3431,
+          "completion_tokens": 1023,
+          "total_tokens": 4454
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "patent CN108574120",
+        "solar charging solution",
+        "Charge Pump technology",
+        "Bluetooth connectivity stability",
+        "AI integration",
+        "competitive advantage",
+        "evidence of performance",
+        "risk of obsolescence",
+        "intellectual property strategy"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the proprietary technology and patents, such as CN108574120 and CN200810007736.6, demonstrate true novelty compared to existing solutions in power management and Bluetooth connectivity?",
+          "question_en_preview": "How does the proprietary technology and patents, such as CN108574120 and CN200810007736.6, demonstrate true novelty compared to existing solutions in power management and Bluetooth connectivity?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the solar charging solution provide over existing high-end products in the market, particularly those dominated by American companies?",
+          "question_en_preview": "What specific advantages does the solar charging solution provide over existing high-end products in the market, particularly those dominated by American companies?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the claim that the Charge Pump technology achieves a conversion efficiency of 98%, and how does this performance compare to traditional methods?",
+          "question_en_preview": "What evidence supports the claim that the Charge Pump technology achieves a conversion efficiency of 98%, and how does this performance compare to traditional methods?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the innovations presented in the project?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the innovations presented in the project?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How can the innovations, particularly the AI-enhanced Bluetooth connectivity, be extended to other customer segments or use cases beyond shared bicycles?",
+          "question_en_preview": "How can the innovations, particularly the AI-enhanced Bluetooth connectivity, be extended to other customer segments or use cases beyond shared bicycles?"
+        }
+      ],
+      "elapsed_sec": 12.47,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 454,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "大瞬科技 has a diverse product portfolio including high-end mobile fast charging ICs, precision power meters, and BLE automotive chips, indicating a strong resource base for project feasibility. The company has a proven track record of timely delivery and maintaining low defect rates ...",
+        "first_key_point_preview": "大瞬科技's product offerings include high-end mobile fast charging ICs, precision power meters, and BLE automotive chips.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.79,
+        "raw_chars": 4139,
+        "usage": {
+          "prompt_tokens": 3485,
+          "completion_tokens": 891,
+          "total_tokens": 4376
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "timely delivery strategies",
+        "budget allocation evidence",
+        "production interruption history",
+        "customer acceptance barriers",
+        "risk identification",
+        "resource stability",
+        "operational capabilities",
+        "market opportunities",
+        "funding diversity",
+        "implementation challenges"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "resources_and_infrastructure": 1,
+          "operational_execution_plan": 1,
+          "funding_and_budget_planning": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does 大瞬科技's diverse product portfolio, including high-end mobile fast charging ICs and precision power meters, support the long-term stability of resources and infrastructure for the project?",
+          "question_en_preview": "How does 大瞬科技's diverse product portfolio, including high-end mobile fast charging ICs and precision power meters, support the long-term stability of resources and infrastructure for the project?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that 大瞬科技 has delivered over 3 billion units on time without production interruptions, what specific operational execution strategies does the company employ to ensure continued timely delivery?",
+          "question_en_preview": "Given that 大瞬科技 has delivered over 3 billion units on time without production interruptions, what specific operational execution strategies does the company employ to ensure continued timely delivery?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence does 大瞬科技 provide to demonstrate the reasonableness of its budget allocation and the diversity of its funding sources for the project?",
+          "question_en_preview": "What evidence does 大瞬科技 provide to demonstrate the reasonableness of its budget allocation and the diversity of its funding sources for the project?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Considering the limited risk information provided in the proposal, what potential risks could arise from this lack of detail, and how might they impact the project's feasibility?",
+          "question_en_preview": "Considering the limited risk information provided in the proposal, what potential risks could arise from this lack of detail, and how might they impact the project's feasibility?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation might 大瞬科技 face in real production settings, particularly in relation to customer acceptance and integration of its high-end mobile fast charging ICs?",
+          "question_en_preview": "What barriers to implementation might 大瞬科技 face in real production settings, particularly in relation to customer acceptance and integration of its high-end mobile fast charging ICs?"
+        }
+      ],
+      "elapsed_sec": 10.79,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-06-16T21:41:20Z",
+  "elapsed_sec": 84.54,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/pB__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/pB__openai/generated_questions_detail.json"
+}

@@ -1,0 +1,615 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "ds1p4__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/ds1p4__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 330,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team comprises members with strong academic and entrepreneurial backgrounds, including professors and executives from prestigious institutions. Key team members include founders and leaders with extensive experience in research and development, as well as practical kn ...",
+        "first_key_point_preview": "The core team members have backgrounds from Peking University, Tsinghua University, and the Electric Science Institute.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.8,
+        "raw_chars": 4617,
+        "usage": {
+          "prompt_tokens": 3365,
+          "completion_tokens": 1024,
+          "total_tokens": 4389
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "R&D capabilities",
+        "medical device approval",
+        "collaboration with hospitals",
+        "entrepreneurial experience",
+        "leadership track record",
+        "governance structures",
+        "validation experience",
+        "team capacity",
+        "conflict resolution"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "yes_no": 1,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 2,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How do the leadership experiences of 雷易鸣 and 王正华 contribute to the project's potential for successful execution and commercialization?",
+          "question_en_preview": "How do the leadership experiences of 雷易鸣 and 王正华 contribute to the project's potential for successful execution and commercialization?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific R&D capabilities does the team possess that are relevant to the technology and medical device approval processes?",
+          "question_en_preview": "What specific R&D capabilities does the team possess that are relevant to the technology and medical device approval processes?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How do the collaborations with top-tier hospitals enhance the team's ability to validate and scale the project?",
+          "question_en_preview": "How do the collaborations with top-tier hospitals enhance the team's ability to validate and scale the project?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "yes_no",
+          "priority": 2,
+          "question_preview": "Given the team's extensive experience in independent entrepreneurship, do they have sufficient capacity to manage this project alongside other commitments?",
+          "question_en_preview": "Given the team's extensive experience in independent entrepreneurship, do they have sufficient capacity to manage this project alongside other commitments?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What experience does the team have with compliance and validation processes specific to medical devices, and how does this mitigate potential risks?",
+          "question_en_preview": "What experience does the team have with compliance and validation processes specific to medical devices, and how does this mitigate potential risks?"
+        }
+      ],
+      "elapsed_sec": 13.8,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 390,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to achieve significant milestones in the development and commercialization of second-generation tumor treatment electric field (TTF) technology. Key objectives include the completion of experimental equipment and clinical trials, with a planned market launch in 2 ...",
+        "first_key_point_preview": "The project aims to complete the first second-generation TTF planning system in China.",
+        "first_risk_preview": "The project aims to maintain a leading position in technology with zero legal risks.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.03,
+        "raw_chars": 3959,
+        "usage": {
+          "prompt_tokens": 3438,
+          "completion_tokens": 887,
+          "total_tokens": 4325
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "second-generation TTF planning system",
+        "clinical trials timeline",
+        "market launch 2026/27",
+        "milestones T+0 T+6 T+12 T+36",
+        "quantifiable success metrics",
+        "legal risk management"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "unmet_need_alignment": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined are the overall goals of the project, particularly in relation to the completion of the second-generation TTF planning system and the planned market launch in 2026/27?",
+          "question_en_preview": "How clearly defined are the overall goals of the project, particularly in relation to the completion of the second-generation TTF planning system and the planned market launch in 2026/27?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed milestones outlined in the timeline segments: T+0, T+6, T+12, and T+36 months.",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed milestones outlined in the timeline segments: T+0, T+6, T+12, and T+36 months."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "To what extent do the project's objectives align with the stated unmet need for second-generation TTF technology in the market? Please identify any gaps in this alignment.",
+          "question_en_preview": "To what extent do the project's objectives align with the stated unmet need for second-generation TTF technology in the market? Please identify any gaps in this alignment."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics are included in the project objectives to measure the completion of experimental equipment and clinical trials? Are these metrics sufficient to gauge progress?",
+          "question_en_preview": "What quantifiable success metrics are included in the project objectives to measure the completion of experimental equipment and clinical trials? Are these metrics sufficient to gauge progress?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in the project's objectives, particularly regarding the goal of maintaining a leading technological position with zero legal risks. What challenges might arise?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the project's objectives, particularly regarding the goal of maintaining a leading technological position with zero legal risks. What challenges might arise?"
+        }
+      ],
+      "elapsed_sec": 15.03,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 297,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project focuses on developing a second-generation tumor treatment electric field (TTF) solution, with a planned market launch in 2026/27. It aims to establish the first second-generation TTF systems and clinical trials in China, supported by a self-funding strategy and planne ...",
+        "first_key_point_preview": "The project is developing a second-generation TTF solution that is domestically produced and internationally advanced.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.37,
+        "raw_chars": 4824,
+        "usage": {
+          "prompt_tokens": 3537,
+          "completion_tokens": 1049,
+          "total_tokens": 4586
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "market launch timeline",
+        "self-funding strategy",
+        "pilot clinical trial milestones",
+        "development trade-offs",
+        "scaling risks",
+        "quality compliance strategy",
+        "unit economics understanding",
+        "revenue benchmarks",
+        "funding rounds",
+        "TTF technology validation"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 2,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the rationale behind the planned market launch of the second-generation TTF technology in 2026/27, and how does this timeline align with market demand and competitive landscape?",
+          "question_en_preview": "What is the rationale behind the planned market launch of the second-generation TTF technology in 2026/27, and how does this timeline align with market demand and competitive landscape?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the mention of self-funding and planned funding rounds, how realistic is the financial strategy for sustaining development and market entry for the second-generation TTF solution?",
+          "question_en_preview": "Given the mention of self-funding and planned funding rounds, how realistic is the financial strategy for sustaining development and market entry for the second-generation TTF solution?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific milestones are planned for the completion of the first second-generation TTF planning system, hardware system, and pilot clinical trial in China, and how will these be validated?",
+          "question_en_preview": "What specific milestones are planned for the completion of the first second-generation TTF planning system, hardware system, and pilot clinical trial in China, and how will these be validated?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternatives were considered for the development of the second-generation TTF solution, and what major trade-offs were identified in the chosen approach?",
+          "question_en_preview": "What alternatives were considered for the development of the second-generation TTF solution, and what major trade-offs were identified in the chosen approach?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the limited risk information provided, what potential risks could arise during the scaling of the second-generation TTF solution, and how might these impact the project's timeline and success?",
+          "question_en_preview": "Considering the limited risk information provided, what potential risks could arise during the scaling of the second-generation TTF solution, and how might these impact the project's timeline and success?"
+        }
+      ],
+      "elapsed_sec": 19.37,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 391,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project focuses on developing a second-generation tumor treatment electric field (TTF) technology that is claimed to be internationally advanced and unique in its capabilities. It has demonstrated significant improvements in effectiveness through prototype experiments and pos ...",
+        "first_key_point_preview": "The second-generation TTF technology has shown a significant improvement in effectiveness compared to the first generation.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The prototype experiments have shown a significant improvement in effectiveness."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.45,
+        "raw_chars": 4053,
+        "usage": {
+          "prompt_tokens": 3431,
+          "completion_tokens": 861,
+          "total_tokens": 4292
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "prototype experiments",
+        "performance metrics",
+        "intellectual property strategy",
+        "competitive advantage",
+        "effectiveness improvement",
+        "obsolescence risk",
+        "customer segments",
+        "scalability implications",
+        "unique capabilities"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 5,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "ip_and_protection": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the second-generation TTF technology demonstrate true novelty compared to existing tumor treatment technologies? Please provide specific examples from the prototype experiments.",
+          "question_en_preview": "How does the second-generation TTF technology demonstrate true novelty compared to existing tumor treatment technologies? Please provide specific examples from the prototype experiments."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the second-generation TTF technology offer over first-generation technologies and other existing alternatives in terms of effectiveness and performance metrics?",
+          "question_en_preview": "What clear advantages does the second-generation TTF technology offer over first-generation technologies and other existing alternatives in terms of effectiveness and performance metrics?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the strategy for protecting the intellectual property associated with the second-generation TTF technology, and how does it support long-term competitive advantage?",
+          "question_en_preview": "What is the strategy for protecting the intellectual property associated with the second-generation TTF technology, and how does it support long-term competitive advantage?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific evidence from the prototype experiments supports the claims of significant improvement in effectiveness for the second-generation TTF technology?",
+          "question_en_preview": "What specific evidence from the prototype experiments supports the claims of significant improvement in effectiveness for the second-generation TTF technology?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the second-generation TTF technology within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the second-generation TTF technology within the next 3-5 years?"
+        }
+      ],
+      "elapsed_sec": 11.45,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 453,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project demonstrates feasibility through a well-defined funding strategy, including plans to raise 25 million yuan for multi-node work and an angel financing round of 25 million yuan. It has a clear timeline for development milestones, including the completion of second-gener ...",
+        "first_key_point_preview": "The project plans to raise 25 million yuan to support the completion of multi-node work before human pilot trials.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The prototype experiments have shown a significant improvement in effectiveness."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 27.25,
+        "raw_chars": 4706,
+        "usage": {
+          "prompt_tokens": 3477,
+          "completion_tokens": 980,
+          "total_tokens": 4457
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding strategy",
+        "milestone timeline",
+        "medical device approvals",
+        "implementation barriers",
+        "risk identification",
+        "resource allocation",
+        "prototype effectiveness",
+        "financial sustainability",
+        "customer acceptance",
+        "operational dependencies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 2,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the planned fundraising of 25 million yuan for multi-node work align with the project's overall budget and financial sustainability? Please discuss any potential gaps or concerns.",
+          "question_en_preview": "How does the planned fundraising of 25 million yuan for multi-node work align with the project's overall budget and financial sustainability? Please discuss any potential gaps or concerns."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific milestones are included in the development plan timeline, and how do they contribute to the project's feasibility? Are there any dependencies or potential bottlenecks identified?",
+          "question_en_preview": "What specific milestones are included in the development plan timeline, and how do they contribute to the project's feasibility? Are there any dependencies or potential bottlenecks identified?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what are the potential implications for the project's feasibility? How might these risks impact the timeline and resource allocation?",
+          "question_en_preview": "Given the limited risk information provided, what are the potential implications for the project's feasibility? How might these risks impact the timeline and resource allocation?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation might arise during the transition from prototype experiments to full-scale deployment, and how can these be mitigated?",
+          "question_en_preview": "What barriers to implementation might arise during the transition from prototype experiments to full-scale deployment, and how can these be mitigated?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the team's experience in passing medical device approvals contribute to the project's feasibility? Are there any specific approvals that remain outstanding?",
+          "question_en_preview": "How does the team's experience in passing medical device approvals contribute to the project's feasibility? Are there any specific approvals that remain outstanding?"
+        }
+      ],
+      "elapsed_sec": 27.25,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-06-11T16:15:37Z",
+  "elapsed_sec": 86.91,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p4__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p4__openai/generated_questions_detail.json"
+}

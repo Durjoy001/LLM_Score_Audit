@@ -1,0 +1,623 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt17__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt17__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 257,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Henning Dekant, who is the creator of the Quantum WebGL project. It emphasizes collaboration by inviting other programmers to contribute modifications, with support provided to coordinate and distribute these contributions effectively.",
+        "first_key_point_preview": "Henning Dekant is the creator of the Quantum WebGL project.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.32,
+        "raw_chars": 3884,
+        "usage": {
+          "prompt_tokens": 3299,
+          "completion_tokens": 836,
+          "total_tokens": 4135
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Henning Dekant",
+        "Quantum WebGL project",
+        "collaborative contributions",
+        "quality control",
+        "governance structures",
+        "execution capacity",
+        "team bandwidth",
+        "conflict of interest",
+        "project management strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Henning Dekant's experience as the creator of the Quantum WebGL project position him to lead this initiative effectively?",
+          "question_en_preview": "How does Henning Dekant's experience as the creator of the Quantum WebGL project position him to lead this initiative effectively?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies will the project employ to invite and manage contributions from other programmers, and how does this enhance the project's execution capacity?",
+          "question_en_preview": "What specific strategies will the project employ to invite and manage contributions from other programmers, and how does this enhance the project's execution capacity?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current workload and the collaborative nature of the project, does the team have sufficient capacity to manage contributions effectively? If not, what are the implications?",
+          "question_en_preview": "Given the current workload and the collaborative nature of the project, does the team have sufficient capacity to manage contributions effectively? If not, what are the implications?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have in managing contributions and ensuring quality control in collaborative projects, particularly in the context of the Quantum WebGL project?",
+          "question_en_preview": "What experience does the team have in managing contributions and ensuring quality control in collaborative projects, particularly in the context of the Quantum WebGL project?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What governance structures are in place to handle potential conflicts of interest or decision-making challenges arising from the collaborative nature of the project?",
+          "question_en_preview": "What governance structures are in place to handle potential conflicts of interest or decision-making challenges arising from the collaborative nature of the project?"
+        }
+      ],
+      "elapsed_sec": 19.32,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 258,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Quantum WebGL project aims to port the QuantumGL software to the Web, specifically for integration into MOOCs and online learning resources. The project has a defined funding period and outlines various cost components associated with its implementation.",
+        "first_key_point_preview": "The project aims to reimplement QuantumGL to run in a browser for educational purposes.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.66,
+        "raw_chars": 4135,
+        "usage": {
+          "prompt_tokens": 3403,
+          "completion_tokens": 915,
+          "total_tokens": 4318
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "MOOC integration",
+        "quantifiable success metrics",
+        "defined funding period",
+        "cost components breakdown",
+        "educational resource alignment",
+        "project milestones prioritization",
+        "business impact logic",
+        "scope clarity",
+        "realism in objectives"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "yes_no": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the Quantum WebGL project align with the stated need for educational resources in MOOCs? Please evaluate the urgency of this need based on the project's objectives.",
+          "question_en_preview": "How well does the Quantum WebGL project align with the stated need for educational resources in MOOCs? Please evaluate the urgency of this need based on the project's objectives."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the defined funding period from June 3, 2015, to August 2, 2015, how reasonable and executable are the proposed milestones for the Quantum WebGL project? What specific milestones should be prioritized?",
+          "question_en_preview": "Given the defined funding period from June 3, 2015, to August 2, 2015, how reasonable and executable are the proposed milestones for the Quantum WebGL project? What specific milestones should be prioritized?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear and quantifiable success metrics should be established for the Quantum WebGL project to measure its impact on online learning resources? How do these metrics align with the project's objectives?",
+          "question_en_preview": "What clear and quantifiable success metrics should be established for the Quantum WebGL project to measure its impact on online learning resources? How do these metrics align with the project's objectives?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the Quantum WebGL project create value and capture funding through its objectives? Please discuss the business or impact logic behind the initiative.",
+          "question_en_preview": "How does the Quantum WebGL project create value and capture funding through its objectives? Please discuss the business or impact logic behind the initiative."
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Considering the project's defined cost components, how realistic are the objectives set for the Quantum WebGL project? Are the goals too ambitious or appropriately balanced with feasibility?",
+          "question_en_preview": "Considering the project's defined cost components, how realistic are the objectives set for the Quantum WebGL project? Are the goals too ambitious or appropriately balanced with feasibility?"
+        }
+      ],
+      "elapsed_sec": 17.66,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 343,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Quantum WebGL project aims to port the QuantumGL software to the Web using HTML5/WebGL, with a focus on reimplementation for browser integration into MOOCs and online learning resources. The project has received funding pledges from backers, and it utilizes OpenGL to facilita ...",
+        "first_key_point_preview": "Quantum WebGL is focused on porting QuantumGL software to the Web.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 25.84,
+        "raw_chars": 5290,
+        "usage": {
+          "prompt_tokens": 3492,
+          "completion_tokens": 1165,
+          "total_tokens": 4657
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "WebGL integration strategy",
+        "MOOCs implementation plan",
+        "funding strategy",
+        "OpenGL utilization",
+        "scalability challenges",
+        "partnership evaluation criteria",
+        "budget realism assessment",
+        "quality compliance standards",
+        "user adoption metrics",
+        "validation stages"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "quality_compliance_strategy": 1,
+          "business_model_and_unit_economics": 2,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the decision to port QuantumGL to the Web using HTML5/WebGL, and how do these trade-offs impact the project's delivery strategy?",
+          "question_en_preview": "What are the major trade-offs considered in the decision to port QuantumGL to the Web using HTML5/WebGL, and how do these trade-offs impact the project's delivery strategy?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What validation stages are planned for the Quantum WebGL project to ensure the successful integration of QuantumGL into MOOCs and online learning resources?",
+          "question_en_preview": "What validation stages are planned for the Quantum WebGL project to ensure the successful integration of QuantumGL into MOOCs and online learning resources?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the CA$ 8,111 in pledges from 20 backers, what is the projected go-to-market strategy for the Quantum WebGL project, and how does it plan to attract additional funding or users?",
+          "question_en_preview": "Given the CA$ 8,111 in pledges from 20 backers, what is the projected go-to-market strategy for the Quantum WebGL project, and how does it plan to attract additional funding or users?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quality and compliance strategies are in place to ensure that the Quantum WebGL project meets the necessary standards for integration into MOOCs and online learning resources?",
+          "question_en_preview": "What quality and compliance strategies are in place to ensure that the Quantum WebGL project meets the necessary standards for integration into MOOCs and online learning resources?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the use of OpenGL in the QuantumGL reimplementation support the project's business model and unit economics, particularly in terms of scalability and user adoption?",
+          "question_en_preview": "How does the use of OpenGL in the QuantumGL reimplementation support the project's business model and unit economics, particularly in terms of scalability and user adoption?"
+        }
+      ],
+      "elapsed_sec": 25.85,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 404,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project focuses on the development and enhancement of QuantumGL, an open-source software tool designed for visualizing the dynamics of electron orbital states. By making the full source code and modifications available under the same open license, the project aims to ensure a ...",
+        "first_key_point_preview": "QuantumGL is an open-source software tool for visualizing electron orbital states.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "QuantumGL being open source allows for overcoming the hurdles of its obsolescence."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.64,
+        "raw_chars": 5057,
+        "usage": {
+          "prompt_tokens": 3414,
+          "completion_tokens": 1115,
+          "total_tokens": 4529
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "open-source software",
+        "visualization of electron states",
+        "teaching quantum mechanics",
+        "competitive advantages",
+        "intellectual property strategy",
+        "evidence of effectiveness",
+        "risk of obsolescence",
+        "customer engagement",
+        "extensibility to other use cases",
+        "continuous improvement"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 2,
+          "ip_and_protection": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does QuantumGL's approach to visualizing electron orbital states compare to existing tools in terms of novelty and technical advancement?",
+          "question_en_preview": "How does QuantumGL's approach to visualizing electron orbital states compare to existing tools in terms of novelty and technical advancement?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does QuantumGL offer over existing visualization tools for quantum mechanics, particularly in terms of accessibility and user engagement?",
+          "question_en_preview": "What specific advantages does QuantumGL offer over existing visualization tools for quantum mechanics, particularly in terms of accessibility and user engagement?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the strategy for protecting the intellectual property of QuantumGL, and how does being open-source impact its competitive position?",
+          "question_en_preview": "What is the strategy for protecting the intellectual property of QuantumGL, and how does being open-source impact its competitive position?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of QuantumGL in enhancing the teaching of quantum mechanics, and how robust is this evidence?",
+          "question_en_preview": "What evidence supports the effectiveness of QuantumGL in enhancing the teaching of quantum mechanics, and how robust is this evidence?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee for QuantumGL becoming obsolete or commoditized, and how might these risks impact its long-term viability?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee for QuantumGL becoming obsolete or commoditized, and how might these risks impact its long-term viability?"
+        }
+      ],
+      "elapsed_sec": 19.64,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 295,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by a detailed budget and funding plan, with a total cost of $8,000 and specific allocations for various components. However, there are risks associated with unanticipated technological challenges that could impact the timeline and requi ...",
+        "first_key_point_preview": "The project has a total cost of $8,000.",
+        "first_risk_preview": "Unanticipated technological challenges, such as browser incompatibilities, may increase the timeline or require compromises in the project.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 27.34,
+        "raw_chars": 3951,
+        "usage": {
+          "prompt_tokens": 3459,
+          "completion_tokens": 832,
+          "total_tokens": 4291
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "budget allocation details",
+        "technological challenges",
+        "Open Source programmer engagement",
+        "implementation barriers",
+        "customer acceptance feasibility",
+        "project timeline alignment",
+        "funding sources diversity",
+        "financial reward structure",
+        "risk identification",
+        "resource stability"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "resources_and_infrastructure": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the total project cost of $8,000 align with the detailed budget allocations for various components, and what evidence supports the reasonableness of these allocations?",
+          "question_en_preview": "How does the total project cost of $8,000 align with the detailed budget allocations for various components, and what evidence supports the reasonableness of these allocations?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific unanticipated technological challenges have been identified, and how might they impact the project timeline or require compromises?",
+          "question_en_preview": "What specific unanticipated technological challenges have been identified, and how might they impact the project timeline or require compromises?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation in real production settings have been considered, and how might they affect customer acceptance or project deployment?",
+          "question_en_preview": "What barriers to implementation in real production settings have been considered, and how might they affect customer acceptance or project deployment?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the plan to engage Open Source programmers, what resources and infrastructure are in place to ensure that coding efforts are financially rewarded?",
+          "question_en_preview": "Given the plan to engage Open Source programmers, what resources and infrastructure are in place to ensure that coding efforts are financially rewarded?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how aligned are the project timeline and resources, considering potential bottlenecks or staffing gaps? Please provide evidence that would increase your score.",
+          "question_en_preview": "On a scale of 1 to 5, how aligned are the project timeline and resources, considering potential bottlenecks or staffing gaps? Please provide evidence that would increase your score."
+        }
+      ],
+      "elapsed_sec": 27.34,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T17:21:20Z",
+  "elapsed_sec": 109.82,
+  "total_questions": 38,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt17__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt17__openai/generated_questions_detail.json"
+}

@@ -1,0 +1,613 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt43__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt43__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 172,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Travel Planner V3 project is led by Aaron and was last updated on October 1, 2014. It is available on Kickstarter, indicating a public engagement aspect of the project.",
+        "first_key_point_preview": "The project is created and led by Aaron.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 24.04,
+        "raw_chars": 5089,
+        "usage": {
+          "prompt_tokens": 3277,
+          "completion_tokens": 1126,
+          "total_tokens": 4403
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "Aaron's leadership experience",
+        "team capacity assessment",
+        "travel planning expertise",
+        "strategic partnerships",
+        "project governance structure",
+        "validation experience",
+        "crowdfunding engagement",
+        "project update frequency",
+        "risk management strategies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is Aaron's prior execution record in leading similar projects, and how does it position him to advance the Travel Planner V3 project to its intended application?",
+          "question_en_preview": "What is Aaron's prior execution record in leading similar projects, and how does it position him to advance the Travel Planner V3 project to its intended application?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the team's expertise in travel planning and technology contribute to the development and success of Travel Planner V3?",
+          "question_en_preview": "How does the team's expertise in travel planning and technology contribute to the development and success of Travel Planner V3?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the project was last updated on October 1, 2014, what is the current workload of the team, and do they have sufficient capacity to advance the Travel Planner V3 project?",
+          "question_en_preview": "Given that the project was last updated on October 1, 2014, what is the current workload of the team, and do they have sufficient capacity to advance the Travel Planner V3 project?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What strategic collaborations or partnerships does the team have that could enhance the development and market entry of Travel Planner V3?",
+          "question_en_preview": "What strategic collaborations or partnerships does the team have that could enhance the development and market entry of Travel Planner V3?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What validation or compliance experience does the team possess that is relevant to the Travel Planner V3 project, and how might this impact its development?",
+          "question_en_preview": "What validation or compliance experience does the team possess that is relevant to the Travel Planner V3 project, and how might this impact its development?"
+        }
+      ],
+      "elapsed_sec": 24.05,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 341,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to simplify travel planning by providing a budget-oriented tool that consolidates all travel information into a single application. Travel Planner V3 is designed for families, group travelers, and solo travelers, supporting planning for flights, hotels, and cars  ...",
+        "first_key_point_preview": "The project was created to address the complexity of travel planning.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The project was created to address the complexity of travel planning."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.58,
+        "raw_chars": 4141,
+        "usage": {
+          "prompt_tokens": 3444,
+          "completion_tokens": 900,
+          "total_tokens": 4344
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "travel planning complexity",
+        "budget-oriented tool",
+        "user engagement metrics",
+        "milestone execution feasibility",
+        "value creation logic",
+        "success measurement criteria",
+        "stakeholder alignment evidence",
+        "user feedback integration",
+        "development timeline assessment"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined are the overall goals of the project, particularly in addressing the complexity of travel planning? Are there any unrelated sub-goals that could dilute focus?",
+          "question_en_preview": "How clearly defined are the overall goals of the project, particularly in addressing the complexity of travel planning? Are there any unrelated sub-goals that could dilute focus?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the objectives of Travel Planner V3 align with the stated unmet need of simplifying travel planning for families, group travelers, and solo travelers? What evidence supports this alignment?",
+          "question_en_preview": "To what extent do the objectives of Travel Planner V3 align with the stated unmet need of simplifying travel planning for families, group travelers, and solo travelers? What evidence supports this alignment?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Are the proposed milestones for the development of Travel Planner V3, including further refinement, VBA coding, and testing, reasonable and executable within the specified timeline? What factors could impact this?",
+          "question_en_preview": "Are the proposed milestones for the development of Travel Planner V3, including further refinement, VBA coding, and testing, reasonable and executable within the specified timeline? What factors could impact this?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "What quantifiable success metrics are proposed for Travel Planner V3 to measure its effectiveness in helping users plan, budget, and share travel configurations? How realistic are these metrics?",
+          "question_en_preview": "What quantifiable success metrics are proposed for Travel Planner V3 to measure its effectiveness in helping users plan, budget, and share travel configurations? How realistic are these metrics?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the initiative create value for its users and capture revenue or funding? What is the underlying logic that connects the objectives to expected outcomes?",
+          "question_en_preview": "How does the initiative create value for its users and capture revenue or funding? What is the underlying logic that connects the objectives to expected outcomes?"
+        }
+      ],
+      "elapsed_sec": 16.59,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 427,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy for Travel Planner V3 focuses on developing a budget-oriented tool that helps users plan, budget, save, and share their travel configurations. The application is designed for Canadians with CAD pricing, and if funding is secured, a USA version with USD pricing will b ...",
+        "first_key_point_preview": "Travel Planner V3 aims to help users get the best prices, compare budgets, and share travel plans.",
+        "first_risk_preview": "The project funding was unsuccessful, indicating potential challenges in securing necessary financial resources.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 20.34,
+        "raw_chars": 4528,
+        "usage": {
+          "prompt_tokens": 3544,
+          "completion_tokens": 1006,
+          "total_tokens": 4550
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding strategy",
+        "market entry plan",
+        "pricing comparison",
+        "user adoption evidence",
+        "validation steps",
+        "scaling strategy",
+        "compliance risks",
+        "budget realism",
+        "trade-offs in design",
+        "user experience considerations"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 2,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Travel Planner V3 plan to secure funding and ensure successful market entry, especially considering the current funding challenges indicated by the unsuccessful project funding?",
+          "question_en_preview": "How does Travel Planner V3 plan to secure funding and ensure successful market entry, especially considering the current funding challenges indicated by the unsuccessful project funding?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the pricing strategy for Travel Planner V3, and how does it compare to similar tools in the market? What evidence supports the expected adoption and revenue generation?",
+          "question_en_preview": "What is the pricing strategy for Travel Planner V3, and how does it compare to similar tools in the market? What evidence supports the expected adoption and revenue generation?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the major trade-offs considered in the design of Travel Planner V3, particularly in terms of functionality versus user experience, and how will these affect user adoption?",
+          "question_en_preview": "What are the major trade-offs considered in the design of Travel Planner V3, particularly in terms of functionality versus user experience, and how will these affect user adoption?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What validation steps are planned for Travel Planner V3 to ensure that it meets user needs and expectations before full-scale launch?",
+          "question_en_preview": "What validation steps are planned for Travel Planner V3 to ensure that it meets user needs and expectations before full-scale launch?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "If funding is secured for the USA version of Travel Planner V3, what strategies will be employed to scale the application effectively in the new market?",
+          "question_en_preview": "If funding is secured for the USA version of Travel Planner V3, what strategies will be employed to scale the application effectively in the new market?"
+        }
+      ],
+      "elapsed_sec": 20.34,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 268,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Travel Planner V3 introduces innovative features designed to enhance the travel planning experience. It is built as a macro-enabled workbook in Microsoft Excel, offering a user-friendly interface and various automated functionalities that streamline trip organization.",
+        "first_key_point_preview": "Travel Planner V3 is a macro-enabled workbook built in Microsoft Excel.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.19,
+        "raw_chars": 4418,
+        "usage": {
+          "prompt_tokens": 3412,
+          "completion_tokens": 987,
+          "total_tokens": 4399
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "macro-enabled workbook",
+        "automated functionalities",
+        "cost report tracking",
+        "user-friendly interface",
+        "scroll-less design principle",
+        "competitive edge",
+        "intellectual property protection",
+        "evidence of effectiveness",
+        "customer segment extension",
+        "risk of obsolescence"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Travel Planner V3's macro-enabled workbook design in Microsoft Excel represent true novelty compared to existing travel planning tools?",
+          "question_en_preview": "How does Travel Planner V3's macro-enabled workbook design in Microsoft Excel represent true novelty compared to existing travel planning tools?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does Travel Planner V3 offer over existing travel planning applications in terms of user experience and functionality?",
+          "question_en_preview": "What specific advantages does Travel Planner V3 offer over existing travel planning applications in terms of user experience and functionality?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of Travel Planner V3's innovative features, such as the automated functionalities and cost report for tracking expenses?",
+          "question_en_preview": "What evidence supports the effectiveness of Travel Planner V3's innovative features, such as the automated functionalities and cost report for tracking expenses?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks could lead to the obsolescence or commoditization of Travel Planner V3 within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks could lead to the obsolescence or commoditization of Travel Planner V3 within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How could Travel Planner V3 be extended to other customer segments or use cases beyond individual travel planning?",
+          "question_en_preview": "How could Travel Planner V3 be extended to other customer segments or use cases beyond individual travel planning?"
+        }
+      ],
+      "elapsed_sec": 17.19,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 311,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by a defined budget and a clear scope for the application. The project was launched on Kickstarter, aiming to assist users in planning and budgeting their travel effectively. However, if significant bugs arise, adjustments to the applic ...",
+        "first_key_point_preview": "The project was launched on Kickstarter.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "If an application-breaking bug is found and cannot be resolved without sacrificing features, the scope of the application may be changed slightly."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 29.96,
+        "raw_chars": 4179,
+        "usage": {
+          "prompt_tokens": 3454,
+          "completion_tokens": 912,
+          "total_tokens": 4366
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Kickstarter launch",
+        "budget allocation",
+        "development timeline",
+        "customer acceptance evidence",
+        "application-breaking bugs",
+        "mitigation strategy",
+        "implementation barriers",
+        "resource alignment",
+        "project tasks ownership",
+        "risk identification"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 2,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the defined budget of $10,000 align with the projected costs and resources needed for the application’s development and maintenance?",
+          "question_en_preview": "How does the defined budget of $10,000 align with the projected costs and resources needed for the application’s development and maintenance?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for the development and launch of the application, and who are the designated owners for these tasks?",
+          "question_en_preview": "What specific tasks and timelines are outlined for the development and launch of the application, and who are the designated owners for these tasks?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee impacting the application’s launch, and how might these be mitigated?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee impacting the application’s launch, and how might these be mitigated?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation might arise during the application’s development and how can these be addressed?",
+          "question_en_preview": "What barriers to implementation might arise during the application’s development and how can these be addressed?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What evidence do you have regarding customer acceptance and demand for the application, and how does this impact its feasibility?",
+          "question_en_preview": "What evidence do you have regarding customer acceptance and demand for the application, and how does this impact its feasibility?"
+        }
+      ],
+      "elapsed_sec": 29.96,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T17:21:22Z",
+  "elapsed_sec": 108.12,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt43__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt43__openai/generated_questions_detail.json"
+}

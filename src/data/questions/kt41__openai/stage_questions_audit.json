@@ -1,0 +1,616 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt41__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt41__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 168,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is supported by an experienced development team assembled specifically for its execution. ZenLuv AI Inc., located in Toronto, Canada, leads this initiative.",
+        "first_key_point_preview": "An experienced development team has been assembled for the project.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.76,
+        "raw_chars": 3413,
+        "usage": {
+          "prompt_tokens": 3263,
+          "completion_tokens": 727,
+          "total_tokens": 3990
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "leadership track record",
+        "domain-specific expertise",
+        "project execution success",
+        "team capacity assessment",
+        "validation experience",
+        "collaboration stability",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the leadership experience of the team at ZenLuv AI Inc. align with the project's execution needs, and what specific prior successes can be cited to support this alignment?",
+          "question_en_preview": "How does the leadership experience of the team at ZenLuv AI Inc. align with the project's execution needs, and what specific prior successes can be cited to support this alignment?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the development team possess that is critical for addressing the customer problem outlined in the proposal, and how has this expertise been demonstrated in past projects?",
+          "question_en_preview": "What specific domain expertise does the development team possess that is critical for addressing the customer problem outlined in the proposal, and how has this expertise been demonstrated in past projects?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the current workload of the team at ZenLuv AI Inc., do you believe they have sufficient capacity and bandwidth to effectively execute this project? Please provide evidence to support your assessment.",
+          "question_en_preview": "Given the current workload of the team at ZenLuv AI Inc., do you believe they have sufficient capacity and bandwidth to effectively execute this project? Please provide evidence to support your assessment."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance processes relevant to this project, and how does this experience mitigate potential risks associated with the initiative?",
+          "question_en_preview": "What experience does the team have with validation and compliance processes relevant to this project, and how does this experience mitigate potential risks associated with the initiative?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What existing collaboration networks does ZenLuv AI Inc. have that could enhance the project's execution, and how stable are these relationships?",
+          "question_en_preview": "What existing collaboration networks does ZenLuv AI Inc. have that could enhance the project's execution, and how stable are these relationships?"
+        }
+      ],
+      "elapsed_sec": 12.76,
+      "final_question_count": 6
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 356,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project, Ryftborne: Shadows of the Void, aims to deliver a social augmented reality (AR) experience through a mobile game. Key milestones include the development of a core AR engine and basic gameplay modes within the first three months, followed by a closed beta for backers  ...",
+        "first_key_point_preview": "The project is focused on creating a playable AR experience with real characters and shareability.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The team has built buffer into their schedule and will run closed beta testing to ensure stability before launch."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.69,
+        "raw_chars": 3658,
+        "usage": {
+          "prompt_tokens": 3454,
+          "completion_tokens": 799,
+          "total_tokens": 4253
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "augmented reality experience",
+        "milestone timeline",
+        "user engagement metrics",
+        "value creation strategy",
+        "stretch goals",
+        "closed beta testing",
+        "project funding status",
+        "gameplay performance",
+        "user-generated content features"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused is the overall goal of delivering a social augmented reality experience through the mobile game, without unrelated sub-goals?",
+          "question_en_preview": "How clear and focused is the overall goal of delivering a social augmented reality experience through the mobile game, without unrelated sub-goals?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the project align with the stated unmet need for an engaging social augmented reality experience, and how urgent is this need?",
+          "question_en_preview": "To what extent does the project align with the stated unmet need for an engaging social augmented reality experience, and how urgent is this need?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed milestones, including the development of the AR engine and the timeline for the closed beta and public launch.",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed milestones, including the development of the AR engine and the timeline for the closed beta and public launch."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are defined for the project, particularly regarding user engagement and gameplay performance?",
+          "question_en_preview": "What clear and quantifiable success metrics are defined for the project, particularly regarding user engagement and gameplay performance?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project explain its value creation and revenue capture strategy, particularly in relation to user-generated content features and stretch goals?",
+          "question_en_preview": "How does the project explain its value creation and revenue capture strategy, particularly in relation to user-generated content features and stretch goals?"
+        }
+      ],
+      "elapsed_sec": 12.69,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 403,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy for Ryftborne: Shadows of the Void focuses on leveraging augmented reality (AR) to enhance user engagement through interactive gameplay and social sharing features. The project aims to comply with iOS and Android guidelines while adapting features to maintain core ga ...",
+        "first_key_point_preview": "The project aims to achieve a funding goal of $49,641, with $776 already pledged.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.07,
+        "raw_chars": 4116,
+        "usage": {
+          "prompt_tokens": 3540,
+          "completion_tokens": 904,
+          "total_tokens": 4444
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding goal alignment",
+        "AR gameplay compliance",
+        "AI-generated content quality",
+        "development timeline risks",
+        "user-generated content strategy",
+        "budget realism evidence"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "quality_compliance_strategy": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the funding goal of $49,641 align with the projected costs and revenue model for Ryftborne: Shadows of the Void? Please discuss any potential gaps in funding and their implications.",
+          "question_en_preview": "How does the funding goal of $49,641 align with the projected costs and revenue model for Ryftborne: Shadows of the Void? Please discuss any potential gaps in funding and their implications."
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs involved in ensuring compliance with iOS and Android guidelines while maintaining the core gameplay integrity of Ryftborne: Shadows of the Void?",
+          "question_en_preview": "What are the major trade-offs involved in ensuring compliance with iOS and Android guidelines while maintaining the core gameplay integrity of Ryftborne: Shadows of the Void?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what are the potential risks associated with the development and validation path for Ryftborne: Shadows of the Void, and how might these impact the project's timeline?",
+          "question_en_preview": "Given the limited risk information provided, what are the potential risks associated with the development and validation path for Ryftborne: Shadows of the Void, and how might these impact the project's timeline?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quality and compliance strategies are in place to ensure that the AI-generated content used for promotional materials and in-game assets meets industry standards?",
+          "question_en_preview": "What quality and compliance strategies are in place to ensure that the AI-generated content used for promotional materials and in-game assets meets industry standards?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how realistic is the budget for achieving the funding goal of $49,641, considering the current pledges and the overall financial model? Please provide evidence that would increase your score.",
+          "question_en_preview": "On a scale of 1-5, how realistic is the budget for achieving the funding goal of $49,641, considering the current pledges and the overall financial model? Please provide evidence that would increase your score."
+        }
+      ],
+      "elapsed_sec": 16.07,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 345,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project incorporates innovative elements such as AI-generated images for promotional materials and in-game assets, enhancing visual storytelling. It introduces unique gameplay features, including mysterious tears called Ryfts that allow interdimensional creatures to enter the ...",
+        "first_key_point_preview": "The project will use AI-generated images for promotional materials and campaign visuals.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.3,
+        "raw_chars": 3679,
+        "usage": {
+          "prompt_tokens": 3403,
+          "completion_tokens": 807,
+          "total_tokens": 4210
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "AI-generated images",
+        "Ryfts gameplay feature",
+        "Text-to-3D Creator",
+        "user-generated content",
+        "competitive differentiation",
+        "intellectual property protection",
+        "risk of obsolescence",
+        "market appeal evidence",
+        "innovation scalability"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the use of AI-generated images for promotional materials and in-game assets differentiate this project from existing offerings in the gaming industry?",
+          "question_en_preview": "How does the use of AI-generated images for promotional materials and in-game assets differentiate this project from existing offerings in the gaming industry?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What unique advantages do the mysterious tears called Ryfts provide in terms of gameplay experience compared to traditional gaming mechanics?",
+          "question_en_preview": "What unique advantages do the mysterious tears called Ryfts provide in terms of gameplay experience compared to traditional gaming mechanics?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness and appeal of the Text-to-3D Creator feature in enhancing user-generated content within the game?",
+          "question_en_preview": "What evidence supports the effectiveness and appeal of the Text-to-3D Creator feature in enhancing user-generated content within the game?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the project's innovation becoming obsolete or commoditized in the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the project's innovation becoming obsolete or commoditized in the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "How does the project plan to protect its unique gameplay features and AI-generated assets from potential infringement or competition?",
+          "question_en_preview": "How does the project plan to protect its unique gameplay features and AI-generated assets from potential infringement or competition?"
+        }
+      ],
+      "elapsed_sec": 13.3,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 271,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by a contingency budget to address unexpected challenges and a clear development roadmap with set milestones. However, the project faced difficulties in reaching its initial funding goal, which may impact its overall viability.",
+        "first_key_point_preview": "A contingency budget has been built to handle unexpected challenges.",
+        "first_risk_preview": "The project faced difficulties in reaching its initial funding goal, which may impact its overall viability.",
+        "first_mitigation_preview": "A contingency budget has been built to handle unexpected challenges."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.58,
+        "raw_chars": 4579,
+        "usage": {
+          "prompt_tokens": 3442,
+          "completion_tokens": 971,
+          "total_tokens": 4413
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "contingency budget",
+        "funding goal impact",
+        "development roadmap milestones",
+        "AR technical complexities",
+        "iOS and Android compliance",
+        "resource alignment assessment",
+        "implementation barriers",
+        "customer acceptance feasibility",
+        "risk mitigation strategies",
+        "operational execution clarity"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "risk_management": 1,
+          "operational_execution_plan": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "resources_and_infrastructure": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project's failure to reach its initial funding goal impact its overall viability, and what specific steps are being taken to secure additional funding?",
+          "question_en_preview": "How does the project's failure to reach its initial funding goal impact its overall viability, and what specific steps are being taken to secure additional funding?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified risk of not reaching the initial funding goal, what are the potential consequences for the project's timeline and resource allocation?",
+          "question_en_preview": "Given the identified risk of not reaching the initial funding goal, what are the potential consequences for the project's timeline and resource allocation?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key milestones set in the development roadmap, and how will they ensure the project stays on track despite the funding challenges?",
+          "question_en_preview": "What are the key milestones set in the development roadmap, and how will they ensure the project stays on track despite the funding challenges?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific technical complexities related to AR tracking, animation rendering, and cross-platform optimization could pose barriers to implementation, and how are they being addressed?",
+          "question_en_preview": "What specific technical complexities related to AR tracking, animation rendering, and cross-platform optimization could pose barriers to implementation, and how are they being addressed?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does compliance with iOS and Android store guidelines impact the feasibility of customer acceptance and the project's overall market entry strategy?",
+          "question_en_preview": "How does compliance with iOS and Android store guidelines impact the feasibility of customer acceptance and the project's overall market entry strategy?"
+        }
+      ],
+      "elapsed_sec": 19.58,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T19:40:45Z",
+  "elapsed_sec": 74.41,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt41__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt41__openai/generated_questions_detail.json"
+}

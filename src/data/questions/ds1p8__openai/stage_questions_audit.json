@@ -1,0 +1,620 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "ds1p8__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/ds1p8__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 401,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team comprises a diverse group of experts from various institutions, including key figures from Ebovir Biotechnologie Inc., McGill University, and several pharmaceutical companies. The team is structured to leverage existing resources and expertise, focusing on techno ...",
+        "first_key_point_preview": "The project is led by Dr. Zhenlong Liu, the CEO of Ebovir Biotechnologie Inc., who has extensive experience in antiviral therapies and virology research.",
+        "first_risk_preview": "The project faces potential challenges related to the collaboration with strategic partners, which may impact resource utilization and technical problem-solving.",
+        "first_mitigation_preview": "The project collaborates with strategic partners like Merck and Fujifilm to leverage existing resources and overcome technical challenges."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.16,
+        "raw_chars": 3929,
+        "usage": {
+          "prompt_tokens": 3443,
+          "completion_tokens": 865,
+          "total_tokens": 4308
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Dr. Zhenlong Liu's experience",
+        "Prof. Benoît Barbeau contributions",
+        "project management capacity",
+        "collaboration with Merck",
+        "biomedicine compliance experience",
+        "governance structure effectiveness",
+        "strategic partnerships",
+        "AI team expansion",
+        "resource utilization strategies"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Dr. Zhenlong Liu's experience in antiviral therapies and virology research position the project for success in its objectives?",
+          "question_en_preview": "How does Dr. Zhenlong Liu's experience in antiviral therapies and virology research position the project for success in its objectives?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific contributions do Prof. Benoît Barbeau and Prof. Rongtuan Lin bring to the scientific foundation of the project, and how do these align with the project's goals?",
+          "question_en_preview": "What specific contributions do Prof. Benoît Barbeau and Prof. Rongtuan Lin bring to the scientific foundation of the project, and how do these align with the project's goals?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the project management team consists of four experts contributing three months per year, how does this impact the team's capacity to meet project milestones?",
+          "question_en_preview": "Given that the project management team consists of four experts contributing three months per year, how does this impact the team's capacity to meet project milestones?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What measures are in place to ensure effective collaboration with strategic partners like Merck and Fujifilm, and how might these partnerships mitigate potential challenges?",
+          "question_en_preview": "What measures are in place to ensure effective collaboration with strategic partners like Merck and Fujifilm, and how might these partnerships mitigate potential challenges?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How does the team's experience with compliance and validation in biomedicine enhance the project's credibility and potential for successful implementation?",
+          "question_en_preview": "How does the team's experience with compliance and validation in biomedicine enhance the project's credibility and potential for successful implementation?"
+        }
+      ],
+      "elapsed_sec": 9.16,
+      "final_question_count": 6
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 342,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to address urgent needs in research on high-risk pathogens and zoonotic diseases, focusing on prevention and treatment strategies. Key objectives include developing broad-spectrum antiviral therapies and improving treatment outcomes for conditions like lung cance ...",
+        "first_key_point_preview": "The project addresses urgent research needs for high-risk pathogens and zoonotic diseases with high mortality rates.",
+        "first_risk_preview": "There is an urgent need for research on high-risk pathogens or zoonotic diseases with high mortality rates.",
+        "first_mitigation_preview": "The treatment approach combines specific antiviral drugs or interferon therapy to shorten virus clearance time and reduce severity and mortality."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.74,
+        "raw_chars": 3554,
+        "usage": {
+          "prompt_tokens": 3429,
+          "completion_tokens": 755,
+          "total_tokens": 4184
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "broad-spectrum antiviral therapies",
+        "treatment outcomes improvement",
+        "high-risk pathogens research",
+        "quantifiable success metrics",
+        "milestones for core technology",
+        "value creation logic",
+        "interferon therapy effectiveness",
+        "treatment approach benchmarks",
+        "project timeline feasibility"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How effectively does the project address the urgent research needs for high-risk pathogens and zoonotic diseases, as stated in the proposal? Please evaluate the alignment with the identified unmet need.",
+          "question_en_preview": "How effectively does the project address the urgent research needs for high-risk pathogens and zoonotic diseases, as stated in the proposal? Please evaluate the alignment with the identified unmet need."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the reasonableness of the proposed timelines for developing and optimizing core technology within 6-12 months. Are these milestones executable given the project's objectives?",
+          "question_en_preview": "Assess the reasonableness of the proposed timelines for developing and optimizing core technology within 6-12 months. Are these milestones executable given the project's objectives?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are established for the expected outcomes, such as improved treatment effects for lung cancer patients? How do these metrics align with the project's objectives?",
+          "question_en_preview": "What clear and quantifiable success metrics are established for the expected outcomes, such as improved treatment effects for lung cancer patients? How do these metrics align with the project's objectives?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Evaluate how the objectives explain the initiative's value creation and impact delivery, particularly in relation to the treatment approach combining antiviral drugs and interferon therapy.",
+          "question_en_preview": "Evaluate how the objectives explain the initiative's value creation and impact delivery, particularly in relation to the treatment approach combining antiviral drugs and interferon therapy."
+        }
+      ],
+      "elapsed_sec": 14.74,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 453,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 3,
+        "summary_preview": "The project employs a strategic approach that integrates advanced AI models for enhancing the precision of lung-targeted RNA delivery systems. It aims to leverage partnerships with organizations like Merck and Fujifilm to utilize existing resources, thereby addressing technical c ...",
+        "first_key_point_preview": "The project utilizes AI models to improve the precision of lung-targeted small nucleic acid RNA delivery.",
+        "first_risk_preview": "The project supports disease prediction and health risk assessment, promoting the market application of genetic testing technology, which may present challenges in market acceptance and regulatory approval.",
+        "first_mitigation_preview": "The project will utilize existing laboratory resources from partners such as McGill University and CQIB to reduce initial investment pressure."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 23.14,
+        "raw_chars": 4521,
+        "usage": {
+          "prompt_tokens": 3628,
+          "completion_tokens": 978,
+          "total_tokens": 4606
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "AI model validation",
+        "lung-targeted RNA delivery",
+        "regulatory communication strategy",
+        "in vivo testing methods",
+        "market acceptance strategies",
+        "partnership dependency risks",
+        "phased R&D goals",
+        "budget realism",
+        "scaling strategies",
+        "compliance with regulatory requirements"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "commercialization_and_market_entry": 1,
+          "development_and_validation_path": 1,
+          "partnership_and_business_model": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to leverage AI models to enhance the precision of lung-targeted RNA delivery, and what are the major trade-offs considered in this approach?",
+          "question_en_preview": "How does the project plan to leverage AI models to enhance the precision of lung-targeted RNA delivery, and what are the major trade-offs considered in this approach?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What strategies are in place to ensure market acceptance of the genetic testing technology, considering the potential challenges in regulatory approval?",
+          "question_en_preview": "What strategies are in place to ensure market acceptance of the genetic testing technology, considering the potential challenges in regulatory approval?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific in vivo testing and dosage optimization methods will be employed, and how will these contribute to the validation of AI technology results in R&D?",
+          "question_en_preview": "What specific in vivo testing and dosage optimization methods will be employed, and how will these contribute to the validation of AI technology results in R&D?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project plan to manage the dependency risks associated with collaborations with strategic partners like Merck and Fujifilm?",
+          "question_en_preview": "How does the project plan to manage the dependency risks associated with collaborations with strategic partners like Merck and Fujifilm?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget for the project considering the phased R&D goals and the use of existing laboratory resources? Please provide evidence that would support a higher score.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget for the project considering the phased R&D goals and the use of existing laboratory resources? Please provide evidence that would support a higher score."
+        }
+      ],
+      "elapsed_sec": 23.14,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 358,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project showcases significant innovation through the development of an AI-based gene testing platform and advanced lipid nanoparticle (LNP) delivery systems. Key innovations include improved precision in RNA delivery, enhanced screening of circulating tumor cells, and the int ...",
+        "first_key_point_preview": "Keyi Zhao and Eric Cen developed an AI-based gene testing platform for disease prediction and health risk assessment.",
+        "first_risk_preview": "The proposal indicates a risk associated with the development of the AI-based gene testing platform for disease prediction and health risk assessment.",
+        "first_mitigation_preview": "AI models are being used to improve the precision of lung-targeted small nucleic acid RNA delivery."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.02,
+        "raw_chars": 3652,
+        "usage": {
+          "prompt_tokens": 3455,
+          "completion_tokens": 793,
+          "total_tokens": 4248
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "AI-based gene testing platform",
+        "RNA delivery precision",
+        "lung-targeted lipid nanoparticles",
+        "patented technology",
+        "evidence of effectiveness",
+        "competitive advantage",
+        "innovation in drug design",
+        "risk assessment",
+        "market differentiation"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "ip_and_protection": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the AI-based gene testing platform compare to existing gene testing solutions in terms of innovation and technological advancement?",
+          "question_en_preview": "How does the AI-based gene testing platform compare to existing gene testing solutions in terms of innovation and technological advancement?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the project offer over traditional gene testing methods, particularly in terms of precision and efficiency?",
+          "question_en_preview": "What specific advantages does the project offer over traditional gene testing methods, particularly in terms of precision and efficiency?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the strategy for protecting the patented technology related to lung-targeted stable lipid nanoparticles, and how does it support long-term competitive advantage?",
+          "question_en_preview": "What is the strategy for protecting the patented technology related to lung-targeted stable lipid nanoparticles, and how does it support long-term competitive advantage?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "What evidence supports the effectiveness of the AI models in enhancing RNA delivery precision, and how robust is this evidence?",
+          "question_en_preview": "What evidence supports the effectiveness of the AI models in enhancing RNA delivery precision, and how robust is this evidence?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific risks are associated with the development of the AI-based gene testing platform, and how might these risks impact its long-term viability?",
+          "question_en_preview": "What specific risks are associated with the development of the AI-based gene testing platform, and how might these risks impact its long-term viability?"
+        }
+      ],
+      "elapsed_sec": 9.02,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 352,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is influenced by various risks, including technical development, market entry, funding pressure, regulatory approval, commercialization, and AI technology validation. Mitigation strategies include in vivo testing, dose optimization, utilizing existi ...",
+        "first_key_point_preview": "The project faces safety concerns related to cytokine storms from excessive immune activation.",
+        "first_risk_preview": "The project faces several risks, including technical development risk, market entry risk, funding pressure risk, regulatory approval risk, commercialization risk, and AI technology and model risk.",
+        "first_mitigation_preview": "The project will utilize existing laboratory resources from partners to reduce initial investment pressure."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 34.2,
+        "raw_chars": 4492,
+        "usage": {
+          "prompt_tokens": 3475,
+          "completion_tokens": 964,
+          "total_tokens": 4439
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "safety concerns",
+        "cytokine storms",
+        "cost-sharing",
+        "regulatory approval",
+        "in vivo testing",
+        "dose optimization",
+        "clinical trial costs",
+        "technical development risk",
+        "market entry risk",
+        "funding pressure"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "risk_management": 1,
+          "funding_and_budget_planning": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "operational_execution_plan": 1,
+          "resources_and_infrastructure": 1,
+          "timeline_and_resource_alignment": 1,
+          "implementation_barriers": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 4,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies will be employed to address the technical development, market entry, and regulatory approval risks identified in the project?",
+          "question_en_preview": "What specific strategies will be employed to address the technical development, market entry, and regulatory approval risks identified in the project?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the plan to share clinical trial costs with partners alleviate funding pressure, and what are the implications if this cost-sharing does not materialize?",
+          "question_en_preview": "How does the plan to share clinical trial costs with partners alleviate funding pressure, and what are the implications if this cost-sharing does not materialize?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the feasibility of obtaining regulatory approval for the project, considering the identified safety concerns related to cytokine storms?",
+          "question_en_preview": "What evidence supports the feasibility of obtaining regulatory approval for the project, considering the identified safety concerns related to cytokine storms?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how clear and specific is the implementation plan regarding key tasks and timelines? What evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1 to 5, how clear and specific is the implementation plan regarding key tasks and timelines? What evidence would increase your confidence in this assessment?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What resources are currently in place to ensure the efficient delivery of RNA drugs to target cells, and how will the project address potential challenges in preventing degradation?",
+          "question_en_preview": "What resources are currently in place to ensure the efficient delivery of RNA drugs to target cells, and how will the project address potential challenges in preventing degradation?"
+        }
+      ],
+      "elapsed_sec": 34.2,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-06-11T17:04:36Z",
+  "elapsed_sec": 90.28,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p8__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p8__openai/generated_questions_detail.json"
+}

@@ -1,0 +1,621 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt91__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt91__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 208,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'Warranty Software Application To Manage Purchases' is developed by Zack Steel, who is the sole identified team member. The project is focused on managing purchases through a software application.",
+        "first_key_point_preview": "The project is titled 'Warranty Software Application To Manage Purchases'.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.27,
+        "raw_chars": 4269,
+        "usage": {
+          "prompt_tokens": 3263,
+          "completion_tokens": 895,
+          "total_tokens": 4158
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "prior execution record",
+        "software development expertise",
+        "purchase management experience",
+        "workload management strategy",
+        "validation and compliance experience",
+        "governance processes",
+        "quality control measures",
+        "capacity assessment",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What prior execution record does Zack Steel have that demonstrates his capability to advance the 'Warranty Software Application To Manage Purchases' to its intended application and market? Please provide specific example ...",
+          "question_en_preview": "What prior execution record does Zack Steel have that demonstrates his capability to advance the 'Warranty Software Application To Manage Purchases' to its intended application and market? Please provide specific example ..."
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Zack Steel's expertise in software development and purchase management specifically contribute to the success of the project? What evidence supports this?",
+          "question_en_preview": "How does Zack Steel's expertise in software development and purchase management specifically contribute to the success of the project? What evidence supports this?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that Zack Steel is the sole identified team member, how does he plan to manage his workload and ensure that the project meets its milestones? What are the potential risks associated with this capacity?",
+          "question_en_preview": "Given that Zack Steel is the sole identified team member, how does he plan to manage his workload and ensure that the project meets its milestones? What are the potential risks associated with this capacity?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does Zack Steel have with validation and compliance in software applications, particularly in the context of managing purchases? How does this experience mitigate potential risks?",
+          "question_en_preview": "What experience does Zack Steel have with validation and compliance in software applications, particularly in the context of managing purchases? How does this experience mitigate potential risks?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What governance and decision-making processes does Zack Steel intend to implement for the project, and how will these processes address potential conflicts of interest or quality control?",
+          "question_en_preview": "What governance and decision-making processes does Zack Steel intend to implement for the project, and how will these processes address potential conflicts of interest or quality control?"
+        }
+      ],
+      "elapsed_sec": 12.27,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 310,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a Warranty Software Application designed to manage purchases, allowing users to scan receipts and warranties for organization and retrieval. It includes features to notify users before their warranty expires and aims to provide opportunities for revenu ...",
+        "first_key_point_preview": "The project is titled 'Warranty Software Application To Manage Purchases' and was created by Zack Steel.",
+        "first_risk_preview": "Risks include competitors producing a similar Warranty Application before it can be developed and submitted to the marketplace.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.86,
+        "raw_chars": 4511,
+        "usage": {
+          "prompt_tokens": 3419,
+          "completion_tokens": 929,
+          "total_tokens": 4348
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user engagement metrics",
+        "revenue generation strategy",
+        "milestone execution timeline",
+        "competitive landscape analysis",
+        "warranty expiration notifications",
+        "success metrics definition",
+        "scope prioritization",
+        "business logic clarity",
+        "unmet customer needs",
+        "application development risks"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of the Warranty Software Application align with the stated need for users to manage their warranties and receipts? Please evaluate the urgency of this need based on the proposal's context.",
+          "question_en_preview": "How well do the objectives of the Warranty Software Application align with the stated need for users to manage their warranties and receipts? Please evaluate the urgency of this need based on the proposal's context."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the proposed milestones for the development and launch of the Warranty Software Application, and how realistic are these timelines? Are there any specific execution challenges that could impact these milestones?",
+          "question_en_preview": "What are the proposed milestones for the development and launch of the Warranty Software Application, and how realistic are these timelines? Are there any specific execution challenges that could impact these milestones?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What quantifiable success metrics are proposed for the Warranty Software Application, particularly regarding user engagement and revenue generation from extended warranties? How might these metrics be measured?",
+          "question_en_preview": "What quantifiable success metrics are proposed for the Warranty Software Application, particularly regarding user engagement and revenue generation from extended warranties? How might these metrics be measured?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how balanced are the project's ambitions with its feasibility, considering the competitive risk of similar applications entering the market? What evidence would increase your confidence in this bala ...",
+          "question_en_preview": "On a scale of 1 to 5, how balanced are the project's ambitions with its feasibility, considering the competitive risk of similar applications entering the market? What evidence would increase your confidence in this bala ..."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How effectively does the proposal articulate the business logic behind the Warranty Software Application, particularly in terms of revenue generation from extended warranties? Are there any gaps in this logic that need a ...",
+          "question_en_preview": "How effectively does the proposal articulate the business logic behind the Warranty Software Application, particularly in terms of revenue generation from extended warranties? Are there any gaps in this logic that need a ..."
+        }
+      ],
+      "elapsed_sec": 15.86,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 400,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a Warranty Software Application that includes features such as notifications for warranty expirations and opportunities for revenue through extended warranties. It was launched on Kickstarter with a funding goal, but it currently has no backers or fund ...",
+        "first_key_point_preview": "The project was launched on Kickstarter with a funding goal of $7,061.",
+        "first_risk_preview": "Risks include competitors producing a similar Warranty Application before it can be developed and submitted to the marketplace.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 24.05,
+        "raw_chars": 6160,
+        "usage": {
+          "prompt_tokens": 3514,
+          "completion_tokens": 1265,
+          "total_tokens": 4779
+        }
+      },
+      "raw_question_count": 9,
+      "search_hints": [
+        "Kickstarter funding goal",
+        "market demand analysis",
+        "competitive differentiation",
+        "revenue streams from warranties",
+        "environmental compliance standards",
+        "vendor partnerships",
+        "development timeline",
+        "validation stages",
+        "market entry strategy",
+        "scaling strategy"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 7,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 3
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "business_model_and_unit_economics": 2,
+          "development_and_validation_path": 2,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the rationale behind the chosen funding goal of $7,061 for the Kickstarter launch, and how does this align with the projected market demand for the Warranty Software Application?",
+          "question_en_preview": "What is the rationale behind the chosen funding goal of $7,061 for the Kickstarter launch, and how does this align with the projected market demand for the Warranty Software Application?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Warranty Software Application plan to differentiate itself from competitors who may produce similar applications before it can be developed and submitted to the marketplace?",
+          "question_en_preview": "How does the Warranty Software Application plan to differentiate itself from competitors who may produce similar applications before it can be developed and submitted to the marketplace?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the expected revenue streams from the Warranty Software Application, particularly regarding the sale of extended warranties through vendors, and how will this impact the overall business model?",
+          "question_en_preview": "What are the expected revenue streams from the Warranty Software Application, particularly regarding the sale of extended warranties through vendors, and how will this impact the overall business model?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the project currently has no backers or funds pledged, what are the planned next steps for validating the Warranty Software Application and securing initial funding?",
+          "question_en_preview": "Given that the project currently has no backers or funds pledged, what are the planned next steps for validating the Warranty Software Application and securing initial funding?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What specific environmental standards will the Warranty Software Application comply with, and how will compliance be ensured throughout the development process?",
+          "question_en_preview": "What specific environmental standards will the Warranty Software Application comply with, and how will compliance be ensured throughout the development process?"
+        }
+      ],
+      "elapsed_sec": 24.05,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 222,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces innovative features in the Warranty Software Application, such as notifications for warranty expirations. This approach aims to enhance user engagement and streamline the warranty management process.",
+        "first_key_point_preview": "The Warranty Software Application allows vendors, stores, and manufacturers to sell extended warranties directly through the platform.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.01,
+        "raw_chars": 4006,
+        "usage": {
+          "prompt_tokens": 3356,
+          "completion_tokens": 837,
+          "total_tokens": 4193
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user engagement metrics",
+        "competitive analysis",
+        "intellectual property strategy",
+        "notification system effectiveness",
+        "scalability of features",
+        "risk of obsolescence",
+        "customer feedback",
+        "market comparison",
+        "warranty management innovation"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Warranty Software Application's notification system for warranty expirations compare to existing solutions in the market? Please provide evidence of its novelty.",
+          "question_en_preview": "How does the Warranty Software Application's notification system for warranty expirations compare to existing solutions in the market? Please provide evidence of its novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the Warranty Software Application offer over traditional warranty management systems, particularly regarding user engagement and experience?",
+          "question_en_preview": "What specific advantages does the Warranty Software Application offer over traditional warranty management systems, particularly regarding user engagement and experience?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the notification system in improving user engagement and warranty management? Are there any metrics or user feedback available?",
+          "question_en_preview": "What evidence supports the effectiveness of the notification system in improving user engagement and warranty management? Are there any metrics or user feedback available?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of the Warranty Software Application's features within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of the Warranty Software Application's features within the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property associated with the innovative features of the Warranty Software Application, particularly the notification system?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property associated with the innovative features of the Warranty Software Application, particularly the notification system?"
+        }
+      ],
+      "elapsed_sec": 10.01,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 366,
+        "key_points_count": 6,
+        "risks_count": 4,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project faces several challenges, including funding issues and costs associated with patents and trademarks. Additionally, there are risks related to competitors potentially launching similar applications before this project can enter the market. The projec ...",
+        "first_key_point_preview": "The project is based in Toronto, Canada.",
+        "first_risk_preview": "Manufacturers or suppliers may want to diagnose issues via the internet or request that the purchaser run various tests before providing a replacement item.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.61,
+        "raw_chars": 4610,
+        "usage": {
+          "prompt_tokens": 3520,
+          "completion_tokens": 967,
+          "total_tokens": 4487
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "107% funded on Kickstarter",
+        "patent fees",
+        "Proof of Concept demonstration",
+        "trademark registration costs",
+        "competitor risks",
+        "diagnostic requirements",
+        "implementation barriers",
+        "customer acceptance",
+        "procurement feasibility",
+        "staffing gaps"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "risk_management": 2,
+          "implementation_barriers": 1,
+          "operational_execution_plan": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 4,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project is currently 107% funded on Kickstarter, what additional funding sources are being considered to address potential costs associated with patents and trademarks?",
+          "question_en_preview": "Given that the project is currently 107% funded on Kickstarter, what additional funding sources are being considered to address potential costs associated with patents and trademarks?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies are in place to mitigate the risk of competitors launching similar applications before this project can enter the market?",
+          "question_en_preview": "What specific strategies are in place to mitigate the risk of competitors launching similar applications before this project can enter the market?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation have been identified, particularly regarding the need for manufacturers or suppliers to diagnose issues via the internet before providing replacements?",
+          "question_en_preview": "What barriers to implementation have been identified, particularly regarding the need for manufacturers or suppliers to diagnose issues via the internet before providing replacements?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how clear and specific is the implementation plan for addressing the challenges related to patent fees and Proof of Concept demonstrations? What evidence would increase your score?",
+          "question_en_preview": "On a scale of 1-5, how clear and specific is the implementation plan for addressing the challenges related to patent fees and Proof of Concept demonstrations? What evidence would increase your score?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "If the proposal does not provide sufficient details on customer acceptance and procurement feasibility, please state this information gap and discuss its impact on the project's viability.",
+          "question_en_preview": "If the proposal does not provide sufficient details on customer acceptance and procurement feasibility, please state this information gap and discuss its impact on the project's viability."
+        }
+      ],
+      "elapsed_sec": 11.61,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T21:18:37Z",
+  "elapsed_sec": 73.81,
+  "total_questions": 38,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt91__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt91__openai/generated_questions_detail.json"
+}

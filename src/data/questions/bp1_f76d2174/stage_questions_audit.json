@@ -1,0 +1,624 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "bp1_f76d2174",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/bp1_f76d2174/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 458,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team comprises key members with significant expertise in aerospace technology and project management. Notable individuals include Dr. Cai Jian, who has a strong background in microelectronics and has developed innovative propulsion systems, and Dr. Cai Yong, who focus ...",
+        "first_key_point_preview": "The team is led by Dr. Cai Jian, a researcher with multiple patents in propulsion technology.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.55,
+        "raw_chars": 3866,
+        "usage": {
+          "prompt_tokens": 3410,
+          "completion_tokens": 814,
+          "total_tokens": 4224
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Dr. Cai Jian patents",
+        "project management experience",
+        "micro-propulsion modules",
+        "collaboration with Busek Company",
+        "academic and industrial experience",
+        "governance structures",
+        "validation experience",
+        "project execution capacity",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "governance_and_decision_making": 1,
+          "validation_and_compliance_experience": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Dr. Cai Jian's background in propulsion technology and his multiple patents contribute to the team's ability to advance the project to its intended application?",
+          "question_en_preview": "How does Dr. Cai Jian's background in propulsion technology and his multiple patents contribute to the team's ability to advance the project to its intended application?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific experiences do team members have in both academic and industrial settings that enhance their capability to execute the project effectively?",
+          "question_en_preview": "What specific experiences do team members have in both academic and industrial settings that enhance their capability to execute the project effectively?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the collaboration between the Institute of Microelectronics and Busek Company on ion propulsion research strengthen the project's execution capacity?",
+          "question_en_preview": "How does the collaboration between the Institute of Microelectronics and Busek Company on ion propulsion research strengthen the project's execution capacity?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the team's established production lines for micro-propulsion modules, how does this indicate their current workload and capacity to take on new projects?",
+          "question_en_preview": "Given the team's established production lines for micro-propulsion modules, how does this indicate their current workload and capacity to take on new projects?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What governance structures are in place to ensure effective decision-making and conflict-of-interest handling within the team, especially given the limited risk information provided?",
+          "question_en_preview": "What governance structures are in place to ensure effective decision-making and conflict-of-interest handling within the team, especially given the limited risk information provided?"
+        }
+      ],
+      "elapsed_sec": 11.55,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 307,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to deliver a total of 128 propulsion units over five years, with the first unit delivered in 2019. Key milestones include the initiation of the deep space joint exploration program in 2020 and the development of various micro propulsion modules tailored for speci ...",
+        "first_key_point_preview": "The first propulsion unit was delivered in 2019, with a goal to complete 128 units within five years.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.46,
+        "raw_chars": 4330,
+        "usage": {
+          "prompt_tokens": 3453,
+          "completion_tokens": 888,
+          "total_tokens": 4341
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "milestone execution timeline",
+        "market demand for micro satellites",
+        "quantifiable success metrics",
+        "propulsion unit performance",
+        "deep space exploration program",
+        "value creation logic",
+        "space debris management applications",
+        "micro satellite functionalities",
+        "project ambition vs feasibility"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused are the overall goals of the project, particularly regarding the delivery of 128 propulsion units and the milestones associated with the deep space joint exploration program?",
+          "question_en_preview": "How clear and focused are the overall goals of the project, particularly regarding the delivery of 128 propulsion units and the milestones associated with the deep space joint exploration program?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the project's objectives align with the identified market demand for micro satellites and the specific applications mentioned, such as constellation deployment and space debris management?",
+          "question_en_preview": "To what extent do the project's objectives align with the identified market demand for micro satellites and the specific applications mentioned, such as constellation deployment and space debris management?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed milestones, including the timeline for delivering the propulsion units and the initiation of the deep space program. What evidence supports your assessment?",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed milestones, including the timeline for delivering the propulsion units and the initiation of the deep space program. What evidence supports your assessment?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are included in the project objectives, particularly regarding the performance of the propulsion units and their impact on satellite functionalities?",
+          "question_en_preview": "What clear and quantifiable success metrics are included in the project objectives, particularly regarding the performance of the propulsion units and their impact on satellite functionalities?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too idealistically, or do they reflect a realistic approach to achieving the milestones?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too idealistically, or do they reflect a realistic approach to achieving the milestones?"
+        }
+      ],
+      "elapsed_sec": 10.47,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 368,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project strategy focuses on developing a constellation of small satellites, primarily in the 10-100 kg range, to support various applications. It emphasizes the use of advanced propulsion technologies, including solid micro-electric propulsion systems, and aims to establish a ...",
+        "first_key_point_preview": "The project plans to deploy a constellation of small satellites, with a focus on 10-100 kg micro and nano satellites.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.73,
+        "raw_chars": 4016,
+        "usage": {
+          "prompt_tokens": 3532,
+          "completion_tokens": 838,
+          "total_tokens": 4370
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "satellite constellation strategy",
+        "propulsion technology validation",
+        "market presence establishment",
+        "funding strategy realism",
+        "scaling risks",
+        "quality assurance measures",
+        "strategic partnerships",
+        "micro-satellite self-assembly",
+        "development acceleration",
+        "operational compliance"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the decision to develop a constellation of small satellites in the 10-100 kg range, and what alternatives were considered during this decision-making process?",
+          "question_en_preview": "What rationale supports the decision to develop a constellation of small satellites in the 10-100 kg range, and what alternatives were considered during this decision-making process?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to validate the performance of the propulsion technologies and satellite functionalities during the development stages?",
+          "question_en_preview": "How does the project plan to validate the performance of the propulsion technologies and satellite functionalities during the development stages?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies will the project employ to establish a robust market presence and accelerate development through strategic partnerships?",
+          "question_en_preview": "What specific strategies will the project employ to establish a robust market presence and accelerate development through strategic partnerships?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1-5, how realistic is the funding strategy outlined in the proposal, considering the reliance on equity financing and local talent projects? Please provide evidence that would increase your score.",
+          "question_en_preview": "On a scale of 1-5, how realistic is the funding strategy outlined in the proposal, considering the reliance on equity financing and local talent projects? Please provide evidence that would increase your score."
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee in scaling the project from development to large-scale rollout, and how might these impact the overall strategy?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee in scaling the project from development to large-scale rollout, and how might these impact the overall strategy?"
+        }
+      ],
+      "elapsed_sec": 9.73,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 312,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project demonstrates significant innovation through a range of patented technologies and products in the field of micro propulsion systems. Key advancements include the development of unique laser micro propulsion technologies and the establishment of a leading testing platfo ...",
+        "first_key_point_preview": "中科纳飞拥有7项发明专利和2项软件著作权，显示出其在技术创新方面的实力。",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.32,
+        "raw_chars": 4293,
+        "usage": {
+          "prompt_tokens": 3504,
+          "completion_tokens": 908,
+          "total_tokens": 4412
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "patented technologies",
+        "laser micro propulsion",
+        "micro thrust measurement",
+        "national achievement appraisal",
+        "competitive advantages",
+        "market potential",
+        "IP protection strategy",
+        "scalability assessment",
+        "obsolescence risks",
+        "customer segments"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project's patented technologies, particularly the unique laser micro propulsion technologies, compare to existing solutions in the micro propulsion systems field? Please provide evidence of their novelty.",
+          "question_en_preview": "How does the project's patented technologies, particularly the unique laser micro propulsion technologies, compare to existing solutions in the micro propulsion systems field? Please provide evidence of their novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages do the project's technologies offer over existing micro propulsion systems in terms of performance, scalability, and cost? Please cite specific key points from the proposal.",
+          "question_en_preview": "What clear advantages do the project's technologies offer over existing micro propulsion systems in terms of performance, scalability, and cost? Please cite specific key points from the proposal."
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What evidence supports the maturity and market potential of the technologies developed, particularly the results from the national achievement appraisal in 2009? How does this evidence strengthen the innovation claim?",
+          "question_en_preview": "What evidence supports the maturity and market potential of the technologies developed, particularly the results from the national achievement appraisal in 2009? How does this evidence strengthen the innovation claim?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the technologies within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the technologies within the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the current patent strategy support the project's long-term competitive position in the micro propulsion systems market? Are there any gaps in the IP protection that could be addressed?",
+          "question_en_preview": "How does the current patent strategy support the project's long-term competitive position in the micro propulsion systems market? Are there any gaps in the IP protection that could be addressed?"
+        }
+      ],
+      "elapsed_sec": 9.32,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 350,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by a robust resource base, including a leading micro-thrust testing platform established by the Institute of Microelectronics. The project has a clear budget plan, with registered capital and funding sources outlined, and it anticipates ...",
+        "first_key_point_preview": "The Institute of Microelectronics has established a leading micro-thrust testing platform.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.89,
+        "raw_chars": 4740,
+        "usage": {
+          "prompt_tokens": 3497,
+          "completion_tokens": 984,
+          "total_tokens": 4481
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "micro-thrust testing platform",
+        "15 million yuan funding requirement",
+        "128 micro-thrust modules delivery",
+        "transition to positive cash flow",
+        "risk identification and mitigation",
+        "budget allocation challenges",
+        "implementation barriers",
+        "resource alignment",
+        "customer acceptance feasibility",
+        "operational execution milestones"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 4
+        },
+        "aspects": {
+          "resources_and_infrastructure": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the established micro-thrust testing platform by the Institute of Microelectronics support the project's resource needs and long-term stability?",
+          "question_en_preview": "How does the established micro-thrust testing platform by the Institute of Microelectronics support the project's resource needs and long-term stability?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the project requires approximately 15 million yuan for development and testing, how realistic is the budget allocation and what are the potential challenges in securing this funding?",
+          "question_en_preview": "Given the project requires approximately 15 million yuan for development and testing, how realistic is the budget allocation and what are the potential challenges in securing this funding?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific milestones and timelines are outlined for delivering the 128 micro-thrust modules over the next five years, and how do they align with the project's resource capabilities?",
+          "question_en_preview": "What specific milestones and timelines are outlined for delivering the 128 micro-thrust modules over the next five years, and how do they align with the project's resource capabilities?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the implications of the limited risk information provided in the proposal, and how might this affect the project's feasibility and planning?",
+          "question_en_preview": "What are the implications of the limited risk information provided in the proposal, and how might this affect the project's feasibility and planning?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation in production or customer settings could arise from the current lack of detailed risk and mitigation strategies?",
+          "question_en_preview": "What potential barriers to implementation in production or customer settings could arise from the current lack of detailed risk and mitigation strategies?"
+        }
+      ],
+      "elapsed_sec": 9.89,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-06-10T18:13:34Z",
+  "elapsed_sec": 50.97,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/bp1_f76d2174/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/bp1_f76d2174/generated_questions_detail.json"
+}

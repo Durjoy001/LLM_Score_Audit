@@ -1,0 +1,627 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km23__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km23__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 279,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by David Laporte, who is a generalist programmer with a background in computer engineering. He is the sole developer of the project and is also the author of Magimagine. There is an intention to seek collaboration for the artistic design aspect of the project.",
+        "first_key_point_preview": "David Laporte is the creator and sole developer of the project.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 21.68,
+        "raw_chars": 5650,
+        "usage": {
+          "prompt_tokens": 3291,
+          "completion_tokens": 1191,
+          "total_tokens": 4482
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "computer engineering background",
+        "sole developer experience",
+        "artistic design collaboration",
+        "project management criteria",
+        "workload management strategies",
+        "validation experience",
+        "governance processes",
+        "conflict-of-interest handling",
+        "team capacity assessment"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does David Laporte's background in computer engineering and experience as the sole developer position him to lead this project effectively? Please provide specific examples of his prior execution record that support  ...",
+          "question_en_preview": "How does David Laporte's background in computer engineering and experience as the sole developer position him to lead this project effectively? Please provide specific examples of his prior execution record that support  ..."
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does David Laporte possess that is relevant to the project's objectives and challenges? How does this expertise enhance the project's potential for success?",
+          "question_en_preview": "What specific domain expertise does David Laporte possess that is relevant to the project's objectives and challenges? How does this expertise enhance the project's potential for success?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the intention to seek collaboration for the artistic design aspect of the project, what criteria will be used to select potential collaborators, and how will these partnerships be managed to ensure project success?",
+          "question_en_preview": "Given the intention to seek collaboration for the artistic design aspect of the project, what criteria will be used to select potential collaborators, and how will these partnerships be managed to ensure project success?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering that David Laporte is the sole developer, how does he plan to manage his workload and ensure that he has sufficient time and resources to advance the project? What are the potential risks of this approach?",
+          "question_en_preview": "Considering that David Laporte is the sole developer, how does he plan to manage his workload and ensure that he has sufficient time and resources to advance the project? What are the potential risks of this approach?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What validation and compliance experience does David Laporte have that could be relevant to the project's success, particularly in terms of quality assurance and meeting industry standards?",
+          "question_en_preview": "What validation and compliance experience does David Laporte have that could be relevant to the project's success, particularly in terms of quality assurance and meeting industry standards?"
+        }
+      ],
+      "elapsed_sec": 21.68,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 380,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The objectives of the Magimagine project focus on developing a website that assists users in creating stories through various stages, including brainstorming, realization, structuring, production, and publication. Key milestones include testing the website for bugs, activating us ...",
+        "first_key_point_preview": "The project aims to help users create stories in various formats, including novels and comics.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "To ensure service quality, the objective includes testing and retesting the website to detect and solve bugs."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.03,
+        "raw_chars": 4932,
+        "usage": {
+          "prompt_tokens": 3450,
+          "completion_tokens": 1085,
+          "total_tokens": 4535
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user engagement metrics",
+        "milestone feasibility",
+        "value creation logic",
+        "success metrics definition",
+        "scope clarity",
+        "user feedback integration",
+        "platform performance testing",
+        "story creation formats",
+        "risk assessment",
+        "service quality testing"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 2,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of the Magimagine project align with the stated need for users to create stories in various formats? Please assess the urgency of this need based on the project's goals.",
+          "question_en_preview": "How well do the objectives of the Magimagine project align with the stated need for users to create stories in various formats? Please assess the urgency of this need based on the project's goals."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness and executability of the key milestones outlined for the Magimagine project, such as testing the website for bugs and activating user accounts. What evidence supports your assessment?",
+          "question_en_preview": "Evaluate the reasonableness and executability of the key milestones outlined for the Magimagine project, such as testing the website for bugs and activating user accounts. What evidence supports your assessment?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear and quantifiable success metrics can be identified for the Magimagine project, particularly regarding user engagement and platform performance? If the proposal lacks specific metrics, please state this gap and ...",
+          "question_en_preview": "What clear and quantifiable success metrics can be identified for the Magimagine project, particularly regarding user engagement and platform performance? If the proposal lacks specific metrics, please state this gap and ..."
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Assess the balance between ambition and feasibility in the objectives of the Magimagine project. Are the goals set too idealistically or conservatively? Provide reasoning for your evaluation.",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the objectives of the Magimagine project. Are the goals set too idealistically or conservatively? Provide reasoning for your evaluation."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the Magimagine project create value for its users and stakeholders? Discuss the business or impact logic that underpins the project's objectives.",
+          "question_en_preview": "How does the Magimagine project create value for its users and stakeholders? Discuss the business or impact logic that underpins the project's objectives."
+        }
+      ],
+      "elapsed_sec": 16.04,
+      "final_question_count": 8
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 277,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 2,
+        "summary_preview": "The strategy for the Magimagine project focuses on enhancing user experience by allowing story uploads and creating an encyclopedia. The project aims to address technical challenges through rigorous testing and retesting of the website to ensure stability as user numbers grow.",
+        "first_key_point_preview": "Magimagine allows users to upload existing stories to enhance them by creating an encyclopedia.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Users can upload a story already produced to improve it by creating their encyclopedia."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.77,
+        "raw_chars": 4608,
+        "usage": {
+          "prompt_tokens": 3542,
+          "completion_tokens": 974,
+          "total_tokens": 4516
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user experience enhancement",
+        "testing protocols",
+        "funding strategy adjustments",
+        "budget realism",
+        "data privacy compliance",
+        "scaling risks",
+        "partnership collaborations",
+        "website stability",
+        "project objectives alignment",
+        "user story uploads"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the strategy of allowing users to upload existing stories to create an encyclopedia enhance the overall user experience, and what alternatives were considered?",
+          "question_en_preview": "How does the strategy of allowing users to upload existing stories to create an encyclopedia enhance the overall user experience, and what alternatives were considered?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific testing and retesting protocols will be implemented to ensure the website's stability as user numbers grow, and how will success be measured?",
+          "question_en_preview": "What specific testing and retesting protocols will be implemented to ensure the website's stability as user numbers grow, and how will success be measured?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the project has a defined funding goal and period but was unsuccessful in reaching its target, what adjustments to the commercialization strategy are being considered to improve funding outcomes?",
+          "question_en_preview": "Given that the project has a defined funding goal and period but was unsuccessful in reaching its target, what adjustments to the commercialization strategy are being considered to improve funding outcomes?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget for server purchase, legal services, and promotional materials in achieving the project goals? Please provide evidence that would justify a higher score.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget for server purchase, legal services, and promotional materials in achieving the project goals? Please provide evidence that would justify a higher score."
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What measures are in place to ensure compliance with data privacy and security standards as users upload their stories to the platform?",
+          "question_en_preview": "What measures are in place to ensure compliance with data privacy and security standards as users upload their stories to the platform?"
+        }
+      ],
+      "elapsed_sec": 14.77,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 314,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Magimagine introduces innovative tools for writing literary texts, emphasizing a structured approach akin to an encyclopedia to create complex narratives. The project aims to incorporate advanced features such as 3D character personalization and interactive storytelling, where re ...",
+        "first_key_point_preview": "Magimagine contains tools to write a literary text.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 21.78,
+        "raw_chars": 5137,
+        "usage": {
+          "prompt_tokens": 3389,
+          "completion_tokens": 1135,
+          "total_tokens": 4524
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "3D character personalization",
+        "interactive storytelling",
+        "structured writing tools",
+        "narrative complexity",
+        "intellectual property strategy",
+        "competitive differentiation",
+        "evidence of effectiveness",
+        "risk of commoditization",
+        "user interface design",
+        "world-building framework"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 2,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Magimagine's structured approach to writing literary texts compare to existing tools in the market? Please provide evidence of its novelty.",
+          "question_en_preview": "How does Magimagine's structured approach to writing literary texts compare to existing tools in the market? Please provide evidence of its novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does Magimagine offer over traditional writing tools, particularly in terms of avoiding contradictions and enhancing narrative complexity?",
+          "question_en_preview": "What specific advantages does Magimagine offer over traditional writing tools, particularly in terms of avoiding contradictions and enhancing narrative complexity?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the 3D character personalization feature and the interactive storytelling system planned for Magimagine?",
+          "question_en_preview": "What evidence supports the effectiveness of the 3D character personalization feature and the interactive storytelling system planned for Magimagine?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to Magimagine's offerings becoming obsolete or commoditized within the next few years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to Magimagine's offerings becoming obsolete or commoditized within the next few years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How can the innovations introduced by Magimagine be extended to other customer segments or use cases beyond literary writing? What are the potential barriers to such extensions?",
+          "question_en_preview": "How can the innovations introduced by Magimagine be extended to other customer segments or use cases beyond literary writing? What are the potential barriers to such extensions?"
+        }
+      ],
+      "elapsed_sec": 21.78,
+      "final_question_count": 9
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 460,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Magimagine project is challenged by several risks, including limitations on user accounts and the potential inability to provide quality service for a large number of users. The project has a tight budget of $10,000, with specific allocations for server pur ...",
+        "first_key_point_preview": "The project has a tight budget of $10,000, with allocations for server purchase, legal services, and promotional materials.",
+        "first_risk_preview": "The project faces risks related to account limitations and the inability to provide quality service for a large number of users.",
+        "first_mitigation_preview": "The objective is to test and retest the website to detect and solve a maximum of bugs and to ensure that a greater number of users does not affect the service."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 20.42,
+        "raw_chars": 4499,
+        "usage": {
+          "prompt_tokens": 3526,
+          "completion_tokens": 974,
+          "total_tokens": 4500
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "budget allocation",
+        "user account limitations",
+        "quality service testing",
+        "implementation barriers",
+        "timeline alignment",
+        "customer acceptance",
+        "risk mitigation strategies",
+        "stakeholder involvement",
+        "resource sufficiency",
+        "service scalability"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "risk_management": 1,
+          "operational_execution_plan": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "resources_and_infrastructure": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the tight budget of $10,000 impact the project's ability to achieve its objectives, and what evidence supports the sufficiency of this budget allocation?",
+          "question_en_preview": "How does the tight budget of $10,000 impact the project's ability to achieve its objectives, and what evidence supports the sufficiency of this budget allocation?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies are in place to mitigate the identified risk of limitations on user accounts and the potential inability to provide quality service for a large number of users?",
+          "question_en_preview": "What specific strategies are in place to mitigate the identified risk of limitations on user accounts and the potential inability to provide quality service for a large number of users?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the detailed implementation plan for testing the website to ensure quality service as user numbers increase, and who are the key stakeholders involved in this process?",
+          "question_en_preview": "What is the detailed implementation plan for testing the website to ensure quality service as user numbers increase, and who are the key stakeholders involved in this process?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the limitations on Guest accounts, how feasible is it for users to accept and adopt the service, and what evidence supports this assessment?",
+          "question_en_preview": "Considering the limitations on Guest accounts, how feasible is it for users to accept and adopt the service, and what evidence supports this assessment?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What barriers to implementation have been identified in the proposal, and how do they affect the project's timeline and resource alignment?",
+          "question_en_preview": "What barriers to implementation have been identified in the proposal, and how do they affect the project's timeline and resource alignment?"
+        }
+      ],
+      "elapsed_sec": 20.42,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T17:45:44Z",
+  "elapsed_sec": 94.72,
+  "total_questions": 41,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km23__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km23__openai/generated_questions_detail.json"
+}

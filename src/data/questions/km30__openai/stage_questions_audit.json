@@ -1,0 +1,616 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km30__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km30__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 262,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'Equestrian Directory and Community Hub' is spearheaded by Alexia and is designed specifically for the equestrian community, developed by its members. The team is collaborating closely with a development team and QA testers to ensure a stable launch.",
+        "first_key_point_preview": "The project is led by Alexia.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.82,
+        "raw_chars": 5076,
+        "usage": {
+          "prompt_tokens": 3288,
+          "completion_tokens": 1067,
+          "total_tokens": 4355
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership experience",
+        "equestrian community involvement",
+        "project management capacity",
+        "collaboration with QA testers",
+        "validation experience",
+        "governance processes",
+        "stakeholder relationships",
+        "team bandwidth assessment",
+        "conflict of interest management"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is Alexia's prior execution record in leading projects similar to the Equestrian Directory and Community Hub, and how does this experience position her to advance the project to its intended application?",
+          "question_en_preview": "What is Alexia's prior execution record in leading projects similar to the Equestrian Directory and Community Hub, and how does this experience position her to advance the project to its intended application?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the team's composition of members from the equestrian community enhance their understanding of the target customer problem and the overall product development for the Equestrian Directory and Community Hub?",
+          "question_en_preview": "How does the team's composition of members from the equestrian community enhance their understanding of the target customer problem and the overall product development for the Equestrian Directory and Community Hub?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the collaboration with a development team and QA testers, does the current team have sufficient capacity and bandwidth to ensure a stable launch of the Equestrian Directory and Community Hub? Please evaluate any po ...",
+          "question_en_preview": "Given the collaboration with a development team and QA testers, does the current team have sufficient capacity and bandwidth to ensure a stable launch of the Equestrian Directory and Community Hub? Please evaluate any po ..."
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing relationships does the team have with other stakeholders in the equestrian community, and how might these relationships contribute to the project's success?",
+          "question_en_preview": "What existing relationships does the team have with other stakeholders in the equestrian community, and how might these relationships contribute to the project's success?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation or compliance experience does the team possess that is relevant to the launch and operation of the Equestrian Directory and Community Hub, and how does this experience mitigate potential risks?",
+          "question_en_preview": "What validation or compliance experience does the team possess that is relevant to the launch and operation of the Equestrian Directory and Community Hub, and how does this experience mitigate potential risks?"
+        }
+      ],
+      "elapsed_sec": 11.83,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 315,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "EquiLink aims to create a centralized platform for the equestrian community, addressing the current disconnection and lack of resources. The project has specific milestones, including a beta launch and the introduction of an Emergency Relief Network by the end of Year 1, followed ...",
+        "first_key_point_preview": "EquiLink's mission is to unite riders, professionals, businesses, and opportunities into one seamless platform.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "EquiLink aims to address the problem of the equestrian world being a maze of Facebook groups, outdated directories, and word-of-mouth connections."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.82,
+        "raw_chars": 3457,
+        "usage": {
+          "prompt_tokens": 3470,
+          "completion_tokens": 774,
+          "total_tokens": 4244
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "Emergency Relief Network",
+        "EquiLink Experiences",
+        "milestone execution",
+        "success metrics",
+        "value creation",
+        "market demand",
+        "community engagement",
+        "resource allocation",
+        "impact validation"
+      ],
+      "cleaned_question_count": 5,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does EquiLink's mission to unite the equestrian community align with the identified needs of riders, professionals, and businesses? Please discuss any evidence of urgency or demand for this solution.",
+          "question_en_preview": "How well does EquiLink's mission to unite the equestrian community align with the identified needs of riders, professionals, and businesses? Please discuss any evidence of urgency or demand for this solution."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness of EquiLink's proposed milestones, including the beta launch and the Emergency Relief Network by the end of Year 1. What factors could impact the execution of these milestones?",
+          "question_en_preview": "Evaluate the reasonableness of EquiLink's proposed milestones, including the beta launch and the Emergency Relief Network by the end of Year 1. What factors could impact the execution of these milestones?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics should EquiLink establish to measure the impact of the Emergency Relief Network and EquiLink Experiences? Discuss how these metrics can validate the project's objectives.",
+          "question_en_preview": "What specific success metrics should EquiLink establish to measure the impact of the Emergency Relief Network and EquiLink Experiences? Discuss how these metrics can validate the project's objectives."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does EquiLink plan to create value and capture revenue through its platform? Please analyze the business logic behind the proposed objectives.",
+          "question_en_preview": "How does EquiLink plan to create value and capture revenue through its platform? Please analyze the business logic behind the proposed objectives."
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in EquiLink's objectives. Are the goals set for Year 1 and Year 2 realistic given the current resources and market conditions?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in EquiLink's objectives. Are the goals set for Year 1 and Year 2 realistic given the current resources and market conditions?"
+        }
+      ],
+      "elapsed_sec": 9.82,
+      "final_question_count": 5
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 334,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop EquiLink, a platform designed to support equestrians by providing a directory of businesses and an events calendar. It has set specific funding goals and timelines for development, marketing, and legal setup, while also planning to build a user base th ...",
+        "first_key_point_preview": "EquiLink includes a directory of equestrian businesses and professionals tailored to user needs and location.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.5,
+        "raw_chars": 4531,
+        "usage": {
+          "prompt_tokens": 3520,
+          "completion_tokens": 998,
+          "total_tokens": 4518
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "grassroots marketing strategy",
+        "community partnerships",
+        "funding goals timeline",
+        "development validation path",
+        "scaling strategy",
+        "compliance quality measures",
+        "Emergency Relief Network",
+        "EquiLink Experiences",
+        "market conditions analysis",
+        "trade-offs in solution design"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 2,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to build its user base through grassroots marketing and community partnerships, and what evidence supports the effectiveness of this strategy?",
+          "question_en_preview": "How does the project plan to build its user base through grassroots marketing and community partnerships, and what evidence supports the effectiveness of this strategy?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the specific funding goals and timelines for development, marketing, and legal setup, and how realistic are these projections based on the current market conditions?",
+          "question_en_preview": "What are the specific funding goals and timelines for development, marketing, and legal setup, and how realistic are these projections based on the current market conditions?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternatives were considered for the solution design of EquiLink, and what major trade-offs were made in selecting the current approach?",
+          "question_en_preview": "What alternatives were considered for the solution design of EquiLink, and what major trade-offs were made in selecting the current approach?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee in the development and validation path of EquiLink, and how might these impact the project's timeline?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee in the development and validation path of EquiLink, and how might these impact the project's timeline?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the strategy for scaling EquiLink from its initial launch to a broader market, and what factors could limit this expansion?",
+          "question_en_preview": "What is the strategy for scaling EquiLink from its initial launch to a broader market, and what factors could limit this expansion?"
+        }
+      ],
+      "elapsed_sec": 10.5,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 287,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The EquiLink platform is an innovative mobile app designed for the equestrian community, functioning as a digital hub for users. It features a Knowledge Hub for educational content, an Opportunity Board for collaborations, and a directory of equestrian businesses tailored to user ...",
+        "first_key_point_preview": "EquiLink is a powerful, all-in-one mobile app for the equestrian community.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.94,
+        "raw_chars": 4554,
+        "usage": {
+          "prompt_tokens": 3405,
+          "completion_tokens": 1020,
+          "total_tokens": 4425
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user engagement metrics",
+        "competitive analysis",
+        "intellectual property strategy",
+        "evidence of feature effectiveness",
+        "market differentiation",
+        "risk assessment",
+        "customer feedback",
+        "platform extensibility",
+        "innovation validation",
+        "user adoption rates"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the EquiLink platform's functionality as a digital hub for the equestrian community represent true novelty compared to existing solutions in the market?",
+          "question_en_preview": "How does the EquiLink platform's functionality as a digital hub for the equestrian community represent true novelty compared to existing solutions in the market?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the EquiLink platform offer over existing equestrian apps or services in terms of customer value, performance, or user engagement?",
+          "question_en_preview": "What clear advantages does the EquiLink platform offer over existing equestrian apps or services in terms of customer value, performance, or user engagement?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness and user engagement of the Knowledge Hub and Opportunity Board features within the EquiLink platform?",
+          "question_en_preview": "What evidence supports the effectiveness and user engagement of the Knowledge Hub and Opportunity Board features within the EquiLink platform?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the EquiLink platform within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the EquiLink platform within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How can the EquiLink platform extend its offerings to other customer segments or use cases beyond the current equestrian community focus?",
+          "question_en_preview": "How can the EquiLink platform extend its offerings to other customer segments or use cases beyond the current equestrian community focus?"
+        }
+      ],
+      "elapsed_sec": 8.94,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 424,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by a budget that includes various allocations, such as $40,000 needed for the full development of Version 1 of EquiLink and CA$ 20,000 for the Equestrian Directory and Community Hub. The project is currently in beta and preparing for an ...",
+        "first_key_point_preview": "The project budget includes $40,000 needed for the full development of Version 1 of EquiLink.",
+        "first_risk_preview": "The project faces risks related to tech development and app store approval.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.37,
+        "raw_chars": 4099,
+        "usage": {
+          "prompt_tokens": 3462,
+          "completion_tokens": 866,
+          "total_tokens": 4328
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "budget allocation analysis",
+        "App Store launch timeline",
+        "risk mitigation strategies",
+        "implementation barriers",
+        "customer acceptance challenges",
+        "resource alignment assessment"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 2,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the budget allocation of $40,000 for the full development of Version 1 of EquiLink and CA$ 20,000 for the Equestrian Directory and Community Hub align with the project's overall financial sustainability and fund ...",
+          "question_en_preview": "How does the budget allocation of $40,000 for the full development of Version 1 of EquiLink and CA$ 20,000 for the Equestrian Directory and Community Hub align with the project's overall financial sustainability and fund ..."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific steps and timeline are outlined for the transition from beta to the App Store launch, and how do these align with the project's overall objectives?",
+          "question_en_preview": "What specific steps and timeline are outlined for the transition from beta to the App Store launch, and how do these align with the project's overall objectives?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified risk related to technology development and app store approval, what specific strategies could be implemented to mitigate these risks effectively?",
+          "question_en_preview": "Given the identified risk related to technology development and app store approval, what specific strategies could be implemented to mitigate these risks effectively?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation have been identified in the project, particularly regarding customer acceptance and app store integration?",
+          "question_en_preview": "What potential barriers to implementation have been identified in the project, particularly regarding customer acceptance and app store integration?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how well do the current timeline and resource allocations align with the project's objectives, particularly in light of the upcoming App Store launch? Please provide evidence that would justify a hi ...",
+          "question_en_preview": "On a scale of 1 to 5, how well do the current timeline and resource allocations align with the project's objectives, particularly in light of the upcoming App Store launch? Please provide evidence that would justify a hi ..."
+        }
+      ],
+      "elapsed_sec": 9.38,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T22:14:39Z",
+  "elapsed_sec": 50.47,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km30__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km30__openai/generated_questions_detail.json"
+}

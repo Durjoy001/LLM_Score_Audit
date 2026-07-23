@@ -1,0 +1,618 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt86__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt86__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 249,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "YouLoox Inc is the sole developer of the 'Universe' operating (eco) system, which is based in Toronto, Canada. The project is focused on the development of this operating system, indicating a dedicated team structure centered around this initiative.",
+        "first_key_point_preview": "YouLoox Inc is the developer of the 'Universe' operating (eco) system.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.09,
+        "raw_chars": 3765,
+        "usage": {
+          "prompt_tokens": 3307,
+          "completion_tokens": 840,
+          "total_tokens": 4147
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "leadership experience",
+        "operating system development",
+        "domain expertise",
+        "team capacity",
+        "validation experience",
+        "collaboration partnerships",
+        "governance processes",
+        "project execution record",
+        "technical expertise",
+        "resource allocation"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the leadership experience of the core team members at YouLoox Inc, particularly in developing operating systems or similar technology?",
+          "question_en_preview": "What is the leadership experience of the core team members at YouLoox Inc, particularly in developing operating systems or similar technology?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the team at YouLoox Inc demonstrate expertise in the operating system domain, and what relevant past projects or experiences do they have?",
+          "question_en_preview": "How does the team at YouLoox Inc demonstrate expertise in the operating system domain, and what relevant past projects or experiences do they have?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the current workload and any parallel projects, does the team at YouLoox Inc have sufficient capacity to focus on the development of the 'Universe' operating system?",
+          "question_en_preview": "Given the current workload and any parallel projects, does the team at YouLoox Inc have sufficient capacity to focus on the development of the 'Universe' operating system?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team at YouLoox Inc have with validation and compliance in the context of operating systems, and how might this impact the project?",
+          "question_en_preview": "What experience does the team at YouLoox Inc have with validation and compliance in the context of operating systems, and how might this impact the project?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What existing collaborations or partnerships does YouLoox Inc have that could support the development and deployment of the 'Universe' operating system?",
+          "question_en_preview": "What existing collaborations or partnerships does YouLoox Inc have that could support the development and deployment of the 'Universe' operating system?"
+        }
+      ],
+      "elapsed_sec": 10.1,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 367,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The 'Universe' Operating System aims to develop a secure, fast, and independent network that addresses various issues such as cybercrime, privacy intrusions, and data manipulation. The project has set milestones for the development of a prototype and aims to create a community th ...",
+        "first_key_point_preview": "The project aims to significantly reduce search times and processing functions.",
+        "first_risk_preview": "The 'Universe' Operating System aims to address issues such as foreign tracking algorithms, illegal data mining, and manipulation of personal information.",
+        "first_mitigation_preview": "The project seeks to reduce the level of anonymity within social media, allowing secure communication among users."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.3,
+        "raw_chars": 4315,
+        "usage": {
+          "prompt_tokens": 3438,
+          "completion_tokens": 939,
+          "total_tokens": 4377
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "cybercrime reduction metrics",
+        "privacy intrusion strategies",
+        "prototype development timeline",
+        "success metrics tracking",
+        "community trust building",
+        "anonymity reduction impact"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of the 'Universe' Operating System align with the stated needs of addressing cybercrime, privacy intrusions, and data manipulation? Please evaluate the urgency of these needs based on the proje ...",
+          "question_en_preview": "How well do the objectives of the 'Universe' Operating System align with the stated needs of addressing cybercrime, privacy intrusions, and data manipulation? Please evaluate the urgency of these needs based on the proje ..."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent are the overall goals of the 'Universe' Operating System clear and focused, particularly in relation to reducing search times and processing functions? Are there any unrelated sub-goals that could dilute t ...",
+          "question_en_preview": "To what extent are the overall goals of the 'Universe' Operating System clear and focused, particularly in relation to reducing search times and processing functions? Are there any unrelated sub-goals that could dilute t ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed milestones for the development of the 'Universe' Operating System's prototype. Are there specific timelines that may pose challenges?",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed milestones for the development of the 'Universe' Operating System's prototype. Are there specific timelines that may pose challenges?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics can be established for the objectives of the 'Universe' Operating System, particularly regarding its impact on cybercrime and privacy intrusions? How will these metrics be trac ...",
+          "question_en_preview": "What clear and quantifiable success metrics can be established for the objectives of the 'Universe' Operating System, particularly regarding its impact on cybercrime and privacy intrusions? How will these metrics be trac ..."
+        }
+      ],
+      "elapsed_sec": 17.3,
+      "final_question_count": 8
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 360,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy for the 'Universe' project focuses on utilizing an Open-Source philosophy to enhance accessibility and security within its operating system. The project aims to develop a fully-fledged operating system that allows users to control electronic devices without third-par ...",
+        "first_key_point_preview": "The project employs an Open-Content philosophy to avoid copyright issues and provide access to various information sources.",
+        "first_risk_preview": "The project employs an Open-Content philosophy to avoid copyright issues, which may present challenges in accessing various information sources.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 20.47,
+        "raw_chars": 4384,
+        "usage": {
+          "prompt_tokens": 3522,
+          "completion_tokens": 933,
+          "total_tokens": 4455
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Open-Content philosophy",
+        "development milestones",
+        "funding strategies",
+        "market entry plan",
+        "compliance challenges",
+        "quality assurance measures",
+        "user control of devices",
+        "financial model realism",
+        "operating system accessibility",
+        "gradual development approach"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Open-Content philosophy enhance the delivery and accessibility of the 'Universe' operating system, and what are the major trade-offs associated with this approach?",
+          "question_en_preview": "How does the Open-Content philosophy enhance the delivery and accessibility of the 'Universe' operating system, and what are the major trade-offs associated with this approach?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific milestones are planned for the gradual development of the 'Universe' operating system, and how will these milestones ensure the project's alignment with user needs and market demands?",
+          "question_en_preview": "What specific milestones are planned for the gradual development of the 'Universe' operating system, and how will these milestones ensure the project's alignment with user needs and market demands?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the need for financial assistance to expedite development, what strategies are in place to secure funding, and how do these strategies align with the overall market entry plan for the 'Universe' operating system?",
+          "question_en_preview": "Given the need for financial assistance to expedite development, what strategies are in place to secure funding, and how do these strategies align with the overall market entry plan for the 'Universe' operating system?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is the financial model for the 'Universe' project based on the current funding strategies and projected development costs? What evidence would increase your confidence in this assessme ...",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the financial model for the 'Universe' project based on the current funding strategies and projected development costs? What evidence would increase your confidence in this assessme ..."
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential challenges could arise from the Open-Content philosophy in terms of compliance and quality assurance for the 'Universe' operating system, and how might these challenges be addressed?",
+          "question_en_preview": "What potential challenges could arise from the Open-Content philosophy in terms of compliance and quality assurance for the 'Universe' operating system, and how might these challenges be addressed?"
+        }
+      ],
+      "elapsed_sec": 20.48,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 357,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "'Universe' is an innovative Open-Source-Open-Content operating (eco) system designed for human civilization, characterized by its unique system design and conceptual engineering. It is positioned as a next-generation technology that can be installed over existing operating system ...",
+        "first_key_point_preview": "'Universe' is described as an innovative Open-Source-Open-Content operating (eco) system.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.21,
+        "raw_chars": 4564,
+        "usage": {
+          "prompt_tokens": 3412,
+          "completion_tokens": 1028,
+          "total_tokens": 4440
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "unique system design",
+        "conceptual engineering",
+        "user control",
+        "competitive advantages",
+        "scalability",
+        "intellectual property strategy",
+        "evidence of innovation",
+        "risk of obsolescence",
+        "customer value proposition",
+        "operating system innovation"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does 'Universe' demonstrate true novelty compared to existing operating systems, and what specific features set it apart from the current state of the art?",
+          "question_en_preview": "How does 'Universe' demonstrate true novelty compared to existing operating systems, and what specific features set it apart from the current state of the art?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does 'Universe' offer over existing operating systems in terms of user control and functionality, and how do these advantages translate into customer value?",
+          "question_en_preview": "What clear advantages does 'Universe' offer over existing operating systems in terms of user control and functionality, and how do these advantages translate into customer value?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the claims of innovation for 'Universe', particularly in terms of its unique system design and conceptual engineering?",
+          "question_en_preview": "What evidence supports the claims of innovation for 'Universe', particularly in terms of its unique system design and conceptual engineering?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of 'Universe' within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of 'Universe' within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How scalable is 'Universe' in terms of extending its application to other customer segments or use cases, and what factors could influence its adaptability in various operating contexts?",
+          "question_en_preview": "How scalable is 'Universe' in terms of extending its application to other customer segments or use cases, and what factors could influence its adaptability in various operating contexts?"
+        }
+      ],
+      "elapsed_sec": 10.21,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 440,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the 'Universe' project is challenged by weak community feedback, which is identified as a primary risk. The project requires financial assistance to develop its operating system and support the community, but it was unsuccessful in reaching its funding goal on  ...",
+        "first_key_point_preview": "The main risk for the 'Universe' project is weak community feedback.",
+        "first_risk_preview": "The main risk for the 'Universe' project is weak community feedback.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.31,
+        "raw_chars": 4226,
+        "usage": {
+          "prompt_tokens": 3445,
+          "completion_tokens": 882,
+          "total_tokens": 4327
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "community feedback analysis",
+        "alternative funding sources",
+        "prototype development timeline",
+        "resource alignment assessment",
+        "implementation barriers identification",
+        "customer acceptance feasibility"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "risk_management": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "timeline_and_resource_alignment": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the weak community feedback identified as a primary risk impact the feasibility of the 'Universe' project, and what specific strategies could be implemented to address this risk?",
+          "question_en_preview": "How does the weak community feedback identified as a primary risk impact the feasibility of the 'Universe' project, and what specific strategies could be implemented to address this risk?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the 'Universe' project was unsuccessful in reaching its funding goal on Kickstarter, what alternative funding sources could be pursued to ensure the project's financial viability?",
+          "question_en_preview": "Given that the 'Universe' project was unsuccessful in reaching its funding goal on Kickstarter, what alternative funding sources could be pursued to ensure the project's financial viability?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key milestones and tasks outlined in the timeline for developing the prototype of the 'Universe' operating system within three years, and how do they align with resource availability?",
+          "question_en_preview": "What are the key milestones and tasks outlined in the timeline for developing the prototype of the 'Universe' operating system within three years, and how do they align with resource availability?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how well do you assess the alignment of the proposed timeline for the 'Universe' project with the resources currently available? Please provide evidence that would justify a higher score.",
+          "question_en_preview": "On a scale of 1 to 5, how well do you assess the alignment of the proposed timeline for the 'Universe' project with the resources currently available? Please provide evidence that would justify a higher score."
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation in real production or customer settings have been identified for the 'Universe' project, and how might these barriers affect adoption?",
+          "question_en_preview": "What potential barriers to implementation in real production or customer settings have been identified for the 'Universe' project, and how might these barriers affect adoption?"
+        }
+      ],
+      "elapsed_sec": 12.31,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T21:11:40Z",
+  "elapsed_sec": 70.42,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt86__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt86__openai/generated_questions_detail.json"
+}

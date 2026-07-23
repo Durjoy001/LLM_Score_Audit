@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YangtzeDelta — Score Clustering Diagnosis</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #222636;
+    --border: #2e3250;
+    --text: #e2e8f0;
+    --muted: #8892b0;
+    --code-bg: #131722;
+    --red: #f87171;
+    --orange: #f5a623;
+    --green: #34c98a;
+    --blue: #4f8ef7;
+    --purple: #a78bfa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px; }
+
+  /* cover */
+  .cover { background: linear-gradient(135deg, #0f1117, #1a1d27, #1a0d0d); border-bottom: 2px solid #3d1f1f; padding: 64px 64px 52px; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; top: -60px; right: -60px; width: 340px; height: 340px; background: radial-gradient(circle, rgba(248,113,113,0.07) 0%, transparent 70%); pointer-events: none; }
+  .cover-tag { display: inline-block; background: rgba(248,113,113,0.15); color: var(--red); border: 1px solid rgba(248,113,113,0.3); border-radius: 4px; padding: 3px 12px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+  .cover h1 { font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 14px; background: linear-gradient(90deg, #e2e8f0, #a0aec0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .cover-sub { color: var(--muted); font-size: 15.5px; max-width: 600px; margin-bottom: 36px; }
+  .cover-pills { display: flex; gap: 12px; flex-wrap: wrap; }
+  .cover-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 8px 14px; font-size: 13px; }
+  .cover-pill .label { color: var(--muted); font-size: 11px; letter-spacing: 0.8px; text-transform: uppercase; display: block; margin-bottom: 1px; }
+  .cover-pill .value { font-weight: 600; }
+
+  /* layout */
+  .container { max-width: 1020px; margin: 0 auto; padding: 0 48px; }
+  section { padding: 56px 0 36px; border-bottom: 1px solid var(--border); }
+  section:last-child { border-bottom: none; }
+
+  /* section headers */
+  .sec-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 28px; }
+  .sec-num { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; flex-shrink: 0; margin-top: 3px; }
+  .sec-header-text h2 { font-size: 24px; font-weight: 700; margin-bottom: 5px; }
+  .sec-header-text p { color: var(--muted); font-size: 14.5px; max-width: 680px; }
+
+  h3 { font-size: 17px; font-weight: 600; margin: 32px 0 12px; }
+  h4 { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin: 22px 0 9px; }
+  p { color: #c8d0e0; margin-bottom: 12px; }
+
+  /* score visualization */
+  .score-visual { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px 28px; margin: 16px 0 24px; }
+  .score-row { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+  .score-row:last-child { margin-bottom: 0; }
+  .score-dim { width: 100px; font-size: 13px; font-weight: 600; color: var(--text); flex-shrink: 0; }
+  .score-bar-wrap { flex: 1; background: rgba(255,255,255,0.06); border-radius: 4px; height: 20px; position: relative; overflow: hidden; }
+  .score-bar { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; font-size: 11px; font-weight: 700; transition: width 0.3s; }
+  .score-expected { position: absolute; top: 0; height: 100%; width: 1px; background: rgba(255,255,255,0.2); }
+  .score-num { width: 50px; font-size: 13px; font-weight: 700; text-align: right; flex-shrink: 0; }
+  .score-meta { width: 120px; font-size: 11.5px; color: var(--muted); flex-shrink: 0; }
+
+  .scale-label { display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; padding: 6px 0 0; }
+
+  /* tables */
+  .table-wrap { overflow-x: auto; margin: 14px 0 22px; border-radius: 8px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  thead th { background: var(--surface2); padding: 11px 15px; text-align: left; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+  tbody tr { border-bottom: 1px solid var(--border); }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(255,255,255,0.02); }
+  tbody td { padding: 11px 15px; color: #c8d0e0; vertical-align: top; }
+  tbody td:first-child { font-weight: 500; color: var(--text); }
+
+  /* code / formula */
+  code { font-family: 'Consolas','JetBrains Mono',monospace; font-size: 13px; background: var(--code-bg); padding: 2px 6px; border-radius: 4px; color: #a5f3fc; }
+  pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 18px 22px; overflow-x: auto; font-family: 'Consolas','JetBrains Mono',monospace; font-size: 13px; line-height: 1.7; margin: 12px 0 20px; color: #a5f3fc; }
+  .formula-block { background: #0d1520; border: 1px solid var(--border); border-left: 3px solid; border-radius: 6px; padding: 16px 20px; margin: 12px 0 18px; font-family: 'Consolas','JetBrains Mono',monospace; font-size: 13.5px; line-height: 2; overflow-x: auto; }
+  .formula-label { font-family: 'Segoe UI',system-ui,sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+  .f-var { color: #93c5fd; } .f-op { color: #f9a8d4; } .f-num { color: #6ee7b7; } .f-bad { color: #f87171; font-weight: 700; } .f-ok { color: #34c98a; } .f-comment { color: #6b7280; font-style: italic; }
+
+  /* badges */
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 12px; font-weight: 600; margin: 0 2px; }
+  .badge-red    { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-orange { background: rgba(245,166,35,0.15);  color: var(--orange); }
+  .badge-green  { background: rgba(52,201,138,0.15);  color: var(--green); }
+  .badge-blue   { background: rgba(79,142,247,0.15);  color: var(--blue); }
+
+  /* info boxes */
+  .info-box { border-radius: 8px; padding: 15px 18px; margin: 14px 0; font-size: 14px; line-height: 1.65; display: flex; gap: 12px; }
+  .info-box .icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .info-box.red    { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.2); color: #fca5a5; }
+  .info-box.orange { background: rgba(245,166,35,0.08);  border: 1px solid rgba(245,166,35,0.2);  color: #fbbf24; }
+  .info-box.green  { background: rgba(52,201,138,0.08);  border: 1px solid rgba(52,201,138,0.2);  color: #6ee7b7; }
+  .info-box.blue   { background: rgba(79,142,247,0.08);  border: 1px solid rgba(79,142,247,0.2);  color: #93bbf7; }
+
+  /* cause cards */
+  .cause-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 16px 0 24px; }
+  @media (max-width: 780px) { .cause-cards { grid-template-columns: 1fr; } }
+  .cause-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 18px 16px; position: relative; overflow: hidden; }
+  .cause-num { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .cause-title { font-size: 14.5px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .cause-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* callout */
+  .callout { background: rgba(248,113,113,0.06); border: 1px solid rgba(248,113,113,0.2); border-radius: 8px; padding: 20px 24px; margin: 20px 0; }
+  .callout-title { font-size: 14px; font-weight: 700; color: var(--red); margin-bottom: 8px; letter-spacing: 0.3px; }
+  .callout-body { font-size: 14px; color: #fca5a5; line-height: 1.7; }
+
+  /* fix steps */
+  .fix-steps { list-style: none; margin: 14px 0; }
+  .fix-steps li { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .fix-steps li:last-child { border-bottom: none; }
+  .fix-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .fix-body { flex: 1; }
+  .fix-title { font-size: 14.5px; font-weight: 600; margin-bottom: 4px; }
+  .fix-desc  { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+  /* two col */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 14px 0; }
+  @media (max-width: 680px) { .two-col { grid-template-columns: 1fr; } }
+  .diff-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+  .diff-card .diff-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 28px 48px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  @media print {
+    body { background: #fff; color: #111; }
+    .cover { background: #fff3f3; border-bottom: 2px solid #fca5a5; }
+    .cover h1 { -webkit-text-fill-color: #111; color: #111; }
+    pre, code { background: #f8f8f8; color: #333; border: 1px solid #ddd; }
+    .formula-block, .score-visual, .callout, .cause-card, .diff-card, .info-box { background: #f8f8f8; border: 1px solid #ddd; color: #333; }
+    .table-wrap { border: 1px solid #ddd; }
+    thead th { background: #f1f3f5; color: #555; }
+    .toc, footer { display: none; }
+    section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="container" style="max-width:1020px;margin:0 auto;padding:0;">
+    <div class="cover-tag">Bug Diagnosis Report</div>
+    <h1>Score Clustering at 0.43–0.45<br>Root Cause Analysis</h1>
+    <p class="cover-sub">Every dimension score in every generated report lands between 0.413 and 0.447 — regardless of proposal content. This document explains what is happening, why it is happening, and how to fix it.</p>
+    <div class="cover-pills">
+      <div class="cover-pill"><span class="label">Proposal</span><span class="value">bp1 (中科纳飞)</span></div>
+      <div class="cover-pill"><span class="label">Score Range</span><span class="value" style="color:var(--red);">0.413 – 0.447</span></div>
+      <div class="cover-pill"><span class="label">Root Causes</span><span class="value">3 stacked bugs</span></div>
+      <div class="cover-pill"><span class="label">Verdict</span><span class="value" style="color:var(--orange);">HOLD (incorrect)</span></div>
+      <div class="cover-pill"><span class="label">Generated</span><span class="value">June 2026</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ═══ SECTION 1 — THE PROBLEM ═══ -->
+<section id="problem">
+  <div class="sec-header">
+    <div class="sec-num" style="background:rgba(248,113,113,0.12);color:var(--red);">1</div>
+    <div class="sec-header-text">
+      <h2 style="color:var(--red)">The Problem</h2>
+      <p>What the scores look like, why they are suspicious, and what a healthy output should look like instead.</p>
+    </div>
+  </div>
+
+  <h3>Observed Scores — bp1 Final Report</h3>
+  <p>Every dimension produces almost identical scores, clustered in a 0.034-wide band (0.413–0.447). All alignment means are exactly 0.35. All confidence values are exactly 0.50.</p>
+
+  <div class="score-visual">
+    <h4 style="margin-top:0;">Dimension scores (0–1 scale)</h4>
+    <div class="score-row">
+      <span class="score-dim">team</span>
+      <div class="score-bar-wrap">
+        <div class="score-bar" style="width:43%;background:rgba(248,113,113,0.4);">0.430</div>
+        <div class="score-expected" style="left:60%;" title="Expected range: 0.4–0.8+"></div>
+      </div>
+      <span class="score-num" style="color:var(--red);">0.430</span>
+      <span class="score-meta">align=0.35 · drift=0.00</span>
+    </div>
+    <div class="score-row">
+      <span class="score-dim">objectives</span>
+      <div class="score-bar-wrap">
+        <div class="score-bar" style="width:43.7%;background:rgba(248,113,113,0.4);">0.437</div>
+      </div>
+      <span class="score-num" style="color:var(--red);">0.437</span>
+      <span class="score-meta">align=0.35 · drift=0.00</span>
+    </div>
+    <div class="score-row">
+      <span class="score-dim">strategy</span>
+      <div class="score-bar-wrap">
+        <div class="score-bar" style="width:41.3%;background:rgba(248,113,113,0.4);">0.413</div>
+      </div>
+      <span class="score-num" style="color:var(--red);">0.413</span>
+      <span class="score-meta">align=0.35 · drift=0.00</span>
+    </div>
+    <div class="score-row">
+      <span class="score-dim">innovation</span>
+      <div class="score-bar-wrap">
+        <div class="score-bar" style="width:44.7%;background:rgba(248,113,113,0.4);">0.447</div>
+      </div>
+      <span class="score-num" style="color:var(--red);">0.447</span>
+      <span class="score-meta">align=0.35 · drift=0.00</span>
+    </div>
+    <div class="score-row">
+      <span class="score-dim">feasibility</span>
+      <div class="score-bar-wrap">
+        <div class="score-bar" style="width:43.4%;background:rgba(248,113,113,0.4);">0.434</div>
+      </div>
+      <span class="score-num" style="color:var(--red);">0.434</span>
+      <span class="score-meta">align=0.35 · drift=0.00</span>
+    </div>
+    <div class="score-row" style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.08);">
+      <span class="score-dim" style="font-size:12px;color:var(--muted);">overall</span>
+      <div class="score-bar-wrap">
+        <div class="score-bar" style="width:43.3%;background:rgba(248,113,113,0.6);">0.433</div>
+      </div>
+      <span class="score-num" style="color:var(--red);">0.433</span>
+      <span class="score-meta" style="color:var(--orange);">→ HOLD verdict</span>
+    </div>
+    <div class="scale-label"><span>0.0 (worst)</span><span style="color:var(--muted);">← all scores land here →</span><span>1.0 (best)</span></div>
+  </div>
+
+  <h3>Why This Is Wrong</h3>
+  <p>A correctly functioning evaluation pipeline should produce scores that:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Property</th><th>Expected (healthy)</th><th>Observed (broken)</th></tr></thead>
+      <tbody>
+        <tr><td>Score spread per proposal</td><td>0.3 – 0.8+ depending on content quality</td><td><span class="badge badge-red">0.413 – 0.447 only (Δ = 0.034)</span></td></tr>
+        <tr><td>Alignment score per dimension</td><td>Varies: 0.2 – 0.9 based on evidence richness</td><td><span class="badge badge-red">Exactly 0.35 for every dimension</span></td></tr>
+        <tr><td>Confidence per answer</td><td>0.50 – 0.92 based on proposal completeness</td><td><span class="badge badge-red">Always 0.50 (the hard floor)</span></td></tr>
+        <tr><td>Differentiation between proposals</td><td>Strong proposal scores 0.65+; weak scores 0.25–0.40</td><td><span class="badge badge-red">Every proposal would land at ~0.43</span></td></tr>
+        <tr><td>Drift mean</td><td>Non-zero when answer drifts off-dimension</td><td><span class="badge badge-red">Exactly 0.00 for all dimensions</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Impact</div>
+    <div class="callout-body">The system cannot distinguish a strong proposal from a weak one. A world-class team with 10 patents would score 0.430 on <em>team</em> — identical to a single founder with no credentials. The scores carry no meaningful signal and the HOLD verdict becomes meaningless.</div>
+  </div>
+</section>
+
+
+<!-- ═══ SECTION 2 — WHY ═══ -->
+<section id="why">
+  <div class="sec-header">
+    <div class="sec-num" style="background:rgba(245,166,35,0.12);color:var(--orange);">2</div>
+    <div class="sec-header-text">
+      <h2 style="color:var(--orange)">Why This Is Happening</h2>
+      <p>Three stacked bugs in the pipeline each independently push scores toward 0.43. Together they make every score identical.</p>
+    </div>
+  </div>
+
+  <div class="cause-cards">
+    <div class="cause-card">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);border-radius:10px 10px 0 0;"></div>
+      <div class="cause-num" style="color:var(--red);">Root Cause 1 · PRIMARY</div>
+      <div class="cause-title">search_hints never generated — alignment locked at 0.35</div>
+      <div class="cause-desc">Stage 3 did not save <code>search_hints</code> for any dimension. Post-processing reads an empty list, making every alignment score fall to the hardcoded fallback (0.35).</div>
+    </div>
+    <div class="cause-card">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);border-radius:10px 10px 0 0;"></div>
+      <div class="cause-num" style="color:var(--orange);">Root Cause 2 · COMPOUNDING</div>
+      <div class="cause-title">Evidence weights zeroed out in scoring config</div>
+      <div class="cause-desc"><code>evidence_count</code>, <code>evidence_authority</code>, and <code>evidence_coverage</code> are all set to <code>0.0</code>. Even if evidence hints were correct, they would contribute nothing.</div>
+    </div>
+    <div class="cause-card">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--purple);border-radius:10px 10px 0 0;"></div>
+      <div class="cause-num" style="color:var(--purple);">Root Cause 3 · MINOR</div>
+      <div class="cause-title">Confidence stuck at the 0.50 floor</div>
+      <div class="cause-desc">Every LLM answer has <code>confidence = 0.50</code> — the hard minimum. This could indicate the LLM is not returning the field or is consistently under-confident, adding a uniform floor contribution.</div>
+    </div>
+  </div>
+
+  <!-- ── ROOT CAUSE 1 DETAIL ── -->
+  <h3 style="color:var(--red);">Root Cause 1 — search_hints are empty → alignment locked at 0.35</h3>
+  <p>This is the dominant cause responsible for the uniform 0.35 alignment across every dimension and every proposal.</p>
+
+  <h4>Step 1 — Stage 3 does not save search_hints to the per-proposal question set</h4>
+  <p>Stage 3 (<code>generate_questions.py</code>) is designed to generate 6–10 short <strong>search_hints</strong> per dimension — verbatim keyword phrases that post_processing uses as authority anchors. However, the generated question set for <code>bp1</code> has no <code>search_hints</code> field at all:</p>
+  <pre><span style="color:#6b7280;">// src/data/questions/bp1/generated_questions.json</span>
+{
+  "dimensions": {
+    "team": {
+      "dimension": "team",
+      "questions": [ ... ]
+      <span style="color:var(--red);">// ← no "search_hints" field</span>
+    }
+  }
+}</pre>
+
+  <h4>Step 2 — post_processing reads from the shared config, not the per-proposal file</h4>
+  <p>The post_processing script loads authority hints from the <strong>shared config</strong> at <code>src/data/config/question_sets/generated_questions.json</code>, not the per-proposal file. That config has <code>search_hints: []</code> for all dimensions:</p>
+  <pre><span style="color:#6b7280;">// src/data/config/question_sets/generated_questions.json</span>
+{
+  "team":       { "search_hints": <span style="color:var(--red);">[]</span> },
+  "objectives": { "search_hints": <span style="color:var(--red);">[]</span> },
+  "strategy":   { "search_hints": <span style="color:var(--red);">[]</span> },
+  "innovation": { "search_hints": <span style="color:var(--red);">[]</span> },
+  "feasibility":{ "search_hints": <span style="color:var(--red);">[]</span> }
+}</pre>
+
+  <h4>Step 3 — empty search_hints triggers the 0.35 hardcoded fallback</h4>
+  <p>In <code>post_processing.py</code>, function <code>_alignment_ratio()</code> at line 563:</p>
+  <pre><span style="color:#6b7280;">def _alignment_ratio(dim, auth_hints, answer, topic_tags, evidence_hints, ...):</span>
+    ...
+    <span style="color:#6b7280;"># No hints: return a neutral fallback if candidate tokens exist.</span>
+    if not auth_hints:
+        return <span style="color:var(--red);font-weight:bold;">0.35</span> if c_uni else 0.0  <span style="color:#6b7280;"># ← ALWAYS HIT</span></pre>
+
+  <p>Since <code>auth_hints</code> is always <code>[]</code>, this line fires for <strong>every question, every dimension, every proposal</strong>. Alignment is unconditionally pinned at <code>0.35</code>.</p>
+
+  <h4>Step 4 — alignment is the highest-weighted scoring component</h4>
+  <p>The scoring formula has alignment at the highest weight (0.30):</p>
+  <div class="formula-block" style="border-left-color:var(--red);">
+    <div class="formula-label" style="color:var(--red);">fields_weight config (post_processing.py line ~184)</div>
+    <span class="f-var">length</span>               <span class="f-op">×</span> <span class="f-num">0.18</span><br>
+    <span class="f-var">claims</span>               <span class="f-op">×</span> <span class="f-num">0.27</span><br>
+    <span class="f-bad">alignment            × 0.30  ← LARGEST WEIGHT, always = 0.35</span><br>
+    <span class="f-var">structure</span>            <span class="f-op">×</span> <span class="f-num">0.20</span><br>
+    <span class="f-var">calibrated_confidence</span><span class="f-op">×</span> <span class="f-num">0.05</span><br>
+    <span class="f-comment">────────────────────────────────</span><br>
+    <span class="f-comment">sum = 1.00</span>
+  </div>
+
+  <p>With alignment locked at 0.35 and weight 0.30, it contributes <code>0.35 × 0.30 = 0.105</code> — identical for every question. The remaining components (claims, structure, length) contribute modest scores based on bullet count and formatting, producing the tight 0.43 cluster.</p>
+
+  <!-- ── ROOT CAUSE 2 DETAIL ── -->
+  <h3 style="color:var(--orange);">Root Cause 2 — Evidence quality weights are disabled</h3>
+  <p>The scoring config at <code>post_processing.py ~line 184</code> explicitly disables all evidence quality signals:</p>
+
+  <div class="formula-block" style="border-left-color:var(--orange);">
+    <div class="formula-label" style="color:var(--orange);">Evidence weights in fields_weight config</div>
+    <span class="f-bad">"evidence_count":     0.0,   ← disabled</span><br>
+    <span class="f-bad">"evidence_authority": 0.0,   ← disabled</span><br>
+    <span class="f-bad">"evidence_coverage":  0.0,   ← disabled</span>
+  </div>
+
+  <p>A comment in the code says <em>"In no-web mode, evidence authority/coverage are diagnostic only."</em> This means even if the LLM's <code>evidence_hints</code> were high-quality, they would score 0 contribution. The scoring system has no mechanism to reward well-evidenced answers.</p>
+
+  <div class="info-box orange">
+    <span class="icon">⚠</span>
+    <div>Root Cause 2 <em>compounds</em> Root Cause 1. Even after fixing search_hints, evidence quality contributes nothing to the score. Both must be fixed together to achieve meaningful differentiation.</div>
+  </div>
+
+  <!-- ── ROOT CAUSE 3 DETAIL ── -->
+  <h3 style="color:var(--purple);">Root Cause 3 — All confidence values at the 0.50 floor</h3>
+  <p>Every single LLM answer in <code>all_refined_items.json</code> has <code>confidence = 0.50</code>, which is the hard minimum in <code>llm_answering.py</code>'s <code>_calibrate_confidence()</code>. Spot check from the data:</p>
+
+  <pre><span style="color:#6b7280;">// src/data/refined_answers/bp1/all_refined_items.json — sampled</span>
+[openai]   Q1 team  → confidence: <span style="color:var(--red);">0.5</span>,  quick_score: 0.7
+[openai]   Q2 team  → confidence: <span style="color:var(--red);">0.5</span>,  quick_score: 0.7
+[openai]   Q3 team  → confidence: <span style="color:var(--red);">0.5</span>,  quick_score: 0.7
+[openai]   Q1 obj   → confidence: <span style="color:var(--red);">0.5</span>,  quick_score: 0.7
+... (all 31 selected answers: confidence = 0.50)</pre>
+
+  <p>The calibration range is 0.50–0.92. The LLM appears to either not be returning the <code>confidence</code> field (defaulting to 0.50), or is consistently outputting its minimum valid value. While confidence only has 0.05 weight, its uniform floor ensures identical contribution across all dimensions.</p>
+
+  <!-- ── HOW FORMULA PRODUCES 0.43 ── -->
+  <h3>How the Formula Produces ~0.433 Every Time</h3>
+  <div class="formula-block" style="border-left-color:var(--blue);">
+    <div class="formula-label" style="color:var(--blue);">Final score calculation — walking through it</div>
+    <span class="f-var">fields_score</span><br>
+    <span class="f-comment">  length     0.18 × ~0.50  =  0.090  (adequate bullet count)</span><br>
+    <span class="f-comment">  claims     0.27 × ~0.55  =  0.149  (3 claims per answer)</span><br>
+    <span class="f-bad">  alignment  0.30 × 0.35  =  0.105  ← LOCKED (search_hints empty)</span><br>
+    <span class="f-comment">  structure  0.20 × ~0.50  =  0.100  (structured bullets)</span><br>
+    <span class="f-comment">  confidence 0.05 × 0.50  =  0.025  ← FLOORED</span><br>
+    <span class="f-comment">  evidence   0.00 × *     =  0.000  ← DISABLED</span><br>
+    <span class="f-comment">  ────────────────────────── ≈ 0.469</span><br><br>
+    <span class="f-var">total</span> <span class="f-op">=</span> <span class="f-num">0.90</span> <span class="f-op">×</span> <span class="f-var">fields_score</span> <span class="f-op">+</span> <span class="f-num">0.10</span> <span class="f-op">×</span> <span class="f-var">consistency</span>(~<span class="f-num">0.5</span>)<br>
+    <span class="f-comment">       = 0.90 × 0.369 + 0.10 × 0.50  ≈ 0.43</span>
+  </div>
+
+  <p>The aligned contribution is identical for every question. Small variations in claims count and length produce the tiny spread (0.413–0.447). The structural reason is that <strong>30% of the score is unconditionally fixed</strong>.</p>
+</section>
+
+
+<!-- ═══ SECTION 3 — HOW TO FIX ═══ -->
+<section id="fix">
+  <div class="sec-header">
+    <div class="sec-num" style="background:rgba(52,201,138,0.12);color:var(--green);">3</div>
+    <div class="sec-header-text">
+      <h2 style="color:var(--green)">How We Will Fix It</h2>
+      <p>Three targeted fixes, ordered by impact. Fix 1 alone resolves the clustering. Fixes 2 and 3 restore full scoring sensitivity.</p>
+    </div>
+  </div>
+
+  <div class="info-box green">
+    <span class="icon">✓</span>
+    <div><strong>Expected outcome after all fixes:</strong> Dimension scores should spread from 0.25 (very weak proposal) to 0.80+ (strong proposal), with meaningful variation between dimensions based on actual content quality.</div>
+  </div>
+
+  <ul class="fix-steps">
+
+    <li>
+      <div class="fix-num" style="background:rgba(248,113,113,0.2);color:var(--red);">1</div>
+      <div class="fix-body">
+        <div class="fix-title" style="color:var(--red);">Re-run Stage 3 to regenerate search_hints for bp1 (PRIMARY FIX)</div>
+        <div class="fix-desc">Stage 3 (<code>generate_questions.py</code>) already has search_hints generation built in (lines 669–699). The bp1 run either used an older version or the LLM returned no hints. Re-running Stage 3 for bp1 will generate 6–10 verbatim keyword phrases per dimension and save them into the question set. These then need to be copied to <code>src/data/config/question_sets/generated_questions.json</code> or Stage 5 needs to be run with <code>--qs_file src/data/questions/bp1/generated_questions.json</code>.</div>
+        <pre style="margin-top:10px;font-size:12px;">python src/tools/generate_questions.py --pid bp1
+<span style="color:#6b7280;"># then either:</span>
+python src/tools/post_processing.py --pid bp1 \
+  --qs_file src/data/questions/bp1/generated_questions.json</pre>
+      </div>
+    </li>
+
+    <li>
+      <div class="fix-num" style="background:rgba(245,166,35,0.2);color:var(--orange);">2</div>
+      <div class="fix-body">
+        <div class="fix-title" style="color:var(--orange);">Re-enable evidence weights in post_processing.py</div>
+        <div class="fix-desc">Restore non-zero values for the three evidence weights. Reduce <code>alignment</code> and <code>claims</code> proportionally to keep the total at 1.0.</div>
+
+        <div class="two-col" style="margin-top:12px;">
+          <div class="diff-card">
+            <div class="diff-label" style="color:var(--red);">Before (current)</div>
+            <pre style="font-size:12px;margin:0;">"evidence_count":     0.0,
+"evidence_authority": 0.0,
+"evidence_coverage":  0.0,
+"alignment":          0.30,
+"claims":             0.27,</pre>
+          </div>
+          <div class="diff-card">
+            <div class="diff-label" style="color:var(--green);">After (proposed fix)</div>
+            <pre style="font-size:12px;margin:0;">"evidence_count":     0.10,
+"evidence_authority": 0.08,
+"evidence_coverage":  0.05,
+"alignment":          0.20,
+"claims":             0.22,</pre>
+          </div>
+        </div>
+
+        <div class="fix-desc" style="margin-top:10px;">File: <code>src/tools/post_processing.py</code> ~line 184. This ensures that answers with rich, grounded evidence score higher than answers with generic statements.</div>
+      </div>
+    </li>
+
+    <li>
+      <div class="fix-num" style="background:rgba(167,139,250,0.2);color:var(--purple);">3</div>
+      <div class="fix-body">
+        <div class="fix-title" style="color:var(--purple);">Diagnose why confidence is always 0.50</div>
+        <div class="fix-desc">Check whether the LLM is actually returning a <code>confidence</code> field in its JSON output. The Stage 4 prompt in <code>prompt_templates.py</code> specifies <code>"confidence": number from 0.50 to 0.92</code> — but observed values are always exactly 0.50. Two possible fixes:</div>
+
+        <div class="two-col" style="margin-top:12px;">
+          <div class="diff-card">
+            <div class="diff-label" style="color:var(--orange);">If LLM is not returning the field</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.6;">The prompt needs to be more explicit. Change the instruction to: <em>"You MUST include a confidence field between 0.50 and 0.92. Use 0.50 ONLY when the proposal provides almost no evidence. Use 0.75–0.92 when evidence is strong."</em></div>
+          </div>
+          <div class="diff-card">
+            <div class="diff-label" style="color:var(--orange);">If LLM returns low values that are clamped</div>
+            <div style="font-size:13px;color:var(--muted);line-height:1.6;">The calibration range in <code>_calibrate_confidence()</code> may be too aggressive. Consider widening the floor from 0.50 to 0.40 so low-confidence answers can differentiate further downward.</div>
+          </div>
+        </div>
+
+        <div class="fix-desc" style="margin-top:10px;">File to check: <code>src/data/refined_answers/bp1/chatgpt_raw.json</code> — look at the raw API response JSON to see whether <code>confidence</code> is present before calibration.</div>
+      </div>
+    </li>
+
+  </ul>
+
+  <h3>Expected Score Distribution After Fixes</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dimension</th><th>Current (broken)</th><th>Expected after Fix 1+2</th><th>What drives the change</th></tr></thead>
+      <tbody>
+        <tr><td>team</td><td><span class="badge badge-red">0.430</span></td><td><span class="badge badge-green">0.55–0.70</span></td><td>Strong team bio found in search_hints → alignment rises</td></tr>
+        <tr><td>objectives</td><td><span class="badge badge-red">0.437</span></td><td><span class="badge badge-green">0.55–0.65</span></td><td>Clear milestones in proposal → alignment rises</td></tr>
+        <tr><td>strategy</td><td><span class="badge badge-red">0.413</span></td><td><span class="badge badge-orange">0.35–0.50</span></td><td>Strategy details sparse in proposal → stays lower</td></tr>
+        <tr><td>innovation</td><td><span class="badge badge-red">0.447</span></td><td><span class="badge badge-green">0.60–0.75</span></td><td>Strong patent/technical evidence → higher with evidence weights</td></tr>
+        <tr><td>feasibility</td><td><span class="badge badge-red">0.434</span></td><td><span class="badge badge-orange">0.40–0.55</span></td><td>Feasibility gaps noted in Q&A → modest score</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box blue">
+    <span class="icon">ℹ</span>
+    <div>The exact post-fix scores will depend on bp1's actual proposal content. The key improvement is that scores will <strong>vary meaningfully</strong> between dimensions and between proposals — a prerequisite for any useful evaluation signal.</div>
+  </div>
+
+  <h3>Summary</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Fix</th><th>File</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Re-run Stage 3 to generate search_hints; point Stage 5 at per-proposal question set</td>
+          <td><code>generate_questions.py</code><br><code>post_processing.py --qs_file</code></td>
+          <td><span class="badge badge-red">Critical</span> — unlocks alignment scoring</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Re-enable evidence weights in <code>fields_weight</code> config</td>
+          <td><code>post_processing.py</code> ~line 184</td>
+          <td><span class="badge badge-orange">High</span> — rewards evidence quality</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Diagnose and fix confidence field in Stage 4 output</td>
+          <td><code>prompt_templates.py</code><br><code>llm_answering.py</code></td>
+          <td><span class="badge badge-blue">Medium</span> — improves score sensitivity</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<footer>
+  <span>YangtzeDelta — Score Clustering Diagnosis · Bug Report</span>
+  <span>Generated June 2026 · Proposal bp1 (中科纳飞)</span>
+</footer>
+
+</body>
+</html>

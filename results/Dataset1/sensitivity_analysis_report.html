@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sensitivity Analysis — Implementation &amp; Root Cause Report</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 11.5px;
+  color: #1a202c;
+  background: #f0f2f5;
+  padding: 24px;
+  line-height: 1.6;
+}
+
+/* Cover */
+.cover {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  border-radius: 12px;
+  padding: 52px 48px;
+  margin-bottom: 28px;
+}
+.cover-tag {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #90cdf4;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.cover h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.cover-sub {
+  font-size: 13px;
+  color: #bee3f8;
+  max-width: 700px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.cover-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 10.5px;
+  color: #a0aec0;
+}
+.cover-meta span::before { content: "• "; color: #4299e1; }
+
+/* Report section */
+.report-section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 32px 36px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.07);
+  position: relative;
+}
+.report-section.highlight-section {
+  border-top: 4px solid #e53e3e;
+}
+.section-number {
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  font-size: 56px;
+  font-weight: 900;
+  color: #edf2f7;
+  line-height: 1;
+  user-select: none;
+}
+.report-section h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a202c;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+.report-section h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 22px 0 10px;
+}
+.report-section h4 {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #4a5568;
+  margin: 18px 0 8px;
+  border-left: 3px solid #cbd5e0;
+  padding-left: 8px;
+}
+.lead {
+  font-size: 12px;
+  color: #4a5568;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.note {
+  font-size: 10.5px;
+  color: #718096;
+  line-height: 1.6;
+  margin: 8px 0 16px;
+  font-style: italic;
+}
+
+/* Pipeline diagram */
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+.pipe-col { display: flex; flex-direction: column; gap: 8px; }
+.pipe-box {
+  border-radius: 8px;
+  padding: 10px 14px;
+  text-align: center;
+  min-width: 150px;
+  border: 1.5px solid;
+}
+.pipe-label { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.pipe-desc  { font-size: 9.5px; color: #4a5568; line-height: 1.5; }
+.pipe-desc code { font-size: 9px; background: rgba(0,0,0,.06); padding: 1px 3px; border-radius: 3px; }
+.pipe-arrow { font-size: 20px; color: #a0aec0; }
+.baseline { background: #ebf8ff; border-color: #90cdf4; }
+.baseline .pipe-label { color: #2b6cb0; }
+.plus     { background: #f0fff4; border-color: #9ae6b4; }
+.plus .pipe-label { color: #276749; }
+.minus    { background: #fff5f5; border-color: #feb2b2; }
+.minus .pipe-label { color: #9b2c2c; }
+.scorer   { background: #faf5ff; border-color: #d6bcfa; }
+.scorer .pipe-label { color: #553c9a; }
+.results  { background: #fffff0; border-color: #f6e05e; }
+.results .pipe-label { color: #744210; }
+
+/* Code blocks */
+.code-block {
+  background: #1a202c;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 10px 0 16px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 10.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  white-space: pre;
+}
+.code-comment { color: #68d391; }
+
+/* Info/alert boxes */
+.info-box {
+  background: #ebf8ff;
+  border-left: 4px solid #4299e1;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 11px;
+  color: #2a4365;
+  line-height: 1.7;
+  margin: 16px 0;
+}
+.alert-box {
+  background: #fff5f5;
+  border-left: 4px solid #e53e3e;
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 11px;
+  color: #742a2a;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+.conclusion-box {
+  background: #fffff0;
+  border: 1px solid #f6e05e;
+  border-left: 4px solid #d69e2e;
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 11px;
+  color: #4a5568;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+/* Content diff */
+.dim-diff {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.dim-diff:last-child { border-bottom: none; }
+.diff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 12px;
+}
+.diff-label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.plus-label  { color: #276749; }
+.minus-label { color: #9b2c2c; }
+.diff-note   { font-size: 10px; color: #718096; margin-bottom: 6px; font-style: italic; }
+.diff-note code { background: #edf2f7; padding: 1px 4px; border-radius: 3px; font-size: 9.5px; }
+.diff-text {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 10px;
+  line-height: 1.7;
+  border-radius: 6px;
+  padding: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.plus-text  { background: #f0fff4; border: 1px solid #9ae6b4; color: #22543d; }
+.diff-plus  { }
+.diff-minus { }
+.kw-row     { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+.kw-pill    { background: #fff5f5; border: 1px solid #feb2b2; border-radius: 12px; padding: 2px 8px; font-size: 9.5px; color: #9b2c2c; }
+.sub-table  { width: 100%; border-collapse: collapse; font-size: 10px; }
+.sub-table th { background: #fff5f5; color: #9b2c2c; padding: 5px 8px; border: 1px solid #fed7d7; }
+.sub-table td { padding: 4px 8px; border: 1px solid #fed7d7; font-family: 'Fira Code', monospace; font-size: 9.5px; }
+.sub-from code { color: #c53030; }
+.sub-to code   { color: #2f855a; }
+
+/* Coverage table */
+.coverage-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10.5px;
+  margin: 16px 0;
+}
+.coverage-table th { background: #edf2f7; padding: 8px 10px; border: 1px solid #e2e8f0; font-size: 10px; }
+.coverage-table td { padding: 7px 10px; border: 1px solid #e2e8f0; }
+.coverage-table .num-cell { text-align: center; font-weight: 700; }
+.coverage-table .pids-cell { font-family: 'Fira Code', monospace; font-size: 9.5px; }
+.coverage-table .empty-pids { color: #e53e3e; }
+.dim-name { font-weight: 700; }
+
+/* Score movement tables */
+.dim-movement { margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid #e2e8f0; }
+.dim-movement:last-child { border-bottom: none; }
+.stats-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0 20px; }
+.stat-card {
+  border-radius: 8px;
+  padding: 10px 16px;
+  text-align: center;
+  min-width: 110px;
+  border: 1.5px solid;
+}
+.stat-card.green  { background: #f0fff4; border-color: #9ae6b4; }
+.stat-card.red    { background: #fff5f5; border-color: #feb2b2; }
+.stat-card.orange { background: #fffaf0; border-color: #f6ad55; }
+.stat-val { font-size: 22px; font-weight: 800; }
+.green .stat-val  { color: #276749; }
+.red   .stat-val  { color: #c53030; }
+.orange .stat-val { color: #c05621; }
+.stat-lbl { font-size: 9px; color: #718096; margin-top: 2px; }
+
+.mv-table { width: 100%; border-collapse: collapse; font-size: 10.5px; margin: 8px 0 16px; }
+.mv-table th { background: #edf2f7; padding: 6px 8px; border: 1px solid #e2e8f0; font-size: 10px; }
+.mv-table td { padding: 5px 8px; border: 1px solid #e2e8f0; }
+.tag { font-size: 9px; font-weight: 700; border-radius: 10px; padding: 2px 7px; text-transform: uppercase; }
+.tag.noise      { background: #fed7d7; color: #9b2c2c; }
+.tag.incomplete { background: #fefcbf; color: #744210; }
+.tag.spillover  { background: #ebf8ff; color: #2b6cb0; }
+
+/* Deltas and pills */
+.delta { font-weight: 700; font-size: 11px; }
+.delta.up { color: #276749; }
+.delta.dn { color: #c53030; }
+.delta.nc { color: #a0aec0; }
+.pill { display:inline-block; width:22px; height:22px; line-height:22px; border-radius:4px; font-weight:700; font-size:11px; text-align:center; }
+.p1{background:#fed7d7;color:#742a2a}
+.p2{background:#fefcbf;color:#744210}
+.p3{background:#bee3f8;color:#2a4365}
+.p4{background:#c6f6d5;color:#22543d}
+.p5{background:#9ae6b4;color:#1c4532}
+.p0{background:#e2e8f0;color:#718096}
+
+/* Cause cards */
+.cause-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.cause-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+.cause-num   { font-size: 11px; font-weight: 900; color: #4a5568; background: #e2e8f0; border-radius: 20px; padding: 2px 9px; }
+.cause-title { font-size: 12.5px; font-weight: 700; color: #1a202c; flex: 1; }
+.cause-sev   { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 12px; padding: 3px 10px; }
+.sev-critical{ background: #fed7d7; color: #742a2a; }
+.sev-high    { background: #fefcbf; color: #744210; }
+.sev-medium  { background: #bee3f8; color: #2a4365; }
+.cause-body  { padding: 16px 18px; }
+.cause-meta  { display: flex; gap: 24px; font-size: 10px; color: #718096; margin-bottom: 14px; }
+.cause-subsection { margin-bottom: 12px; }
+.cause-sub-label { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #718096; margin-bottom: 4px; }
+.cause-body p { font-size: 11px; line-height: 1.7; color: #4a5568; }
+.cause-body em { font-style: italic; color: #2d3748; }
+.cause-body code { background: #edf2f7; padding: 1px 4px; border-radius: 3px; font-size: 10px; }
+.fix-text { background: #f0fff4; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #68d391; color: #22543d !important; }
+
+/* Validity table */
+.validity-table { width: 100%; border-collapse: collapse; font-size: 10.5px; margin: 16px 0; }
+.validity-table th { background: #edf2f7; padding: 7px 10px; border: 1px solid #e2e8f0; font-size: 10px; text-align: center; }
+.validity-table td { padding: 6px 10px; border: 1px solid #e2e8f0; text-align: center; }
+.validity-table .dim-name { text-align: left; font-weight: 700; }
+.total-row { background: #edf2f7 !important; }
+.pct-high { color: #276749; font-weight: 700; }
+.pct-mid  { color: #b7791f; font-weight: 700; }
+.pct-low  { color: #c53030; font-weight: 700; }
+.valid-tag   { background: #c6f6d5; color: #22543d; font-weight: 700; border-radius: 4px; padding: 1px 6px; }
+.invalid-tag { background: #fed7d7; color: #742a2a; font-weight: 700; border-radius: 4px; padding: 1px 6px; }
+
+@media print {
+  body { background: #fff; padding: 0; }
+  .report-section { box-shadow: none; page-break-before: always; }
+  .report-section:first-of-type, .cover + .report-section { page-break-before: avoid; }
+  .cover { page-break-after: always; border-radius: 0; }
+  .cause-card, .dim-diff, .dim-movement { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+  
+<div class="cover">
+  <div class="cover-tag">INTERNAL ANALYSIS REPORT</div>
+  <h1>Content-Sensitivity Experiment<br>Implementation &amp; Root Cause Analysis</h1>
+  <p class="cover-sub">
+    A full walkthrough of how PLUS and MINUS variants are built, what content was
+    added and removed, and why some subrubric scores moved in unexpected directions.
+  </p>
+  <div class="cover-meta">
+    <span>Generated: July 06, 2026  11:18</span>
+    <span>Proposals: p1–p8, pA–pD (12 total)</span>
+    <span>Dimensions: Strategy · Advantages · Objectives</span>
+  </div>
+</div>
+
+  
+<section class="report-section">
+  <div class="section-number">01</div>
+  <h2>How the Experiment Is Implemented</h2>
+
+  <p class="lead">
+    The experiment tests whether the LLM scoring system reads and reacts to actual proposal content —
+    or assigns scores based on surface patterns and noise. It does this by creating two controlled
+    variants of each proposal's final report and re-scoring all 8 subrubrics per dimension.
+  </p>
+
+  <h3>Step 1 — Variant Creation</h3>
+  <div class="pipeline">
+    <div class="pipe-box baseline">
+      <div class="pipe-label">BASELINE</div>
+      <div class="pipe-desc">Original final report<br><code>{pid}__openai_final_report.md</code></div>
+    </div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-col">
+      <div class="pipe-box plus">
+        <div class="pipe-label">PLUS variant</div>
+        <div class="pipe-desc"><code>_inject_plus()</code><br>Prepends evidence text at a fixed marker in the document</div>
+      </div>
+      <div class="pipe-box minus">
+        <div class="pipe-label">MINUS variant</div>
+        <div class="pipe-desc"><code>_strip_minus()</code><br>Removes bullet lines with target keywords; applies regex substitutions</div>
+      </div>
+    </div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-box scorer">
+      <div class="pipe-label">LLM SCORER</div>
+      <div class="pipe-desc"><code>generate_{dim}_rubric_scores.py</code><br>temperature=0.2 · max_tokens=600<br>Returns JSON: {rubric_key: score}</div>
+    </div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-box results">
+      <div class="pipe-label">SCORES JSON</div>
+      <div class="pipe-desc">8 subrubric scores (1–5) per variant<br>⚠ No evidence/reasoning captured for variants</div>
+    </div>
+  </div>
+
+  <h3>Step 2 — How PLUS injection works (<code>_inject_plus</code>)</h3>
+  <div class="code-block">
+    <div class="code-comment"># Find a fixed marker string inside the report</div>
+    <code>if marker in text:
+    return text.replace(marker, injection.rstrip() + "\n\n" + marker, 1)
+# Fallback: insert before the Q&A section
+if "## 2. Dimension Q&amp;A" in text:
+    return text.replace("## 2. Dimension Q&amp;A", injection + "\n\n" + qa, 1)</code>
+  </div>
+  <p class="note">
+    The injection is prepended immediately before a section heading in the report. If the heading
+    is not found (the report was generated in a different format), it falls back to inserting before
+    the Q&amp;A block. The injection text is the <em>same across all proposals</em> for a given dimension.
+  </p>
+
+  <h3>Step 3 — How MINUS stripping works (<code>_strip_minus</code>)</h3>
+  <div class="code-block">
+    <code>for line in text.split("\n"):
+    is_list = bool(re.match(r"^-\s|^\d+\.\s", stripped))
+    # Drop entire bullet/numbered lines containing target keywords
+    if is_list and any(kw.lower() in line.lower() for kw in strip_keywords):
+        continue
+    # Apply inline regex substitutions to remaining lines
+    for pattern, replacement in inline_subs:
+        line = re.sub(pattern, replacement, line)</code>
+  </div>
+  <p class="note">
+    ⚠ <strong>Critical limitation:</strong> Stripping only targets narrative bullet points and
+    inline phrases. It does NOT touch the Q&amp;A section of the report, which often re-states
+    the same concepts with different vocabulary — leaving the LLM's evidence base largely intact.
+  </p>
+
+  <h3>Key observation: variant scoring is intentionally minimal</h3>
+  <div class="info-box">
+    The baseline scoring tool captures full <code>evidence</code>, <code>reasoning</code>, and
+    <code>score</code> fields per rubric. Variant scoring (PLUS/MINUS) was deliberately simplified
+    to capture only the <code>score</code> — making the analysis faster but preventing direct
+    inspection of <em>why</em> a score changed. All root-cause analysis in this report is therefore
+    inferred from the report text, rubric definitions, and score deltas.
+  </div>
+</section>
+
+  
+<section class="report-section">
+  <div class="section-number">02</div>
+  <h2>What Was Added and What Was Removed</h2>
+  <p class="lead">
+    The PLUS injection text is <strong>identical across all 12 proposals</strong> for a given dimension —
+    it is pre-written evidence designed to raise specific target rubrics.
+    The MINUS stripping targets specific vocabulary; if a proposal doesn't use that vocabulary,
+    its MINUS variant is <strong>byte-for-byte identical to its baseline</strong>.
+  </p>
+  
+<div class="dim-diff">
+  <h3>STRATEGY</h3>
+  <div class="diff-grid">
+
+    <div class="diff-plus">
+      <div class="diff-label plus-label">PLUS — Content Added</div>
+      <p class="diff-note">Inserted immediately before: <code>##### Technology and product innovation</code></p>
+      <pre class="diff-text plus-text">**Revenue Model:** The company will commercialize via a B2B SaaS licensing model at $240,000 per hospital system per year (enterprise tier), $48,000 per year (mid-market tier). Unit economics: estimated cost to serve = $18,000/year per customer; gross margin = 62.5%. Payment structure: annual upfront license with quarterly usage-based overage at $0.40 per processed patient record. Year-1 revenue target: $2.4M from 10 enterprise contracts already in late-stage negotiation.
+
+**Regulatory Strategy:** The product is classified as a Software as a Medical Device (SaMD) under FDA 21 CFR Part 820. The team filed a Pre-Submission (Q-Sub) with FDA in March 2026 (reference Q260312-01) and received written feedback confirming the 510(k) pathway via predicate device K213456. De Novo classification has been ruled out. CE mark submission under EU MDR Article 51 is scheduled for Q3 2026, with a notified body (TÜV SÜD) already engaged under a formal contract.</pre>
+    </div>
+
+    <div class="diff-minus">
+      <div class="diff-label minus-label">MINUS — Content Targeted for Removal</div>
+      <p class="diff-note">Bullet lines dropped if they contain any of these keywords:</p>
+      <div class="kw-row"><span class="kw-pill">Merck</span><span class="kw-pill">Fujifilm</span><span class="kw-pill">Pfizer</span><span class="kw-pill">Roche</span><span class="kw-pill">AstraZeneca</span><span class="kw-pill">Novartis</span><span class="kw-pill">GSK</span><span class="kw-pill">Sanofi</span><span class="kw-pill">phased funding strategy</span><span class="kw-pill">Phased funding strategy</span></div>
+      <p class="diff-note" style="margin-top:10px">Inline regex substitutions applied:</p>
+      <table class="sub-table">
+        <thead><tr><th>Pattern (stripped/replaced)</th><th>Replacement</th></tr></thead>
+        <tbody><tr><td class='sub-from'><code>Merck|Fujifilm|Pfizer|Roche|AstraZeneca|Novartis|GSK|Sanofi</code></td><td class='sub-to'><code>strategic partner</code></td></tr><tr><td class='sub-from'><code>[Pp]hased funding strategy[^.]*\.</code></td><td class='sub-to'><code>&lt;deleted&gt;</code></td></tr></tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<div class="dim-diff">
+  <h3>ADVANTAGES</h3>
+  <div class="diff-grid">
+
+    <div class="diff-plus">
+      <div class="diff-label plus-label">PLUS — Content Added</div>
+      <p class="diff-note">Inserted immediately before: <code>##### Resources and feasibility</code></p>
+      <pre class="diff-text plus-text">**IP Portfolio:** The company holds US patent 11,234,567 (granted October 2024) covering the core LNP stabilization technology, with two continuation applications pending (US 18/456,789; US 18/456,790) covering AI-guided delivery optimization and excipient composition. A European counterpart (EP4123456) was granted March 2026, with PCT filings active in Japan and China.
+
+**Performance vs Benchmark:** Head-to-head in vitro comparison against the leading commercial LNP formulation (MC3-based) demonstrated: transfection efficiency 94.3% vs 71.2% (p&lt;0.001, n=6 replicates); cytotoxicity IC50 of 847 µg/mL vs 312 µg/mL (2.7× safer); shelf stability at 4°C of 18 months vs 6 months (3× longer). Data generated under GLP conditions, protocol on file.</pre>
+    </div>
+
+    <div class="diff-minus">
+      <div class="diff-label minus-label">MINUS — Content Targeted for Removal</div>
+      <p class="diff-note">Bullet lines dropped if they contain any of these keywords:</p>
+      <div class="kw-row"><span class="kw-pill">lung-targeted stable lipid</span><span class="kw-pill">generative design</span><span class="kw-pill">recurrent neural</span><span class="kw-pill"> RNN</span><span class="kw-pill">AI drug screening</span><span class="kw-pill">AI model</span><span class="kw-pill">AI-guided</span><span class="kw-pill">advanced gene engineering</span><span class="kw-pill">precision delivery</span><span class="kw-pill">proprietary LNP</span><span class="kw-pill">AI integration</span></div>
+      <p class="diff-note" style="margin-top:10px">Inline regex substitutions applied:</p>
+      <table class="sub-table">
+        <thead><tr><th>Pattern (stripped/replaced)</th><th>Replacement</th></tr></thead>
+        <tbody><tr><td class='sub-from'><code>lung-targeted stable lipid nanoparticles?(?:\s*\(LNPs?\))?</code></td><td class='sub-to'><code>lipid nanoparticles</code></td></tr><tr><td class='sub-from'><code>generative design and recurrent neural networks?(?:\s*\(RNN\))?</code></td><td class='sub-to'><code>computational screening</code></td></tr><tr><td class='sub-from'><code>[Aa]dvanced gene engineering techniques?</code></td><td class='sub-to'><code>standard formulation methods</code></td></tr><tr><td class='sub-from'><code>\b[Aa][Ii]-guided( delivery)?</code></td><td class='sub-to'><code>standard</code></td></tr><tr><td class='sub-from'><code>[Ii]ntegration of AI models?</code></td><td class='sub-to'><code>use of computational tools</code></td></tr><tr><td class='sub-from'><code>AI models? (?:is|are|were|has been) a distinguishing feature[^.]*\.</code></td><td class='sub-to'><code>&lt;deleted&gt;</code></td></tr><tr><td class='sub-from'><code>AI models? enable[^.]*\.</code></td><td class='sub-to'><code>&lt;deleted&gt;</code></td></tr><tr><td class='sub-from'><code>using AI models?[^.]*\.</code></td><td class='sub-to'><code>.</code></td></tr><tr><td class='sub-from'><code>\bpatent(?:ed|ing|s)?\b</code></td><td class='sub-to'><code>&lt;deleted&gt;</code></td></tr><tr><td class='sub-from'><code>\b[Pp]roprietary\b</code></td><td class='sub-to'><code>&lt;deleted&gt;</code></td></tr><tr><td class='sub-from'><code>\bIP portfolio\b</code></td><td class='sub-to'><code>IP</code></td></tr><tr><td class='sub-from'><code>exclusive (?:rights?|licen[sc]e)[^.]*\.</code></td><td class='sub-to'><code>license.</code></td></tr></tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<div class="dim-diff">
+  <h3>OBJECTIVES</h3>
+  <div class="diff-grid">
+
+    <div class="diff-plus">
+      <div class="diff-label plus-label">PLUS — Content Added</div>
+      <p class="diff-note">Inserted immediately before: <code>##### Implementation path and strategy</code></p>
+      <pre class="diff-text plus-text">**Market Size:** The global antiviral therapeutics market was valued at $57.3B in 2024 (Source: Grand View Research, 2024), growing at 8.2% CAGR. The serviceable addressable market for RNA-based broad-spectrum antivirals in high-risk populations is estimated at $4.2B by 2028 (Source: EvaluatePharma, 2025). The initial target segment — immunocompromised patients with recurrent respiratory viral infections — represents approximately 18 million patients in the US and EU combined, with an average treatment cost of $12,000–$18,000 per episode.
+
+**Buyer Pathway:** The company has signed a Letter of Intent (LOI, dated April 2026) with MedHealth Network (42 hospital sites, 180,000 patients/year) for a pilot procurement of the antiviral therapy at $8,500 per treatment course. The LOI includes a 12-month exclusivity window and a defined path to a Master Supply Agreement upon Phase II trial completion. Two additional health system LOIs are in final review.</pre>
+    </div>
+
+    <div class="diff-minus">
+      <div class="diff-label minus-label">MINUS — Content Targeted for Removal</div>
+      <p class="diff-note">Bullet lines dropped if they contain any of these keywords:</p>
+      <div class="kw-row"><span class="kw-pill">high-risk exposure</span><span class="kw-pill">high-risk population</span><span class="kw-pill">immunocompromised</span><span class="kw-pill">COVID-19</span><span class="kw-pill">SARS-CoV-2</span><span class="kw-pill">specifically designed to</span><span class="kw-pill">specifically targets</span><span class="kw-pill">directly addresses</span><span class="kw-pill">addresses the unmet need</span><span class="kw-pill">targets a critical need</span></div>
+      <p class="diff-note" style="margin-top:10px">Inline regex substitutions applied:</p>
+      <table class="sub-table">
+        <thead><tr><th>Pattern (stripped/replaced)</th><th>Replacement</th></tr></thead>
+        <tbody><tr><td class='sub-from'><code>high-risk (?:exposure )?populations?</code></td><td class='sub-to'><code>patients</code></td></tr><tr><td class='sub-from'><code>COVID-?19(?:[^,\.]*)</code></td><td class='sub-to'><code>viral disease</code></td></tr><tr><td class='sub-from'><code>SARS-CoV-2(?:[^,\.]*)</code></td><td class='sub-to'><code>the virus</code></td></tr><tr><td class='sub-from'><code>\bimmunocompromised\b</code></td><td class='sub-to'><code>at-risk</code></td></tr><tr><td class='sub-from'><code>18 million patients?[^.]*\.</code></td><td class='sub-to'><code>many patients.</code></td></tr><tr><td class='sub-from'><code>lung-targeted[^,\.]*(?:therapy|RNA|treatment)[^,\.]*\.</code></td><td class='sub-to'><code>therapeutic approach.</code></td></tr><tr><td class='sub-from'><code>broad-spectrum antiviral (?:status|therapy|RNA/LNP therapy)</code></td><td class='sub-to'><code>antiviral treatment</code></td></tr><tr><td class='sub-from'><code>specifically (?:targets?|designed to|addresses?)[^.]*\.</code></td><td class='sub-to'><code>The product addresses the condition.</code></td></tr><tr><td class='sub-from'><code>[Tt]he project targets? a critical need[^.]*\.</code></td><td class='sub-to'><code>The project addresses a medical need.</code></td></tr><tr><td class='sub-from'><code>aligns? with (?:the )?(?:critical |urgent |pressing |unmet )?need[^.]*\.</code></td><td class='sub-to'><code>&lt;deleted&gt;</code></td></tr><tr><td class='sub-from'><code>directly addresses? the (?:problem|need|gap)[^.]*\.</code></td><td class='sub-to'><code>&lt;deleted&gt;</code></td></tr><tr><td class='sub-from'><code>proactive approach to addressing[^.]*\.</code></td><td class='sub-to'><code>approach.</code></td></tr><tr><td class='sub-from'><code>objectives? align with[^.]*\.</code></td><td class='sub-to'><code>&lt;deleted&gt;</code></td></tr></tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+</section>
+
+  
+<section class="report-section highlight-section">
+  <div class="section-number">03</div>
+  <h2>Critical Finding: Most MINUS Variants Are Empty</h2>
+  <p class="lead">
+    The MINUS stripping was designed using vocabulary from a specific antiviral/LNP proposal (p8).
+    The other 11 proposals were generated from diverse domains and <strong>never used that vocabulary</strong>
+    — so the stripping operation produced no changes for them.
+  </p>
+
+  <table class="coverage-table">
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th>Proposals with<br>actual stripping</th>
+        <th>Empty MINUS<br>(identical to baseline)</th>
+        <th>Proposals where stripping occurred</th>
+        <th>Empty MINUS proposals (score changes = noise)</th>
+      </tr>
+    </thead>
+    <tbody><tr><td class='dim-name'>STRATEGY</td><td class='num-cell'>1/12</td><td class='num-cell'>11/12</td><td class='pids-cell'>p8</td><td class='pids-cell empty-pids'>p1, p2, p3, p4, p5, p6, p7, pA, pB, pC, pD</td></tr><tr><td class='dim-name'>ADVANTAGES</td><td class='num-cell'>3/12</td><td class='num-cell'>9/12</td><td class='pids-cell'>p2, p3, p8</td><td class='pids-cell empty-pids'>p1, p4, p5, p6, p7, pA, pB, pC, pD</td></tr><tr><td class='dim-name'>OBJECTIVES</td><td class='num-cell'>2/12</td><td class='num-cell'>10/12</td><td class='pids-cell'>p8, pA</td><td class='pids-cell empty-pids'>p1, p2, p3, p4, p5, p6, p7, pB, pC, pD</td></tr></tbody>
+  </table>
+
+  <div class="alert-box">
+    <strong>Implication:</strong> All MINUS score changes for proposals in the "empty MINUS" column
+    are <strong>pure LLM sampling noise</strong> (temperature=0.2), not a response to content removal.
+    Any MINUS hypothesis check that "passes" or "fails" for those proposals reflects stochasticity —
+    not the model reading the document. This invalidates the MINUS arm of the experiment for
+    10–11 of 12 proposals across all three dimensions.
+  </div>
+</section>
+
+  
+<section class="report-section">
+  <div class="section-number">04</div>
+  <h2>Score Movement Analysis</h2>
+  <p class="lead">
+    Unexpected score movements fall into three observable patterns:
+    PLUS cross-contamination (non-target rubrics shift when evidence is injected),
+    MINUS stochastic changes (empty variants scored differently due to LLM temperature),
+    and MINUS incomplete stripping (keywords present but core signals survive).
+  </p>
+  
+<div class="dim-movement">
+  <h3>STRATEGY</h3>
+
+  <div class="stats-row">
+    <div class="stat-card green">
+      <div class="stat-val">24/24</div>
+      <div class="stat-lbl">PLUS targets rose ✓</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-val">0/24</div>
+      <div class="stat-lbl">PLUS targets failed ✗</div>
+    </div>
+    <div class="stat-card green">
+      <div class="stat-val">6</div>
+      <div class="stat-lbl">MINUS target fell ✓ (valid)</div>
+    </div>
+    <div class="stat-card orange">
+      <div class="stat-val">17</div>
+      <div class="stat-lbl">MINUS changes = noise</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-val">1</div>
+      <div class="stat-lbl">MINUS failed (non-empty)</div>
+    </div>
+  </div>
+
+  <h4>PLUS Cross-Contamination — Non-target rubrics that shifted on PLUS variant</h4><table class="mv-table"><thead><tr><th>Proposal</th><th>Rubric</th><th>Baseline</th><th>PLUS score</th><th>Delta</th></tr></thead><tbody><tr><td>p2</td><td>R5 Moat</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p3</td><td>R5 Moat</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p5</td><td>R5 Moat</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p6</td><td>R5 Moat</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p7</td><td>R2 Milestones</td><td><span class="pill p3">3</span></td><td><span class="pill p1">1</span></td><td><span class="delta dn">-2↓</span></td></tr><tr><td>p7</td><td>R5 Moat</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>pC</td><td>R5 Moat</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>pC</td><td>R7 Team Fit</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>pD</td><td>R5 Moat</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p1</td><td>R1 Go-to-Market</td><td><span class="pill p2">2</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+1↑</span></td></tr><tr><td>p1</td><td>R2 Milestones</td><td><span class="pill p2">2</span></td><td><span class="pill p1">1</span></td><td><span class="delta dn">-1↓</span></td></tr><tr><td>p1</td><td>R5 Moat</td><td><span class="pill p4">4</span></td><td><span class="pill p3">3</span></td><td><span class="delta dn">-1↓</span></td></tr><tr><td>p1</td><td>R7 Team Fit</td><td><span class="pill p4">4</span></td><td><span class="pill p3">3</span></td><td><span class="delta dn">-1↓</span></td></tr><tr><td>p2</td><td>R1 Go-to-Market</td><td><span class="pill p2">2</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+1↑</span></td></tr><tr><td>p2</td><td>R2 Milestones</td><td><span class="pill p2">2</span></td><td><span class="pill p1">1</span></td><td><span class="delta dn">-1↓</span></td></tr></tbody></table>
+
+  <h4>MINUS — Stochastic changes (empty MINUS variant)</h4><table class="mv-table"><thead><tr><th>Proposal</th><th>Target rubric</th><th>Baseline</th><th>MINUS score</th><th>Delta</th><th>Cause</th></tr></thead><tbody><tr><td>p1</td><td>R8 Timing</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p2</td><td>R6 Partners</td><td><span class="pill p1">1</span></td><td><span class="pill p1">1</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p2</td><td>R8 Timing</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p3</td><td>R6 Partners</td><td><span class="pill p2">2</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+1↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p3</td><td>R8 Timing</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p4</td><td>R8 Timing</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p5</td><td>R8 Timing</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p6</td><td>R6 Partners</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p6</td><td>R8 Timing</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p7</td><td>R6 Partners</td><td><span class="pill p1">1</span></td><td><span class="pill p1">1</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p7</td><td>R8 Timing</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>pA</td><td>R8 Timing</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr></tbody></table>
+
+  <h4>MINUS — Incomplete stripping (non-empty MINUS, target still did not fall)</h4><table class="mv-table"><thead><tr><th>Proposal</th><th>Target rubric</th><th>Baseline</th><th>MINUS score</th><th>Delta</th><th>Cause</th></tr></thead><tbody><tr><td>p8</td><td>R8 Timing</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag incomplete'>SHALLOW STRIP</span></td></tr></tbody></table>
+</div>
+
+<div class="dim-movement">
+  <h3>ADVANTAGES</h3>
+
+  <div class="stats-row">
+    <div class="stat-card green">
+      <div class="stat-val">21/24</div>
+      <div class="stat-lbl">PLUS targets rose ✓</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-val">3/24</div>
+      <div class="stat-lbl">PLUS targets failed ✗</div>
+    </div>
+    <div class="stat-card green">
+      <div class="stat-val">7</div>
+      <div class="stat-lbl">MINUS target fell ✓ (valid)</div>
+    </div>
+    <div class="stat-card orange">
+      <div class="stat-val">13</div>
+      <div class="stat-lbl">MINUS changes = noise</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-val">4</div>
+      <div class="stat-lbl">MINUS failed (non-empty)</div>
+    </div>
+  </div>
+
+  <h4>PLUS Cross-Contamination — Non-target rubrics that shifted on PLUS variant</h4><table class="mv-table"><thead><tr><th>Proposal</th><th>Rubric</th><th>Baseline</th><th>PLUS score</th><th>Delta</th></tr></thead><tbody><tr><td>p1</td><td>R4 Competitor Benchmark</td><td><span class="pill p1">1</span></td><td><span class="pill p5">5</span></td><td><span class="delta up">+4↑</span></td></tr><tr><td>p3</td><td>R4 Competitor Benchmark</td><td><span class="pill p1">1</span></td><td><span class="pill p5">5</span></td><td><span class="delta up">+4↑</span></td></tr><tr><td>p5</td><td>R4 Competitor Benchmark</td><td><span class="pill p1">1</span></td><td><span class="pill p5">5</span></td><td><span class="delta up">+4↑</span></td></tr><tr><td>p7</td><td>R4 Competitor Benchmark</td><td><span class="pill p1">1</span></td><td><span class="pill p5">5</span></td><td><span class="delta up">+4↑</span></td></tr><tr><td>p8</td><td>R4 Competitor Benchmark</td><td><span class="pill p1">1</span></td><td><span class="pill p5">5</span></td><td><span class="delta up">+4↑</span></td></tr><tr><td>pA</td><td>R4 Competitor Benchmark</td><td><span class="pill p1">1</span></td><td><span class="pill p5">5</span></td><td><span class="delta up">+4↑</span></td></tr><tr><td>pC</td><td>R4 Competitor Benchmark</td><td><span class="pill p1">1</span></td><td><span class="pill p5">5</span></td><td><span class="delta up">+4↑</span></td></tr><tr><td>pB</td><td>R4 Competitor Benchmark</td><td><span class="pill p2">2</span></td><td><span class="pill p5">5</span></td><td><span class="delta up">+3↑</span></td></tr><tr><td>pD</td><td>R4 Competitor Benchmark</td><td><span class="pill p2">2</span></td><td><span class="pill p5">5</span></td><td><span class="delta up">+3↑</span></td></tr><tr><td>p1</td><td>R6 Platform Potential</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p1</td><td>R7 Validation Signals</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p1</td><td>R8 Adoption Readiness</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p3</td><td>R7 Validation Signals</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p3</td><td>R8 Adoption Readiness</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p4</td><td>R4 Competitor Benchmark</td><td><span class="pill p3">3</span></td><td><span class="pill p5">5</span></td><td><span class="delta up">+2↑</span></td></tr></tbody></table>
+
+  <h4>MINUS — Stochastic changes (empty MINUS variant)</h4><table class="mv-table"><thead><tr><th>Proposal</th><th>Target rubric</th><th>Baseline</th><th>MINUS score</th><th>Delta</th><th>Cause</th></tr></thead><tbody><tr><td>p4</td><td>R1 Mechanism Novelty</td><td><span class="pill p3">3</span></td><td><span class="pill p4">4</span></td><td><span class="delta up">+1↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p5</td><td>R1 Mechanism Novelty</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p5</td><td>R5 Defensibility</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p6</td><td>R1 Mechanism Novelty</td><td><span class="pill p4">4</span></td><td><span class="pill p4">4</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p6</td><td>R5 Defensibility</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p7</td><td>R5 Defensibility</td><td><span class="pill p1">1</span></td><td><span class="pill p1">1</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>pA</td><td>R1 Mechanism Novelty</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>pA</td><td>R5 Defensibility</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>pB</td><td>R1 Mechanism Novelty</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>pC</td><td>R1 Mechanism Novelty</td><td><span class="pill p2">2</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+1↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>pC</td><td>R5 Defensibility</td><td><span class="pill p1">1</span></td><td><span class="pill p1">1</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>pD</td><td>R1 Mechanism Novelty</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr></tbody></table>
+
+  <h4>MINUS — Incomplete stripping (non-empty MINUS, target still did not fall)</h4><table class="mv-table"><thead><tr><th>Proposal</th><th>Target rubric</th><th>Baseline</th><th>MINUS score</th><th>Delta</th><th>Cause</th></tr></thead><tbody><tr><td>p2</td><td>R5 Defensibility</td><td><span class="pill p1">1</span></td><td><span class="pill p1">1</span></td><td><span class="delta nc">→</span></td><td><span class='tag incomplete'>SHALLOW STRIP</span></td></tr><tr><td>p3</td><td>R1 Mechanism Novelty</td><td><span class="pill p3">3</span></td><td><span class="pill p4">4</span></td><td><span class="delta up">+1↑</span></td><td><span class='tag incomplete'>SHALLOW STRIP</span></td></tr><tr><td>p3</td><td>R5 Defensibility</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag incomplete'>SHALLOW STRIP</span></td></tr><tr><td>p8</td><td>R5 Defensibility</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag incomplete'>SHALLOW STRIP</span></td></tr></tbody></table>
+</div>
+
+<div class="dim-movement">
+  <h3>OBJECTIVES</h3>
+
+  <div class="stats-row">
+    <div class="stat-card green">
+      <div class="stat-val">24/24</div>
+      <div class="stat-lbl">PLUS targets rose ✓</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-val">0/24</div>
+      <div class="stat-lbl">PLUS targets failed ✗</div>
+    </div>
+    <div class="stat-card green">
+      <div class="stat-val">10</div>
+      <div class="stat-lbl">MINUS target fell ✓ (valid)</div>
+    </div>
+    <div class="stat-card orange">
+      <div class="stat-val">12</div>
+      <div class="stat-lbl">MINUS changes = noise</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-val">2</div>
+      <div class="stat-lbl">MINUS failed (non-empty)</div>
+    </div>
+  </div>
+
+  <h4>PLUS Cross-Contamination — Non-target rubrics that shifted on PLUS variant</h4><table class="mv-table"><thead><tr><th>Proposal</th><th>Rubric</th><th>Baseline</th><th>PLUS score</th><th>Delta</th></tr></thead><tbody><tr><td>p3</td><td>R8 Addressability</td><td><span class="pill p1">1</span></td><td><span class="pill p4">4</span></td><td><span class="delta up">+3↑</span></td></tr><tr><td>p4</td><td>R8 Addressability</td><td><span class="pill p1">1</span></td><td><span class="pill p4">4</span></td><td><span class="delta up">+3↑</span></td></tr><tr><td>p5</td><td>R8 Addressability</td><td><span class="pill p1">1</span></td><td><span class="pill p4">4</span></td><td><span class="delta up">+3↑</span></td></tr><tr><td>p7</td><td>R8 Addressability</td><td><span class="pill p1">1</span></td><td><span class="pill p4">4</span></td><td><span class="delta up">+3↑</span></td></tr><tr><td>p8</td><td>R4 Unmet Need Evidence</td><td><span class="pill p1">1</span></td><td><span class="pill p4">4</span></td><td><span class="delta up">+3↑</span></td></tr><tr><td>p8</td><td>R8 Addressability</td><td><span class="pill p1">1</span></td><td><span class="pill p4">4</span></td><td><span class="delta up">+3↑</span></td></tr><tr><td>p1</td><td>R5 Why Now</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p1</td><td>R6 Competitive Context</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p1</td><td>R8 Addressability</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p2</td><td>R5 Why Now</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p2</td><td>R8 Addressability</td><td><span class="pill p2">2</span></td><td><span class="pill p4">4</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p3</td><td>R5 Why Now</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p3</td><td>R6 Competitive Context</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p4</td><td>R5 Why Now</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr><tr><td>p4</td><td>R6 Competitive Context</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td></tr></tbody></table>
+
+  <h4>MINUS — Stochastic changes (empty MINUS variant)</h4><table class="mv-table"><thead><tr><th>Proposal</th><th>Target rubric</th><th>Baseline</th><th>MINUS score</th><th>Delta</th><th>Cause</th></tr></thead><tbody><tr><td>p1</td><td>R7 Problem-Sol Fit</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p2</td><td>R7 Problem-Sol Fit</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p4</td><td>R7 Problem-Sol Fit</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p5</td><td>R1 Problem Clarity</td><td><span class="pill p3">3</span></td><td><span class="pill p4">4</span></td><td><span class="delta up">+1↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p5</td><td>R7 Problem-Sol Fit</td><td><span class="pill p2">2</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+1↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p6</td><td>R1 Problem Clarity</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p6</td><td>R7 Problem-Sol Fit</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>p7</td><td>R7 Problem-Sol Fit</td><td><span class="pill p2">2</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+1↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>pB</td><td>R7 Problem-Sol Fit</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>pC</td><td>R1 Problem Clarity</td><td><span class="pill p4">4</span></td><td><span class="pill p4">4</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>pC</td><td>R7 Problem-Sol Fit</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr><tr><td>pD</td><td>R7 Problem-Sol Fit</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag noise'>NOISE (empty MINUS)</span></td></tr></tbody></table>
+
+  <h4>MINUS — Incomplete stripping (non-empty MINUS, target still did not fall)</h4><table class="mv-table"><thead><tr><th>Proposal</th><th>Target rubric</th><th>Baseline</th><th>MINUS score</th><th>Delta</th><th>Cause</th></tr></thead><tbody><tr><td>p8</td><td>R7 Problem-Sol Fit</td><td><span class="pill p1">1</span></td><td><span class="pill p3">3</span></td><td><span class="delta up">+2↑</span></td><td><span class='tag incomplete'>SHALLOW STRIP</span></td></tr><tr><td>pA</td><td>R7 Problem-Sol Fit</td><td><span class="pill p3">3</span></td><td><span class="pill p3">3</span></td><td><span class="delta nc">→</span></td><td><span class='tag incomplete'>SHALLOW STRIP</span></td></tr></tbody></table>
+</div>
+
+</section>
+
+  
+<section class="report-section">
+  <div class="section-number">05</div>
+  <h2>Root Cause Diagnosis</h2>
+  <p class="lead">
+    Five distinct causes explain the unexpected score movements. They are ordered by severity
+    and the number of hypothesis checks they invalidate.
+  </p>
+  
+<div class="cause-card">
+  <div class="cause-header">
+    <span class="cause-num">C1</span>
+    <span class="cause-title">Empty MINUS Variants — Stochasticity Misread as Sensitivity</span>
+    <span class="cause-sev sev-critical">Critical</span>
+  </div>
+  <div class="cause-body">
+    <div class="cause-meta">
+      <span><strong>Affects:</strong> All 3 dimensions</span>
+      <span><strong>Rubrics:</strong> All MINUS targets (11/12 proposals per dimension)</span>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">What happened</div>
+      <p>
+              The MINUS stripping vocabulary was written for a specific LNP/antiviral proposal (p8).
+              The other 11 proposals never used those words. Their MINUS variant files are
+              byte-for-byte identical to the baseline — yet the LLM returns different scores
+              because temperature=0.2 introduces sampling randomness.
+            </p>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">Evidence</div>
+      <p>
+              Strategy MINUS: 11/12 proposals are empty. Advantages MINUS: 10/12 empty.
+              Objectives MINUS: 10/12 empty. R8_timing rises 1→3 on MINUS for all 11 empty
+              proposals — even though no content was removed. The score change equals the
+              inherent noise floor of temperature=0.2 scoring.
+            </p>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">Recommended fix</div>
+      <p class="fix-text">Re-score each variant 3× and take the median. Or set temperature=0 for deterministic scoring.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cause-card">
+  <div class="cause-header">
+    <span class="cause-num">C2</span>
+    <span class="cause-title">Injection Spillover — Regulatory Text Activates Timing Rubric</span>
+    <span class="cause-sev sev-high">High</span>
+  </div>
+  <div class="cause-body">
+    <div class="cause-meta">
+      <span><strong>Affects:</strong> Strategy</span>
+      <span><strong>Rubrics:</strong> R8_timing (MINUS target)</span>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">What happened</div>
+      <p>
+              The PLUS injection adds: <em>"Q-Sub filed March 2026 (ref Q260312-01)"</em>,
+              <em>"CE mark scheduled Q3 2026"</em>, <em>"10 enterprise contracts in late-stage negotiation"</em>.
+              The R8_timing rubric definition says score 3 = <em>"timing plausible based on proposal claims"</em>
+              and score 5 = <em>"strong timing signals from external data, regulation, or validated demand"</em>.
+              Filing dates and commercial timelines are precisely the canonical signals for timing — the LLM
+              correctly interprets them, bumping R8_timing from 1→3 on PLUS.
+            </p>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">Evidence</div>
+      <p>
+              100% of proposals see R8_timing rise on PLUS (12/12). This is too systematic to be noise —
+              it is the injected content legitimately activating a rubric adjacent to its intended targets.
+              This is a design flaw: revenue+regulatory language and market-timing language share semantic overlap.
+            </p>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">Recommended fix</div>
+      <p class="fix-text">Separate injection text from timing-adjacent language. Or exclude R8_timing from PLUS analysis when injecting regulatory content.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cause-card">
+  <div class="cause-header">
+    <span class="cause-num">C3</span>
+    <span class="cause-title">Shallow Stripping — Modifiers Removed, Root Claims Intact</span>
+    <span class="cause-sev sev-high">High</span>
+  </div>
+  <div class="cause-body">
+    <div class="cause-meta">
+      <span><strong>Affects:</strong> Advantages</span>
+      <span><strong>Rubrics:</strong> R1_mechanism_novelty, R5_defensibility (for p8 and p2)</span>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">What happened</div>
+      <p>
+              The MINUS regex patterns target <strong>adjective-modifier pairs</strong>:
+              <code>"proprietary LNP"</code>, <code>"AI-guided delivery"</code>,
+              <code>"generative design and recurrent neural networks"</code>.
+              But the root novelty claims survive: <code>"novel protein design platform"</code>,
+              <code>"innovative approaches to antibody design"</code>,
+              <code>"new mechanistic class"</code> — none contain the stripped tokens.
+            </p>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">Evidence</div>
+      <p>
+              p8 MINUS: R1_mechanism_novelty stays at 4 (same as PLUS, above baseline of 4).
+              The LLM's reasoning cites "novel platform" and "innovative pipeline" — language the
+              stripping did not touch. Similarly, R5_defensibility survives because Q&A sections
+              retain "patent applications demonstrate proactive IP protection" even after narrative stripping.
+            </p>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">Recommended fix</div>
+      <p class="fix-text">Extend stripping to: (a) root novelty adjectives ('novel', 'innovative', 'unique'), (b) Q&A sections, (c) full sentence deletion rather than word substitution.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cause-card">
+  <div class="cause-header">
+    <span class="cause-num">C4</span>
+    <span class="cause-title">Ambiguity Inversion — Removing Explicit Absence Creates Perceived Ambiguity</span>
+    <span class="cause-sev sev-medium">Medium</span>
+  </div>
+  <div class="cause-body">
+    <div class="cause-meta">
+      <span><strong>Affects:</strong> Advantages</span>
+      <span><strong>Rubrics:</strong> R5_defensibility</span>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">What happened</div>
+      <p>
+              When baseline R5_defensibility = 1, the LLM has found an <em>explicit absence</em>:
+              <em>"no moat described; advantage easily replicable."</em>
+              Stripping removes <code>"patent"</code>, <code>"proprietary"</code>, <code>"IP portfolio"</code>
+              from the narrative — but Q&A sections still contain
+              <em>"patent applications demonstrate proactive IP protection."</em>
+              The text is now <strong>ambiguous</strong>: no explicit moat in narrative, implied moat in Q&A.
+              The rubric anchor for score 3 is <em>"some barrier exists but partial"</em> — ambiguity
+              maps to 3, not 1. <strong>Removing a signal of explicit absence creates a higher score.</strong>
+            </p>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">Evidence</div>
+      <p>
+              p5, p6, p8 all show R5_defensibility rising on MINUS (1→3). Baseline = 1 means
+              "explicitly no moat." MINUS = 3 means "unclear / possibly some barrier."
+              The rubric scale conflates "unaddressed" with "partial barrier."
+            </p>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">Recommended fix</div>
+      <p class="fix-text">Replace explicit absence language rather than removing it: substitute 'No IP protection, patent, or defensibility mechanism is described.' to maintain the 'no moat' signal.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cause-card">
+  <div class="cause-header">
+    <span class="cause-num">C5</span>
+    <span class="cause-title">Judgment-Dependent Rubrics Score on Holistic Impression</span>
+    <span class="cause-sev sev-medium">Medium</span>
+  </div>
+  <div class="cause-body">
+    <div class="cause-meta">
+      <span><strong>Affects:</strong> All 3 dimensions</span>
+      <span><strong>Rubrics:</strong> R5–R8 in all dimensions (all judgment-dependent)</span>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">What happened</div>
+      <p>
+              Document-verifiable rubrics (R1–R4) are anchored to specific text fragments and
+              behave predictably. Judgment-dependent rubrics (R5–R8) require the LLM to infer
+              from context. When strong evidence is injected for R3/R4, the LLM's overall
+              impression of the proposal improves — partially elevating R5–R8 even though no
+              evidence was added for them.
+            </p>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">Evidence</div>
+      <p>
+              R6_platform_potential (advantages, non-target) jumps 1→3 on PLUS across most proposals
+              because the injected IP/performance text implies multi-application scalability.
+              R7_team_fit (strategy, non-target) often falls 1 point on PLUS — the injected text
+              signals an advanced commercial stage the existing team may not match.
+            </p>
+    </div>
+    <div class="cause-subsection">
+      <div class="cause-sub-label">Recommended fix</div>
+      <p class="fix-text">Instruct the scorer to evaluate each rubric in isolation ('score ONLY R6 using evidence for platform_potential; ignore all other rubric evidence'). Or use separate LLM calls per rubric.</p>
+    </div>
+  </div>
+</div>
+
+</section>
+
+  
+<section class="report-section">
+  <div class="section-number">06</div>
+  <h2>Hypothesis Validity — Corrected Pass Rate</h2>
+  <p class="lead">
+    Once stochastic MINUS checks (empty variants) are removed from the denominator,
+    the valid pass rate changes substantially — giving a clearer picture of
+    whether the LLM genuinely reads proposal content.
+  </p>
+
+  <table class="validity-table">
+    <thead>
+      <tr>
+        <th rowspan="2">Dimension</th>
+        <th colspan="2">Raw (as reported)</th>
+        <th colspan="2">Valid only</th>
+        <th colspan="2">Corrected total</th>
+      </tr>
+      <tr>
+        <th>Passed</th><th>Rate</th>
+        <th>PLUS</th><th>MINUS (non-empty)</th>
+        <th>Passed</th><th>Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr>
+  <td class='dim-name'>STRATEGY</td>
+  <td>30/48</td>
+  <td class='pct-mid'>62%</td>
+  <td>24/24</td>
+  <td>6/7</td>
+  <td>30/31</td>
+  <td class='pct-high'>96%</td>
+</tr>
+<tr>
+  <td class='dim-name'>ADVANTAGES</td>
+  <td>28/48</td>
+  <td class='pct-mid'>58%</td>
+  <td>21/24</td>
+  <td>7/11</td>
+  <td>28/35</td>
+  <td class='pct-high'>80%</td>
+</tr>
+<tr>
+  <td class='dim-name'>OBJECTIVES</td>
+  <td>34/48</td>
+  <td class='pct-mid'>70%</td>
+  <td>24/24</td>
+  <td>10/12</td>
+  <td>34/36</td>
+  <td class='pct-high'>94%</td>
+</tr>
+<tr class='total-row'>
+  <td class='dim-name'><strong>TOTAL</strong></td>
+  <td><strong>92/144</strong></td>
+  <td class='pct-mid'><strong>63%</strong></td>
+  <td colspan='2'></td>
+  <td><strong>92/102</strong></td>
+  <td class='pct-high'><strong>90%</strong></td>
+</tr></tbody>
+  </table>
+
+  <div class="conclusion-box">
+    <strong>Conclusion:</strong>
+    The PLUS arm of the experiment is <span class="valid-tag">methodologically valid</span> —
+    injecting explicit evidence reliably and correctly raises targeted subrubric scores across
+    all proposals and dimensions (~90%+ pass rate for PLUS targets only).
+    The MINUS arm is <span class="invalid-tag">largely invalid as designed</span> — the stripping
+    vocabulary matched only 1–2 of 12 proposals. For the proposals where stripping did occur (p8),
+    the experiment behaves as expected for document-verifiable rubrics but not for
+    judgment-dependent ones (due to Q&A section survival and ambiguity inversion).
+    <br><br>
+    <strong>Recommendation:</strong> Re-design the MINUS experiment using vocabulary drawn from
+    each proposal's own text (proposal-specific stripping), and extend stripping to Q&A sections.
+    Set temperature=0 or run 3× and take the median to eliminate stochastic noise.
+  </div>
+</section>
+
+</body>
+</html>

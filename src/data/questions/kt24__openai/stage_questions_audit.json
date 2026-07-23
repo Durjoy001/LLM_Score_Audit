@@ -1,0 +1,619 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt24__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt24__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 273,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team behind the Ihsan App is led by Zaineb Malik and includes over 10 youth-led volunteers. The project is supported by Ihsan, a registered nonprofit in Canada, which focuses on creating a unique digital experience that incorporates voluntary acts recommended in Islam.",
+        "first_key_point_preview": "Zaineb Malik is the creator of the Ihsan App.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.83,
+        "raw_chars": 4471,
+        "usage": {
+          "prompt_tokens": 3337,
+          "completion_tokens": 981,
+          "total_tokens": 4318
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Zaineb Malik leadership experience",
+        "youth-led volunteer expertise",
+        "nonprofit governance structure",
+        "team capacity assessment",
+        "validation and compliance experience",
+        "collaboration partnerships",
+        "project execution record",
+        "decision-making processes",
+        "conflict resolution mechanisms"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "governance_and_decision_making": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Zaineb Malik's leadership experience contribute to the advancement of the Ihsan App, particularly in terms of project execution and team management?",
+          "question_en_preview": "How does Zaineb Malik's leadership experience contribute to the advancement of the Ihsan App, particularly in terms of project execution and team management?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise do the youth-led volunteers bring to the development of the Ihsan App, and how does this expertise align with the app's objectives?",
+          "question_en_preview": "What specific expertise do the youth-led volunteers bring to the development of the Ihsan App, and how does this expertise align with the app's objectives?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the team consists of over 10 youth-led volunteers, how does the current workload impact their capacity to effectively contribute to the Ihsan App's development?",
+          "question_en_preview": "Given that the team consists of over 10 youth-led volunteers, how does the current workload impact their capacity to effectively contribute to the Ihsan App's development?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures are in place within the nonprofit Ihsan to ensure effective decision-making and conflict resolution among the team members?",
+          "question_en_preview": "What governance structures are in place within the nonprofit Ihsan to ensure effective decision-making and conflict resolution among the team members?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance in the context of developing the Ihsan App, and how does this experience mitigate potential risks?",
+          "question_en_preview": "What experience does the team have with validation and compliance in the context of developing the Ihsan App, and how does this experience mitigate potential risks?"
+        }
+      ],
+      "elapsed_sec": 15.83,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 324,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Ihsan App aims to transform knowledge into action by providing practical tools for Muslims to integrate faith into their daily lives. Key objectives include offering GPS-driven reminders for worship and facilitating voluntary acts of worship, with a focus on strengthening com ...",
+        "first_key_point_preview": "The Ihsan App is designed to help users observe beneficial voluntary acts of worship within everyday life.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The Ihsan App was built to address the need for a practical tool designed to transform knowledge into action and bring faith alive in daily routines."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.12,
+        "raw_chars": 4004,
+        "usage": {
+          "prompt_tokens": 3448,
+          "completion_tokens": 897,
+          "total_tokens": 4345
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user engagement metrics",
+        "community impact assessment",
+        "milestone tracking",
+        "user feedback loops",
+        "faith integration tools",
+        "GPS-driven reminders",
+        "voluntary acts of worship",
+        "success metrics definition",
+        "user adoption rates"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused are the overall goals of the Ihsan App, particularly in relation to its objectives of integrating faith into daily life? Are there any unrelated sub-goals that could dilute its focus?",
+          "question_en_preview": "How clear and focused are the overall goals of the Ihsan App, particularly in relation to its objectives of integrating faith into daily life? Are there any unrelated sub-goals that could dilute its focus?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the Ihsan App align with the stated unmet need for a practical tool that brings faith alive in daily routines? How urgent is this need among the target user base?",
+          "question_en_preview": "To what extent does the Ihsan App align with the stated unmet need for a practical tool that brings faith alive in daily routines? How urgent is this need among the target user base?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Are the milestones set for the Ihsan App's launch and ongoing development reasonable and executable within the proposed timeline? What specific milestones have been identified?",
+          "question_en_preview": "Are the milestones set for the Ihsan App's launch and ongoing development reasonable and executable within the proposed timeline? What specific milestones have been identified?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics have been established for the Ihsan App to measure its impact on users' daily lives and community engagement?",
+          "question_en_preview": "What clear and quantifiable success metrics have been established for the Ihsan App to measure its impact on users' daily lives and community engagement?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Ihsan App create value for its users and stakeholders? What is the logic behind its objectives in terms of delivering impact and capturing engagement?",
+          "question_en_preview": "How does the Ihsan App create value for its users and stakeholders? What is the logic behind its objectives in terms of delivering impact and capturing engagement?"
+        }
+      ],
+      "elapsed_sec": 12.12,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 279,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Ihsan App is designed to support Muslims in maintaining voluntary acts of worship through practical tools. It aims to provide features such as GPS-driven reminders for worship and dua suggestions, while being completely free for users and forgoing traditional revenue models.",
+        "first_key_point_preview": "The Ihsan App addresses the need for tools that help Muslims sustain voluntary acts of worship.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The Ihsan App was built to address the need for practical tools that help Muslims sustain voluntary acts of worship."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.35,
+        "raw_chars": 4499,
+        "usage": {
+          "prompt_tokens": 3519,
+          "completion_tokens": 983,
+          "total_tokens": 4502
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user adoption strategy",
+        "operational scalability",
+        "validation steps",
+        "global distribution strategy",
+        "partnership opportunities",
+        "trade-offs in design",
+        "financial backing impact",
+        "quality assurance measures",
+        "community support",
+        "feature effectiveness"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 5,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Ihsan App plan to achieve user adoption and sustain engagement without traditional revenue models, given its goal to remain free for users?",
+          "question_en_preview": "How does the Ihsan App plan to achieve user adoption and sustain engagement without traditional revenue models, given its goal to remain free for users?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Considering the Ihsan App has raised $4.5K against a funding goal of $3,530, how does this financial backing influence its operational scalability and future funding strategies?",
+          "question_en_preview": "Considering the Ihsan App has raised $4.5K against a funding goal of $3,530, how does this financial backing influence its operational scalability and future funding strategies?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the major trade-offs considered in the design of the Ihsan App, particularly in relation to its features like GPS-driven reminders and the decision to forgo advertisements?",
+          "question_en_preview": "What are the major trade-offs considered in the design of the Ihsan App, particularly in relation to its features like GPS-driven reminders and the decision to forgo advertisements?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What validation steps are planned to ensure that the features of the Ihsan App effectively support users in maintaining their voluntary acts of worship?",
+          "question_en_preview": "What validation steps are planned to ensure that the features of the Ihsan App effectively support users in maintaining their voluntary acts of worship?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the Ihsan App can be distributed globally with no incremental environmental cost per user, what strategies are in place to scale its user base internationally?",
+          "question_en_preview": "Given that the Ihsan App can be distributed globally with no incremental environmental cost per user, what strategies are in place to scale its user base internationally?"
+        }
+      ],
+      "elapsed_sec": 14.35,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 332,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Ihsan App represents a significant innovation in the digital space by centralizing spiritual practices and reducing reliance on physical materials. It offers unique features such as GPS-enabled reminders, contextual notifications, and habit-tracking systems, all designed to e ...",
+        "first_key_point_preview": "Ihsan eliminates the need for physical materials, reducing paper consumption and waste.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Ihsan's digital nature avoids packaging, shipping, and manufacturing emissions, supporting a lighter environmental footprint."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.04,
+        "raw_chars": 4543,
+        "usage": {
+          "prompt_tokens": 3427,
+          "completion_tokens": 1015,
+          "total_tokens": 4442
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user engagement metrics",
+        "environmental impact analysis",
+        "GPS-enabled reminders",
+        "habit-tracking systems",
+        "competitive differentiation",
+        "intellectual property strategy",
+        "adaptability to contexts",
+        "evidence of effectiveness",
+        "risk assessment",
+        "digital innovation"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Ihsan App's approach to centralizing spiritual practices compare to existing digital solutions in terms of novelty and user engagement?",
+          "question_en_preview": "How does the Ihsan App's approach to centralizing spiritual practices compare to existing digital solutions in terms of novelty and user engagement?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the Ihsan App offer over traditional methods of spiritual practice and other digital alternatives, particularly regarding user engagement and environmental impact?",
+          "question_en_preview": "What specific advantages does the Ihsan App offer over traditional methods of spiritual practice and other digital alternatives, particularly regarding user engagement and environmental impact?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the unique features of the Ihsan App, such as GPS-enabled reminders and habit-tracking systems, in enhancing user engagement?",
+          "question_en_preview": "What evidence supports the effectiveness of the unique features of the Ihsan App, such as GPS-enabled reminders and habit-tracking systems, in enhancing user engagement?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could affect the Ihsan App's competitive edge or relevance in the market?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could affect the Ihsan App's competitive edge or relevance in the market?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How can the core features of the Ihsan App be adapted for other contexts or campaigns, and what are the implications for its scalability?",
+          "question_en_preview": "How can the core features of the Ihsan App be adapted for other contexts or campaigns, and what are the implications for its scalability?"
+        }
+      ],
+      "elapsed_sec": 13.04,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 381,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 2,
+        "summary_preview": "The feasibility of the Ihsan App project is challenged by various risks, including the difficulty many Muslims face in maintaining acts of worship due to personal responsibilities and the financial sustainability of the project. The project has raised initial funding but acknowle ...",
+        "first_key_point_preview": "Many Muslims in the West struggle to maintain acts of worship due to balancing work, family, and personal responsibilities.",
+        "first_risk_preview": "The project acknowledges the risks and challenges related to financial sustainability.",
+        "first_mitigation_preview": "As a digital product, Ihsan eliminates the need for physical materials, thereby reducing paper consumption, ink usage, and related waste."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.75,
+        "raw_chars": 3820,
+        "usage": {
+          "prompt_tokens": 3517,
+          "completion_tokens": 827,
+          "total_tokens": 4344
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "ongoing funding strategy",
+        "user adoption barriers",
+        "contingency plans",
+        "resource stability",
+        "customer acceptance evidence",
+        "timeline bottlenecks"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "implementation_barriers": 1,
+          "risk_management": 1,
+          "resources_and_infrastructure": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to secure ongoing funding beyond the initial $4.5K raised, and what specific strategies are in place to ensure financial sustainability?",
+          "question_en_preview": "How does the project plan to secure ongoing funding beyond the initial $4.5K raised, and what specific strategies are in place to ensure financial sustainability?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific barriers to user adoption and implementation does the project anticipate, particularly in relation to the challenges faced by young Muslims in maintaining acts of worship?",
+          "question_en_preview": "What specific barriers to user adoption and implementation does the project anticipate, particularly in relation to the challenges faced by young Muslims in maintaining acts of worship?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified risk of losing two years of development efforts without sufficient funding, what contingency plans does the project have in place to mitigate this risk?",
+          "question_en_preview": "Given the identified risk of losing two years of development efforts without sufficient funding, what contingency plans does the project have in place to mitigate this risk?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How sufficient and stable are the current resources and infrastructure for the Ihsan App, considering its reliance on external funding for ongoing costs?",
+          "question_en_preview": "How sufficient and stable are the current resources and infrastructure for the Ihsan App, considering its reliance on external funding for ongoing costs?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What evidence does the project have regarding customer acceptance and willingness to use the Ihsan App, particularly in light of the financial sustainability concerns?",
+          "question_en_preview": "What evidence does the project have regarding customer acceptance and willingness to use the Ihsan App, particularly in light of the financial sustainability concerns?"
+        }
+      ],
+      "elapsed_sec": 11.76,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T19:09:10Z",
+  "elapsed_sec": 67.11,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt24__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt24__openai/generated_questions_detail.json"
+}

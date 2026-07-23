@@ -1,0 +1,616 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km36__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km36__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 207,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The ProMaxScore project is developed by the ProMaxScore Team, which includes Mr. Phillipson, recognized as an industry expert in SMEs. However, the project faces challenges due to a lack of time and capital.",
+        "first_key_point_preview": "Mr. Phillipson is identified as one of the gurus of the industry of SMEs.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.32,
+        "raw_chars": 4852,
+        "usage": {
+          "prompt_tokens": 3287,
+          "completion_tokens": 1053,
+          "total_tokens": 4340
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "SME industry expertise",
+        "resource allocation strategy",
+        "project governance structure",
+        "collaboration partnerships",
+        "team capacity assessment",
+        "leadership effectiveness",
+        "risk management strategies",
+        "domain-specific knowledge",
+        "execution milestones",
+        "capital allocation plan"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "team_capacity_and_bandwidth": 2,
+          "domain_expertise": 1,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Mr. Phillipson's recognized expertise in SMEs translate into actionable strategies for the ProMaxScore project, and what specific past experiences support his capability to lead this initiative?",
+          "question_en_preview": "How does Mr. Phillipson's recognized expertise in SMEs translate into actionable strategies for the ProMaxScore project, and what specific past experiences support his capability to lead this initiative?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified lack of time and capital for the ProMaxScore project, how does the team plan to allocate its current resources effectively to ensure project milestones are met?",
+          "question_en_preview": "Given the identified lack of time and capital for the ProMaxScore project, how does the team plan to allocate its current resources effectively to ensure project milestones are met?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific domain expertise does the ProMaxScore Team possess that directly addresses the challenges faced by SMEs, and how does this expertise enhance the project's potential for success?",
+          "question_en_preview": "What specific domain expertise does the ProMaxScore Team possess that directly addresses the challenges faced by SMEs, and how does this expertise enhance the project's potential for success?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures and decision-making processes are in place within the ProMaxScore Team to address the identified risks and ensure effective project management?",
+          "question_en_preview": "What governance structures and decision-making processes are in place within the ProMaxScore Team to address the identified risks and ensure effective project management?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What existing collaborations or partnerships does the ProMaxScore Team have that could mitigate the risks associated with the lack of time and capital, and how stable are these relationships?",
+          "question_en_preview": "What existing collaborations or partnerships does the ProMaxScore Team have that could mitigate the risks associated with the lack of time and capital, and how stable are these relationships?"
+        }
+      ],
+      "elapsed_sec": 11.32,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 360,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The ProMaxScore project aims to support small and medium enterprises (SMEs) by providing self-help and analysis tools to enhance their operational longevity and efficiency. Key objectives include launching a pilot project in the Greater Montréal area, developing tailored tools fo ...",
+        "first_key_point_preview": "The project aims to start with a pilot project in the Greater Montréal area.",
+        "first_risk_preview": "The color coding for Actions Needed indicates 43% as High Risk (red).",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.81,
+        "raw_chars": 3841,
+        "usage": {
+          "prompt_tokens": 3440,
+          "completion_tokens": 860,
+          "total_tokens": 4300
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "pilot project launch",
+        "SME operational efficiency",
+        "success metrics definition",
+        "value creation logic",
+        "project scope prioritization",
+        "ambition versus feasibility balance"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "milestones_and_timeline": 1,
+          "business_or_impact_logic": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of the ProMaxScore project align with the needs of small and medium enterprises (SMEs) in the Greater Montréal area? Please evaluate the urgency of this alignment.",
+          "question_en_preview": "How well do the objectives of the ProMaxScore project align with the needs of small and medium enterprises (SMEs) in the Greater Montréal area? Please evaluate the urgency of this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Are the proposed milestones for launching the pilot project in the Greater Montréal area realistic and executable within the specified timeframe? What evidence supports your assessment?",
+          "question_en_preview": "Are the proposed milestones for launching the pilot project in the Greater Montréal area realistic and executable within the specified timeframe? What evidence supports your assessment?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the value creation logic behind the ProMaxScore project? How does it intend to save SMEs time and money, and what metrics will be used to measure this impact?",
+          "question_en_preview": "What is the value creation logic behind the ProMaxScore project? How does it intend to save SMEs time and money, and what metrics will be used to measure this impact?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What specific success metrics will be used to evaluate the effectiveness of the ProMaxScore tools for different business types? Are these metrics clearly defined?",
+          "question_en_preview": "What specific success metrics will be used to evaluate the effectiveness of the ProMaxScore tools for different business types? Are these metrics clearly defined?"
+        }
+      ],
+      "elapsed_sec": 10.82,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 430,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "ProMaxScore's strategy focuses on providing tools for small and medium enterprises (SMEs) to enhance their operations and profitability. The project aims to launch a pilot in the Greater Montréal area, engaging local business organizations and adapting tools for various business  ...",
+        "first_key_point_preview": "ProMaxScore offers a self-analysis tool designed to help SMEs assess their business operations.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.72,
+        "raw_chars": 5471,
+        "usage": {
+          "prompt_tokens": 3550,
+          "completion_tokens": 1204,
+          "total_tokens": 4754
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "pilot project engagement strategy",
+        "SME savings rationale",
+        "scalability milestones",
+        "quality compliance strategies",
+        "go-to-market strategy",
+        "competitive pressures",
+        "budget realism evidence",
+        "tool validation process",
+        "trade-offs in solution design",
+        "risk assessment for scaling"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 2,
+          "business_model_and_unit_economics": 2,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does ProMaxScore plan to engage local business organizations in the Greater Montréal area to ensure successful pilot project adoption, and what evidence supports the effectiveness of this engagement strategy?",
+          "question_en_preview": "How does ProMaxScore plan to engage local business organizations in the Greater Montréal area to ensure successful pilot project adoption, and what evidence supports the effectiveness of this engagement strategy?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the rationale behind ProMaxScore's claim that SMEs can save between $2,000 to $25,000 by using their tools, and how does this impact the project's revenue model?",
+          "question_en_preview": "What is the rationale behind ProMaxScore's claim that SMEs can save between $2,000 to $25,000 by using their tools, and how does this impact the project's revenue model?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternatives to the proposed self-analysis tool for SMEs were considered, and what major trade-offs were identified in the decision-making process?",
+          "question_en_preview": "What alternatives to the proposed self-analysis tool for SMEs were considered, and what major trade-offs were identified in the decision-making process?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific milestones will ProMaxScore use to evaluate the success of the pilot project in the Greater Montréal area, and how will these milestones inform the scalability of the model?",
+          "question_en_preview": "What specific milestones will ProMaxScore use to evaluate the success of the pilot project in the Greater Montréal area, and how will these milestones inform the scalability of the model?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee in scaling ProMaxScore's model across Canada and the USA, and how might these risks impact the project's success?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee in scaling ProMaxScore's model across Canada and the USA, and how might these risks impact the project's success?"
+        }
+      ],
+      "elapsed_sec": 13.73,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 325,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The ProMaxScore project demonstrates innovation through the development of adaptable tools for various platforms, including iPhone, Android, and Tablets. It features a structured flow diagram that organizes data into three sections: Data Worksheets, Operations, and Summary, enhan ...",
+        "first_key_point_preview": "The tools will be adapted for iPhone, Android, and Tablets.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.19,
+        "raw_chars": 4817,
+        "usage": {
+          "prompt_tokens": 3404,
+          "completion_tokens": 1045,
+          "total_tokens": 4449
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user interaction enhancement",
+        "data visualization tools",
+        "competitive advantages",
+        "intellectual property strategy",
+        "evidence of effectiveness",
+        "risk of obsolescence",
+        "adaptable tools",
+        "operational metrics",
+        "customer feedback",
+        "market differentiation"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 4
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the ProMaxScore project demonstrate true novelty compared to existing tools in data organization and visualization? Please provide specific examples from the key points.",
+          "question_en_preview": "How does the ProMaxScore project demonstrate true novelty compared to existing tools in data organization and visualization? Please provide specific examples from the key points."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the ProMaxScore project offer over existing data tools in terms of user interaction and data visualization? How do these advantages align with the key points provided?",
+          "question_en_preview": "What clear advantages does the ProMaxScore project offer over existing data tools in terms of user interaction and data visualization? How do these advantages align with the key points provided?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the ProMaxScore project's tools in enhancing user interaction and data visualization? Are there any operational metrics or customer feedback available?",
+          "question_en_preview": "What evidence supports the effectiveness of the ProMaxScore project's tools in enhancing user interaction and data visualization? Are there any operational metrics or customer feedback available?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the ProMaxScore project's offering becoming obsolete or commoditized within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the ProMaxScore project's offering becoming obsolete or commoditized within the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What strategies does the ProMaxScore project have in place for protecting its intellectual property, particularly regarding its innovative tools and methodologies?",
+          "question_en_preview": "What strategies does the ProMaxScore project have in place for protecting its intellectual property, particularly regarding its innovative tools and methodologies?"
+        }
+      ],
+      "elapsed_sec": 9.19,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 431,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 2,
+        "summary_preview": "The feasibility of the ProMaxScore project is influenced by several challenges faced by SMEs, including a lack of information, planning, and focus on real issues. The project has a proposed budget of $20,000 for the Greater Montreal area and $50,000 for the Greater New York area, ...",
+        "first_key_point_preview": "The project identifies major challenges for SMEs, including a lack of information on effective practices.",
+        "first_risk_preview": "Challenges for SMEs include a lack of planning to solve real problems and a lack of focus on real issues.",
+        "first_mitigation_preview": "The project has allowed for more time than anticipated for delivering rewards to mitigate potential delays."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.48,
+        "raw_chars": 3878,
+        "usage": {
+          "prompt_tokens": 3540,
+          "completion_tokens": 857,
+          "total_tokens": 4397
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "budget allocation realism",
+        "implementation timeline",
+        "risk mitigation effectiveness",
+        "customer acceptance evidence",
+        "operational integration barriers",
+        "funding goal alignment",
+        "project planning challenges",
+        "reward delivery timelines",
+        "resource allocation bottlenecks"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "rating": 2,
+          "analysis": 4
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How realistic is the proposed budget of $20,000 for the Greater Montreal area and $50,000 for the Greater New York area in relation to the project's goals and scope?",
+          "question_en_preview": "How realistic is the proposed budget of $20,000 for the Greater Montreal area and $50,000 for the Greater New York area in relation to the project's goals and scope?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific steps and timelines are outlined for the implementation of the ProMaxScore project, and how do they align with the proposed budget and funding goal of $500,000?",
+          "question_en_preview": "What specific steps and timelines are outlined for the implementation of the ProMaxScore project, and how do they align with the proposed budget and funding goal of $500,000?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified risks of a lack of planning and potential delays in delivering rewards, how effective are the proposed mitigations in addressing these challenges?",
+          "question_en_preview": "Given the identified risks of a lack of planning and potential delays in delivering rewards, how effective are the proposed mitigations in addressing these challenges?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation have been identified for the ProMaxScore project, particularly in relation to customer acceptance and operational integration?",
+          "question_en_preview": "What barriers to implementation have been identified for the ProMaxScore project, particularly in relation to customer acceptance and operational integration?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How well does the timeline for the ProMaxScore project align with the resources allocated, and what potential bottlenecks could arise during implementation?",
+          "question_en_preview": "How well does the timeline for the ProMaxScore project align with the resources allocated, and what potential bottlenecks could arise during implementation?"
+        }
+      ],
+      "elapsed_sec": 9.48,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T22:22:14Z",
+  "elapsed_sec": 54.55,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km36__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km36__openai/generated_questions_detail.json"
+}

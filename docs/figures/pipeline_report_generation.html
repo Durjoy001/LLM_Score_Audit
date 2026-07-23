@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fig. A1 — Evidence-Grounded Report-Generation Pipeline</title>
+<style>
+  :root{
+    --ink:#1e2530;
+    --sub:#5b6470;
+    --line:#d6dce3;
+    --panel:#f7f9fb;
+    --blue:#2a5c96;
+    --blue-soft:#e7eef7;
+    --team:#2563eb;
+    --obj:#7c3aed;
+    --strat:#0891b2;
+    --adv:#c2760c;
+    --feas:#0d9463;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{background:#e9edf1;}
+  body{
+    font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+    padding:6mm 0;
+  }
+  .page{
+    width:297mm;
+    height:210mm;
+    background:#ffffff;
+    box-shadow:0 2px 18px rgba(0,0,0,.18);
+    padding:9mm 11mm 7mm 11mm;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+
+  /* ---------- header ---------- */
+  .hdr{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:4.2mm;}
+  .hdr h1{font-size:15.5pt;font-weight:800;letter-spacing:.1px;color:var(--ink);}
+  .hdr p{font-size:8.4pt;color:var(--sub);margin-top:1.3mm;max-width:190mm;line-height:1.35;}
+  .tag{
+    font-size:7.6pt;font-weight:700;color:var(--blue);
+    background:var(--blue-soft);border:1px solid #c6d8ec;
+    padding:2.6mm 3.4mm;border-radius:3mm;white-space:nowrap;text-align:right;line-height:1.5;
+  }
+  .tag span{display:block;color:var(--sub);font-weight:500;font-size:6.9pt;}
+
+  /* ---------- legend ---------- */
+  .legend{display:flex;align-items:center;gap:3mm;margin-bottom:3.6mm;flex-wrap:wrap;}
+  .legend .lbl{font-size:7.4pt;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.4px;margin-right:.5mm;}
+  .pill{
+    display:flex;align-items:center;gap:1.6mm;
+    font-size:7.6pt;font-weight:600;color:#fff;
+    padding:1.3mm 3mm;border-radius:20px;
+  }
+  .pill i{width:2.2mm;height:2.2mm;border-radius:50%;background:#fff;opacity:.85;display:inline-block;}
+  .pill.team{background:var(--team);} .pill.obj{background:var(--obj);}
+  .pill.strat{background:var(--strat);} .pill.adv{background:var(--adv);}
+  .pill.feas{background:var(--feas);}
+
+  /* ---------- flow ---------- */
+  .flow{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:2mm;position:relative;}
+  .phase{display:flex;align-items:center;gap:2mm;margin-bottom:.5mm;}
+  .phase .bar{width:5mm;height:1.6mm;border-radius:1mm;background:var(--blue);}
+  .phase span{font-size:7.6pt;font-weight:800;color:var(--blue);text-transform:uppercase;letter-spacing:.4px;}
+  .phase small{font-size:7.2pt;color:var(--sub);font-weight:500;text-transform:none;letter-spacing:0;}
+  .row{display:flex;align-items:stretch;gap:2.4mm;}
+  .row.rev{flex-direction:row-reverse;}
+
+  .card{
+    flex:1;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-top:2.6px solid var(--blue);
+    border-radius:2.4mm;
+    padding:3.4mm 3.4mm 2.8mm 3.4mm;
+    display:flex;
+    flex-direction:column;
+    gap:1.3mm;
+    position:relative;
+    min-width:0;
+    min-height:34mm;
+  }
+  .card .num{
+    position:absolute;top:-3.2mm;left:-3.2mm;
+    width:6.4mm;height:6.4mm;border-radius:50%;
+    background:var(--blue);color:#fff;font-weight:800;font-size:8.4pt;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 1px 3px rgba(0,0,0,.25);
+    border:1.6px solid #fff;
+  }
+  .card h3{font-size:9.2pt;font-weight:800;color:var(--ink);margin-top:1mm;line-height:1.22;}
+  .card p{font-size:7.4pt;color:var(--sub);line-height:1.38;flex:1;}
+  .card .art{
+    margin-top:auto;
+    font-size:6.7pt;font-family:"SF Mono",Consolas,monospace;
+    color:var(--blue);background:var(--blue-soft);
+    border:1px solid #c6d8ec;border-radius:1.6mm;
+    padding:1mm 1.6mm;line-height:1.25;
+  }
+  .card .dims{display:flex;gap:.9mm;margin-top:.4mm;flex-wrap:wrap;}
+  .card .dims i{width:2mm;height:2mm;border-radius:50%;display:inline-block;}
+
+  .arrow{
+    display:flex;align-items:center;justify-content:center;
+    width:4.6mm;color:#9aa6b3;font-size:12pt;font-weight:700;flex-shrink:0;
+  }
+  .row.rev .arrow::before{content:"\2190";}
+  .row:not(.rev) .arrow::before{content:"\2192";}
+
+  .turn{
+    display:flex;justify-content:flex-end;align-items:center;gap:1.6mm;
+    padding-right:6mm;
+    font-size:6.6pt;color:var(--sub);font-weight:700;
+  }
+  .turn .bar{width:9mm;height:1.6px;background:#b9c3cf;}
+  .turn .chev{font-size:11pt;color:var(--blue);line-height:.7;transform:rotate(90deg);}
+
+  /* ---------- footer ---------- */
+  .foot{display:flex;gap:4mm;margin-top:4mm;align-items:stretch;}
+  .quote{
+    flex:1.5;background:var(--blue-soft);border:1px solid #c6d8ec;border-left:3px solid var(--blue);
+    border-radius:2mm;padding:2.4mm 3.4mm;font-size:7.6pt;color:#274161;line-height:1.4;font-style:italic;
+    display:flex;align-items:center;
+  }
+  .outputs{
+    flex:1;background:var(--panel);border:1px solid var(--line);border-radius:2mm;
+    padding:2.2mm 3.4mm;font-size:7.2pt;color:var(--ink);display:flex;flex-direction:column;justify-content:center;gap:1mm;
+  }
+  .outputs b{font-size:7.4pt;color:var(--blue);display:block;margin-bottom:.6mm;text-transform:uppercase;letter-spacing:.3px;font-size:6.8pt;}
+  .outputs code{font-family:"SF Mono",Consolas,monospace;background:#eef2f6;border-radius:1mm;padding:0 1mm;}
+
+  @media print{
+    html,body{background:#fff;}
+    .page{box-shadow:none;margin:0;}
+    @page{size:297mm 210mm;margin:0;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hdr">
+    <div>
+      <h1>Evidence-Grounded Proposal-Screening Pipeline &mdash; Report Generation</h1>
+      <p>Nine-stage pipeline that turns a heterogeneous proposal document into a rubric-scored, evidence-linked expert-style report. Every stage persists an auditable, structured artifact instead of passing only free-form text between steps &mdash; the property the downstream evaluation audit (Fig. A2) depends on.</p>
+    </div>
+    <div class="tag">Trustworthy LLM-Assisted Venture Screening<span>Report-generation stage &middot; ICAIF '26</span></div>
+  </div>
+
+  <div class="legend">
+    <span class="lbl">Five review dimensions</span>
+    <span class="pill team"><i></i>Team</span>
+    <span class="pill obj"><i></i>Objectives</span>
+    <span class="pill strat"><i></i>Strategy</span>
+    <span class="pill adv"><i></i>Advantages</span>
+    <span class="pill feas"><i></i>Feasibility</span>
+  </div>
+
+  <div class="flow">
+
+    <div class="phase"><span class="bar"></span><span>Phase I &middot; Stages 1&ndash;5</span><small>&mdash; ingest the document and structure it into source-linked, dimension-tagged evidence</small></div>
+    <div class="row">
+      <div class="card">
+        <div class="num">1</div>
+        <h3>Document Upload</h3>
+        <p>Accepts PDF, DOCX, PPTX, TXT, Markdown. Preserves page / slide boundaries, document identifiers, and source metadata.</p>
+        <div class="art">out: paginated source + metadata</div>
+      </div>
+      <div class="arrow"></div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>Text / OCR Extraction</h3>
+        <p>OCR on scanned or image-heavy pages; vision processing converts visible tables, charts and diagrams into textual evidence.</p>
+        <div class="art">out: extracted text corpus</div>
+      </div>
+      <div class="arrow"></div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>Atomic Fact Extraction</h3>
+        <p>LLM chunks the corpus into atomic propositions, each tagged with source location, evidence span and a tentative review dimension.</p>
+        <div class="art">out: atomic facts (source-linked)</div>
+      </div>
+      <div class="arrow"></div>
+      <div class="card">
+        <div class="num">4</div>
+        <h3>Dimension Construction</h3>
+        <p>Facts assigned to the five dimensions; builds a provenance-linked evidence packet per dimension &mdash; supporting facts, adverse facts, missing evidence, risks, mitigations.</p>
+        <div class="dims"><i style="background:var(--team)"></i><i style="background:var(--obj)"></i><i style="background:var(--strat)"></i><i style="background:var(--adv)"></i><i style="background:var(--feas)"></i></div>
+        <div class="art">out: evidence packets &times; 5 dims</div>
+      </div>
+      <div class="arrow"></div>
+      <div class="card">
+        <div class="num">5</div>
+        <h3>Question Generation</h3>
+        <p>Per-dimension questions covering rubric criteria, evidence sufficiency, risks, mitigations and unresolved uncertainties.</p>
+        <div class="art">out: dimension question sets</div>
+      </div>
+    </div>
+
+    <div class="turn"><span>flow continues below</span><span class="bar"></span><span class="chev">&#10148;</span></div>
+
+    <div class="phase"><span class="bar"></span><span>Phase II &middot; Stages 6&ndash;9</span><small>&mdash; answer evidence-grounded questions, assemble the report, and compute rubric scores</small></div>
+    <div class="row rev">
+      <div class="card">
+        <div class="num">6</div>
+        <h3>LLM Answering</h3>
+        <p>Structured schema per answer: direct response, cited factual claims, source pointers, confidence, caveats &mdash; general domain knowledge kept separate from cited evidence.</p>
+        <div class="art">out: structured Q&amp;A records</div>
+      </div>
+      <div class="arrow"></div>
+      <div class="card">
+        <div class="num">7</div>
+        <h3>Answer Selection / Post-Processing</h3>
+        <p>Candidate answers checked for schema validity, dimensional relevance, evidence linkage, confidence and internal consistency.</p>
+        <div class="art">out: validated answer set</div>
+      </div>
+      <div class="arrow"></div>
+      <div class="card">
+        <div class="num">8</div>
+        <h3>Expert-Style Report Generation</h3>
+        <p>Compiles retained Q&amp;A evidence into an executive summary, dimension-level findings, evidence gaps, scores and a recommendation.</p>
+        <div class="art">out: expert-style draft report</div>
+      </div>
+      <div class="arrow"></div>
+      <div class="card">
+        <div class="num">9</div>
+        <h3>Rubric Scoring</h3>
+        <p>Applies the explicit expert rubric. Blends evidence-oriented QA score with holistic investment-judgment score: s = &lambda;&middot;v<sub>invest</sub> + (1&minus;&lambda;)&middot;q<sub>QA</sub>, &lambda; = 0.90.</p>
+        <div class="art">out: &#295;<sub>dim</sub>, r&#770;, c&#770;, &#375; &isin; {GO, NO-GO}</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <div class="quote">&ldquo;Document upload &rarr; text/OCR extraction &rarr; atomic fact extraction &rarr; dimension construction &rarr; question generation &rarr; LLM answering &rarr; answer selection/post-processing &rarr; expert-style report &rarr; rubric scoring. Each stage stores an auditable artifact rather than passing only free-form text.&rdquo;</div>
+    <div class="outputs">
+      <b>Per-proposal system output</b>
+      <span><code>&#295;</code>&nbsp;5 normalized dimension scores &isin; [0,1]</span>
+      <span><code>r&#770;</code>&nbsp;overall screening score &middot; <code>c&#770;</code>&nbsp;confidence estimate</span>
+      <span><code>&#375;</code>&nbsp;binary verdict &isin; {GO, NO-GO} &middot; every claim source-linked or flagged unsupported</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,622 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km9__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km9__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 426,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by Nicolas Palomino, who has expertise in programming, languages, and neurosciences, and is the creator of the geospatial software for advanced analytics. The team includes a software development company that is prepared to collaborate with business partne ...",
+        "first_key_point_preview": "Nicolas Palomino is the creator of the geospatial software for advanced analytics.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.4,
+        "raw_chars": 3584,
+        "usage": {
+          "prompt_tokens": 3361,
+          "completion_tokens": 785,
+          "total_tokens": 4146
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Nicolas Palomino",
+        "geospatial software",
+        "programming expertise",
+        "neurosciences background",
+        "collaboration with MIT",
+        "engagement with AT&T",
+        "NGO partnerships",
+        "governmental organization collaboration",
+        "team capacity assessment",
+        "validation experience"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Nicolas Palomino's experience as the creator of geospatial software for advanced analytics position him to lead this project effectively?",
+          "question_en_preview": "How does Nicolas Palomino's experience as the creator of geospatial software for advanced analytics position him to lead this project effectively?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does the team possess in programming, languages, and neurosciences that will contribute to the project's success?",
+          "question_en_preview": "What specific expertise does the team possess in programming, languages, and neurosciences that will contribute to the project's success?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the potential benefits and risks of engaging with MIT, AT&T, NGOs, and governmental organizations for collaboration on this project?",
+          "question_en_preview": "What are the potential benefits and risks of engaging with MIT, AT&T, NGOs, and governmental organizations for collaboration on this project?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Given the current workload and potential collaborations, does the team have sufficient capacity and bandwidth to advance this project? Please evaluate any gaps.",
+          "question_en_preview": "Given the current workload and potential collaborations, does the team have sufficient capacity and bandwidth to advance this project? Please evaluate any gaps."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with domain-specific validation and compliance that could mitigate risks associated with this project?",
+          "question_en_preview": "What experience does the team have with domain-specific validation and compliance that could mitigate risks associated with this project?"
+        }
+      ],
+      "elapsed_sec": 13.4,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 372,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a mobile application that provides access to commercial data through geolocation, integrating new concepts and technologies into existing Internet and IoT infrastructures. Key objectives include leveraging proprietary data intelligence for real-time bu ...",
+        "first_key_point_preview": "The primary objective is to develop a mobile application for accessing public and private services' commercial data via geolocation.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Nicolas Palomino expressed an interest in building technological systems to address current problems and evolve technologically."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.31,
+        "raw_chars": 3893,
+        "usage": {
+          "prompt_tokens": 3445,
+          "completion_tokens": 819,
+          "total_tokens": 4264
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "commercial data access",
+        "real-time business insights",
+        "geolocation technology",
+        "prototype development",
+        "telecommunication sector",
+        "value creation logic",
+        "success metrics",
+        "technology integration",
+        "stakeholder impact"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused are the overall goals of the project, particularly in relation to the development of the mobile application for accessing commercial data via geolocation?",
+          "question_en_preview": "How clear and focused are the overall goals of the project, particularly in relation to the development of the mobile application for accessing commercial data via geolocation?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the project's objectives align with the stated unmet need for real-time business insights and the integration of new technologies into existing infrastructures?",
+          "question_en_preview": "To what extent do the project's objectives align with the stated unmet need for real-time business insights and the integration of new technologies into existing infrastructures?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the project, and how reasonable and executable are they given the objective of building a prototype to attract partners?",
+          "question_en_preview": "What are the proposed milestones for the project, and how reasonable and executable are they given the objective of building a prototype to attract partners?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "What clear and quantifiable success metrics are included in the project's objectives, particularly regarding the use of proprietary data intelligence for business insights?",
+          "question_en_preview": "What clear and quantifiable success metrics are included in the project's objectives, particularly regarding the use of proprietary data intelligence for business insights?"
+        }
+      ],
+      "elapsed_sec": 10.32,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 409,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to leverage geospatial programming and advanced wireless technologies to drive technological advancement. It has successfully reached 107% of its funding goal, with plans to build a software prototype to attract partners in the telecommunications sector. The indi ...",
+        "first_key_point_preview": "The project has achieved 107% of its funding goal.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.49,
+        "raw_chars": 4865,
+        "usage": {
+          "prompt_tokens": 3514,
+          "completion_tokens": 1003,
+          "total_tokens": 4517
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "geospatial programming",
+        "wireless technologies",
+        "software prototype",
+        "telecommunications partners",
+        "funding goal achievement",
+        "partnership strategy",
+        "market entry strategy",
+        "regulatory considerations",
+        "scaling risks",
+        "competitive pressures"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "partnership_and_business_model": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the choice of geospatial programming and advanced wireless technologies as the primary strategy for this project, and what alternatives were considered?",
+          "question_en_preview": "What rationale supports the choice of geospatial programming and advanced wireless technologies as the primary strategy for this project, and what alternatives were considered?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the plan to build a software prototype align with the project's validation path, and what specific milestones will indicate successful progress towards attracting partners in the telecommunications sector?",
+          "question_en_preview": "How does the plan to build a software prototype align with the project's validation path, and what specific milestones will indicate successful progress towards attracting partners in the telecommunications sector?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the project's achievement of 107% of its funding goal, what is the proposed go-to-market strategy for engaging with telecommunications partners, and how does this strategy address potential competitive pressures?",
+          "question_en_preview": "Given the project's achievement of 107% of its funding goal, what is the proposed go-to-market strategy for engaging with telecommunications partners, and how does this strategy address potential competitive pressures?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific roles do MIT, AT&T, NGOs, and governmental organizations play in the partnership strategy, and how will these collaborations enhance the project's credibility and market entry?",
+          "question_en_preview": "What specific roles do MIT, AT&T, NGOs, and governmental organizations play in the partnership strategy, and how will these collaborations enhance the project's credibility and market entry?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How does the project plan to sustain revenue and funding post-launch, and what evidence supports the viability of the proposed business model?",
+          "question_en_preview": "How does the project plan to sustain revenue and funding post-launch, and what evidence supports the viability of the proposed business model?"
+        }
+      ],
+      "elapsed_sec": 11.49,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 263,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project emphasizes advancements in various technological fields, including IT, AI, geospatial programming, and green technologies. It aims to leverage innovations in banking solutions, blockchain, decentralized networks, and classical to quantum technologies.",
+        "first_key_point_preview": "The application offers opportunities for advancement in new technological studies and appliances.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.08,
+        "raw_chars": 4721,
+        "usage": {
+          "prompt_tokens": 3360,
+          "completion_tokens": 1020,
+          "total_tokens": 4380
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "advancements in IT",
+        "blockchain technology",
+        "decentralized networks",
+        "quantum technologies",
+        "customer value",
+        "competitive advantages",
+        "intellectual property protection",
+        "evidence for innovation",
+        "scalability of solutions"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project's emphasis on advancements in IT, AI, geospatial programming, and green technologies represent true novelty compared to existing solutions in these fields?",
+          "question_en_preview": "How does the project's emphasis on advancements in IT, AI, geospatial programming, and green technologies represent true novelty compared to existing solutions in these fields?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the project offer over existing banking solutions and blockchain technologies, particularly in terms of customer value, performance, and scalability?",
+          "question_en_preview": "What clear advantages does the project offer over existing banking solutions and blockchain technologies, particularly in terms of customer value, performance, and scalability?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What types of evidence can be provided to support the innovations in decentralized networks and the transition from classical to quantum technologies outlined in the proposal?",
+          "question_en_preview": "What types of evidence can be provided to support the innovations in decentralized networks and the transition from classical to quantum technologies outlined in the proposal?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the project's obsolescence or commoditization within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the project's obsolescence or commoditization within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project plan to extend its innovations in banking solutions and blockchain technology to other customer segments or use cases beyond the initial offering?",
+          "question_en_preview": "How does the project plan to extend its innovations in banking solutions and blockchain technology to other customer segments or use cases beyond the initial offering?"
+        }
+      ],
+      "elapsed_sec": 12.08,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 389,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is currently in the development phase and has been launched on Kickstarter, with a funding goal of $105,921. It is focused on various advanced fields including IT, AI, and green technologies, and has recently achieved 107% of its funding goal, indicating a positive re ...",
+        "first_key_point_preview": "The project is hosted on Kickstarter and has achieved 107% of its funding goal.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.08,
+        "raw_chars": 3823,
+        "usage": {
+          "prompt_tokens": 3442,
+          "completion_tokens": 803,
+          "total_tokens": 4245
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding success",
+        "development phase tasks",
+        "budget allocation evidence",
+        "implementation barriers",
+        "customer acceptance metrics",
+        "resource alignment analysis"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project has achieved 107% of its funding goal on Kickstarter, how do you assess the reasonableness of the budget allocation for the development phase? What evidence supports your assessment?",
+          "question_en_preview": "Given that the project has achieved 107% of its funding goal on Kickstarter, how do you assess the reasonableness of the budget allocation for the development phase? What evidence supports your assessment?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined in the development plan for the project, and how do they align with the current funding and resource availability?",
+          "question_en_preview": "What specific tasks and timelines are outlined in the development plan for the project, and how do they align with the current funding and resource availability?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "The proposal indicates limited risk information. What potential risks do you foresee in the project's development phase, and how might these impact feasibility?",
+          "question_en_preview": "The proposal indicates limited risk information. What potential risks do you foresee in the project's development phase, and how might these impact feasibility?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation do you anticipate in the project's development phase, particularly regarding customer acceptance and integration into existing systems?",
+          "question_en_preview": "What barriers to implementation do you anticipate in the project's development phase, particularly regarding customer acceptance and integration into existing systems?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How well-aligned are the project's timelines with the available resources, and what potential bottlenecks could arise as the project progresses?",
+          "question_en_preview": "How well-aligned are the project's timelines with the available resources, and what potential bottlenecks could arise as the project progresses?"
+        }
+      ],
+      "elapsed_sec": 9.08,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T21:48:10Z",
+  "elapsed_sec": 56.39,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km9__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km9__openai/generated_questions_detail.json"
+}

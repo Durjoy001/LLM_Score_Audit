@@ -1,0 +1,628 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt9__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt9__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 303,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Tracy Osborn, who has a history of developing educational resources, including the Hello Web App. Osborn collaborates with Print Ninja for printing services and conducts workshops at Hackbright Academy, indicating a structured approach to team involvement an ...",
+        "first_key_point_preview": "The project was created by Tracy Osborn.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.3,
+        "raw_chars": 3836,
+        "usage": {
+          "prompt_tokens": 3324,
+          "completion_tokens": 820,
+          "total_tokens": 4144
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Tracy Osborn experience",
+        "Hello Web App development",
+        "Print Ninja collaboration",
+        "educational resource expertise",
+        "project governance structure",
+        "workload impact analysis",
+        "validation experience",
+        "Kickstarter campaign execution",
+        "Hackbright Academy workshops"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Tracy Osborn's experience in developing educational resources, particularly with Hello Web App, position her to lead this project effectively?",
+          "question_en_preview": "How does Tracy Osborn's experience in developing educational resources, particularly with Hello Web App, position her to lead this project effectively?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does Tracy Osborn bring to the project, and how does it relate to the educational resources being developed?",
+          "question_en_preview": "What specific domain expertise does Tracy Osborn bring to the project, and how does it relate to the educational resources being developed?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the collaboration with Print Ninja enhance the project's execution capacity, and what are the implications of this partnership for resource utilization?",
+          "question_en_preview": "How does the collaboration with Print Ninja enhance the project's execution capacity, and what are the implications of this partnership for resource utilization?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential impact could the current workload of Tracy Osborn and her collaborators have on the project's success?",
+          "question_en_preview": "Given the limited risk information provided, what potential impact could the current workload of Tracy Osborn and her collaborators have on the project's success?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What validation or compliance experience does the team have that could support the successful execution of the project, and how is this reflected in the proposal?",
+          "question_en_preview": "What validation or compliance experience does the team have that could support the successful execution of the project, and how is this reflected in the proposal?"
+        }
+      ],
+      "elapsed_sec": 10.3,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 381,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to teach coding through the Hello Web App 2.0, an online course and book series focused on building web applications using Python and Django. It targets beginners with little-to-no programming experience, providing a comprehensive package that includes eBooks, pa ...",
+        "first_key_point_preview": "The project aims to teach coding by building a web app using Python and Django.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.01,
+        "raw_chars": 4079,
+        "usage": {
+          "prompt_tokens": 3445,
+          "completion_tokens": 882,
+          "total_tokens": 4327
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "beginner coding education",
+        "Python and Django curriculum",
+        "quantifiable success metrics",
+        "milestone feasibility",
+        "value creation logic",
+        "stakeholder behavior change",
+        "market demand for coding skills",
+        "project timeline execution",
+        "impact assessment criteria"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the project align with the stated need for teaching coding to beginners with little-to-no programming experience? Please evaluate the urgency of this need based on current market trends.",
+          "question_en_preview": "How well does the project align with the stated need for teaching coding to beginners with little-to-no programming experience? Please evaluate the urgency of this need based on current market trends."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "To what extent is the overall goal of teaching coding through the Hello Web App 2.0 clear and focused? Are there any unrelated sub-goals that could dilute the project's impact?",
+          "question_en_preview": "To what extent is the overall goal of teaching coding through the Hello Web App 2.0 clear and focused? Are there any unrelated sub-goals that could dilute the project's impact?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the project, and how reasonable and executable are they within the specified timeline? Please assess the feasibility of achieving these milestones.",
+          "question_en_preview": "What are the proposed milestones for the project, and how reasonable and executable are they within the specified timeline? Please assess the feasibility of achieving these milestones."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are included in the project objectives? How do these metrics align with the goals of teaching coding and ensuring effective learning outcomes?",
+          "question_en_preview": "What clear and quantifiable success metrics are included in the project objectives? How do these metrics align with the goals of teaching coding and ensuring effective learning outcomes?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the initiative explain its value creation and capture of revenue or funding? What impact logic is presented to demonstrate how the project will change stakeholder behavior?",
+          "question_en_preview": "How does the initiative explain its value creation and capture of revenue or funding? What impact logic is presented to demonstrate how the project will change stakeholder behavior?"
+        }
+      ],
+      "elapsed_sec": 13.01,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 307,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop Hello Web App 2.0, which includes a comprehensive package of eBooks, paperbacks, and videos designed to guide users in building projects using Python and Django. The funding strategy successfully raised CA$ 8,254 from 121 backers, exceeding the initial ...",
+        "first_key_point_preview": "The project focuses on creating Hello Web App 2.0, a resource for users to learn project development.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.25,
+        "raw_chars": 4476,
+        "usage": {
+          "prompt_tokens": 3536,
+          "completion_tokens": 1019,
+          "total_tokens": 4555
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding strategy",
+        "market entry strategy",
+        "user feedback incorporation",
+        "unit economics projection",
+        "quality assurance measures",
+        "distribution strategy",
+        "scaling challenges",
+        "partnership opportunities",
+        "validation steps",
+        "delivery format rationale"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "commercialization_and_market_entry": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the choice of eBooks, paperbacks, and videos as the delivery format for Hello Web App 2.0, and what alternatives were considered?",
+          "question_en_preview": "What rationale supports the choice of eBooks, paperbacks, and videos as the delivery format for Hello Web App 2.0, and what alternatives were considered?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the funding success of CA$ 8,254 from 121 backers inform the project's market entry strategy, and what implications does this have for future funding rounds?",
+          "question_en_preview": "How does the funding success of CA$ 8,254 from 121 backers inform the project's market entry strategy, and what implications does this have for future funding rounds?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps are planned to ensure the effectiveness of the learning resources in Hello Web App 2.0, and how will user feedback be incorporated into future iterations?",
+          "question_en_preview": "What validation steps are planned to ensure the effectiveness of the learning resources in Hello Web App 2.0, and how will user feedback be incorporated into future iterations?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Given the funding raised, what are the projected unit economics for Hello Web App 2.0, including pricing strategies for eBooks, paperbacks, and videos?",
+          "question_en_preview": "Given the funding raised, what are the projected unit economics for Hello Web App 2.0, including pricing strategies for eBooks, paperbacks, and videos?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quality assurance measures are in place for the production of the full-color paperback books, and how do these measures align with the project's overall quality strategy?",
+          "question_en_preview": "What quality assurance measures are in place for the production of the full-color paperback books, and how do these measures align with the project's overall quality strategy?"
+        }
+      ],
+      "elapsed_sec": 15.25,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 317,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces significant innovations through Hello Web App 2.0, which includes updated content for Python 3 and Django 2.0, and features a new bundle of previously separate books. Additionally, it offers enhanced video content designed for clarity and ease of understand ...",
+        "first_key_point_preview": "Hello Web App 2.0 is designed to teach coding by building a web app using Python and Django.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.01,
+        "raw_chars": 4549,
+        "usage": {
+          "prompt_tokens": 3438,
+          "completion_tokens": 1048,
+          "total_tokens": 4486
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Python 3 content update",
+        "Django 2.0 features",
+        "new video content effectiveness",
+        "competitive advantages",
+        "intellectual property strategy",
+        "risk of obsolescence",
+        "customer segment extension",
+        "educational resource comparison",
+        "evidence for innovation",
+        "learning experience enhancement"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Hello Web App 2.0's approach to teaching coding with Python and Django compare to existing educational resources in terms of novelty and effectiveness?",
+          "question_en_preview": "How does Hello Web App 2.0's approach to teaching coding with Python and Django compare to existing educational resources in terms of novelty and effectiveness?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does Hello Web App 2.0 offer over other coding education platforms, particularly regarding its updated content and new video features?",
+          "question_en_preview": "What specific advantages does Hello Web App 2.0 offer over other coding education platforms, particularly regarding its updated content and new video features?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the new video content in Hello Web App 2.0 for enhancing the learning experience for beginners?",
+          "question_en_preview": "What evidence supports the effectiveness of the new video content in Hello Web App 2.0 for enhancing the learning experience for beginners?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to Hello Web App 2.0 becoming obsolete or commoditized in the next few years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to Hello Web App 2.0 becoming obsolete or commoditized in the next few years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How could Hello Web App 2.0 be extended to serve other customer segments or use cases beyond teaching coding to beginners?",
+          "question_en_preview": "How could Hello Web App 2.0 be extended to serve other customer segments or use cases beyond teaching coding to beginners?"
+        }
+      ],
+      "elapsed_sec": 14.01,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 354,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is focused on producing the book 'Hello Web App 2.0' and has successfully raised funds through a Kickstarter campaign. While the book is completed and ready for printing, there is a risk of delays in printing and shipping. The project has a clear funding goal and has  ...",
+        "first_key_point_preview": "The book 'Hello Web App 2.0' is finished and ready to go off to the printer.",
+        "first_risk_preview": "There is a risk that the book may be delayed in printing and shipping.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.97,
+        "raw_chars": 4382,
+        "usage": {
+          "prompt_tokens": 3451,
+          "completion_tokens": 945,
+          "total_tokens": 4396
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding analysis",
+        "budget allocation reasonableness",
+        "printing and shipping barriers",
+        "risk management strategies",
+        "resource infrastructure assessment",
+        "customer acceptance process",
+        "project timeline alignment",
+        "international shipping experience",
+        "delivery speed improvements"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "implementation_barriers": 1,
+          "risk_management": 1,
+          "resources_and_infrastructure": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the funding raised through the Kickstarter campaign align with the budget required for printing and shipping the book 'Hello Web App 2.0'? Please evaluate the reasonableness of the budget allocation based on the ...",
+          "question_en_preview": "How does the funding raised through the Kickstarter campaign align with the budget required for printing and shipping the book 'Hello Web App 2.0'? Please evaluate the reasonableness of the budget allocation based on the ..."
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific barriers to implementation could arise from the risk of delays in printing and shipping the book? How might these barriers impact the overall project timeline?",
+          "question_en_preview": "What specific barriers to implementation could arise from the risk of delays in printing and shipping the book? How might these barriers impact the overall project timeline?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the identified risk of potential delays in printing and shipping, what additional risk management strategies could be implemented to mitigate this risk? Please assess the sufficiency of the current mitigation measu ...",
+          "question_en_preview": "Given the identified risk of potential delays in printing and shipping, what additional risk management strategies could be implemented to mitigate this risk? Please assess the sufficiency of the current mitigation measu ..."
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What resources and infrastructure are in place to ensure the successful printing and shipping of 'Hello Web App 2.0'? Are there any gaps that could affect the project's feasibility?",
+          "question_en_preview": "What resources and infrastructure are in place to ensure the successful printing and shipping of 'Hello Web App 2.0'? Are there any gaps that could affect the project's feasibility?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how aligned are the project timeline and resources for the printing and shipping of the book? What evidence would increase your confidence in this alignment?",
+          "question_en_preview": "On a scale of 1 to 5, how aligned are the project timeline and resources for the printing and shipping of the book? What evidence would increase your confidence in this alignment?"
+        }
+      ],
+      "elapsed_sec": 11.97,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T18:51:39Z",
+  "elapsed_sec": 64.55,
+  "total_questions": 38,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt9__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt9__openai/generated_questions_detail.json"
+}

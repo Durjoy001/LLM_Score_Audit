@@ -1,0 +1,1717 @@
+{
+  "generated_at": "2026-07-17 14:20:03",
+  "n_total": 141,
+  "n_success": 24,
+  "success_rate": 0.1702,
+  "k_folds": 5,
+  "seed": 42,
+  "l2_C": 1.0,
+  "method_note": "All three methods use a SINGLE score threshold (no OR-logic confidence gate) to isolate score quality alone, calibrated via the same stratified 5-fold CV (same folds/seed as calibrate_kickstarter_threshold.py). Method A and B thresholds are fit-free (fixed formulas); Method C's logistic regression weights AND threshold are both fit on training folds only, producing pooled out-of-fold probabilities for ROC-AUC/AP.",
+  "method_a_overall_score": {
+    "roc_auc": 0.7644,
+    "average_precision": 0.3611,
+    "cv_aggregated_held_out": {
+      "tp": 19,
+      "fp": 46,
+      "fn": 5,
+      "tn": 71,
+      "accuracy": 0.6383,
+      "precision": 0.2923,
+      "recall": 0.7917,
+      "f1": 0.427
+    },
+    "per_fold": [
+      {
+        "fold": 1,
+        "tau": 0.5605,
+        "train_f1": 0.4687,
+        "tp": 3,
+        "fp": 8,
+        "fn": 2,
+        "tn": 16,
+        "accuracy": 0.6552,
+        "precision": 0.2727,
+        "recall": 0.6,
+        "f1": 0.375
+      },
+      {
+        "fold": 2,
+        "tau": 0.529,
+        "train_f1": 0.48,
+        "tp": 4,
+        "fp": 11,
+        "fn": 1,
+        "tn": 13,
+        "accuracy": 0.5862,
+        "precision": 0.2667,
+        "recall": 0.8,
+        "f1": 0.4
+      },
+      {
+        "fold": 3,
+        "tau": 0.5505,
+        "train_f1": 0.4865,
+        "tp": 3,
+        "fp": 8,
+        "fn": 2,
+        "tn": 15,
+        "accuracy": 0.6429,
+        "precision": 0.2727,
+        "recall": 0.6,
+        "f1": 0.375
+      },
+      {
+        "fold": 4,
+        "tau": 0.529,
+        "train_f1": 0.4416,
+        "tp": 5,
+        "fp": 8,
+        "fn": 0,
+        "tn": 15,
+        "accuracy": 0.7143,
+        "precision": 0.3846,
+        "recall": 1.0,
+        "f1": 0.5555
+      },
+      {
+        "fold": 5,
+        "tau": 0.529,
+        "train_f1": 0.4737,
+        "tp": 4,
+        "fp": 11,
+        "fn": 0,
+        "tn": 12,
+        "accuracy": 0.5926,
+        "precision": 0.2667,
+        "recall": 1.0,
+        "f1": 0.4211
+      }
+    ]
+  },
+  "method_b_simple_composite": {
+    "roc_auc": 0.8048,
+    "average_precision": 0.4539,
+    "cv_aggregated_held_out": {
+      "tp": 17,
+      "fp": 31,
+      "fn": 7,
+      "tn": 86,
+      "accuracy": 0.7305,
+      "precision": 0.3542,
+      "recall": 0.7083,
+      "f1": 0.4722
+    },
+    "per_fold": [
+      {
+        "fold": 1,
+        "tau": 0.6085,
+        "train_f1": 0.5185,
+        "tp": 4,
+        "fp": 5,
+        "fn": 1,
+        "tn": 19,
+        "accuracy": 0.7931,
+        "precision": 0.4444,
+        "recall": 0.8,
+        "f1": 0.5714
+      },
+      {
+        "fold": 2,
+        "tau": 0.604,
+        "train_f1": 0.5424,
+        "tp": 4,
+        "fp": 9,
+        "fn": 1,
+        "tn": 15,
+        "accuracy": 0.6552,
+        "precision": 0.3077,
+        "recall": 0.8,
+        "f1": 0.4445
+      },
+      {
+        "fold": 3,
+        "tau": 0.6098,
+        "train_f1": 0.5769,
+        "tp": 1,
+        "fp": 5,
+        "fn": 4,
+        "tn": 18,
+        "accuracy": 0.6786,
+        "precision": 0.1667,
+        "recall": 0.2,
+        "f1": 0.1818
+      },
+      {
+        "fold": 4,
+        "tau": 0.604,
+        "train_f1": 0.4918,
+        "tp": 5,
+        "fp": 6,
+        "fn": 0,
+        "tn": 17,
+        "accuracy": 0.7857,
+        "precision": 0.4545,
+        "recall": 1.0,
+        "f1": 0.625
+      },
+      {
+        "fold": 5,
+        "tau": 0.6085,
+        "train_f1": 0.5455,
+        "tp": 3,
+        "fp": 6,
+        "fn": 1,
+        "tn": 17,
+        "accuracy": 0.7407,
+        "precision": 0.3333,
+        "recall": 0.75,
+        "f1": 0.4615
+      }
+    ]
+  },
+  "method_c_logistic_regression": {
+    "roc_auc": 0.7682,
+    "average_precision": 0.3704,
+    "cv_aggregated_held_out": {
+      "tp": 19,
+      "fp": 40,
+      "fn": 5,
+      "tn": 77,
+      "accuracy": 0.6809,
+      "precision": 0.322,
+      "recall": 0.7917,
+      "f1": 0.4578
+    },
+    "per_fold": [
+      {
+        "fold": 1,
+        "tau": 0.1842,
+        "train_f1": 0.4838,
+        "coef": {
+          "team": 0.0312,
+          "objective": 0.0271,
+          "strategy": 0.0809,
+          "advantages": 0.0363,
+          "feasibility": 0.1036
+        },
+        "intercept": -1.6031,
+        "tp": 4,
+        "fp": 7,
+        "fn": 1,
+        "tn": 17,
+        "accuracy": 0.7241,
+        "precision": 0.3636,
+        "recall": 0.8,
+        "f1": 0.5
+      },
+      {
+        "fold": 2,
+        "tau": 0.1857,
+        "train_f1": 0.5,
+        "coef": {
+          "team": 0.0488,
+          "objective": 0.0463,
+          "strategy": 0.0774,
+          "advantages": 0.0613,
+          "feasibility": 0.1069
+        },
+        "intercept": -1.6096,
+        "tp": 4,
+        "fp": 9,
+        "fn": 1,
+        "tn": 15,
+        "accuracy": 0.6552,
+        "precision": 0.3077,
+        "recall": 0.8,
+        "f1": 0.4445
+      },
+      {
+        "fold": 3,
+        "tau": 0.1817,
+        "train_f1": 0.5075,
+        "coef": {
+          "team": 0.0552,
+          "objective": 0.0301,
+          "strategy": 0.0804,
+          "advantages": 0.0358,
+          "feasibility": 0.1163
+        },
+        "intercept": -1.6186,
+        "tp": 3,
+        "fp": 8,
+        "fn": 2,
+        "tn": 15,
+        "accuracy": 0.6429,
+        "precision": 0.2727,
+        "recall": 0.6,
+        "f1": 0.375
+      },
+      {
+        "fold": 4,
+        "tau": 0.1834,
+        "train_f1": 0.4516,
+        "coef": {
+          "team": 0.0341,
+          "objective": 0.0283,
+          "strategy": 0.0739,
+          "advantages": 0.0314,
+          "feasibility": 0.1028
+        },
+        "intercept": -1.614,
+        "tp": 4,
+        "fp": 6,
+        "fn": 1,
+        "tn": 17,
+        "accuracy": 0.75,
+        "precision": 0.4,
+        "recall": 0.8,
+        "f1": 0.5333
+      },
+      {
+        "fold": 5,
+        "tau": 0.1841,
+        "train_f1": 0.4931,
+        "coef": {
+          "team": 0.0319,
+          "objective": 0.0283,
+          "strategy": 0.0862,
+          "advantages": 0.0352,
+          "feasibility": 0.1054
+        },
+        "intercept": -1.5631,
+        "tp": 4,
+        "fp": 10,
+        "fn": 0,
+        "tn": 13,
+        "accuracy": 0.6296,
+        "precision": 0.2857,
+        "recall": 1.0,
+        "f1": 0.4444
+      }
+    ],
+    "full_dataset_fit_coefficients_for_interpretation_only": {
+      "intercept": -1.6012,
+      "coef": {
+        "team": 0.0402,
+        "objective": 0.0317,
+        "strategy": 0.0797,
+        "advantages": 0.0395,
+        "feasibility": 0.1069
+      }
+    },
+    "oof_proba": [
+      0.2025,
+      0.1794,
+      0.2088,
+      0.1873,
+      0.1846,
+      0.1923,
+      0.1844,
+      0.1874,
+      0.2046,
+      0.2199,
+      0.1948,
+      0.1644,
+      0.2085,
+      0.204,
+      0.1833,
+      0.1883,
+      0.2032,
+      0.1308,
+      0.1719,
+      0.1473,
+      0.1778,
+      0.1942,
+      0.208,
+      0.1794,
+      0.1755,
+      0.1698,
+      0.2185,
+      0.1176,
+      0.1963,
+      0.198,
+      0.1335,
+      0.199,
+      0.2034,
+      0.1926,
+      0.2192,
+      0.2082,
+      0.1676,
+      0.1472,
+      0.1939,
+      0.1439,
+      0.1906,
+      0.1904,
+      0.1555,
+      0.1108,
+      0.1732,
+      0.1839,
+      0.1339,
+      0.1674,
+      0.2198,
+      0.1744,
+      0.1956,
+      0.1902,
+      0.1697,
+      0.1512,
+      0.1627,
+      0.18,
+      0.1059,
+      0.1174,
+      0.1676,
+      0.1857,
+      0.1712,
+      0.2108,
+      0.2067,
+      0.1709,
+      0.1978,
+      0.1399,
+      0.2046,
+      0.1541,
+      0.2121,
+      0.1946,
+      0.1865,
+      0.1106,
+      0.1401,
+      0.163,
+      0.1703,
+      0.1872,
+      0.0955,
+      0.1678,
+      0.1304,
+      0.2034,
+      0.1066,
+      0.1472,
+      0.0957,
+      0.1359,
+      0.2096,
+      0.1547,
+      0.158,
+      0.1705,
+      0.1557,
+      0.0787,
+      0.146,
+      0.1337,
+      0.1913,
+      0.1441,
+      0.1518,
+      0.185,
+      0.1504,
+      0.1848,
+      0.1633,
+      0.1869,
+      0.1974,
+      0.1774,
+      0.1785,
+      0.171,
+      0.2014,
+      0.2095,
+      0.2025,
+      0.1884,
+      0.2001,
+      0.1707,
+      0.1554,
+      0.1541,
+      0.1975,
+      0.1397,
+      0.1244,
+      0.1524,
+      0.1952,
+      0.1557,
+      0.187,
+      0.1262,
+      0.1649,
+      0.1815,
+      0.201,
+      0.1748,
+      0.1049,
+      0.1565,
+      0.169,
+      0.117,
+      0.1485,
+      0.1018,
+      0.1517,
+      0.1877,
+      0.1968,
+      0.1834,
+      0.1146,
+      0.17,
+      0.1321,
+      0.1835,
+      0.1232,
+      0.1848,
+      0.118
+    ]
+  },
+  "per_proposal": [
+    {
+      "pid": "kt1",
+      "city": "Toronto",
+      "funded_pct": 107.0,
+      "success": 1,
+      "overall_score": 0.598,
+      "simple_composite": 0.62,
+      "logreg_oof_proba": 0.2025
+    },
+    {
+      "pid": "kt2",
+      "city": "Toronto",
+      "funded_pct": 107.0,
+      "success": 1,
+      "overall_score": 0.56,
+      "simple_composite": 0.5867,
+      "logreg_oof_proba": 0.1794
+    },
+    {
+      "pid": "kt3",
+      "city": "Toronto",
+      "funded_pct": 112.0,
+      "success": 1,
+      "overall_score": 0.626,
+      "simple_composite": 0.636,
+      "logreg_oof_proba": 0.2088
+    },
+    {
+      "pid": "kt4",
+      "city": "Toronto",
+      "funded_pct": 162.0,
+      "success": 1,
+      "overall_score": 0.571,
+      "simple_composite": 0.6073,
+      "logreg_oof_proba": 0.1873
+    },
+    {
+      "pid": "kt5",
+      "city": "Toronto",
+      "funded_pct": 331.0,
+      "success": 1,
+      "overall_score": 0.565,
+      "simple_composite": 0.6063,
+      "logreg_oof_proba": 0.1846
+    },
+    {
+      "pid": "kt6",
+      "city": "Toronto",
+      "funded_pct": 127.0,
+      "success": 1,
+      "overall_score": 0.562,
+      "simple_composite": 0.6573,
+      "logreg_oof_proba": 0.1923
+    },
+    {
+      "pid": "kt7",
+      "city": "Toronto",
+      "funded_pct": 112.0,
+      "success": 1,
+      "overall_score": 0.551,
+      "simple_composite": 0.6363,
+      "logreg_oof_proba": 0.1844
+    },
+    {
+      "pid": "kt8",
+      "city": "Toronto",
+      "funded_pct": 134.0,
+      "success": 1,
+      "overall_score": 0.561,
+      "simple_composite": 0.589,
+      "logreg_oof_proba": 0.1874
+    },
+    {
+      "pid": "kt9",
+      "city": "Toronto",
+      "funded_pct": 206.0,
+      "success": 1,
+      "overall_score": 0.608,
+      "simple_composite": 0.661,
+      "logreg_oof_proba": 0.2046
+    },
+    {
+      "pid": "kt10",
+      "city": "Toronto",
+      "funded_pct": 151.0,
+      "success": 1,
+      "overall_score": 0.639,
+      "simple_composite": 0.6573,
+      "logreg_oof_proba": 0.2199
+    },
+    {
+      "pid": "kt11",
+      "city": "Toronto",
+      "funded_pct": 228.0,
+      "success": 1,
+      "overall_score": 0.582,
+      "simple_composite": 0.614,
+      "logreg_oof_proba": 0.1948
+    },
+    {
+      "pid": "kt12",
+      "city": "Toronto",
+      "funded_pct": 111.0,
+      "success": 1,
+      "overall_score": 0.491,
+      "simple_composite": 0.547,
+      "logreg_oof_proba": 0.1644
+    },
+    {
+      "pid": "kt13",
+      "city": "Toronto",
+      "funded_pct": 675.0,
+      "success": 1,
+      "overall_score": 0.606,
+      "simple_composite": 0.6583,
+      "logreg_oof_proba": 0.2085
+    },
+    {
+      "pid": "kt14",
+      "city": "Toronto",
+      "funded_pct": 105.0,
+      "success": 1,
+      "overall_score": 0.595,
+      "simple_composite": 0.6393,
+      "logreg_oof_proba": 0.204
+    },
+    {
+      "pid": "kt15",
+      "city": "Toronto",
+      "funded_pct": 103.0,
+      "success": 1,
+      "overall_score": 0.564,
+      "simple_composite": 0.6087,
+      "logreg_oof_proba": 0.1833
+    },
+    {
+      "pid": "kt16",
+      "city": "Toronto",
+      "funded_pct": 100.0,
+      "success": 1,
+      "overall_score": 0.554,
+      "simple_composite": 0.6407,
+      "logreg_oof_proba": 0.1883
+    },
+    {
+      "pid": "kt17",
+      "city": "Toronto",
+      "funded_pct": 101.0,
+      "success": 1,
+      "overall_score": 0.594,
+      "simple_composite": 0.6367,
+      "logreg_oof_proba": 0.2032
+    },
+    {
+      "pid": "kt18",
+      "city": "Toronto",
+      "funded_pct": 138.0,
+      "success": 1,
+      "overall_score": 0.404,
+      "simple_composite": 0.4597,
+      "logreg_oof_proba": 0.1308
+    },
+    {
+      "pid": "kt19",
+      "city": "Toronto",
+      "funded_pct": 166.0,
+      "success": 1,
+      "overall_score": 0.53,
+      "simple_composite": 0.6087,
+      "logreg_oof_proba": 0.1719
+    },
+    {
+      "pid": "kt20",
+      "city": "Toronto",
+      "funded_pct": 2.0,
+      "success": 0,
+      "overall_score": 0.477,
+      "simple_composite": 0.5283,
+      "logreg_oof_proba": 0.1473
+    },
+    {
+      "pid": "kt21",
+      "city": "Toronto",
+      "funded_pct": 3.0,
+      "success": 0,
+      "overall_score": 0.518,
+      "simple_composite": 0.5887,
+      "logreg_oof_proba": 0.1778
+    },
+    {
+      "pid": "kt22",
+      "city": "Toronto",
+      "funded_pct": 5.0,
+      "success": 0,
+      "overall_score": 0.571,
+      "simple_composite": 0.6097,
+      "logreg_oof_proba": 0.1942
+    },
+    {
+      "pid": "kt23",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.606,
+      "simple_composite": 0.6587,
+      "logreg_oof_proba": 0.208
+    },
+    {
+      "pid": "kt24",
+      "city": "Toronto",
+      "funded_pct": 9.0,
+      "success": 0,
+      "overall_score": 0.56,
+      "simple_composite": 0.587,
+      "logreg_oof_proba": 0.1794
+    },
+    {
+      "pid": "kt25",
+      "city": "Toronto",
+      "funded_pct": 1.0,
+      "success": 0,
+      "overall_score": 0.542,
+      "simple_composite": 0.576,
+      "logreg_oof_proba": 0.1755
+    },
+    {
+      "pid": "kt26",
+      "city": "Toronto",
+      "funded_pct": 40.0,
+      "success": 0,
+      "overall_score": 0.516,
+      "simple_composite": 0.5877,
+      "logreg_oof_proba": 0.1698
+    },
+    {
+      "pid": "kt27",
+      "city": "Toronto",
+      "funded_pct": 14.0,
+      "success": 0,
+      "overall_score": 0.631,
+      "simple_composite": 0.651,
+      "logreg_oof_proba": 0.2185
+    },
+    {
+      "pid": "kt28",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.331,
+      "simple_composite": 0.284,
+      "logreg_oof_proba": 0.1176
+    },
+    {
+      "pid": "kt29",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.585,
+      "simple_composite": 0.6393,
+      "logreg_oof_proba": 0.1963
+    },
+    {
+      "pid": "kt30",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.567,
+      "simple_composite": 0.5973,
+      "logreg_oof_proba": 0.198
+    },
+    {
+      "pid": "kt31",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.392,
+      "simple_composite": 0.3867,
+      "logreg_oof_proba": 0.1335
+    },
+    {
+      "pid": "kt32",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.593,
+      "simple_composite": 0.637,
+      "logreg_oof_proba": 0.199
+    },
+    {
+      "pid": "kt33",
+      "city": "Toronto",
+      "funded_pct": 24.0,
+      "success": 0,
+      "overall_score": 0.605,
+      "simple_composite": 0.658,
+      "logreg_oof_proba": 0.2034
+    },
+    {
+      "pid": "kt34",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.565,
+      "simple_composite": 0.6097,
+      "logreg_oof_proba": 0.1926
+    },
+    {
+      "pid": "kt35",
+      "city": "Toronto",
+      "funded_pct": 2.0,
+      "success": 0,
+      "overall_score": 0.629,
+      "simple_composite": 0.6517,
+      "logreg_oof_proba": 0.2192
+    },
+    {
+      "pid": "kt36",
+      "city": "Toronto",
+      "funded_pct": 1.0,
+      "success": 0,
+      "overall_score": 0.606,
+      "simple_composite": 0.659,
+      "logreg_oof_proba": 0.2082
+    },
+    {
+      "pid": "kt37",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.53,
+      "simple_composite": 0.5467,
+      "logreg_oof_proba": 0.1676
+    },
+    {
+      "pid": "kt38",
+      "city": "Toronto",
+      "funded_pct": 7.0,
+      "success": 0,
+      "overall_score": 0.449,
+      "simple_composite": 0.527,
+      "logreg_oof_proba": 0.1472
+    },
+    {
+      "pid": "kt39",
+      "city": "Toronto",
+      "funded_pct": 6.0,
+      "success": 0,
+      "overall_score": 0.571,
+      "simple_composite": 0.607,
+      "logreg_oof_proba": 0.1939
+    },
+    {
+      "pid": "kt40",
+      "city": "Toronto",
+      "funded_pct": 5.0,
+      "success": 0,
+      "overall_score": 0.444,
+      "simple_composite": 0.4027,
+      "logreg_oof_proba": 0.1439
+    },
+    {
+      "pid": "kt41",
+      "city": "Toronto",
+      "funded_pct": 2.0,
+      "success": 0,
+      "overall_score": 0.57,
+      "simple_composite": 0.6077,
+      "logreg_oof_proba": 0.1906
+    },
+    {
+      "pid": "kt42",
+      "city": "Toronto",
+      "funded_pct": 1.0,
+      "success": 0,
+      "overall_score": 0.593,
+      "simple_composite": 0.6437,
+      "logreg_oof_proba": 0.1904
+    },
+    {
+      "pid": "kt43",
+      "city": "Toronto",
+      "funded_pct": 37.0,
+      "success": 0,
+      "overall_score": 0.482,
+      "simple_composite": 0.5267,
+      "logreg_oof_proba": 0.1555
+    },
+    {
+      "pid": "kt44",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.331,
+      "simple_composite": 0.3497,
+      "logreg_oof_proba": 0.1108
+    },
+    {
+      "pid": "kt45",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.52,
+      "simple_composite": 0.5247,
+      "logreg_oof_proba": 0.1732
+    },
+    {
+      "pid": "kt46",
+      "city": "Toronto",
+      "funded_pct": 2.0,
+      "success": 0,
+      "overall_score": 0.565,
+      "simple_composite": 0.593,
+      "logreg_oof_proba": 0.1839
+    },
+    {
+      "pid": "kt47",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.361,
+      "simple_composite": 0.3957,
+      "logreg_oof_proba": 0.1339
+    },
+    {
+      "pid": "kt48",
+      "city": "Toronto",
+      "funded_pct": 7.0,
+      "success": 0,
+      "overall_score": 0.525,
+      "simple_composite": 0.525,
+      "logreg_oof_proba": 0.1674
+    },
+    {
+      "pid": "kt49",
+      "city": "Toronto",
+      "funded_pct": 4.0,
+      "success": 0,
+      "overall_score": 0.64,
+      "simple_composite": 0.6583,
+      "logreg_oof_proba": 0.2198
+    },
+    {
+      "pid": "kt50",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.523,
+      "simple_composite": 0.5283,
+      "logreg_oof_proba": 0.1744
+    },
+    {
+      "pid": "kt51",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.567,
+      "simple_composite": 0.596,
+      "logreg_oof_proba": 0.1956
+    },
+    {
+      "pid": "kt52",
+      "city": "Toronto",
+      "funded_pct": 1.0,
+      "success": 0,
+      "overall_score": 0.566,
+      "simple_composite": 0.6613,
+      "logreg_oof_proba": 0.1902
+    },
+    {
+      "pid": "kt53",
+      "city": "Toronto",
+      "funded_pct": 3.0,
+      "success": 0,
+      "overall_score": 0.516,
+      "simple_composite": 0.5863,
+      "logreg_oof_proba": 0.1697
+    },
+    {
+      "pid": "kt54",
+      "city": "Toronto",
+      "funded_pct": 10.0,
+      "success": 0,
+      "overall_score": 0.452,
+      "simple_composite": 0.53,
+      "logreg_oof_proba": 0.1512
+    },
+    {
+      "pid": "kt55",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.476,
+      "simple_composite": 0.522,
+      "logreg_oof_proba": 0.1627
+    },
+    {
+      "pid": "kt56",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.56,
+      "simple_composite": 0.589,
+      "logreg_oof_proba": 0.18
+    },
+    {
+      "pid": "kt57",
+      "city": "Toronto",
+      "funded_pct": 33.0,
+      "success": 0,
+      "overall_score": 0.341,
+      "simple_composite": 0.2897,
+      "logreg_oof_proba": 0.1059
+    },
+    {
+      "pid": "kt58",
+      "city": "Toronto",
+      "funded_pct": 6.0,
+      "success": 0,
+      "overall_score": 0.367,
+      "simple_composite": 0.274,
+      "logreg_oof_proba": 0.1174
+    },
+    {
+      "pid": "kt59",
+      "city": "Toronto",
+      "funded_pct": 4.0,
+      "success": 0,
+      "overall_score": 0.525,
+      "simple_composite": 0.5873,
+      "logreg_oof_proba": 0.1676
+    },
+    {
+      "pid": "kt60",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.561,
+      "simple_composite": 0.5903,
+      "logreg_oof_proba": 0.1857
+    },
+    {
+      "pid": "kt61",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.528,
+      "simple_composite": 0.607,
+      "logreg_oof_proba": 0.1712
+    },
+    {
+      "pid": "kt62",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.605,
+      "simple_composite": 0.6587,
+      "logreg_oof_proba": 0.2108
+    },
+    {
+      "pid": "kt63",
+      "city": "Toronto",
+      "funded_pct": 1.0,
+      "success": 0,
+      "overall_score": 0.611,
+      "simple_composite": 0.624,
+      "logreg_oof_proba": 0.2067
+    },
+    {
+      "pid": "kt64",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.518,
+      "simple_composite": 0.5873,
+      "logreg_oof_proba": 0.1709
+    },
+    {
+      "pid": "kt65",
+      "city": "Toronto",
+      "funded_pct": 2.0,
+      "success": 0,
+      "overall_score": 0.575,
+      "simple_composite": 0.6347,
+      "logreg_oof_proba": 0.1978
+    },
+    {
+      "pid": "kt66",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.436,
+      "simple_composite": 0.4627,
+      "logreg_oof_proba": 0.1399
+    },
+    {
+      "pid": "kt67",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.602,
+      "simple_composite": 0.6533,
+      "logreg_oof_proba": 0.2046
+    },
+    {
+      "pid": "kt68",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.476,
+      "simple_composite": 0.528,
+      "logreg_oof_proba": 0.1541
+    },
+    {
+      "pid": "kt69",
+      "city": "Toronto",
+      "funded_pct": 3.0,
+      "success": 0,
+      "overall_score": 0.63,
+      "simple_composite": 0.652,
+      "logreg_oof_proba": 0.2121
+    },
+    {
+      "pid": "kt70",
+      "city": "Toronto",
+      "funded_pct": 1.0,
+      "success": 0,
+      "overall_score": 0.583,
+      "simple_composite": 0.6373,
+      "logreg_oof_proba": 0.1946
+    },
+    {
+      "pid": "kt71",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.573,
+      "simple_composite": 0.6093,
+      "logreg_oof_proba": 0.1865
+    },
+    {
+      "pid": "kt72",
+      "city": "Toronto",
+      "funded_pct": 1.0,
+      "success": 0,
+      "overall_score": 0.328,
+      "simple_composite": 0.3443,
+      "logreg_oof_proba": 0.1106
+    },
+    {
+      "pid": "kt73",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.438,
+      "simple_composite": 0.397,
+      "logreg_oof_proba": 0.1401
+    },
+    {
+      "pid": "kt74",
+      "city": "Toronto",
+      "funded_pct": 6.0,
+      "success": 0,
+      "overall_score": 0.485,
+      "simple_composite": 0.5383,
+      "logreg_oof_proba": 0.163
+    },
+    {
+      "pid": "kt75",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.471,
+      "simple_composite": 0.5067,
+      "logreg_oof_proba": 0.1703
+    },
+    {
+      "pid": "kt76",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.561,
+      "simple_composite": 0.5877,
+      "logreg_oof_proba": 0.1872
+    },
+    {
+      "pid": "kt77",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.26,
+      "simple_composite": 0.2287,
+      "logreg_oof_proba": 0.0955
+    },
+    {
+      "pid": "kt78",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.504,
+      "simple_composite": 0.5333,
+      "logreg_oof_proba": 0.1678
+    },
+    {
+      "pid": "kt79",
+      "city": "Toronto",
+      "funded_pct": 4.0,
+      "success": 0,
+      "overall_score": 0.449,
+      "simple_composite": 0.414,
+      "logreg_oof_proba": 0.1304
+    },
+    {
+      "pid": "kt80",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.594,
+      "simple_composite": 0.6393,
+      "logreg_oof_proba": 0.2034
+    },
+    {
+      "pid": "kt81",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.334,
+      "simple_composite": 0.3433,
+      "logreg_oof_proba": 0.1066
+    },
+    {
+      "pid": "kt82",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.478,
+      "simple_composite": 0.5273,
+      "logreg_oof_proba": 0.1472
+    },
+    {
+      "pid": "kt83",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.299,
+      "simple_composite": 0.292,
+      "logreg_oof_proba": 0.0957
+    },
+    {
+      "pid": "kt84",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.411,
+      "simple_composite": 0.4013,
+      "logreg_oof_proba": 0.1359
+    },
+    {
+      "pid": "kt85",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.613,
+      "simple_composite": 0.638,
+      "logreg_oof_proba": 0.2096
+    },
+    {
+      "pid": "kt86",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.478,
+      "simple_composite": 0.5287,
+      "logreg_oof_proba": 0.1547
+    },
+    {
+      "pid": "kt87",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.48,
+      "simple_composite": 0.4673,
+      "logreg_oof_proba": 0.158
+    },
+    {
+      "pid": "kt88",
+      "city": "Toronto",
+      "funded_pct": 11.0,
+      "success": 0,
+      "overall_score": 0.517,
+      "simple_composite": 0.5873,
+      "logreg_oof_proba": 0.1705
+    },
+    {
+      "pid": "kt89",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.483,
+      "simple_composite": 0.5273,
+      "logreg_oof_proba": 0.1557
+    },
+    {
+      "pid": "kt90",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.23,
+      "simple_composite": 0.2303,
+      "logreg_oof_proba": 0.0787
+    },
+    {
+      "pid": "kt91",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.438,
+      "simple_composite": 0.4553,
+      "logreg_oof_proba": 0.146
+    },
+    {
+      "pid": "kt92",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.398,
+      "simple_composite": 0.3887,
+      "logreg_oof_proba": 0.1337
+    },
+    {
+      "pid": "kt93",
+      "city": "Toronto",
+      "funded_pct": 4.0,
+      "success": 0,
+      "overall_score": 0.572,
+      "simple_composite": 0.6083,
+      "logreg_oof_proba": 0.1913
+    },
+    {
+      "pid": "kt94",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.484,
+      "simple_composite": 0.466,
+      "logreg_oof_proba": 0.1441
+    },
+    {
+      "pid": "kt95",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.475,
+      "simple_composite": 0.457,
+      "logreg_oof_proba": 0.1518
+    },
+    {
+      "pid": "kt96",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.571,
+      "simple_composite": 0.6073,
+      "logreg_oof_proba": 0.185
+    },
+    {
+      "pid": "kt97",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.451,
+      "simple_composite": 0.527,
+      "logreg_oof_proba": 0.1504
+    },
+    {
+      "pid": "kt98",
+      "city": "Toronto",
+      "funded_pct": 34.0,
+      "success": 0,
+      "overall_score": 0.57,
+      "simple_composite": 0.6077,
+      "logreg_oof_proba": 0.1848
+    },
+    {
+      "pid": "kt99",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.477,
+      "simple_composite": 0.5233,
+      "logreg_oof_proba": 0.1633
+    },
+    {
+      "pid": "kt100",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.56,
+      "simple_composite": 0.586,
+      "logreg_oof_proba": 0.1869
+    },
+    {
+      "pid": "kt101",
+      "city": "Toronto",
+      "funded_pct": 1.0,
+      "success": 0,
+      "overall_score": 0.595,
+      "simple_composite": 0.6387,
+      "logreg_oof_proba": 0.1974
+    },
+    {
+      "pid": "kt102",
+      "city": "Toronto",
+      "funded_pct": 9.0,
+      "success": 0,
+      "overall_score": 0.517,
+      "simple_composite": 0.587,
+      "logreg_oof_proba": 0.1774
+    },
+    {
+      "pid": "kt103",
+      "city": "Toronto",
+      "funded_pct": 3.0,
+      "success": 0,
+      "overall_score": 0.56,
+      "simple_composite": 0.5783,
+      "logreg_oof_proba": 0.1785
+    },
+    {
+      "pid": "kt104",
+      "city": "Toronto",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.479,
+      "simple_composite": 0.4567,
+      "logreg_oof_proba": 0.171
+    },
+    {
+      "pid": "km1",
+      "city": "Montreal",
+      "funded_pct": 1588.0,
+      "success": 1,
+      "overall_score": 0.612,
+      "simple_composite": 0.6813,
+      "logreg_oof_proba": 0.2014
+    },
+    {
+      "pid": "km2",
+      "city": "Montreal",
+      "funded_pct": 4534.0,
+      "success": 1,
+      "overall_score": 0.624,
+      "simple_composite": 0.689,
+      "logreg_oof_proba": 0.2095
+    },
+    {
+      "pid": "km3",
+      "city": "Montreal",
+      "funded_pct": 102.0,
+      "success": 1,
+      "overall_score": 0.593,
+      "simple_composite": 0.652,
+      "logreg_oof_proba": 0.2025
+    },
+    {
+      "pid": "km4",
+      "city": "Montreal",
+      "funded_pct": 1462.0,
+      "success": 1,
+      "overall_score": 0.563,
+      "simple_composite": 0.61,
+      "logreg_oof_proba": 0.1884
+    },
+    {
+      "pid": "km5",
+      "city": "Montreal",
+      "funded_pct": 464.0,
+      "success": 1,
+      "overall_score": 0.604,
+      "simple_composite": 0.6567,
+      "logreg_oof_proba": 0.2001
+    },
+    {
+      "pid": "km6",
+      "city": "Montreal",
+      "funded_pct": 12.0,
+      "success": 0,
+      "overall_score": 0.527,
+      "simple_composite": 0.5453,
+      "logreg_oof_proba": 0.1707
+    },
+    {
+      "pid": "km7",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.482,
+      "simple_composite": 0.5257,
+      "logreg_oof_proba": 0.1554
+    },
+    {
+      "pid": "km8",
+      "city": "Montreal",
+      "funded_pct": 22.0,
+      "success": 0,
+      "overall_score": 0.441,
+      "simple_composite": 0.519,
+      "logreg_oof_proba": 0.1541
+    },
+    {
+      "pid": "km9",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.564,
+      "simple_composite": 0.592,
+      "logreg_oof_proba": 0.1975
+    },
+    {
+      "pid": "km10",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.4,
+      "simple_composite": 0.4587,
+      "logreg_oof_proba": 0.1397
+    },
+    {
+      "pid": "km11",
+      "city": "Montreal",
+      "funded_pct": 4.0,
+      "success": 0,
+      "overall_score": 0.42,
+      "simple_composite": 0.4127,
+      "logreg_oof_proba": 0.1244
+    },
+    {
+      "pid": "km12",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.477,
+      "simple_composite": 0.528,
+      "logreg_oof_proba": 0.1524
+    },
+    {
+      "pid": "km13",
+      "city": "Montreal",
+      "funded_pct": 15.0,
+      "success": 0,
+      "overall_score": 0.595,
+      "simple_composite": 0.639,
+      "logreg_oof_proba": 0.1952
+    },
+    {
+      "pid": "km14",
+      "city": "Montreal",
+      "funded_pct": 1.0,
+      "success": 0,
+      "overall_score": 0.484,
+      "simple_composite": 0.5273,
+      "logreg_oof_proba": 0.1557
+    },
+    {
+      "pid": "km15",
+      "city": "Montreal",
+      "funded_pct": 1.0,
+      "success": 0,
+      "overall_score": 0.56,
+      "simple_composite": 0.5873,
+      "logreg_oof_proba": 0.187
+    },
+    {
+      "pid": "km16",
+      "city": "Montreal",
+      "funded_pct": 15.0,
+      "success": 0,
+      "overall_score": 0.406,
+      "simple_composite": 0.473,
+      "logreg_oof_proba": 0.1262
+    },
+    {
+      "pid": "km17",
+      "city": "Montreal",
+      "funded_pct": 31.0,
+      "success": 0,
+      "overall_score": 0.516,
+      "simple_composite": 0.587,
+      "logreg_oof_proba": 0.1649
+    },
+    {
+      "pid": "km18",
+      "city": "Montreal",
+      "funded_pct": 30.0,
+      "success": 0,
+      "overall_score": 0.55,
+      "simple_composite": 0.5863,
+      "logreg_oof_proba": 0.1815
+    },
+    {
+      "pid": "km19",
+      "city": "Montreal",
+      "funded_pct": 4.0,
+      "success": 0,
+      "overall_score": 0.606,
+      "simple_composite": 0.6597,
+      "logreg_oof_proba": 0.201
+    },
+    {
+      "pid": "km20",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.53,
+      "simple_composite": 0.547,
+      "logreg_oof_proba": 0.1748
+    },
+    {
+      "pid": "km21",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.301,
+      "simple_composite": 0.296,
+      "logreg_oof_proba": 0.1049
+    },
+    {
+      "pid": "km22",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.493,
+      "simple_composite": 0.5297,
+      "logreg_oof_proba": 0.1565
+    },
+    {
+      "pid": "km23",
+      "city": "Montreal",
+      "funded_pct": 35.0,
+      "success": 0,
+      "overall_score": 0.515,
+      "simple_composite": 0.5727,
+      "logreg_oof_proba": 0.169
+    },
+    {
+      "pid": "km24",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.331,
+      "simple_composite": 0.3487,
+      "logreg_oof_proba": 0.117
+    },
+    {
+      "pid": "km25",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.482,
+      "simple_composite": 0.526,
+      "logreg_oof_proba": 0.1485
+    },
+    {
+      "pid": "km26",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.32,
+      "simple_composite": 0.3037,
+      "logreg_oof_proba": 0.1018
+    },
+    {
+      "pid": "km27",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.47,
+      "simple_composite": 0.5187,
+      "logreg_oof_proba": 0.1517
+    },
+    {
+      "pid": "km28",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.554,
+      "simple_composite": 0.64,
+      "logreg_oof_proba": 0.1877
+    },
+    {
+      "pid": "km29",
+      "city": "Montreal",
+      "funded_pct": 15.0,
+      "success": 0,
+      "overall_score": 0.601,
+      "simple_composite": 0.6287,
+      "logreg_oof_proba": 0.1968
+    },
+    {
+      "pid": "km30",
+      "city": "Montreal",
+      "funded_pct": 12.0,
+      "success": 0,
+      "overall_score": 0.564,
+      "simple_composite": 0.6073,
+      "logreg_oof_proba": 0.1834
+    },
+    {
+      "pid": "km31",
+      "city": "Montreal",
+      "funded_pct": 1.0,
+      "success": 0,
+      "overall_score": 0.354,
+      "simple_composite": 0.327,
+      "logreg_oof_proba": 0.1146
+    },
+    {
+      "pid": "km32",
+      "city": "Montreal",
+      "funded_pct": 18.0,
+      "success": 0,
+      "overall_score": 0.517,
+      "simple_composite": 0.587,
+      "logreg_oof_proba": 0.17
+    },
+    {
+      "pid": "km33",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.44,
+      "simple_composite": 0.4733,
+      "logreg_oof_proba": 0.1321
+    },
+    {
+      "pid": "km34",
+      "city": "Montreal",
+      "funded_pct": 2.0,
+      "success": 0,
+      "overall_score": 0.559,
+      "simple_composite": 0.6017,
+      "logreg_oof_proba": 0.1835
+    },
+    {
+      "pid": "km35",
+      "city": "Montreal",
+      "funded_pct": 19.0,
+      "success": 0,
+      "overall_score": 0.402,
+      "simple_composite": 0.3507,
+      "logreg_oof_proba": 0.1232
+    },
+    {
+      "pid": "km36",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.567,
+      "simple_composite": 0.599,
+      "logreg_oof_proba": 0.1848
+    },
+    {
+      "pid": "km37",
+      "city": "Montreal",
+      "funded_pct": 0.0,
+      "success": 0,
+      "overall_score": 0.366,
+      "simple_composite": 0.3473,
+      "logreg_oof_proba": 0.118
+    }
+  ]
+}

@@ -1,0 +1,903 @@
+Language Models for Code Completion: A Practical Evaluation
+MalihehIzadi JonathanKatzy TimvanDam
+m.izadi@tudelft.nl j.b.katzy@tudelft.nl t.o.vandam@student.tudelft.nl
+DelftUniversityofTechnology DelftUniversityofTechnology DelftUniversityofTechnology
+Delft,Netherlands Delft,Netherlands Delft,Netherlands
+MarcOtten RazvanMihaiPopescu ArievanDeursen
+m.j.c.otten@student.tudelft.nl r.popescu-3@student.tudelft.nl arie.vandeursen@tudelft.nl
+DelftUniversityofTechnology DelftUniversityofTechnology DelftUniversityofTechnology
+Delft,Netherlands Delft,Netherlands Delft,Netherlands
+ABSTRACT ACMReferenceFormat:
+Transformer-based language models for automatic code comple- MalihehIzadi,JonathanKatzy,TimvanDam,MarcOtten,RazvanMihai
+Popescu,andArievanDeursen.2024.LanguageModelsforCodeCom-
+tionhaveshowngreatpromisesofar,yettheevaluationofthese
+pletion:APracticalEvaluation.In2024IEEE/ACM46thInternationalCon-
+modelsrarelyusesrealdata.Thisstudyprovidesbothquantitative
+ferenceonSoftwareEngineering(ICSE’24),April14–20,2024,Lisbon,Portu-
+and qualitative assessments of three public code language mod-
+gal.ACM,NewYork,NY,USA,13pages.https://doi.org/10.1145/3597503.
+elswhencompletingreal-worldcode.Wefirstdevelopedanopen- 3639138
+source IDE extension, Code4Me, for the online evaluation of the
+models.Wecollectedrealauto-completionusagedataforovera
+yearfrommorethan1200users,resultinginover600Kvalidcom-
+pletions.Thesemodelswerethenevaluatedusingsixstandardmet- 1 INTRODUCTION
+ricsacrosstwelveprogramminglanguages.Next,weconducteda Therisingpopularityoftransformer-basedLanguageModels(LMs)
+qualitativestudyof1690real-worldcompletionrequeststoidentify has significantly impacted development practices, with more de-
+the reasons behind the poor model performance. A comparative velopersincreasinglyadoptingthesemodelsforcodecompletion.
+analysisofthemodels’performanceinonlineandofflinesettings Unliketraditionalnativeauto-completions,LMsworkwellinpre-
+wasalsoperformed,usingbenchmarksyntheticdatasetsandtwo dictingentirelinesofcode[1–12].Despitetheiradvantages,LMs
+maskingstrategies. for code are not without flaws. Many LMs proposed in research
+Our findings suggest that while developers utilize code com- arecomplexandaccurateonsyntheticdata[13],butonlyahandful
+pletionacrossvariouslanguages,thebestresultsareachievedfor evermakeittointegrationinproducts,highlightingagapbetween
+mainstreamlanguagessuchasPythonandJava.InCoderoutper- theoretical advancement and practical application [7, 14–16]. A
+formedtheothermodelsacrossallprogramminglanguages,high- fewstudieshaveanalyzedthesemodelsinonlinesettings[17,18],
+lightingthesignificanceoftrainingdataandobjectives.Ourstudy revealing that their performance may decrease in such environ-
+alsorevealedthatofflineevaluationsdonotaccuratelyreflectreal- ments.However,theseexplorationsofteninvolveproprietarymod-
+worldscenarios.Uponqualitativeanalysisofthemodels’predic- elsandcodeinspecializedscenarios,andtheyfallshortofprovid-
+tions,wefoundthat66.3%offailureswereduetomodels’limita- ingadetailedanalysisoftheerrors.Thus,amorethorough,com-
+tions, 24.4% occurred due to inappropriate model usage in a de- parative,andopenevaluationofLMsforcode,especiallyinreal-
+velopmentcontext,and9.3%werevalidrequeststhatdevelopers worldcontexts,iscriticalforimprovingtheireffectiveness.
+overwrote.Giventhesefindings,weproposeseveralstrategiesto Thegoalofthisstudyistosystematicallyevaluatethreepub-
+overcomethecurrentlimitations.Theseincluderefiningtraining lic completion models, namely InCoder [2], UniXcoder [3], and
+objectives,improvingresiliencetotypographicalerrors,adopting CodeGPT[19]inareal-worldcodingsetup.WereleasedCode4Me,
+hybridapproaches,andenhancingimplementationsandusability. anopen-sourceIDEextension,toconductonlineevaluations.Over
+thecourseofayear,wegatheredauto-completionusagedatafrom
+KEYWORDS morethan1200users,leadingtoabout2Mcompletions.Weexam-
+inethethreemodelsacrosstwelveprogramminglanguagescom-
+AutomaticCodeCompletion,Transformers,LanguageModels,IDE,
+monly used in the literature [13, 20, 21] using six standard met-
+Evaluation,OpenSource,InCoder,UniXcoder,CodeGPT
+rics. Additionally, we carry out a qualitative investigation using
+anopencodingprocesson1690realcompletionrequeststoiden-
+tifythecausesofpoormodelperformance.Lastly,weconducta
+Permissiontomakedigitalorhardcopiesofpartorallofthisworkforpersonalor comparisonofthemodels’performanceinbothonlineandoffline
+classroomuseisgrantedwithoutfeeprovidedthatcopiesarenotmadeordistributed settings,employingbenchmarksyntheticdatasets[13]andtwodis-
+forprofitorcommercialadvantageandthatcopiesbearthisnoticeandthefullcitation
+tinctmaskingstrategiesusedinliterature[1,21].
+onthefirstpage.Copyrightsforthird-partycomponentsofthisworkmustbehonored.
+Forallotheruses,contacttheowner/author(s). Analysisofthemodels’onlineuserevealstheirapplicationacross
+ICSE’24,April14–20,2024,Lisbon,Portugal diverseprogramminglanguages.However,performancevariesby
+©2024Copyrightheldbytheowner/author(s).
+language.ModelsexcelincommonlanguageslikePythonandJava
+ACMISBN979-8-4007-0217-4/24/04.
+https://doi.org/10.1145/3597503.3639138 butfacechallengeswithless-representedlanguageslikeRustand
+
+ICSE’24,April14–20,2024,Lisbon,Portugal Izadietal.
+Scala.Furthermore,InCoderexceedsitscompetitorsacrossalllan- 4, 34]. Our tool incorporates left-context-only models, CodeGPT
+guages,highlightingtheimpactoftrainingdataandmorealigned andUniXcoder[3],aswellasInCoder[2],amodelusingbothleft
+trainingobjectivesasitwastrainedforcodeinfilling.Ouranalysis andrightcontexts.
+identified18typesofrejectionsbydevelopers.Often,themodels’
+designlimitedtheiraccuracyordevelopersexpectedpredictions
+beyondthemodels’scope.Wealsonotedatendencyofdevelopers 2.3 EmpiricalStudiesonCodeCompletion
+torejectcorrectpredictions.Lastly,wefoundamismatchbetween Models’performanceinonlinesettings: Prokschetal.[37]con-
+modelperformanceonsyntheticandreal-worlddata.Thisislikely ductedanevaluationofamethod-callrecommendationsystemus-
+duetothedifferentcontextsingeneratingpredictionsforincom- ingadatasetderivedfromIDEinteractionsandidentifiedthatpreva-
+pletecode,versusthecompletecodeusedintraining. lentassessmentsusingsyntheticdatasetsoverlookchangesincon-
+Basedonourfindings,werecommendthatfutureresearchfo- text.In2019,Hellendoornetal.[38]analyzedtraditionalnext-token
+cuson(1)includingabroaderrangeofprogramminglanguagesin prediction models (e.g., n-grams and recurrent neural networks)
+boththetrainingandevaluationphasestoachievemoreconsistent using a real-world dataset from observing 66 developers’ usage
+performance,(2)refiningmodeltrainingobjectivestomoreaccu- overthespanoftwoweeksresultingin15Kcompletions.There-
+ratelyreflectactualdeveloperusage,and(3)improvingassistant sultsindicatedthatsyntheticbenchmarkslacksufficientrepresen-
+implementationsandusabilityaswellasreducingunnecessaryin- tation. Aye et al. [18] examined neural code completion models
+vocations.Ourcontributionsareasfollows. trained on live code versus committed code. They discovered a
+• Code4Me,anopen-sourceIDEextensionthatprovidesauto- notabledecreaseinmodelperformancewhenevaluatingthecom-
+completionsusingthreecodeLMs,withasubstantialuser pletions collected from real usage. Additionally, they observed a
+base(+1200)andnearly2Mcompletions, higher usage of out-of-vocabulary tokens in predicting comple-
+• Quantitativeonlineandofflineevaluationofthemodelsacross tions compared to masked tokens. In a recent study, Bibaev et
+twelveprogramminglanguages(+600Kvalidcompletions), al. [17] improved the rankings of auto-completions in IDE’s by
+• Ananalysisofmodels’limitationsusing1690completions trainingmodelsonanonymizeddata.
+resultinginataxonomyof18causesofpoorperformance,
+• Publicsourcecode,datasetforofflineevaluation,andopen
+Models’performanceinofflinesettings: Maurasoiuetal.[39]in-
+codingdataforthequalitativeanalysis[22].
+vestigatedtheusageofcodecompletionintheDartEditorbysix
+professionalsoftwaredevelopers.Uponanalyzingthisdata,they
+2 BACKGROUNDANDRELATEDWORK
+identifiedcertaininteractionpatterns.Keyfindingshintthatalarge
+2.1 Transformer-basedLanguageModels portionofcodecompletionsarenotacceptedbyusers,andcode
+Transformer-basedLMsrequiresubstantialdatasetsforinitialpre- completionisfrequentlyemployedasadebuggingtool.Ciniselli
+trainingandpotentialfine-tuningforspecifictasks.Commonar- etal.[34,35]evaluatedtheproficiencyoftwoLMs,T5[28]and
+chitecturesareencoder-onlytransformerssuchasBERT[23,24], RoBERTa [24], in completing code at three levels of granularity,
+decoder-onlytransformerssuchasGPT[25–27],orencoder-decoder namelysingle-token,line,andblockcompletionforJavamethods
+modelssuchasT5[28].Popularsoftwareengineeringdownstream andAndroidappmethodsinanofflinesetting.AlthoughT5outper-
+taskswithtransformer-basedmodelsarecodeinterpretingandrep- formedRoBERTa,theauthorsobservedthatthesemodels’efficacy
+resentation[4,5,9,29,30],sourcecodeandsoftwaredocumenta- inpredictinglongersequencesisrestricted.Theoutcomesofthe
+tion[2,4,5,31,32],andcodegeneration[1,2,4–7,10,13,33]. studyarespecifictoJavaandmaynotbegeneralizabletogradually-
+ordynamically-typedlanguages.Inanotherempiricalstudy,Van
+2.2 AutomaticCodeCompletion Dametal.[40]usedtheimpactofcontextualdataontheperfor-
+mance of UniXcoder, CodeGPT, and InCoder at two granularity
+Auto-completionfacilitatesprogrammingbygeneratingpredictive
+levels(tokenandlinecompletion),andtwolanguages(JavaScript
+textthatalignswithadeveloper’sprogrammingcontext.
+andTypeScript).Theresultsindicatedthatallmodelsperformed
+Granularity level: Completion occurs at varying degrees of
+slightlybetterwhentypeannotationswereomittedorwhenmulti-
+granularity. At the basic level, next-token prediction is applied
+linecommentswerepresent.Theseobservationssuggestthatcare
+wherethemodelpredictsthesubsequentcodetoken[1,8,9,34–36].
+shouldbetakenwhentraining,fine-tuning,orselectingsuchmod-
+Inlinecompletion,amodelisemployedtocompletealineofcode
+elstoensuretheyalignwiththeintendeddataandapplication.
+givenaspecificcontext[1,3,7,19].Inthemostextensiveformof
+codecompletion,blockcompletion,modelsgenerateentireblocks,
+functions,orclasses[2,3,14]. Developers’ expectations of models. Recently, Wang et al. [41]
+Completion Scenario: Furthermore, code completion can be surveyed599programmerstounderstandtheirexpectationsofcode
+characterized as a left-to-right task. In this approach, the model completionmodels.Theydiscoveredthat81%oftherespondents
+hasvisibilityofonlythecodecontextprecedingthecursoratthe usedtoken-levelpredictionstopredictaccurateidentifiernames
+pointwherecodecompletionisinvoked.Alternatively,itcanbe andAPIs.Additionally,32%ofparticipantsutilizedstatement-level
+viewedasaneditingtaskwherethemodelleveragesboththeleft predictions, with 46% of those being related to API completions
+andrightcontextofatriggerpoint.Thisallowsthemodeltogener- and 45% for editing the current line of code. The survey also re-
+ateaspanofcode,whichcancommenceandconcludeanywhere vealed that 80% of the participants agreed that code completion
+withinalineofcode,andcanencompassmultiplelinesofcode[2, toolsshouldsupportidentifiercompletions,APIrecommendations,
+
+LanguageModelsforCodeCompletion:APracticalEvaluation ICSE’24,April14–20,2024,Lisbon,Portugal
+and path completions. Most recently, Ciniselli et al. [42] investi-
+gatedtheneedsofsoftwaredevelopersinrelationtocoderecom-
+mendation systems, surveying 80 developers and categorized 70
+requirements for these systems. Notably, developers value mod-
+ifiable code over creating new one, given it is time-efficient. An
+intuitive user interface in the recommendation system was also
+deemedcritical.Developersdemonstratedawillingnesstoaccept
+longerpredictions,giventheirhighleveloftrustinthesystem’s
+accuracy.Thesystem’scapacitytorecognizenotonlythecurrent
+projectbutalsopastonesthedeveloperhasworkedonwasalso Figure1:Codeeditorsandmodelscommunicationpipeline
+highlighted.Finally,theuseoffamiliarcodeexpressionswasfound
+toincreasethesystem’sperceivedutility.
+Ourstudycontribution. Weassesslinecompletionmodels’per-
+formance,specificallyleft-to-rightandeditingmodels,inbothon-
+line and offline settings. We enrich the limited practical assess-
+mentsbymethodicallyevaluatingthreerecent,publictransformer-
+basedLMsforcodeandconductinganin-depthqualitativeanaly- Figure2:Completionsample(Code4MePyCharmplugin)
+sistocomprehendwhydevelopersrejectcompletions,leadingtoa
+broadtaxonomyofsuchreasons.Moreover,thescopeofCode4Me
+is much larger than existing work, encompassing over 2M com- RQ5:Howdoesanonlineevaluationdifferfromoffline
+pletionsbyprovidingserviceto1,200usersformorethanayear. ones? Finally, we conduct an offline evaluation to explore how
+Finally,contrarytopriorresearchfocusingondevelopers’expec- auto-completionperformancevariesforrandomandtriggermask-
+tationsfromoptimalcoderecommendationsystems,ourstudyex- ingandhowthesemeasurementscomparetoreal-worldscenarios.
+ploresthesemodels’actualperformanceinpractice.Ourworklays
+thefoundationforusingthefailurecauseswehaveidentifiedin 4 CODE4ME
+tandem with developer expectations to build stronger, more effi-
+To gather data for answering our research questions, we devel-
+cientcompletionsystems. opedtwoopen-sourceextensionsforIntelliJandVSCodecalled
+Code4Metotestauto-completionmodelsinanonlinesetting.The
+extensionsprovidecompletionsgeneratedbythreeLMsandcap-
+3 RESEARCHQUESTIONS
+turehowdevelopersusethesecompletions.Codecompletionpop-
+Inthisstudy,ourgoalistoassesshowwellcodemodelsperformin upsaretriggereduponpressingthecompletionkey-bindorafter
+completinglinesofcode,bothinonlineandofflinescenarios.We typingoneofthefollowingtriggerpoints[1,22]asfollow.
+focusonlinecompletionasitstrikesagoodbalancebetweenex-
+await assert raise del lambda yield return while for if
+tremelyshort(tokenprediction)andexcessivelylongcompletions elif else global in and not or is with except . + - * /
+(entireblockorfunctioncompletions).Wehaveformulatedthefol- % ** << >> & | ^ == != <= >= += -= = < > ; , [ ( { ~
+lowingfiveResearchQuestions(RQs)tothoroughlyevaluateLMs
+forcodebothquantitativelyandqualitatively. WethenrequestacompletionusingtheremoteAPIoverHTTPS,
+RQ1:Basedonreal-worldcompletions,howaccurateare whichreturnssuggestionsfromallavailablemodels,andpresent
+the models? Using Code4Me, we conduct an online evaluation themtodevelopers.Weutilizeastandardclient-serversetupwith
+toquantitativelyassesstheaccuracyofthreestate-of-the-artLMs’ an inference server running the models and a client serving as
+predictions. We explore the frequency developers accept model theeditorforcompletions.Figure1presentsthecommunication
+predictions,theiraccuracycomparedtothegroundtruth,andthe pipeline between the code editors, extensions,and models. Note
+variationinperformanceacrossdifferentprogramminglanguages. thatCode4Mecompetesagainstallcompletionsystems(bothna-
+RQ2:Whatarethemostcommoncompletiontriggerpoints, tiveandnon-native)inthedeveloper’spreferredcodeeditor.
+and how do the models perform on those? Rather than be-
+Server. WeuseaserverwithtwoGeForceGTX2080TiGPUs
+ingalwayson,auto-completionismoreeffectiveatspecifictrigger
+with22GBofmemoryintotaltohostthemodels.Theextensions
+points[1,38].InRQ2,weidentifythemostcommonlyusedtrigger
+automaticallymakeHTTPSrequeststotheservertoreceivethe
+pointsdataandassesshowwellmodelsperformonthem.
+models’ predictions. The server then feeds inputs to the models,
+RQ3: In practice, what are common scenarios in which
+storesrelevantdata,andreturnsthecompletionstotheextension.
+auto-completion is invoked? Next, we study how developers
+utilizeauto-completionwhilecoding,i,e.,traditionalleft-to-right Clients. TheclientsarethelocalIntelliJandVSCodeextensions
+completion,editing,etc. installedondevelopers’systems.Ourprimaryrequirementsincluded
+RQ4:Basedonreal-worldcompletions,whatarethecom- (1) user-friendly operation, (2) displaying several predictions at
+mon causes of poor results? To understand why a model un- once, and (3) integrating smoothly with the IDE without affect-
+derperforms, we manually examine a subset of completions and ingitsnativecompletions.Therefore,bothclientsincorporatenew
+identifycausesofinaccuratepredictionsanddeveloperrejection. completionsintotheIDE’sstandardsuggestionwindow,illustrated
+
+ICSE’24,April14–20,2024,Lisbon,Portugal Izadietal.
+in Figure 2. This strategy facilitates usage and enhances the ex- Table1:StatisticsonDatasets
+isting code completions within the IDEs. Additionally, it allows
+for the presentation of multiple completions simultaneously. To Online Offline
+minimizebias,weshuffletheuniquecompletionsfromthethree Language #ValidCompletions Random TriggerPoint
+modelsbeforesendingthemtotheclientwheretheyappearina
+Python 219,822 585 598
+pop-uplist,eachmarkedwiththesamelogo.Whileweensurethe
+Java 104,157 902 898
+presence of our completions in the list by giving them high pri-
+TypeScript 72,492 897 882
+orityinthecompletionproviderAPI,itistheIDEthatultimately
+PHP 69,215 712 709
+organizesanddisplaysallnativeandnon-nativecompletionsand
+JavaScript 55,550 564 548
+presentsthemtotheusers.Forinstance,userpreferencessuchas
+Kotlin 27,353 - -
+IntelliJ’s“SortcompletionsbasedonML”,caninfluencethefinal
+C++ 15,742 708 709
+order.Duringtheinitialphaseandaftercollectinguserfeedback,
+Rust 14,063 838 836
+weconcentratedonenhancingthespeedofcompletiongeneration
+C# 12,971 928 916
+andresolvingedgecasesthatimpactedtheplugin’susability.
+Go 10,199 757 756
+IntelliJ Extension: We built this extension by extending the
+C 3,626 581 579
+existing extension template from JetBrains [43] to show custom
+Scala 878 971 969
+completions in the completion window. This window shows all
+Ruby - 857 848
+code suggestions to the user. The extension also detects trigger
+pointsandthenpromptsthemodelsforcompletion.VSCodeEx- Total 606,068 9,300 9,248
+tension:WedevelopedtheVSCodeExtensionusingitsAPIand
+annpmpackagethatgeneratesabasicextension[44].Wethenex-
+tendthisbyaddingauto-completionwhenevertheshortcutisused multilingualcode.Lastly,duetolatencyconcerns,forUniXcoder
+orwhenatriggerpointisdetected. andCodeGPT,wesetthebeamwidthfordecodingto1.InCoder
+usestop-pnucleussamplingasopposedtobeamsearch,hencefor
+Telemetry. For each completion request, Code4Me collects its InCoder,weset𝑝 =0.95.Additionally,toincreasethespeedacus-
+timestamp,triggerpoint,programminglanguage,models’predic-
+tomstoppingconditionwasaddedtoensuremodelsonlycomplete
+tions,modelinferencetime,user-selectedprediction(emptyincase
+thelineandnoextratokens.
+ofnoselection),characterlengthofleft-andright-contexts,trig-
+gerkind(manualorautomaticinvocation),IDE,extensionversion, 5 EXPERIMENTALSETUP
+and finally the ground truth (the final line written by the devel-
+5.1 QuantitativeAnalysis
+oper after 30 seconds). The ground truth helps evaluate predic-
+tionsbasedonthedeveloper’sfinalcodeuse.Westorethecontext 5.1.1 ModelsandData. Intheofflinesetting,weusetheUnseen
+lengthincharactersbecausetokenizingforeachrequestputstoo dataset[13]totestthelinecompletionperformanceofthethree
+muchstrainontheserver/client.Additionally,userscanopt-into LMs.Thisisacurateddatasetcontainingsourcecodefilesintwelve
+allowforthecollectionofdevelopmentcontext(i.e.,modelinput) differentlanguages:C,C#,C++,Go,Java,JavaScript,PHP,Python,
+tobeusedinRQ3andRQ4. Ruby,Rust,Scala,andTypeScript.Thisdatasetwasmadespecifi-
+callytoevaluatenumerousLMsforcodeondatatheyhadnotbeen
+Models. WeusethreerecentandpubliclyavailableLMsforcode:
+trainedon.Wefurtherde-duplicatetheUnseendatasetbyremov-
+InCoder,UniXcoder,andCodeGPT.InCoder[2]isanLMforcode
+ingrepositoriesthatarealreadyinthetrainingdataofthemodels.
+trained on natural language and code from GitHub, GitLab, and
+We had previously acquired the list of repositories from the In-
+Stack Overflow. Notably, InCoder is trained using causal mask-
+Coderauthors.Thisprocessremoves29repositoriesoutofthetotal
+ing[45],whichenablesittousebothleftandrightcodecontexts.
+of293repositoriesintheUnseendataset.Weusetwostrategiesfor
+UniXcoder[3]isanLMtrainedonnaturallanguageandsource
+creatingthetestsets;randomandtriggermasking.First,weselect
+codeusingmaskedlanguagemodeling[23,46],unidirectionallan-
+randompositionstoperformcodecompletion,maskinguptothe
+guagemodeling[25],anddenoising[28].CodeGPT[19]isaGPT-
+endoftheline.Theselectedpositionsarealwaysatawhitespace
+2[26]basedmodelfirstintroducedbyLuetal.[19],whocreated
+character.Second,wesimulateuserbehaviorbyselectingonlyline
+severalGPT2-basedmodelsforcode-relatedtasks.Forourstudy,
+completionsthatbeginatatriggerpoint.Bothcasesdonotallow
+we create a multilingual version of CodeGPT by fine-tuning the
+auto-completionsatthebeginningorendofaline.Whengener-
+pre-trained GPT-2 model checkpoint [26] on the training set of
+atingoursynthetictrigger-points,welimitthenumberofcomple-
+theCodeSearchNetdataset[20],whichUniXcoderwasalsotrained
+tionsperfileto10topreventourresultsfrombeingdominatedby
+on [3]. This is a benchmark dataset widely used for fine-tuning
+largefiles,ensuringdiversityinourtestsamples.Table1displays
+modelsforvariouscode-relatedtasks[3,4,9,19,29].CodeSearch-
+thenumberoftestsamplesperlanguage.
+Net contains functions and their documentation in six program-
+minglanguages:Go,Java,JavaScript,PHP,Python,andRuby.We 5.1.2 EvaluationMetrics. Forthequantitativeanalysis(RQ1,RQ2,
+usealearningrateof1.37e-4,abatchsizeof2,andtheAdamW RQ5), we use a diverse set of standard evaluation metrics [47],
+optimizer with a weight decay of 0.01 for 10 epochs when fine- namely acceptance rate, ROUGE-L, BLEU4, METEOR, Edit Simi-
+tuningCodeGPT.Notethatweperformednofurthertrainingon larity,andExactMatch.Duetospacelimitations,weonlyreport
+UniXcoderandInCoder,asthesemodelswerealreadytrainedon ROUGE-L here as it has been shown to align more with human
+
+LanguageModelsforCodeCompletion:APracticalEvaluation ICSE’24,April14–20,2024,Lisbon,Portugal
+judgment[48].Additionalresultsareavailableinthereplication wasused.Then,twoauthorsindividuallytaggedeachcompletion.
+package[22].Severalofthechosenmetricsnecessitatetheconver- Upon completion of labeling, any conflict among the labels was
+sionofagivenpieceofcodeintoatokenarray.Forconsistency discussedbetweenthelabelerstoachieveaconsensus.
+inresults,weutilizeauniformtokenizer,specificallytheInCoder ForRQ4,duetothediversityofpotentialfailurereasonsincom-
+tokenizer,acrossallsamplesgivenitsextensiveexposuretonumer- pletions,fourauthorsundertooktheprocessofformulatingcate-
+ousprogramminglanguages.TheemploymentoftheInCodertok- goriesandassigninglabelstodatapoints.Initially,𝐿 1and𝐿 2inde-
+enizerdoesnotconferanybenefittotheInCodermodel,thereby pendentlyexamined440randomlyselectedfiles(20%ofamodel’s
+preserving the fairness of the comparison. Acceptance Rate is data).Followingtheirindividualanalysis,theyheldameetingto
+theproportionofthenumberofcompletionsacceptedbyauser formapreliminarysetofpotentiallabelstogether.Thisresultedin
+tothenumberofcompletionspresentedtothem.ROUGE-Lisa 22labels.Subsequently,usingthisset,𝐿 3and𝐿 4engagedinindivid-
+variantofROUGE(Recall-OrientedUnderstudyforGistingEvalua- uallyexamininganothersetofdatapoints(aportionofCodeGPT
+tion)[49]whichcomparesthetokenizedgroundtruthwiththepre- predictions). The annotators analyzed available data such as left
+diction,evaluatingitbasedonthelongestcommonsub-sequence andrightcontexts,predictions,andgroundtruth.Afterthefirstit-
+wherein each code token operates as a uni-gram. ROUGE-L cal- eration,annotatorsrefinedthelabelsetto20labels,removingvery
+culatesandemploysbothprecisionandrecalltodetermineanF1 fine-grainedlabelsastheirrepresentationcouldbesufficientlycov-
+score.Groundtruthheremeansthetokensthatthemodelaimsto eredbytheremaininglabels.Both𝐿 3 and𝐿 4 keptrefiningthela-
+predict.Astokensarenotmaskedinonlinesettings,wewait30sec- belsiterativelyuntiltheyfinishedthefirstmodel.Next,𝐿 3and𝐿 4
+ondsafterofferingpredictionstoestablishgroundtruth.Thisdelay hadadiscussiontoresolvetheconflicts,whereseverallabelswere
+allowsdeveloperstimetocorrectanyflawsinthepredictions. merged,removed,ornewonesemerged,resultinginatotalof18la-
+bels.Followingasecondexaminationofthedata,theselabelswere
+5.2 QualitativeAnalysis solidifiedandallocatedtoallsamples.TheUniXcoderandInCoder
+WithRQ3andRQ4,weaimtogaindeeperinsightsintothestrengths
+modelsunderwentanidenticaliterativeprocess,carriedoutby𝐿
+3
+andweaknessesofLMsviaaqualitativeanalysisofasubsetofpre-
+and𝐿 4.Onceagain,thelabelsobtainedfromthepreviousmodel
+wererefinedthroughoutthisprocedure,toprovideacomprehen-
+dictionsgeneratedbyCode4Meinactualscenarios.
+siveanalysisofthepredictionbehaviordemonstratedbythesetwo
+SamplingData. ThisdataiscollectedfromCode4Meuserswho models.
+consented.1 ByOctober2022,Code4Mehadstoredabout29,000
+ConflictsResolutionProcess. Inthelabelingphase,eachsample
+validcompletionswithdevelopmentcontexts.Duetotimeandcost
+was assigned an unrestricted number of labels from the annota-
+constraints, we randomly sampled 2,117 files for manual analy-
+tors.Toreachaconsensus,annotatorsdiscussedsamplesthathad
+sis.Afteraninitialreview,werefinedthecompletionsbyexclud-
+at least one conflict and reduced the number of labels assigned
+ingcaseswheretheleftandrightcontextsweremismatched,the
+toeachsampletoamaximumoftwo,selectedfortheirabilityto
+groundtruthdidnotalignwiththecontext,orthemodelwasap-
+mostaccuratelydescribetheerror’sorigin,asdeterminedbythe
+pliedtonon-programminglanguagetasks(liketextdocumentsor
+experts.Theprocessofassigninglabelsandresolvingconflictswas
+settings).Thisprocessyieldedatotalof1,690filesforlabeling.
+conductedfourtimes,withthelabelsbeingupdatedeachiteration.
+We annotated each completion from two aspects, usage type
+(RQ3)andpotentialfailurereasons(RQ4).ToanswerRQ3,wefocus
+6 RESULTS
+ontheleftandrightcontextofaninvocationwithoutlookingatthe
+models’predictions.ThisRQisaimedatevaluatingwhetherthe Inthissection,wereportboththequantitativeandqualitativere-
+expectationsofusers(wherethecompletioniscalled)alignwith sultsofthisstudy.
+thetrainingsettings.Next,weidentifypotentialreasonswhena
+completionfails.Westoreeachcompletioninafile.Thesefilesin- 6.1 StatisticsonCode4Me
+cludetheleftandrightcodecontexts(relativetothetriggerpoint), WelaunchedCode4MeinJune2022.AsofJuly2023,atotalof1,203
+models’predictions,thetriggerkind(manualorautomatic),and unique users have used the extensions, with 168 of these users
+theassociatedIDE.Additionally,wedemonstratethegroundtruth, agreeingtosharetheircontext,therebyenablingustoconductthe
+representingthetargetedcodelineaftera30-secondinterval,as qualitativeanalysisofthepredictions.Duetoourstrictprivacypol-
+wellastheuser-selectedprediction.Labelersemploythesefilesto icythatensuresuseranonymity,wedonotgatheranypersonalor
+assignfittinglabelstoeachcompletionforallmodels. demographicinformationaboutourusers.Tolimitabuseorcon-
+taminationofourdataweratelimitcodecompletionto1,000com-
+5.2.1 Labeling Process. We used open coding and iteratively re-
+pletionsperhour.Thetoolhasrespondedto1,976,701completions,
+fined a distinct set of labels for both RQ3 and RQ4. The entire
+outofwhich1,370,879qualifyforassessment.Thatis,weremove
+process,includingdefininglabels,labelingsamples,resolvingcon-
+completionrequestswherethegroundtruthisempty(whenthe
+flicts,andcreatingthetaxonomy,requiredabout540person-hours.
+userdidnotwriteanythingaftercallingthemodel),orthepredic-
+ForRQ3,twooftheauthors(referredtoas𝐿 𝑖),developedaset
+tionsareempty.Fortheonlineevaluation,webaseourlanguage
+ofpotentiallabelsforinvokingauto-completion.Theselabelsrep-
+selectiononthelarge-scaleevaluationstudyconductedbyXuet
+resent the circumstances under which each of the three models
+al.[13].However,ourusersdidnotrequestenoughcompletions
+1Wehavetheapprovalofourinstitution’sEthicsReviewBoardtoconductthequali- for Ruby, so we replaced it with Kotlin. This selection results in
+tativeanalysisofthedevelopmentcontext. twelve programming languages with 1,308,606 total data points.
+
+ICSE’24,April14–20,2024,Lisbon,Portugal Izadietal.
+Figure3:ROUGE-Lperlanguageforallmodels(online) Figure5:ROUGE-Lpertriggerpointforallmodels(online)
+aregenerallysimplerthanlinecompletion.Itistriggeredonlyby
+non-alphanumericcharacters,whereasCode4Mealsorespondsto
+keywords.Moreover,IntelliCodeCompose,havingmoreresources,
+employsawiderbeamwidth,hence,improvingtheaccuracy.Among
+models,InCoderhasthehighestscoreespeciallyonJava,C#,and
+Kotlin,whileCodeGPTandUniXcoderbothperformexceptionally
+poorlyonTypeScriptandRust.NotethatahigherROUGE-Lscore
+doesnotalwayscorrelatewithincreasedacceptancerates.Forex-
+ample,JavahasahigheracceptanceratethanPython,despitesim-
+ilarROUGE-Lscores.Thisdisparitymightbeduetothediffering
+easeandverbosityofthelanguages.Pythonprogrammersmight
+find it quicker to type code themselves rather than waiting for
+Code4Me,whereasthemoreverbosenatureofJavamakesthetool
+more beneficial for Java programmers. For all valid completions,
+Figure4:Acceptancerateperlanguage(online) ROUGE-Lscoresmostlyrangefrom20to40.However,foraccepted
+completions,allmodelsscorebetween50to80onROUGE-Lacross
+mostlanguages,indicatingthatevensomeacceptedcompletions
+Table1presentsthenumberofvaliddatapointsperprogramming
+requirefurtheredits.NotethatthedifferencebetweenaROUGE-L
+language.TheIntelliJextensiongenerates49.6%ofthecompletions,
+scoreof50and80issubstantial.Ascoreof50denotesmoderate
+while50.4%comesfromtheVSCodeextension.
+accuracy,suggestingcorrectbasicstructureandcontentbutwith
+significantgapsorerrors.Incontrast,ascoreof80reflectsahigh
+6.2 RQ1:OnlineEvaluation
+accuracy,withthecompletioncloselyresemblingtheintendedout-
+ResultsonAllValidCompletionRequests. Figure3showsROUGE- put.Moredetailsareavailableinourpublicrepository[22].
+LofCode4Meforeachlanguage.InCoderperformsbestinalllan-
+guages,withUniXcoderandCodeGPTcloselytrailinginmostlan- 6.3 RQ2:OnlineEvaluationonTriggerPoints
+guages.UniXcoderandCodeGPTweretrainedonthesamecode
+Ofallcompletions,83.4%comefromautomatictriggerssetatspe-
+dataset, and show similar performance. For instance, they both
+cific trigger points. Figure 5 reports ROUGE-L scores per the 14
+strugglewithRust,asitwasnotintheirtraining.InCoder,how-
+mostfrequentlyusedtriggerpointsforcompletionbyCode4Me.
+ever, was trained on a larger, more varied dataset that includes
+InCoder consistently surpasses UniXcoder and CodeGPT across
+codeunderstandingdatasuchasStackOverflowQ&A.
+varioustriggerpoints.Notably,differentperformanceisobserved
+AcceptanceRate. Figure4presentstheacceptancerateofmod- between these triggers. For instance, the return trigger demon-
+elsperlanguage.Onaverage,modelsachieveanacceptancerate stratessuperiorperformance,potentiallyattributedtoitsposition-
+of 4.91%. The lower acceptance rate of our system compared to inginafilewheremorecontextuallyrelevantdataisavailableto
+the10%inIntelliCodeComposecanbeattributedtovariousfac- themodels.Incontrast,the/triggerperformsworstforallmodels
+tors.IntelliCodeCompose,duringitslaunch,didnotcompetewith whichcanbeattributedtoitsambiguoususeincode(e.g.,division,
+advancedcompletionsystemslikeGitHubCopilotorcustomized commentdenotation,andfilepaths).
+modelstrainedonspecificcompanyoruserdata,whicharepreva-
+6.4 RQ3:UsageScenarios
+lent now. In contrast, Code4Me competes with all existing com-
+pletionsystemswithintheuser’scodeeditor.Additionally,Intelli- Forlabelassignment,weanalyzeonlythelocationwherethepre-
+CodeComposedealswithmethodandargumentcompletion,which dictionwastriggered(leftcontext,rightcontext,andgroundtruth).
+
+LanguageModelsforCodeCompletion:APracticalEvaluation ICSE’24,April14–20,2024,Lisbon,Portugal
+Table2:Taxonomyoffailurecategories
+FailurecategorypluslabelID Count
+Model-orientedErrors 5,511
+Figure6:Auto-completioninvocation:commonscenarios TokenLevel 3,835
+(ME-T1)Incorrectvariable 1,435
+(ME-T2)Incorrectfunction 1,162
+(ME-T3)Incorrectliteral 1,130
+(ME-T4)Incorrecttype 108
+StatementLevel 1,676
+(ME-S1)Wrongparametercount 613
+(ME-S2)Wrongsemantics 352
+Figure7:Top-leveldistributionoffailurecategories
+Untimelytermination 318
+(ME-S3)Earlytermination 205
+Thisistoassesswhatthemodelwouldneedtomodifyforacorrect
+(ME-S4)Latetermination 113
+prediction.ModelpredictionswereexclusivelyevaluatedforRQ4.
+RambledOutputs 249
+Weidentifiedthreecompletionscenariosfromthesamples:(1)to
+(ME-S5)Loopedrepetition 171
+predicttherestofalinebasedontheleftcontextwhilenothingis
+(ME-S6)Copiedinputcontext 78
+writtenontherightside,(2)topartiallycompletealinewhenthe
+(ME-S7)Faultysyntax 144
+modelneedstopredicttokensuptoothertokensonthesameline,
+Application-orientedErrors 2,030
+andfinally(3)topredictandmodifythecodewrittenonthesame
+line,inorderforthecorrectpredictiontobevalid.Twoannotators (AE-1)Mid-tokeninvocation 1,173
+individuallylabeledallrelevantfiles,reachinganagreementrate (AE-2)Insufficientcontext 482
+of82.1%.Mostdisagreementsarosefromdeterminingwhethera (AE-3)Redundantinvocation 240
+lineeditwasnecessary,whichthelabelersdiscussedtoarriveat (AE-4)Typographicalerrorsininput 135
+aconsensus.Figure6presentsthepercentageofthesescenarios. User-overriddenOutputs 771
+Conventional line completions stand out as the most prevalent (UO-1)Correctbutnotaccepted 605
+prediction scenario (48%). However, a model exclusively trained (UO-2)Validbutnotpreferred 112
+forlinecompletionwouldlikelygeneratepredictionsthatconflict
+(UO-3)Acceptedbutrequiredchange 54
+withtherightcontextfortheremaining52%requests.Moreover,in
+about21%ofsituations,itwouldrequiremodificationstotheright
+context.Hence,toalignwithdevelopers’needs,modelsshouldbe
+trainedtomakesmalleditstothesurroundingcontext. Forallmodels,thelargestclassoferrorspertainstopredicting
+variablenames(ME-T1).In28%ofallfileslabeledwithME-T1,the
+6.5 RQ4:FailureCategories modelwascalledaftertheinitialletterswerealreadytypedbythe
+developer.Similarly,for23%ofallpredictionslabeledwithME-T2,
+Afterresolvingallconflicts,wecollected2,800labelsforCodeGPT
+themodelwascalledinthemiddleoftheidentifier.Furthermore,
+predictions,2,701labelsforInCoderpredictions,and2,811labels
+weseeahighcorrelationbetweenME-T1andME-T2,modelsthat
+forUniXcoderpredictions.Thisresultsin8,312labelsforallthree
+failtocorrectlypredictfunctionnameswillalsofailtopredictvari-
+models.Utilizingtheselabels,wedevelopedataxonomythaten-
+able names, and vice versa. Finally, in 14% of all ME-T2 labeled
+compasses all the assigned labels (Table 2). Figure 7, presents a
+cases,modelsalsopredictedthewrongnumberofparameters(ME-
+high-levelsummaryoflabelfrequencypermodel.Ouranalysisin-
+S1). Incorrect literals (ME-T3) occur as frequently as ME-T2 but
+dicatesthatcompletionsaretypicallyrejectedduetouserprefer-
+theymostlyoccurinisolation.
+enceormodelerrors.Modelerrorsfallintotwocategories:model-
+orientedandapplication-oriented.Model-orientederrorsstemfrom Statement-levelErrors. Errorsthatexceedmeresingle-tokenin-
+themodel’sinherentlimitations,whileapplication-orientederrors accuraciesandrelatetoadeepercomprehensionofthelanguage
+arisefromamismatchbetweenhowmodelsaretrainedtoassist orcode,characterizedbytheprediction’slength,parametercount,
+in development and how they are used by developers. Addition- andcomplexsyntax.
+ally, there are cases where the model suggests accurate or valid
+completionsbuttheuserpreferstooverridethem. NumberofParameters. Acommonerroristheincorrectpredic-
+tionofthenumberofparameters(ME-S1)especiallyinlanguages
+6.5.1 Model-oriented. Themodelitselfisaprimarysourceofpoor
+suchasJavaScript(anddialects)andHTML/CSSastheyoftenre-
+predictionsresultingintwomainsub-categoriesoferrors;token-
+quire a large number of parameters, often describing attributes,
+levelandstatement-levelerrors.
+ratherthanvariables.In27%ofappearancesitco-occurswithanin-
+Token-levelErrors. Errorsatthetokenleveloccurwheninaccu- correctfunctionname,in22%ofallcaseswithanincorrectliteral,
+raciesariseincompletingvariables,functions,types,andliterals. andin20%ofallcaseswithanincorrectvariable.Theparameter
+
+ICSE’24,April14–20,2024,Lisbon,Portugal Izadietal.
+1 template <typename T> T setAttribute(const key_t &key, const T 1 a = int(input("enter the number to find 3 consecutive number: ")
+&value, access_specifier_t accessSpecifier, bool isConstant){ 2 if a % 3 == 0:
+2 if (¶ 3 if a % 2 =¶
+1 INCODER_PREDICTION: threadLock_setAttribute 1 INCODER_PREDICTION: 0:
+2 UNIXCODER_PREDICTION: isConstant) { 2 UNIXCODER_PREDICTION: 0:
+3 CODEGPT_PREDICTION: isConstant) 3 CODEGPT_PREDICTION: 1:
+4 GROUND_TRUTH: typeid(T) == typeid(key_t)) { 4 GROUND_TRUTH: = 0:
+5 RIGHTCONTEXT: )
+Figure10:Rejectedprediction:faultysyntax(ME-S7)
+Figure8:Rejectedprediction:wrongsemantics(ME-S2)
+1 for i, state in enumerate(states_):
+1 2 m i i n n d e u _ _ n p e r n o e c r e g s = = [ [ ' ' V S A U L Z E B 3 3 . . S S A A ' ' , , ' ' C U S N N I A P 3 6 . . S S A A ' ' , , ' ' G S G L B C R E 3 3 . . S S A A ' ' , , ' ' U S S M I T M O 3 3 . . S S A A ' ' ] ] 2 3 c f o o n r te c x i t n = al s p t h a e t b e t . ¶ append(previous[i])
+3 cons_civi¶
+1 INCODER_PREDICTION: ree(self.alphabet):
+1 C ' O C D I E V G I P . T S _ A P ' R , ED ' I C C I T V I I O . N S : A' = , [ ' ' C C I I V V I I . . S S A A ' ' , , 'C ' I C V I I V . I S . A S ' A , ', 'C ' I C V I I V . I S . A S ' A , ', 'CIVI.SA', 2 3 U C N O I D X E C G O P D T E _ R P _ R P E R D E I D C I T C I T O I N O : N: .g s e ( t s _ t c a o t d e i ) n : g_handlers(context):
+2 GROUND_TRUTH: l = ['EVEN3.SA', 'CYRE3.SA', ] 4 GROUND_TRUTH: symbols(state):
+Figure 11: Rejected prediction: Typographical errors in in-
+Figure9:Rejectedprediction:loopedrepetition(ME-S5)
+put(AE-4)andmid-tokeninvocation(AE-1)
+valuesarefrequentlyincorrectwhenpredictinganexcessivenum- FaultySyntax. Allmodelsexhibitedlowincorrectsyntaxrates
+berofvariables,asevidencedbyME-T1andME-T3occurrences. (ME-S7),withafewnotablecases.ME-S7ishighlycorrelated(31%)
+Additionally, the number of parameters is closely related to the withpoorperformanceinrequestingcompletionsinthemiddleof
+functionname,asshownbytheco-occurrenceofthelabelME-T2. tokens(AE-1),indicatingpotentialsensitivitytoout-of-distribution
+samplesfrompartialidentifiers.Figure10showsacompletionre-
+Wrong Semantics. Models make mistakes not only when com-
+questforwhichallmodelspredictanassignmentinsteadofequal-
+pletingtokensbutalsointhesemanticsofthestatementtheyare
+ityintheifstatement.
+predicting (ME-S2). Boolean expressions are often mistaken for
+functioncalls,orlistcomprehensionsarepredictedinsteadofin- 6.5.2 Application-oriented. Approximately42%ofcompletionre-
+dexinganarray.Theseareerrorswherethemodeldidnotunder- questsarelabeledwitherrorsrelatedhowmodelsareappliedin
+standwhatthedeveloper’sintentwas.Figure8showsthepredic- practiceandhowthatcanleadtosub-optimalperformance.
+tionofavariableinsteadofcheckingtheequalityoftwotypes,as
+Mid-tokenInvocation. Modelsusetokenizersbasedonfrequently
+theconditionoftheifstatement.ME-S2iscorrelatedwithME-T1
+occurringbytepairsastheirsmallestunit.Thiscausesproblemsifa
+(26%)andME-T2(25%)suggestingmodelsselectidentifiersbased
+modeliscalledinthemiddleofatoken,asitwouldgenerateanout-
+ontheperceivedsemanticsofthepredictedstatement.
+of-distributiontokenatthatlocation(AE-1).Ouranalysisshowsin
+Untimely Termination. LM generations can sometimes be too 34%,23%,and10%ofcases,AE-1co-occurswithincorrectvariable
+brieforlengthy.Earlytermination(ME-S3)relatestomissedfunc- names,functionnames,andliterals,respectively.Figure10shows
+tioncalls(24%)andvariables(21%),wrongliterals(16%),andwrong anexamplewheremodelsstruggletoaccuratelydisambiguatethe
+numberofparameters(13%).Similarly,modelsterminatelate(ME- meaningoftheequalssign.Thischallengeisalsoapplicableinlan-
+S4)duetoextravariables(20%),extrafunctioncalls(19%),toomany guagessuchasJavaScriptorTypeScript,whereboth==and===are
+parameters(18%),andwhenpredictingliterals(16%). employedforequalitycomparison,albeitwithdistinctfunctional-
+ities.
+RambledOutputs. Inthesecases,themodelfallsintoarepetitive
+loop of producing the same few tokens (ME-S5) until it hits the InsufficientContext. Giventhatmodelsuseonlythepresentfile
+maximumallowablelength,orechoespartsoftheinputcontext aspredictivecontext,itscontentiscrucial.Yet,often,contextinsuf-
+(ME-S6),renderingtheoutputnonsensical.Figure9showsanex- ficiencycauseserrors(AE-2)in482predictions.Forinstance,early
+amplewherethemodelcompletesthecontentofthearraybyrepli- in a file, models often require importing code from specific files.
+catingoneofthestrings.Potentialcausesarecommonpatternsof Thisleadstoahighcorrelation(31.3%)betweenAE-2andME-T3
+coding or frequently-used token(s) being present in the context, labels.
+specificmodelsettings,oruseofafallbackwhenthemodelisfac-
+RedundantInvocation. Thesearethecaseswherethemodelsare
+ingdifficultyinpredictinganappropriateresponse.CodeGPTex-
+unnecessarilyinvoked(AE-3),e.g.,inapositionwherebothcorrect
+hibitsfewerME-S4instances(28files)comparedtoUniXcoder(35)
+leftandrightcontextsalreadyexist.Weattributethistobothuser
+andInCoder(50).Qualitativeanalysisshowsthisissueoccursmore
+behaviorandimplementationfactors.
+whenthequalityofinputdataisnotveryhigh.Furthermore,ME-
+S5occursmorewhenthemodelcopiesaliteral(19%)frominput TypographicalErrorsinInput. Modelsalsostrugglewhenthere
+context. aremisspellingsormistakesintheleft-context(AE-4).Figure11
+
+LanguageModelsforCodeCompletion:APracticalEvaluation ICSE’24,April14–20,2024,Lisbon,Portugal
+Figure12:ROUGE-Lperlanguage(randomstrategy) Figure13:ROUGE-Lperlanguage(triggerpointstrategy)
+presentsanexamplewhereatypoin“alphebt”andamid-token
+triggercauseinaccuratefunctionprediction.
+6.5.3 User-overriddenOutputs. Inthesecases,usersoverridethe
+models’suggestions.
+Correctbutnotaccepted. Interestingly,theuserdoesnotalways
+acceptpredictionsevenwhentheyarecorrect(UO-1).In605pre-
+dictions,thegroundtruthmatchedthegeneratedpredictionsex-
+actly.Whenexaminingthepredictiontypes,wefoundthatfor163
+predictions(comprising102partiallinecompletionsand61lineed-
+its),therewascontexttotherightofthepredictionlocationthat
+theUniXcoderandCodeGPTmodelscouldnothavetakenintoac-
+count,potentiallyleadingtooverwriting.Usersmightalsochoose
+acompletionfromacompetingtool,whichisbeyondourcontrol.
+Figure14:ROUGE-Lpertriggerpoint
+ValidbutnotPreferred. Incertaincases,althoughtheprediction
+didnotpreciselymatchthegroundtruth,itwouldbeavalidpre-
+dictionifaccepted(UO-2).Thereasonislikelyattributedtostyle ROUGE-LforUniXcoderandCodeGPT,whereasInCoderperforms
+preferencesthatarecurrentlynotaccountedforinthemodels. betteronthistestset.Thesedifferencesareespeciallystrongwhen
+consideringExactMatch.
+AcceptedbutRequiredChange. Incertaincases,theselectedpre-
+dictiondoesnotperfectlymatchthegroundtruth(UO-3).In22% ComparisontoOnlineEvaluation. Bothofflinetestsetsresultin
+ofinstances,variablemodificationsoccurred,13%involvedliteral a gross overestimation of the performance of the models. While
+changes,6%witnessedfunctionnamealterations,and9%entailed InCoderdidnotexceed40ROUGE-Lforanyindividuallanguage
+parametercountadjustments. intheonlineevaluation,theofflineevaluationshowsamaximum
+ROUGE-Lofover60inboththerandomandtriggerpointstrate-
+6.6 RQ5:OfflineEvaluation gies.MetricvaluesaresimilarlyinflatedforUniXcoderandCodeGPT,
+which score higher than 30 ROUGE-L in only two languages in
+WereporttheaverageROUGE-Lperlanguagefortherandomand
+theonlinesetting,butachievethisforalllanguagesintheoffline
+triggerpointtestsetsinFigures12and13.WealsoreportROUGE-
+setting.Thoughofflineresultsaremuchhigherthancorrespond-
+LpertriggerpointforthetriggerpointtestsetinFigure14.
+ingonlineones,offlineevaluationstillholdsvalueduetocorrect
+PerformanceperLanguage. Eachmodelbehavesdifferentlyacross modelrankings,i.e.,InCoderfollowedbyUniXcoderandCodeGPT.
+languagesinrandomandtriggerpointtests.UniXcoderandCodeGPT, However,performanceperlanguagemaynotalignwithonlineset-
+trainedonidenticalcodedatasets,performsimilarlyinalllanguages. tings,withslightdifferencesinbothtestsets.
+However, InCoder, trained on a larger and more diverse corpus,
+Performance per Trigger Point. Some models have proficiency
+outperforms the rest. Its proficiency is also boosted by utilizing
+gapsatcertaintriggerpoints,however,usingrandomtriggerpoints
+bothleftandrightcontexts,whichcanbehelpful,especiallyinthe
+for auto-completion may not mimic programmers’ actions well.
+firstfewlinesofafilewithlessleftbutmorerightcontext.
+Figure14showsROUGE-Lscoresforthreemodelspostdifferent
+Impact of Masking Strategy. Based on the results, models ex- triggerpoints.Theseoutcomesdiffergreatlyfromouronlineeval-
+hibitsimilarperformanceacrossbothtestsets.However,themain uationresults(Figure5).Onceagainweobservethatofflineresults
+difference is that the trigger point test set yields slightly lower arehigherthanthecorrespondingresultsfromtheonlinesetting.
+
+ICSE’24,April14–20,2024,Lisbon,Portugal Izadietal.
+However, performance per trigger point also varies between on- settings.Differencesmaystemfromthetrainingdatasets,evalua-
+lineandofflineevaluations.Inonlineevaluation,InCoderexcels tionstrategy(randomtokenmaskingversuspost-invocationcom-
+atthereturntriggerpoint,whileofflineshowsthethreemodels pletion),developerreal-worldinteractionswiththecompletionsys-
+arecloselycompetitive.Additionally,theofflineevaluationshows tems,individualdecision-makingprocesses,anddevelopers’per-
+thatthe>triggerpointyieldsverygoodperformancewhilethis sonalpreferences,amongotherfactors.Forinstance,thecontext
+isnotthecaseintheonlineevaluation.Thesedissimilaritiesshow andcodequalityauthoredbyanaveragedevelopermaydifferfrom
+thatevenatestsetcreatedbasedontriggerpointsdoesnotper- those present in the refined benchmark or proprietary datasets
+fectly match a realistic programming environment. This may be used in some offline evaluations. Additionally, offline data typi-
+duetothefactthatofflinedatasetsoftencontaincompletecode, callycontainmorevaluablecontextthanlivedevelopmentwhere
+meaningtheremaybemoreusefulcodecontextavailablethanin limited context is available. In RQ5, offline evaluations did not
+caseswhereadeveloperisactivelycreatingandeditingnewcode. matchouronlineones,makingitachallengetoachieveequivalent
+resultswithbothsettings.Ouranalysisalsoindicatesthatdefin-
+7 DISCUSSION ingsuccessfulpredictionsiscomplex.Bothourresearchandprior
+studies[50]demonstratethatevenacceptedsuggestionsmaynot
+Below, we briefly discuss the key shortcomings of existing code
+persistinacodebaseasdevelopersmayinitiallyacceptaprediction
+completionsolutions.
+andlateralteritsignificantly.Thisleadstothechallengeofdeter-
+miningthecorrecttimingforpredictionvalidation.Finally,RQ4
+7.1 CurrentLimitations
+showedthatin78%ofcaseswheredeveloperstendtooverridethe
+7.1.1 ModelsandTrainingShortcomings. BasedonRQ4results,on
+recommendedcompletions(UO-1),thepredictionsarecorrectand
+averageforallmodels,around66%offailures(excludingdiscarded
+match the ground truth exactly. Valid but not preferred comple-
+requests),arosefrommodelshortcomingssuchasinaccurateiden-
+tions(UO-2)are15%ofcasesandin7%ofinstances,theuseropts
+tifiers and types, semantic or syntactic errors, and untimely ter-
+foracompletionthatrequireseditingbeforeitcanbeincorporated
+mination.Developersemployproperidentifiernamestoenhance
+into the code (UO-3). Deciphering developers’ intent from code
+codecomprehensionandmaintenance,however,existingmodels
+can be tough due to its complexity and individual coding styles.
+facedifficultyingeneratingsuitablenamesthatreflectcodefunc-
+Moreover,predictionsmaynotmatchthegroundtruthbutcanbe
+tions and intentions due to their underlying training to predict
+semanticallyconsistentwiththecodeandacceptable.Whilequal-
+plausiblesubsequenttokens,notinunderstandingcodeasdevel-
+itativeanalysiscanhelp,itisnotascalablesolution.
+opersdo.Theircurrentlimitationsalsoincludeinadequateknowl-
+edgeofthecodebase,hinderingtheirabilitytoexamineit,identify
+7.2 Recommendations
+components,andcomprehendtheirrelationshipstoimprovegen-
+erations.Moreover,thepracticeofwritingnamesandcomments Examiningtheoutcomesandunresolvedissuesbasedonouranal-
+canvarygreatlyamongdevelopers,andamodeltrainedonadi- ysisallowsustosuggestseveralpotentialresearchdirections.
+verse range of code may have difficulty learning a consistent or
+7.2.1 Align Model Training with Practice. We propose adjusting
+usefulstrategyforgeneratingthem.Thiscouldleadtosuggestions
+auto-completion’strainingobjectivetodecreasethegranularityof
+thatareconfusingorunhelpfulfordevelopers.
+masked units (e.g., characters), as well as adding partial comple-
+7.1.2 DisparitybetweenTheoryandApplication. About24%ofthe tions,andeditingcapabilitytomodels.Intentionallyaddingbugs
+failuresareattributedtoamisalignmentbetweenthemodels’prac- or small perturbations on a character level can improve perfor-
+ticalapplicationandtheirtrainingobjectives.Themostprevalent manceinthepresenceofbugs,typos,andsyntacticinconsistencies
+instance, accounting for 58% of such cases, is the inappropriate intheinputs.Next,oversamplinglessfrequenttriggerscanrepair
+invocationofmodels,eithermanuallyorautomatically,atunsuit- thedifferenceinperformanceatthesepoints.Aligningwiththeex-
+ablelocationslikeinthemiddleofidentifiersoroperators,creating pectedusecasecanimprovemodelperformance,meetdevelopers’
+newout-of-distributiontokensasinputtothemodels.Theamount preferencesforintuitiveauto-completiontools[42],andenhance
+andqualityofcontextalsoimpactthesemodels’generations,with real-timeapplicationrobustness.Toaddresstheperformancegap
+around24%ofinstancessupplyinglimitedcontext,and7%provid- amongdifferentlanguagesashighlightedinRQ1,RQ2,andRQ5,
+ingcontextwithtyposorsyntaxerrors.Theaverageleftandright werecommendfurtherresearchoncross-languagetraining,iden-
+contextlengthinouronlinedataare299and154tokens.Forex- tificationofuniquelinguisticelements,andtheincorporationof
+ample,relevantcontextmightnotbereadilyavailablewithinthe low-resourcelanguages.Finally,exploringadditionalmodelarchi-
+file,suchasfunctionsonimportedobjectsorautilityclasswith tecturesforthistaskcouldyieldintriguingresults.
+globalfunctions.Additionally,RQ3showedbidirectionalmodels,
+7.2.2 ReduceModelRambling. Overcomingrambling(ME-S5and
+needtomodifytherightcontextforthepredictiontoproperlyfitin
+ME-S6) is a significant challenge in NLP. Methods like modify-
+thecontext.Thisnecessitytypicallystemmedfrombracketsauto-
+ingthetrainingprocess,usingmoresophisticateddecodingstrate-
+insertedbycodeeditorsorextensivecoderewrites.Asanticipated,
+gies,introducingpenaltiesduringthegenerationprocess,orpost-
+brief,poor-quality,faulty,misalignedcodecontextsfromlivecode
+processingthegeneratedtexttoremoverepetitionsorcopiedcon-
+canresultinsubstandardrecommendations.
+text are among the potential solutions. For instance, setting the
+7.1.3 InsufficientandUnrealisticEvaluationSettings. Ourquanti- model’stemperatureparametertoahighervaluecanmakeitless
+tativeanalysisrevealsagapinaccuracybetweenonlineandoffline deterministicwithrespecttopatternsfromtheinput.Finally,using
+
+LanguageModelsforCodeCompletion:APracticalEvaluation ICSE’24,April14–20,2024,Lisbon,Portugal
+reinforcementlearning,onecanpenalizethemodelforcopyingin- 7.3 ThreatstotheValidity
+putdirectlyandrewarditforgeneratingmoreoriginalresponses. Threatstointernalvalidity,suchasmodelhyperparametersand
+implementation errors, could impact our study’s results. We uti-
+7.2.3 EnrichtheContext. Relyingsolelyonalanguagemodeling lizedpubliccheckpointsofthreeLMsprovidedinreplicationpack-
+approachforcodecompletionpresentscertainlimitations.Forin- ages.Wehavetestedourimplementationandchosenhyperparam-
+stance,it can be challenging for a model to predict user-defined eterscarefully,however,moreoptimalhyperparametersmayexist.
+typesanduncommonornewAPIsiftheyarenotincludedinthe Toreducetheimpactofundetectederrorsinthecode,wepublish
+trainingdata(ME-T1,ME-T2,ME-T4).Additionally,ifthereisin- oursourcecodeanddatasettoenableotherresearcherstoreplicate
+sufficientcontextwithinthecurrentfile,themodelmaystruggle andextendourwork.Tominimizesubjectivitybias,fourauthors
+(AE-2). Enriching model input with additional details, e.g., avail- participatedinopencoding.Ineveryround,atleasttwoauthorsin-
+ablefunctionsandimportedclassescouldhelpthemodelbetterun- dependentlyannotatedsamplesusingavailablecodecontext.Any
+derstandthecontext.Therefore,integratingLMswithmorestruc- arising conflicts were subsequently resolved through discussion.
+turedmethods,suchassymbolicreasoning,orincorporatingdata These processes increase our confidence in the taxonomy, how-
+from static analyses and local context including project context ever,assubjectivityisunavoidableinqualitativeanalysis,further
+(scale and domain), system context (e.g., languages and deploy- large-scalestudiescanrefineorverifyourtaxonomy.
+mentenvironments),andpersonalcontext(e.g.,expertise)canlead Threatstoexternalvalidityincludedatasetqualityandresult
+tomoreaccuratemodelingofuserneedsandhighercodequality. generalizability. For enhancing generalizability, we utilize three
+Post-processinggenerationsalsoreducesyntacticissues(ME-S7). public code LMs with different training objectives and architec-
+tures,and12programminglanguagesbasedontheliterature[13].
+7.2.4 SmartInvocation. RQ2andRQ4findingshighlightdifferent Thisallowsrepresentationacrossadiversesetofmodelsandlan-
+issueswithmodelinvocation.Totackleissueswithautomaticmid- guages.Inofflineevaluation,weutilizedanddeduplicatedastan-
+tokeninvocations(AE-1)andredundantactivation(AE-3),wecan darddataset[13]topreventdataleakagefromthetrainingdata[51].
+equip both models and code editors with a smart invocation ca- For fine-tuning CodeGPT on multilingual data, weused another
+pabilitytoselectivelyoffersuggestions.Studyingdeveloperinter- commonbenchmarkdataset[20].Apotentialconcernisthatthe
+actiondatawithcodeeditorscanleadtoidentifyingthemostap- Code4Meuserbasemaynotreflectthebroaderprogrammingcom-
+propriatemomentstoautomaticallyinvokeauto-completion.Ad- munity.Toaddressthis,wehaveensuredextensivedistributionof
+ditionally,modelsshouldrefrainfromsuggestionsifunsureabout ourtooltoexpandouruserbaseoverayear.Webelieveitmiti-
+theirpredictions.Thiswillreducenoiseandensurethatonlyrele- gatesthepotentialbias,resultinginarepresentativedataset.Yet,
+vant,high-confidencesuggestionsarepresentedtothedeveloper. furtherstudiescanverifyandgeneralizeourfindingstomoredata,
+models,languages,andusers.
+Constructvaliditythreatsrelatetotheappropriatenessofour
+7.2.5 ImproveUsabilityandCustomization. Werecommendusing
+metrics.ToevaluateCode4Me,weuseadiversesetofwidely-used
+multi-suggestion functionality (variety of viable completions) to
+metrics from the literature [1, 7, 34, 35, 50, 52], however, due to
+repairvalidbutnotacceptedcompletions(UO-2)potentiallylead-
+spaceconstraints,weonlyreportROUGE-Landacceptancerates
+ingtoahigheracceptancerate(RQ1).Whilepersonalizedrecom-
+here,withtherestavailableinourreplicationpackage[22].
+mendersystemsandbetteruserinterfacescanimproveacceptance,
+furtherstudiesareneededtofullycomprehendtheunderlyingrea-
+8 CONCLUSION
+sonsforoverwrittencompletions(UO-1,UO-2,UO-3).
+Inthispaper,weevaluatetheuseofTransformer-basedmodelsfor
+codecompletioninapracticalsetting.Tothisend,wedeveloped
+7.2.6 Improve Evaluation Settings. The challenges of evaluating
+Code4Me,anopen-sourcecompletionextensionthatcanworkwith
+codecompletionsystemsaremultifacetedincludingissuesrelated
+three popular LMs. Over the course of a year, we collected over
+to proper metrics, defining ground truth, developers’ individual
+600Kvalidcompletionsfrom1,200developers.Ourempiricalanal-
+preferences,andtheirabilitytoalterthegeneratedcode.Strictmet-
+ysisdemonstratesthatlanguagepopularity,triggerpoints,andcom-
+rics like acceptance rate can undervalue a model’s worth, while
+pletionscenariossubstantiallyaffectaccuracy.Moreover,thepreva-
+fuzzy metrics (e.g., BLEU and ROUGE) overlook semantic equiv-
+lentuseofofflineevaluationsinexistingresearchtendstopaint
+alence,resultinginunderestimation.Moreover,traditionaloffline
+anoverlyoptimisticpictureofthecurrentauto-completioncapa-
+evaluationsfailtoaccuratelyassesstheperformanceofthesesys-
+bilities.Ourfindingssuggestaneedforafocusedstudyonauto-
+tems(RQ5).Onlineevaluationsaimtoaddresssomeoftheseshort-
+completionthatconsidersreal-worldapplications,aswellastrain-
+comingsbyevaluatingmodels’performanceinmorerealisticcod-
+ingLMsthatbetteralignwiththeneedsofdevelopers.
+ingconditions.However,RQ4showedthatsomecorrect comple-
+tions are still rejected by developers (UO-1). Hence, an effective
+ACKNOWLEDGMENTS
+evaluationrequiresestablishingareliablegroundtruthandabet-
+terunderstandingofdevelopers’needs.RQ3hasdemonstratedthat OurspecialthanksgotoFrankvanderHeijdenandJoritdeWeerdt
+programmersemploymodelsundervaryingscenarios,suchasleft- whosesupportandassistanceplayedanimportantroleinCode4Me’s
+to-rightcompletionoreditingtaskswhichshouldbeconsideredin success.WealsothanktheuserswhousedCode4Meintheirpro-
+theevaluation.Lastly,futureworkcanexplorethedifferencesbe- gramming activities. Finally, we thank Dr. Georgios Gousios for
+tweentheperformanceofIDEextensionsandthird-partytools. providinghardwareresourcesforpartoftheexperiments.
+
+ICSE’24,April14–20,2024,Lisbon,Portugal Izadietal.
+REFERENCES [19] ShuaiLu,DayaGuo,ShuoRen,JunjieHuang,AlexeySvyatkovskiy,Ambrosio
+[1] MalihehIzadi,RobertaGismondi,andGeorgiosGousios. Codefill:Multi-token Blanco,ColinClement,DawnDrain,DaxinJiang,DuyuTang,GeLi,Lidong
+codecompletionbyjointlylearningfromstructureandnamingsequences. In Zhou,LinjunShou,LongZhou,MicheleTufano,MINGGONG,MingZhou,
+Proceedingsofthe44thInternationalConferenceonSoftwareEngineering,ICSE’22, Nan Duan, Neel Sundaresan, Shao Kun Deng, Shengyu Fu, and Shujie LIU.
+page401–412,NewYork,NY,USA,2022.AssociationforComputingMachinery. CodeXGLUE:Amachinelearningbenchmarkdatasetforcodeunderstanding
+[2] DanielFried,ArmenAghajanyan,JessyLin,SidaWang,EricWallace,FredaShi, andgeneration.InThirty-fifthConferenceonNeuralInformationProcessingSys-
+RuiqiZhong,ScottYih,LukeZettlemoyer,andMikeLewis. Incoder:Agenera- temsDatasetsandBenchmarksTrack(Round1),2021.
+tivemodelforcodeinfillingandsynthesis.InTheEleventhInternationalConfer- [20] HamelHusain,Ho-HsiangWu,TiferetGazit,MiltiadisAllamanis,andMarc
+enceonLearningRepresentations,2023. Brockschmidt.CodeSearchNetchallenge:Evaluatingthestateofsemanticcode
+[3] Daya Guo, Shuai Lu, Nan Duan, Yanlin Wang, Ming Zhou, and Jian Yin. search.arXivpreprintarXiv:1909.09436,2019.
+UniXcoder:Unifiedcross-modalpre-trainingforcoderepresentation.InProceed- [21] Microsoft. Microsoftintellicode. https://visualstudio.microsoft.com/services/
+ingsofthe60thAnnualMeetingoftheAssociationforComputationalLinguistics intellicode[Accessed:2023].
+(Volume1:LongPapers),pages7212–7225,Dublin,Ireland,May2022.Associa- [22] Maliheh Izadi, Jonathan Katzy, Tim van Dam, Marc Otten, Razvan Mihai
+tionforComputationalLinguistics. Popescu,andArievanDeursen.Studymaterialincludingsourcecodeanddata.
+[4] YueWang,WeishiWang,ShafiqJoty,andStevenC.H.Hoi. Codet5:Identifier- https://github.com/AISE-TUDelft/Code4MeEvaluation[Accessed:2024].
+awareunifiedpre-trainedencoder-decodermodelsforcodeunderstandingand [23] JacobDevlin,Ming-WeiChang,KentonLee,andKristinaToutanova. BERT:
+generation.InProceedingsofthe2021ConferenceonEmpiricalMethodsinNatural Pre-trainingofdeepbidirectionaltransformersforlanguageunderstanding.In
+LanguageProcessing,EMNLP2021,2021. Proceedingsofthe2019ConferenceoftheNorthAmericanChapteroftheAsso-
+[5] RaymondLi,LoubnaBenAllal,YangtianZi,NiklasMuennighoff,DenisKo- ciationforComputationalLinguistics:HumanLanguageTechnologies,Volume1
+cetkov,ChenghaoMou,MarcMarone,ChristopherAkiki,JiaLi,JennyChim, (LongandShortPapers),pages4171–4186,Minneapolis,Minnesota,June2019.
+etal. Starcoder:maythesourcebewithyou! arXivpreprintarXiv:2305.06161, AssociationforComputationalLinguistics.
+2023. [24] YinhanLiu,MyleOtt,NamanGoyal,JingfeiDu,MandarJoshi,DanqiChen,
+[6] LoubnaBenAllal,RaymondLi,DenisKocetkov,ChenghaoMou,Christopher OmerLevy,MikeLewis,LukeZettlemoyer,andVeselinStoyanov. RoBERTa:
+Akiki,CarlosMunozFerrandis,NiklasMuennighoff,MayankMishra,AlexGu, A Robustly Optimized BERT Pretraining Approach. arXiv e-prints, page
+MananDey,LogeshKumarUmapathi,CarolynJaneAnderson,YangtianZi, arXiv:1907.11692,July2019.
+Joel Lamy Poirier, Hailey Schoelkopf, Sergey Troshin, Dmitry Abulkhanov, [25] AlecRadfordandKarthikNarasimhan. Improvinglanguageunderstandingby
+ManuelRomero,MichaelLappert,FrancescoDeToni,BernardoGarcíadelRío, generativepre-training.2018.
+QianLiu,ShamikBose,UrvashiBhattacharyya,TerryYueZhuo,IanYu,Paulo [26] Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya
+Villegas,MarcoZocca,SourabMangrulkar,DavidLansky,HuuNguyen,Danish Sutskever.Languagemodelsareunsupervisedmultitasklearners.2019.
+Contractor,LuisVilla,JiaLi,DzmitryBahdanau,YacineJernite,SeanHughes, [27] Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Ka-
+DanielFried,ArjunGuha,HarmdeVries,andLeandrovonWerra.Santacoder: plan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry,
+don’treachforthestars!InDeepLearningforCodeWorkshop(DL4C),2023. AmandaAskell,SandhiniAgarwal,ArielHerbert-Voss,GretchenKrueger,Tom
+[7] AlexeySvyatkovskiy,ShaoKunDeng,ShengyuFu,andNeelSundaresan.Intel- Henighan,RewonChild,AdityaRamesh,DanielZiegler,JeffreyWu,Clemens
+licodecompose:Codegenerationusingtransformer. InProceedingsofthe28th Winter,ChrisHesse,MarkChen,EricSigler,MateuszLitwin,ScottGray,Ben-
+ACMJointMeetingonEuropeanSoftwareEngineeringConferenceandSymposium jaminChess,JackClark,ChristopherBerner,SamMcCandlish,AlecRadford,
+ontheFoundationsofSoftwareEngineering,pages1433–1443,2020. IlyaSutskever,andDarioAmodei. Languagemodelsarefew-shotlearners. In
+[8] SeohyunKim,JinmanZhao,YuchiTian,andSatishChandra.Codepredictionby H.Larochelle,M.Ranzato,R.Hadsell,M.F.Balcan,andH.Lin,editors,Advances
+feedingtreestotransformers. In2021IEEE/ACM43rdInternationalConference inNeuralInformationProcessingSystems,volume33,pages1877–1901.Curran
+onSoftwareEngineering(ICSE),pages150–162.IEEE,2021. Associates,Inc.,2020.
+[9] ZhangyinFeng,DayaGuo,DuyuTang,NanDuan,XiaochengFeng,MingGong, [28] Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang,
+LinjunShou,BingQin,TingLiu,DaxinJiang,andMingZhou. CodeBERT:A MichaelMatena,YanqiZhou,WeiLi,andPeterJ.Liu. Exploringthelimitsof
+pre-trainedmodelforprogrammingandnaturallanguages. InFindingsofthe transferlearningwithaunifiedtext-to-texttransformer. J.Mach.Learn.Res.,
+AssociationforComputationalLinguistics:EMNLP2020,pages1536–1547,Online, 21(1),jan2020.
+November2020.AssociationforComputationalLinguistics. [29] DayaGuo,ShuoRen,ShuaiLu,ZhangyinFeng,DuyuTang,ShujieLIU,Long
+[10] ErikNijkamp,BoPang,HiroakiHayashi,LifuTu,HaiquanWang,YingboZhou, Zhou,NanDuan,AlexeySvyatkovskiy,ShengyuFu,MicheleTufano,ShaoKun
+SilvioSavarese,andCaimingXiong.Codegen:Anopenlargelanguagemodelfor Deng,ColinClement,DawnDrain,NeelSundaresan,JianYin,DaxinJiang,and
+codewithmulti-turnprogramsynthesis.InInternationalConferenceonLearning MingZhou. Graphcodebert:Pre-trainingcoderepresentationswithdataflow.
+Representations,2022. InInternationalConferenceonLearningRepresentations,2021.
+[11] Sid Black, Stella Biderman, Eric Hallahan, Quentin Anthony,Leo Gao, Lau- [30] JonathanKatzy,MalihehIzadi,andArievanDeursen. Ontheimpactoflan-
+renceGolding,HoraceHe,ConnorLeahy,KyleMcDonell,JasonPhang,etal. guageselectionfortrainingandevaluatingprogramminglanguagemodels. In
+Gpt-neox-20b:Anopen-sourceautoregressivelanguagemodel. arXivpreprint 2023IEEE23rdInternationalWorkingConferenceonSourceCodeAnalysisand
+arXiv:2204.06745,2022. Manipulation(SCAM),pages271–276.IEEE,2023.
+[12] StellaBiderman,HaileySchoelkopf,QuentinGregoryAnthony,HerbieBradley, [31] AliAl-Kaswan,ToufiqueAhmed,MalihehIzadi,AnandAshokSawant,Prem
+Kyle O’Brien, Eric Hallahan, Mohammad Aflah Khan, Shivanshu Purohit, Devanbu,andArievanDeursen. Extendingsourcecodepre-trainedlanguage
+USVSNSaiPrashanth,EdwardRaff,etal. Pythia:Asuiteforanalyzinglarge modelstosummarisedecompiledbinaries.InProceedingsofthe30thIEEEInter-
+languagemodelsacrosstrainingandscaling.InInternationalConferenceonMa- nationalConferenceonSoftwareAnalysis,EvolutionandReengineering(SANER),
+chineLearning,pages2397–2430.PMLR,2023. 2023.
+[13] FrankFXu,UriAlon,GrahamNeubig,andVincentJosuaHellendoorn. Asys- [32] MalihehIzadi,AbbasHeydarnoori,andGeorgiosGousios. Topicrecommenda-
+tematicevaluationoflargelanguagemodelsofcode. InProceedingsofthe6th tionforsoftwarerepositoriesusingmulti-labelclassificationalgorithms.Empir-
+ACMSIGPLANInternationalSymposiumonMachineProgramming,pages1–10, icalSoftwareEngineering,26:1–33,2021.
+2022. [33] Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde
+[14] Github.Githubcopilot.https://github.com/features/copilot[Accessed:2023]. deOliveiraPinto,JaredKaplan,HarriEdwards,YuriBurda,NicholasJoseph,
+[15] Google. Mlenhancedcodecompletion. https://ai.googleblog.com/2022/07/ml- GregBrockman,etal.Evaluatinglargelanguagemodelstrainedoncode.arXiv
+enhanced-code-completion-improves.html[Accessed:2023]. preprintarXiv:2107.03374,2021.
+[16] Amazon.Amazoncodewhisperer.https://aws.amazon.com/codewhisperer[Ac- [34] MatteoCiniselli,NathanCooper,LucaPascarella,AntonioMastropaolo,Emad
+cessed:2023]. Aghajani,DenysPoshyvanyk,MassimilianoDiPenta,andGabrieleBavota.An
+[17] VitaliyBibaev,AlexeyKalina,VadimLomshakov,YaroslavGolubev,Alexander empiricalstudyontheusageoftransformermodelsforcodecompletion. IEEE
+Bezzubov,NikitaPovarov,andTimofeyBryksin.Allyouneedislogs:Improving TransactionsonSoftwareEngineering,2021.
+codecompletionbylearningfromanonymousideusagelogs.InProceedingsof [35] MatteoCiniselli,NathanCooper,LucaPascarella,DenysPoshyvanyk,Massim-
+the30thACMJointEuropeanSoftwareEngineeringConferenceandSymposiumon ilianoDiPenta,andGabrieleBavota.AnempiricalstudyontheusageofBERT
+theFoundationsofSoftwareEngineering,ESEC/FSE2022,page1269–1279,New modelsforcodecompletion. 2021IEEE/ACM18thInternationalConferenceon
+York,NY,USA,2022.AssociationforComputingMachinery. MiningSoftwareRepositories(MSR),pages108–119,2021.
+[18] GarethAriAye,SeohyunKim,andHongyuLi. Learningautocompletionfrom [36] YanlinWangandHuiLi.Codecompletionbymodelingflattenedabstractsyntax
+real-worlddatasets.In2021IEEE/ACM43rdInternationalConferenceonSoftware treesasgraphs. InProceedingsoftheAAAIconferenceonartificialintelligence,
+Engineering:SoftwareEngineeringinPractice(ICSE-SEIP),pages131–139.IEEE, volume35,pages14015–14023,2021.
+2021. [37] SebastianProksch,SvenAmann,SarahNadi,andMiraMezini. Evaluatingthe
+evaluationsofcoderecommendersystems:arealitycheck. InProceedingsof
+the31stIEEE/ACMInternationalConferenceonAutomatedSoftwareEngineering,
+
+LanguageModelsforCodeCompletion:APracticalEvaluation ICSE’24,April14–20,2024,Lisbon,Portugal
+pages111–121,2016.
+[38] VincentJHellendoorn,SebastianProksch,HaraldCGall,andAlbertoBacchelli.
+Whencodecompletionfails:Acasestudyonreal-worldcompletions. In2019
+IEEE/ACM41stInternationalConferenceonSoftwareEngineering(ICSE),pages
+960–970.IEEE,2019.
+[39] MarianaMărășoiu,LukeChurch,andAlanBlackwell. Anempiricalinvestiga-
+tionofcodecompletionusagebyprofessionalsoftwaredevelopers.Psychology
+ofProgrammingInterestGroup(PPIG2015),pages59–68,2015.
+[40] T.vanDam,M.Izadi,andA.vanDeursen.Enrichingsourcecodewithcontextual
+dataforcodecompletionmodels:Anempiricalstudy. In2023IEEE/ACM20th
+InternationalConferenceonMiningSoftwareRepositories(MSR),pages170–182,
+LosAlamitos,CA,USA,may2023.IEEEComputerSociety.
+[41] ChaozhengWang,JunhaoHu,CuiyunGao,YuJin,TaoXie,HailiangHuang,
+ZhenyuLei,andYuetangDeng.Practitioners’expectationsoncodecompletion,
+2023.
+[42] MatteoCiniselli,LucaPascarella,EmadAghajani,SimoneScalabrino,Rocco
+Oliveto,andGabrieleBavota. Sourcecoderecommendersystems:Thepracti-
+tioners’perspective.pages2161–2172,052023.
+[43] IntelliJ. Intellijplatformplugintemplate. https://github.com/JetBrains/intellij-
+platform-plugin-template[Accessed:2022].
+[44] VSCode. Code-extensionandcustomizationgenerator. https://www.npmjs.
+com/package/generator-code[Accessed:2022].
+[45] ArmenAghajanyan,BernieHuang,CandaceRoss,VladimirKarpukhin,HuXu,
+Naman Goyal, Dmytro Okhonko, Mandar Joshi, Gargi Ghosh, Mike Lewis,
+etal. Cm3:Acausalmaskedmultimodalmodeloftheinternet. arXivpreprint
+arXiv:2201.07520,2022.
+[46] AlexeiBaevski,SergeyEdunov,YinhanLiu,LukeZettlemoyer,andMichaelAuli.
+Cloze-drivenpretrainingofself-attentionnetworks. InProceedingsofthe2019
+ConferenceonEmpiricalMethodsinNaturalLanguageProcessingandthe9thIn-
+ternationalJointConferenceonNaturalLanguageProcessing(EMNLP-IJCNLP),
+pages5360–5369,HongKong,China,November2019.AssociationforCompu-
+tationalLinguistics.
+[47] MalihehIzadiandMatinNiliAhmadabadi.Ontheevaluationofnlp-basedmod-
+elsforsoftwareengineering.InProceedingsofthe1stInternationalWorkshopon
+NaturalLanguage-basedSoftwareEngineering,pages48–50,2022.
+[48] MikhailEvtikhiev,EgorBogomolov,YaroslavSokolov,andTimofeyBryksin.
+Outofthebleu:howshouldweassessqualityofthecodegenerationmodels?
+JournalofSystemsandSoftware,203:111741,2023.
+[49] Chin-YewLin.Rouge:Apackageforautomaticevaluationofsummaries.InText
+SummarizationBranchesOut,pages74–81,Barcelona,Spain,July2004.Associa-
+tionforComputationalLinguistics.
+[50] AlbertZiegler,EiriniKalliamvakou,X.AliceLi,AndrewRice,DevonRifkin,
+ShawnSimister,GaneshSittampalam,andEdwardAftandilian.Productivityas-
+sessmentofneuralcodecompletion.InProceedingsofthe6thACMSIGPLANIn-
+ternationalSymposiumonMachineProgramming,MAPS2022,page21–29,New
+York,NY,USA,2022.AssociationforComputingMachinery.
+[51] MiltiadisAllamanis.Theadverseeffectsofcodeduplicationinmachinelearning
+modelsofcode. InProceedingsofthe2019ACMSIGPLANInternationalSympo-
+siumonNewIdeas,NewParadigms,andReflectionsonProgrammingandSoftware,
+pages143–153,2019.
+[52] AlirezaAghamohammadi,MalihehIzadi,andAbbasHeydarnoori. Generating
+summariesformethodsofevent-drivenprograms:Anandroidcasestudy.Jour-
+nalofSystemsandSoftware,170:110800,2020.

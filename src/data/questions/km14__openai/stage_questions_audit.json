@@ -1,0 +1,613 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km14__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km14__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 142,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Sébastien de Grandpré, who also created the initiative. His leadership is central to the team's structure and direction.",
+        "first_key_point_preview": "Sébastien de Grandpré is the creator and leader of the project.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.54,
+        "raw_chars": 4226,
+        "usage": {
+          "prompt_tokens": 3242,
+          "completion_tokens": 929,
+          "total_tokens": 4171
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership track record",
+        "domain expertise",
+        "project management structure",
+        "collaboration potential",
+        "team workload assessment",
+        "governance processes",
+        "execution timelines"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 2,
+          "team_capacity_and_bandwidth": 1,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Sébastien de Grandpré's leadership experience and track record support the project's advancement towards its intended application and commercialization?",
+          "question_en_preview": "How does Sébastien de Grandpré's leadership experience and track record support the project's advancement towards its intended application and commercialization?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does Sébastien de Grandpré bring to the project, and how does this expertise address the target customer problem?",
+          "question_en_preview": "What specific domain expertise does Sébastien de Grandpré bring to the project, and how does this expertise address the target customer problem?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited information on team capacity, how might the current workload of Sébastien de Grandpré and the team impact the project's execution and timelines?",
+          "question_en_preview": "Given the limited information on team capacity, how might the current workload of Sébastien de Grandpré and the team impact the project's execution and timelines?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures or decision-making processes are in place to ensure effective project management, given the limited risk information provided?",
+          "question_en_preview": "What governance structures or decision-making processes are in place to ensure effective project management, given the limited risk information provided?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What potential collaborations or partnerships could enhance the project's execution, and how does the team plan to establish these relationships?",
+          "question_en_preview": "What potential collaborations or partnerships could enhance the project's execution, and how does the team plan to establish these relationships?"
+        }
+      ],
+      "elapsed_sec": 12.54,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 323,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The NoCO2 mobile app aims to help users track and offset their CO2 emissions through integrated payments to carbon offset providers. The project seeks to encourage behavioral changes to promote environmental sustainability, with a funding goal of $7,061 and a current funding stat ...",
+        "first_key_point_preview": "The app forecasts CO2 emissions based on various user inputs, including housing and transportation habits.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.8,
+        "raw_chars": 3753,
+        "usage": {
+          "prompt_tokens": 3425,
+          "completion_tokens": 846,
+          "total_tokens": 4271
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "environmental sustainability need",
+        "CO2 emissions tracking",
+        "quantifiable success metrics",
+        "project milestones",
+        "value creation logic",
+        "user behavior change",
+        "funding goal achievement",
+        "payment integration",
+        "carbon offset providers"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the NoCO2 mobile app align with the urgent need for environmental sustainability as stated in the proposal? Please discuss any gaps in the alignment and their potential impact.",
+          "question_en_preview": "How well does the NoCO2 mobile app align with the urgent need for environmental sustainability as stated in the proposal? Please discuss any gaps in the alignment and their potential impact."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "To what extent is the overall goal of the NoCO2 project clear and focused? Are there any unrelated sub-goals that could dilute its effectiveness?",
+          "question_en_preview": "To what extent is the overall goal of the NoCO2 project clear and focused? Are there any unrelated sub-goals that could dilute its effectiveness?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed milestones and timeline for the NoCO2 project. What evidence supports your assessment?",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed milestones and timeline for the NoCO2 project. What evidence supports your assessment?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are proposed for the NoCO2 app? How might the absence of specific metrics affect the project's evaluation?",
+          "question_en_preview": "What clear and quantifiable success metrics are proposed for the NoCO2 app? How might the absence of specific metrics affect the project's evaluation?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Discuss how the objectives of the NoCO2 project explain the value it creates and how it captures revenue or funding. Are there any weaknesses in this logic?",
+          "question_en_preview": "Discuss how the objectives of the NoCO2 project explain the value it creates and how it captures revenue or funding. Are there any weaknesses in this logic?"
+        }
+      ],
+      "elapsed_sec": 12.8,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 281,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The NoCO2 mobile app aims to facilitate users in tracking and offsetting their CO2 emissions through integrated payments to carbon offset providers. The project includes features such as GPS tracking of travel habits and a web platform with an open API for third-party integration ...",
+        "first_key_point_preview": "The NoCO2 mobile app allows users to offset between 0% to 100% of their CO2 emissions.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.64,
+        "raw_chars": 4122,
+        "usage": {
+          "prompt_tokens": 3499,
+          "completion_tokens": 923,
+          "total_tokens": 4422
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user adoption strategy",
+        "funding shortfall",
+        "GPS tracking trade-offs",
+        "carbon offset integration",
+        "validation steps",
+        "data privacy compliance",
+        "unit economics evidence",
+        "scaling challenges",
+        "emissions forecasting",
+        "third-party API integration"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "quality_compliance_strategy": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the NoCO2 mobile app plan to secure user adoption and sustain revenue, given that the funding goal of $7,061 was not met by the deadline? What strategies are in place to address this shortfall?",
+          "question_en_preview": "How does the NoCO2 mobile app plan to secure user adoption and sustain revenue, given that the funding goal of $7,061 was not met by the deadline? What strategies are in place to address this shortfall?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the design of the NoCO2 mobile app, particularly regarding its features like GPS tracking and payment integration with carbon offset providers?",
+          "question_en_preview": "What are the major trade-offs considered in the design of the NoCO2 mobile app, particularly regarding its features like GPS tracking and payment integration with carbon offset providers?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what validation steps are planned to ensure the NoCO2 app effectively forecasts CO2 emissions based on user habits and trip distances?",
+          "question_en_preview": "Given the limited risk information provided, what validation steps are planned to ensure the NoCO2 app effectively forecasts CO2 emissions based on user habits and trip distances?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quality and compliance strategies are in place for the NoCO2 mobile app, especially regarding data privacy and security in handling user emissions data?",
+          "question_en_preview": "What quality and compliance strategies are in place for the NoCO2 mobile app, especially regarding data privacy and security in handling user emissions data?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how realistic are the unit economics for the NoCO2 app, considering the integration with carbon offset providers? What evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1-5, how realistic are the unit economics for the NoCO2 app, considering the integration with carbon offset providers? What evidence would increase your confidence in this assessment?"
+        }
+      ],
+      "elapsed_sec": 14.64,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 306,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces an innovative app that forecasts CO2 emissions by analyzing various factors such as housing, consumption habits, transportation modes, and trip distances. Additionally, it features automatic tracking of trip distances through GPS changes, enhancing user exp ...",
+        "first_key_point_preview": "The app forecasts CO2 emissions based on housing, consumption habits, mode of transportation, and trip distances.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.21,
+        "raw_chars": 4238,
+        "usage": {
+          "prompt_tokens": 3341,
+          "completion_tokens": 959,
+          "total_tokens": 4300
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "CO2 emissions forecasting",
+        "GPS tracking accuracy",
+        "user experience enhancement",
+        "evidence of effectiveness",
+        "competitive advantages",
+        "intellectual property strategy",
+        "risk of commoditization",
+        "market differentiation",
+        "extension to other use cases"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "evidence_strength_for_innovation": 2,
+          "differentiation_and_competitive_edge": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the app's method of forecasting CO2 emissions compare to existing solutions in terms of innovation and effectiveness?",
+          "question_en_preview": "How does the app's method of forecasting CO2 emissions compare to existing solutions in terms of innovation and effectiveness?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What evidence supports the app's ability to accurately forecast CO2 emissions based on the factors mentioned, and how robust is this evidence?",
+          "question_en_preview": "What evidence supports the app's ability to accurately forecast CO2 emissions based on the factors mentioned, and how robust is this evidence?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific advantages does the app offer over existing CO2 forecasting tools, particularly regarding user experience and data accuracy?",
+          "question_en_preview": "What specific advantages does the app offer over existing CO2 forecasting tools, particularly regarding user experience and data accuracy?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the app becoming obsolete or commoditized in the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the app becoming obsolete or commoditized in the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property of the app, and how do they support its long-term competitive position?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property of the app, and how do they support its long-term competitive position?"
+        }
+      ],
+      "elapsed_sec": 9.22,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 359,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the NoCO2 app is supported by its innovative tracking of CO2 emissions through GPS technology and integrated payment options for carbon offsets. However, a significant risk is its potential usability issues, which could hinder global adoption. The project aims  ...",
+        "first_key_point_preview": "The NoCO2 app tracks CO2 emissions automatically using smartphone GPS coordinates.",
+        "first_risk_preview": "A main risk for the NoCO2 app is that it may not be easy enough to use to gain global traction.",
+        "first_mitigation_preview": "To mitigate the risk of usability, the project will contract UI/UX experts to simplify and polish the product."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.79,
+        "raw_chars": 3669,
+        "usage": {
+          "prompt_tokens": 3473,
+          "completion_tokens": 824,
+          "total_tokens": 4297
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "usability testing results",
+        "user feedback",
+        "UI/UX expert engagement",
+        "Kickstarter funding impact",
+        "customer acceptance metrics",
+        "implementation barriers",
+        "project timeline alignment",
+        "resource allocation plan",
+        "global adoption strategy"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "funding_and_budget_planning": 1,
+          "resources_and_infrastructure": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific usability issues have been identified for the NoCO2 app, and how might these impact global adoption?",
+          "question_en_preview": "What specific usability issues have been identified for the NoCO2 app, and how might these impact global adoption?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified risk of usability, what barriers to implementation could arise in real-world settings, and how will the project address these?",
+          "question_en_preview": "Given the identified risk of usability, what barriers to implementation could arise in real-world settings, and how will the project address these?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the unsuccessful Kickstarter funding impact the project's budget realism and future funding strategies?",
+          "question_en_preview": "How does the unsuccessful Kickstarter funding impact the project's budget realism and future funding strategies?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What resources and infrastructure are in place to support the hiring of UI/UX experts, and how will this enhance the app's usability?",
+          "question_en_preview": "What resources and infrastructure are in place to support the hiring of UI/UX experts, and how will this enhance the app's usability?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "What evidence exists to support the assumption that the NoCO2 app will be simple enough for a five-year-old to understand, and how does this relate to customer acceptance?",
+          "question_en_preview": "What evidence exists to support the assumption that the NoCO2 app will be simple enough for a five-year-old to understand, and how does this relate to customer acceptance?"
+        }
+      ],
+      "elapsed_sec": 8.79,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T21:53:39Z",
+  "elapsed_sec": 57.99,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km14__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km14__openai/generated_questions_detail.json"
+}

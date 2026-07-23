@@ -1,0 +1,621 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt79__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt79__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 269,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Melissa Rogers, who is the creator and founder of the Talent Management Tool. She brings over 10 years of experience in Human Resources, with expertise in both Canada and the U.S., and has global exposure in Human Resources and People development.",
+        "first_key_point_preview": "Melissa Rogers is the creator and founder of the Talent Management Tool.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.15,
+        "raw_chars": 4857,
+        "usage": {
+          "prompt_tokens": 3321,
+          "completion_tokens": 1040,
+          "total_tokens": 4361
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "Human Resources expertise",
+        "global exposure",
+        "project leadership",
+        "collaboration potential",
+        "capacity assessment",
+        "governance processes",
+        "validation experience",
+        "risk implications",
+        "execution capacity"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 7,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Melissa Rogers' 10 years of experience in Human Resources position her to lead the Talent Management Tool project effectively?",
+          "question_en_preview": "How does Melissa Rogers' 10 years of experience in Human Resources position her to lead the Talent Management Tool project effectively?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does Melissa Rogers have in Human Resources that is relevant to the development and success of the Talent Management Tool?",
+          "question_en_preview": "What specific expertise does Melissa Rogers have in Human Resources that is relevant to the development and success of the Talent Management Tool?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited information on risk, how might the current workload of Melissa Rogers and her team impact the project's execution and success?",
+          "question_en_preview": "Given the limited information on risk, how might the current workload of Melissa Rogers and her team impact the project's execution and success?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential collaborations or partnerships could enhance the Talent Management Tool's development and market entry, considering Melissa Rogers' background?",
+          "question_en_preview": "What potential collaborations or partnerships could enhance the Talent Management Tool's development and market entry, considering Melissa Rogers' background?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What experience does Melissa Rogers have with validation and compliance in Human Resources that could support the Talent Management Tool's development?",
+          "question_en_preview": "What experience does Melissa Rogers have with validation and compliance in Human Resources that could support the Talent Management Tool's development?"
+        }
+      ],
+      "elapsed_sec": 13.16,
+      "final_question_count": 9
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 354,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 2,
+        "summary_preview": "The project aims to enhance the recruitment process through a Talent Management Tool that improves the accuracy and value of professional validation for employers. It seeks to eliminate delays in recruitment, streamline interactions between candidates and recruiters, and save tim ...",
+        "first_key_point_preview": "The tool aims to improve the value and accuracy of the professional validation process for employers.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The tool aims to improve the value and accuracy of the professional validation process for employers."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.15,
+        "raw_chars": 4125,
+        "usage": {
+          "prompt_tokens": 3439,
+          "completion_tokens": 877,
+          "total_tokens": 4316
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "professional validation accuracy",
+        "recruitment process delays",
+        "candidate engagement",
+        "success metrics for employers",
+        "milestones for Talent Management Tool",
+        "balance of ambition and feasibility",
+        "scope definition and prioritization"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the initiative align with the stated unmet need of improving the accuracy and value of professional validation for employers? Please discuss any evidence of urgency in addressing this need.",
+          "question_en_preview": "How well does the initiative align with the stated unmet need of improving the accuracy and value of professional validation for employers? Please discuss any evidence of urgency in addressing this need."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how clear and focused are the overall goals of the project in enhancing the recruitment process through the Talent Management Tool? What specific evidence supports your rating?",
+          "question_en_preview": "On a scale of 1-5, how clear and focused are the overall goals of the project in enhancing the recruitment process through the Talent Management Tool? What specific evidence supports your rating?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the initiative, and how reasonable and executable do you find them based on the project's objectives? Please provide any supporting details.",
+          "question_en_preview": "What are the proposed milestones for the initiative, and how reasonable and executable do you find them based on the project's objectives? Please provide any supporting details."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics does the initiative propose to measure the effectiveness of the Talent Management Tool in saving time for employers and enhancing candidate experience? How quantifiable are these metrics?",
+          "question_en_preview": "What specific success metrics does the initiative propose to measure the effectiveness of the Talent Management Tool in saving time for employers and enhancing candidate experience? How quantifiable are these metrics?"
+        }
+      ],
+      "elapsed_sec": 15.15,
+      "final_question_count": 8
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 212,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aimed to secure $21,184 in funding within a specified period from March 19, 2018, to April 14, 2018. However, it was unsuccessful in reaching this funding goal, which impacts its strategic objectives.",
+        "first_key_point_preview": "The funding goal for the project was $21,184.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.91,
+        "raw_chars": 3512,
+        "usage": {
+          "prompt_tokens": 3448,
+          "completion_tokens": 764,
+          "total_tokens": 4212
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "funding goal analysis",
+        "commercialization strategy",
+        "market entry plan",
+        "unit economics assessment",
+        "development validation implications",
+        "risk mitigation partnerships",
+        "execution strategy risks",
+        "financial sustainability",
+        "strategic objectives alignment"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project was unsuccessful in reaching its funding goal of $21,184, how does this impact the project's overall commercialization strategy and market entry plan?",
+          "question_en_preview": "Given that the project was unsuccessful in reaching its funding goal of $21,184, how does this impact the project's overall commercialization strategy and market entry plan?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how realistic is the project's funding goal of $21,184 in relation to its business model and expected unit economics? What evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1-5, how realistic is the project's funding goal of $21,184 in relation to its business model and expected unit economics? What evidence would increase your confidence in this assessment?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the implications of the project's failure to secure funding within the specified period (March 19, 2018, to April 14, 2018) on its development and validation path?",
+          "question_en_preview": "What are the implications of the project's failure to secure funding within the specified period (March 19, 2018, to April 14, 2018) on its development and validation path?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the limited risk information provided, what potential risks do you foresee in the project's solution delivery strategy, and how might these affect its execution?",
+          "question_en_preview": "Considering the limited risk information provided, what potential risks do you foresee in the project's solution delivery strategy, and how might these affect its execution?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What partnerships or collaborations could be critical for the project to mitigate the risks associated with its funding shortfall, and how might these partnerships enhance its strategic objectives?",
+          "question_en_preview": "What partnerships or collaborations could be critical for the project to mitigate the risks associated with its funding shortfall, and how might these partnerships enhance its strategic objectives?"
+        }
+      ],
+      "elapsed_sec": 16.91,
+      "final_question_count": 6
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 244,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to innovate the validation process of past employment and professional experience, addressing the issue of resume inaccuracies. It claims to offer a more trusted, accurate, and interactive approach compared to existing methods.",
+        "first_key_point_preview": "The tool is designed to innovate the validation process of past employment and professional experience.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.99,
+        "raw_chars": 4691,
+        "usage": {
+          "prompt_tokens": 3355,
+          "completion_tokens": 1023,
+          "total_tokens": 4378
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "validation process innovation",
+        "resume inaccuracies",
+        "trust and accuracy claims",
+        "customer demand evidence",
+        "intellectual property strategy",
+        "competitive edge analysis",
+        "market expansion barriers",
+        "obsolescence risks",
+        "research on applicant honesty",
+        "interactive validation features"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the proposed tool innovate the validation process of past employment and professional experience compared to existing methods? Please provide specific examples of its novel features.",
+          "question_en_preview": "How does the proposed tool innovate the validation process of past employment and professional experience compared to existing methods? Please provide specific examples of its novel features."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "In what ways is the tool claimed to be more trusted, accurate, and interactive than previous validation processes? What evidence supports these claims?",
+          "question_en_preview": "In what ways is the tool claimed to be more trusted, accurate, and interactive than previous validation processes? What evidence supports these claims?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What research or data supports the assertion that more than 50% of job applicants lie on their resumes, and how does this data validate the need for the proposed innovation?",
+          "question_en_preview": "What research or data supports the assertion that more than 50% of job applicants lie on their resumes, and how does this data validate the need for the proposed innovation?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the proposed validation tool within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the proposed validation tool within the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property of the proposed tool, and how do these strategies support its competitive edge in the market?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property of the proposed tool, and how do these strategies support its competitive edge in the market?"
+        }
+      ],
+      "elapsed_sec": 11.0,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 274,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project's feasibility is impacted by its unsuccessful attempt to reach the funding goal of $21,184 during its Kickstarter campaign. Additionally, there are identified risks related to the team's diverse and strategic experience in Human Resources and People development.",
+        "first_key_point_preview": "The project was launched and hosted on Kickstarter.",
+        "first_risk_preview": "The project mentions risks and challenges related to diverse and strategic experience in Human Resources and People development.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.9,
+        "raw_chars": 4109,
+        "usage": {
+          "prompt_tokens": 3414,
+          "completion_tokens": 852,
+          "total_tokens": 4266
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding goal",
+        "funding sustainability",
+        "team experience risks",
+        "implementation barriers",
+        "operational execution clarity",
+        "timeline resource alignment",
+        "customer acceptance feasibility",
+        "budget allocation",
+        "project funding challenges"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "operational_execution_plan": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project was unsuccessful in reaching its funding goal of $21,184 during the Kickstarter campaign, how does this impact the project's long-term funding sustainability and budget allocation?",
+          "question_en_preview": "Given that the project was unsuccessful in reaching its funding goal of $21,184 during the Kickstarter campaign, how does this impact the project's long-term funding sustainability and budget allocation?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific risks arise from the team's diverse and strategic experience in Human Resources and People development, and how might these risks affect the project's feasibility?",
+          "question_en_preview": "What specific risks arise from the team's diverse and strategic experience in Human Resources and People development, and how might these risks affect the project's feasibility?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation might the project face in real production or deployment settings, considering the team's experience and the funding challenges encountered?",
+          "question_en_preview": "What barriers to implementation might the project face in real production or deployment settings, considering the team's experience and the funding challenges encountered?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project's failure to meet its Kickstarter funding goal affect the clarity and specificity of its operational execution plan, including key tasks and timelines?",
+          "question_en_preview": "How does the project's failure to meet its Kickstarter funding goal affect the clarity and specificity of its operational execution plan, including key tasks and timelines?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how well-aligned are the project's timeline and resources given the funding shortfall? What evidence would increase your confidence in this alignment?",
+          "question_en_preview": "On a scale of 1 to 5, how well-aligned are the project's timeline and resources given the funding shortfall? What evidence would increase your confidence in this alignment?"
+        }
+      ],
+      "elapsed_sec": 10.9,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T21:00:01Z",
+  "elapsed_sec": 67.12,
+  "total_questions": 38,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt79__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt79__openai/generated_questions_detail.json"
+}

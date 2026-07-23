@@ -1,0 +1,1018 @@
+{
+  "system": "You are a senior venture, product, technical, financial, and operating diligence advisor for world-class startup, corporate innovation, product, service, platform, and operating-business reviews. Before writing any assessment, infer the closest business archetype from the evidence: SaaS/software, AI/data product, marketplace, consumer brand, B2B service, professional services, education/training, healthcare/life science, industrial/manufacturing, hardware/device, energy/climate, logistics/supply-chain, fintech/financial service, real estate/infrastructure, agriculture/food, media/content, nonprofit/public-sector program, research commercialization, internal corporate transformation, or mixed model. Use that archetype only to choose relevant diligence standards; do not output an archetype label unless it is useful and clearly supported. The system will provide five dimensions: team, objectives, strategy, innovation, and feasibility. For each dimension you will receive: a label; qualitative score/consistency/drift signals; strength/risk phrases extracted by metrics; top_evidence_phrases from post-processing, which are evidence directions rather than complete evidence; dimension-level and question-level general_insights, which are industry-context benchmarks and not project achievements; and sample-level provenance flags such as selection_mode and fallback_used, which indicate whether the selected answer came from the normal filtered path or a fallback rescue path; dim_general_insights_covered, meaning general industry points partly reflected in the selected QA; dim_general_insights_missing, meaning important industry points barely covered in the selected QA; and several QA samples. Your task:\n1. For each dimension, write an investment/scale-up-grade assessment based on QA content, metric phrases, evidence directions, and general insights. The standard of proof must match the inferred archetype: software needs adoption, retention, security, integration, and support evidence; services need repeatability, staffing, service quality, utilization, and margin evidence; consumer businesses need channel economics, repeat purchase, brand differentiation, and working-capital evidence; marketplaces need liquidity, trust, acquisition, take-rate, and disintermediation evidence; manufacturing/hardware needs BOM, yield, reliability, certification, supply chain, inventory, and warranty evidence; public/nonprofit programs need theory of change, funding durability, implementation partners, and measurable outcomes; research commercialization needs IP rights, validation milestones, partner route, and capital-intensity evidence. Strengths must connect concrete proposal facts to a business or execution implication: why this could improve defensibility, speed, cost, customer adoption, compliance readiness, operating readiness, delivery readiness, or capital efficiency. Concerns must explain the decision impact, not just say information is limited. Specify whether the gap affects problem proof, customer/user proof, buyer/payer/funder proof, product/service proof, technical proof, commercial proof, operating proof, financial proof, legal/compliance proof, impact proof, or governance proof. Recommendations must be diligence-ready asks: name the exact material to add, such as customer interviews, pilot results, LOIs, usage/retention data, service quality metrics, benchmark test results, IP claim charts, channel economics, unit-economics assumptions, capacity/resource plan, staffing model, supply-chain plan, budget use-of-funds, risk register, owner/timeline/RACI, procurement path, compliance pathway, impact measurement plan, or partner agreements when applicable.\n2. Each strength/concern must be causal and explanatory: say why it is good or risky, not just what exists. Vary sentence openings and avoid generic phrases such as 'aligns with industry expectations' unless you also name the concrete project fact and decision implication.\n3. You may cite key QA information, but do not invent organizations, registration numbers, customer data, production data, or concrete data.\nDo not assume any sector, customer type, business model, regulated pathway, or delivery model unless the QA content supports it; use validation, quality, customer qualification, operating scaling, adoption, security, procurement, funding, implementation, impact, or compliance language when that better fits the project.\n4. Do not output question IDs, numeric scores, percentages, or internal metric names such as alignment, coverage, authority, drift, overall_score, confidence, or Jaccard.\n5. If a dimension has limited information or many fallback-selected samples, provide conservative conclusions and separate 'what is promising' from 'what must be proven before scale-up or investment'.\nReturn strict JSON. For each dimension provide summary (2-4 sentences), strengths (3-5 items), concerns (3-5 items), and recommendations (3-5 items).",
+  "user": {
+    "pid": "kt46__openai",
+    "task": "dimension_level_expert_opinion",
+    "note": "Return only the dimensions field. Other fields are added by the system.",
+    "dimensions": {
+      "team": {
+        "dimension": "team",
+        "label": "Team and governance",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers show notable disagreement; interpret with caution.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [
+          "Q1: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.67)",
+          "Q2: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.70)",
+          "Q3: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.47)",
+          "Q4: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.47)",
+          "Q5: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.45)"
+        ],
+        "metric_risk_phrases": [
+          "Q2: possible cross-dimension drift (drift=0.10); review dimension boundary manually",
+          "Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended",
+          "Q5: possible cross-dimension drift (drift=0.10); review dimension boundary manually",
+          "Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended"
+        ],
+        "metric_top_evidence_phrases": [
+          "Details about past projects or experience in financial software development and compliance, which could be included in a",
+          "Information on any current partnerships or collaborations, which could be included in a partnership section or collabora",
+          "Information on the team's previous projects, qualifications of team members, and a detailed project execution plan."
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "Successful software projects often require a leadership team with a proven track record in similar domains.",
+          "Common pitfalls include inadequate risk assessment and lack of domain expertise, which can hinder project execution.",
+          "It is essential to have a clear understanding of the team's past successes and failures to gauge future project feasibility.",
+          "Domain expertise is critical for projects involving trading algorithms, as it directly impacts the quality of the product.",
+          "Common pitfalls include underestimating the importance of team qualifications and failing to assess the experience levels of new hires.",
+          "Evidence of past projects or successes in similar domains can strengthen the credibility of the team's expertise.",
+          "Assessing team capacity is critical for project success, especially in software development where timelines can be tight.",
+          "Common pitfalls include overestimating the capabilities of new hires and underestimating the impact of existing workloads.",
+          "Evidence of current team capacity and workload management strategies is essential for evaluating project feasibility.",
+          "Typically, teams developing financial software should demonstrate prior experience with regulatory compliance to mitigate risks."
+        ],
+        "dim_general_insights_covered": [
+          "Successful software projects often require a leadership team with a proven track record in similar domains.",
+          "Common pitfalls include inadequate risk assessment and lack of domain expertise, which can hinder project execution.",
+          "It is essential to have a clear understanding of the team's past successes and failures to gauge future project feasibility.",
+          "Domain expertise is critical for projects involving trading algorithms, as it directly impacts the quality of the product.",
+          "Common pitfalls include underestimating the importance of team qualifications and failing to assess the experience levels of new hires.",
+          "Evidence of past projects or successes in similar domains can strengthen the credibility of the team's expertise.",
+          "Assessing team capacity is critical for project success, especially in software development where timelines can be tight.",
+          "Common pitfalls include overestimating the capabilities of new hires and underestimating the impact of existing workloads.",
+          "Evidence of current team capacity and workload management strategies is essential for evaluating project feasibility.",
+          "Typically, teams developing financial software should demonstrate prior experience with regulatory compliance to mitigate risks."
+        ],
+        "dim_general_insights_missing": [],
+        "qa_samples": [
+          {
+            "question": "How does the prior experience of the leadership team at Logica Analysis Inc. and Maple Intercontinental Trade Inc. position them to successfully execute this project, particularly in developing the Fast Robot Trader software?",
+            "answer": "1. The leadership team at Logica Analysis Inc. and Maple Intercontinental Trade Inc. has relevant experience in software development, which is important for executing the project focused on the Fast Robot Trader software.\n2. The proposal does not provide specific details about the leadership team's past projects or successes in similar domains, which limits the ability to fully assess their capability and experience.\n3. The inclusion of a Chartered Financial Analyst on the team suggests a foundational understanding of financial markets, which is relevant for developing a trading algorithm.\n4. However, the proposal lacks detailed risk information and mitigation strategies, indicating a need for further clarification on how potential challenges will be addressed during project execution.",
+            "key_claims": [
+              "The leadership team has relevant software development experience, which is important for the project's success.",
+              "The proposal lacks detailed information on the leadership team's past successes in similar projects.",
+              "The inclusion of a Chartered Financial Analyst indicates foundational financial expertise relevant to the project."
+            ],
+            "evidence_hints": [
+              "Team overview section for details on leadership experience and past projects.",
+              "Main risks or uncertainties section for any mention of risk management strategies."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Successful software projects often require a leadership team with a proven track record in similar domains.",
+              "Common pitfalls include inadequate risk assessment and lack of domain expertise, which can hinder project execution.",
+              "It is essential to have a clear understanding of the team's past successes and failures to gauge future project feasibility."
+            ]
+          },
+          {
+            "question": "What specific domain expertise does the team possess that is relevant to the development of the trading algorithm and the downloadable SDK, and how does this expertise enhance the project's feasibility?",
+            "answer": "1. The proposal indicates that the team includes a Chartered Financial Analyst, which suggests relevant expertise in financial markets and trading algorithms.\n2. However, the proposal does not specify any additional domain expertise or technical skills that the team members possess, which limits the assessment of their overall capability.\n3. The intention to hire software engineering students indicates a focus on building technical capacity, but their varying levels of experience may impact the project's feasibility and execution.\n4. The proposal lacks detailed qualifications or past achievements related to trading algorithms, which raises questions about the team's readiness to develop the SDK effectively.",
+            "key_claims": [
+              "The team includes a Chartered Financial Analyst, suggesting expertise in financial markets.",
+              "The proposal lacks information on additional domain expertise relevant to trading algorithms.",
+              "The hiring of software engineering students may introduce variability in technical capability."
+            ],
+            "evidence_hints": [
+              "Team overview section for qualifications and expertise of team members.",
+              "Key points section for details on the skills and experience of the software engineering team."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Domain expertise is critical for projects involving trading algorithms, as it directly impacts the quality of the product.",
+              "Common pitfalls include underestimating the importance of team qualifications and failing to assess the experience levels of new hires.",
+              "Evidence of past projects or successes in similar domains can strengthen the credibility of the team's expertise."
+            ]
+          },
+          {
+            "question": "Considering the current workload and the plan to hire software engineering students and a Chartered Financial Analyst, does the team have sufficient capacity to meet the project's demands? Please evaluate any potential risks associated with this capacity.",
+            "answer": "1. The proposal indicates plans to hire software engineering students and a Chartered Financial Analyst, suggesting an intention to build a capable team to support the project.\n2. However, there is a lack of information regarding the current workload and the existing team's capacity to manage project demands, which creates uncertainty about their ability to meet deadlines.\n3. The reliance on hiring students may introduce risks related to their experience and availability, which could potentially impact project timelines.\n4. Additionally, the proposal does not provide detailed risk information or mitigation strategies, making it challenging to assess the team's overall capacity to deliver on project demands.",
+            "key_claims": [
+              "The team plans to hire additional personnel to support project demands.",
+              "The proposal lacks information on the current workload and existing team's capacity.",
+              "Hiring students may introduce risks related to their experience and availability."
+            ],
+            "evidence_hints": [
+              "Key points section for details on hiring plans and team composition.",
+              "Main risks or uncertainties section for any mention of capacity-related risks."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Assessing team capacity is critical for project success, especially in software development where timelines can be tight.",
+              "Common pitfalls include overestimating the capabilities of new hires and underestimating the impact of existing workloads.",
+              "Evidence of current team capacity and workload management strategies is essential for evaluating project feasibility."
+            ]
+          },
+          {
+            "question": "What experience does the team have with validation and compliance in the context of developing financial software, and how does this experience mitigate potential risks associated with regulatory requirements?",
+            "answer": "1. The proposal does not provide specific details regarding the team's experience with validation and compliance in developing financial software, which is important for addressing regulatory risks.\n2. While Logica Analysis Inc. and Maple Intercontinental Trade Inc. are identified as the main entities involved, their prior experience in financial software development is not elaborated upon.\n3. The proposal lacks information on compliance with financial regulations, which raises questions about the team's readiness to navigate regulatory requirements.",
+            "key_claims": [
+              "The proposal lacks detailed information on the team's experience with regulatory compliance in financial software development.",
+              "No specific risk mitigation measures related to compliance are mentioned in the proposal."
+            ],
+            "evidence_hints": [
+              "Details about past projects or experience in financial software development and compliance, which could be included in a team biography or project history section."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Typically, teams developing financial software should demonstrate prior experience with regulatory compliance to mitigate risks.",
+              "Common pitfalls include underestimating the complexity of regulatory requirements and lacking a clear compliance strategy.",
+              "Evidence of past successful compliance in similar projects is often required to build confidence among stakeholders."
+            ]
+          },
+          {
+            "question": "What existing collaborations or partnerships does the team have that could support the development and distribution of the Fast Robot Trader software and SDK, and how stable are these relationships?",
+            "answer": "1. The proposal does not mention any existing collaborations or partnerships that could support the development and distribution of the Fast Robot Trader software and SDK, which could be critical for market entry.\n2. The stability of relationships with potential partners is not addressed, creating uncertainty regarding the project's support network and its ability to leverage external resources.\n3. The absence of established partnerships may pose challenges in distribution and market entry, necessitating further exploration of potential collaborations.",
+            "key_claims": [
+              "The proposal lacks information on existing collaborations or partnerships that could aid in the project's development.",
+              "No details are provided regarding the stability of relationships with potential partners."
+            ],
+            "evidence_hints": [
+              "Information on any current partnerships or collaborations, which could be included in a partnership section or collaboration strategy."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "In similar projects, established partnerships can significantly enhance development and distribution capabilities.",
+              "Common pitfalls include relying solely on internal resources without leveraging external partnerships for market access.",
+              "Evidence of stable partnerships or collaborations is often necessary to ensure project viability and support."
+            ]
+          },
+          {
+            "question": "On a scale of 1 to 5, how would you rate the team's overall capacity to execute this project based on their current commitments and the planned hiring? What specific evidence would increase your confidence in this rating?",
+            "answer": "1. Based on the current commitments and planned hiring, the team's overall capacity to execute this project may be rated as low, indicating potential challenges in execution.\n2. The team includes Logica Analysis Inc. and Maple Intercontinental Trade Inc., but there is limited information regarding their experience in financial software development and compliance.\n3. The planned hiring of software engineering students and a Chartered Financial Analyst suggests some capacity, but the overall experience and stability of the team remain unclear and need further clarification.\n4. To enhance confidence in this rating, it would be beneficial to provide evidence of past project success, detailed qualifications of team members, and a comprehensive project execution plan.",
+            "key_claims": [
+              "The current team composition and experience do not strongly support a high capacity rating for project execution.",
+              "The proposal lacks detailed evidence of the team's past successes or relevant experience."
+            ],
+            "evidence_hints": [
+              "Information on the team's previous projects, qualifications of team members, and a detailed project execution plan."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Typically, teams should demonstrate a strong track record of relevant experience and successful project execution to achieve a higher capacity rating.",
+              "Common pitfalls include overestimating team capabilities without sufficient evidence of past performance.",
+              "Evidence of team qualifications, project milestones, and execution strategies are essential for building confidence in project capacity."
+            ]
+          }
+        ]
+      },
+      "objectives": {
+        "dimension": "objectives",
+        "label": "Project objectives",
+        "score_hint": "Weak signal; this dimension appears to have clear limitations or limited evidence.",
+        "alignment_hint": "Candidate answers show notable disagreement; interpret with caution.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [
+          "Q1: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.64)",
+          "Q2: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.55)",
+          "Q3: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.44)",
+          "Q4: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.51)",
+          "Q5: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.61)"
+        ],
+        "metric_risk_phrases": [
+          "Q3: possible cross-dimension drift (drift=0.10); review dimension boundary manually",
+          "Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended",
+          "Q5: possible cross-dimension drift (drift=0.35); review dimension boundary manually",
+          "Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended"
+        ],
+        "metric_top_evidence_phrases": [
+          "Key points section and overall project status.",
+          "Key points section for specific timelines and milestones.",
+          "Key points section of the proposal, particularly regarding market alignment."
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "Typically, projects should have clearly defined goals without unrelated sub-goals to maintain focus.",
+          "Common pitfalls include failing to identify risks that could detract from achieving the main objectives.",
+          "Evidence of risk management strategies is often required to ensure project resilience.",
+          "In similar projects, demonstrating market need through user discovery or market analysis is critical.",
+          "Common pitfalls include assuming demand without validating it through evidence.",
+          "Evidence of customer interest or pilot programs is often necessary to substantiate claims of market alignment.",
+          "Milestone timelines should be realistic and based on resource availability.",
+          "Detailed project plans should include all critical milestones to avoid potential delays.",
+          "Regular updates on milestone progress can help maintain stakeholder confidence and engagement.",
+          "Typically, software projects should define success metrics such as user activation rates, retention rates, and performance benchmarks."
+        ],
+        "dim_general_insights_covered": [
+          "Typically, projects should have clearly defined goals without unrelated sub-goals to maintain focus.",
+          "Common pitfalls include failing to identify risks that could detract from achieving the main objectives.",
+          "Evidence of risk management strategies is often required to ensure project resilience.",
+          "In similar projects, demonstrating market need through user discovery or market analysis is critical.",
+          "Common pitfalls include assuming demand without validating it through evidence.",
+          "Evidence of customer interest or pilot programs is often necessary to substantiate claims of market alignment.",
+          "Milestone timelines should be realistic and based on resource availability.",
+          "Detailed project plans should include all critical milestones to avoid potential delays.",
+          "Regular updates on milestone progress can help maintain stakeholder confidence and engagement.",
+          "Typically, software projects should define success metrics such as user activation rates, retention rates, and performance benchmarks."
+        ],
+        "dim_general_insights_missing": [],
+        "qa_samples": [
+          {
+            "question": "How clearly defined is the overall goal of developing the Fast Robot Trader software, and are there any unrelated sub-goals that could distract from this objective?",
+            "answer": "1. The overall goal of developing the Fast Robot Trader software is defined as automating trading strategies across financial markets, with no unrelated sub-goals mentioned in the proposal.\n2. The project has a defined funding goal of $200,000 and specific milestones, indicating a focused approach towards achieving the main objective.\n3. The proposal lacks detailed information on potential risks or uncertainties that could impact the project's success and distract from the primary goal.\n4. The absence of specified mitigation measures for risks indicates a need for further information on how the project plans to address potential challenges.",
+            "key_claims": [
+              "The proposal defines the goal of developing the Fast Robot Trader software.",
+              "There are no unrelated sub-goals identified in the proposal."
+            ],
+            "evidence_hints": [
+              "Objectives overview section of the proposal."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Typically, projects should have clearly defined goals without unrelated sub-goals to maintain focus.",
+              "Common pitfalls include failing to identify risks that could detract from achieving the main objectives.",
+              "Evidence of risk management strategies is often required to ensure project resilience."
+            ]
+          },
+          {
+            "question": "To what extent does the project align with the urgent need for automating trading strategies in financial markets, and what evidence supports this alignment?",
+            "answer": "1. The project aims to develop the Fast Robot Trader software, which addresses the need for automating trading strategies in financial markets.\n2. However, the proposal does not provide specific evidence or market analysis to substantiate this alignment with market demand.\n3. While the funding goal and milestones indicate an understanding of the financial landscape, the absence of market validation leaves the urgency of the project unproven.\n4. The proposal lacks customer/user discovery or market research data, which limits the ability to fully assess the project's alignment with market needs.",
+            "key_claims": [
+              "The project aims to address the need for automating trading strategies in financial markets.",
+              "The proposal lacks specific evidence supporting the alignment with market demand."
+            ],
+            "evidence_hints": [
+              "Key points section of the proposal, particularly regarding market alignment."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "In similar projects, demonstrating market need through user discovery or market analysis is critical.",
+              "Common pitfalls include assuming demand without validating it through evidence.",
+              "Evidence of customer interest or pilot programs is often necessary to substantiate claims of market alignment."
+            ]
+          },
+          {
+            "question": "Evaluate the reasonableness and executability of the key milestones outlined, such as securing funding and hiring a software engineering team. Are these timelines realistic?",
+            "answer": "1. The key milestones outlined in the proposal, such as securing funding and hiring a software engineering team, are reasonable given the project context and current funding status.\n2. The timeline for securing funds by September 2014 and hiring a team by October 2014 appears executable, particularly since the project is already 107% funded with 10 days remaining in the funding period.\n3. However, the proposal lacks specific timelines for the critical milestone of algorithm development, which needs to be addressed for a clearer project roadmap.",
+            "key_claims": [
+              "The funding goal has been exceeded, indicating a positive status for the project.",
+              "The proposal lacks specific timelines for algorithm development, which presents an information gap."
+            ],
+            "evidence_hints": [
+              "Key points section and overall project status."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Milestone timelines should be realistic and based on resource availability.",
+              "Detailed project plans should include all critical milestones to avoid potential delays.",
+              "Regular updates on milestone progress can help maintain stakeholder confidence and engagement."
+            ]
+          },
+          {
+            "question": "What quantifiable success metrics are defined for the Fast Robot Trader project, and how do they align with the overall objectives?",
+            "answer": "1. The proposal does not define specific quantifiable success metrics for the Fast Robot Trader project, which limits the ability to measure progress against its objectives.\n2. The overall objective is to develop software for automating trading strategies; however, the lack of defined metrics makes it unclear how success will be evaluated.\n3. The absence of success metrics may affect stakeholder confidence and complicate future funding or operational decisions, necessitating the development of clear evaluation criteria.",
+            "key_claims": [
+              "The proposal lacks defined success metrics for the Fast Robot Trader project.",
+              "Without metrics, alignment with overall objectives is unclear."
+            ],
+            "evidence_hints": [
+              "Proposal facts related to objectives overview and key points could be expanded to include specific success metrics."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Typically, software projects should define success metrics such as user activation rates, retention rates, and performance benchmarks.",
+              "Common pitfalls include failing to establish clear metrics, which can lead to misalignment with stakeholder expectations.",
+              "Evidence requirements often include user feedback, performance data, and market validation to support claims of success."
+            ]
+          },
+          {
+            "question": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too high or too low given the current funding status?",
+            "answer": "1. The project's objectives indicate a strong initial interest, as it is currently 107% funded, which may support the ambition of developing the Fast Robot Trader software.\n2. The timeline for hiring a software engineering team and developing the algorithm is tight, with milestones set for only a few months apart, which may require careful planning and resource management.\n3. The proposal lacks detailed risk assessments and mitigation strategies, which needs to be addressed to better evaluate the feasibility of achieving these objectives within the proposed timeline.",
+            "key_claims": [
+              "The project is currently overfunded, suggesting positive market interest.",
+              "The ambitious timeline may present challenges in hiring and development phases."
+            ],
+            "evidence_hints": [
+              "Key points section for specific timelines and milestones.",
+              "Main risks or uncertainties section to check for any risk assessments or identified challenges."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "In software development, aligning project ambition with realistic timelines is crucial to prevent burnout and project delays.",
+              "Common pitfalls include underestimating the time required for hiring and onboarding skilled personnel.",
+              "Evidence requirements should include a detailed project timeline and resource allocation plan to ensure feasibility."
+            ]
+          }
+        ]
+      },
+      "strategy": {
+        "dimension": "strategy",
+        "label": "Implementation path and strategy",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers show notable disagreement; interpret with caution.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [
+          "Q1: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.65)",
+          "Q2: enough claims with good structure/alignment (auth=0.50, cover=0.20, align=0.55)",
+          "Q3: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.41)",
+          "Q4: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.43)",
+          "Q5: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.41)"
+        ],
+        "metric_risk_phrases": [],
+        "metric_top_evidence_phrases": [
+          "Including a competitive analysis section or market research report could provide insights into positioning.",
+          "Main risks or uncertainties section for insights on user demand and revenue sustainability.",
+          "A detailed budget breakdown and cost analysis could be included in a financial plan section."
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "Effective user acquisition strategies are crucial for projects in the fintech space, often requiring targeted marketing and outreach.",
+          "Tiered funding models can enhance engagement but must be coupled with clear communication of value to backers.",
+          "Sustainability in fintech projects often hinges on user retention strategies, which should be clearly outlined and supported by data.",
+          "Sustainable revenue models in fintech often require ongoing user engagement and clear pathways for converting users from initial interest to active participation.",
+          "Market research and user feedback are essential for validating demand for financial products.",
+          "Establishing a clear value proposition and user retention strategy is critical for long-term success in automated trading.",
+          "In fintech projects, understanding trade-offs in product design is crucial for balancing performance, risk, and user experience.",
+          "Validation through user testing and market feedback is essential for refining automated trading solutions.",
+          "Establishing clear performance metrics and benchmarks can help in assessing the effectiveness of trading strategies.",
+          "Common industry practice includes implementing phased validation stages such as alpha and beta testing to ensure product reliability."
+        ],
+        "dim_general_insights_covered": [
+          "Effective user acquisition strategies are crucial for projects in the fintech space, often requiring targeted marketing and outreach.",
+          "Tiered funding models can enhance engagement but must be coupled with clear communication of value to backers.",
+          "Sustainability in fintech projects often hinges on user retention strategies, which should be clearly outlined and supported by data.",
+          "Sustainable revenue models in fintech often require ongoing user engagement and clear pathways for converting users from initial interest to active participation.",
+          "Market research and user feedback are essential for validating demand for financial products.",
+          "Establishing a clear value proposition and user retention strategy is critical for long-term success in automated trading.",
+          "In fintech projects, understanding trade-offs in product design is crucial for balancing performance, risk, and user experience.",
+          "Validation through user testing and market feedback is essential for refining automated trading solutions.",
+          "Establishing clear performance metrics and benchmarks can help in assessing the effectiveness of trading strategies.",
+          "Common industry practice includes implementing phased validation stages such as alpha and beta testing to ensure product reliability."
+        ],
+        "dim_general_insights_missing": [],
+        "qa_samples": [
+          {
+            "question": "How does the Fast Robot Trader project plan to reach its users and secure funding from backers, particularly in terms of its tiered support model?",
+            "answer": "1. The Fast Robot Trader project utilizes a tiered support model to incentivize backers, allowing them to invest varying amounts starting from $5, which may enhance funding diversity.\n2. The project has achieved 107% of its funding goal, indicating initial user interest and potential market demand, but further validation of market fit is needed.\n3. The proposal does not specify detailed marketing strategies or outreach plans to reach users, which is a critical aspect for user acquisition and should be developed to ensure effective engagement.\n4. The absence of a clear strategy for user engagement and retention may pose risks to the project's long-term sustainability, necessitating the development of a comprehensive plan in this area.",
+            "key_claims": [
+              "The tiered support model is designed to attract a range of backers, which may enhance funding diversity.",
+              "Achieving 107% of the funding goal suggests initial validation of the project concept among backers, but further evidence of market demand is required."
+            ],
+            "evidence_hints": [
+              "Details on marketing strategies or user acquisition plans would strengthen the understanding of how the project will reach its users and ensure sustained engagement."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Effective user acquisition strategies are crucial for projects in the fintech space, often requiring targeted marketing and outreach.",
+              "Tiered funding models can enhance engagement but must be coupled with clear communication of value to backers.",
+              "Sustainability in fintech projects often hinges on user retention strategies, which should be clearly outlined and supported by data."
+            ]
+          },
+          {
+            "question": "Given that the project has achieved 107% of its funding goal, what evidence supports the sustainability of its revenue model and user demand for automated trading strategies?",
+            "answer": "1. The project has reached 107% of its funding goal; however, the proposal does not provide specific evidence regarding the sustainability of its revenue model beyond this initial funding success.\n2. There is no detailed analysis of user demand for automated trading strategies, which is necessary for assessing long-term viability.\n3. The proposal does not specify a strategy for converting initial backers into long-term users or customers, which is critical for ongoing success.\n4. The absence of evidence regarding ongoing user engagement or market research raises questions about the sustainability of the revenue model.",
+            "key_claims": [
+              "The project has achieved initial funding success, but evidence for long-term sustainability is lacking.",
+              "There is no analysis of user demand for the automated trading strategies offered.",
+              "The proposal does not outline a strategy for converting backers into long-term users."
+            ],
+            "evidence_hints": [
+              "Key points section for funding success metrics.",
+              "Main risks or uncertainties section for insights on user demand and revenue sustainability."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Sustainable revenue models in fintech often require ongoing user engagement and clear pathways for converting users from initial interest to active participation.",
+              "Market research and user feedback are essential for validating demand for financial products.",
+              "Establishing a clear value proposition and user retention strategy is critical for long-term success in automated trading."
+            ]
+          },
+          {
+            "question": "What are the major trade-offs considered in the design of the Fast Robot Trader's automated trading solution, and how have these been validated?",
+            "answer": "1. The proposal does not explicitly outline the major trade-offs considered in the design of the automated trading solution, which is an important aspect of product development that needs further clarification.\n2. The proposal lacks details on how the project has validated or refined its trading strategies, which is essential for ensuring effectiveness and reliability.\n3. The absence of risk management strategies complicates the understanding of the robustness of the solution and should be addressed.\n4. The proposal does not provide specific metrics or benchmarks to indicate how the solution performs against competitors or market standards, which is necessary for assessing its competitive position.",
+            "key_claims": [
+              "The proposal does not provide details on trade-offs in the automated trading solution design.",
+              "There is no information on validation processes for the trading strategies.",
+              "Risk management strategies are not addressed, complicating the understanding of the solution's robustness.",
+              "The proposal lacks specific metrics or benchmarks for competitive performance assessment."
+            ],
+            "evidence_hints": [
+              "Main risks or uncertainties section for potential insights on trade-offs and risk management.",
+              "Strategy overview section for any mention of design considerations.",
+              "Additional sections that may provide insights into performance metrics or competitive analysis."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "In fintech projects, understanding trade-offs in product design is crucial for balancing performance, risk, and user experience.",
+              "Validation through user testing and market feedback is essential for refining automated trading solutions.",
+              "Establishing clear performance metrics and benchmarks can help in assessing the effectiveness of trading strategies."
+            ]
+          },
+          {
+            "question": "What validation stages does the Fast Robot Trader project plan to implement to ensure the effectiveness of its trading strategies before full deployment?",
+            "answer": "1. The proposal does not outline specific validation stages for the Fast Robot Trader project, which raises questions about the effectiveness of the trading strategies prior to full deployment.\n2. The lack of defined validation stages may lead to the risk of deploying untested or ineffective trading strategies, which could result in financial losses for users.\n3. The absence of a structured validation process could potentially affect user confidence and adoption, as investors typically seek assurance that automated trading systems are reliable and effective.",
+            "key_claims": [
+              "The proposal lacks detail on validation stages for trading strategies.",
+              "The absence of validation stages could impact user confidence and project adoption."
+            ],
+            "evidence_hints": [
+              "The proposal's strategy overview section could be expanded to include details on planned validation stages."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Common industry practice includes implementing phased validation stages such as alpha and beta testing to ensure product reliability.",
+              "Projects in the financial technology sector often require rigorous backtesting of trading algorithms to validate performance under various market conditions.",
+              "User feedback and iterative improvements are critical for building trust in automated trading systems."
+            ]
+          },
+          {
+            "question": "What quality and compliance measures are in place to ensure that the Fast Robot Trader adheres to regulatory standards in the financial markets?",
+            "answer": "1. The proposal does not provide specific quality or compliance measures to ensure adherence to regulatory standards in financial markets.\n2. The lack of detail on compliance raises concerns about the project's ability to operate within legal frameworks, which is important for automated trading systems.\n3. Without clear compliance measures, the project may encounter risks, including potential legal challenges and impacts on user trust.",
+            "key_claims": [
+              "There are no specified quality or compliance measures in the proposal.",
+              "The absence of compliance details could expose the project to regulatory risks."
+            ],
+            "evidence_hints": [
+              "The proposal should include sections on compliance frameworks or quality assurance processes relevant to automated trading."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Automated trading projects typically require adherence to financial regulations, including risk management and reporting standards.",
+              "Documentation of compliance measures is essential for securing partnerships and funding.",
+              "Regular audits and compliance checks are recommended to maintain operational integrity."
+            ]
+          },
+          {
+            "question": "If the proposal does not provide sufficient details on the scaling strategy for the Fast Robot Trader, please state this information gap and discuss its impact on the project's potential for large-scale rollout.",
+            "answer": "1. The proposal does not provide sufficient details on the scaling strategy for the Fast Robot Trader, indicating a significant information gap that needs to be addressed.\n2. The absence of a clear scaling strategy makes it challenging to evaluate how the project intends to grow its user base and expand its market presence, which is crucial for potential investors.\n3. This lack of information could affect the project's readiness for large-scale rollout, as stakeholders typically seek defined growth plans before committing resources.",
+            "key_claims": [
+              "The proposal lacks a clear scaling strategy.",
+              "The absence of a scaling strategy could hinder the project's growth potential."
+            ],
+            "evidence_hints": [
+              "Additional details on market entry strategies and user acquisition plans would strengthen the proposal."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Effective scaling strategies often include market analysis, user acquisition tactics, and partnerships to enhance reach.",
+              "Projects should outline their operational capacity to handle increased demand as they scale.",
+              "Common pitfalls include underestimating resource needs and failing to adapt to market changes during scaling."
+            ]
+          }
+        ]
+      },
+      "innovation": {
+        "dimension": "innovation",
+        "label": "Technology and product innovation",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers are broadly consistent, with some differences.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [
+          "Q1: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.66)",
+          "Q2: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.53)",
+          "Q3: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.67)",
+          "Q4: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.79)",
+          "Q5: enough claims with good structure/alignment (auth=1.00, cover=0.20, align=0.53)"
+        ],
+        "metric_risk_phrases": [
+          "Q5: possible cross-dimension drift (drift=0.25); review dimension boundary manually",
+          "Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended",
+          "Q6: possible cross-dimension drift (drift=0.10); review dimension boundary manually",
+          "Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended"
+        ],
+        "metric_top_evidence_phrases": [
+          "Intellectual property strategy section or any mention of patents, trademarks, or proprietary technology in the proposal.",
+          "Market research data indicating demand for cost-effective trading solutions.",
+          "Comparative analysis data showing performance metrics against existing high-frequency trading solutions."
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "In high-frequency trading, innovations typically require clear differentiation from existing technologies to attract users.",
+          "Common pitfalls include failing to demonstrate unique value propositions and not providing sufficient evidence of effectiveness.",
+          "Evidence requirements often include comparative analyses, user testimonials, and performance metrics against established competitors.",
+          "In financial technology, demonstrating clear customer value and performance improvements is critical for adoption.",
+          "Common pitfalls include failing to provide detailed cost comparisons and lacking empirical evidence of performance enhancements.",
+          "Evidence requirements typically include customer testimonials, comparative pricing analyses, and performance benchmarks.",
+          "In software development for trading, evidence of effectiveness is crucial and often includes A/B testing results or user feedback.",
+          "Common pitfalls include neglecting to document and analyze performance data during initial rollouts.",
+          "Evidence requirements should focus on both qualitative and quantitative assessments of the technology's impact.",
+          "Common risks in high-frequency trading include technological obsolescence and challenges related to regulatory compliance."
+        ],
+        "dim_general_insights_covered": [
+          "In high-frequency trading, innovations typically require clear differentiation from existing technologies to attract users.",
+          "Common pitfalls include failing to demonstrate unique value propositions and not providing sufficient evidence of effectiveness.",
+          "Evidence requirements often include comparative analyses, user testimonials, and performance metrics against established competitors.",
+          "In financial technology, demonstrating clear customer value and performance improvements is critical for adoption.",
+          "Common pitfalls include failing to provide detailed cost comparisons and lacking empirical evidence of performance enhancements.",
+          "Evidence requirements typically include customer testimonials, comparative pricing analyses, and performance benchmarks.",
+          "In software development for trading, evidence of effectiveness is crucial and often includes A/B testing results or user feedback.",
+          "Common pitfalls include neglecting to document and analyze performance data during initial rollouts.",
+          "Evidence requirements should focus on both qualitative and quantitative assessments of the technology's impact.",
+          "Common risks in high-frequency trading include technological obsolescence and challenges related to regulatory compliance."
+        ],
+        "dim_general_insights_missing": [],
+        "qa_samples": [
+          {
+            "question": "How does Fast Robot Trader's approach to high-frequency trading differ from existing solutions used by banks and stock exchanges? Please provide specific examples of its novelty.",
+            "answer": "1. Fast Robot Trader differentiates itself by utilizing advanced software that learns from live news and analyzes big data, which may not be explicitly mentioned as a feature of existing solutions used by banks and stock exchanges.\n2. The proposal indicates that Fast Robot Trader aims to provide a cost-effective alternative to high-cost trading solutions, suggesting a focus on affordability and accessibility, though specific pricing strategies are not detailed.\n3. Unlike traditional high-frequency trading systems that may rely on static algorithms, Fast Robot Trader's adaptive learning from real-time data could potentially enhance decision-making speed and accuracy, but further evidence is needed to support this claim.\n4. The proposal does not provide specific examples of how Fast Robot Tr...",
+            "key_claims": [
+              "Fast Robot Trader employs advanced software that adapts to live news and big data, which could serve as a differentiator from traditional trading solutions.",
+              "The proposal lacks specific examples that illustrate the novelty of Fast Robot Trader's technology compared to existing high-frequency trading solutions."
+            ],
+            "evidence_hints": [
+              "Innovation overview section detailing the technology's unique features compared to existing solutions."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "In high-frequency trading, innovations typically require clear differentiation from existing technologies to attract users.",
+              "Common pitfalls include failing to demonstrate unique value propositions and not providing sufficient evidence of effectiveness.",
+              "Evidence requirements often include comparative analyses, user testimonials, and performance metrics against established competitors."
+            ]
+          },
+          {
+            "question": "What specific advantages does Fast Robot Trader offer over traditional high-cost trading solutions in terms of customer value, performance, and cost-effectiveness?",
+            "answer": "1. Fast Robot Trader presents potential advantages in customer value by offering a cost-effective solution compared to traditional high-cost trading systems used by banks and stock exchanges, although specific pricing details are not provided.\n2. The proposal indicates that the software's capability to learn from live news and analyze big data could enhance trading performance; however, specific performance metrics to substantiate this claim are not included.\n3. Cost-effectiveness is emphasized as a key selling point, but the proposal lacks detailed comparisons of pricing or operational costs against traditional solutions, which would strengthen the value proposition.\n4. The current materials do not provide specific details on how customer value is quantified or measured, indicating a need...",
+            "key_claims": [
+              "Fast Robot Trader is positioned as a cost-effective alternative to traditional high-cost trading solutions.",
+              "The proposal does not provide specific performance metrics or detailed comparisons to substantiate claims of enhanced customer value."
+            ],
+            "evidence_hints": [
+              "Key points section discussing customer value propositions and performance metrics."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "In financial technology, demonstrating clear customer value and performance improvements is critical for adoption.",
+              "Common pitfalls include failing to provide detailed cost comparisons and lacking empirical evidence of performance enhancements.",
+              "Evidence requirements typically include customer testimonials, comparative pricing analyses, and performance benchmarks."
+            ]
+          },
+          {
+            "question": "What evidence supports the effectiveness of Fast Robot Trader's technology in making trading decisions based on live news and big data analysis? Please detail any experimental or operational evidence available.",
+            "answer": "1. The proposal does not provide specific experimental or operational evidence that supports the effectiveness of Fast Robot Trader's technology in high-frequency trading.\n2. There is a lack of detailed risk information or existing mitigations that would typically support claims of effectiveness in trading decisions, which is essential for assessing operational readiness.\n3. To substantiate the technology's efficacy, additional evidence such as performance data, case studies, or pilot results would be necessary to evaluate its impact in real trading scenarios.",
+            "key_claims": [
+              "The proposal lacks empirical evidence supporting the effectiveness of the technology.",
+              "No risk mitigation strategies are outlined, which is critical for assessing operational readiness."
+            ],
+            "evidence_hints": [
+              "Main risks or uncertainties section, which indicates a gap in risk management and evidence of effectiveness."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "In software development for trading, evidence of effectiveness is crucial and often includes A/B testing results or user feedback.",
+              "Common pitfalls include neglecting to document and analyze performance data during initial rollouts.",
+              "Evidence requirements should focus on both qualitative and quantitative assessments of the technology's impact."
+            ]
+          },
+          {
+            "question": "Given the limited risk information provided, what potential risks do you foresee that could lead to Fast Robot Trader becoming obsolete or commoditized within the next 3-5 years?",
+            "answer": "1. Fast Robot Trader may encounter risks associated with rapid technological advancements in high-frequency trading, which could potentially affect the relevance of its current algorithms.\n2. The reliance on live news and big data analysis may expose the software to vulnerabilities if competitors develop more advanced or quicker algorithms.\n3. The presence of similar cost-effective trading solutions in the market could lead to commoditization, which may impact differentiation and pricing power.\n4. Changes in regulations governing high-frequency trading practices could introduce additional compliance requirements or operational constraints.",
+            "key_claims": [
+              "The proposal lacks detailed risk information, highlighting the need for a comprehensive risk assessment strategy.",
+              "There is a potential for technological obsolescence due to the fast-paced nature of the trading technology sector.",
+              "The risk of commoditization is increased by the emergence of similar low-cost trading solutions."
+            ],
+            "evidence_hints": [
+              "The main risks or uncertainties section of the proposal could be expanded to include specific risks and potential mitigation strategies."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Common risks in high-frequency trading include technological obsolescence and challenges related to regulatory compliance.",
+              "Evidence of effectiveness and competitive differentiation is essential for maintaining a strong market position.",
+              "Regular updates on algorithm performance and market trends are important to address risks associated with commoditization."
+            ]
+          },
+          {
+            "question": "What strategies does Fast Robot Trader have in place for protecting its intellectual property, and how do these strategies support its competitive position in the high-frequency trading market?",
+            "answer": "1. The proposal does not specify any strategies for protecting intellectual property, which is important in the competitive high-frequency trading market.\n2. The lack of a clear intellectual property strategy may pose challenges for Fast Robot Trader in maintaining a competitive edge against established players with strong IP protections.\n3. The absence of detailed information on IP strategies indicates a need for further clarification on how Fast Robot Trader plans to differentiate itself in the high-frequency trading market.",
+            "key_claims": [
+              "The proposal lacks information on intellectual property protection strategies.",
+              "The absence of IP strategies may affect the competitive position of Fast Robot Trader.",
+              "The proposal does not clarify how it intends to differentiate itself in the high-frequency trading market."
+            ],
+            "evidence_hints": [
+              "Intellectual property strategy section or any mention of patents, trademarks, or proprietary technology in the proposal."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "In the high-frequency trading sector, strong IP protections are essential for safeguarding innovations and maintaining market position.",
+              "Common pitfalls include neglecting to file for patents or failing to enforce IP rights, which can lead to loss of competitive advantage.",
+              "Evidence requirements typically include documentation of IP filings, competitive analysis, and differentiation strategies."
+            ]
+          },
+          {
+            "question": "How can Fast Robot Trader's technology be extended to other customer segments or use cases beyond high-frequency trading? What are the potential barriers to such extensions?",
+            "answer": "1. The technology behind Fast Robot Trader, which analyzes big data and live news, may have potential applications in other financial services, such as portfolio management or risk assessment tools, but this requires further exploration.\n2. Barriers to extension could include regulatory compliance in different financial sectors and the need for customization to meet specific customer needs outside of high-frequency trading, which should be investigated further.\n3. The proposal does not provide information on market research or customer validation for these potential extensions, which is essential for assessing feasibility and should be addressed.",
+            "key_claims": [
+              "Fast Robot Trader's technology may have potential applications beyond high-frequency trading, but this needs further validation.",
+              "Regulatory compliance could pose a barrier to entering new customer segments, which requires additional analysis.",
+              "The proposal lacks market research or customer validation for extensions, which is critical for future development."
+            ],
+            "evidence_hints": [
+              "Market analysis or customer discovery sections that could provide insights into potential use cases and barriers."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Typically, technology extensions require thorough market validation and understanding of regulatory environments.",
+              "Common pitfalls include overestimating the applicability of technology without adequate market research.",
+              "Evidence requirements often include customer feedback, pilot programs, and regulatory assessments to ensure successful adaptation."
+            ]
+          }
+        ]
+      },
+      "feasibility": {
+        "dimension": "feasibility",
+        "label": "Resources and feasibility",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers are broadly consistent, with some differences.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [
+          "Q1: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.69)",
+          "Q2: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.61)",
+          "Q4: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.83)",
+          "Q5: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.62)",
+          "Q6: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.42)"
+        ],
+        "metric_risk_phrases": [
+          "Q1: possible cross-dimension drift (drift=0.10); review dimension boundary manually",
+          "Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended",
+          "Q3: possible cross-dimension drift (drift=0.10); review dimension boundary manually",
+          "Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended",
+          "Q5: possible cross-dimension drift (drift=0.10); review dimension boundary manually"
+        ],
+        "metric_top_evidence_phrases": [
+          "A procurement strategy document would clarify how the project plans to acquire necessary resources.",
+          "A revised project timeline and resource allocation plan could clarify alignment.",
+          "Details on risk mitigation strategies would strengthen the proposal's feasibility assessment and demonstrate preparednes"
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "In similar projects, securing consistent funding is crucial for operational sustainability and growth.",
+          "Common pitfalls include underestimating the need for ongoing funding and failing to diversify funding sources.",
+          "Evidence requirements often include detailed financial projections and funding commitments to ensure sustainability.",
+          "Common strategies for mitigating financial risks include securing diverse funding sources and establishing contingency plans.",
+          "Addressing product obsolescence typically requires a commitment to continuous innovation and market research.",
+          "Effective competition management often involves a strong marketing strategy and customer engagement initiatives.",
+          "In projects with key personnel reliance, it's essential to have robust knowledge management and succession planning.",
+          "Common pitfalls include failing to prepare for employee turnover, which can lead to operational disruptions.",
+          "Evidence requirements often include documentation of training programs and succession plans to ensure operational continuity.",
+          "Common pitfalls include underestimating the importance of customer feedback in product development."
+        ],
+        "dim_general_insights_covered": [
+          "In similar projects, securing consistent funding is crucial for operational sustainability and growth.",
+          "Common pitfalls include underestimating the need for ongoing funding and failing to diversify funding sources.",
+          "Evidence requirements often include detailed financial projections and funding commitments to ensure sustainability.",
+          "Common strategies for mitigating financial risks include securing diverse funding sources and establishing contingency plans.",
+          "Addressing product obsolescence typically requires a commitment to continuous innovation and market research.",
+          "Effective competition management often involves a strong marketing strategy and customer engagement initiatives.",
+          "In projects with key personnel reliance, it's essential to have robust knowledge management and succession planning.",
+          "Common pitfalls include failing to prepare for employee turnover, which can lead to operational disruptions.",
+          "Evidence requirements often include documentation of training programs and succession plans to ensure operational continuity.",
+          "Common pitfalls include underestimating the importance of customer feedback in product development."
+        ],
+        "dim_general_insights_missing": [],
+        "qa_samples": [
+          {
+            "question": "Given that the project was initially unable to reach its funding goal of $141,228 by the deadline, how does the current status of being reported as 107% funded impact the project's financial sustainability and budget allocation?",
+            "answer": "1. The project initially did not meet its funding goal of $141,228 by the deadline, which raises concerns about financial sustainability; however, being reported as 107% funded may suggest recent success in securing additional funds that need to be clarified further.\n2. The current funding status could potentially improve budget allocation towards operational costs and payroll, but the reliance on key employees remains a risk if their retention is not assured.\n3. The proposal highlights insufficient funds as a risk, which could still hinder the project's ability to meet its immediate objectives despite the current funding status.\n4. The project must ensure that the funding is sustainable over the long term to mitigate future financial shortfalls, especially in light of competition and prod...",
+            "key_claims": [
+              "The project initially faced financial sustainability issues due to not meeting its funding goal by the deadline.",
+              "The reported funding status of 107% indicates a potential improvement in financial outlook, but further details on fund utilization are needed.",
+              "Insufficient funds remain a critical risk that could impact operational execution."
+            ],
+            "evidence_hints": [
+              "Feasibility overview section regarding funding goals and current funding status.",
+              "Key points section discussing business risks related to funding."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "In similar projects, securing consistent funding is crucial for operational sustainability and growth.",
+              "Common pitfalls include underestimating the need for ongoing funding and failing to diversify funding sources.",
+              "Evidence requirements often include detailed financial projections and funding commitments to ensure sustainability."
+            ]
+          },
+          {
+            "question": "What specific strategies can be implemented to mitigate the identified risks of insufficient funds, product obsolescence, competition, and third-party credit risks?",
+            "answer": "1. To address the challenge of insufficient funds, the project could consider exploring alternative funding sources, such as grants or partnerships, to enhance financial support options.\n2. To mitigate the risk of product obsolescence, the project may need to invest in ongoing research and development to ensure the product remains competitive in the market.\n3. To respond to competition, the project could focus on developing a unique value proposition or refining marketing strategies to improve market positioning.\n4. To manage third-party credit risks, the project should conduct thorough due diligence on potential partners and establish clear credit terms to reduce exposure.",
+            "key_claims": [
+              "The proposal identifies insufficient funds, product obsolescence, competition, and third-party credit risks as key challenges.",
+              "Mitigation strategies are not currently detailed in the proposal, indicating a gap in risk management planning."
+            ],
+            "evidence_hints": [
+              "Main risks or uncertainties section outlining identified risks.",
+              "Existing mitigations section, which currently lacks detail on mitigation strategies."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Common strategies for mitigating financial risks include securing diverse funding sources and establishing contingency plans.",
+              "Addressing product obsolescence typically requires a commitment to continuous innovation and market research.",
+              "Effective competition management often involves a strong marketing strategy and customer engagement initiatives."
+            ]
+          },
+          {
+            "question": "How does the reliance on key employees affect the operational execution plan, and what contingency plans are in place to address potential gaps in personnel?",
+            "answer": "1. The reliance on key employees poses a risk to operational execution, as their absence could disrupt project continuity and execution.\n2. To address potential gaps in personnel, the project should consider cross-training team members to facilitate knowledge transfer and enhance operational resilience.\n3. Establishing a succession plan for key roles could help mitigate risks associated with employee turnover.\n4. The proposal lacks detail on specific contingency plans currently in place, which is an important aspect of operational readiness and should be addressed to strengthen the project's feasibility.",
+            "key_claims": [
+              "Key employee reliance is identified as a risk that could impact operational execution.",
+              "The proposal does not specify any contingency plans for addressing personnel gaps."
+            ],
+            "evidence_hints": [
+              "Feasibility overview section discussing key employee reliance.",
+              "Existing mitigations section, which currently lacks detail on contingency plans."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "In projects with key personnel reliance, it's essential to have robust knowledge management and succession planning.",
+              "Common pitfalls include failing to prepare for employee turnover, which can lead to operational disruptions.",
+              "Evidence requirements often include documentation of training programs and succession plans to ensure operational continuity."
+            ]
+          },
+          {
+            "question": "What barriers to implementation have been identified in the proposal, particularly regarding customer acceptance and competition, and how can these be addressed?",
+            "answer": "1. The proposal identifies barriers to implementation, including insufficient funding and competition, which may impact the project's ability to achieve customer acceptance.\n2. To address funding issues, the project could consider exploring alternative financing options or forming partnerships to enhance financial sustainability.\n3. Competition risks may be addressed through conducting market analysis and developing differentiation strategies to strengthen customer value propositions.\n4. The proposal lacks specific customer feedback or insights, which are necessary for understanding acceptance and refining the product offering.",
+            "key_claims": [
+              "The project faces barriers related to funding and competition.",
+              "There is a lack of customer insights that could inform acceptance strategies."
+            ],
+            "evidence_hints": [
+              "Feasibility overview section discussing funding and competition",
+              "Key points section mentioning the need for customer acceptance strategies"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Common pitfalls include underestimating the importance of customer feedback in product development.",
+              "Funding sustainability is critical; projects often face challenges without clear financial strategies.",
+              "Understanding the competitive landscape and customer needs is essential for successful market entry and acceptance."
+            ]
+          },
+          {
+            "question": "On a scale of 1-5, how well aligned are the project's timeline and resources, considering the identified risks? Please provide evidence that would increase your score.",
+            "answer": "1. The project's timeline and resources appear to be misaligned due to identified risks, particularly insufficient funding and reliance on key employees.\n2. On a scale of 1-5, I would rate the alignment as a 2, indicating significant challenges ahead.\n3. Evidence that could improve this score includes securing additional funding, demonstrating a clear plan for resource allocation, and establishing a timeline that considers potential delays from competition and product obsolescence.\n4. Developing a detailed risk management plan would also be beneficial in aligning resources with project objectives.",
+            "key_claims": [
+              "The project is currently reported as 107% funded, but this funding was not achieved by the deadline, which may indicate potential future financial instability.",
+              "Reliance on key employees poses a risk to project continuity and execution."
+            ],
+            "evidence_hints": [
+              "A revised project timeline and resource allocation plan could clarify alignment.",
+              "Documentation of secured funding and commitments from key employees would strengthen the project's feasibility."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "In similar projects, alignment of timeline and resources is crucial for maintaining momentum and achieving milestones.",
+              "Common pitfalls include failing to adjust timelines based on funding availability and resource constraints.",
+              "Evidence of operational capacity and a clear funding strategy are typically required to ensure project feasibility."
+            ]
+          },
+          {
+            "question": "If the proposal does not provide sufficient details on customer acceptance and procurement processes, please state this information gap and discuss its impact on the project's feasibility.",
+            "answer": "1. The proposal lacks sufficient details on customer acceptance and procurement processes, which are important for assessing feasibility and market readiness.\n2. Without insights into customer acceptance, it is difficult to predict market traction and the potential for achieving financial sustainability.\n3. The absence of a clear procurement strategy could limit the project's ability to secure necessary partnerships and resources, impacting operational readiness.\n4. Addressing these gaps is essential for enhancing the project's feasibility and attracting potential investors.",
+            "key_claims": [
+              "The proposal does not provide specific details on customer acceptance, which is vital for market entry.",
+              "A lack of clarity on procurement processes raises concerns about the project's ability to secure necessary resources."
+            ],
+            "evidence_hints": [
+              "Market research data or customer interviews could provide insights into acceptance.",
+              "A procurement strategy document would clarify how the project plans to acquire necessary resources."
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "Typically, projects need to demonstrate a clear understanding of customer needs and procurement pathways to ensure feasibility.",
+              "Common pitfalls include neglecting to validate customer interest and failing to outline a clear procurement strategy.",
+              "Evidence of customer engagement and a defined procurement process are often required to validate project feasibility."
+            ]
+          }
+        ]
+      }
+    },
+    "output_schema_hint": {
+      "type": "object",
+      "required": [
+        "dimensions"
+      ],
+      "properties": {
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "team": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "objectives": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "strategy": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "innovation": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "feasibility": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

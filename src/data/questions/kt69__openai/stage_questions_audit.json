@@ -1,0 +1,624 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt69__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt69__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 265,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team includes Vinny Alves, the creator of bbPress Notify Pro for WordPress, indicating a strong technical background. The project involves administrative roles where admins manage the delivery timing of digest messages and control forum subscriptions for users.",
+        "first_key_point_preview": "Vinny Alves is a key team member, known for creating bbPress Notify Pro for WordPress.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.32,
+        "raw_chars": 4950,
+        "usage": {
+          "prompt_tokens": 3293,
+          "completion_tokens": 1042,
+          "total_tokens": 4335
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Vinny Alves",
+        "bbPress Notify Pro",
+        "admin role responsibilities",
+        "team bandwidth assessment",
+        "domain expertise in forums",
+        "collaboration partnerships",
+        "validation experience",
+        "governance processes",
+        "decision-making framework"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Vinny Alves's experience with bbPress Notify Pro for WordPress position him to lead this project effectively? Please evaluate his track record in relation to the project's objectives.",
+          "question_en_preview": "How does Vinny Alves's experience with bbPress Notify Pro for WordPress position him to lead this project effectively? Please evaluate his track record in relation to the project's objectives."
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that is relevant to managing the delivery timing of digest messages and controlling forum subscriptions? How does this expertise enhance the project's feasibility?",
+          "question_en_preview": "What specific domain expertise does the team possess that is relevant to managing the delivery timing of digest messages and controlling forum subscriptions? How does this expertise enhance the project's feasibility?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity to manage the responsibilities of admin roles effectively? Please assess any potential risks related to team bandwidth.",
+          "question_en_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity to manage the responsibilities of admin roles effectively? Please assess any potential risks related to team bandwidth."
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing collaborations or partnerships does the team have that could support the project's execution, particularly in relation to the admin roles and user subscription management?",
+          "question_en_preview": "What existing collaborations or partnerships does the team have that could support the project's execution, particularly in relation to the admin roles and user subscription management?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation or compliance experience does the team have that is relevant to the project, especially regarding the management of user subscriptions and message delivery? How might the lack of this experience pose a ri ...",
+          "question_en_preview": "What validation or compliance experience does the team have that is relevant to the project, especially regarding the management of user subscriptions and message delivery? How might the lack of this experience pose a ri ..."
+        }
+      ],
+      "elapsed_sec": 12.32,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 233,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to achieve successful funding through a Kickstarter campaign, with a goal of $1,977. Users and admins have the ability to manage forum notification subscriptions, indicating a focus on user control and customization.",
+        "first_key_point_preview": "The project was launched on Kickstarter with a funding goal of $1,977.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.27,
+        "raw_chars": 4066,
+        "usage": {
+          "prompt_tokens": 3386,
+          "completion_tokens": 897,
+          "total_tokens": 4283
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter campaign",
+        "funding goal",
+        "user control",
+        "notification subscriptions",
+        "success metrics",
+        "business logic",
+        "funding strategy",
+        "milestones",
+        "user engagement"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused is the project's overall goal of achieving successful funding through the Kickstarter campaign? Are there any unrelated sub-goals that could distract from this primary objective?",
+          "question_en_preview": "How clear and focused is the project's overall goal of achieving successful funding through the Kickstarter campaign? Are there any unrelated sub-goals that could distract from this primary objective?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the project align with the stated unmet need for user control and customization in forum notifications? Please assess the urgency of this alignment.",
+          "question_en_preview": "To what extent does the project align with the stated unmet need for user control and customization in forum notifications? Please assess the urgency of this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given that the funding period for the project was from December 13, 2014, to January 12, 2015, how reasonable and executable are the staged milestones leading up to this funding goal?",
+          "question_en_preview": "Given that the funding period for the project was from December 13, 2014, to January 12, 2015, how reasonable and executable are the staged milestones leading up to this funding goal?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are in place to measure the project's achievement of its funding goal and user engagement? If these metrics are not provided, please state this information gap and discuss its  ...",
+          "question_en_preview": "What clear and quantifiable success metrics are in place to measure the project's achievement of its funding goal and user engagement? If these metrics are not provided, please state this information gap and discuss its  ..."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project create value and capture funding through its Kickstarter campaign? Please evaluate the business logic behind the funding strategy.",
+          "question_en_preview": "How does the project create value and capture funding through its Kickstarter campaign? Please evaluate the business logic behind the funding strategy."
+        }
+      ],
+      "elapsed_sec": 11.27,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 390,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to enhance user notification control within forums, allowing both users and admins to manage subscriptions and delivery settings. It was initially launched on Kickstarter with a funding goal, which was not met, but later achieved 104% funding with two days remain ...",
+        "first_key_point_preview": "The project allows users to specify which forums they receive notifications for, controlled by an admin.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.59,
+        "raw_chars": 4334,
+        "usage": {
+          "prompt_tokens": 3519,
+          "completion_tokens": 905,
+          "total_tokens": 4424
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding strategy",
+        "user notification control",
+        "admin subscription management",
+        "customizable delivery features",
+        "user engagement strategies",
+        "validation steps for features",
+        "budget realism assessment",
+        "partnership risk evaluation",
+        "compliance measures for privacy",
+        "operational readiness"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to position itself in the market given that it initially failed to meet its Kickstarter funding goal but later achieved 104% funding? What strategies will be employed to ensure sustained user ad ...",
+          "question_en_preview": "How does the project plan to position itself in the market given that it initially failed to meet its Kickstarter funding goal but later achieved 104% funding? What strategies will be employed to ensure sustained user ad ..."
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the solution design that allows users to manage their notification settings? How does this align with the needs of both users and admins?",
+          "question_en_preview": "What are the major trade-offs considered in the solution design that allows users to manage their notification settings? How does this align with the needs of both users and admins?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps will the project undertake to ensure that the features, such as customizable delivery times and opt-out options, meet user expectations and operational requirements?",
+          "question_en_preview": "What validation steps will the project undertake to ensure that the features, such as customizable delivery times and opt-out options, meet user expectations and operational requirements?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is the project's budget and revenue model considering the initial funding challenges? What evidence would increase your confidence in the project's financial sustainability?",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the project's budget and revenue model considering the initial funding challenges? What evidence would increase your confidence in the project's financial sustainability?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee in the partnership strategy for this project, and how might they impact the delivery of the solution?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee in the partnership strategy for this project, and how might they impact the delivery of the solution?"
+        }
+      ],
+      "elapsed_sec": 12.59,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 310,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "bbPress Notify Pro for WordPress represents an evolution of the existing bbPress Notify plugin, introducing several innovative features. These include the ability to send HTML emails, text notifications, and customizable notification frequencies, enhancing user engagement and con ...",
+        "first_key_point_preview": "bbPress Notify Pro is an evolution of the popular bbPress Notify plugin.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.29,
+        "raw_chars": 4391,
+        "usage": {
+          "prompt_tokens": 3388,
+          "completion_tokens": 979,
+          "total_tokens": 4367
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "HTML email feature",
+        "customizable notification frequencies",
+        "user engagement metrics",
+        "competitive advantages",
+        "intellectual property strategy",
+        "risk of obsolescence",
+        "user feedback",
+        "beta testing results",
+        "extension to other segments",
+        "differentiation from existing plugins"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does bbPress Notify Pro's introduction of HTML emails and customizable notification frequencies represent a true innovation compared to the existing bbPress Notify plugin?",
+          "question_en_preview": "How does bbPress Notify Pro's introduction of HTML emails and customizable notification frequencies represent a true innovation compared to the existing bbPress Notify plugin?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does bbPress Notify Pro offer over existing notification systems in terms of user engagement and control?",
+          "question_en_preview": "What specific advantages does bbPress Notify Pro offer over existing notification systems in terms of user engagement and control?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the new features in bbPress Notify Pro, such as user engagement metrics or feedback from beta testing?",
+          "question_en_preview": "What evidence supports the effectiveness of the new features in bbPress Notify Pro, such as user engagement metrics or feedback from beta testing?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of bbPress Notify Pro within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of bbPress Notify Pro within the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property of the innovative features introduced in bbPress Notify Pro?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property of the innovative features introduced in bbPress Notify Pro?"
+        }
+      ],
+      "elapsed_sec": 11.29,
+      "final_question_count": 9
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 306,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by a defined strategy for handling mail-outs, which includes sending messages in batches or using a queue table for processing. The project has a funding goal of $1,977, and it was recently reported to be 104% funded with only two days  ...",
+        "first_key_point_preview": "The project aims to solve the mail-out problem by sending messages in batches or using a queue table.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "To solve the mail-out problem, messages will either be sent in batches or a queue table will be used that will be read, updated, and committed at each mail-out iteration."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.13,
+        "raw_chars": 4663,
+        "usage": {
+          "prompt_tokens": 3455,
+          "completion_tokens": 996,
+          "total_tokens": 4451
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding level analysis",
+        "implementation timeline",
+        "resource allocation",
+        "customer acceptance evidence",
+        "risk identification",
+        "mail-out strategy barriers",
+        "task ownership",
+        "budget alignment",
+        "operational execution clarity"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 5
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "resources_and_infrastructure": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project has a funding goal of $1,977 and is reported to be 104% funded, how does this funding level align with the projected budget and resource needs for successful implementation?",
+          "question_en_preview": "Given that the project has a funding goal of $1,977 and is reported to be 104% funded, how does this funding level align with the projected budget and resource needs for successful implementation?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for implementing the strategy of sending messages in batches or using a queue table, and who are the designated owners for these tasks?",
+          "question_en_preview": "What specific tasks and timelines are outlined for implementing the strategy of sending messages in batches or using a queue table, and who are the designated owners for these tasks?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "The proposal mentions limited risk information. What potential risks could arise from the current implementation strategy, and how might they impact the project's feasibility?",
+          "question_en_preview": "The proposal mentions limited risk information. What potential risks could arise from the current implementation strategy, and how might they impact the project's feasibility?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation might exist in real production settings for the proposed mail-out strategy, and how can these be addressed?",
+          "question_en_preview": "What barriers to implementation might exist in real production settings for the proposed mail-out strategy, and how can these be addressed?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the project's current funding status, what resources (people, tools, infrastructure) are necessary to ensure the successful execution of the mail-out strategy, and are these resources currently in place?",
+          "question_en_preview": "Considering the project's current funding status, what resources (people, tools, infrastructure) are necessary to ensure the successful execution of the mail-out strategy, and are these resources currently in place?"
+        }
+      ],
+      "elapsed_sec": 17.14,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T20:40:51Z",
+  "elapsed_sec": 64.62,
+  "total_questions": 38,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt69__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt69__openai/generated_questions_detail.json"
+}

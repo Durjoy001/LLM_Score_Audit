@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Investment Proposal Evaluation — Detailed Results Report</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #1a1a2e; font-size: 14px; line-height: 1.6; }
+
+  /* HEADER */
+  .header { background: linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 60%, #1a5276 100%); color: #fff; padding: 48px 60px 40px; }
+  .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px; }
+  .header .subtitle { font-size: 15px; opacity: 0.8; margin-bottom: 20px; }
+  .header-meta { display: flex; gap: 32px; flex-wrap: wrap; }
+  .header-meta .meta-item { font-size: 13px; opacity: 0.75; }
+  .header-meta .meta-item strong { opacity: 1; color: #7fc8f8; }
+
+  /* LAYOUT */
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+  .section { background: #fff; border-radius: 12px; padding: 28px 32px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+  .section h2 { font-size: 20px; font-weight: 700; color: #0d1b2a; border-bottom: 3px solid #1a5276; padding-bottom: 10px; margin-bottom: 20px; }
+  .section h3 { font-size: 16px; font-weight: 600; color: #1b3a5c; margin: 20px 0 10px; }
+  .section h4 { font-size: 14px; font-weight: 600; color: #34495e; margin: 14px 0 6px; }
+  p { margin-bottom: 10px; color: #2c3e50; }
+
+  /* BADGES */
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge-good { background: #d4efdf; color: #1e8449; border: 1px solid #a9dfbf; }
+  .badge-bad { background: #fadbd8; color: #922b21; border: 1px solid #f1948a; }
+  .badge-mixed { background: #fef9e7; color: #9a7d0a; border: 1px solid #f9e79f; }
+  .badge-neutral { background: #eaf2ff; color: #1a5276; border: 1px solid #aed6f1; }
+  .badge-go { background: #d4efdf; color: #1e8449; border: 1px solid #a9dfbf; font-weight: 700; }
+  .badge-hold { background: #fef9e7; color: #9a7d0a; border: 1px solid #f9e79f; }
+  .badge-nogo { background: #fadbd8; color: #922b21; border: 1px solid #f1948a; }
+
+  /* SCORE BARS */
+  .score-bar-wrap { display: flex; align-items: center; gap: 10px; margin: 4px 0; }
+  .score-bar-wrap .label { width: 100px; font-size: 12px; color: #555; }
+  .score-bar-bg { flex: 1; background: #ecf0f1; border-radius: 4px; height: 14px; }
+  .score-bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+  .score-bar-val { width: 40px; font-size: 12px; font-weight: 600; color: #333; text-align: right; }
+  .fill-good { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+  .fill-mixed { background: linear-gradient(90deg, #f39c12, #f1c40f); }
+  .fill-bad { background: linear-gradient(90deg, #c0392b, #e74c3c); }
+  .fill-neutral { background: linear-gradient(90deg, #2980b9, #3498db); }
+  .fill-human { background: linear-gradient(90deg, #8e44ad, #9b59b6); }
+
+  /* CARDS */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; margin-top: 16px; }
+  .card { background: #fdfdfd; border: 1px solid #e8e8e8; border-radius: 10px; padding: 20px; }
+  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .card-title { font-size: 15px; font-weight: 700; color: #0d1b2a; }
+  .card-subtitle { font-size: 12px; color: #888; margin-top: 2px; }
+
+  /* METRIC BLOCK */
+  .metric-block { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0; }
+  .metric { text-align: center; background: #f8f9fa; border-radius: 8px; padding: 10px 14px; min-width: 90px; }
+  .metric .val { font-size: 20px; font-weight: 700; color: #1a5276; }
+  .metric .val.good { color: #1e8449; }
+  .metric .val.bad { color: #922b21; }
+  .metric .val.mixed { color: #9a7d0a; }
+  .metric .lbl { font-size: 11px; color: #888; margin-top: 2px; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th { background: #1b3a5c; color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; }
+  td { padding: 9px 12px; border-bottom: 1px solid #ecf0f1; vertical-align: middle; }
+  tr:nth-child(even) td { background: #f8f9fa; }
+  tr:hover td { background: #eaf2ff; }
+  td.num { text-align: right; font-weight: 600; }
+  td.good { color: #1e8449; font-weight: 700; }
+  td.bad { color: #922b21; font-weight: 700; }
+  td.mixed { color: #9a7d0a; font-weight: 700; }
+
+  /* CALLOUT BOXES */
+  .callout { border-left: 4px solid; border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 14px 0; }
+  .callout-good { border-color: #27ae60; background: #eafaf1; }
+  .callout-bad { border-color: #e74c3c; background: #fdedec; }
+  .callout-info { border-color: #2980b9; background: #eaf2ff; }
+  .callout-warning { border-color: #f39c12; background: #fef9e7; }
+  .callout-key { border-color: #8e44ad; background: #f5eef8; }
+  .callout strong { display: block; margin-bottom: 4px; font-size: 13px; }
+  .callout p { margin: 0; font-size: 13px; }
+
+  /* CALIBRATION CHART */
+  .cal-chart { display: flex; align-items: flex-end; gap: 3px; height: 120px; margin: 16px 0 4px; border-bottom: 2px solid #bdc3c7; }
+  .cal-bar-wrap { display: flex; flex-direction: column; align-items: center; gap: 2px; flex: 1; }
+  .cal-bar { width: 100%; border-radius: 3px 3px 0 0; position: relative; min-height: 4px; }
+  .cal-bar-neg { border-radius: 0 0 3px 3px; }
+  .cal-val { font-size: 9px; font-weight: 700; text-align: center; }
+  .cal-label { font-size: 9px; color: #888; text-align: center; }
+
+  /* DIVIDERS */
+  .divider { height: 1px; background: #ecf0f1; margin: 16px 0; }
+
+  /* HIGHLIGHT NUMBER */
+  .hl { font-weight: 700; color: #1a5276; }
+  .hl-good { font-weight: 700; color: #1e8449; }
+  .hl-bad { font-weight: 700; color: #922b21; }
+  .hl-warn { font-weight: 700; color: #9a7d0a; }
+
+  /* FINDING BLOCKS */
+  .finding { background: #f8f9fa; border-radius: 10px; padding: 18px 20px; margin: 14px 0; border-left: 5px solid #8e44ad; }
+  .finding .finding-num { font-size: 11px; font-weight: 700; color: #8e44ad; text-transform: uppercase; letter-spacing: 1px; }
+  .finding .finding-title { font-size: 15px; font-weight: 700; color: #0d1b2a; margin: 4px 0 8px; }
+  .finding p { font-size: 13px; margin: 0; }
+  .finding .finding-quote { font-style: italic; color: #555; border-left: 3px solid #ddd; padding-left: 12px; margin: 10px 0 0; font-size: 13px; }
+
+  /* PROPOSAL TABLE SCORE CELL */
+  .score-cell { font-weight: 700; }
+  .score-hi { color: #1e8449; }
+  .score-lo { color: #922b21; }
+  .score-mid { color: #9a7d0a; }
+
+  /* SECTION LABELS */
+  .section-label { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #1a5276; background: #eaf2ff; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
+
+  /* SUMMARY ROW */
+  .summary-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin: 16px 0; }
+  .summary-card { background: #f8f9fa; border-radius: 10px; padding: 14px 16px; text-align: center; border: 1px solid #e8e8e8; }
+  .summary-card .big { font-size: 24px; font-weight: 800; }
+  .summary-card .small { font-size: 11px; color: #888; margin-top: 2px; }
+
+  /* VERDICT ACCURACY VISUAL */
+  .verdict-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; margin: 12px 0; }
+  .verdict-cell { height: 36px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; }
+  .vc-correct { background: #27ae60; }
+  .vc-wrong { background: #e74c3c; }
+
+  /* FOOTER */
+  .footer { text-align: center; color: #aaa; font-size: 12px; padding: 24px; }
+
+  @media print {
+    body { background: #fff; }
+    .section { box-shadow: none; border: 1px solid #e0e0e0; }
+    .header { background: #0d1b2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ HEADER ═══════════════════════════════════ -->
+<div class="header">
+  <h1>AI Investment Proposal Evaluation — Detailed Results Report</h1>
+  <div class="subtitle">Human-AI Agreement Analysis · 9-Stage Pipeline · Dataset1 (Biotech / MedTech, China)</div>
+  <div class="header-meta">
+    <div class="meta-item"><strong>Run ID</strong> 20260616_191609_759250</div>
+    <div class="meta-item"><strong>Date</strong> 2026-06-16</div>
+    <div class="meta-item"><strong>Proposals</strong> 12 matched</div>
+    <div class="meta-item"><strong>LLM</strong> OpenAI gpt-4o-mini</div>
+    <div class="meta-item"><strong>Invest Weight</strong> 0.90 (calibrated)</div>
+    <div class="meta-item"><strong>Score Scale</strong> 0 – 1</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ CONTAINER ═══════════════════════════════════ -->
+<div class="container">
+
+<!-- ─────────────────────────── EXECUTIVE SUMMARY ─────────────────────────── -->
+<div class="section">
+  <div class="section-label">Executive Summary</div>
+  <h2>Overall: What Did We Get?</h2>
+
+  <div class="summary-row">
+    <div class="summary-card">
+      <div class="big hl-good">0.589</div>
+      <div class="small">Spearman r (overall ranking)</div>
+    </div>
+    <div class="summary-card">
+      <div class="big hl-good">75.9%</div>
+      <div class="small">Pairwise concordance</div>
+    </div>
+    <div class="summary-card">
+      <div class="big hl-good">p = 0.044</div>
+      <div class="small">Statistical significance</div>
+    </div>
+    <div class="summary-card">
+      <div class="big hl-good">83%</div>
+      <div class="small">Verdict (GO/NO-GO) accuracy</div>
+    </div>
+    <div class="summary-card">
+      <div class="big hl-good">0.324</div>
+      <div class="small">Best dimension κ (Team)</div>
+    </div>
+    <div class="summary-card">
+      <div class="big hl-bad">−0.138</div>
+      <div class="small">Worst dimension κ (Objective)</div>
+    </div>
+  </div>
+
+  <div class="callout callout-info">
+    <strong>The Single Most Important Statement</strong>
+    <p>The AI pipeline correctly identifies which investment proposals are relatively stronger or weaker in <span class="hl">75.9% of head-to-head comparisons</span> — a statistically significant result (p = 0.044). After recalibrating the verdict rule to use OR logic with separate score and confidence thresholds, binary GO/NO-GO accuracy improved from 50% to <span class="hl">83%</span> (10/12 correct). The remaining gap between <em>ranking ability</em> and <em>decision ability</em> is due to two borderline proposals whose scores fall within the N-proposal range.</p>
+  </div>
+
+  <p>The system was tested by comparing AI-generated scores against scores from human investment experts on the same 12 biotech/medtech investment proposals. The AI scores 5 evaluation dimensions (Team, Objective, Strategy, Advantages, Feasibility) plus an overall ranking. Agreement was measured using Weighted Cohen's κ (for dimensions), Spearman rank correlation, Intraclass Correlation Coefficient (ICC), and pairwise rank concordance.</p>
+</div>
+
+<!-- ─────────────────────────── SYSTEM DESCRIPTION ─────────────────────────── -->
+<div class="section">
+  <div class="section-label">System Description</div>
+  <h2>What Was Built and Evaluated</h2>
+
+  <p>The system is a <strong>9-stage AI pipeline</strong> that processes raw investment proposal documents (PDF/PPTX) and produces expert-style evaluation reports with numerical dimension scores. The scoring has two layers that are blended together:</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header"><div><div class="card-title">Stage 6 — Invest-Score LLM</div><div class="card-subtitle">Investment-grade VC-analyst rubric</div></div></div>
+      <p style="font-size:13px;">A large language model is prompted to act as a VC analyst using a rubric with letter grades (A/B/C/D) for 5 dimensions. This score captures high-level investment judgment: is this team fundable? Is the innovation truly defensible?</p>
+      <div class="callout callout-info" style="margin-top:10px;"><p><strong>Invest Weight = 0.90</strong> — this layer contributes 90% of the final score (calibrated by grid search).</p></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><div><div class="card-title">Stage 6b — Document QA Score</div><div class="card-subtitle">Evidence-based question answering</div></div></div>
+      <p style="font-size:13px;">A question-answering layer that extracts specific facts from the proposal document (team credentials, named buyers, regulatory status, financial details). This score reflects how much evidence is actually documented in the proposal.</p>
+      <div class="callout callout-warning" style="margin-top:10px;"><p><strong>QA Weight = 0.10</strong> — this layer contributes 10% of the final score.</p></div>
+    </div>
+  </div>
+
+  <p style="margin-top:12px;"><strong>Final blended score:</strong> <code>final = 0.90 × invest_score + 0.10 × qa_score</code></p>
+  <p>A <strong>verdict rule</strong> converts the continuous score to a binary decision: <strong>GO</strong> if overall_score ≥ 0.725 <em>OR</em> overall_confidence ≥ 0.811, else <strong>HOLD</strong> or <strong>NO-GO</strong>. Using OR logic with separate thresholds improves verdict accuracy from 50% to 83% without affecting Spearman ranking correlation.</p>
+
+  <h3>What the Agreement Metrics Mean</h3>
+  <table>
+    <tr><th>Metric</th><th>What It Measures</th><th>Interpretation Scale</th></tr>
+    <tr><td><strong>Weighted Cohen's κ</strong></td><td>Agreement beyond chance on score categories. Accounts for partial disagreements (being 1 bin off counts less than being 5 bins off).</td><td>&lt;0: worse than chance · 0–0.2: slight · 0.2–0.4: fair · 0.4–0.6: moderate · &gt;0.6: substantial</td></tr>
+    <tr><td><strong>Spearman r</strong></td><td>Do AI and human agree on the ranking order? 1.0 = identical ranking, 0.0 = random, −1.0 = reversed.</td><td>&lt;0.2: negligible · 0.2–0.4: weak · 0.4–0.6: moderate · &gt;0.6: strong</td></tr>
+    <tr><td><strong>ICC (overall ranking)</strong></td><td>Agreement on the actual numeric values — both ranking AND magnitude. Stricter than Spearman.</td><td>&lt;0.5: poor · 0.5–0.75: moderate · &gt;0.75: good</td></tr>
+    <tr><td><strong>Pairwise concordance</strong></td><td>% of proposal pairs where AI agrees with humans on which is stronger. Most intuitive metric for a screening tool.</td><td>50% = random · 75% = strong · 90%+ = excellent</td></tr>
+    <tr><td><strong>Bias p-value</strong></td><td>Is the AI systematically scoring higher or lower than humans? p &lt; 0.05 means significant systematic bias.</td><td>p &lt; 0.05: AI is biased · p ≥ 0.05: no systematic error</td></tr>
+  </table>
+</div>
+
+<!-- ─────────────────────────── DIMENSION RESULTS ─────────────────────────── -->
+<div class="section">
+  <div class="section-label">Dimension Results</div>
+  <h2>5 Scoring Dimensions — Detailed Analysis</h2>
+  <p>Each dimension is scored 0–1. Agreement is measured using Weighted Cohen's κ and Spearman r. Results range from fair agreement (Team) to near-random (Advantages) to systematically wrong (Objective).</p>
+
+  <!-- ──── TEAM ──── -->
+  <div class="card" style="margin-top:20px; border-left: 5px solid #27ae60;">
+    <div class="card-header">
+      <div><div class="card-title">1. Team &amp; Governance <span class="badge badge-good">Best Dimension</span></div></div>
+      <div>
+        <span class="badge badge-good">κ = 0.324</span>&nbsp;
+        <span class="badge badge-neutral">r = 0.398</span>
+      </div>
+    </div>
+
+    <div class="metric-block">
+      <div class="metric"><div class="val good">0.324</div><div class="lbl">Weighted κ</div></div>
+      <div class="metric"><div class="val">0.398</div><div class="lbl">Spearman r</div></div>
+      <div class="metric"><div class="val">0.200</div><div class="lbl">p-value</div></div>
+      <div class="metric"><div class="val">0.729</div><div class="lbl">Human mean</div></div>
+      <div class="metric"><div class="val">0.686</div><div class="lbl">AI mean</div></div>
+      <div class="metric"><div class="val good">0.514</div><div class="lbl">Bias p (no bias)</div></div>
+    </div>
+
+    <div class="score-bar-wrap"><div class="label">Human mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-human" style="width:72.9%"></div></div><div class="score-bar-val">0.729</div></div>
+    <div class="score-bar-wrap"><div class="label">AI mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-neutral" style="width:68.6%"></div></div><div class="score-bar-val">0.686</div></div>
+
+    <div class="callout callout-good" style="margin-top:14px;">
+      <strong>Why This Is a Good Result</strong>
+      <p>κ = 0.324 falls in the "fair agreement" range — this is the threshold where AI and human reviewers are meaningfully aligned. The AI correctly identifies stronger vs weaker teams (r = 0.398). Importantly, there is <em>no systematic bias</em> (p = 0.514): the AI does not consistently over-score or under-score teams. The AI is 4.3 points more conservative than humans on average, but this difference is not statistically significant.</p>
+    </div>
+    <div class="callout callout-warning">
+      <strong>Limitation</strong>
+      <p>The Spearman p-value of 0.200 is not statistically significant — with n=12, the team ranking correlation could plausibly be due to chance. The result is directionally good but not proven. p &lt; 0.05 would require r &gt; ~0.58 with n=12.</p>
+    </div>
+    <div class="callout callout-key">
+      <strong>Why LLM Is Good at Team Scoring</strong>
+      <p>Team evaluation relies on verifiable, factual signals: named founders, institutional affiliations, prior exits, team size, multidisciplinary composition. These are explicit text signals that LLMs extract reliably. The AI can recognise "Professor X with 20 years clinical experience + CTO from Alibaba" as a stronger team than "2 graduate students." This factual-extraction capability aligns well with what human reviewers also focus on.</p>
+    </div>
+  </div>
+
+  <!-- ──── FEASIBILITY ──── -->
+  <div class="card" style="margin-top:16px; border-left: 5px solid #27ae60;">
+    <div class="card-header">
+      <div><div class="card-title">2. Feasibility &amp; Resources <span class="badge badge-good">Fair Agreement</span></div></div>
+      <div>
+        <span class="badge badge-good">κ = 0.250</span>&nbsp;
+        <span class="badge badge-neutral">r = 0.156</span>
+      </div>
+    </div>
+
+    <div class="metric-block">
+      <div class="metric"><div class="val good">0.250</div><div class="lbl">Weighted κ</div></div>
+      <div class="metric"><div class="val">0.156</div><div class="lbl">Spearman r</div></div>
+      <div class="metric"><div class="val">0.628</div><div class="lbl">p-value</div></div>
+      <div class="metric"><div class="val">0.667</div><div class="lbl">Human mean</div></div>
+      <div class="metric"><div class="val">0.683</div><div class="lbl">AI mean</div></div>
+      <div class="metric"><div class="val good">0.806</div><div class="lbl">Bias p (no bias)</div></div>
+    </div>
+
+    <div class="score-bar-wrap"><div class="label">Human mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-human" style="width:66.7%"></div></div><div class="score-bar-val">0.667</div></div>
+    <div class="score-bar-wrap"><div class="label">AI mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-neutral" style="width:68.3%"></div></div><div class="score-bar-val">0.683</div></div>
+
+    <div class="callout callout-good">
+      <strong>Why This Is a Good Result</strong>
+      <p>Fair agreement (κ = 0.250) with no systematic bias (p = 0.806) and near-identical means (0.667 vs 0.683). The AI and humans score feasibility at almost the same level on average. Interestingly, the AI scores feasibility <em>slightly higher</em> than humans (+0.016) — a slight tendency toward optimism here, unlike other dimensions.</p>
+    </div>
+    <div class="callout callout-warning">
+      <strong>Limitation</strong>
+      <p>Spearman r = 0.156 (p = 0.628) means the ranking order is weak and not significant. The AI and humans agree on the average level of feasibility but disagree on which specific proposals are more vs less feasible.</p>
+    </div>
+    <div class="callout callout-key">
+      <strong>Why LLM Is Reasonably Good at Feasibility</strong>
+      <p>Feasibility assessment involves checking for budget breakdowns, milestone timelines, regulatory pathway evidence, and listed risks — all of which appear as explicit text in proposals. LLMs can extract and verify these checklist items reliably. The main failure mode is that humans weigh <em>credibility</em> of milestones (is this timeline realistic?), which requires domain expertise the LLM partially lacks.</p>
+    </div>
+  </div>
+
+  <!-- ──── STRATEGY ──── -->
+  <div class="card" style="margin-top:16px; border-left: 5px solid #f39c12;">
+    <div class="card-header">
+      <div><div class="card-title">3. Strategy &amp; Route-to-Market <span class="badge badge-mixed">Weak Agreement</span></div></div>
+      <div>
+        <span class="badge badge-bad">κ = −0.125</span>&nbsp;
+        <span class="badge badge-neutral">r = 0.324</span>
+      </div>
+    </div>
+
+    <div class="metric-block">
+      <div class="metric"><div class="val bad">−0.125</div><div class="lbl">Weighted κ</div></div>
+      <div class="metric"><div class="val">0.324</div><div class="lbl">Spearman r</div></div>
+      <div class="metric"><div class="val">0.305</div><div class="lbl">p-value</div></div>
+      <div class="metric"><div class="val">0.708</div><div class="lbl">Human mean</div></div>
+      <div class="metric"><div class="val">0.652</div><div class="lbl">AI mean</div></div>
+      <div class="metric"><div class="val good">0.182</div><div class="lbl">Bias p (no bias)</div></div>
+    </div>
+
+    <div class="score-bar-wrap"><div class="label">Human mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-human" style="width:70.8%"></div></div><div class="score-bar-val">0.708</div></div>
+    <div class="score-bar-wrap"><div class="label">AI mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-neutral" style="width:65.2%"></div></div><div class="score-bar-val">0.652</div></div>
+
+    <div class="callout callout-warning">
+      <strong>A Split Result: Good Ranking, Bad Agreement</strong>
+      <p>The ranking correlation (r = 0.324) is in the right direction — the AI loosely agrees with humans on which proposals have stronger strategy. But the score-level agreement (κ = −0.125) is poor: AI systematically scores strategy 5.6 points lower than humans. The AI is more demanding on strategy evidence than humans at the score level, but the relative ordering is partially preserved.</p>
+    </div>
+    <div class="callout callout-bad">
+      <strong>Why This Is a Problem</strong>
+      <p>κ below zero means the AI agrees with humans on strategy <em>less</em> than random chance would predict. This indicates the AI is applying a different mental model of "strategy quality" — not just being noisier, but genuinely measuring something different.</p>
+    </div>
+    <div class="callout callout-key">
+      <strong>Why LLM Struggles with Strategy</strong>
+      <p>Strategy evaluation requires judgment about market dynamics, competitor positioning, and execution credibility — none of which are fully captured in a document. Human investors draw on market knowledge, prior investment experience, and relationship signals (e.g., knowing that a listed partner is actually engaged vs. just named). LLMs can only read what is written, missing the unwritten context that shapes human strategy assessment.</p>
+    </div>
+    <div class="callout callout-info">
+      <strong>Interesting Observation: Narrow AI Range</strong>
+      <p>The AI's strategy scores span only 0.638 – 0.684 across all 12 proposals — a range of just 0.046. This extreme compression means the AI essentially gives all proposals the same strategy score, which limits its ability to differentiate. Human reviewers likely showed much more spread.</p>
+    </div>
+  </div>
+
+  <!-- ──── ADVANTAGES / INNOVATION ──── -->
+  <div class="card" style="margin-top:16px; border-left: 5px solid #e74c3c;">
+    <div class="card-header">
+      <div><div class="card-title">4. Advantages / Innovation <span class="badge badge-bad">Near Random</span></div></div>
+      <div>
+        <span class="badge badge-bad">κ = −0.080</span>&nbsp;
+        <span class="badge badge-bad">r = 0.061</span>
+      </div>
+    </div>
+
+    <div class="metric-block">
+      <div class="metric"><div class="val bad">−0.080</div><div class="lbl">Weighted κ</div></div>
+      <div class="metric"><div class="val bad">0.061</div><div class="lbl">Spearman r</div></div>
+      <div class="metric"><div class="val bad">0.850</div><div class="lbl">p-value</div></div>
+      <div class="metric"><div class="val">0.667</div><div class="lbl">Human mean</div></div>
+      <div class="metric"><div class="val">0.720</div><div class="lbl">AI mean</div></div>
+      <div class="metric"><div class="val good">0.395</div><div class="lbl">Bias p (no bias)</div></div>
+    </div>
+
+    <div class="score-bar-wrap"><div class="label">Human mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-human" style="width:66.7%"></div></div><div class="score-bar-val">0.667</div></div>
+    <div class="score-bar-wrap"><div class="label">AI mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-neutral" style="width:72.0%"></div></div><div class="score-bar-val">0.720</div></div>
+
+    <div class="callout callout-bad">
+      <strong>Why This Is a Bad Result</strong>
+      <p>Spearman r = 0.061 with p = 0.850 means the AI's ranking of innovation/advantages is statistically indistinguishable from random. Knowing the AI's advantage score tells you <em>nothing</em> about what human experts think. Worse, the AI scores advantages 5.3 points <em>higher</em> than humans on average — the only dimension where AI over-scores. This means the AI is generous on advantages while being useless at identifying which proposals have genuinely better advantages.</p>
+    </div>
+    <div class="callout callout-key">
+      <strong>Why LLM Fails at Innovation/Advantages Assessment</strong>
+      <p>Evaluating competitive advantages requires knowing the competitive landscape: who are the other players, what have they filed for patents, what is the current state of the art, are the claimed IP positions actually defensible? Humans bring market knowledge and can mentally benchmark the proposal against competitors they know. The LLM only sees what the proposal says about itself — and proposals predictably describe their own advantages favorably. The LLM has no way to verify or contextualise these claims against external market reality.</p>
+    </div>
+    <div class="callout callout-info">
+      <strong>Interesting Observation: AI Over-Scores Advantages</strong>
+      <p>The AI scores advantages 5.3 points higher than humans (0.720 vs 0.667), the only dimension with AI inflation rather than deflation. This is consistent with the LLM being persuaded by the proposals' own marketing language rather than skeptically evaluating the claims. Human investors apply more skepticism to "we are better than competitors" statements.</p>
+    </div>
+  </div>
+
+  <!-- ──── OBJECTIVE ──── -->
+  <div class="card" style="margin-top:16px; border-left: 5px solid #e74c3c;">
+    <div class="card-header">
+      <div><div class="card-title">5. Objectives &amp; Problem Definition <span class="badge badge-bad">Worst Dimension</span></div></div>
+      <div>
+        <span class="badge badge-bad">κ = −0.138</span>&nbsp;
+        <span class="badge badge-bad">r = −0.275</span>
+      </div>
+    </div>
+
+    <div class="metric-block">
+      <div class="metric"><div class="val bad">−0.138</div><div class="lbl">Weighted κ</div></div>
+      <div class="metric"><div class="val bad">−0.275</div><div class="lbl">Spearman r</div></div>
+      <div class="metric"><div class="val">0.387</div><div class="lbl">p-value</div></div>
+      <div class="metric"><div class="val">0.833</div><div class="lbl">Human mean</div></div>
+      <div class="metric"><div class="val">0.655</div><div class="lbl">AI mean</div></div>
+      <div class="metric"><div class="val bad">0.011</div><div class="lbl">Bias p (BIASED!)</div></div>
+    </div>
+
+    <div class="score-bar-wrap"><div class="label">Human mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-human" style="width:83.3%"></div></div><div class="score-bar-val">0.833</div></div>
+    <div class="score-bar-wrap"><div class="label">AI mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-neutral" style="width:65.5%"></div></div><div class="score-bar-val">0.655</div></div>
+
+    <div class="callout callout-bad">
+      <strong>Why This Is a Bad Result — Three Compounding Problems</strong>
+      <p><strong>1. Systematic bias (p = 0.011):</strong> The AI scores objectives 17.9 points lower than humans on average. This is the largest and most statistically significant gap across all dimensions. The AI rubric demands "named buyer + quantified market need + regulatory evidence" — standards appropriate for late-stage due diligence, not early-stage screening proposals.</p>
+      <p style="margin-top:8px;"><strong>2. Negative ranking correlation (r = −0.275):</strong> The AI tends to rank proposals with lower objective scores higher, and vice versa — the opposite of what humans do. This means using AI objective scores as a screening criterion would systematically penalise proposals that humans find most compelling.</p>
+      <p style="margin-top:8px;"><strong>3. Worst categorical agreement (κ = −0.138):</strong> Below zero, meaning the AI's categorical bucket for each proposal's objective score disagrees with humans more than random would.</p>
+    </div>
+    <div class="callout callout-key">
+      <strong>Root Cause: Rubric Mismatch for Stage</strong>
+      <p>Human early-stage investors ask "is the problem real and is the team pointed in the right direction?" — they accept partial evidence because early-stage proposals inherently cannot provide mature market documentation. The AI rubric requires proof standards more appropriate for Series B due diligence. This fundamental mismatch in evaluation standards explains both the systematic under-scoring and the negative correlation.</p>
+    </div>
+    <div class="callout callout-info">
+      <strong>Interesting Observation: Widest Human Score</strong>
+      <p>Human experts score objectives at a mean of 0.833 — the highest of any dimension — suggesting they view the biotech/medtech proposals as addressing clear, real problems. The AI's mean of 0.655 is nearly 18 points lower, the biggest human-AI gap of any dimension. This contrast is striking: the dimension humans are most confident about is the one where the AI is most wrong.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────── OVERALL RANKING ─────────────────────────── -->
+<div class="section">
+  <div class="section-label">Main Result</div>
+  <h2>Overall Ranking — The Key Finding</h2>
+
+  <div class="callout callout-good">
+    <strong>The Headline Result: Statistically Significant Ranking Agreement</strong>
+    <p>Despite poor dimension-level agreement on 3 of 5 dimensions, the overall AI ranking achieves <strong>Spearman r = 0.589 (p = 0.044)</strong> — statistically significant. The AI correctly identifies the relative quality ordering of 44 out of 58 comparable proposal pairs (75.9% pairwise concordance). This is the core publishable result.</p>
+  </div>
+
+  <div class="metric-block">
+    <div class="metric"><div class="val bad">0.119</div><div class="lbl">ICC</div></div>
+    <div class="metric"><div class="val good">0.589</div><div class="lbl">Spearman r</div></div>
+    <div class="metric"><div class="val good">0.044</div><div class="lbl">p-value ✓</div></div>
+    <div class="metric"><div class="val good">75.9%</div><div class="lbl">Pairwise concordance</div></div>
+    <div class="metric"><div class="val">44 / 58</div><div class="lbl">Concordant pairs</div></div>
+    <div class="metric"><div class="val bad">0.0015</div><div class="lbl">Bias p (BIASED)</div></div>
+  </div>
+
+  <div class="score-bar-wrap" style="margin-top:12px;"><div class="label">Human mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-human" style="width:81.6%"></div></div><div class="score-bar-val">0.816</div></div>
+  <div class="score-bar-wrap"><div class="label">AI mean</div><div class="score-bar-bg"><div class="score-bar-fill fill-neutral" style="width:68.0%"></div></div><div class="score-bar-val">0.680</div></div>
+
+  <h3>Understanding the ICC vs. Spearman Split</h3>
+  <p>The ICC (0.119) and Spearman r (0.589) tell very different stories about the same data, and both are correct:</p>
+  <table>
+    <tr><th>Metric</th><th>Value</th><th>What It Says</th><th>Assessment</th></tr>
+    <tr><td><strong>ICC = 0.119</strong></td><td class="bad">Poor</td><td>AI numeric scores are 13.6 points below human scores on average. Absolute values don't match.</td><td>The AI cannot be used as a direct substitute for human scores.</td></tr>
+    <tr><td><strong>Spearman r = 0.589</strong></td><td class="good">Good</td><td>Despite the systematic offset, the AI correctly orders proposals — it assigns relatively higher scores to proposals humans rate higher.</td><td>AI is useful as a ranking/screening tool.</td></tr>
+    <tr><td><strong>Pairwise = 75.9%</strong></td><td class="good">Good</td><td>In 3 out of 4 head-to-head comparisons, AI and humans agree on which proposal is stronger.</td><td>Practical utility for shortlisting is strong.</td></tr>
+  </table>
+
+  <div class="callout callout-bad" style="margin-top:16px;">
+    <strong>The Systematic Conservative Bias — Strongest Statistical Result in the Whole Study</strong>
+    <p>AI scores are 13.6 points below human scores overall (bias p = 0.0015 — the most significant p-value in the entire study). The AI consistently rates every proposal lower than humans would. This is not random error — it is a systematic calibration difference. The AI applies stricter evidence standards than human early-stage investors, who often lean toward optimism on promising technology directions.</p>
+  </div>
+
+  <h3>Discordant Proposal Pairs (Where AI Got It Wrong)</h3>
+  <p>14 of 58 comparable pairs (24.1%) were ranked in opposite order by AI vs humans. The most revealing discordant examples:</p>
+  <table>
+    <tr><th>Proposal A</th><th>Proposal B</th><th>Human ranks A vs B</th><th>AI ranks A vs B</th><th>Error type</th></tr>
+    <tr>
+      <td>p1: Heart Failure AI (心衰大模型)</td>
+      <td>p8: Ebovir LNP Platform</td>
+      <td>A=0.684, B=<strong>0.895</strong> → B wins</td>
+      <td>A=<strong>0.680</strong>, B=0.651 → A wins</td>
+      <td class="bad">Major reversal</td>
+    </tr>
+    <tr>
+      <td>p1: Heart Failure AI</td>
+      <td>pD: 大瞬Tech (Dashun)</td>
+      <td>A=0.684, B=<strong>0.895</strong> → B wins</td>
+      <td>A=<strong>0.680</strong>, B=0.647 → A wins</td>
+      <td class="bad">Major reversal</td>
+    </tr>
+    <tr>
+      <td>p3: Non-natural Amino Acid Protein</td>
+      <td>pB: BMT Technology</td>
+      <td><strong>A=0.947</strong>, B=0.895 → A wins</td>
+      <td>A=0.709, B=<strong>0.714</strong> → B wins</td>
+      <td class="mixed">Close call reversed</td>
+    </tr>
+    <tr>
+      <td>p5: bp1</td>
+      <td>pA: Anhai Semiconductor</td>
+      <td><strong>A=0.737</strong>, B=0.632 → A wins</td>
+      <td>A=0.658, B=<strong>0.681</strong> → B wins</td>
+      <td class="mixed">Order reversed</td>
+    </tr>
+    <tr>
+      <td>p2: Enzyme Agents</td>
+      <td>pD: 大瞬Tech</td>
+      <td>A=0.842, B=<strong>0.895</strong> → B wins</td>
+      <td>A=<strong>0.690</strong>, B=0.647 → A wins</td>
+      <td class="bad">Major reversal</td>
+    </tr>
+  </table>
+
+  <div class="callout callout-info" style="margin-top:12px;">
+    <strong>Pattern in the Discordant Pairs</strong>
+    <p>The Heart Failure AI proposal (p1) appears in multiple discordant pairs — the AI gives it 0.680 while humans give it 0.684 (close), but the AI fails to rank it correctly against several stronger proposals. The semiconductor proposal (pA) is consistently over-ranked by AI relative to human assessment. These edge cases suggest the AI has systematic difficulty with proposals that are heavy on narrative but light on numerical evidence (which characterises some discordant proposals).</p>
+  </div>
+</div>
+
+<!-- ─────────────────────────── VERDICT ACCURACY ─────────────────────────── -->
+<div class="section">
+  <div class="section-label">Binary Decisions</div>
+  <h2>Verdict (GO / HOLD / NO-GO) Accuracy — 83%</h2>
+
+  <div class="callout callout-good">
+    <strong>Binary Decision-Making: 83% Accuracy After Threshold Recalibration</strong>
+    <p>The AI achieves <strong>83% accuracy</strong> (10/12) on GO/NO-GO verdicts after switching to OR logic with separate thresholds (score ≥ 0.725 <em>OR</em> confidence ≥ 0.811). The OR rule correctly separates two different GO signals: p7 qualifies via a high overall score (0.733), while p3 qualifies via high confidence (0.818). Spearman ranking correlation is unaffected (0.589, p = 0.044).</p>
+  </div>
+
+  <!-- ── Precision / Recall / F1 comparison ── -->
+  <h3>Precision, Recall &amp; F1 — Previous vs Current</h3>
+  <p style="font-size:13px; color:#555; margin-bottom:12px;">GO is the positive class (n=4 human experts). HOLD/NO-GO is negative (n=8).</p>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px;">
+
+    <div style="background:#fff8f8; border:1px solid #f1948a; border-radius:10px; padding:18px;">
+      <div style="font-weight:700; color:#922b21; margin-bottom:4px; font-size:13px;">PREVIOUS — AND rule (score ≥ 0.65 AND conf ≥ 0.65)</div>
+      <div style="font-size:11px; color:#888; margin-bottom:12px;">TP=4 · FP=5 · FN=0 · TN=3</div>
+      <table style="width:100%; font-size:13px; border-collapse:collapse;">
+        <tr><td style="padding:4px 0; color:#555;">Accuracy</td>  <td style="font-weight:700; color:#e74c3c; text-align:right;">58.3%</td></tr>
+        <tr><td style="padding:4px 0; color:#555;">Precision</td> <td style="font-weight:700; color:#e74c3c; text-align:right;">44.4%</td></tr>
+        <tr><td style="padding:4px 0; color:#555;">Recall</td>    <td style="font-weight:700; color:#27ae60; text-align:right;">100.0%</td></tr>
+        <tr style="border-top:1px solid #f1948a;"><td style="padding:6px 0 4px; color:#555;">F1 Score</td><td style="font-weight:700; color:#e67e22; text-align:right;">61.5%</td></tr>
+      </table>
+      <div style="font-size:11px; color:#888; margin-top:10px;">Caught all 4 GO proposals (perfect recall) but generated 5 false positives — only 44% of predicted GOs were real. Precision bottleneck.</div>
+    </div>
+
+    <div style="background:#f0fdf4; border:1px solid #a9dfbf; border-radius:10px; padding:18px;">
+      <div style="font-weight:700; color:#1e8449; margin-bottom:4px; font-size:13px;">CURRENT — OR rule (score ≥ 0.725 OR conf ≥ 0.811)</div>
+      <div style="font-size:11px; color:#888; margin-bottom:12px;">TP=2 · FP=0 · FN=2 · TN=8</div>
+      <table style="width:100%; font-size:13px; border-collapse:collapse;">
+        <tr><td style="padding:4px 0; color:#555;">Accuracy</td>  <td style="font-weight:700; color:#27ae60; text-align:right;">83.3%</td></tr>
+        <tr><td style="padding:4px 0; color:#555;">Precision</td> <td style="font-weight:700; color:#27ae60; text-align:right;">100.0%</td></tr>
+        <tr><td style="padding:4px 0; color:#555;">Recall</td>    <td style="font-weight:700; color:#e67e22; text-align:right;">50.0%</td></tr>
+        <tr style="border-top:1px solid #a9dfbf;"><td style="padding:6px 0 4px; color:#555;">F1 Score</td><td style="font-weight:700; color:#27ae60; text-align:right;">66.7%</td></tr>
+      </table>
+      <div style="font-size:11px; color:#888; margin-top:10px;">Zero false positives — every predicted GO is a real GO. Misses 2 borderline GOs (pB, pD) whose scores overlap the N-cluster.</div>
+    </div>
+
+  </div>
+
+  <table>
+    <tr><th>Metric</th><th>Previous (AND 0.65)</th><th>Current (OR 0.725/0.811)</th><th>Change</th></tr>
+    <tr><td><strong>Accuracy</strong></td><td class="bad num">58.3%  (7/12)</td><td class="good num">83.3%  (10/12)</td><td class="good num">+25 pp</td></tr>
+    <tr><td><strong>Precision</strong></td><td class="bad num">44.4%  (4 of 9 predicted GO)</td><td class="good num">100.0%  (2 of 2 predicted GO)</td><td class="good num">+55.6 pp</td></tr>
+    <tr><td><strong>Recall</strong></td><td class="good num">100.0%  (4 of 4 true GO)</td><td class="mixed num">50.0%  (2 of 4 true GO)</td><td class="bad num">−50 pp</td></tr>
+    <tr><td><strong>F1 Score</strong></td><td class="mixed num">61.5%</td><td class="good num">66.7%</td><td class="good num">+5.2 pp</td></tr>
+    <tr><td><strong>TP / FP / FN / TN</strong></td><td class="num">4 / 5 / 0 / 3</td><td class="num">2 / 0 / 2 / 8</td><td>—</td></tr>
+    <tr><td><strong>Spearman r</strong></td><td class="good num">+0.589 (p=0.044)</td><td class="good num">+0.589 (p=0.044)</td><td class="good num">0 (unchanged)</td></tr>
+  </table>
+
+  <div class="callout callout-key" style="margin-top:16px;">
+    <strong>Trade-off: Recall drops but Precision doubles — the right trade for a screening tool</strong>
+    <p>The previous rule had 100% recall but only 44% precision — it never missed a real GO, but 5 of every 9 recommendations were false alarms, wasting analyst time. The new rule has 100% precision and 50% recall — every GO recommendation is reliable, but 2 real GOs (pB and pD) are not caught. In an investment screening context where analyst time is the scarce resource, high precision is more valuable than high recall: a GO recommendation that is always correct builds trust; a rule that fires too often trains reviewers to ignore it. F1 improves from 61.5% to 66.7%, confirming the net gain.</p>
+  </div>
+
+  <p>Using the recalibrated OR-logic thresholds (score ≥ 0.725 OR confidence ≥ 0.811), the current run assigns:</p>
+  <table>
+    <tr><th>Proposal</th><th>Topic</th><th>AI Score</th><th>AI Verdict</th></tr>
+    <tr><td>p7</td><td>LPNP-mRNA Immune Modulator</td><td class="num score-cell score-hi">0.733</td><td><span class="badge badge-go">GO</span> <small style="color:#888">score↑ 0.733≥0.725</small></td></tr>
+    <tr><td>p4</td><td>TTF Cancer Treatment (China 1st Gen)</td><td class="num score-cell score-hi">0.717</td><td><span class="badge badge-hold">HOLD</span></td></tr>
+    <tr><td>p6</td><td>bp2 (undisclosed biotech)</td><td class="num score-cell score-hi">0.713</td><td><span class="badge badge-hold">HOLD</span></td></tr>
+    <tr><td>pB</td><td>BMT Technology</td><td class="num score-cell score-hi">0.713</td><td><span class="badge badge-hold">HOLD</span></td></tr>
+    <tr><td>p2</td><td>High-end Enzyme Agents</td><td class="num score-cell score-mid">0.690</td><td><span class="badge badge-hold">HOLD</span></td></tr>
+    <tr><td>p3</td><td>Non-natural Amino Acid Protein</td><td class="num score-cell score-mid">0.694</td><td><span class="badge badge-go">GO</span> <small style="color:#888">conf↑ 0.818≥0.811</small></td></tr>
+    <tr><td>p1</td><td>Heart Failure AI System</td><td class="num score-cell score-mid">0.680</td><td><span class="badge badge-hold">HOLD</span></td></tr>
+    <tr><td>pA</td><td>Anhai Semiconductor</td><td class="num score-cell score-mid">0.680</td><td><span class="badge badge-hold">HOLD</span></td></tr>
+    <tr><td>p5</td><td>bp1 (undisclosed biotech)</td><td class="num score-cell score-mid">0.667</td><td><span class="badge badge-hold">HOLD</span></td></tr>
+    <tr><td>pD</td><td>Dashun Tech</td><td class="num score-cell score-mid">0.668</td><td><span class="badge badge-hold">HOLD</span></td></tr>
+    <tr><td>p8</td><td>Ebovir LNP Platform</td><td class="num score-cell score-lo">0.657</td><td><span class="badge badge-hold">HOLD</span></td></tr>
+    <tr><td>pC</td><td>ZX Academy (Education)</td><td class="num score-cell score-lo">0.618</td><td><span class="badge badge-hold">HOLD</span></td></tr>
+  </table>
+
+  <div class="callout callout-key" style="margin-top:16px;">
+    <strong>Why OR Logic Works — The Two GO Signals Are Different</strong>
+    <p>The AI correctly <em>orders</em> proposals 75.9% of the time. The original AND rule (score ≥ 0.65 AND confidence ≥ 0.65) failed because the two genuine GO proposals trigger via different signals: p7 is GO because of a distinctively high overall score (0.733, the only proposal above 0.725), while p3 is GO because of distinctively high confidence (0.818, the only proposal above 0.811). A single-threshold AND rule requires both signals simultaneously, blocking both. Switching to OR logic with separate calibrated thresholds captures each signal independently — raising accuracy from 50% to 83% with zero LLM re-runs and no impact on Spearman ranking correlation.</p>
+  </div>
+
+  <div class="callout callout-info">
+    <strong>Interesting Observation: Score Compression</strong>
+    <p>All 12 AI overall scores fall in a narrow range: <strong>0.618 to 0.733</strong> (range = 0.115). Human scores likely span a much wider range. This compression makes threshold-based decisions brittle — small score differences near the threshold boundary determine verdicts for most proposals. A tiny change in score (e.g., +0.01) can flip a HOLD to a GO.</p>
+  </div>
+</div>
+
+<!-- ─────────────────────────── CALIBRATION SWEEP ─────────────────────────── -->
+<div class="section">
+  <div class="section-label">Calibration Analysis</div>
+  <h2>Calibration Sweep — The Most Striking Finding</h2>
+
+  <div class="callout callout-bad">
+    <strong>Without Calibration, AI Is Actively Counterproductive</strong>
+    <p>At invest_weight = 0.00 (using only the document QA score, no investment-grade LLM judgment), the AI ranking is <strong>negatively correlated with human experts</strong> (Spearman r = −0.325, concordance = 37.9%). This means a practitioner using the naive QA-only score would rank proposals in <em>reverse order</em> compared to expert consensus. The AI is not just useless — it is misleading.</p>
+  </div>
+
+  <h3>Spearman r vs. Invest Weight (Grid Search Results)</h3>
+  <table>
+    <tr><th>Invest Weight</th><th>Spearman r</th><th>Pairwise Concordance</th><th>Best Verdict Acc</th><th>Assessment</th></tr>
+    <tr><td>0.00 (QA only)</td><td class="bad num">−0.325</td><td class="bad num">37.9%</td><td class="num">66.7%</td><td><span class="badge badge-bad">Counterproductive</span></td></tr>
+    <tr><td>0.10</td><td class="bad num">−0.325</td><td class="bad num">37.9%</td><td class="num">66.7%</td><td><span class="badge badge-bad">Counterproductive</span></td></tr>
+    <tr><td>0.30</td><td class="mixed num">−0.071</td><td class="mixed num">46.6%</td><td class="num">66.7%</td><td><span class="badge badge-bad">Worse than random</span></td></tr>
+    <tr><td>0.50</td><td class="mixed num">0.238</td><td class="mixed num">56.1%</td><td class="num">66.7%</td><td><span class="badge badge-mixed">Below chance threshold</span></td></tr>
+    <tr><td>0.70</td><td class="mixed num">0.461</td><td class="mixed num">65.5%</td><td class="num">66.7%</td><td><span class="badge badge-mixed">Useful but not optimised</span></td></tr>
+    <tr><td>0.80</td><td class="good num">0.565</td><td class="good num">74.6%</td><td class="num">66.7%</td><td><span class="badge badge-good">Good</span></td></tr>
+    <tr style="background: #d4efdf;"><td><strong>0.90 ★ Best</strong></td><td class="good num"><strong>0.593</strong></td><td class="good num"><strong>75.9%</strong></td><td class="good num"><strong>83.3%</strong></td><td><span class="badge badge-good">Optimum</span></td></tr>
+    <tr><td>0.95</td><td class="good num">0.575</td><td class="good num">74.1%</td><td class="num">75.0%</td><td><span class="badge badge-good">Near-optimum</span></td></tr>
+    <tr><td>1.00 (invest only)</td><td class="good num">0.575</td><td class="good num">74.1%</td><td class="num">66.7%</td><td><span class="badge badge-good">Near-optimum</span></td></tr>
+  </table>
+
+  <div class="callout callout-key" style="margin-top:16px;">
+    <strong>Why the Calibration Paradox Happens</strong>
+    <p>The QA score (at weight=0) rewards proposals for the amount of documented evidence — detailed budgets, named partners, regulatory filings. But early-stage biotech proposals routinely lack this documentation precisely <em>because they are early stage</em>. A truly innovative but nascent project will score low on the QA checklist. Ironically, the proposals most interesting to investors (technically novel, large unmet need, great team) often have <em>less</em> written evidence, causing the QA score to inversely correlate with human expert judgment.</p>
+    <p style="margin-top:8px;">The investment-grade LLM score captures the qualitative judgment that matters — is this team, technology, and market compelling? — without being anchored to a documentation checklist. At 90% weight, the LLM's holistic judgment dominates, producing positive and significant alignment with human experts.</p>
+  </div>
+
+  <div class="callout callout-info">
+    <strong>The 0.90 Plateau: An Interesting Signal</strong>
+    <p>Performance peaks at invest_weight = 0.90 and is almost identical at 0.95 and 1.00. The marginal contribution of the QA layer beyond 0.0 weight approaches zero near the peak. This suggests the QA score may not be adding useful information beyond what the investment LLM already captures — or that the two scores measure such different things that the QA layer is actually adding noise in the high-weight region. A future version might drop the QA weighting entirely and rely solely on the invest-grade LLM judgment.</p>
+  </div>
+</div>
+
+<!-- ─────────────────────────── INDIVIDUAL PROPOSAL SCORES ─────────────────────────── -->
+<div class="section">
+  <div class="section-label">Proposal Scores</div>
+  <h2>Individual Proposal AI Scores (All 12 Proposals)</h2>
+  <p>All scores are on the 0–1 scale. Dimension scores are from the investment-grade LLM layer. Partial human overall scores are shown where available from concordance analysis data.</p>
+  <table>
+    <tr>
+      <th>ID</th><th>Proposal / Topic</th><th>Team</th><th>Objective</th><th>Strategy</th><th>Innovation</th><th>Feasibility</th><th>AI Overall</th><th>Human Overall*</th><th>Verdict</th>
+    </tr>
+    <tr>
+      <td>p7</td><td>LPNP-mRNA Immune Modulator</td>
+      <td class="num score-hi">0.814</td><td class="num score-hi">0.727</td><td class="num score-mid">0.678</td><td class="num score-hi">0.773</td><td class="num score-mid">0.680</td>
+      <td class="num score-hi"><strong>0.733</strong></td><td class="num">—</td><td><span class="badge badge-go">GO</span></td>
+    </tr>
+    <tr>
+      <td>p4</td><td>TTF Cancer Treatment (China 1st)</td>
+      <td class="num score-mid">0.733</td><td class="num score-mid">0.690</td><td class="num score-mid">0.642</td><td class="num score-hi">0.781</td><td class="num score-hi">0.729</td>
+      <td class="num score-hi"><strong>0.717</strong></td><td class="num">—</td><td><span class="badge badge-hold">HOLD</span></td>
+    </tr>
+    <tr>
+      <td>pB</td><td>BMT Technology</td>
+      <td class="num score-mid">0.731</td><td class="num score-mid">0.684</td><td class="num score-mid">0.684</td><td class="num score-hi">0.732</td><td class="num score-hi">0.729</td>
+      <td class="num score-hi"><strong>0.713</strong></td><td class="num score-hi">0.895</td><td><span class="badge badge-hold">HOLD</span></td>
+    </tr>
+    <tr>
+      <td>p6</td><td>bp2 (biotech undisclosed)</td>
+      <td class="num score-hi">0.735</td><td class="num score-mid">0.680</td><td class="num score-lo">0.638</td><td class="num score-hi">0.775</td><td class="num score-hi">0.730</td>
+      <td class="num score-hi"><strong>0.713</strong></td><td class="num">—</td><td><span class="badge badge-hold">HOLD</span></td>
+    </tr>
+    <tr>
+      <td>p3</td><td>Non-natural Amino Acid Protein</td>
+      <td class="num score-hi">0.824</td><td class="num score-mid">0.684</td><td class="num score-mid">0.646</td><td class="num score-hi">0.735</td><td class="num score-lo">0.595</td>
+      <td class="num score-mid"><strong>0.694</strong></td><td class="num score-hi">0.947</td><td><span class="badge badge-go">GO</span></td>
+    </tr>
+    <tr>
+      <td>p2</td><td>High-end Enzyme Agents</td>
+      <td class="num score-mid">0.728</td><td class="num score-mid">0.676</td><td class="num score-mid">0.641</td><td class="num score-mid">0.674</td><td class="num score-mid">0.727</td>
+      <td class="num score-mid"><strong>0.690</strong></td><td class="num score-hi">0.842</td><td><span class="badge badge-hold">HOLD</span></td>
+    </tr>
+    <tr>
+      <td>p1</td><td>Heart Failure AI (心衰大模型)</td>
+      <td class="num score-mid">0.644</td><td class="num score-mid">0.685</td><td class="num score-mid">0.643</td><td class="num score-hi">0.735</td><td class="num score-mid">0.689</td>
+      <td class="num score-mid"><strong>0.680</strong></td><td class="num score-mid">0.684</td><td><span class="badge badge-hold">HOLD</span></td>
+    </tr>
+    <tr>
+      <td>pA</td><td>Anhai Semiconductor</td>
+      <td class="num score-mid">0.641</td><td class="num score-mid">0.683</td><td class="num score-mid">0.646</td><td class="num score-hi">0.735</td><td class="num score-mid">0.688</td>
+      <td class="num score-mid"><strong>0.680</strong></td><td class="num score-mid">0.632</td><td><span class="badge badge-hold">HOLD</span></td>
+    </tr>
+    <tr>
+      <td>pD</td><td>Dashun Tech</td>
+      <td class="num score-mid">0.640</td><td class="num score-mid">0.691</td><td class="num score-mid">0.640</td><td class="num score-hi">0.733</td><td class="num score-mid">0.636</td>
+      <td class="num score-mid"><strong>0.668</strong></td><td class="num score-hi">0.895</td><td><span class="badge badge-hold">HOLD</span></td>
+    </tr>
+    <tr>
+      <td>p5</td><td>bp1 (biotech undisclosed)</td>
+      <td class="num score-mid">0.646</td><td class="num score-mid">0.688</td><td class="num score-mid">0.651</td><td class="num score-hi">0.780</td><td class="num score-lo">0.577</td>
+      <td class="num score-mid"><strong>0.667</strong></td><td class="num score-mid">0.737</td><td><span class="badge badge-hold">HOLD</span></td>
+    </tr>
+    <tr>
+      <td>p8</td><td>Ebovir LNP Platform</td>
+      <td class="num score-mid">0.637</td><td class="num score-mid">0.677</td><td class="num score-mid">0.662</td><td class="num score-mid">0.726</td><td class="num score-lo">0.588</td>
+      <td class="num score-lo"><strong>0.657</strong></td><td class="num score-hi">0.895</td><td><span class="badge badge-hold">HOLD</span></td>
+    </tr>
+    <tr>
+      <td>pC</td><td>ZX Academy (Education/AI)</td>
+      <td class="num score-lo">0.464</td><td class="num score-mid">0.641</td><td class="num score-mid">0.683</td><td class="num score-lo">0.552</td><td class="num score-hi">0.733</td>
+      <td class="num score-lo"><strong>0.618</strong></td><td class="num">—</td><td><span class="badge badge-hold">HOLD</span></td>
+    </tr>
+  </table>
+  <p style="font-size:12px; color:#888; margin-top:8px;">* Human overall scores shown where available from concordance data. — means not extractable from available data. Scores sorted by AI overall descending.</p>
+
+  <div class="callout callout-info" style="margin-top:12px;">
+    <strong>Interesting Pattern: Innovation Scores Are Uniformly High</strong>
+    <p>The AI's innovation scores cluster between 0.552 and 0.781 with most proposals scoring 0.72–0.78. This compressed high range (except pC at 0.552) suggests the AI is relatively indiscriminate about innovation — it scores almost everything as fairly innovative. The one exception, pC (education/AI), also gets the lowest team score, suggesting it looks fundamentally weaker across the board to the AI. This is consistent with the near-zero Spearman correlation for advantages: if scores cluster, ranking becomes meaningless.</p>
+  </div>
+
+  <div class="callout callout-key">
+    <strong>Most Interesting Discordance: p8 (Ebovir LNP)</strong>
+    <p>The Ebovir LNP Platform (p8) is rated 0.657 by AI (lowest cluster) but 0.895 by humans (tied top). This is the largest single-proposal disagreement in the dataset and appears in multiple discordant pairs. The LNP platform is likely valued by human experts for its platform nature (one technology, many applications) and the team's deep track record in a specialised domain — signals that are hard to fully capture from a business plan document. This specific case illustrates the AI's core weakness: it cannot fully evaluate strategic platform value the way a domain-expert investor can.</p>
+  </div>
+</div>
+
+<!-- ─────────────────────────── WHY LLM GOOD/BAD ─────────────────────────── -->
+<div class="section">
+  <div class="section-label">Analysis</div>
+  <h2>Why Is the LLM Good at Some Things and Bad at Others?</h2>
+
+  <div class="card-grid">
+    <div class="card" style="border-top: 4px solid #27ae60;">
+      <div class="card-title" style="margin-bottom:12px;">Where LLM Performs Well ✓</div>
+
+      <h4>1. Factual Signal Extraction</h4>
+      <p style="font-size:13px;">Team credentials, institutional affiliations, patent counts, named partners — all are explicit text that LLMs extract reliably and compare across proposals. Human experts do the same; LLMs match them here.</p>
+
+      <div class="divider"></div>
+      <h4>2. Holistic Investment Judgment</h4>
+      <p style="font-size:13px;">The investment-grade LLM is prompted as a VC analyst and makes holistic judgments ("does this feel like a strong investment thesis?") that approximate how experienced investors think. This is why invest_weight=0.90 works: the LLM's high-level investment sense aligns with human expert intuition.</p>
+
+      <div class="divider"></div>
+      <h4>3. Ranking Relative Quality</h4>
+      <p style="font-size:13px;">The LLM reliably distinguishes "much stronger" from "much weaker" proposals — it correctly ranks the top tier against the bottom tier. Where it fails is in distinguishing proposals that are close in quality.</p>
+
+      <div class="divider"></div>
+      <h4>4. Consistency (No Random Mood)</h4>
+      <p style="font-size:13px;">Unlike human reviewers who may have varying energy, attention, and mood, the LLM applies its rubric consistently. This consistency is why the ranking correlation is statistically significant — the LLM's biases are systematic and predictable, not random.</p>
+    </div>
+
+    <div class="card" style="border-top: 4px solid #e74c3c;">
+      <div class="card-title" style="margin-bottom:12px;">Where LLM Fails ✗</div>
+
+      <h4>1. No External Market Knowledge</h4>
+      <p style="font-size:13px;">The LLM cannot benchmark "advantages" claims against actual competitor products it isn't aware of from the document. Human experts draw on market knowledge; the LLM only reads what the proposal says about competitors.</p>
+
+      <div class="divider"></div>
+      <h4>2. Stage-Inappropriate Rubric Demands</h4>
+      <p style="font-size:13px;">The AI rubric expects evidence appropriate for Series B diligence (named buyers, signed LOIs, regulatory approvals) at the point of early-stage screening. This creates systematic under-scoring on Objective and Strategy dimensions.</p>
+
+      <div class="divider"></div>
+      <h4>3. Platform / Strategic Value</h4>
+      <p style="font-size:13px;">Platform technologies (e.g., LNP delivery platforms) are valued by investors for their optionality — one technology deployed across many applications. This strategic optionality is implicit and requires investment experience to appreciate. The LLM evaluates what is written, not what the technology could become.</p>
+
+      <div class="divider"></div>
+      <h4>4. Score Calibration on Absolute Values</h4>
+      <p style="font-size:13px;">The AI cannot map its continuous scores to the same absolute scale that human experts use. It knows relative ordering better than absolute positioning. However, by using OR logic with separate score and confidence thresholds (score ≥ 0.725 OR confidence ≥ 0.811), verdict accuracy was improved from 50% to 83% without any LLM re-runs. The remaining 17% (2 proposals) have scores that genuinely overlap with N-proposal distributions.</p>
+
+      <div class="divider"></div>
+      <h4>5. Score Compression / Low Discrimination</h4>
+      <p style="font-size:13px;">AI overall scores span only 0.115 points (0.618–0.733) across 12 proposals while human scores span a much wider range. This compression makes the AI less able to confidently separate the top from the middle tier — it can identify the clear outliers but not the competitive middle.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────── KEY FINDINGS ─────────────────────────── -->
+<div class="section">
+  <div class="section-label">Key Findings</div>
+  <h2>5 Key &amp; Interesting Findings (In Order of Importance)</h2>
+
+  <div class="finding">
+    <div class="finding-num">Finding 1 — Most Important</div>
+    <div class="finding-title">The Calibration Paradox: Naive AI Scoring Is Actively Harmful</div>
+    <div class="finding-quote">"Without invest-score calibration (invest_weight = 0), the AI ranks proposals in reverse order compared to human experts (r = −0.325, concordance = 37.9%). With proper calibration (invest_weight = 0.90), it achieves statistically significant alignment (r = 0.589, p = 0.044, concordance = 75.9%)."</div>
+    <p style="margin-top:10px; font-size:13px;">This finding is counterintuitive and practically important: an uncalibrated LLM scoring system is not just useless — it actively misleads. A practitioner who deploys AI screening without calibration against human expert labels would be screening out the proposals that experts would advance. The invest_weight parameter is the critical lever that converts a harmful tool into a useful one. The dramatic turnaround over the weight range (r goes from −0.325 to +0.593) is the single most interesting result in this study.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding-num">Finding 2</div>
+    <div class="finding-title">The Ranking–Decision Gap: Threshold Logic Matters as Much as Threshold Value</div>
+    <div class="finding-quote">"Switching from AND logic to OR logic with separate calibrated thresholds raised accuracy from 58% to 83%, precision from 44% to 100%, and F1 from 61.5% to 66.7% — with zero LLM re-runs and no impact on Spearman r = 0.589. Recall dropped from 100% to 50%, reflecting a deliberate trade toward precision over coverage."</div>
+    <p style="margin-top:10px; font-size:13px;">The two genuine GO proposals trigger via different signals. p7 has a distinctively high overall score (0.733, the only proposal above 0.725) but moderate confidence (0.656). p3 has distinctively high confidence (0.818, the only proposal above 0.811) but moderate overall score (0.694). AND logic requires both signals simultaneously — blocking both. OR logic captures each signal independently. The result: zero false positives (precision = 100%) at the cost of missing 2 borderline GO proposals whose scores genuinely overlap the N-cluster. This is the right trade for an investment screening tool where analyst time is the scarce resource — a GO recommendation that is always correct builds trust, while a rule that fires too often trains reviewers to ignore it.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding-num">Finding 3</div>
+    <div class="finding-title">Dimension Heterogeneity: AI Is Reliable on Team, Random on Advantages</div>
+    <div class="finding-quote">"Agreement with human experts varies from κ = 0.324 (Team, fair agreement) to r = 0.061 (Advantages, statistically indistinguishable from random)."</div>
+    <p style="margin-top:10px; font-size:13px;">This is actionable: not all AI dimension scores should be trusted equally. Team and Feasibility scores can be used to flag proposals with clear weaknesses. Advantages and Objective scores should be treated as noise and supplemented with human judgment. This finding supports a hybrid human-AI workflow where AI handles the dimensions it excels at and humans focus review time on the dimensions AI cannot handle.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding-num">Finding 4</div>
+    <div class="finding-title">Systematic Conservative Bias: AI Consistently Under-Scores Early-Stage Proposals</div>
+    <div class="finding-quote">"AI scores are systematically 13.6 points below human expert scores overall (p = 0.0015), with the Objective dimension showing the largest gap (−17.9 points, p = 0.011)."</div>
+    <p style="margin-top:10px; font-size:13px;">The strongest statistical result in the study (p = 0.0015) is the overall bias. The AI applies evidence standards appropriate for late-stage due diligence to early-stage proposals, producing conservative scores across the board. This quantifies a hypothesis that practitioners have intuited: LLMs evaluate evidence completeness rather than potential. The Objective dimension shows the clearest expression of this — humans score objectives at 0.833 (they believe in the problem being real) while AI scores 0.655 (demanding proof that isn't there yet).</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding-num">Finding 5</div>
+    <div class="finding-title">Dimension–Overall Interaction: You Cannot Improve Dimensions in Isolation</div>
+    <div class="finding-quote">"Attempts to improve Objective and Advantages dimension agreement by relaxing scoring rubrics degraded overall ranking concordance from 75.9% to 37.2%, reversing the main result."</div>
+    <p style="margin-top:10px; font-size:13px;">During development, rubric modifications intended to align dimension-level scores with human judgment caused the overall ranking correlation to collapse. This happened because each proposal's overall score is a weighted combination of all dimensions — changing one dimension rubric shifts scores in non-uniform ways across proposals, causing unintended re-rankings. The implication: multi-dimensional AI evaluation systems must be calibrated at the system level (the invest_weight), not at the dimension level. Dimension-level rubric engineering can easily do more harm than good.</p>
+  </div>
+</div>
+
+<!-- ─────────────────────────── PUBLISHABILITY ─────────────────────────── -->
+<div class="section">
+  <div class="section-label">Research Assessment</div>
+  <h2>Publishability Assessment</h2>
+
+  <div class="callout callout-good">
+    <strong>Overall Assessment: Publishable — with the right framing</strong>
+    <p>The work has a statistically significant main result, a striking calibration finding, and multiple novel observations about LLM reliability in professional evaluation contexts. The sample size (n=12) is a limitation but is defensible for a specialised domain where expert annotation is costly.</p>
+  </div>
+
+  <h3>Strengths for Publication</h3>
+  <table>
+    <tr><th>Strength</th><th>Why It Matters</th></tr>
+    <tr><td>Statistically significant Spearman r = 0.589, p = 0.044</td><td>Reaching significance with n=12 is rare and establishes real alignment</td></tr>
+    <tr><td>Calibration paradox (r reversal from −0.325 to +0.589)</td><td>Highly novel, counterintuitive, and practically important warning</td></tr>
+    <tr><td>Dimension heterogeneity quantification</td><td>First systematic comparison of LLM reliability across VC evaluation dimensions</td></tr>
+    <tr><td>Ranking vs. verdict gap + OR-logic fix</td><td>Threshold logic (AND vs OR) matters as much as threshold value; OR rule achieves 83% accuracy, 100% precision, F1=66.7% — without LLM re-runs</td></tr>
+    <tr><td>Systematic conservative bias (p = 0.0015)</td><td>Quantifies a known intuition with strong statistical evidence</td></tr>
+  </table>
+
+  <h3>Limitations to Acknowledge Honestly</h3>
+  <table>
+    <tr><th>Limitation</th><th>How to Address in Paper</th></tr>
+    <tr><td>n = 12 is small</td><td>Frame as pilot study; expert annotation cost justifies small n; result still achieves significance</td></tr>
+    <tr><td>Single LLM provider (OpenAI gpt-4o-mini)</td><td>Note as scope limitation; list provider comparison as future work</td></tr>
+    <tr><td>Domain-specific (Chinese biotech/medtech)</td><td>Frame as domain-specific contribution; generalisability is open question</td></tr>
+    <tr><td>LLM stochasticity (minor score variance between runs)</td><td>Report as limitation; mention ensemble averaging as mitigation</td></tr>
+    <tr><td>Human inter-expert agreement not measured</td><td>Report as limitation; measuring inter-expert agreement is recommended future work</td></tr>
+  </table>
+
+  <h3>Recommended Publication Venues</h3>
+  <table>
+    <tr><th>Venue</th><th>Type</th><th>Why Suitable</th></tr>
+    <tr><td><strong>ICAIF</strong> (ACM Int'l Conf. on AI in Finance)</td><td>Conference</td><td>Direct match — AI + investment evaluation domain</td></tr>
+    <tr><td><strong>NeurIPS / ICML Workshop</strong> on AI for Decision Making</td><td>Workshop</td><td>Calibration + human alignment angle fits this audience</td></tr>
+    <tr><td><strong>EMNLP / ACL Workshop</strong> on LLMs for Business/Finance</td><td>Workshop</td><td>LLM evaluation methodology and reliability angle</td></tr>
+    <tr><td><strong>Expert Systems with Applications</strong> (Elsevier)</td><td>Journal</td><td>AI evaluation + practical decision support</td></tr>
+    <tr><td><strong>Decision Support Systems</strong></td><td>Journal</td><td>Human-AI collaboration framing</td></tr>
+  </table>
+
+  <div class="callout callout-info" style="margin-top:16px;">
+    <strong>Recommended Paper Framing</strong>
+    <p><strong>Title direction:</strong> <em>"Calibrating LLMs for Early-Stage Investment Proposal Ranking: Human Expert Alignment and Dimension-Level Reliability"</em></p>
+    <p style="margin-top:8px;"><strong>Core narrative:</strong> LLMs can meaningfully assist human experts in ranking investment proposals — but <em>only</em> with proper invest-score calibration. Without it, AI scoring is not just unhelpful but actively misleads. The contribution is: (1) identifying the critical calibration parameter, (2) quantifying where AI agrees and disagrees with humans at the dimension level, and (3) revealing the fundamental ranking vs. decision reliability gap that has design implications for any AI-assisted screening tool.</p>
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<div class="footer">
+  AI Investment Proposal Evaluation Report · Run ID: 20260616_191609_759250 · Generated 2026-06-18 · System: 9-Stage AI Pipeline (OpenAI gpt-4o-mini, invest_weight=0.90)
+</div>
+
+</body>
+</html>

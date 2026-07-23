@@ -1,0 +1,628 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt8__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt8__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 191,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by Nicholas Edward Werner-Matavka, who is also the creator of HERMES Mail/X. A team of C++ programmers, under his leadership, is involved in the development of Eudora.",
+        "first_key_point_preview": "Nicholas Edward Werner-Matavka is the creator of HERMES Mail/X.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.13,
+        "raw_chars": 4654,
+        "usage": {
+          "prompt_tokens": 3295,
+          "completion_tokens": 1004,
+          "total_tokens": 4299
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Nicholas Edward Werner-Matavka",
+        "HERMES Mail/X",
+        "C++ programming expertise",
+        "project governance structure",
+        "validation experience",
+        "team capacity assessment",
+        "collaboration partnerships",
+        "decision-making processes",
+        "conflict-of-interest management"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "governance_and_decision_making": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Nicholas Edward Werner-Matavka's experience as the creator of HERMES Mail/X contribute to the leadership of this project, particularly in terms of advancing it to its intended application?",
+          "question_en_preview": "How does Nicholas Edward Werner-Matavka's experience as the creator of HERMES Mail/X contribute to the leadership of this project, particularly in terms of advancing it to its intended application?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team of C++ programmers bring to the development of Eudora, and how does this expertise align with the project's objectives?",
+          "question_en_preview": "What specific domain expertise does the team of C++ programmers bring to the development of Eudora, and how does this expertise align with the project's objectives?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity and resources to effectively execute this project? If not, what are the implications?",
+          "question_en_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity and resources to effectively execute this project? If not, what are the implications?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures or decision-making processes are in place to manage the project effectively, and how do they address potential conflicts of interest?",
+          "question_en_preview": "What governance structures or decision-making processes are in place to manage the project effectively, and how do they address potential conflicts of interest?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What experience does the team have with validation and compliance in the context of software development, and how does this experience mitigate potential risks associated with the project?",
+          "question_en_preview": "What experience does the team have with validation and compliance in the context of software development, and how does this experience mitigate potential risks associated with the project?"
+        }
+      ],
+      "elapsed_sec": 15.13,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 284,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to enhance the user experience for Apple Mail users by developing HERMES Mail/X, an email client that supports multiple platforms. Key milestones include the release of the Windows version in Q1 2019 and ongoing support for Eudora 7 until the new version is launc ...",
+        "first_key_point_preview": "The project aims to alleviate issues faced by Apple Mail users.",
+        "first_risk_preview": "The project aims to alleviate issues faced by Apple Mail users.",
+        "first_mitigation_preview": "The project aims to create a product that will improve the experience for Apple users."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.77,
+        "raw_chars": 3802,
+        "usage": {
+          "prompt_tokens": 3421,
+          "completion_tokens": 850,
+          "total_tokens": 4271
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user experience improvement",
+        "Windows version release",
+        "funding status",
+        "value creation logic",
+        "success metrics definition",
+        "project scope management",
+        "Apple Mail user issues",
+        "development approaches",
+        "milestone feasibility"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "outcome_and_success_metrics": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the project align with the stated need to alleviate issues faced by Apple Mail users? Please evaluate the urgency of this need based on the provided information.",
+          "question_en_preview": "How well does the project align with the stated need to alleviate issues faced by Apple Mail users? Please evaluate the urgency of this need based on the provided information."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Are the key milestones, such as the release of the Windows version in Q1 2019, reasonable and executable? What evidence supports your assessment?",
+          "question_en_preview": "Are the key milestones, such as the release of the Windows version in Q1 2019, reasonable and executable? What evidence supports your assessment?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project create value for Apple Mail users, and what is the logic behind its objectives in terms of capturing revenue or delivering impact?",
+          "question_en_preview": "How does the project create value for Apple Mail users, and what is the logic behind its objectives in terms of capturing revenue or delivering impact?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Evaluate the balance between ambition and feasibility in the project's objectives. Are the goals too idealistic or too conservative based on the current funding status?",
+          "question_en_preview": "Evaluate the balance between ambition and feasibility in the project's objectives. Are the goals too idealistic or too conservative based on the current funding status?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What clear and quantifiable success metrics are defined for the project, particularly regarding the improvement of the user experience for Apple Mail users?",
+          "question_en_preview": "What clear and quantifiable success metrics are defined for the project, particularly regarding the improvement of the user experience for Apple Mail users?"
+        }
+      ],
+      "elapsed_sec": 19.77,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 439,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project HERMES Mail/X aims to enhance the email experience for Apple users by developing a new email client. The strategy includes pursuing two approaches for the Macintosh interface, either rewriting the user interface from the Windows version or starting a separate project  ...",
+        "first_key_point_preview": "The project aims to alleviate issues faced by Apple Mail users.",
+        "first_risk_preview": "The project aims to alleviate issues faced by Apple Mail users.",
+        "first_mitigation_preview": "The project aims to create a product that will improve the experience for Apple users."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.95,
+        "raw_chars": 4039,
+        "usage": {
+          "prompt_tokens": 3556,
+          "completion_tokens": 880,
+          "total_tokens": 4436
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user interface development",
+        "email client validation metrics",
+        "funding strategy",
+        "unit economics analysis",
+        "quality compliance measures",
+        "scaling challenges",
+        "backer contributions",
+        "customer acquisition costs",
+        "Macintosh interface trade-offs",
+        "user experience improvement"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the decision to pursue two approaches for the Macintosh interface development, and what are the major trade-offs associated with each approach?",
+          "question_en_preview": "What rationale supports the decision to pursue two approaches for the Macintosh interface development, and what are the major trade-offs associated with each approach?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the team plan to validate the effectiveness of HERMES Mail/X in improving the email experience for Apple users, and what specific metrics will be used to assess success?",
+          "question_en_preview": "How does the team plan to validate the effectiveness of HERMES Mail/X in improving the email experience for Apple users, and what specific metrics will be used to assess success?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current funding from 28 backers, what is the strategy for securing additional funding or revenue streams to support the ongoing development and commercialization of HERMES Mail/X?",
+          "question_en_preview": "Given the current funding from 28 backers, what is the strategy for securing additional funding or revenue streams to support the ongoing development and commercialization of HERMES Mail/X?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "What are the anticipated unit economics for HERMES Mail/X, including pricing strategy and expected customer acquisition costs, and how do these align with the project's funding model?",
+          "question_en_preview": "What are the anticipated unit economics for HERMES Mail/X, including pricing strategy and expected customer acquisition costs, and how do these align with the project's funding model?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quality and compliance strategies are in place to ensure that HERMES Mail/X meets user expectations and regulatory requirements, if applicable?",
+          "question_en_preview": "What quality and compliance strategies are in place to ensure that HERMES Mail/X meets user expectations and regulatory requirements, if applicable?"
+        }
+      ],
+      "elapsed_sec": 12.95,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 320,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project focuses on the development of HERMES Mail/X as a successor to Eudora, aiming to enhance email functionality and user experience. Key innovations include support for Unicode, integration of a spelling checker, and a redesigned interface built from the ground up, addres ...",
+        "first_key_point_preview": "HERMES Mail/X will support Unicode (UTF-8) and enable messaging in all left-to-right alphabetic languages.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.39,
+        "raw_chars": 3656,
+        "usage": {
+          "prompt_tokens": 3438,
+          "completion_tokens": 837,
+          "total_tokens": 4275
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Unicode support",
+        "email functionality enhancement",
+        "user experience improvement",
+        "spelling checker integration",
+        "competitive advantages",
+        "intellectual property strategy",
+        "scalability potential",
+        "risk of obsolescence",
+        "redesigned interface"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does HERMES Mail/X's support for Unicode and enhanced email functionality compare to existing email solutions in terms of novelty and user experience?",
+          "question_en_preview": "How does HERMES Mail/X's support for Unicode and enhanced email functionality compare to existing email solutions in terms of novelty and user experience?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does HERMES Mail/X offer over Eudora and other email clients in terms of performance, user interface, and functionality?",
+          "question_en_preview": "What specific advantages does HERMES Mail/X offer over Eudora and other email clients in terms of performance, user interface, and functionality?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the new features in HERMES Mail/X, such as the redesigned interface and spelling checker integration?",
+          "question_en_preview": "What evidence supports the effectiveness of the new features in HERMES Mail/X, such as the redesigned interface and spelling checker integration?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee for HERMES Mail/X in terms of becoming obsolete or commoditized?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee for HERMES Mail/X in terms of becoming obsolete or commoditized?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How scalable is HERMES Mail/X in terms of extending its features to other platforms or user segments beyond the initial target market?",
+          "question_en_preview": "How scalable is HERMES Mail/X in terms of extending its features to other platforms or user segments beyond the initial target market?"
+        }
+      ],
+      "elapsed_sec": 10.39,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 369,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is challenged by the need for additional programming resources and the complexities of transitioning to new Apple architecture. The project is currently funded and aims to improve the user experience for Apple Mail users, but it faces risks related  ...",
+        "first_key_point_preview": "The project requires more programmers to address development needs.",
+        "first_risk_preview": "Creating a new product presents challenges due to transitions in the Apple architecture since 2005.",
+        "first_mitigation_preview": "The project aims to create a product that will improve the experience for Apple users."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 18.35,
+        "raw_chars": 4105,
+        "usage": {
+          "prompt_tokens": 3468,
+          "completion_tokens": 892,
+          "total_tokens": 4360
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "programming resources needed",
+        "funding utilization plan",
+        "Apple architecture transition",
+        "historical email client risks",
+        "implementation barriers",
+        "customer acceptance feasibility",
+        "development milestones",
+        "risk mitigation strategies",
+        "user experience improvement",
+        "project funding timeline"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "resources_and_infrastructure": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific programming resources are needed to address the development challenges mentioned in the proposal, and how does the team plan to secure these resources?",
+          "question_en_preview": "What specific programming resources are needed to address the development challenges mentioned in the proposal, and how does the team plan to secure these resources?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project is currently 107% funded, what is the plan for utilizing the remaining funding effectively within the next 10 days, and what follow-on financing strategies are in place?",
+          "question_en_preview": "Given that the project is currently 107% funded, what is the plan for utilizing the remaining funding effectively within the next 10 days, and what follow-on financing strategies are in place?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the team plan to address the complexities of transitioning to new Apple architecture, and what are the key milestones in the implementation timeline?",
+          "question_en_preview": "How does the team plan to address the complexities of transitioning to new Apple architecture, and what are the key milestones in the implementation timeline?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific risks does the team identify regarding the historical context of previous email clients, and how do they plan to mitigate these risks?",
+          "question_en_preview": "What specific risks does the team identify regarding the historical context of previous email clients, and how do they plan to mitigate these risks?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What barriers to implementation does the team foresee in alleviating issues faced by Apple Mail users, and how do they plan to overcome these barriers?",
+          "question_en_preview": "What barriers to implementation does the team foresee in alleviating issues faced by Apple Mail users, and how do they plan to overcome these barriers?"
+        }
+      ],
+      "elapsed_sec": 18.35,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T18:45:12Z",
+  "elapsed_sec": 76.6,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt8__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt8__openai/generated_questions_detail.json"
+}

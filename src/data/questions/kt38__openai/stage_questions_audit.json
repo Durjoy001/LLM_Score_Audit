@@ -1,0 +1,619 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt38__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt38__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 181,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Metal Fusion Game was created by Sigma, indicating a defined team member responsible for the project. This suggests a structured approach to team composition within the project.",
+        "first_key_point_preview": "The Metal Fusion Game was created by Sigma, highlighting the involvement of a specific team member.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.75,
+        "raw_chars": 3143,
+        "usage": {
+          "prompt_tokens": 3247,
+          "completion_tokens": 663,
+          "total_tokens": 3910
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "Sigma's role",
+        "leadership experience",
+        "domain expertise",
+        "team capacity",
+        "validation risks",
+        "collaboration opportunities",
+        "execution capability",
+        "project advancement"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the involvement of Sigma as a specific team member enhance the leadership experience and execution capability of the Metal Fusion Game project?",
+          "question_en_preview": "How does the involvement of Sigma as a specific team member enhance the leadership experience and execution capability of the Metal Fusion Game project?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does Sigma bring to the Metal Fusion Game project that addresses the target customer problem or enhances the product's domain relevance?",
+          "question_en_preview": "What specific expertise does Sigma bring to the Metal Fusion Game project that addresses the target customer problem or enhances the product's domain relevance?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Considering the current workload and potential parallel projects, does the team have sufficient capacity to effectively advance the Metal Fusion Game project? Please specify any gaps.",
+          "question_en_preview": "Considering the current workload and potential parallel projects, does the team have sufficient capacity to effectively advance the Metal Fusion Game project? Please specify any gaps."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the lack of specified mitigation measures, what risks do you foresee in the team's ability to navigate validation and compliance for the Metal Fusion Game?",
+          "question_en_preview": "Given the lack of specified mitigation measures, what risks do you foresee in the team's ability to navigate validation and compliance for the Metal Fusion Game?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What potential collaborations or partnerships could enhance the project's execution, considering the current team structure and Sigma's role?",
+          "question_en_preview": "What potential collaborations or partnerships could enhance the project's execution, considering the current team structure and Sigma's role?"
+        }
+      ],
+      "elapsed_sec": 10.75,
+      "final_question_count": 6
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 271,
+        "key_points_count": 7,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a game that allows users to mix metals from the periodic table to create new metals, alloys, and chemical compounds. The funding goal for the project is set at $706, and it is currently 107% funded with 10 days remaining in the funding period.",
+        "first_key_point_preview": "The project was last updated on March 11, 2017.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.73,
+        "raw_chars": 4354,
+        "usage": {
+          "prompt_tokens": 3420,
+          "completion_tokens": 920,
+          "total_tokens": 4340
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "game functionality clarity",
+        "market opportunity alignment",
+        "milestone feasibility",
+        "success metrics definition",
+        "value creation strategy",
+        "realism versus ambition balance"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined are the overall goals of the project, particularly in relation to the game's functionality of mixing metals to create new materials? Are there any unrelated sub-goals that could distract from this pri ...",
+          "question_en_preview": "How clearly defined are the overall goals of the project, particularly in relation to the game's functionality of mixing metals to create new materials? Are there any unrelated sub-goals that could distract from this pri ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the project align with an unmet need or market opportunity in the gaming sector? If the proposal lacks sufficient details on this alignment, please state the information gap and discuss its potential  ...",
+          "question_en_preview": "To what extent does the project align with an unmet need or market opportunity in the gaming sector? If the proposal lacks sufficient details on this alignment, please state the information gap and discuss its potential  ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the project, and how reasonable and executable are they given the current funding status and timeline? Are there any specific milestones that appear overly ambitious or unrealistic?",
+          "question_en_preview": "What are the proposed milestones for the project, and how reasonable and executable are they given the current funding status and timeline? Are there any specific milestones that appear overly ambitious or unrealistic?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Does the project outline clear and quantifiable success metrics that will indicate the game's performance and user engagement? If not, what metrics would be necessary to effectively measure success?",
+          "question_en_preview": "Does the project outline clear and quantifiable success metrics that will indicate the game's performance and user engagement? If not, what metrics would be necessary to effectively measure success?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project plan to create value and capture revenue through the game? What are the expected impacts on users, and how does this align with the objectives stated in the proposal?",
+          "question_en_preview": "How does the project plan to create value and capture revenue through the game? What are the expected impacts on users, and how does this align with the objectives stated in the proposal?"
+        }
+      ],
+      "elapsed_sec": 16.74,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 266,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a game that allows users to mix metals from the periodic table to create new metals, alloys, and chemical compounds. It has a funding goal of $706, with a current funding status of 107% achieved, and a remaining funding period of 10 days.",
+        "first_key_point_preview": "The game enables users to create new metals, alloys, and chemical compounds by mixing metals.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.44,
+        "raw_chars": 4196,
+        "usage": {
+          "prompt_tokens": 3507,
+          "completion_tokens": 902,
+          "total_tokens": 4409
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user engagement metrics",
+        "market entry strategy",
+        "revenue sustainability",
+        "validation steps",
+        "partnership opportunities",
+        "quality assurance measures",
+        "trade-offs in delivery",
+        "scaling strategy",
+        "funding impact analysis"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 3
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the strategy for rolling out the game to potential users, and how does the current funding status of 107% influence this strategy?",
+          "question_en_preview": "What is the strategy for rolling out the game to potential users, and how does the current funding status of 107% influence this strategy?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the funding goal of $706 and the current achievement of 107%, how does the project plan to sustain revenue and ensure profitability post-launch?",
+          "question_en_preview": "Given the funding goal of $706 and the current achievement of 107%, how does the project plan to sustain revenue and ensure profitability post-launch?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps are planned to ensure the game's functionality and user engagement before full-scale launch, especially considering the initial funding challenges?",
+          "question_en_preview": "What validation steps are planned to ensure the game's functionality and user engagement before full-scale launch, especially considering the initial funding challenges?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternatives were considered for the game's delivery and operating model, and what major trade-offs were made in the current approach?",
+          "question_en_preview": "What alternatives were considered for the game's delivery and operating model, and what major trade-offs were made in the current approach?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "If the proposal does not provide sufficient details on scaling strategies for the game, please state this information gap and discuss its potential impact on future growth.",
+          "question_en_preview": "If the proposal does not provide sufficient details on scaling strategies for the game, please state this information gap and discuss its potential impact on future growth."
+        }
+      ],
+      "elapsed_sec": 14.44,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 274,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project showcases innovation by allowing users to mix metals from the periodic table to create new metals, alloys, and chemical compounds. This unique feature is inspired by the creator's personal experiences and interests, indicating a creative approach to game design.",
+        "first_key_point_preview": "The game was inspired by the creator's younger brother's interest in Minecraft.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.72,
+        "raw_chars": 3618,
+        "usage": {
+          "prompt_tokens": 3351,
+          "completion_tokens": 769,
+          "total_tokens": 4120
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user engagement metrics",
+        "creativity enhancement",
+        "competitive analysis",
+        "intellectual property strategy",
+        "market differentiation",
+        "risk assessment",
+        "user feedback",
+        "innovation scalability",
+        "experimental design quality"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the ability for users to mix metals from the periodic table differentiate this project from existing games or educational tools in the market?",
+          "question_en_preview": "How does the ability for users to mix metals from the periodic table differentiate this project from existing games or educational tools in the market?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does this project offer in terms of user creativity and experimentation compared to traditional gaming experiences?",
+          "question_en_preview": "What specific advantages does this project offer in terms of user creativity and experimentation compared to traditional gaming experiences?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the innovative features in enhancing user engagement and creativity within the game?",
+          "question_en_preview": "What evidence supports the effectiveness of the innovative features in enhancing user engagement and creativity within the game?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the project's innovation becoming obsolete or commoditized?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the project's innovation becoming obsolete or commoditized?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property associated with the unique features of this project, and how do they support long-term competitiveness?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property associated with the unique features of this project, and how do they support long-term competitiveness?"
+        }
+      ],
+      "elapsed_sec": 12.72,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 285,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to expand the Metal Fusion Game while addressing errors and is currently hosted on Kickstarter. It has a funding goal of $706, with $49 pledged so far, and is categorized under 'Games'. The project is currently 107% funded with 10 days remaining in the funding pe ...",
+        "first_key_point_preview": "The creator aims to expand the program while identifying and fixing errors.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.81,
+        "raw_chars": 4257,
+        "usage": {
+          "prompt_tokens": 3414,
+          "completion_tokens": 917,
+          "total_tokens": 4331
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding goal",
+        "budget allocation reasonableness",
+        "expansion tasks timeline",
+        "customer acceptance barriers",
+        "implementation risks",
+        "107% funded status",
+        "games market integration",
+        "project feasibility assessment",
+        "resource alignment with timeline",
+        "customer procurement feasibility"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the funding goal for the Metal Fusion Game is $706 and only $49 has been pledged so far, how do you assess the reasonableness of the budget allocation and the likelihood of achieving the funding goal within th ...",
+          "question_en_preview": "Given that the funding goal for the Metal Fusion Game is $706 and only $49 has been pledged so far, how do you assess the reasonableness of the budget allocation and the likelihood of achieving the funding goal within th ..."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for expanding the Metal Fusion Game, and how do these align with the current funding status and remaining time on Kickstarter?",
+          "question_en_preview": "What specific tasks and timelines are outlined for expanding the Metal Fusion Game, and how do these align with the current funding status and remaining time on Kickstarter?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "The proposal indicates limited risk information. What potential risks do you foresee in the expansion of the Metal Fusion Game, and how might these impact the project's feasibility?",
+          "question_en_preview": "The proposal indicates limited risk information. What potential risks do you foresee in the expansion of the Metal Fusion Game, and how might these impact the project's feasibility?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation do you anticipate in the expansion of the Metal Fusion Game, particularly in relation to customer acceptance and integration into the gaming market?",
+          "question_en_preview": "What barriers to implementation do you anticipate in the expansion of the Metal Fusion Game, particularly in relation to customer acceptance and integration into the gaming market?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Considering the current funding status and the project's categorization under 'Games', how feasible do you believe customer acceptance and procurement will be for the Metal Fusion Game?",
+          "question_en_preview": "Considering the current funding status and the project's categorization under 'Games', how feasible do you believe customer acceptance and procurement will be for the Metal Fusion Game?"
+        }
+      ],
+      "elapsed_sec": 16.81,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T17:12:07Z",
+  "elapsed_sec": 71.47,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt38__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt38__openai/generated_questions_detail.json"
+}

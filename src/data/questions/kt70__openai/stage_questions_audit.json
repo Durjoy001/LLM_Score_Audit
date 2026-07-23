@@ -1,0 +1,615 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt70__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt70__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 190,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Patrick Ben Thomas, who is the creator of HyberX, a context-aware AI initiative. The project has garnered early support from a community that believes in its potential.",
+        "first_key_point_preview": "The project was created by Patrick Ben Thomas.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.76,
+        "raw_chars": 3470,
+        "usage": {
+          "prompt_tokens": 3278,
+          "completion_tokens": 757,
+          "total_tokens": 4035
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Patrick Ben Thomas",
+        "HyberX experience",
+        "context-aware AI expertise",
+        "team capacity assessment",
+        "collaboration partnerships",
+        "validation experience",
+        "governance structures",
+        "risk management strategies",
+        "community support"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Patrick Ben Thomas's previous experience with HyberX equip him to lead this project effectively?",
+          "question_en_preview": "How does Patrick Ben Thomas's previous experience with HyberX equip him to lead this project effectively?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that is relevant to the context-aware AI initiative?",
+          "question_en_preview": "What specific domain expertise does the team possess that is relevant to the context-aware AI initiative?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity to advance the initiative effectively?",
+          "question_en_preview": "Given the current workload and potential parallel projects, does the team have sufficient capacity to advance the initiative effectively?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing collaborations or partnerships does the team have that could enhance the project's success, and how stable are these relationships?",
+          "question_en_preview": "What existing collaborations or partnerships does the team have that could enhance the project's success, and how stable are these relationships?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation or compliance experience does the team have that could support the successful implementation of the context-aware AI initiative?",
+          "question_en_preview": "What validation or compliance experience does the team have that could support the successful implementation of the context-aware AI initiative?"
+        }
+      ],
+      "elapsed_sec": 10.76,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 314,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The objectives of the HyberX project focus on creating an intelligent on-screen assistant that helps users navigate technology with clarity and ease. The project aims to address the challenges faced by non-technical users who struggle with technology, providing real-time assistan ...",
+        "first_key_point_preview": "HyberX aims to eliminate the need for users to describe problems they can barely see.",
+        "first_risk_preview": "The project involves real-time screen analysis, which may raise privacy and security concerns.",
+        "first_mitigation_preview": "HyberX is described as the first AI that sits beside users, sees their screen, and solves the moment they are actually living in."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.45,
+        "raw_chars": 3345,
+        "usage": {
+          "prompt_tokens": 3450,
+          "completion_tokens": 754,
+          "total_tokens": 4204
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "real-time assistance",
+        "non-technical users",
+        "privacy concerns",
+        "success metrics",
+        "funding status",
+        "milestones",
+        "user engagement",
+        "project objectives",
+        "user experience improvement"
+      ],
+      "cleaned_question_count": 5,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 2,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How effectively does the HyberX project address the challenges faced by non-technical users in navigating technology, as highlighted in the key points? Please evaluate the urgency of this unmet need.",
+          "question_en_preview": "How effectively does the HyberX project address the challenges faced by non-technical users in navigating technology, as highlighted in the key points? Please evaluate the urgency of this unmet need."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "To what extent is the overall goal of HyberX clear and focused on assisting non-technical users? Are there any unrelated sub-goals that could dilute its effectiveness?",
+          "question_en_preview": "To what extent is the overall goal of HyberX clear and focused on assisting non-technical users? Are there any unrelated sub-goals that could dilute its effectiveness?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the HyberX project, and how reasonable and executable do you find them given the current beta phase and funding status?",
+          "question_en_preview": "What are the proposed milestones for the HyberX project, and how reasonable and executable do you find them given the current beta phase and funding status?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics should be established for the HyberX project to measure its effectiveness in assisting users? Are these metrics currently defined?",
+          "question_en_preview": "What clear and quantifiable success metrics should be established for the HyberX project to measure its effectiveness in assisting users? Are these metrics currently defined?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Considering the project's ambition to provide real-time assistance, how realistic do you find the objectives set for HyberX, especially in light of the privacy and security concerns mentioned?",
+          "question_en_preview": "Considering the project's ambition to provide real-time assistance, how realistic do you find the objectives set for HyberX, especially in light of the privacy and security concerns mentioned?"
+        }
+      ],
+      "elapsed_sec": 13.45,
+      "final_question_count": 5
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 312,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "HyberX aims to assist users in navigating technology by providing real-time, on-screen support. The project utilizes AI to understand user issues instantly and guides them through problem resolution in plain language. It seeks to address the challenges faced by non-technical user ...",
+        "first_key_point_preview": "HyberX is designed to help users navigate tasks with greater clarity and confidence.",
+        "first_risk_preview": "The project may face challenges related to real-time understanding of user issues.",
+        "first_mitigation_preview": "HyberX is described as the first AI that sits beside users, sees their screen, and solves the moment they are actually living in."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.71,
+        "raw_chars": 3780,
+        "usage": {
+          "prompt_tokens": 3538,
+          "completion_tokens": 869,
+          "total_tokens": 4407
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "real-time user support",
+        "beta phase validation",
+        "go-to-market strategy",
+        "non-technical user engagement",
+        "budget realism",
+        "data security measures",
+        "scaling strategies",
+        "user feedback integration",
+        "AI problem resolution",
+        "operating model clarity"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does HyberX's approach to real-time user support differentiate it from existing solutions, and what major trade-offs were considered in its design?",
+          "question_en_preview": "How does HyberX's approach to real-time user support differentiate it from existing solutions, and what major trade-offs were considered in its design?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What validation steps are planned for HyberX as it moves from the beta phase to full deployment, and how will user feedback be integrated into this process?",
+          "question_en_preview": "What validation steps are planned for HyberX as it moves from the beta phase to full deployment, and how will user feedback be integrated into this process?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the go-to-market strategy for HyberX, and how does it plan to attract non-technical users who struggle with technology?",
+          "question_en_preview": "What is the go-to-market strategy for HyberX, and how does it plan to attract non-technical users who struggle with technology?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget for HyberX considering its current stage and the projected costs for scaling? Please provide evidence that would increase your score.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget for HyberX considering its current stage and the projected costs for scaling? Please provide evidence that would increase your score."
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quality and compliance measures are in place to ensure that HyberX effectively addresses user issues in real-time without compromising data security?",
+          "question_en_preview": "What quality and compliance measures are in place to ensure that HyberX effectively addresses user issues in real-time without compromising data security?"
+        }
+      ],
+      "elapsed_sec": 14.71,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 355,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "HyberX represents a significant innovation in AI technology, being the first real-time AI system that interacts with users by seeing their screens and providing immediate assistance. It is positioned as a new category of product, emphasizing its unique capabilities to understand  ...",
+        "first_key_point_preview": "HyberX is described as the first AI that sits beside users and solves issues in real-time.",
+        "first_risk_preview": "The proposal indicates a risk related to HyberX's capability to open and look at users' screens in real-time to understand issues instantly.",
+        "first_mitigation_preview": "HyberX mitigates risks by being described as the first AI that sits beside users and solves problems as they occur."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.26,
+        "raw_chars": 4601,
+        "usage": {
+          "prompt_tokens": 3466,
+          "completion_tokens": 1015,
+          "total_tokens": 4481
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "real-time AI interaction",
+        "screen-aware technology",
+        "customer value advantages",
+        "performance metrics",
+        "intellectual property strategy",
+        "scalability potential",
+        "competitive differentiation",
+        "risk assessment",
+        "evidence of effectiveness"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "evidence_strength_for_innovation": 2,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does HyberX's capability to interact with users by seeing their screens differentiate it from existing AI systems? Please provide specific examples of its novelty compared to current solutions.",
+          "question_en_preview": "How does HyberX's capability to interact with users by seeing their screens differentiate it from existing AI systems? Please provide specific examples of its novelty compared to current solutions."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does HyberX offer over traditional support systems in terms of customer value, speed, and performance? How do these advantages position it in the market?",
+          "question_en_preview": "What specific advantages does HyberX offer over traditional support systems in terms of customer value, speed, and performance? How do these advantages position it in the market?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the potential risks associated with HyberX's real-time screen interaction capability, and how might these risks affect its long-term viability in the market?",
+          "question_en_preview": "What are the potential risks associated with HyberX's real-time screen interaction capability, and how might these risks affect its long-term viability in the market?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of HyberX's real-time assistance capabilities? Are there any metrics or case studies that demonstrate its performance in real-world scenarios?",
+          "question_en_preview": "What evidence supports the effectiveness of HyberX's real-time assistance capabilities? Are there any metrics or case studies that demonstrate its performance in real-world scenarios?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How scalable is HyberX's technology for potential future applications in different customer segments or use cases? What are the plans for extending its capabilities?",
+          "question_en_preview": "How scalable is HyberX's technology for potential future applications in different customer segments or use cases? What are the plans for extending its capabilities?"
+        }
+      ],
+      "elapsed_sec": 14.26,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 448,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 2,
+        "summary_preview": "The feasibility of the HyberX project is challenged by technical difficulties in screen-awareness and the complexity of teaching AI to understand various screen layouts. Despite these challenges, the project has developed early builds that effectively handle a significant portion ...",
+        "first_key_point_preview": "HyberX faces technical challenges, particularly in screen-awareness and understanding diverse screen layouts.",
+        "first_risk_preview": "The development of HyberX faces technical challenges, particularly in screen-awareness.",
+        "first_mitigation_preview": "HyberX guides users step by step in plain human language until the problem is resolved."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.72,
+        "raw_chars": 3846,
+        "usage": {
+          "prompt_tokens": 3535,
+          "completion_tokens": 835,
+          "total_tokens": 4370
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "screen-awareness challenges",
+        "user feedback integration",
+        "real-time problem resolution",
+        "budget allocation realism",
+        "implementation barriers",
+        "timeline-resource alignment",
+        "customer acceptance evidence",
+        "technical challenge mitigation",
+        "user guidance effectiveness"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "risk_management": 1,
+          "operational_execution_plan": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "funding_and_budget_planning": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific technical challenges does HyberX face in achieving screen-awareness, and how might these challenges impact the project's timeline and resource allocation?",
+          "question_en_preview": "What specific technical challenges does HyberX face in achieving screen-awareness, and how might these challenges impact the project's timeline and resource allocation?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the current implementation plan address the need for ongoing training and user feedback to improve HyberX's capabilities?",
+          "question_en_preview": "How does the current implementation plan address the need for ongoing training and user feedback to improve HyberX's capabilities?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence exists to support the feasibility of customer acceptance for HyberX, particularly in terms of user guidance and real-time problem resolution?",
+          "question_en_preview": "What evidence exists to support the feasibility of customer acceptance for HyberX, particularly in terms of user guidance and real-time problem resolution?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget allocation for addressing the technical challenges of screen-awareness in HyberX? What evidence would increase your confidence in this score?",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget allocation for addressing the technical challenges of screen-awareness in HyberX? What evidence would increase your confidence in this score?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation exist for HyberX in real production settings, and how might these barriers affect user adoption?",
+          "question_en_preview": "What potential barriers to implementation exist for HyberX in real production settings, and how might these barriers affect user adoption?"
+        }
+      ],
+      "elapsed_sec": 12.72,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T20:45:33Z",
+  "elapsed_sec": 65.9,
+  "total_questions": 33,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt70__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt70__openai/generated_questions_detail.json"
+}

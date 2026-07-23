@@ -1,0 +1,619 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt49__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt49__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 288,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team behind HawkEye Risk Solutions consists of experts in Payments with over 15 years of experience in fraud prevention. Oleg Romanov is identified as the creator of the project, and the team operates as an independent data science shop, leveraging their extensive industry kn ...",
+        "first_key_point_preview": "HawkEye Risk Solutions is formed by a group of experts in Payments with 15 years of experience in fraud prevention.",
+        "first_risk_preview": "The proposal indicates a risk related to the team's formation and expertise in Payments and fraud prevention.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.89,
+        "raw_chars": 4396,
+        "usage": {
+          "prompt_tokens": 3311,
+          "completion_tokens": 945,
+          "total_tokens": 4256
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Oleg Romanov's leadership",
+        "Payments expertise",
+        "Fraud prevention experience",
+        "Team validation steps",
+        "Operational partnerships",
+        "Conflict of interest management",
+        "Team workload assessment",
+        "Independent data science shop",
+        "Industry knowledge application"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "validation_and_compliance_experience": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Oleg Romanov's experience as the creator of HawkEye Risk Solutions contribute to the team's ability to address the challenges in Payments and fraud prevention?",
+          "question_en_preview": "How does Oleg Romanov's experience as the creator of HawkEye Risk Solutions contribute to the team's ability to address the challenges in Payments and fraud prevention?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does the team possess in Payments and fraud prevention that differentiates them from competitors in the market?",
+          "question_en_preview": "What specific expertise does the team possess in Payments and fraud prevention that differentiates them from competitors in the market?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the identified risk regarding the team's formation and expertise, what steps can be taken to validate their capabilities in Payments and fraud prevention?",
+          "question_en_preview": "Given the identified risk regarding the team's formation and expertise, what steps can be taken to validate their capabilities in Payments and fraud prevention?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Does the current workload of the team allow sufficient time and resources to effectively execute the HawkEye Risk Solutions project? If not, what are the implications?",
+          "question_en_preview": "Does the current workload of the team allow sufficient time and resources to effectively execute the HawkEye Risk Solutions project? If not, what are the implications?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What existing partnerships or collaborations does the team have that could enhance their operational capacity in delivering HawkEye Risk Solutions?",
+          "question_en_preview": "What existing partnerships or collaborations does the team have that could enhance their operational capacity in delivering HawkEye Risk Solutions?"
+        }
+      ],
+      "elapsed_sec": 13.89,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 331,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "HawkEye Risk Solutions aims to develop an effective fraud detection tool to support business growth by protecting against fraud. The project has established a production-ready AI-driven platform and has achieved several milestones, including the completion of a proof of concept a ...",
+        "first_key_point_preview": "The overall goal is to build an effective fraud detection tool to help businesses grow.",
+        "first_risk_preview": "There is a challenge to retain backers as clients after the first month at full pricing.",
+        "first_mitigation_preview": "The HawkEye Platform is a payment fraud detection engine that delivers risk mitigating decisions in real-time."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.56,
+        "raw_chars": 3700,
+        "usage": {
+          "prompt_tokens": 3448,
+          "completion_tokens": 821,
+          "total_tokens": 4269
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "fraud detection tool",
+        "business growth objectives",
+        "milestones achieved",
+        "quantifiable success metrics",
+        "stakeholder impact",
+        "retention challenge",
+        "real-time risk decisions",
+        "proof of concept",
+        "platform launch timeline"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined is the overall goal of building an effective fraud detection tool, and are there any unrelated sub-goals that could dilute focus?",
+          "question_en_preview": "How clearly defined is the overall goal of building an effective fraud detection tool, and are there any unrelated sub-goals that could dilute focus?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the initiative align with the stated need for a fraud detection tool, and what evidence supports the urgency of this need?",
+          "question_en_preview": "To what extent does the initiative align with the stated need for a fraud detection tool, and what evidence supports the urgency of this need?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Are the milestones achieved, such as the proof of concept and platform launch, reasonable and indicative of a clear timeline for future development?",
+          "question_en_preview": "Are the milestones achieved, such as the proof of concept and platform launch, reasonable and indicative of a clear timeline for future development?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics are in place to evaluate the effectiveness of the fraud detection tool, and how do they align with business growth objectives?",
+          "question_en_preview": "What quantifiable success metrics are in place to evaluate the effectiveness of the fraud detection tool, and how do they align with business growth objectives?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the initiative create value and capture revenue through the fraud detection tool, and what is the expected impact on stakeholders?",
+          "question_en_preview": "How does the initiative create value and capture revenue through the fraud detection tool, and what is the expected impact on stakeholders?"
+        }
+      ],
+      "elapsed_sec": 15.56,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 327,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "HawkEye Risk Solutions aims to combat payment fraud through an AI-driven platform that delivers real-time risk mitigation decisions. The project focuses on utilizing advanced technologies, including a Deep Neural Network, to enhance fraud detection capabilities while maintaining  ...",
+        "first_key_point_preview": "HawkEye Risk Solutions utilizes Artificial Intelligence and Data Science to fight fraud.",
+        "first_risk_preview": "There is a challenge to retain backers as clients after the first month at full pricing.",
+        "first_mitigation_preview": "The project will employ developers and analysts to work from home, reducing office space and environmental footprint."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.71,
+        "raw_chars": 5138,
+        "usage": {
+          "prompt_tokens": 3531,
+          "completion_tokens": 1114,
+          "total_tokens": 4645
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "real-time risk mitigation",
+        "Deep Neural Network",
+        "client retention strategy",
+        "validation stages",
+        "environmentally conscious operations",
+        "quality compliance strategy",
+        "sustainability of revenue model",
+        "go-to-market strategy",
+        "operational model",
+        "pricing strategy"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 7,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 2,
+          "business_model_and_unit_economics": 2,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does HawkEye Risk Solutions plan to secure and retain clients after the initial month at full pricing, given the identified risk of client retention?",
+          "question_en_preview": "How does HawkEye Risk Solutions plan to secure and retain clients after the initial month at full pricing, given the identified risk of client retention?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What evidence supports the sustainability of the revenue model for HawkEye Risk Solutions, particularly in relation to the pricing strategy and client retention?",
+          "question_en_preview": "What evidence supports the sustainability of the revenue model for HawkEye Risk Solutions, particularly in relation to the pricing strategy and client retention?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the major trade-offs considered in the design of the AI-driven Fraud Detection platform, particularly regarding the use of a Deep Neural Network for real-time risk mitigation?",
+          "question_en_preview": "What are the major trade-offs considered in the design of the AI-driven Fraud Detection platform, particularly regarding the use of a Deep Neural Network for real-time risk mitigation?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation stages have been implemented for the HawkEye platform to ensure its effectiveness in real-world fraud detection scenarios?",
+          "question_en_preview": "What validation stages have been implemented for the HawkEye platform to ensure its effectiveness in real-world fraud detection scenarios?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does HawkEye Risk Solutions plan to scale its operations while maintaining an environmentally conscious operational model?",
+          "question_en_preview": "How does HawkEye Risk Solutions plan to scale its operations while maintaining an environmentally conscious operational model?"
+        }
+      ],
+      "elapsed_sec": 17.71,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 400,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The HawkEye Platform demonstrates innovation through its integration of multiple AI tools and decision layers, enhancing its ability to analyze transaction flows for fraud detection. It employs a state-of-the-art fraud detection framework that combines traditional and modern AI m ...",
+        "first_key_point_preview": "The HawkEye Platform utilizes Artificial Intelligence and Data Science to combat fraud.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.92,
+        "raw_chars": 4318,
+        "usage": {
+          "prompt_tokens": 3401,
+          "completion_tokens": 966,
+          "total_tokens": 4367
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "AI integration",
+        "fraud detection framework",
+        "Deep Neural Network",
+        "Autoencoder",
+        "transaction analysis",
+        "competitive advantage",
+        "intellectual property strategy",
+        "evidence of effectiveness",
+        "extension to other use cases",
+        "risk of obsolescence"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the HawkEye Platform's integration of AI tools and decision layers represent true novelty compared to existing fraud detection solutions?",
+          "question_en_preview": "How does the HawkEye Platform's integration of AI tools and decision layers represent true novelty compared to existing fraud detection solutions?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the HawkEye Platform offer over traditional fraud detection methods in terms of accuracy and efficiency?",
+          "question_en_preview": "What clear advantages does the HawkEye Platform offer over traditional fraud detection methods in terms of accuracy and efficiency?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What types of evidence support the effectiveness of the HawkEye Platform's fraud detection capabilities, and how robust is this evidence?",
+          "question_en_preview": "What types of evidence support the effectiveness of the HawkEye Platform's fraud detection capabilities, and how robust is this evidence?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the HawkEye Platform becoming obsolete or commoditized?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the HawkEye Platform becoming obsolete or commoditized?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How can the HawkEye Platform be extended to other use cases or customer segments beyond fraud detection, and what challenges might arise in doing so?",
+          "question_en_preview": "How can the HawkEye Platform be extended to other use cases or customer segments beyond fraud detection, and what challenges might arise in doing so?"
+        }
+      ],
+      "elapsed_sec": 12.92,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 364,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "HawkEye Risk Solutions has developed a production-ready AI-driven Fraud Detection platform, which is designed to combat payment fraud effectively. The project is based in Toronto, Canada, and has a defined budget of CA$26,934, with various expense categories outlined. The team is ...",
+        "first_key_point_preview": "HawkEye Risk Solutions has built a production-ready AI-driven Fraud Detection platform for payment providers.",
+        "first_risk_preview": "There is a challenge to retain backers as clients after the first month at full pricing.",
+        "first_mitigation_preview": "The team continuously monitors, audits, scales, and enhances the platform to address emerging fraud trends and technological developments."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.34,
+        "raw_chars": 4012,
+        "usage": {
+          "prompt_tokens": 3488,
+          "completion_tokens": 865,
+          "total_tokens": 4353
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "budget allocation",
+        "implementation timeline",
+        "customer acceptance",
+        "risk mitigation strategies",
+        "project tasks ownership",
+        "barriers to procurement",
+        "resource alignment",
+        "backer retention",
+        "evidence of demand",
+        "platform scalability"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 2,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the budget of CA$26,934 align with the projected expenses for the AI-driven Fraud Detection platform, and what evidence supports the reasonableness of this budget allocation?",
+          "question_en_preview": "How does the budget of CA$26,934 align with the projected expenses for the AI-driven Fraud Detection platform, and what evidence supports the reasonableness of this budget allocation?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for the implementation of the AI-driven Fraud Detection platform, and who are the designated owners responsible for these tasks?",
+          "question_en_preview": "What specific tasks and timelines are outlined for the implementation of the AI-driven Fraud Detection platform, and who are the designated owners responsible for these tasks?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What strategies are in place to mitigate the risk of losing backers after the first month at full pricing, and how effective are these strategies based on past experiences?",
+          "question_en_preview": "What strategies are in place to mitigate the risk of losing backers after the first month at full pricing, and how effective are these strategies based on past experiences?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to customer acceptance and procurement have been identified for the AI-driven Fraud Detection platform, and how does the team plan to address these barriers?",
+          "question_en_preview": "What potential barriers to customer acceptance and procurement have been identified for the AI-driven Fraud Detection platform, and how does the team plan to address these barriers?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How realistic is the expectation for customer acceptance of the AI-driven Fraud Detection platform, and what evidence supports this expectation?",
+          "question_en_preview": "How realistic is the expectation for customer acceptance of the AI-driven Fraud Detection platform, and what evidence supports this expectation?"
+        }
+      ],
+      "elapsed_sec": 19.34,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T17:12:37Z",
+  "elapsed_sec": 79.43,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt49__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt49__openai/generated_questions_detail.json"
+}

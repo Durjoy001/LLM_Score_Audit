@@ -1,0 +1,618 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt92__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt92__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 280,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team includes key members such as Jennifer Graham, Patrick Munroe-Smith, and Lindsay, who are involved in various projects with different funding statuses. A critical risk identified is the need for the right technical team to address potential technical difficulties.",
+        "first_key_point_preview": "Jennifer Graham created the Mobile FlashCards App for Exam Preparation.",
+        "first_risk_preview": "The project needs to have the right technical team in place to eliminate or reduce technical difficulties.",
+        "first_mitigation_preview": "The project needs to have the right technical team in place to eliminate or reduce technical difficulties."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.82,
+        "raw_chars": 4179,
+        "usage": {
+          "prompt_tokens": 3339,
+          "completion_tokens": 875,
+          "total_tokens": 4214
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Mobile FlashCards App",
+        "project funding status",
+        "technical team expertise",
+        "capacity for new projects",
+        "collaborative partnerships",
+        "validation experience",
+        "governance structures",
+        "conflict resolution",
+        "technical difficulties mitigation"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How do the previous projects led by Jennifer Graham, such as the Mobile FlashCards App for Exam Preparation, demonstrate her capability to lead this initiative effectively?",
+          "question_en_preview": "How do the previous projects led by Jennifer Graham, such as the Mobile FlashCards App for Exam Preparation, demonstrate her capability to lead this initiative effectively?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific technical skills or experiences does the team possess that will help mitigate the identified risk of needing the right technical team to address potential technical difficulties?",
+          "question_en_preview": "What specific technical skills or experiences does the team possess that will help mitigate the identified risk of needing the right technical team to address potential technical difficulties?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the current projects that Patrick Munroe-Smith and Lindsay are involved in, do you believe the team has sufficient capacity and bandwidth to commit to this project? Please explain your reasoning.",
+          "question_en_preview": "Considering the current projects that Patrick Munroe-Smith and Lindsay are involved in, do you believe the team has sufficient capacity and bandwidth to commit to this project? Please explain your reasoning."
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing collaborations or partnerships does the team have that could support the successful execution of this project, particularly in addressing technical difficulties?",
+          "question_en_preview": "What existing collaborations or partnerships does the team have that could support the successful execution of this project, particularly in addressing technical difficulties?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how would you rate the team's experience in managing validation and compliance processes relevant to this project? What evidence would increase your confidence in this rating?",
+          "question_en_preview": "On a scale of 1 to 5, how would you rate the team's experience in managing validation and compliance processes relevant to this project? What evidence would increase your confidence in this rating?"
+        }
+      ],
+      "elapsed_sec": 12.82,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 401,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a Mobile FlashCards App for Exam Preparation, targeting certification exams in various fields such as ITIL, CISSP, and PMP. It plans to offer the app on both Android and iPhone platforms, with multiple packages for different exams and flashcard counts. ...",
+        "first_key_point_preview": "The app is designed for certification exams in ITIL, CISSP, PMP, PMO, OCM, and CBAP.",
+        "first_risk_preview": "Insufficient funding could halt the project.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.64,
+        "raw_chars": 4603,
+        "usage": {
+          "prompt_tokens": 3430,
+          "completion_tokens": 962,
+          "total_tokens": 4392
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "student engagement metrics",
+        "milestone feasibility assessment",
+        "success metrics definition",
+        "market competition analysis",
+        "licensing revenue model",
+        "scope definition clarity",
+        "user feedback integration",
+        "certification exam trends",
+        "development timeline assessment"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the project's objective of developing a Mobile FlashCards App for certification exams align with the identified needs of students preparing for ITIL, CISSP, and PMP exams? Please discuss any gaps in this al ...",
+          "question_en_preview": "How well does the project's objective of developing a Mobile FlashCards App for certification exams align with the identified needs of students preparing for ITIL, CISSP, and PMP exams? Please discuss any gaps in this al ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the proposed milestones for the Mobile FlashCards App development, and how realistic are they given the project's scope and objectives? Please evaluate the feasibility of achieving these milestones within the st ...",
+          "question_en_preview": "What are the proposed milestones for the Mobile FlashCards App development, and how realistic are they given the project's scope and objectives? Please evaluate the feasibility of achieving these milestones within the st ..."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific success metrics will the project use to measure the effectiveness of the Mobile FlashCards App in meeting the needs of its users? How will these metrics inform future development and marketing strategies?",
+          "question_en_preview": "What specific success metrics will the project use to measure the effectiveness of the Mobile FlashCards App in meeting the needs of its users? How will these metrics inform future development and marketing strategies?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic are the project's objectives for the Mobile FlashCards App, considering the current market conditions and competition in the certification exam preparation space? What evidence would i ...",
+          "question_en_preview": "On a scale of 1 to 5, how realistic are the project's objectives for the Mobile FlashCards App, considering the current market conditions and competition in the certification exam preparation space? What evidence would i ..."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project plan to create value and capture revenue through the Mobile FlashCards App? Please evaluate the business logic behind the proposed licensing model to training providers.",
+          "question_en_preview": "How does the project plan to create value and capture revenue through the Mobile FlashCards App? Please evaluate the business logic behind the proposed licensing model to training providers."
+        }
+      ],
+      "elapsed_sec": 14.65,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 436,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to establish a market presence by offering a unique app that can be sold through various pricing models, including one-time downloads and subscriptions. It plans to expand its offerings by adding more certifications as the market grows, while also intending to li ...",
+        "first_key_point_preview": "The project plans to add more certifications as the market grows.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.73,
+        "raw_chars": 4806,
+        "usage": {
+          "prompt_tokens": 3491,
+          "completion_tokens": 1016,
+          "total_tokens": 4507
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "market positioning strategy",
+        "revenue model validation",
+        "customer validation milestones",
+        "partnership collaborations",
+        "scaling strategy",
+        "quality compliance standards",
+        "funding strategies",
+        "licensing agreements",
+        "subscription pricing models",
+        "certification expansion plans"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "development_and_validation_path": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "solution_delivery_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to position its app in the market, considering its unique offerings and the absence of similar products? Please discuss the pricing models and market entry strategy.",
+          "question_en_preview": "How does the project plan to position its app in the market, considering its unique offerings and the absence of similar products? Please discuss the pricing models and market entry strategy."
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how realistic is the project's revenue model, considering the one-time download and subscription options? What evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1-5, how realistic is the project's revenue model, considering the one-time download and subscription options? What evidence would increase your confidence in this assessment?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps does the project plan to undertake to ensure the app meets market needs and customer expectations? Are there any identified milestones for this process?",
+          "question_en_preview": "What validation steps does the project plan to undertake to ensure the app meets market needs and customer expectations? Are there any identified milestones for this process?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the intention to license content to other training providers, what partnerships or collaborations does the project foresee as critical for its success?",
+          "question_en_preview": "Given the intention to license content to other training providers, what partnerships or collaborations does the project foresee as critical for its success?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "If the proposal does not provide sufficient details on how the project plans to scale its offerings as the market grows, please state this information gap and discuss its potential impact on the project's success.",
+          "question_en_preview": "If the proposal does not provide sufficient details on how the project plans to scale its offerings as the market grows, please state this information gap and discuss its potential impact on the project's success."
+        }
+      ],
+      "elapsed_sec": 16.73,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 6,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 124,
+        "key_points_count": 0,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The proposal contains limited explicit information about the innovation dimension, so a detailed summary cannot be produced.",
+        "first_key_point_preview": "<none>",
+        "first_risk_preview": "The proposal provides limited detail for the innovation dimension, which may affect evaluation quality.",
+        "first_mitigation_preview": "The proposal does not specify how to address or mitigate this information gap."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.25,
+        "raw_chars": 4237,
+        "usage": {
+          "prompt_tokens": 3154,
+          "completion_tokens": 900,
+          "total_tokens": 4054
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "innovation evidence",
+        "competitive advantage validation",
+        "intellectual property strategy",
+        "extensibility barriers",
+        "obsolescence risk factors",
+        "state of the art comparison"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "risk_of_obsolescence_or_commoditization": 1,
+          "evidence_strength_for_innovation": 1,
+          "platform_and_extensibility": 1,
+          "differentiation_and_competitive_edge": 1,
+          "ip_and_protection": 1,
+          "novelty_vs_state_of_art": 1
+        },
+        "linked_to_key_points": 0,
+        "linked_to_risks": 6,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited detail provided in the proposal regarding the innovation dimension, what specific risks do you foresee that could lead to obsolescence or commoditization of the offering within the next 3-5 years?",
+          "question_en_preview": "Given the limited detail provided in the proposal regarding the innovation dimension, what specific risks do you foresee that could lead to obsolescence or commoditization of the offering within the next 3-5 years?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What evidence or data would strengthen the proposal's claims about its innovation? Please identify any gaps in the current evidence that could impact the evaluation of the innovation's effectiveness.",
+          "question_en_preview": "What evidence or data would strengthen the proposal's claims about its innovation? Please identify any gaps in the current evidence that could impact the evaluation of the innovation's effectiveness."
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the current lack of detail in the proposal, how might the innovation be extended to other customer segments or use cases? What are the potential barriers to achieving this extensibility?",
+          "question_en_preview": "Considering the current lack of detail in the proposal, how might the innovation be extended to other customer segments or use cases? What are the potential barriers to achieving this extensibility?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What competitive advantages does the proposal claim to have, and how can these be validated given the limited information provided? What additional information would help assess these claims?",
+          "question_en_preview": "What competitive advantages does the proposal claim to have, and how can these be validated given the limited information provided? What additional information would help assess these claims?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What strategies for intellectual property protection are currently outlined in the proposal, and how sufficient are these strategies to support long-term competitive advantage? What additional measures could be considere ...",
+          "question_en_preview": "What strategies for intellectual property protection are currently outlined in the proposal, and how sufficient are these strategies to support long-term competitive advantage? What additional measures could be considere ..."
+        }
+      ],
+      "elapsed_sec": 10.25,
+      "final_question_count": 6
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 317,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is challenged by potential delays in app development and the need for strong testing to minimize bugs. Additionally, the project requires a capable technical team to address technical difficulties and ensure it can meet demand. Insufficient funding  ...",
+        "first_key_point_preview": "The project faces risks related to having the right technical team to address technical difficulties.",
+        "first_risk_preview": "The project faces risks related to having the right technical team to address technical difficulties.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.64,
+        "raw_chars": 3778,
+        "usage": {
+          "prompt_tokens": 3413,
+          "completion_tokens": 817,
+          "total_tokens": 4230
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "technical team capabilities",
+        "app development timeline",
+        "funding sufficiency",
+        "implementation barriers",
+        "customer acceptance evidence",
+        "milestone tracking",
+        "risk mitigation strategies",
+        "testing protocols",
+        "demand validation",
+        "resource allocation"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "risk_management": 1,
+          "operational_execution_plan": 1,
+          "funding_and_budget_planning": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies does the project have in place to ensure the technical team can effectively address potential technical difficulties?",
+          "question_en_preview": "What specific strategies does the project have in place to ensure the technical team can effectively address potential technical difficulties?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to manage potential delays in app development, and what are the key milestones to ensure timely delivery?",
+          "question_en_preview": "How does the project plan to manage potential delays in app development, and what are the key milestones to ensure timely delivery?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how sufficient is the current funding for the project to ensure its continuation, and what evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1-5, how sufficient is the current funding for the project to ensure its continuation, and what evidence would increase your confidence in this assessment?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation in real production settings does the project anticipate, and how does it plan to overcome them?",
+          "question_en_preview": "What barriers to implementation in real production settings does the project anticipate, and how does it plan to overcome them?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "If the proposal does not provide sufficient details on the timeline for app development, please first state this information gap and then discuss its impact on the project's feasibility.",
+          "question_en_preview": "If the proposal does not provide sufficient details on the timeline for app development, please first state this information gap and then discuss its impact on the project's feasibility."
+        }
+      ],
+      "elapsed_sec": 9.64,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T21:20:04Z",
+  "elapsed_sec": 64.09,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt92__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt92__openai/generated_questions_detail.json"
+}

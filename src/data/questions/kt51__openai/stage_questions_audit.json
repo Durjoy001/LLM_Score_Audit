@@ -1,0 +1,621 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt51__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt51__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 376,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project TeamMates is led by Arman Jassani and supported by a diverse team of coaches, volunteers, and parents, all of whom have significant experience in sports management. The team has over 8 years of coaching experience and is actively involved in the development and review ...",
+        "first_key_point_preview": "The project is led by Arman Jassani.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 21.66,
+        "raw_chars": 3977,
+        "usage": {
+          "prompt_tokens": 3372,
+          "completion_tokens": 852,
+          "total_tokens": 4224
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "coaching experience",
+        "sports management expertise",
+        "project governance",
+        "team capacity assessment",
+        "validation experience",
+        "collaboration network stability",
+        "decision-making processes",
+        "promotional material development",
+        "app feature alignment"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Arman Jassani's experience as the head coach of a competitive youth travel team for the last 8 years position him to lead the TeamMates project effectively?",
+          "question_en_preview": "How does Arman Jassani's experience as the head coach of a competitive youth travel team for the last 8 years position him to lead the TeamMates project effectively?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does the team possess in sports management that enhances their ability to develop and review promotional materials and app features for TeamMates?",
+          "question_en_preview": "What specific expertise does the team possess in sports management that enhances their ability to develop and review promotional materials and app features for TeamMates?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Considering the team's involvement in multiple aspects of the TeamMates project, do they have sufficient capacity and bandwidth to manage their current workload effectively?",
+          "question_en_preview": "Considering the team's involvement in multiple aspects of the TeamMates project, do they have sufficient capacity and bandwidth to manage their current workload effectively?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance in the context of developing the TeamMates app, and how does this impact their ability to ensure quality and alignment with objectives?",
+          "question_en_preview": "What experience does the team have with validation and compliance in the context of developing the TeamMates app, and how does this impact their ability to ensure quality and alignment with objectives?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, how might the lack of specified governance and decision-making processes affect the project's execution and stability?",
+          "question_en_preview": "Given the limited risk information provided, how might the lack of specified governance and decision-making processes affect the project's execution and stability?"
+        }
+      ],
+      "elapsed_sec": 21.66,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 374,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The TeamMates project aims to enhance team management and communication through the development of a mobile app and web platform. Key objectives include launching a registration and admin dashboard, adding premium features, and providing onboarding for early users, with a focus o ...",
+        "first_key_point_preview": "The project aims to finalize the TeamMates mobile app and web platform.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The project TeamMates was started to improve team management and communication."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.87,
+        "raw_chars": 4370,
+        "usage": {
+          "prompt_tokens": 3426,
+          "completion_tokens": 956,
+          "total_tokens": 4382
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "registration and admin dashboard",
+        "premium features",
+        "onboarding for early users",
+        "team management and communication",
+        "expansion across sports",
+        "quantifiable success metrics",
+        "business logic",
+        "milestones and timeline",
+        "alignment with unmet needs"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused are the overall goals of the TeamMates project, particularly in relation to its key objectives of enhancing team management and communication through a mobile app and web platform?",
+          "question_en_preview": "How clear and focused are the overall goals of the TeamMates project, particularly in relation to its key objectives of enhancing team management and communication through a mobile app and web platform?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the objectives of the TeamMates project align with the stated unmet needs of team management and communication in the context of hockey in Canada? Please discuss any gaps in this alignment.",
+          "question_en_preview": "To what extent do the objectives of the TeamMates project align with the stated unmet needs of team management and communication in the context of hockey in Canada? Please discuss any gaps in this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed milestones for the TeamMates project, particularly the launch of the registration and admin dashboard and the addition of premium features.",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed milestones for the TeamMates project, particularly the launch of the registration and admin dashboard and the addition of premium features."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear and quantifiable success metrics are included in the objectives of the TeamMates project, and how do these metrics align with the overall goals of enhancing team management and communication?",
+          "question_en_preview": "What clear and quantifiable success metrics are included in the objectives of the TeamMates project, and how do these metrics align with the overall goals of enhancing team management and communication?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the TeamMates project articulate its business or impact logic in terms of creating value and capturing revenue or funding through its objectives?",
+          "question_en_preview": "How does the TeamMates project articulate its business or impact logic in terms of creating value and capturing revenue or funding through its objectives?"
+        }
+      ],
+      "elapsed_sec": 13.87,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 465,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy for the TeamMates project focuses on developing an all-in-one platform for sports teams, incorporating features such as scheduling, communication, and payments. The project aims to finalize its mobile app and web platform, launch a registration dashboard, and introdu ...",
+        "first_key_point_preview": "TeamMates is an all-in-one platform for sports teams, including features for scheduling, communication, registration, and payments.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Kickstarter funds will go directly toward hiring extra support and optimizing systems for performance and stability."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 35.75,
+        "raw_chars": 4766,
+        "usage": {
+          "prompt_tokens": 3559,
+          "completion_tokens": 1041,
+          "total_tokens": 4600
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "market positioning strategy",
+        "premium feature revenue model",
+        "development milestones",
+        "solution delivery trade-offs",
+        "quality compliance measures",
+        "scaling challenges post-launch",
+        "Kickstarter funding allocation",
+        "user data security strategy",
+        "real-time chat functionality",
+        "scheduling optimization features"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 2,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 2
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the TeamMates project plan to position itself in the market against existing platforms, and what evidence supports the anticipated demand for its features such as scheduling and communication?",
+          "question_en_preview": "How does the TeamMates project plan to position itself in the market against existing platforms, and what evidence supports the anticipated demand for its features such as scheduling and communication?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the revenue model for the TeamMates platform, and how do the proposed premium features contribute to the overall financial sustainability of the project?",
+          "question_en_preview": "What is the revenue model for the TeamMates platform, and how do the proposed premium features contribute to the overall financial sustainability of the project?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the key milestones in the development and validation path for the TeamMates platform, and how does the team plan to ensure readiness for the 1.0 release?",
+          "question_en_preview": "What are the key milestones in the development and validation path for the TeamMates platform, and how does the team plan to ensure readiness for the 1.0 release?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternatives were considered for the solution delivery strategy of the TeamMates platform, and what major trade-offs were made in selecting the current approach?",
+          "question_en_preview": "What alternatives were considered for the solution delivery strategy of the TeamMates platform, and what major trade-offs were made in selecting the current approach?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the TeamMates project plan to address quality and compliance issues as it develops its platform, particularly concerning user data and payment processing?",
+          "question_en_preview": "How does the TeamMates project plan to address quality and compliance issues as it develops its platform, particularly concerning user data and payment processing?"
+        }
+      ],
+      "elapsed_sec": 35.75,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 488,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project demonstrates innovation through the use of AI-generated content in promotional materials, enhancing the marketing strategy for TeamMates. While the app's core functionality and design are developed by human teams, the integration of AI tools for drafting promotional c ...",
+        "first_key_point_preview": "AI-generated content is utilized in promotional materials for TeamMates, including written copy drafted with AI tools.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.18,
+        "raw_chars": 3925,
+        "usage": {
+          "prompt_tokens": 3430,
+          "completion_tokens": 843,
+          "total_tokens": 4273
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "AI-generated content effectiveness",
+        "marketing strategy innovation",
+        "competitive advantages of AI",
+        "risk of commoditization",
+        "intellectual property protection",
+        "customer segment extension",
+        "premium features introduction",
+        "sustainable practices alignment"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the use of AI-generated content in promotional materials for TeamMates represent a true novelty compared to existing marketing strategies in the industry?",
+          "question_en_preview": "How does the use of AI-generated content in promotional materials for TeamMates represent a true novelty compared to existing marketing strategies in the industry?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the integration of AI tools for drafting promotional content provide TeamMates over traditional marketing approaches?",
+          "question_en_preview": "What clear advantages does the integration of AI tools for drafting promotional content provide TeamMates over traditional marketing approaches?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of AI-generated content in enhancing the marketing strategy for TeamMates, and how does this evidence compare to traditional methods?",
+          "question_en_preview": "What evidence supports the effectiveness of AI-generated content in enhancing the marketing strategy for TeamMates, and how does this evidence compare to traditional methods?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the obsolescence or commoditization of the AI-generated content approach within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the obsolescence or commoditization of the AI-generated content approach within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How might the innovation of using AI-generated content extend to other customer segments or use cases beyond promotional materials for TeamMates?",
+          "question_en_preview": "How might the innovation of using AI-generated content extend to other customer segments or use cases beyond promotional materials for TeamMates?"
+        }
+      ],
+      "elapsed_sec": 14.18,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 300,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the TeamMates project is supported by a solid budget and existing infrastructure, but it faces several risks including development delays and unexpected bugs. The project is currently funded and aims to cover essential costs while employing a subscription model ...",
+        "first_key_point_preview": "The project budget is $7,061, aimed at covering early hosting, development, and support costs.",
+        "first_risk_preview": "Development delays are a key challenge due to building for both mobile and web, along with unexpected bugs or testing issues that could delay the timeline.",
+        "first_mitigation_preview": "Kickstarter funds will go directly toward hiring extra support and optimizing systems for performance and stability."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 18.01,
+        "raw_chars": 4150,
+        "usage": {
+          "prompt_tokens": 3480,
+          "completion_tokens": 882,
+          "total_tokens": 4362
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "budget sufficiency analysis",
+        "cloud infrastructure features",
+        "development delay strategies",
+        "risk mitigation effectiveness",
+        "customer acceptance evidence",
+        "resource alignment assessment",
+        "subscription model feasibility",
+        "operational execution clarity",
+        "funding campaign status",
+        "performance optimization plans"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "resources_and_infrastructure": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the current budget of $7,061 align with the projected costs for hosting, development, and support? What evidence supports the sufficiency of this budget for the project's early stages?",
+          "question_en_preview": "How does the current budget of $7,061 align with the projected costs for hosting, development, and support? What evidence supports the sufficiency of this budget for the project's early stages?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific features of the scalable cloud infrastructure support the operational needs of TeamMates, and how do they mitigate potential risks associated with development delays?",
+          "question_en_preview": "What specific features of the scalable cloud infrastructure support the operational needs of TeamMates, and how do they mitigate potential risks associated with development delays?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the development delays mentioned, what is the detailed implementation plan for addressing these delays, and who is responsible for each key task?",
+          "question_en_preview": "Given the development delays mentioned, what is the detailed implementation plan for addressing these delays, and who is responsible for each key task?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific strategies are in place to manage the risk of development delays and unexpected bugs, and how effective are the proposed mitigations in addressing these risks?",
+          "question_en_preview": "What specific strategies are in place to manage the risk of development delays and unexpected bugs, and how effective are the proposed mitigations in addressing these risks?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What evidence exists to support the feasibility of customer acceptance and payment for the subscription model, especially in light of the current funding status?",
+          "question_en_preview": "What evidence exists to support the feasibility of customer acceptance and payment for the subscription model, especially in light of the current funding status?"
+        }
+      ],
+      "elapsed_sec": 18.01,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T20:09:15Z",
+  "elapsed_sec": 103.49,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt51__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt51__openai/generated_questions_detail.json"
+}

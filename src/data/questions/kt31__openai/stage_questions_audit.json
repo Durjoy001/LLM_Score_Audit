@@ -1,0 +1,623 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt31__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt31__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 332,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team behind Refutal expresses frustration with the current state of social media and technology, indicating a strong motivation to address perceived issues in online discussions. They believe that platforms like Facebook, Twitter, and Discord have altered the dynamics ...",
+        "first_key_point_preview": "The project team is frustrated with current social media and technology.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.59,
+        "raw_chars": 3998,
+        "usage": {
+          "prompt_tokens": 3286,
+          "completion_tokens": 823,
+          "total_tokens": 4109
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "leadership experience",
+        "domain expertise",
+        "social media challenges",
+        "team capacity",
+        "validation experience",
+        "collaboration partnerships",
+        "governance structure",
+        "decision-making process"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the leadership experience of the project team align with their motivation to address issues in online discussions, as indicated by their frustration with current social media platforms?",
+          "question_en_preview": "How does the leadership experience of the project team align with their motivation to address issues in online discussions, as indicated by their frustration with current social media platforms?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that enables them to effectively tackle the challenges posed by platforms like Facebook, Twitter, and Discord?",
+          "question_en_preview": "What specific domain expertise does the team possess that enables them to effectively tackle the challenges posed by platforms like Facebook, Twitter, and Discord?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the team's current workload and potential parallel projects, do they have sufficient capacity to address the challenges associated with their project focus on social media dynamics?",
+          "question_en_preview": "Given the team's current workload and potential parallel projects, do they have sufficient capacity to address the challenges associated with their project focus on social media dynamics?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance in the context of social media technologies, and how might this impact their ability to execute the project?",
+          "question_en_preview": "What experience does the team have with validation and compliance in the context of social media technologies, and how might this impact their ability to execute the project?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What existing collaborations or partnerships does the team have that could enhance their ability to address the issues they perceive in current social media platforms?",
+          "question_en_preview": "What existing collaborations or partnerships does the team have that could enhance their ability to address the issues they perceive in current social media platforms?"
+        }
+      ],
+      "elapsed_sec": 15.59,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 344,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Refutal is a free political debate and discussion platform that aims to change the paradigm of free speech in political debate. The project seeks to provide a space for users to express their opinions, regardless of their controversial nature, and includes features such as politi ...",
+        "first_key_point_preview": "Refutal describes its product as a chat program.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.66,
+        "raw_chars": 3734,
+        "usage": {
+          "prompt_tokens": 3438,
+          "completion_tokens": 838,
+          "total_tokens": 4276
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "political debate platform",
+        "user expression",
+        "controversial opinions",
+        "success metrics",
+        "revenue capture",
+        "milestones timeline",
+        "value creation",
+        "user engagement",
+        "AI-moderation features"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 2,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly does Refutal articulate its overall goal of changing the paradigm of free speech in political debate? Are there any unrelated sub-goals that could dilute this focus?",
+          "question_en_preview": "How clearly does Refutal articulate its overall goal of changing the paradigm of free speech in political debate? Are there any unrelated sub-goals that could dilute this focus?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the proposal align with the stated unmet need for a platform that allows users to express controversial opinions? What evidence supports this alignment?",
+          "question_en_preview": "To what extent does the proposal align with the stated unmet need for a platform that allows users to express controversial opinions? What evidence supports this alignment?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the development and launch of Refutal, and how realistic are these timelines given the current stage of the project?",
+          "question_en_preview": "What are the proposed milestones for the development and launch of Refutal, and how realistic are these timelines given the current stage of the project?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What specific success metrics does Refutal plan to use to evaluate the effectiveness of its platform? How quantifiable are these metrics?",
+          "question_en_preview": "What specific success metrics does Refutal plan to use to evaluate the effectiveness of its platform? How quantifiable are these metrics?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Refutal intend to create value and capture revenue through its platform? What assumptions underlie this business logic?",
+          "question_en_preview": "How does Refutal intend to create value and capture revenue through its platform? What assumptions underlie this business logic?"
+        }
+      ],
+      "elapsed_sec": 14.66,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 371,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Refutal aims to develop a chat program that allows users to participate in debates and manage guilds, with a focus on modern design and user-friendly features. The project includes plans for a beta version featuring political profiling and AI-moderation bots, with a funding goal  ...",
+        "first_key_point_preview": "Refutal allows users to participate in debates for free and manage guilds of up to 30 members.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.05,
+        "raw_chars": 4875,
+        "usage": {
+          "prompt_tokens": 3556,
+          "completion_tokens": 1043,
+          "total_tokens": 4599
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user adoption strategy",
+        "beta version milestones",
+        "pricing strategy assumptions",
+        "solution design trade-offs",
+        "risk mitigation strategies",
+        "compliance measures for AI",
+        "partnership opportunities",
+        "guild management features",
+        "political profiling implementation",
+        "funding goal impact"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 3
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "solution_delivery_strategy": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Refutal plan to secure user adoption and sustain revenue through its guild management and debate participation features, especially considering its previous funding goal was not met?",
+          "question_en_preview": "How does Refutal plan to secure user adoption and sustain revenue through its guild management and debate participation features, especially considering its previous funding goal was not met?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific milestones does Refutal have in place to validate the beta version of its chat program by the end of December, and how will these milestones ensure the product's readiness for user engagement?",
+          "question_en_preview": "What specific milestones does Refutal have in place to validate the beta version of its chat program by the end of December, and how will these milestones ensure the product's readiness for user engagement?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that users can upgrade their guild's member base for a low monthly rate, what assumptions underlie the pricing strategy, and how does this impact the project's overall financial viability?",
+          "question_en_preview": "Given that users can upgrade their guild's member base for a low monthly rate, what assumptions underlie the pricing strategy, and how does this impact the project's overall financial viability?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternatives were considered in the design of Refutal's chat program, and what trade-offs were made in choosing the current solution route focused on modern design and user-friendly features?",
+          "question_en_preview": "What alternatives were considered in the design of Refutal's chat program, and what trade-offs were made in choosing the current solution route focused on modern design and user-friendly features?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "Considering the limited risk information provided, what potential risks does Refutal face in scaling its user base and how might these risks affect its long-term strategy?",
+          "question_en_preview": "Considering the limited risk information provided, what potential risks does Refutal face in scaling its user base and how might these risks affect its long-term strategy?"
+        }
+      ],
+      "elapsed_sec": 17.05,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 239,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to innovate by developing a beta version of a client that incorporates features like political profiling and custom AI-moderation bots. This approach is designed to enhance user engagement and provide tailored experiences.",
+        "first_key_point_preview": "The beta version will include political profiling features.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.48,
+        "raw_chars": 3805,
+        "usage": {
+          "prompt_tokens": 3332,
+          "completion_tokens": 834,
+          "total_tokens": 4166
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "political profiling feature",
+        "custom AI-moderation bots",
+        "user engagement metrics",
+        "competitive advantages",
+        "intellectual property strategy",
+        "risk of obsolescence",
+        "evidence of effectiveness",
+        "market differentiation",
+        "extensibility to other segments"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the political profiling feature in the beta version differentiate it from existing solutions in the market?",
+          "question_en_preview": "How does the political profiling feature in the beta version differentiate it from existing solutions in the market?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages do the custom AI-moderation bots provide over traditional moderation methods, and how do these advantages enhance user engagement?",
+          "question_en_preview": "What specific advantages do the custom AI-moderation bots provide over traditional moderation methods, and how do these advantages enhance user engagement?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the political profiling and AI-moderation features in enhancing user engagement, and how was this evidence gathered?",
+          "question_en_preview": "What evidence supports the effectiveness of the political profiling and AI-moderation features in enhancing user engagement, and how was this evidence gathered?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of the proposed features within 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence of the proposed features within 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property associated with the political profiling and AI-moderation features, and how do these strategies support long-term competitiveness?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property associated with the political profiling and AI-moderation features, and how do these strategies support long-term competitiveness?"
+        }
+      ],
+      "elapsed_sec": 12.48,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 298,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Refutal project is influenced by its funding challenges and the timeline for launching its beta client. The project aims to create a chat program with specific features, but it has not met its funding goal, which raises concerns about its resource base and  ...",
+        "first_key_point_preview": "Refutal is based in Toronto, Canada.",
+        "first_risk_preview": "Refutal claims there aren't many risks associated with the chat program.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 18.24,
+        "raw_chars": 4454,
+        "usage": {
+          "prompt_tokens": 3457,
+          "completion_tokens": 1014,
+          "total_tokens": 4471
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding goal",
+        "beta version timeline",
+        "customer acceptance",
+        "resource allocation",
+        "implementation barriers",
+        "risk assessment",
+        "project sustainability",
+        "feature adoption",
+        "operational tasks",
+        "financial viability"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 2,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that Refutal was unable to meet its funding goal of US$ 2,000 by November 15, 2019, how does this impact the project's long-term financial sustainability and resource allocation?",
+          "question_en_preview": "Given that Refutal was unable to meet its funding goal of US$ 2,000 by November 15, 2019, how does this impact the project's long-term financial sustainability and resource allocation?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for the development of the beta version of the client, and how do these align with the overall project goals?",
+          "question_en_preview": "What specific tasks and timelines are outlined for the development of the beta version of the client, and how do these align with the overall project goals?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Refutal claims there aren't many risks associated with the chat program. How credible is this assertion, and what potential risks could arise during implementation?",
+          "question_en_preview": "Refutal claims there aren't many risks associated with the chat program. How credible is this assertion, and what potential risks could arise during implementation?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation might Refutal face in real production settings, particularly regarding customer acceptance of the chat program's features?",
+          "question_en_preview": "What barriers to implementation might Refutal face in real production settings, particularly regarding customer acceptance of the chat program's features?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the timeline for launching the beta client align with the resources currently available to Refutal, and what gaps exist that could hinder progress?",
+          "question_en_preview": "How does the timeline for launching the beta client align with the resources currently available to Refutal, and what gaps exist that could hinder progress?"
+        }
+      ],
+      "elapsed_sec": 18.24,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T19:22:46Z",
+  "elapsed_sec": 78.03,
+  "total_questions": 38,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt31__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt31__openai/generated_questions_detail.json"
+}

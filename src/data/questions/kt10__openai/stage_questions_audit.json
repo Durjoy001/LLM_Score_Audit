@@ -1,0 +1,617 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt10__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt10__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 373,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team behind the project is led by Nauman Jaffar, the founder of LocateMotion, who has personal motivation stemming from his experience as a caregiver. The team comprises members with diverse expertise in management consulting, Big Data, AI, and IoT, and includes notable figur ...",
+        "first_key_point_preview": "Nauman Jaffar is the founder and creator of the project, motivated by personal experiences.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.56,
+        "raw_chars": 4095,
+        "usage": {
+          "prompt_tokens": 3387,
+          "completion_tokens": 878,
+          "total_tokens": 4265
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "leadership experience",
+        "strategic collaborations",
+        "domain expertise",
+        "project oversight",
+        "team capacity",
+        "validation experience",
+        "conflict of interest",
+        "partnership development",
+        "caregiver motivation"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "team_capacity_and_bandwidth": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Nauman Jaffar's personal motivation as a caregiver influence the project's direction and execution? Please provide specific examples of his leadership experience that support this.",
+          "question_en_preview": "How does Nauman Jaffar's personal motivation as a caregiver influence the project's direction and execution? Please provide specific examples of his leadership experience that support this."
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise do the team members in management consulting, Big Data, AI, and IoT bring to the project, and how does this expertise enhance the project's credibility and capability?",
+          "question_en_preview": "What specific expertise do the team members in management consulting, Big Data, AI, and IoT bring to the project, and how does this expertise enhance the project's credibility and capability?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does Oren Chervinsky's role as the Partnership Development Guru contribute to the project's strategic collaborations, and what specific partnerships have been established or are in progress?",
+          "question_en_preview": "How does Oren Chervinsky's role as the Partnership Development Guru contribute to the project's strategic collaborations, and what specific partnerships have been established or are in progress?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the team's experience with validation and compliance in this project, and how might these risks impact execution?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the team's experience with validation and compliance in this project, and how might these risks impact execution?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how would you rate the team's current workload and capacity to take on this project? Please provide evidence that would justify a higher score.",
+          "question_en_preview": "On a scale of 1 to 5, how would you rate the team's current workload and capacity to take on this project? Please provide evidence that would justify a higher score."
+        }
+      ],
+      "elapsed_sec": 11.57,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 352,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to provide an affordable all-in-one solution called 'Stay Together' for caregivers of individuals prone to wandering, such as those with Alzheimer's, Dementia, or Autism. It focuses on maintaining constant communication and support for these individuals, with pla ...",
+        "first_key_point_preview": "The project addresses a common issue faced by caregivers globally.",
+        "first_risk_preview": "The project addresses a common issue faced by caregivers globally.",
+        "first_mitigation_preview": "LocateMotion addresses the need for a way to stay connected with individuals who may wander off."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.31,
+        "raw_chars": 4104,
+        "usage": {
+          "prompt_tokens": 3424,
+          "completion_tokens": 898,
+          "total_tokens": 4322
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "caregiver needs assessment",
+        "user feedback incorporation",
+        "milestone feasibility",
+        "quantifiable success metrics",
+        "value creation logic",
+        "global expansion strategy",
+        "impact measurement framework",
+        "user-friendly design",
+        "proactive health monitoring"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How effectively does the project align its objectives with the urgent needs of caregivers dealing with individuals prone to wandering, such as those with Alzheimer's, Dementia, or Autism? Please discuss any evidence of t ...",
+          "question_en_preview": "How effectively does the project align its objectives with the urgent needs of caregivers dealing with individuals prone to wandering, such as those with Alzheimer's, Dementia, or Autism? Please discuss any evidence of t ..."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how clear and focused are the overall goals of the project, particularly in relation to the needs of caregivers? What specific evidence supports your rating?",
+          "question_en_preview": "On a scale of 1 to 5, how clear and focused are the overall goals of the project, particularly in relation to the needs of caregivers? What specific evidence supports your rating?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the project, and how reasonable and executable are they given the current objectives? Please provide an analysis of the timeline.",
+          "question_en_preview": "What are the proposed milestones for the project, and how reasonable and executable are they given the current objectives? Please provide an analysis of the timeline."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics does the project include to measure its impact on caregivers and individuals prone to wandering? If the proposal lacks specific metrics, please identify this gap and discuss its implicat ...",
+          "question_en_preview": "What quantifiable success metrics does the project include to measure its impact on caregivers and individuals prone to wandering? If the proposal lacks specific metrics, please identify this gap and discuss its implicat ..."
+        }
+      ],
+      "elapsed_sec": 10.31,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 465,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy for the LocateMotion project focuses on developing an all-in-one, user-friendly health monitoring solution that is affordable and accessible. The project aims to leverage crowdfunding through Kickstarter to support its development and plans to launch a minimum viable ...",
+        "first_key_point_preview": "The project utilizes crowdfunding through Kickstarter to support its development.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The funding raised at Kickstarter will be used to test the trial prototype with actual deserving patients and caregivers to solicit feedback and improvements."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.91,
+        "raw_chars": 3951,
+        "usage": {
+          "prompt_tokens": 3540,
+          "completion_tokens": 850,
+          "total_tokens": 4390
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter crowdfunding strategy",
+        "user-friendly health monitoring",
+        "GPS-enabled smartwatch",
+        "trial prototype validation",
+        "global scaling challenges",
+        "partnership evaluation criteria"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the crowdfunding strategy through Kickstarter align with the overall market entry plan for the LocateMotion project, and what evidence supports its effectiveness?",
+          "question_en_preview": "How does the crowdfunding strategy through Kickstarter align with the overall market entry plan for the LocateMotion project, and what evidence supports its effectiveness?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the design of the GPS-enabled smartwatch and app, and how do these trade-offs impact the solution's usability and affordability?",
+          "question_en_preview": "What are the major trade-offs considered in the design of the GPS-enabled smartwatch and app, and how do these trade-offs impact the solution's usability and affordability?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific steps will be taken to validate the trial prototype with actual patients and caregivers, and how will feedback be integrated into the development process?",
+          "question_en_preview": "What specific steps will be taken to validate the trial prototype with actual patients and caregivers, and how will feedback be integrated into the development process?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget for the LocateMotion project considering the crowdfunding model, and what evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget for the LocateMotion project considering the crowdfunding model, and what evidence would increase your confidence in this assessment?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current plan to launch in Canada and the US, what are the anticipated challenges for scaling the LocateMotion project globally, and how does the team plan to address these challenges?",
+          "question_en_preview": "Given the current plan to launch in Canada and the US, what are the anticipated challenges for scaling the LocateMotion project globally, and how does the team plan to address these challenges?"
+        }
+      ],
+      "elapsed_sec": 11.92,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 370,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The innovation dimension of the project focuses on developing an all-in-one health monitoring solution that integrates advanced technologies such as GPS, 3G/4G connectivity, and AI features. The product aims to enhance user experience through affordability, simplicity, and extend ...",
+        "first_key_point_preview": "The solution is positioned as an all-in-one product for health monitoring, designed to be user-friendly and accessible.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The team is working on technology to improve battery life to months in future generation product releases."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.65,
+        "raw_chars": 3897,
+        "usage": {
+          "prompt_tokens": 3473,
+          "completion_tokens": 816,
+          "total_tokens": 4289
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "IoT smartwatch features",
+        "battery optimization technology",
+        "user-friendly design",
+        "health monitoring capabilities",
+        "competitive pricing strategy",
+        "intellectual property protection",
+        "future generation devices",
+        "customer adoption metrics",
+        "evidence of effectiveness",
+        "market differentiation"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 5
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the all-in-one health monitoring solution compare to existing products in terms of technological novelty and user experience?",
+          "question_en_preview": "How does the all-in-one health monitoring solution compare to existing products in terms of technological novelty and user experience?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does LocateMotion's solution offer over alternative health monitoring products in terms of affordability and user-friendliness?",
+          "question_en_preview": "What specific advantages does LocateMotion's solution offer over alternative health monitoring products in terms of affordability and user-friendliness?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the proposed health monitoring solution, particularly regarding its battery optimization and health monitoring capabilities?",
+          "question_en_preview": "What evidence supports the effectiveness of the proposed health monitoring solution, particularly regarding its battery optimization and health monitoring capabilities?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could affect the longevity and competitiveness of the health monitoring solution?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could affect the longevity and competitiveness of the health monitoring solution?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What strategies are in place to protect the intellectual property of the health monitoring solution, and how do these strategies support long-term competitive advantage?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property of the health monitoring solution, and how do these strategies support long-term competitive advantage?"
+        }
+      ],
+      "elapsed_sec": 11.65,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 333,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 2,
+        "summary_preview": "The feasibility of the LocateMotion project is supported by a combination of innovative technology, funding strategies, and a clear plan for addressing potential risks. The project aims to provide a comprehensive solution for individuals prone to wandering, leveraging a smartwatc ...",
+        "first_key_point_preview": "The LocateMotion watch minimizes battery consumption by using only necessary optimized apps.",
+        "first_risk_preview": "Wandering can pose serious safety issues and sometimes puts loved ones in life-threatening situations.",
+        "first_mitigation_preview": "The LocateMotion watch minimizes battery consumption by using only necessary optimized apps."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.75,
+        "raw_chars": 4433,
+        "usage": {
+          "prompt_tokens": 3505,
+          "completion_tokens": 943,
+          "total_tokens": 4448
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Kickstarter funding status",
+        "trial prototype testing",
+        "safety risk mitigation",
+        "customer acceptance barriers",
+        "MVP launch timeline",
+        "feedback integration process",
+        "battery consumption optimization",
+        "operational execution plan",
+        "team experience with startups",
+        "resource alignment for launch"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 2,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 2
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the current funding status of 104% on Kickstarter impact the project's budget allocation and sustainability plan for future phases?",
+          "question_en_preview": "How does the current funding status of 104% on Kickstarter impact the project's budget allocation and sustainability plan for future phases?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for testing the trial prototype with patients and caregivers, and how will feedback be integrated into the product development?",
+          "question_en_preview": "What specific tasks and timelines are outlined for testing the trial prototype with patients and caregivers, and how will feedback be integrated into the product development?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified risk that wandering can pose serious safety issues, what specific measures are in place to mitigate this risk during the trial phase?",
+          "question_en_preview": "Given the identified risk that wandering can pose serious safety issues, what specific measures are in place to mitigate this risk during the trial phase?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation have been identified for the LocateMotion project, particularly in the context of customer acceptance and integration into existing care systems?",
+          "question_en_preview": "What barriers to implementation have been identified for the LocateMotion project, particularly in the context of customer acceptance and integration into existing care systems?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the team plan to align resources and timelines for the controlled market MVP launch in Canada and the US, and what potential bottlenecks have been identified?",
+          "question_en_preview": "How does the team plan to align resources and timelines for the controlled market MVP launch in Canada and the US, and what potential bottlenecks have been identified?"
+        }
+      ],
+      "elapsed_sec": 12.75,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T18:52:21Z",
+  "elapsed_sec": 58.21,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt10__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt10__openai/generated_questions_detail.json"
+}

@@ -1,0 +1,614 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "ds1p5__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/ds1p5__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 415,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by 蔡建博士, who holds multiple roles including deputy director at the Microelectronic Instrument and Equipment R&D Center and has significant expertise in the field. The team includes members from 中科院微电子所 and 中科纳飞, with a focus on developing advanced propulsi ...",
+        "first_key_point_preview": "蔡建博士 is the team leader and deputy director at the Microelectronic Instrument and Equipment R&D Center.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.99,
+        "raw_chars": 5146,
+        "usage": {
+          "prompt_tokens": 3405,
+          "completion_tokens": 1133,
+          "total_tokens": 4538
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "蔡建博士 leadership role",
+        "advanced propulsion systems expertise",
+        "collaboration with 中科院微电子所",
+        "team capacity assessment",
+        "validation and compliance experience",
+        "governance structures",
+        "project execution risks",
+        "strategic partnerships",
+        "domain-specific knowledge"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 2,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does 蔡建博士's role as deputy director at the Microelectronic Instrument and Equipment R&D Center contribute to the team's ability to advance the project towards its intended application?",
+          "question_en_preview": "How does 蔡建博士's role as deputy director at the Microelectronic Instrument and Equipment R&D Center contribute to the team's ability to advance the project towards its intended application?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does the team possess in developing advanced propulsion systems for satellites, and how does this expertise enhance the project's feasibility?",
+          "question_en_preview": "What specific expertise does the team possess in developing advanced propulsion systems for satellites, and how does this expertise enhance the project's feasibility?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the collaboration with 中科院微电子所 and 中科纳飞 strengthen the project's capabilities and what are the potential risks associated with these partnerships?",
+          "question_en_preview": "How does the collaboration with 中科院微电子所 and 中科纳飞 strengthen the project's capabilities and what are the potential risks associated with these partnerships?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the current workload and potential parallel projects, does the team have sufficient capacity to commit to this project effectively? If not, what are the implications?",
+          "question_en_preview": "Considering the current workload and potential parallel projects, does the team have sufficient capacity to commit to this project effectively? If not, what are the implications?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What experience does the team have with domain-specific validation and compliance processes, and how does this experience mitigate potential risks in project execution?",
+          "question_en_preview": "What experience does the team have with domain-specific validation and compliance processes, and how does this experience mitigate potential risks in project execution?"
+        }
+      ],
+      "elapsed_sec": 14.99,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 303,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop advanced microelectric propulsion systems for small satellites, focusing on efficiency and reduced weight. Key milestones include the delivery of 100 thrusters over five years, with significant progress made since 2019 in developing and delivering vari ...",
+        "first_key_point_preview": "The project aims to deliver 100 thrusters over five years, with the first propulsion system delivered in 2019.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The project plans to reduce fuel storage to improve efficiency and indicates electric propulsion as a future direction for long-life satellite propulsion."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.39,
+        "raw_chars": 4328,
+        "usage": {
+          "prompt_tokens": 3449,
+          "completion_tokens": 917,
+          "total_tokens": 4366
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "efficiency metrics",
+        "weight reduction",
+        "milestone execution",
+        "market demand evidence",
+        "success metrics",
+        "value creation logic",
+        "propulsion technology advancements",
+        "customer alignment",
+        "risk management strategies"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined are the overall goals of the project, particularly in relation to the delivery of 100 thrusters over five years? Are there any unrelated sub-goals that could distract from this primary objective?",
+          "question_en_preview": "How clearly defined are the overall goals of the project, particularly in relation to the delivery of 100 thrusters over five years? Are there any unrelated sub-goals that could distract from this primary objective?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the project's objectives align with the unmet needs of the satellite propulsion market, particularly regarding efficiency and reduced weight? Please discuss any evidence of urgency or demand for these f ...",
+          "question_en_preview": "To what extent do the project's objectives align with the unmet needs of the satellite propulsion market, particularly regarding efficiency and reduced weight? Please discuss any evidence of urgency or demand for these f ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed milestones for delivering 100 thrusters over five years. What specific challenges might arise in achieving these milestones?",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed milestones for delivering 100 thrusters over five years. What specific challenges might arise in achieving these milestones?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics are in place to measure the project's progress towards its objectives, particularly in relation to the efficiency and weight reduction of the thrusters? Are these metrics sufficient to g ...",
+          "question_en_preview": "What quantifiable success metrics are in place to measure the project's progress towards its objectives, particularly in relation to the efficiency and weight reduction of the thrusters? Are these metrics sufficient to g ..."
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too idealistically, or do they realistically reflect the current capabilities and market conditions?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too idealistically, or do they realistically reflect the current capabilities and market conditions?"
+        }
+      ],
+      "elapsed_sec": 12.39,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 318,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop advanced propulsion systems for small satellites, focusing on mini thrusters and lightweight designs. It plans to establish a production line for approximately 400 to 500 commercial small satellites over the next five years, leveraging government polic ...",
+        "first_key_point_preview": "The project focuses on developing mini thrusters and lightweight propulsion systems for small satellites.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The product features a mini thruster and has a reduced launch weight of 30kg."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 20.29,
+        "raw_chars": 4061,
+        "usage": {
+          "prompt_tokens": 3511,
+          "completion_tokens": 871,
+          "total_tokens": 4382
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "mini thruster technology",
+        "lightweight propulsion systems",
+        "production line scalability",
+        "government policy leverage",
+        "market entry strategy",
+        "customer acquisition plan",
+        "validation milestones",
+        "unit economics analysis",
+        "partnership collaborations",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the choice of mini thrusters and lightweight propulsion systems for small satellites, and what alternatives were considered during the solution design?",
+          "question_en_preview": "What rationale supports the choice of mini thrusters and lightweight propulsion systems for small satellites, and what alternatives were considered during the solution design?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to validate the performance and reliability of the mini thrusters before full-scale production, and what milestones are set for this validation?",
+          "question_en_preview": "How does the project plan to validate the performance and reliability of the mini thrusters before full-scale production, and what milestones are set for this validation?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the plan to launch approximately 400 to 500 commercial small satellites, what is the strategy for market entry and customer acquisition, and how does it leverage government policies?",
+          "question_en_preview": "Given the plan to launch approximately 400 to 500 commercial small satellites, what is the strategy for market entry and customer acquisition, and how does it leverage government policies?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic is the projected production of 18 units per year in terms of unit economics and operational capacity? Please provide evidence that could improve this score.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the projected production of 18 units per year in terms of unit economics and operational capacity? Please provide evidence that could improve this score."
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What partnerships or collaborations are being pursued to enhance the production and deployment of the propulsion systems, and how do these align with the project’s goals?",
+          "question_en_preview": "What partnerships or collaborations are being pursued to enhance the production and deployment of the propulsion systems, and how do these align with the project’s goals?"
+        }
+      ],
+      "elapsed_sec": 20.29,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 412,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project demonstrates significant innovation in propulsion technology, particularly through the development of new generation thrusters that drastically reduce size and cost compared to traditional systems. Key advancements include the introduction of a micro laser thruster, w ...",
+        "first_key_point_preview": "The volume of fuel storage tanks has been reduced to one-fifth to one-tenth of traditional chemical propulsion systems.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The project includes innovations that significantly reduce the size and cost of propulsion systems, which may mitigate potential market entry challenges."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.74,
+        "raw_chars": 4607,
+        "usage": {
+          "prompt_tokens": 3482,
+          "completion_tokens": 1000,
+          "total_tokens": 4482
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "micro laser thruster",
+        "cost reduction",
+        "size reduction",
+        "invention patents",
+        "competitive position",
+        "market adoption",
+        "performance validation",
+        "scalability factors",
+        "innovation evidence"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "ip_and_protection": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the micro laser thruster compare to existing propulsion technologies in terms of size and cost reduction? Please provide evidence to support your assessment.",
+          "question_en_preview": "How does the micro laser thruster compare to existing propulsion technologies in terms of size and cost reduction? Please provide evidence to support your assessment."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the new generation of chemical thrusters offer over traditional systems, particularly regarding fuel storage and cost? How might these advantages impact market adoption?",
+          "question_en_preview": "What specific advantages does the new generation of chemical thrusters offer over traditional systems, particularly regarding fuel storage and cost? How might these advantages impact market adoption?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How do the 7 invention patents and 2 software copyrights held by the organization support its competitive position in the propulsion technology market?",
+          "question_en_preview": "How do the 7 invention patents and 2 software copyrights held by the organization support its competitive position in the propulsion technology market?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence exists to validate the performance and cost-effectiveness of the new propulsion systems? If the proposal lacks sufficient evidence, please identify the gaps and discuss their implications.",
+          "question_en_preview": "What evidence exists to validate the performance and cost-effectiveness of the new propulsion systems? If the proposal lacks sufficient evidence, please identify the gaps and discuss their implications."
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could affect the long-term viability of the propulsion technology? How might these risks be mitigated?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could affect the long-term viability of the propulsion technology? How might these risks be mitigated?"
+        }
+      ],
+      "elapsed_sec": 12.75,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 343,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is influenced by several factors, including identified risks related to electric propulsion technology and budgetary considerations. Key risks include bottlenecks in storage density and the high cost of xenon gas, while mitigations involve the devel ...",
+        "first_key_point_preview": "Current bottlenecks in electric propulsion technology include low storage density, high dry mass, high-pressure storage tanks, and valve systems.",
+        "first_risk_preview": "The proposal identifies risks related to bottlenecks in electric propulsion technology and the high cost of xenon gas, along with issues of cathode corrosion and lifespan.",
+        "first_mitigation_preview": "The project plans to mitigate risks by utilizing a mini thruster that reduces launch weight and associated costs."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 22.56,
+        "raw_chars": 4447,
+        "usage": {
+          "prompt_tokens": 3498,
+          "completion_tokens": 938,
+          "total_tokens": 4436
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "budget alignment",
+        "development milestones",
+        "risk mitigation strategies",
+        "customer acceptance feasibility",
+        "implementation barriers",
+        "resource allocation",
+        "propulsion system integration",
+        "staff salary requirements",
+        "funding sources",
+        "timeline alignment"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "risk_management": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies are in place to address the identified risks related to bottlenecks in electric propulsion technology and the high cost of xenon gas, including issues of cathode corrosion and lifespan?",
+          "question_en_preview": "What specific strategies are in place to address the identified risks related to bottlenecks in electric propulsion technology and the high cost of xenon gas, including issues of cathode corrosion and lifespan?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the proposed budget of 3 million currency units for the launch align with the total capital requirement of approximately 15 million currency units for development and testing? Are there plans for securing the ad ...",
+          "question_en_preview": "How does the proposed budget of 3 million currency units for the launch align with the total capital requirement of approximately 15 million currency units for development and testing? Are there plans for securing the ad ..."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key milestones and timelines for the development and testing of the first prototype, and how do they align with the overall budget and resource allocation?",
+          "question_en_preview": "What are the key milestones and timelines for the development and testing of the first prototype, and how do they align with the overall budget and resource allocation?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation have been identified in the proposal, particularly regarding the adoption of the propulsion system and integration into existing frameworks?",
+          "question_en_preview": "What potential barriers to implementation have been identified in the proposal, particularly regarding the adoption of the propulsion system and integration into existing frameworks?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how well do you believe the timeline for the project aligns with the available resources, including the annual capital requirement of 1.92 million RMB for staff salaries? Please provide evidence tha ...",
+          "question_en_preview": "On a scale of 1 to 5, how well do you believe the timeline for the project aligns with the available resources, including the annual capital requirement of 1.92 million RMB for staff salaries? Please provide evidence tha ..."
+        }
+      ],
+      "elapsed_sec": 22.56,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-06-11T16:29:01Z",
+  "elapsed_sec": 82.98,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p5__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p5__openai/generated_questions_detail.json"
+}

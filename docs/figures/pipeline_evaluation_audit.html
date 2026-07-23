@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fig. A2 — Outcome-Free Measurement Audit Pipeline</title>
+<style>
+  :root{
+    --ink:#1e2530;
+    --sub:#5b6470;
+    --line:#d6dce3;
+    --panel:#f7f9fb;
+    --blue:#2a5c96; --blue-soft:#e7eef7; --blue-line:#c6d8ec;
+    --rq1:#2a5c96; --rq1-soft:#e7eef7;
+    --rq2:#6d4aa0; --rq2-soft:#efe8f6;
+    --rq3:#0f8b8d; --rq3-soft:#e2f3f2;
+    --rq4:#b5790a; --rq4-soft:#faf0dd;
+    --done:#0d9463; --done-soft:#e2f5ec;
+    --pilot:#c2760c; --pilot-soft:#faf0dd;
+    --future:#7c8794; --future-soft:#eef0f2;
+    --neg:#c0392b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{background:#e9edf1;}
+  body{
+    font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    display:flex;justify-content:center;padding:6mm 0;
+  }
+  .page{
+    width:297mm;height:210mm;background:#fff;
+    box-shadow:0 2px 18px rgba(0,0,0,.18);
+    padding:8mm 11mm 6.5mm 11mm;
+    display:flex;flex-direction:column;
+  }
+
+  /* header (shared style with Fig. A1) */
+  .hdr{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:3.2mm;}
+  .hdr h1{font-size:15pt;font-weight:800;color:var(--ink);}
+  .hdr p{font-size:8.1pt;color:var(--sub);margin-top:1.2mm;max-width:196mm;line-height:1.32;}
+  .tag{
+    font-size:7.6pt;font-weight:700;color:var(--blue);
+    background:var(--blue-soft);border:1px solid var(--blue-line);
+    padding:2.6mm 3.4mm;border-radius:3mm;white-space:nowrap;text-align:right;line-height:1.5;
+  }
+  .tag span{display:block;color:var(--sub);font-weight:500;font-size:6.9pt;}
+
+  /* research question ribbon */
+  .rq-ribbon{
+    background:var(--ink);color:#fff;border-radius:2mm;
+    padding:1.9mm 4mm;font-size:8pt;font-weight:600;line-height:1.3;
+    margin-bottom:3mm;display:flex;gap:2.4mm;align-items:baseline;
+  }
+  .rq-ribbon b{font-weight:800;color:#a9c6ea;font-size:7.4pt;text-transform:uppercase;letter-spacing:.4px;flex-shrink:0;}
+
+  /* inputs row */
+  .inputs{display:flex;gap:3mm;margin-bottom:1.6mm;}
+  .in-card{
+    flex:1;background:var(--panel);border:1px solid var(--line);border-radius:2.2mm;
+    padding:2mm 3mm;display:flex;flex-direction:column;gap:.5mm;
+  }
+  .in-card h4{font-size:7.9pt;font-weight:800;color:var(--ink);}
+  .in-card p{font-size:6.9pt;color:var(--sub);line-height:1.3;}
+  .in-card .n{
+    align-self:flex-start;font-size:6.3pt;font-weight:700;color:var(--blue);
+    background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:1.6mm;padding:.4mm 1.6mm;margin-top:.4mm;
+  }
+
+  .converge{display:flex;justify-content:center;align-items:center;gap:1.6mm;margin:.5mm 0 2.2mm 0;color:var(--sub);font-size:7pt;font-weight:700;}
+  .converge .ln{height:1.6px;width:22mm;background:linear-gradient(90deg,transparent,#b9c3cf);}
+  .converge .ln.r{background:linear-gradient(90deg,#b9c3cf,transparent);}
+  .converge .chip{
+    background:var(--ink);color:#fff;padding:1.2mm 3.4mm;border-radius:20px;font-size:7.3pt;font-weight:700;
+  }
+
+  /* RQ panels */
+  .rqs{flex:1;display:flex;gap:2.8mm;min-height:0;}
+  .rq{
+    flex:1;display:flex;flex-direction:column;
+    background:var(--panel);border:1px solid var(--line);border-radius:2.4mm;overflow:hidden;
+    min-width:0;
+  }
+  .rq .rq-head{padding:2mm 2.8mm;color:#fff;}
+  .rq .rq-head b{display:block;font-size:8.4pt;font-weight:800;}
+  .rq .rq-head span{display:block;font-size:6.7pt;font-weight:500;opacity:.92;margin-top:.3mm;}
+  .rq1 .rq-head{background:var(--rq1);} .rq2 .rq-head{background:var(--rq2);}
+  .rq3 .rq-head{background:var(--rq3);} .rq4 .rq-head{background:var(--rq4);}
+  .rq-body{padding:2.2mm 2.8mm;display:flex;flex-direction:column;gap:1.8mm;flex:1;}
+  .metric{
+    background:#fff;border:1px solid var(--line);border-radius:1.8mm;padding:1.6mm 2mm;
+  }
+  .metric .label{font-size:6.6pt;color:var(--sub);font-weight:600;line-height:1.28;}
+  .metric .val{font-size:8.6pt;font-weight:800;margin-top:.3mm;}
+  .rq1 .metric .val{color:var(--rq1);} .rq2 .metric .val{color:var(--rq2);}
+  .rq3 .metric .val{color:var(--rq3);} .rq4 .metric .val{color:var(--rq4);}
+  .metric .val.neg{color:var(--neg);}
+  .metric .sub{font-size:6.3pt;color:var(--sub);margin-top:.4mm;line-height:1.28;}
+  .kappa-row{display:flex;flex-wrap:wrap;gap:1mm;margin-top:1mm;}
+  .kappa-row .k{font-size:6.1pt;font-weight:700;padding:.6mm 1.4mm;border-radius:1.2mm;background:var(--future-soft);color:var(--ink);}
+  .kappa-row .k.pos{background:var(--done-soft);color:var(--done);}
+  .kappa-row .k.neg{background:#fbe7e4;color:var(--neg);}
+  .note{font-size:6.5pt;color:var(--sub);line-height:1.32;margin-top:auto;padding-top:1mm;border-top:1px dashed var(--line);}
+
+  /* audit matrix footer */
+  .matrix{margin-top:2.6mm;background:var(--panel);border:1px solid var(--line);border-radius:2.2mm;padding:2mm 3.4mm;}
+  .matrix-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.4mm;}
+  .matrix-hd b{font-size:7.4pt;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.3px;}
+  .matrix-hd em{font-size:6.6pt;color:var(--sub);font-style:italic;}
+  .chips{display:flex;gap:2mm;flex-wrap:wrap;align-items:center;}
+  .grp{display:flex;align-items:center;gap:1.4mm;padding-right:2.4mm;border-right:1px solid var(--line);}
+  .grp:last-child{border-right:none;}
+  .grp .dot{width:2.1mm;height:2.1mm;border-radius:50%;flex-shrink:0;}
+  .grp.done .dot{background:var(--done);} .grp.pilot .dot{background:var(--pilot);} .grp.future .dot{background:var(--future);}
+  .chip2{font-size:6.5pt;font-weight:600;padding:.9mm 2mm;border-radius:20px;white-space:nowrap;}
+  .grp.done .chip2{background:var(--done-soft);color:#0a6b49;}
+  .grp.pilot .chip2{background:var(--pilot-soft);color:#8f5a08;}
+  .grp.future .chip2{background:var(--future-soft);color:#555f6b;}
+
+  @media print{
+    html,body{background:#fff;}
+    .page{box-shadow:none;margin:0;}
+    @page{size:297mm 210mm;margin:0;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hdr">
+    <div>
+      <h1>Outcome-Free Measurement Audit &mdash; Evaluation Pipeline</h1>
+      <p>Once Fig. A1 produces scored reports, the system's scores are audited as measurement instruments against expert judgment &mdash; not against unavailable long-run venture outcomes. Four validity targets are tested on the same 12 matched, expert-scored proposals.</p>
+    </div>
+    <div class="tag">Trustworthy LLM-Assisted Venture Screening<span>Evaluation / audit stage &middot; ICAIF '26</span></div>
+  </div>
+
+  <div class="rq-ribbon"><b>Central question</b> Can an evidence-grounded LLM evaluation system serve as a credible outcome-free measurement instrument for venture proposal review &mdash; not a predictor of venture success?</div>
+
+  <div class="inputs">
+    <div class="in-card">
+      <h4>AI Pipeline Output</h4>
+      <p>12 proposals &times; {5 dimension scores, overall r&#770;, confidence c&#770;, verdict &#375;} from the Fig. A1 pipeline.</p>
+      <span class="n">from Fig. A1 &middot; &lambda; = 0.90</span>
+    </div>
+    <div class="in-card">
+      <h4>Expert Reference</h4>
+      <p>12 matched expert-scored proposals: 5 dimension scores, 1&ndash;20 overall ranking, binary GO / NO-GO decision.</p>
+      <span class="n">operational reference, not ground truth</span>
+    </div>
+    <div class="in-card">
+      <h4>Direct Raw-Document Baseline</h4>
+      <p>One-shot LLM scoring of the full raw document &mdash; no fact extraction, no QA artifacts, temperature 0.</p>
+      <span class="n">pipeline-attribution check</span>
+    </div>
+  </div>
+
+  <div class="converge"><span class="ln"></span><span class="chip">Measurement-Validity Audit &middot; same 12-proposal sample</span><span class="ln r"></span></div>
+
+  <div class="rqs">
+
+    <div class="rq rq1">
+      <div class="rq-head"><b>RQ1 &middot; Ordinal &amp; Scale Validity</b><span>Do rankings and absolute scores reproduce expert judgment?</span></div>
+      <div class="rq-body">
+        <div class="metric"><div class="label">Pairwise rank concordance</div><div class="val">75.9%</div><div class="sub">44 / 58 comparable pairs correctly ordered</div></div>
+        <div class="metric"><div class="label">Spearman, overall ranking</div><div class="val">+0.589</div><div class="sub">ICC (absolute agreement) 0.119, 95% CI [&minus;0.003, 0.257]</div></div>
+        <div class="metric"><div class="label">Score offset (paired t / Wilcoxon)</div><div class="val neg">&minus;0.136 avg</div><div class="sub">AI scores read low vs. experts; Holm-adj. p = 0.009</div></div>
+        <div class="note">Moderate rank alignment; absolute-scale agreement does not survive multiple-comparison correction.</div>
+      </div>
+    </div>
+
+    <div class="rq rq2">
+      <div class="rq-head"><b>RQ2 &middot; Calibration &amp; Decision Mapping</b><span>Are score and verdict mappings aligned with experts?</span></div>
+      <div class="rq-body">
+        <div class="metric"><div class="label">Blend sweep s = &lambda;v<sub>invest</sub> + (1&minus;&lambda;)q<sub>QA</sub></div><div class="val neg">&lambda;=0 &rarr; &minus;0.325</div><div class="sub">QA-only scoring reverses expert ranking; operating point &lambda; = 0.90</div></div>
+        <div class="metric"><div class="label">Verdict rule (&tau;<sub>r</sub>, &tau;<sub>c</sub> grid search)</div><div class="val">10 / 12 acc.</div><div class="sub">OR rule: r&#770;&ge;0.725 &or; c&#770;&ge;0.811 &middot; 2/4 recall, 95% CI [0.516, 0.979]</div></div>
+        <div class="metric"><div class="label">vs. prior AND rule</div><div class="val">9 / 12 acc.</div><div class="sub">2/2 precision but only 1/4 recall &mdash; misses most human GO cases</div></div>
+        <div class="note">Score-source weighting is itself a model component that can fail: QA-only inverts alignment.</div>
+      </div>
+    </div>
+
+    <div class="rq rq3">
+      <div class="rq-head"><b>RQ3 &middot; Dimension-Level Reliability</b><span>Which investment dimensions remain unreliable?</span></div>
+      <div class="rq-body">
+        <div class="metric"><div class="label">Quadratic-weighted Cohen's &kappa; per dimension</div>
+          <div class="kappa-row">
+            <span class="k pos">Team 0.324</span>
+            <span class="k pos">Feasibility 0.250</span>
+            <span class="k neg">Objective &minus;0.138</span>
+            <span class="k neg">Strategy &minus;0.125</span>
+            <span class="k neg">Advantages &minus;0.080</span>
+          </div>
+        </div>
+        <div class="metric"><div class="label">Scale-compression symptom</div><div class="val">3 of 5 bins</div><div class="sub">AI dimension scores cluster on 3 bins; experts use the full 5-bin scale</div></div>
+        <div class="note">Reliability is heterogeneous, not uniformly weak &mdash; error mechanism depends on the construct scored.</div>
+      </div>
+    </div>
+
+    <div class="rq rq4">
+      <div class="rq-head"><b>RQ4 &middot; Evidence &amp; Responsiveness <em style="font-style:normal">(pilot)</em></b><span>Are claims grounded and do scores respond to real edits?</span></div>
+      <div class="rq-body">
+        <div class="metric"><div class="label">Claim grounding &middot; 188 statements &rarr; 33 eligible claims</div><div class="val">0.758 strict</div><div class="sub">0.818 lenient &middot; unsupported-claim rate 0.121, CI [0.048, 0.273]</div></div>
+        <div class="metric"><div class="label">Controlled content sensitivity</div><div class="val">87.7%</div><div class="sub">366 / 417 PLUS / MINUS rubric-targeted checks moved as expected</div></div>
+        <div class="metric"><div class="label">Weakest construct</div><div class="val neg">Advantages</div><div class="sub">95/128 (74%) &mdash; least responsive to added favorable evidence</div></div>
+        <div class="note">Prompt-coupled pilot: confirms generation&ndash;scoring consistency, not independent evidentiary realism.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="matrix">
+    <div class="matrix-hd"><b>Audit coverage &middot; Table 4</b><em>10 audits &middot; deliberately narrow claim: reviewer triage under audit, not autonomous investment judgment or outcome prediction</em></div>
+    <div class="chips">
+      <div class="grp done">
+        <span class="dot"></span>
+        <span class="chip2">Expert alignment</span><span class="chip2">Rank preservation</span><span class="chip2">Calibration</span>
+      </div>
+      <div class="grp pilot">
+        <span class="dot"></span>
+        <span class="chip2">Pipeline attribution</span><span class="chip2">Content sensitivity</span><span class="chip2">Groundedness</span>
+      </div>
+      <div class="grp future">
+        <span class="dot"></span>
+        <span class="chip2">Repeatability</span><span class="chip2">Style robustness</span><span class="chip2">Halo / spillover</span><span class="chip2">Provider robustness</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

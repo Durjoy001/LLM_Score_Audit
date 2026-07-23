@@ -1,0 +1,619 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km8__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km8__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 328,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team for the NeatScreen project is led by founder Bob and includes Christina Aon, who is responsible for developing the greenscreen mobile app. The team operates from Montreal, Canada, and has experience working both in offices and remotely, adapting to challenges such as pre ...",
+        "first_key_point_preview": "Bob is the founder of NeatScreen.",
+        "first_risk_preview": "The team does not foresee any big risks during the testing phase of the app.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.57,
+        "raw_chars": 4302,
+        "usage": {
+          "prompt_tokens": 3329,
+          "completion_tokens": 914,
+          "total_tokens": 4243
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "leadership experience",
+        "mobile app development",
+        "team capacity",
+        "quality control",
+        "validation experience",
+        "testing phase challenges",
+        "remote work adaptation",
+        "governance structures",
+        "domain expertise"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "governance_and_decision_making": 1,
+          "validation_and_compliance_experience": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Bob's leadership experience contribute to the advancement of the NeatScreen project, particularly in terms of navigating challenges during the app's development and testing phases?",
+          "question_en_preview": "How does Bob's leadership experience contribute to the advancement of the NeatScreen project, particularly in terms of navigating challenges during the app's development and testing phases?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does Christina Aon bring to the development of the NeatScreen greenscreen mobile app, and how does this expertise enhance the team's ability to deliver a high-quality product?",
+          "question_en_preview": "What specific expertise does Christina Aon bring to the development of the NeatScreen greenscreen mobile app, and how does this expertise enhance the team's ability to deliver a high-quality product?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the team's experience working in both office and home environments, how does their current workload impact their capacity to effectively test the NeatScreen app during its testing phase?",
+          "question_en_preview": "Given the team's experience working in both office and home environments, how does their current workload impact their capacity to effectively test the NeatScreen app during its testing phase?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures or decision-making processes does the team have in place to address potential conflicts of interest or quality control issues during the NeatScreen app's development?",
+          "question_en_preview": "What governance structures or decision-making processes does the team have in place to address potential conflicts of interest or quality control issues during the NeatScreen app's development?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation and compliance experience does the team possess that could support the successful testing and deployment of the NeatScreen app, especially considering the absence of specified mitigation measures?",
+          "question_en_preview": "What validation and compliance experience does the team possess that could support the successful testing and deployment of the NeatScreen app, especially considering the absence of specified mitigation measures?"
+        }
+      ],
+      "elapsed_sec": 10.57,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 425,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a mobile app that allows users to change their webcam backgrounds for video content and Zoom calls, targeting small business owners and individuals who create videos. The funding goal for the project was set at $353, but the campaign was unsuccessful,  ...",
+        "first_key_point_preview": "The app allows users to change their webcam backgrounds for video content and Zoom calls.",
+        "first_risk_preview": "The biggest risk is low funds, which may require waiting for more sales of other products to gain cash flow.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.42,
+        "raw_chars": 4182,
+        "usage": {
+          "prompt_tokens": 3437,
+          "completion_tokens": 914,
+          "total_tokens": 4351
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding shortfall",
+        "user needs assessment",
+        "milestone feasibility",
+        "success metrics definition",
+        "scope prioritization",
+        "work-from-home enhancement",
+        "market entry strategy",
+        "goal clarity",
+        "ambition versus feasibility",
+        "customer alignment"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "overall_goal_clarity": 1,
+          "realism_and_ambition_balance": 1,
+          "outcome_and_success_metrics": 1,
+          "scope_and_prioritization": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the project's objective of developing a mobile app for changing webcam backgrounds align with the stated needs of small business owners and video content creators? Please discuss any gaps in understanding t ...",
+          "question_en_preview": "How well does the project's objective of developing a mobile app for changing webcam backgrounds align with the stated needs of small business owners and video content creators? Please discuss any gaps in understanding t ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the funding goal was set at $353 but only $79 was raised, what are the implications for the project's milestones and timeline? Are the proposed timelines still realistic?",
+          "question_en_preview": "Given that the funding goal was set at $353 but only $79 was raised, what are the implications for the project's milestones and timeline? Are the proposed timelines still realistic?"
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Is the overall goal of the project to enhance the work-from-home experience through the app clear and focused? Are there any unrelated sub-goals that could dilute this focus?",
+          "question_en_preview": "Is the overall goal of the project to enhance the work-from-home experience through the app clear and focused? Are there any unrelated sub-goals that could dilute this focus?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the project's funding shortfall, how do you assess the balance between ambition and feasibility in the project's objectives? Are the goals too idealistic given the current funding situation?",
+          "question_en_preview": "Considering the project's funding shortfall, how do you assess the balance between ambition and feasibility in the project's objectives? Are the goals too idealistic given the current funding situation?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "What specific success metrics should be established to evaluate the effectiveness of the app in enhancing the work-from-home experience? How can these metrics be quantified?",
+          "question_en_preview": "What specific success metrics should be established to evaluate the effectiveness of the app in enhancing the work-from-home experience? How can these metrics be quantified?"
+        }
+      ],
+      "elapsed_sec": 11.42,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 385,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a mobile app that allows users to change their webcam backgrounds for video content and Zoom calls, enhancing professional presentation while maintaining privacy. The funding goal for the project was set at $353, and the campaign was ultimately unsucce ...",
+        "first_key_point_preview": "The app enables users to set it up in under 1 minute for professional video presentations.",
+        "first_risk_preview": "The biggest risk is low funds, which may require waiting for more sales of other products to gain cash flow.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.17,
+        "raw_chars": 5285,
+        "usage": {
+          "prompt_tokens": 3520,
+          "completion_tokens": 1160,
+          "total_tokens": 4680
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "user setup time",
+        "funding campaign success",
+        "financial sustainability metrics",
+        "quality assurance measures",
+        "go-to-market strategy",
+        "scaling strategy",
+        "user privacy compliance",
+        "video quality expectations",
+        "market entry strategy",
+        "customer acquisition evidence"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 2,
+          "business_model_and_unit_economics": 2,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project is currently 107% funded, how does this funding level inform your strategy for market entry and customer acquisition? What evidence supports your approach?",
+          "question_en_preview": "Given that the project is currently 107% funded, how does this funding level inform your strategy for market entry and customer acquisition? What evidence supports your approach?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How do you plan to address the identified risk of low funds, and what specific financial metrics will you monitor to ensure the project's sustainability and growth?",
+          "question_en_preview": "How do you plan to address the identified risk of low funds, and what specific financial metrics will you monitor to ensure the project's sustainability and growth?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What alternatives did you consider for the solution delivery model, and what major trade-offs influenced your final decision to develop the mobile app for changing webcam backgrounds?",
+          "question_en_preview": "What alternatives did you consider for the solution delivery model, and what major trade-offs influenced your final decision to develop the mobile app for changing webcam backgrounds?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation steps have you implemented to ensure that users can set up the app in under 1 minute, and how will you measure the success of this feature?",
+          "question_en_preview": "What validation steps have you implemented to ensure that users can set up the app in under 1 minute, and how will you measure the success of this feature?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What quality assurance measures are in place to ensure that the app meets user expectations for video quality and privacy, and how will you address any compliance issues that arise?",
+          "question_en_preview": "What quality assurance measures are in place to ensure that the app meets user expectations for video quality and privacy, and how will you address any compliance issues that arise?"
+        }
+      ],
+      "elapsed_sec": 12.17,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 255,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project focuses on developing a mobile app, NeatScreen, that enables users to create quality videos quickly and affordably while maintaining privacy. The software is designed to be easily upgradable, enhancing its long-term usability and adaptability.",
+        "first_key_point_preview": "The NeatScreen app allows users to set it up in under 1 minute for professional presentations without compromising privacy.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.05,
+        "raw_chars": 3989,
+        "usage": {
+          "prompt_tokens": 3364,
+          "completion_tokens": 890,
+          "total_tokens": 4254
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user setup time",
+        "video quality metrics",
+        "cost-effectiveness analysis",
+        "upgrade strategy",
+        "customer feedback",
+        "intellectual property strategy",
+        "market competition",
+        "risk of obsolescence",
+        "adaptability to user needs"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "platform_and_extensibility": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the NeatScreen app's ability to set up in under 1 minute for professional presentations compare to existing video creation tools in terms of user experience and efficiency?",
+          "question_en_preview": "How does the NeatScreen app's ability to set up in under 1 minute for professional presentations compare to existing video creation tools in terms of user experience and efficiency?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the NeatScreen app offer in terms of cost and quality of video production compared to current market alternatives?",
+          "question_en_preview": "What specific advantages does the NeatScreen app offer in terms of cost and quality of video production compared to current market alternatives?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the claim that the NeatScreen app can produce quality videos easily and affordably? Are there any pilot tests or user feedback available?",
+          "question_en_preview": "What evidence supports the claim that the NeatScreen app can produce quality videos easily and affordably? Are there any pilot tests or user feedback available?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the design of the NeatScreen app facilitate future upgrades and adaptability to new features or user needs? What potential customer segments could benefit from these upgrades?",
+          "question_en_preview": "How does the design of the NeatScreen app facilitate future upgrades and adaptability to new features or user needs? What potential customer segments could benefit from these upgrades?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what are the potential risks of the NeatScreen app becoming obsolete or commoditized within the next 3-5 years? How might these risks impact its market position?",
+          "question_en_preview": "Given the limited risk information provided, what are the potential risks of the NeatScreen app becoming obsolete or commoditized within the next 3-5 years? How might these risks impact its market position?"
+        }
+      ],
+      "elapsed_sec": 8.05,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 278,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the NeatScreen greenscreen mobile app project is supported by its lightweight and easy-to-use design, allowing for quick setup and portability. However, the project faces a significant risk due to low funding, which may impact its cash flow and testing phase.",
+        "first_key_point_preview": "The NeatScreen greenscreen mobile app is developed to complement an existing product line.",
+        "first_risk_preview": "The biggest risk is low funds, which may require waiting for more sales of other products to gain cash flow.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.6,
+        "raw_chars": 5191,
+        "usage": {
+          "prompt_tokens": 3463,
+          "completion_tokens": 1115,
+          "total_tokens": 4578
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding strategy",
+        "cash flow management",
+        "testing phase timeline",
+        "customer acceptance evidence",
+        "implementation barriers",
+        "resource sufficiency",
+        "risk mitigation strategies",
+        "operational execution plan",
+        "market demand validation",
+        "alignment of resources"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "risk_management": 1,
+          "operational_execution_plan": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "resources_and_infrastructure": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 2,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project is currently 107% funded with only 10 days left for funding, how does the team plan to secure additional funding to ensure cash flow for the testing phase? Please evaluate the sufficiency of the cu ...",
+          "question_en_preview": "Given that the project is currently 107% funded with only 10 days left for funding, how does the team plan to secure additional funding to ensure cash flow for the testing phase? Please evaluate the sufficiency of the cu ..."
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "The proposal identifies low funds as the biggest risk that may require waiting for more sales of other products to gain cash flow. What specific strategies does the team have in place to mitigate this risk, and how effec ...",
+          "question_en_preview": "The proposal identifies low funds as the biggest risk that may require waiting for more sales of other products to gain cash flow. What specific strategies does the team have in place to mitigate this risk, and how effec ..."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key tasks and timelines outlined for the testing phase of the NeatScreen greenscreen mobile app, and how does the team plan to ensure that these tasks are completed on schedule?",
+          "question_en_preview": "What are the key tasks and timelines outlined for the testing phase of the NeatScreen greenscreen mobile app, and how does the team plan to ensure that these tasks are completed on schedule?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the NeatScreen greenscreen mobile app's design and functionality, what evidence does the team have regarding customer acceptance and demand for this product in the market?",
+          "question_en_preview": "Considering the NeatScreen greenscreen mobile app's design and functionality, what evidence does the team have regarding customer acceptance and demand for this product in the market?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What potential barriers to implementation does the team foresee in the testing and deployment of the NeatScreen greenscreen mobile app, and how does the team plan to address these barriers?",
+          "question_en_preview": "What potential barriers to implementation does the team foresee in the testing and deployment of the NeatScreen greenscreen mobile app, and how does the team plan to address these barriers?"
+        }
+      ],
+      "elapsed_sec": 11.6,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T21:47:31Z",
+  "elapsed_sec": 53.82,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km8__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km8__openai/generated_questions_detail.json"
+}

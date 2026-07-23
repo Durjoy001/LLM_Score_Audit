@@ -1,0 +1,626 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt56__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt56__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 359,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team is led by Srujal Patel, who is the creator of Mind Rich CRM and possesses a strong educational background with degrees in electronics and management, as well as a diploma in Business System Analysis and Project Management. Srujal Patel has 12 years of experience in opera ...",
+        "first_key_point_preview": "Srujal Patel is the creator of Mind Rich CRM.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 23.04,
+        "raw_chars": 5303,
+        "usage": {
+          "prompt_tokens": 3349,
+          "completion_tokens": 1140,
+          "total_tokens": 4489
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "B2B sales experience",
+        "project management skills",
+        "domain-specific expertise",
+        "collaboration stability",
+        "governance structures",
+        "validation experience",
+        "capacity assessment",
+        "leadership track record",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 7,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 5,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "validation_and_compliance_experience": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Srujal Patel's 12 years of experience in operations and B2B sales specifically prepare the team to advance this project to its intended application and commercialization path?",
+          "question_en_preview": "How does Srujal Patel's 12 years of experience in operations and B2B sales specifically prepare the team to advance this project to its intended application and commercialization path?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that aligns with the challenges faced in the project, and how does this expertise enhance the project's execution capabilities?",
+          "question_en_preview": "What specific domain expertise does the team possess that aligns with the challenges faced in the project, and how does this expertise enhance the project's execution capabilities?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the lack of specified mitigation measures, what potential risks does the team face in terms of validation and compliance, and how might these impact project execution?",
+          "question_en_preview": "Given the lack of specified mitigation measures, what potential risks does the team face in terms of validation and compliance, and how might these impact project execution?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the current workload of the team affect their capacity to commit to this project, and what evidence can be provided to demonstrate their ability to manage this alongside other responsibilities?",
+          "question_en_preview": "How does the current workload of the team affect their capacity to commit to this project, and what evidence can be provided to demonstrate their ability to manage this alongside other responsibilities?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing collaborations or partnerships does the team have that could support the project's execution, and how stable and complementary are these relationships?",
+          "question_en_preview": "What existing collaborations or partnerships does the team have that could support the project's execution, and how stable and complementary are these relationships?"
+        }
+      ],
+      "elapsed_sec": 23.04,
+      "final_question_count": 9
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 324,
+        "key_points_count": 5,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to deliver the Mind Rich CRM product by November 2017, with plans to develop additional modules such as HR, Accounting, and Material Management. A Minimum Viable Product approach will be utilized to gather real-world feedback early in the process, while engaging  ...",
+        "first_key_point_preview": "The project aims to deliver the actual product of Mind Rich CRM in November 2017.",
+        "first_risk_preview": "Identifying and addressing technical risks early is necessary to reduce risk in the software development project.",
+        "first_mitigation_preview": "Identifying and addressing technical risks early is a strategy to reduce risk in the software development project."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.17,
+        "raw_chars": 3588,
+        "usage": {
+          "prompt_tokens": 3440,
+          "completion_tokens": 810,
+          "total_tokens": 4250
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Mind Rich CRM delivery timeline",
+        "user engagement strategy",
+        "Minimum Viable Product approach",
+        "quantifiable success metrics",
+        "technical risk identification",
+        "accessible technology mission",
+        "module development plans",
+        "stakeholder behavior change",
+        "project scope prioritization"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined is the overall goal of delivering the Mind Rich CRM product by November 2017, and does it avoid unrelated sub-goals?",
+          "question_en_preview": "How clearly defined is the overall goal of delivering the Mind Rich CRM product by November 2017, and does it avoid unrelated sub-goals?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the objectives align with the stated unmet need for accessible technology, and how urgent is this need in the current market?",
+          "question_en_preview": "To what extent do the objectives align with the stated unmet need for accessible technology, and how urgent is this need in the current market?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed timeline for delivering the Mind Rich CRM product and subsequent modules. What are the key milestones?",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed timeline for delivering the Mind Rich CRM product and subsequent modules. What are the key milestones?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are defined for the Mind Rich CRM product, and how will these metrics be measured?",
+          "question_en_preview": "What clear and quantifiable success metrics are defined for the Mind Rich CRM product, and how will these metrics be measured?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too idealistically or conservatively?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the project's objectives. Are the goals set too idealistically or conservatively?"
+        }
+      ],
+      "elapsed_sec": 16.17,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 307,
+        "key_points_count": 5,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy for the Mind Rich CRM project focuses on developing an affordable and user-friendly ERP system for small organizations. The project aims to engage users early through a Minimum Viable Product approach and seeks funding via Kickstarter to develop additional modules, i ...",
+        "first_key_point_preview": "The project aims to develop Mind Rich CRM as an affordable and easy-to-use ERP system for small organizations.",
+        "first_risk_preview": "Identifying and addressing technical risks early is a strategy to reduce risk in the software development project.",
+        "first_mitigation_preview": "Identifying and addressing technical risks early is a strategy to reduce risk in the software development project."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.65,
+        "raw_chars": 4026,
+        "usage": {
+          "prompt_tokens": 3529,
+          "completion_tokens": 864,
+          "total_tokens": 4393
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding strategy",
+        "Minimum Viable Product feedback",
+        "development milestones",
+        "budget realism",
+        "technical risk management",
+        "scalability assessment",
+        "user engagement strategy",
+        "module development plan",
+        "real-world validation",
+        "early user feedback integration"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to leverage Kickstarter for funding, and what are the anticipated challenges in securing this funding?",
+          "question_en_preview": "How does the project plan to leverage Kickstarter for funding, and what are the anticipated challenges in securing this funding?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies will be employed to engage users early through the Minimum Viable Product approach, and how will feedback be integrated into the development process?",
+          "question_en_preview": "What specific strategies will be employed to engage users early through the Minimum Viable Product approach, and how will feedback be integrated into the development process?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key milestones in the development and validation path for the Mind Rich CRM project, and how will success be measured at each stage?",
+          "question_en_preview": "What are the key milestones in the development and validation path for the Mind Rich CRM project, and how will success be measured at each stage?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how realistic is the budget for developing additional modules for Mind Rich CRM, considering the funding sought through Kickstarter? Please provide evidence that would increase your confidence in this  ...",
+          "question_en_preview": "On a scale of 1-5, how realistic is the budget for developing additional modules for Mind Rich CRM, considering the funding sought through Kickstarter? Please provide evidence that would increase your confidence in this  ..."
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What measures will be taken to identify and address technical risks early in the software development process, and how will these measures be validated?",
+          "question_en_preview": "What measures will be taken to identify and address technical risks early in the software development process, and how will these measures be validated?"
+        }
+      ],
+      "elapsed_sec": 14.65,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 318,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project focuses on the development of Mind Rich CRM, an affordable and user-friendly ERP system aimed at small organizations. It includes the creation of an Android app and plans for additional modules such as HR, Accounting, and Material Management, showcasing innovation in  ...",
+        "first_key_point_preview": "Mind Rich CRM is designed to be affordable and easy to use for small organizations.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.43,
+        "raw_chars": 4659,
+        "usage": {
+          "prompt_tokens": 3382,
+          "completion_tokens": 1024,
+          "total_tokens": 4406
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "affordability comparison",
+        "user-friendliness metrics",
+        "competitive advantages",
+        "experimental evidence",
+        "scalability challenges",
+        "intellectual property strategy",
+        "risk of obsolescence",
+        "module expansion plans",
+        "customer feedback",
+        "market positioning"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Mind Rich CRM's affordability and user-friendliness compare to existing ERP systems for small organizations? Please provide evidence to support your assessment.",
+          "question_en_preview": "How does Mind Rich CRM's affordability and user-friendliness compare to existing ERP systems for small organizations? Please provide evidence to support your assessment."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does Mind Rich CRM offer over other ERP solutions in terms of speed, quality, and cost? How do these advantages create a competitive edge?",
+          "question_en_preview": "What specific advantages does Mind Rich CRM offer over other ERP solutions in terms of speed, quality, and cost? How do these advantages create a competitive edge?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the innovation claims of Mind Rich CRM, particularly regarding its design and functionality? Please describe any experimental or operational evidence available.",
+          "question_en_preview": "What evidence supports the innovation claims of Mind Rich CRM, particularly regarding its design and functionality? Please describe any experimental or operational evidence available."
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of Mind Rich CRM within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of Mind Rich CRM within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How scalable is Mind Rich CRM in terms of extending its functionalities to additional modules like HR, Accounting, and Material Management? What are the potential challenges in this expansion?",
+          "question_en_preview": "How scalable is Mind Rich CRM in terms of extending its functionalities to additional modules like HR, Accounting, and Material Management? What are the potential challenges in this expansion?"
+        }
+      ],
+      "elapsed_sec": 14.43,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 378,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Mind Rich CRM project is challenged by the inherent risks associated with business software development, including high costs and potential project failures. The project targets small organizations, aiming to provide an easy-to-use and affordable CRM soluti ...",
+        "first_key_point_preview": "Mind Rich CRM is designed to be easy to use and affordable for small organizations.",
+        "first_risk_preview": "Business software projects can be expensive and risky undertakings.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.53,
+        "raw_chars": 4526,
+        "usage": {
+          "prompt_tokens": 3449,
+          "completion_tokens": 978,
+          "total_tokens": 4427
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "budget allocation",
+        "functional testing",
+        "user feedback management",
+        "project timeline",
+        "risk mitigation strategies",
+        "customer acceptance evidence",
+        "resource allocation",
+        "sustainability plan",
+        "implementation barriers",
+        "dependency management"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 7,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 6
+        },
+        "aspects": {
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "resources_and_infrastructure": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies does the project have in place to mitigate the risks associated with the high costs and potential failures of business software projects?",
+          "question_en_preview": "What specific strategies does the project have in place to mitigate the risks associated with the high costs and potential failures of business software projects?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to address the concerns raised by small but vocal minorities of users that may skew results, and what measures are in place to ensure balanced feedback?",
+          "question_en_preview": "How does the project plan to address the concerns raised by small but vocal minorities of users that may skew results, and what measures are in place to ensure balanced feedback?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the high costs associated with business software projects, how does the budget allocation for Mind Rich CRM ensure sustainability and what are the follow-on financing plans?",
+          "question_en_preview": "Given the high costs associated with business software projects, how does the budget allocation for Mind Rich CRM ensure sustainability and what are the follow-on financing plans?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key tasks and timelines outlined for the delivery of the Mind Rich CRM product in November 2017, and how does the team plan to manage dependencies?",
+          "question_en_preview": "What are the key tasks and timelines outlined for the delivery of the Mind Rich CRM product in November 2017, and how does the team plan to manage dependencies?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the ongoing functional testing of Mind Rich CRM contribute to the project's feasibility, and what resources are allocated to ensure its success?",
+          "question_en_preview": "How does the ongoing functional testing of Mind Rich CRM contribute to the project's feasibility, and what resources are allocated to ensure its success?"
+        }
+      ],
+      "elapsed_sec": 13.53,
+      "final_question_count": 9
+    }
+  },
+  "generated_at": "2026-07-15T20:18:42Z",
+  "elapsed_sec": 81.82,
+  "total_questions": 39,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt56__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt56__openai/generated_questions_detail.json"
+}

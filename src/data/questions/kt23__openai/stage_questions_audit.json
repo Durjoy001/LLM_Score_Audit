@@ -1,0 +1,615 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt23__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt23__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 158,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Marianne Hoffmann, who is also associated with the PABAsoft project. This indicates a focused leadership role within the team structure.",
+        "first_key_point_preview": "Marianne Hoffmann is the creator of the project.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.21,
+        "raw_chars": 4585,
+        "usage": {
+          "prompt_tokens": 3261,
+          "completion_tokens": 979,
+          "total_tokens": 4240
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Marianne Hoffmann leadership",
+        "PABAsoft project outcomes",
+        "domain expertise relevance",
+        "team capacity assessment",
+        "validation experience",
+        "governance structures",
+        "collaboration stability",
+        "risk mitigation strategies",
+        "execution capability"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Marianne Hoffmann's leadership experience with the PABAsoft project enhance her capability to lead this initiative, and what specific outcomes from that project can be leveraged here?",
+          "question_en_preview": "How does Marianne Hoffmann's leadership experience with the PABAsoft project enhance her capability to lead this initiative, and what specific outcomes from that project can be leveraged here?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does Marianne Hoffmann bring to the project, and how does this expertise relate to the challenges the initiative aims to address?",
+          "question_en_preview": "What specific domain expertise does Marianne Hoffmann bring to the project, and how does this expertise relate to the challenges the initiative aims to address?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current workload and any parallel projects, does the team have sufficient capacity to commit to this initiative effectively? If not, what are the implications?",
+          "question_en_preview": "Given the current workload and any parallel projects, does the team have sufficient capacity to commit to this initiative effectively? If not, what are the implications?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance in similar projects, and how does this experience mitigate potential risks associated with the initiative?",
+          "question_en_preview": "What experience does the team have with validation and compliance in similar projects, and how does this experience mitigate potential risks associated with the initiative?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures are in place to support decision-making within the team, and how might these structures address the risk of limited detailed risk information?",
+          "question_en_preview": "What governance structures are in place to support decision-making within the team, and how might these structures address the risk of limited detailed risk information?"
+        }
+      ],
+      "elapsed_sec": 14.21,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 288,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "PABAsoft aims to enhance therapy services for children with special needs, particularly those with autism, by reducing costs and improving service effectiveness. The project focuses on the child and their family, aspiring to inspire recovery from autism and emphasizing community  ...",
+        "first_key_point_preview": "PABAsoft is designed to decrease the costs of special needs therapy and expand the reach of service providers.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "PABAsoft aims to improve therapy services for special children, which serves as a mitigation strategy to enhance service delivery."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.1,
+        "raw_chars": 4421,
+        "usage": {
+          "prompt_tokens": 3418,
+          "completion_tokens": 954,
+          "total_tokens": 4372
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "cost reduction strategy",
+        "service effectiveness metrics",
+        "community support integration",
+        "milestone feasibility",
+        "quantifiable success metrics",
+        "impact delivery logic",
+        "alignment with autism needs",
+        "execution timeline analysis",
+        "therapy service improvement"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does PABAsoft's objective of enhancing therapy services for children with special needs align with the stated need for reducing costs and improving service effectiveness? Please evaluate the urgency of this alig ...",
+          "question_en_preview": "How well does PABAsoft's objective of enhancing therapy services for children with special needs align with the stated need for reducing costs and improving service effectiveness? Please evaluate the urgency of this alig ..."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Is the overall goal of PABAsoft, which focuses on reducing costs and improving service effectiveness for children with autism, clear and focused? Are there any unrelated sub-goals that could dilute this focus?",
+          "question_en_preview": "Is the overall goal of PABAsoft, which focuses on reducing costs and improving service effectiveness for children with autism, clear and focused? Are there any unrelated sub-goals that could dilute this focus?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for PABAsoft, and how reasonable and executable are they in the context of enhancing therapy services for children with special needs? Please provide an analysis of the timeline.",
+          "question_en_preview": "What are the proposed milestones for PABAsoft, and how reasonable and executable are they in the context of enhancing therapy services for children with special needs? Please provide an analysis of the timeline."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics does PABAsoft propose to measure the effectiveness of its therapy services for children with autism? How do these metrics align with the project's objectives?",
+          "question_en_preview": "What clear and quantifiable success metrics does PABAsoft propose to measure the effectiveness of its therapy services for children with autism? How do these metrics align with the project's objectives?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does PABAsoft's initiative create value and capture revenue or funding while delivering impact for children with autism? Please analyze the business or impact logic presented in the proposal.",
+          "question_en_preview": "How does PABAsoft's initiative create value and capture revenue or funding while delivering impact for children with autism? Please analyze the business or impact logic presented in the proposal."
+        }
+      ],
+      "elapsed_sec": 17.1,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 359,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "PABAsoft is a platform-based solution aimed at reducing costs associated with special needs therapy while enhancing the effectiveness of Applied Behavioral Analysis (ABA) for children with autism. The project employs next-generation web-based technologies and operates under a one ...",
+        "first_key_point_preview": "PABAsoft is designed to decrease the costs of special needs therapy and expand the reach of service providers.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "PABAsoft aims to decrease therapy costs and improve service provider reach, which serves as a mitigation strategy for potential market challenges."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.17,
+        "raw_chars": 5010,
+        "usage": {
+          "prompt_tokens": 3534,
+          "completion_tokens": 1055,
+          "total_tokens": 4589
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "one-for-one business model",
+        "Applied Behavioral Analysis effectiveness",
+        "real-world validation stages",
+        "financial model realism",
+        "compliance challenges",
+        "scaling strategy",
+        "partnership collaborations",
+        "market entry strategy",
+        "service delivery enhancements",
+        "cost reduction strategies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does PABAsoft's one-for-one business model enhance its market entry strategy and customer adoption? Please provide specific evidence from the proposal.",
+          "question_en_preview": "How does PABAsoft's one-for-one business model enhance its market entry strategy and customer adoption? Please provide specific evidence from the proposal."
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs in the design of PABAsoft's platform that could impact its effectiveness in delivering Applied Behavioral Analysis (ABA) therapy? Please elaborate on any potential alternatives considered.",
+          "question_en_preview": "What are the major trade-offs in the design of PABAsoft's platform that could impact its effectiveness in delivering Applied Behavioral Analysis (ABA) therapy? Please elaborate on any potential alternatives considered."
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation stages does PABAsoft plan to implement to ensure the effectiveness of its platform in real-world settings, particularly for children with autism? Please identify any gaps in the proposal regarding these s ...",
+          "question_en_preview": "What validation stages does PABAsoft plan to implement to ensure the effectiveness of its platform in real-world settings, particularly for children with autism? Please identify any gaps in the proposal regarding these s ..."
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is the financial model underpinning PABAsoft's one-for-one business model? Please provide evidence that would increase your confidence in this assessment.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the financial model underpinning PABAsoft's one-for-one business model? Please provide evidence that would increase your confidence in this assessment."
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what are the potential compliance and quality challenges that PABAsoft may face in delivering its therapy solution? How could these challenges affect its operational scalabili ...",
+          "question_en_preview": "Given the limited risk information provided, what are the potential compliance and quality challenges that PABAsoft may face in delivering its therapy solution? How could these challenges affect its operational scalabili ..."
+        }
+      ],
+      "elapsed_sec": 17.17,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 289,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "PABAsoft represents an innovative approach to enhancing the effectiveness of Applied Behavioral Analysis (ABA) for children with autism. It leverages next-generation web-based technologies and customized programs to address the growing needs associated with Autism Spectrum Disord ...",
+        "first_key_point_preview": "PABAsoft improves the effectiveness of Applied Behavioral Analysis (ABA), the leading therapeutic intervention model for children with autism.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "PABAsoft improves the effectiveness of Applied Behavioral Analysis (ABA), which serves as a mitigation strategy for enhancing therapeutic outcomes."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.71,
+        "raw_chars": 4425,
+        "usage": {
+          "prompt_tokens": 3405,
+          "completion_tokens": 1004,
+          "total_tokens": 4409
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Applied Behavioral Analysis effectiveness",
+        "next-generation web technologies",
+        "customized programs for ASD",
+        "video data capture",
+        "competitive advantages in ABA",
+        "intellectual property protection strategies",
+        "scalability of technology",
+        "evidence for therapeutic outcomes",
+        "risk of commoditization",
+        "customer segments for expansion"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does PABAsoft's approach to enhancing Applied Behavioral Analysis (ABA) compare to existing solutions in terms of novelty and effectiveness?",
+          "question_en_preview": "How does PABAsoft's approach to enhancing Applied Behavioral Analysis (ABA) compare to existing solutions in terms of novelty and effectiveness?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does PABAsoft offer over traditional ABA methods, particularly in terms of customer value and performance?",
+          "question_en_preview": "What specific advantages does PABAsoft offer over traditional ABA methods, particularly in terms of customer value and performance?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of PABAsoft in improving therapeutic outcomes for children with autism, and how robust is this evidence?",
+          "question_en_preview": "What evidence supports the effectiveness of PABAsoft in improving therapeutic outcomes for children with autism, and how robust is this evidence?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to PABAsoft becoming obsolete or commoditized in the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to PABAsoft becoming obsolete or commoditized in the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect PABAsoft's intellectual property, and how do these strategies support its competitive position in the market?",
+          "question_en_preview": "What strategies are in place to protect PABAsoft's intellectual property, and how do these strategies support its competitive position in the market?"
+        }
+      ],
+      "elapsed_sec": 12.71,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 280,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the PABAsoft project is supported by its global reach and the use of advanced web-based technologies. However, the project faced challenges in achieving its initial funding goal, although it is currently 107% funded with 10 days remaining in the funding period.",
+        "first_key_point_preview": "PABAsoft is based in Toronto, Canada, and has a worldwide reach.",
+        "first_risk_preview": "The project was unsuccessful in reaching its initial funding goal.",
+        "first_mitigation_preview": "PABAsoft improves the effectiveness of Applied Behavioral Analysis (ABA), which is a key therapeutic intervention model for children with autism."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.38,
+        "raw_chars": 4054,
+        "usage": {
+          "prompt_tokens": 3441,
+          "completion_tokens": 873,
+          "total_tokens": 4314
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding sustainability plan",
+        "implementation timeline",
+        "customer acceptance feasibility",
+        "adoption barriers",
+        "operational execution tasks",
+        "risk implications",
+        "web-based technology adoption",
+        "budget allocation",
+        "clinician monitoring effectiveness"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that PABAsoft is currently 107% funded with 10 days remaining in the funding period, how does this funding level align with the project's budget allocation and future financial sustainability plans?",
+          "question_en_preview": "Given that PABAsoft is currently 107% funded with 10 days remaining in the funding period, how does this funding level align with the project's budget allocation and future financial sustainability plans?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for the implementation of PABAsoft, and how do they ensure that clinicians can effectively monitor and respond to cases without delays?",
+          "question_en_preview": "What specific tasks and timelines are outlined for the implementation of PABAsoft, and how do they ensure that clinicians can effectively monitor and respond to cases without delays?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the implications of the project's initial failure to reach its funding goal, and how does this risk affect the overall feasibility of PABAsoft?",
+          "question_en_preview": "What are the implications of the project's initial failure to reach its funding goal, and how does this risk affect the overall feasibility of PABAsoft?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation might PABAsoft face in real production settings, particularly regarding the adoption of its web-based technologies by clinicians?",
+          "question_en_preview": "What barriers to implementation might PABAsoft face in real production settings, particularly regarding the adoption of its web-based technologies by clinicians?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How realistic is the feasibility of customer acceptance and procurement for PABAsoft in the healthcare sector, considering its reliance on advanced web-based technologies?",
+          "question_en_preview": "How realistic is the feasibility of customer acceptance and procurement for PABAsoft in the healthcare sector, considering its reliance on advanced web-based technologies?"
+        }
+      ],
+      "elapsed_sec": 17.38,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T17:12:18Z",
+  "elapsed_sec": 78.58,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt23__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt23__openai/generated_questions_detail.json"
+}

@@ -1,0 +1,620 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "pC__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/pC__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 389,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is structured with a clear hierarchy and defined roles, including a General Manager overseeing various departments such as Research and Development, Delivery, Marketing, and Administration. The delivery team is equipped with operational awareness and project mana ...",
+        "first_key_point_preview": "The delivery team has been established with members possessing operational awareness and project management capabilities.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.48,
+        "raw_chars": 3957,
+        "usage": {
+          "prompt_tokens": 3356,
+          "completion_tokens": 829,
+          "total_tokens": 4185
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "operational awareness",
+        "project management capabilities",
+        "General Manager role",
+        "government collaboration experience",
+        "governance structures",
+        "team capacity assessment",
+        "KPI assessment indicators",
+        "organizational structure",
+        "delivery team roles"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the leadership structure, particularly the role of the General Manager, contribute to the project's ability to achieve its objectives and manage operational challenges?",
+          "question_en_preview": "How does the leadership structure, particularly the role of the General Manager, contribute to the project's ability to achieve its objectives and manage operational challenges?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific operational awareness and project management capabilities do the delivery team members possess, and how do these capabilities align with the project's goals?",
+          "question_en_preview": "What specific operational awareness and project management capabilities do the delivery team members possess, and how do these capabilities align with the project's goals?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the lack of specified mitigation measures, what risks do you foresee in the team's ability to comply with necessary validation and quality systems, and how might this impact project execution?",
+          "question_en_preview": "Given the lack of specified mitigation measures, what risks do you foresee in the team's ability to comply with necessary validation and quality systems, and how might this impact project execution?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the team's experience in collaborating with the government enhance the project's credibility and operational capacity?",
+          "question_en_preview": "How does the team's experience in collaborating with the government enhance the project's credibility and operational capacity?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how would you rate the team's current workload and capacity to manage this project effectively? What evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1 to 5, how would you rate the team's current workload and capacity to manage this project effectively? What evidence would increase your confidence in this assessment?"
+        }
+      ],
+      "elapsed_sec": 10.48,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 332,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to establish 100 ZX*** colleges from 2022 to 2024, with a focus on improving the quality of professional construction in higher education. Each college will offer 3-4 majors and accommodate 300 students per cohort, addressing the talent demand in strategic indust ...",
+        "first_key_point_preview": "The overall goal is to establish 100 ZX*** colleges from 2022 to 2024.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The quality of professional construction in higher education institutions urgently needs improvement."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.51,
+        "raw_chars": 4063,
+        "usage": {
+          "prompt_tokens": 3424,
+          "completion_tokens": 883,
+          "total_tokens": 4307
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "ZX*** colleges establishment",
+        "professional construction quality",
+        "student cohort capacity",
+        "milestones for college setup",
+        "success metrics for education",
+        "value creation in education",
+        "impact on local workforce",
+        "urgent educational needs",
+        "cooperation agreements",
+        "vocational education reform"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined is the overall goal of establishing 100 ZX*** colleges from 2022 to 2024, and are there any unrelated sub-goals that could distract from this primary objective?",
+          "question_en_preview": "How clearly defined is the overall goal of establishing 100 ZX*** colleges from 2022 to 2024, and are there any unrelated sub-goals that could distract from this primary objective?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the project align with the urgent need to improve the quality of professional construction in higher education institutions, and what evidence supports this alignment?",
+          "question_en_preview": "To what extent does the project align with the urgent need to improve the quality of professional construction in higher education institutions, and what evidence supports this alignment?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Are the proposed milestones for establishing the 100 ZX*** colleges within the 2022 to 2024 timeline reasonable and executable, and what specific milestones are outlined?",
+          "question_en_preview": "Are the proposed milestones for establishing the 100 ZX*** colleges within the 2022 to 2024 timeline reasonable and executable, and what specific milestones are outlined?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are established for the project, particularly regarding the number of students per cohort and the quality of education provided?",
+          "question_en_preview": "What clear and quantifiable success metrics are established for the project, particularly regarding the number of students per cohort and the quality of education provided?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the initiative create value and capture revenue or funding through the establishment of the ZX*** colleges, and what impact is expected on the local workforce?",
+          "question_en_preview": "How does the initiative create value and capture revenue or funding through the establishment of the ZX*** colleges, and what impact is expected on the local workforce?"
+        }
+      ],
+      "elapsed_sec": 13.52,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 312,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy focuses on integrating industry standards into educational content and fostering deep cooperation between schools and enterprises. The plan includes expanding the number of ZX*** colleges significantly by 2024 and implementing a structured advancement plan through co ...",
+        "first_key_point_preview": "The organization emphasizes the integration of industry standards into teaching content.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.14,
+        "raw_chars": 4954,
+        "usage": {
+          "prompt_tokens": 3501,
+          "completion_tokens": 1041,
+          "total_tokens": 4542
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "cooperation agreements",
+        "ZX*** college expansion",
+        "educational content validation",
+        "sales based on teaching needs",
+        "quality assurance measures",
+        "partnership risks",
+        "industry standards integration",
+        "milestones for growth",
+        "sustained revenue strategy"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 5
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "solution_delivery_strategy": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the initiative plan to secure cooperation agreements with schools and enterprises to support the integration of industry standards into educational content? Please discuss any evidence of prior successful partne ...",
+          "question_en_preview": "How does the initiative plan to secure cooperation agreements with schools and enterprises to support the integration of industry standards into educational content? Please discuss any evidence of prior successful partne ..."
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific milestones are set for the expansion of ZX*** colleges from 20 to 100 by 2024, and how will the initiative validate the effectiveness of the educational content being developed?",
+          "question_en_preview": "What specific milestones are set for the expansion of ZX*** colleges from 20 to 100 by 2024, and how will the initiative validate the effectiveness of the educational content being developed?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that sales of educational equipment products are based on practical teaching needs, how does the initiative plan to assess and adapt to these needs over time to ensure sustained revenue?",
+          "question_en_preview": "Given that sales of educational equipment products are based on practical teaching needs, how does the initiative plan to assess and adapt to these needs over time to ensure sustained revenue?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the anticipated challenges in scaling from 20 to 100 ZX*** colleges, and how does the initiative plan to address these challenges?",
+          "question_en_preview": "What are the anticipated challenges in scaling from 20 to 100 ZX*** colleges, and how does the initiative plan to address these challenges?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quality assurance measures are in place to ensure that the integration of industry standards into educational content meets regulatory or accreditation requirements?",
+          "question_en_preview": "What quality assurance measures are in place to ensure that the integration of industry standards into educational content meets regulatory or accreditation requirements?"
+        }
+      ],
+      "elapsed_sec": 14.15,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 248,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The organization has developed standardized educational products and training programs aimed at addressing key issues in applied talent cultivation. This innovation reflects a strategic approach to enhance skill development and meet industry needs.",
+        "first_key_point_preview": "The organization has created standardized educational products.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.2,
+        "raw_chars": 4574,
+        "usage": {
+          "prompt_tokens": 3314,
+          "completion_tokens": 963,
+          "total_tokens": 4277
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "standardized educational products",
+        "training program effectiveness",
+        "customer feedback",
+        "pilot results",
+        "intellectual property protections",
+        "scalability to other segments",
+        "competitive advantages",
+        "risk of obsolescence",
+        "evidence for innovation"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the organization's approach to standardized educational products differ from existing solutions in the market, and what evidence supports this innovation?",
+          "question_en_preview": "How does the organization's approach to standardized educational products differ from existing solutions in the market, and what evidence supports this innovation?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages do the training programs offer compared to alternative approaches in applied talent cultivation, and how are these advantages validated?",
+          "question_en_preview": "What specific advantages do the training programs offer compared to alternative approaches in applied talent cultivation, and how are these advantages validated?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What types of evidence (e.g., customer feedback, pilot results) does the organization have to demonstrate the effectiveness of its educational products and training programs?",
+          "question_en_preview": "What types of evidence (e.g., customer feedback, pilot results) does the organization have to demonstrate the effectiveness of its educational products and training programs?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the organization's educational offerings?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the organization's educational offerings?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How scalable are the standardized educational products and training programs to other customer segments or geographies, and what evidence supports this scalability?",
+          "question_en_preview": "How scalable are the standardized educational products and training programs to other customer segments or geographies, and what evidence supports this scalability?"
+        }
+      ],
+      "elapsed_sec": 14.21,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 359,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by a strong resource base, including investment in facilities and operational capabilities. Risks are managed through mechanisms such as joint ventures and a low operational risk due to prior educational experience. Financial and team r ...",
+        "first_key_point_preview": "The project includes an investment in 6 servers and 500-600 square meters of workspace.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.26,
+        "raw_chars": 3775,
+        "usage": {
+          "prompt_tokens": 3447,
+          "completion_tokens": 795,
+          "total_tokens": 4242
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "investment in servers",
+        "workspace allocation",
+        "financial risk management",
+        "operational capabilities",
+        "implementation timeline",
+        "risk identification",
+        "customer acceptance feasibility",
+        "joint ventures",
+        "policy support",
+        "resource investment strategy"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "resources_and_infrastructure": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the investment in 6 servers and 500-600 square meters of workspace support the long-term operational needs of the project?",
+          "question_en_preview": "How does the investment in 6 servers and 500-600 square meters of workspace support the long-term operational needs of the project?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that financial risk is low with resource investment contingent on signed agreements, what are the implications for follow-on financing or sustainability plans?",
+          "question_en_preview": "Given that financial risk is low with resource investment contingent on signed agreements, what are the implications for follow-on financing or sustainability plans?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific tasks and timelines are outlined in the implementation plan to leverage the operational capabilities of Dingli Education?",
+          "question_en_preview": "What specific tasks and timelines are outlined in the implementation plan to leverage the operational capabilities of Dingli Education?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Considering the limited detailed risk information provided, how might this impact the project's overall feasibility and what additional risks should be identified?",
+          "question_en_preview": "Considering the limited detailed risk information provided, how might this impact the project's overall feasibility and what additional risks should be identified?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation in real production or operational settings could arise from the current lack of detailed risk information?",
+          "question_en_preview": "What barriers to implementation in real production or operational settings could arise from the current lack of detailed risk information?"
+        }
+      ],
+      "elapsed_sec": 11.26,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-06-16T21:48:54Z",
+  "elapsed_sec": 63.62,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/pC__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/pC__openai/generated_questions_detail.json"
+}

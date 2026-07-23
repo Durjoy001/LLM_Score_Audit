@@ -1,0 +1,616 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt97__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt97__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 172,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team for the project is led by Fatima Manzoor, who is identified as the creator of the Sumitt project. This indicates a clear leadership role within the team structure.",
+        "first_key_point_preview": "Fatima Manzoor is the creator of the Sumitt project.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.33,
+        "raw_chars": 3961,
+        "usage": {
+          "prompt_tokens": 3249,
+          "completion_tokens": 866,
+          "total_tokens": 4115
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "leadership experience",
+        "domain expertise",
+        "project execution capacity",
+        "validation experience",
+        "governance processes",
+        "team workload",
+        "risk management",
+        "compliance experience"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Fatima Manzoor's role as the creator of the Sumitt project demonstrate her leadership experience and capability to advance the project to its intended application?",
+          "question_en_preview": "How does Fatima Manzoor's role as the creator of the Sumitt project demonstrate her leadership experience and capability to advance the project to its intended application?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does Fatima Manzoor possess that is relevant to the challenges and objectives of the Sumitt project?",
+          "question_en_preview": "What specific domain expertise does Fatima Manzoor possess that is relevant to the challenges and objectives of the Sumitt project?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited information provided, how might the current workload of Fatima Manzoor and the team impact their capacity to execute the Sumitt project effectively?",
+          "question_en_preview": "Given the limited information provided, how might the current workload of Fatima Manzoor and the team impact their capacity to execute the Sumitt project effectively?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance processes that are necessary for the successful implementation of the Sumitt project, given the absence of detailed information?",
+          "question_en_preview": "What experience does the team have with validation and compliance processes that are necessary for the successful implementation of the Sumitt project, given the absence of detailed information?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the proposal's lack of specified governance and decision-making processes create risks for the Sumitt project, and what potential impacts could this have on project execution?",
+          "question_en_preview": "How does the proposal's lack of specified governance and decision-making processes create risks for the Sumitt project, and what potential impacts could this have on project execution?"
+        }
+      ],
+      "elapsed_sec": 12.33,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 316,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Sumitt project aims to develop software that simplifies document comprehension for students overwhelmed by reading materials. The project had a funding goal of $21,184, with a funding period from February 11, 2022, to March 13, 2022. However, the funding was canceled by the p ...",
+        "first_key_point_preview": "The Sumitt software aims to help students who feel overwhelmed by the number of readings they have to do.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.88,
+        "raw_chars": 4115,
+        "usage": {
+          "prompt_tokens": 3439,
+          "completion_tokens": 884,
+          "total_tokens": 4323
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "student comprehension improvement",
+        "funding cancellation impact",
+        "clear project objectives",
+        "success metrics definition",
+        "alignment with student needs",
+        "realistic project milestones"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the Sumitt project align with the stated need of helping students who feel overwhelmed by reading materials? Please discuss any evidence that supports this alignment.",
+          "question_en_preview": "How well does the Sumitt project align with the stated need of helping students who feel overwhelmed by reading materials? Please discuss any evidence that supports this alignment."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Is the overall goal of the Sumitt project clear and focused on simplifying document comprehension for students? What aspects of the proposal support or detract from this clarity?",
+          "question_en_preview": "Is the overall goal of the Sumitt project clear and focused on simplifying document comprehension for students? What aspects of the proposal support or detract from this clarity?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the funding for the Sumitt project was canceled shortly after its initiation, how realistic are the proposed milestones and timeline for achieving the project's objectives?",
+          "question_en_preview": "Given that the funding for the Sumitt project was canceled shortly after its initiation, how realistic are the proposed milestones and timeline for achieving the project's objectives?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics could be established to evaluate the effectiveness of the Sumitt software in improving document comprehension for students? If the proposal lacks this information, please identify the gap an ...",
+          "question_en_preview": "What specific success metrics could be established to evaluate the effectiveness of the Sumitt software in improving document comprehension for students? If the proposal lacks this information, please identify the gap an ..."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the Sumitt project plan to create value and capture funding or revenue, given the cancellation of its initial funding? What implications does this have for its objectives?",
+          "question_en_preview": "How does the Sumitt project plan to create value and capture funding or revenue, given the cancellation of its initial funding? What implications does this have for its objectives?"
+        }
+      ],
+      "elapsed_sec": 9.88,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 332,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy for the Sumitt project includes a focus on generating concise document summaries while maintaining comprehension quality. The project had a funding goal of $21,184, with a funding period from February 11, 2022, to March 13, 2022. However, the funding was ultimately c ...",
+        "first_key_point_preview": "The Sumitt project aims to create shorter and simpler document versions without compromising user comprehension.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.36,
+        "raw_chars": 4241,
+        "usage": {
+          "prompt_tokens": 3497,
+          "completion_tokens": 926,
+          "total_tokens": 4423
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding goal analysis",
+        "customer demand evidence",
+        "go-to-market strategy",
+        "validation stages",
+        "partnership opportunities",
+        "scaling risks",
+        "trade-offs in strategy",
+        "financial viability factors",
+        "concise document summaries",
+        "cancellation impact"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the approach of generating shorter and simpler document versions while maintaining comprehension quality? Are there alternative strategies considered, and what trade-offs were identified?",
+          "question_en_preview": "What rationale supports the approach of generating shorter and simpler document versions while maintaining comprehension quality? Are there alternative strategies considered, and what trade-offs were identified?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the funding goal of $21,184 and the funding period from February 11, 2022, to March 13, 2022, what validation stages were planned for the Sumitt project? How does the cancellation of funding impact these stages?",
+          "question_en_preview": "Given the funding goal of $21,184 and the funding period from February 11, 2022, to March 13, 2022, what validation stages were planned for the Sumitt project? How does the cancellation of funding impact these stages?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the proposed go-to-market strategy for the Sumitt project, and how does it align with the objectives of creating concise document summaries? What evidence supports the anticipated customer demand?",
+          "question_en_preview": "What is the proposed go-to-market strategy for the Sumitt project, and how does it align with the objectives of creating concise document summaries? What evidence supports the anticipated customer demand?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How realistic is the funding goal of $21,184 in relation to the expected costs and revenues associated with the Sumitt project? What factors could affect the project's financial viability?",
+          "question_en_preview": "How realistic is the funding goal of $21,184 in relation to the expected costs and revenues associated with the Sumitt project? What factors could affect the project's financial viability?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What partnerships or collaborations are envisioned to support the Sumitt project, and how might these relationships enhance the project's delivery and market entry?",
+          "question_en_preview": "What partnerships or collaborations are envisioned to support the Sumitt project, and how might these relationships enhance the project's delivery and market entry?"
+        }
+      ],
+      "elapsed_sec": 11.36,
+      "final_question_count": 6
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 296,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Sumitt is an innovative tool designed to simplify document comprehension by generating shorter versions without losing essential information. It employs a novel algorithm that extracts key content and reformulates it using AI and machine learning techniques, enhancing readability ...",
+        "first_key_point_preview": "Sumitt generates shorter and simpler document versions while maintaining comprehension quality.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.33,
+        "raw_chars": 4204,
+        "usage": {
+          "prompt_tokens": 3368,
+          "completion_tokens": 936,
+          "total_tokens": 4304
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "document summarization effectiveness",
+        "AI algorithm novelty",
+        "customer value differentiation",
+        "intellectual property strategy",
+        "scalability of solution",
+        "evidence of performance",
+        "risk of commoditization",
+        "competitive advantages",
+        "machine learning techniques"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Sumitt's algorithm for generating shorter document versions compare to existing solutions in terms of novelty and effectiveness?",
+          "question_en_preview": "How does Sumitt's algorithm for generating shorter document versions compare to existing solutions in terms of novelty and effectiveness?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does Sumitt offer over traditional document summarization tools, particularly regarding customer value and performance?",
+          "question_en_preview": "What specific advantages does Sumitt offer over traditional document summarization tools, particularly regarding customer value and performance?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of Sumitt's AI and machine learning techniques in enhancing document comprehension?",
+          "question_en_preview": "What evidence supports the effectiveness of Sumitt's AI and machine learning techniques in enhancing document comprehension?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to Sumitt's obsolescence or commoditization in the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to Sumitt's obsolescence or commoditization in the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies does Sumitt have in place for protecting its intellectual property, particularly regarding its novel algorithm?",
+          "question_en_preview": "What strategies does Sumitt have in place for protecting its intellectual property, particularly regarding its novel algorithm?"
+        }
+      ],
+      "elapsed_sec": 14.33,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 292,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Sumitt project is challenged by funding issues, as the project creator canceled the funding on February 21, 2022. However, the project has demonstrated effectiveness through beta testing, where students reported a 70% reduction in reading time while using t ...",
+        "first_key_point_preview": "The Sumitt project is based in Toronto, Canada.",
+        "first_risk_preview": "The project faces challenges in maintaining enough funds to develop and test the software.",
+        "first_mitigation_preview": "Beta testing surveys indicated that students who used Sumitt's assistance decreased their reading time by 70%."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.31,
+        "raw_chars": 5736,
+        "usage": {
+          "prompt_tokens": 3440,
+          "completion_tokens": 1232,
+          "total_tokens": 4672
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "funding sources",
+        "beta testing results",
+        "customer acceptance strategy",
+        "implementation timeline",
+        "risk mitigation strategies",
+        "resource allocation",
+        "procurement feasibility",
+        "project sustainability",
+        "operational bottlenecks",
+        "budget realism"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 7,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "funding_and_budget_planning": 2,
+          "risk_management": 2,
+          "operational_execution_plan": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "resources_and_infrastructure": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 2,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 3
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the funding goal for the Sumitt project was $21,184 and the funding period has ended, what is the current status of funding and what alternative funding sources are being considered to ensure project sustainab ...",
+          "question_en_preview": "Given that the funding goal for the Sumitt project was $21,184 and the funding period has ended, what is the current status of funding and what alternative funding sources are being considered to ensure project sustainab ..."
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "The project faces challenges in maintaining enough funds to develop and test the software. What specific strategies are in place to mitigate this funding risk, and how effective are they based on current projections?",
+          "question_en_preview": "The project faces challenges in maintaining enough funds to develop and test the software. What specific strategies are in place to mitigate this funding risk, and how effective are they based on current projections?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key tasks and timelines outlined for the Sumitt project to ensure effective implementation, and how do these align with the reported effectiveness from beta testing?",
+          "question_en_preview": "What are the key tasks and timelines outlined for the Sumitt project to ensure effective implementation, and how do these align with the reported effectiveness from beta testing?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the reported 70% reduction in reading time from beta testing, how does the project plan to leverage this data to gain customer acceptance and secure procurement in the educational sector?",
+          "question_en_preview": "Considering the reported 70% reduction in reading time from beta testing, how does the project plan to leverage this data to gain customer acceptance and secure procurement in the educational sector?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the timeline for the Sumitt project align with the resources currently available, and what potential bottlenecks have been identified that could impact the project's progress?",
+          "question_en_preview": "How does the timeline for the Sumitt project align with the resources currently available, and what potential bottlenecks have been identified that could impact the project's progress?"
+        }
+      ],
+      "elapsed_sec": 13.32,
+      "final_question_count": 9
+    }
+  },
+  "generated_at": "2026-07-15T21:27:31Z",
+  "elapsed_sec": 61.24,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt97__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt97__openai/generated_questions_detail.json"
+}

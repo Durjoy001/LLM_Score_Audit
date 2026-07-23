@@ -1,0 +1,619 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "ds1p6__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/ds1p6__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 406,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by Yang Guoqing, who serves as the Chief Executive Officer and is affiliated with Zhejiang University. The core team includes distinguished experts such as Pan Zhijie, Wu Zhaohui, and Li Jun, all of whom have significant experience in their respective fiel ...",
+        "first_key_point_preview": "Yang Guoqing is the Chief Executive Officer and leads the core team.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.04,
+        "raw_chars": 3866,
+        "usage": {
+          "prompt_tokens": 3402,
+          "completion_tokens": 836,
+          "total_tokens": 4238
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Yang Guoqing leadership",
+        "Pan Zhijie expertise",
+        "long-term partnerships",
+        "vehicle industry influence",
+        "team capacity assessment",
+        "validation experience",
+        "governance structures",
+        "project execution risk",
+        "technical advisory committee"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Yang Guoqing's leadership experience as Chief Executive Officer contribute to the project's potential for successful execution and commercialization?",
+          "question_en_preview": "How does Yang Guoqing's leadership experience as Chief Executive Officer contribute to the project's potential for successful execution and commercialization?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise do the core team members, including Pan Zhijie and Wu Zhaohui, bring to address the challenges in the vehicle industry?",
+          "question_en_preview": "What specific domain expertise do the core team members, including Pan Zhijie and Wu Zhaohui, bring to address the challenges in the vehicle industry?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How do the established long-term partnerships with companies like Wanxiang Group and Five Dragon Automotive enhance the project's execution capacity and market reach?",
+          "question_en_preview": "How do the established long-term partnerships with companies like Wanxiang Group and Five Dragon Automotive enhance the project's execution capacity and market reach?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Considering the current workload of the team, do you believe they have sufficient capacity to manage this project effectively? Please rate from 1 to 5 and specify what evidence would increase your confidence.",
+          "question_en_preview": "Considering the current workload of the team, do you believe they have sufficient capacity to manage this project effectively? Please rate from 1 to 5 and specify what evidence would increase your confidence."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance in the vehicle industry, and how does this impact the project's risk profile?",
+          "question_en_preview": "What experience does the team have with validation and compliance in the vehicle industry, and how does this impact the project's risk profile?"
+        }
+      ],
+      "elapsed_sec": 11.04,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 398,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 2,
+        "summary_preview": "The project aims to become a world-leading provider of autonomous driving platforms for special industries, focusing on machine replacement and vehicle modification to enhance operational efficiency and safety. Key milestones include the optimization of machine design and the dev ...",
+        "first_key_point_preview": "The project aims to realize machine replacement to reduce operational costs and eliminate safety hazards.",
+        "first_risk_preview": "The text discusses various types of risks, including market risks, policy risks, and technological risks.",
+        "first_mitigation_preview": "The project aims to realize machine replacement to reduce operational costs and eliminate safety hazards."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.56,
+        "raw_chars": 4582,
+        "usage": {
+          "prompt_tokens": 3484,
+          "completion_tokens": 950,
+          "total_tokens": 4434
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "operational efficiency metrics",
+        "safety hazard reduction",
+        "milestone feasibility",
+        "quantifiable success metrics",
+        "value creation logic",
+        "project scope analysis",
+        "ambition vs feasibility balance",
+        "vehicle modification impact",
+        "market channel development",
+        "machine design optimization"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the project's objective of becoming a world-leading provider of autonomous driving platforms align with the stated need for machine replacement to reduce operational costs and eliminate safety hazards? Plea ...",
+          "question_en_preview": "How well does the project's objective of becoming a world-leading provider of autonomous driving platforms align with the stated need for machine replacement to reduce operational costs and eliminate safety hazards? Plea ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed milestones and timeline from 2018 to 2023 for optimizing machine design and developing a high-performance computing platform. What evidence supports your asse ...",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed milestones and timeline from 2018 to 2023 for optimizing machine design and developing a high-performance computing platform. What evidence supports your asse ..."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear and quantifiable success metrics are outlined in the project objectives to measure the impact of machine replacement and vehicle modification on operational efficiency and safety? Are there any missing metrics ...",
+          "question_en_preview": "What clear and quantifiable success metrics are outlined in the project objectives to measure the impact of machine replacement and vehicle modification on operational efficiency and safety? Are there any missing metrics ..."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Discuss how the project’s objectives create value and capture revenue through the proposed modifications of existing vehicles for special operation. What assumptions underpin this logic, and are they realistic?",
+          "question_en_preview": "Discuss how the project’s objectives create value and capture revenue through the proposed modifications of existing vehicles for special operation. What assumptions underpin this logic, and are they realistic?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how balanced is the project's ambition in achieving its objectives against the feasibility of the proposed strategies? What evidence would increase your confidence in this balance?",
+          "question_en_preview": "On a scale of 1 to 5, how balanced is the project's ambition in achieving its objectives against the feasibility of the proposed strategies? What evidence would increase your confidence in this balance?"
+        }
+      ],
+      "elapsed_sec": 12.57,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 450,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop core software and hardware technologies for the global unmanned systems market, focusing on autonomous driving applications. It includes a structured financing plan to support product optimization, market expansion, and the establishment of a competiti ...",
+        "first_key_point_preview": "The project aims to provide core software and hardware technologies for the global unmanned systems market.",
+        "first_risk_preview": "The project discusses various types of risks, including market risks, policy risks, and technological risks.",
+        "first_mitigation_preview": "The '应对方式' (Response Method) column provides brief descriptions of strategies to address each risk."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 29.66,
+        "raw_chars": 5178,
+        "usage": {
+          "prompt_tokens": 3537,
+          "completion_tokens": 1094,
+          "total_tokens": 4631
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "autonomous driving technology stages",
+        "international technology alliance",
+        "product application system",
+        "financing plan sustainability",
+        "market entry strategy",
+        "competitive product line",
+        "validation path",
+        "scaling strategy",
+        "risk mitigation strategies",
+        "core software and hardware technologies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 2,
+          "development_and_validation_path": 1,
+          "solution_delivery_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "quality_compliance_strategy": 1
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to establish its product application system in collaboration with vehicle manufacturers, and what evidence supports the viability of this strategy?",
+          "question_en_preview": "How does the project plan to establish its product application system in collaboration with vehicle manufacturers, and what evidence supports the viability of this strategy?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the initial investment of 55 million, how does the project ensure that its financing plan supports sustainable product optimization and market expansion?",
+          "question_en_preview": "Given the initial investment of 55 million, how does the project ensure that its financing plan supports sustainable product optimization and market expansion?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the four stages of development for the autonomous driving technology, and how will each stage be validated before moving to the next?",
+          "question_en_preview": "What are the four stages of development for the autonomous driving technology, and how will each stage be validated before moving to the next?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What major trade-offs were considered in the solution delivery strategy for the core software and hardware technologies, and how do these trade-offs impact the project's feasibility?",
+          "question_en_preview": "What major trade-offs were considered in the solution delivery strategy for the core software and hardware technologies, and how do these trade-offs impact the project's feasibility?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What strategies are in place to scale the project from initial development to large-scale rollout, particularly in international markets?",
+          "question_en_preview": "What strategies are in place to scale the project from initial development to large-scale rollout, particularly in international markets?"
+        }
+      ],
+      "elapsed_sec": 29.66,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 341,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project demonstrates significant innovation through the development of advanced technologies for autonomous driving, including a heterogeneous multi-processor computing unit and various intelligent control systems. It holds numerous patents and copyrights, showcasing its comm ...",
+        "first_key_point_preview": "The organization holds 70 invention patents and 30 software copyrights.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.35,
+        "raw_chars": 4710,
+        "usage": {
+          "prompt_tokens": 3405,
+          "completion_tokens": 1020,
+          "total_tokens": 4425
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "heterogeneous multi-processor technology",
+        "invention patents",
+        "software copyrights",
+        "customer value advantages",
+        "evidence of effectiveness",
+        "competitive edge analysis",
+        "risk of obsolescence",
+        "market differentiation",
+        "extensibility to other segments",
+        "machine learning frameworks"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 4
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "ip_and_protection": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project's use of heterogeneous multi-processor fusion technology and machine learning algorithm frameworks represent a true novelty compared to existing solutions in autonomous driving?",
+          "question_en_preview": "How does the project's use of heterogeneous multi-processor fusion technology and machine learning algorithm frameworks represent a true novelty compared to existing solutions in autonomous driving?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the project offer over existing autonomous driving technologies, particularly in terms of customer value, performance, and scalability?",
+          "question_en_preview": "What specific advantages does the project offer over existing autonomous driving technologies, particularly in terms of customer value, performance, and scalability?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the organization's portfolio of 70 invention patents and 30 software copyrights strengthen its competitive position in the autonomous driving market?",
+          "question_en_preview": "How does the organization's portfolio of 70 invention patents and 30 software copyrights strengthen its competitive position in the autonomous driving market?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness and reliability of the advanced technologies developed for autonomous driving, and how does this evidence compare to industry standards?",
+          "question_en_preview": "What evidence supports the effectiveness and reliability of the advanced technologies developed for autonomous driving, and how does this evidence compare to industry standards?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What potential risks exist regarding the obsolescence or commoditization of the project's technology within the next 3-5 years, and how might these risks impact its competitive edge?",
+          "question_en_preview": "What potential risks exist regarding the obsolescence or commoditization of the project's technology within the next 3-5 years, and how might these risks impact its competitive edge?"
+        }
+      ],
+      "elapsed_sec": 13.35,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 285,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by advanced technology, low technical and policy risks, and a comprehensive financing plan. The project aims to address the talent and resource gaps in the autonomous driving sector while aligning with market demands and industrial poli ...",
+        "first_key_point_preview": "The project employs advanced and reliable technology, resulting in a relatively low technical risk.",
+        "first_risk_preview": "The project faces market risks due to the explosive growth of the autonomous driving market and a significant market gap.",
+        "first_mitigation_preview": "The financing plan includes purposes such as product optimization, product line expansion, and international market channel development."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 21.52,
+        "raw_chars": 4296,
+        "usage": {
+          "prompt_tokens": 3467,
+          "completion_tokens": 911,
+          "total_tokens": 4378
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "financing plan details",
+        "product verification timeline",
+        "market risk mitigation strategies",
+        "implementation barriers",
+        "customer acceptance evidence",
+        "resource alignment assessment",
+        "budget allocation reasonableness",
+        "operational execution clarity",
+        "diversity of funding sources",
+        "market entry strategy"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the financing plan ensure sufficient funds for product development, optimization, and market expansion? Please evaluate the diversity of funding sources and the reasonableness of budget allocation.",
+          "question_en_preview": "How does the financing plan ensure sufficient funds for product development, optimization, and market expansion? Please evaluate the diversity of funding sources and the reasonableness of budget allocation."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks, owners, and timelines are included in the implementation plan for product verification and market entry? How do these align with the proposed timeline from 2018 to 2022?",
+          "question_en_preview": "What specific tasks, owners, and timelines are included in the implementation plan for product verification and market entry? How do these align with the proposed timeline from 2018 to 2022?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified market risks due to the explosive growth of the autonomous driving market, what specific strategies are in place to mitigate these risks? How effective do you believe these strategies will be?",
+          "question_en_preview": "Given the identified market risks due to the explosive growth of the autonomous driving market, what specific strategies are in place to mitigate these risks? How effective do you believe these strategies will be?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation in real production or operational settings have been identified, and how does the project plan to address these barriers?",
+          "question_en_preview": "What barriers to implementation in real production or operational settings have been identified, and how does the project plan to address these barriers?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the feasibility of customer acceptance and procurement in the target market? If the proposal lacks sufficient details on this aspect, please state the information gap and discuss its impact.",
+          "question_en_preview": "What evidence supports the feasibility of customer acceptance and procurement in the target market? If the proposal lacks sufficient details on this aspect, please state the information gap and discuss its impact."
+        }
+      ],
+      "elapsed_sec": 21.52,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-06-11T16:39:26Z",
+  "elapsed_sec": 88.14,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p6__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p6__openai/generated_questions_detail.json"
+}

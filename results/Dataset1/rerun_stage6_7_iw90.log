@@ -1,0 +1,814 @@
+[23:04:02] [START] Re-running Stage 6+7 for 12 proposals
+[23:04:02] [STAGE6+7] Starting pid=p1
+[LIFECYCLE] base_pid=p1 configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=p1__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid p1__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=p1__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p1__openai/postproc/metrics.json size_bytes=484881
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p1__openai/postproc/final_payload.json size_bytes=85774
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p1__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=32973
+[LLM_CALL] done attempts=1 elapsed_sec=14.93
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=6689
+[LLM_CALL] done attempts=1 elapsed_sec=5.22
+[INVEST] investment categories: {"team": "T-B", "objectives": "O-B", "strategy": "S-B", "innovation": "I-B", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The project is led by Professor Zhang Liang, who has extensive surgical experience and academic credentials, indicating strong leadership. The team includes experts in cardiovascular medicine and AI, but lacks evidence of large-scale execution or commercial success.", "objectives": "The project aims to standardize treatment for over 12 million heart failure patients in China and addresses regional disparities, indicating a clear problem and market size estimate, but lacks specific buyer pathways.", "strategy": "The strategy includes advanced AI technologies and a structured approach to heart failure management, with some evidence of differentiation, but lacks strong validation signals.", "innovation": "The project introduces a heart failure large model undergoing patent application and features advanced technologies, but the innovation is more of a refinement rather than a completely new class.", "feasibility": "The project has a detailed budget plan and a structured approach to data management, with a clear timeline, but lacks comprehensive risk mitigation details."}
+[INVEST] investment scores: {'team': 0.65, 'objectives': 0.7, 'strategy': 0.65, 'innovation': 0.75, 'feasibility': 0.7}
+[TIMING] investment_scoring elapsed_sec=5.219
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=232 strengths=3 concerns=2 recommendations=3 score=0.644 (qa=0.587 invest=0.650)
+[DIM_OUTPUT] objectives: summary_chars=166 strengths=2 concerns=3 recommendations=3 score=0.685 (qa=0.548 invest=0.700)
+[DIM_OUTPUT] strategy: summary_chars=165 strengths=2 concerns=2 recommendations=2 score=0.643 (qa=0.582 invest=0.650)
+[DIM_OUTPUT] innovation: summary_chars=187 strengths=2 concerns=2 recommendations=3 score=0.735 (qa=0.601 invest=0.750)
+[DIM_OUTPUT] feasibility: summary_chars=146 strengths=2 concerns=2 recommendations=3 score=0.689 (qa=0.587 invest=0.700)
+[TIMING] clean_dimension_blocks elapsed_sec=0.006
+[TIMING] build_overall_from_dims elapsed_sec=0.003
+[TIMING] write_outputs elapsed_sec=0.001
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p1__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p1__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p1__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p1__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=GO overall_score=0.680 confidence=0.786
+[STAGE_6] Completed Stage 6 elapsed_sec=20.163
+[RUN] provider=openai stage=generate_final_report pid=p1__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid p1__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=p1__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p1__openai/postproc/final_payload.json size_bytes=85774
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p1__openai/ai_expert_opinion.md size_bytes=9155
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p1__openai/ai_expert_opinion.json size_bytes=10229
+[TIMING] read_inputs elapsed_sec=0.001
+[DIM_INPUT] team: qas=8 rationales=0 general_insights=10 score=58.7
+[DIM_INPUT] objectives: qas=6 rationales=0 general_insights=10 score=54.8
+[DIM_INPUT] strategy: qas=7 rationales=1 general_insights=10 score=58.2
+[DIM_INPUT] innovation: qas=7 rationales=3 general_insights=10 score=60.1
+[DIM_INPUT] feasibility: qas=6 rationales=1 general_insights=10 score=58.7
+[SECTION] executive_summary included=True chars=2864 elapsed_sec=0.000
+[SECTION] expert_review chars=8344 elapsed_sec=0.000
+[SECTION] qa_traceability chars=26136 qas_available=34 qas_shown=34 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.000
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p1__openai_final_report.md size_bytes=60664
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p1__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=34 report_chars=37586
+[STAGE_7] Completed Stage 7 elapsed_sec=0.005
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/p1/provider_lifecycle_summary.json
+[23:04:24] [STAGE6+7] OK pid=p1
+[23:04:24] [STAGE6+7] Starting pid=p2
+[LIFECYCLE] base_pid=p2 configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=p2__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid p2__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=p2__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p2__openai/postproc/metrics.json size_bytes=501655
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p2__openai/postproc/final_payload.json size_bytes=87846
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.001
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Weak signal; this dimension appears to have clear limitations or limited evidence.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Weak signal; this dimension appears to have clear limitations or limited evidence.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p2__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=70081
+[LLM_CALL] done attempts=1 elapsed_sec=11.96
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=7173
+[LLM_CALL] done attempts=1 elapsed_sec=3.79
+[INVEST] investment categories: {"team": "T-B", "objectives": "O-B", "strategy": "S-B", "innovation": "I-B", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The team includes Dr. Zhang Lu Jia and Dr. Feng Yinghui, who have significant academic and industry experience, and the project has published over 70 SCI papers, indicating a strong research background.", "objectives": "The project aims to develop high-performance enzyme products with quantified improvements (5x, 3x, 2.1x) but lacks a clearly defined buyer pathway.", "strategy": "The strategy addresses domestic enzyme supply issues and includes collaborations for cost-effective solutions, but lacks strong evidence of market validation.", "innovation": "The project shows advancements in enzyme efficiency and design, but the innovations are refinements rather than a completely new class of mechanisms.", "feasibility": "The project has a robust funding allocation plan and access to extensive experimental data, but faces challenges in hydrolyzing soy protein effectively."}
+[INVEST] investment scores: {'team': 0.75, 'objectives': 0.65, 'strategy': 0.7, 'innovation': 0.7, 'feasibility': 0.75}
+[TIMING] investment_scoring elapsed_sec=3.790
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=327 strengths=3 concerns=3 recommendations=3 score=0.728 (qa=0.531 invest=0.750)
+[DIM_OUTPUT] objectives: summary_chars=293 strengths=3 concerns=3 recommendations=3 score=0.631 (qa=0.464 invest=0.650)
+[DIM_OUTPUT] strategy: summary_chars=299 strengths=3 concerns=3 recommendations=2 score=0.686 (qa=0.559 invest=0.700)
+[DIM_OUTPUT] innovation: summary_chars=277 strengths=2 concerns=3 recommendations=3 score=0.674 (qa=0.442 invest=0.700)
+[DIM_OUTPUT] feasibility: summary_chars=290 strengths=3 concerns=3 recommendations=3 score=0.727 (qa=0.519 invest=0.750)
+[TIMING] clean_dimension_blocks elapsed_sec=0.008
+[TIMING] build_overall_from_dims elapsed_sec=0.004
+[TIMING] write_outputs elapsed_sec=0.001
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p2__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p2__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p2__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p2__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=HOLD overall_score=0.690 confidence=0.640
+[STAGE_6] Completed Stage 6 elapsed_sec=15.767
+[RUN] provider=openai stage=generate_final_report pid=p2__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid p2__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=p2__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p2__openai/postproc/final_payload.json size_bytes=87846
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p2__openai/ai_expert_opinion.md size_bytes=10736
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p2__openai/ai_expert_opinion.json size_bytes=11947
+[TIMING] read_inputs elapsed_sec=0.001
+[DIM_INPUT] team: qas=7 rationales=3 general_insights=10 score=53.1
+[DIM_INPUT] objectives: qas=6 rationales=3 general_insights=10 score=46.4
+[DIM_INPUT] strategy: qas=6 rationales=3 general_insights=10 score=55.9
+[DIM_INPUT] innovation: qas=8 rationales=3 general_insights=10 score=44.2
+[DIM_INPUT] feasibility: qas=7 rationales=3 general_insights=10 score=51.9
+[SECTION] executive_summary included=True chars=3039 elapsed_sec=0.000
+[SECTION] expert_review chars=9916 elapsed_sec=0.000
+[SECTION] qa_traceability chars=52353 qas_available=34 qas_shown=34 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.000
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p2__openai_final_report.md size_bytes=65722
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p2__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=34 report_chars=65550
+[STAGE_7] Completed Stage 7 elapsed_sec=0.005
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/p2/provider_lifecycle_summary.json
+[23:04:40] [STAGE6+7] OK pid=p2
+[23:04:40] [STAGE6+7] Starting pid=p3
+[LIFECYCLE] base_pid=p3 configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=p3__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid p3__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=p3__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p3__openai/postproc/metrics.json size_bytes=546187
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p3__openai/postproc/final_payload.json size_bytes=96148
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p3__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=32609
+[LLM_CALL] done attempts=1 elapsed_sec=17.35
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=7528
+[LLM_CALL] done attempts=1 elapsed_sec=4.14
+[INVEST] investment categories: {"team": "T-A", "objectives": "O-B", "strategy": "S-B", "innovation": "I-B", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The project team is led by Professor Wang Jiangyun from the Institute of Biophysics, Chinese Academy of Sciences, with over 80 publications and 20 patents, indicating strong academic and research credentials.", "objectives": "The project outlines clear objectives related to antibody production and purification, including specific milestones and aims to establish large-scale synthesis capabilities by 2025, but lacks detailed buyer pathway evidence.", "strategy": "The strategy integrates advanced protein design and addresses market risks through collaboration, but the competitive moat is not fully established.", "innovation": "The project introduces a novel protein design platform and aims for significant improvements in binding affinity, but it lacks a completely new mechanistic class, thus scoring lower than I-A.", "feasibility": "The project has a structured budget and plans for Series A financing, but faces significant market and regulatory risks that could impact execution."}
+[INVEST] investment scores: {'team': 0.85, 'objectives': 0.68, 'strategy': 0.7, 'innovation': 0.75, 'feasibility': 0.65}
+[TIMING] investment_scoring elapsed_sec=4.140
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=284 strengths=3 concerns=3 recommendations=3 score=0.824 (qa=0.589 invest=0.850)
+[DIM_OUTPUT] objectives: summary_chars=290 strengths=2 concerns=3 recommendations=2 score=0.666 (qa=0.543 invest=0.680)
+[DIM_OUTPUT] strategy: summary_chars=265 strengths=2 concerns=3 recommendations=3 score=0.691 (qa=0.606 invest=0.700)
+[DIM_OUTPUT] innovation: summary_chars=276 strengths=1 concerns=2 recommendations=3 score=0.735 (qa=0.602 invest=0.750)
+[DIM_OUTPUT] feasibility: summary_chars=271 strengths=2 concerns=3 recommendations=3 score=0.640 (qa=0.549 invest=0.650)
+[TIMING] clean_dimension_blocks elapsed_sec=0.010
+[TIMING] build_overall_from_dims elapsed_sec=0.004
+[TIMING] write_outputs elapsed_sec=0.001
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p3__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p3__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p3__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p3__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=GO overall_score=0.709 confidence=0.818
+[STAGE_6] Completed Stage 6 elapsed_sec=21.511
+[RUN] provider=openai stage=generate_final_report pid=p3__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid p3__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=p3__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p3__openai/postproc/final_payload.json size_bytes=96148
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p3__openai/ai_expert_opinion.md size_bytes=11054
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p3__openai/ai_expert_opinion.json size_bytes=12146
+[TIMING] read_inputs elapsed_sec=0.001
+[DIM_INPUT] team: qas=8 rationales=0 general_insights=10 score=58.9
+[DIM_INPUT] objectives: qas=7 rationales=0 general_insights=10 score=54.3
+[DIM_INPUT] strategy: qas=7 rationales=0 general_insights=10 score=60.6
+[DIM_INPUT] innovation: qas=8 rationales=1 general_insights=10 score=60.2
+[DIM_INPUT] feasibility: qas=8 rationales=0 general_insights=10 score=54.9
+[SECTION] executive_summary included=True chars=2573 elapsed_sec=0.000
+[SECTION] expert_review chars=10230 elapsed_sec=0.000
+[SECTION] qa_traceability chars=28319 qas_available=38 qas_shown=38 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.000
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p3__openai_final_report.md size_bytes=67390
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p3__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=38 report_chars=41364
+[STAGE_7] Completed Stage 7 elapsed_sec=0.006
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/p3/provider_lifecycle_summary.json
+[23:05:02] [STAGE6+7] OK pid=p3
+[23:05:02] [STAGE6+7] Starting pid=p4
+[LIFECYCLE] base_pid=p4 configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=p4__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid p4__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=p4__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p4__openai/postproc/metrics.json size_bytes=520617
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p4__openai/postproc/final_payload.json size_bytes=91754
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p4__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=32253
+[LLM_CALL] done attempts=1 elapsed_sec=13.35
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=6326
+[LLM_CALL] done attempts=1 elapsed_sec=4.31
+[INVEST] investment categories: {"team": "T-B", "objectives": "O-B", "strategy": "S-B", "innovation": "I-B", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The team includes members from prestigious institutions like Peking University and Tsinghua University, with strong R&D capabilities and practical experience in medical device approvals, qualifying them for T-B.", "objectives": "The project outlines clear engineering development milestones and a timeline for NMPA approvals, but lacks specific buyer pathways or demand validation, placing it in O-B.", "strategy": "The strategy includes plans for hardware and software design and a funding target, but lacks strong evidence of competitive moat or market validation, leading to a score in S-B.", "innovation": "The project claims significant innovations in TTF technology with independent IP rights and improvements in treatment efficacy, but does not fully meet the criteria for I-A, thus scoring in I-B.", "feasibility": "The project has a well-defined budget and timeline with a clear funding plan, indicating a structured approach to implementation, which supports a score in F-B."}
+[INVEST] investment scores: {'team': 0.7, 'objectives': 0.65, 'strategy': 0.6, 'innovation': 0.8, 'feasibility': 0.75}
+[TIMING] investment_scoring elapsed_sec=4.312
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=277 strengths=2 concerns=2 recommendations=3 score=0.688 (qa=0.582 invest=0.700)
+[DIM_OUTPUT] objectives: summary_chars=228 strengths=2 concerns=2 recommendations=2 score=0.645 (qa=0.595 invest=0.650)
+[DIM_OUTPUT] strategy: summary_chars=229 strengths=2 concerns=2 recommendations=1 score=0.597 (qa=0.572 invest=0.600)
+[DIM_OUTPUT] innovation: summary_chars=235 strengths=2 concerns=3 recommendations=1 score=0.781 (qa=0.614 invest=0.800)
+[DIM_OUTPUT] feasibility: summary_chars=212 strengths=2 concerns=2 recommendations=2 score=0.729 (qa=0.542 invest=0.750)
+[TIMING] clean_dimension_blocks elapsed_sec=0.010
+[TIMING] build_overall_from_dims elapsed_sec=0.004
+[TIMING] write_outputs elapsed_sec=0.002
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p4__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p4__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p4__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p4__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=GO overall_score=0.691 confidence=0.783
+[STAGE_6] Completed Stage 6 elapsed_sec=17.688
+[RUN] provider=openai stage=generate_final_report pid=p4__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid p4__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=p4__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p4__openai/postproc/final_payload.json size_bytes=91754
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p4__openai/ai_expert_opinion.md size_bytes=10105
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p4__openai/ai_expert_opinion.json size_bytes=11148
+[TIMING] read_inputs elapsed_sec=0.001
+[DIM_INPUT] team: qas=8 rationales=0 general_insights=10 score=58.2
+[DIM_INPUT] objectives: qas=6 rationales=1 general_insights=10 score=59.5
+[DIM_INPUT] strategy: qas=8 rationales=0 general_insights=10 score=57.2
+[DIM_INPUT] innovation: qas=8 rationales=0 general_insights=10 score=61.4
+[DIM_INPUT] feasibility: qas=7 rationales=0 general_insights=10 score=54.2
+[SECTION] executive_summary included=True chars=3057 elapsed_sec=0.000
+[SECTION] expert_review chars=9372 elapsed_sec=0.000
+[SECTION] qa_traceability chars=27506 qas_available=37 qas_shown=37 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.000
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p4__openai_final_report.md size_bytes=64989
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p4__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=37 report_chars=40177
+[STAGE_7] Completed Stage 7 elapsed_sec=0.005
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/p4/provider_lifecycle_summary.json
+[23:05:21] [STAGE6+7] OK pid=p4
+[23:05:21] [STAGE6+7] Starting pid=p5
+[LIFECYCLE] base_pid=p5 configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=p5__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid p5__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=p5__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p5__openai/postproc/metrics.json size_bytes=506107
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p5__openai/postproc/final_payload.json size_bytes=90891
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Moderately strong signal; clear advantages exist, with room to improve.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=1 missing=9 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p5__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=35454
+[LLM_CALL] done attempts=1 elapsed_sec=18.59
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=6652
+[LLM_CALL] done attempts=1 elapsed_sec=4.59
+[INVEST] investment categories: {"team": "T-B", "objectives": "O-B", "strategy": "S-B", "innovation": "I-B", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The team includes experts from 中科院微小卫星创新研究院 and other organizations specializing in satellite technology, with key members having significant experience in aerospace, qualifying for T-B.", "objectives": "The project has clear milestones and a defined goal of delivering 100 micro thrusters over five years, indicating a clear problem and market size estimate, qualifying for O-B.", "strategy": "The strategy outlines a development path and funding needs but lacks strong evidence of market validation or competitive moat, placing it in S-B.", "innovation": "The project presents significant advancements in propulsion technology and holds multiple patents, but the innovations are refinements rather than a new class, qualifying for I-B.", "feasibility": "The proposal acknowledges technical challenges and outlines some mitigations, but lacks detailed budget breakdowns and specific timelines, placing it in F-B."}
+[INVEST] investment scores: {'team': 0.65, 'objectives': 0.7, 'strategy': 0.6, 'innovation': 0.8, 'feasibility': 0.58}
+[TIMING] investment_scoring elapsed_sec=4.593
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=254 strengths=3 concerns=2 recommendations=3 score=0.646 (qa=0.614 invest=0.650)
+[DIM_OUTPUT] objectives: summary_chars=264 strengths=2 concerns=2 recommendations=3 score=0.688 (qa=0.578 invest=0.700)
+[DIM_OUTPUT] strategy: summary_chars=275 strengths=2 concerns=3 recommendations=3 score=0.605 (qa=0.655 invest=0.600)
+[DIM_OUTPUT] innovation: summary_chars=305 strengths=1 concerns=3 recommendations=2 score=0.780 (qa=0.600 invest=0.800)
+[DIM_OUTPUT] feasibility: summary_chars=298 strengths=2 concerns=2 recommendations=2 score=0.577 (qa=0.551 invest=0.580)
+[TIMING] clean_dimension_blocks elapsed_sec=0.008
+[TIMING] build_overall_from_dims elapsed_sec=0.002
+[TIMING] write_outputs elapsed_sec=0.001
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p5__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p5__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p5__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p5__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=GO overall_score=0.658 confidence=0.779
+[STAGE_6] Completed Stage 6 elapsed_sec=23.198
+[RUN] provider=openai stage=generate_final_report pid=p5__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid p5__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=p5__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p5__openai/postproc/final_payload.json size_bytes=90891
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p5__openai/ai_expert_opinion.md size_bytes=9120
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p5__openai/ai_expert_opinion.json size_bytes=10200
+[TIMING] read_inputs elapsed_sec=0.001
+[DIM_INPUT] team: qas=8 rationales=1 general_insights=10 score=61.4
+[DIM_INPUT] objectives: qas=7 rationales=0 general_insights=10 score=57.8
+[DIM_INPUT] strategy: qas=7 rationales=3 general_insights=10 score=65.5
+[DIM_INPUT] innovation: qas=7 rationales=3 general_insights=10 score=60.0
+[DIM_INPUT] feasibility: qas=6 rationales=0 general_insights=10 score=55.1
+[SECTION] executive_summary included=True chars=2588 elapsed_sec=0.000
+[SECTION] expert_review chars=8385 elapsed_sec=0.000
+[SECTION] qa_traceability chars=27925 qas_available=35 qas_shown=35 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.001
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p5__openai_final_report.md size_bytes=63104
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p5__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=35 report_chars=39140
+[STAGE_7] Completed Stage 7 elapsed_sec=0.006
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/p5/provider_lifecycle_summary.json
+[23:05:45] [STAGE6+7] OK pid=p5
+[23:05:45] [STAGE6+7] Starting pid=p6
+[LIFECYCLE] base_pid=p6 configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=p6__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid p6__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=p6__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p6__openai/postproc/metrics.json size_bytes=478818
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p6__openai/postproc/final_payload.json size_bytes=81480
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Weak signal; this dimension appears to have clear limitations or limited evidence.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p6__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=31282
+[LLM_CALL] done attempts=1 elapsed_sec=13.65
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=6748
+[LLM_CALL] done attempts=1 elapsed_sec=3.68
+[INVEST] investment categories: {"team": "T-B", "objectives": "O-B", "strategy": "S-B", "innovation": "I-B", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The team is led by Yang Guoqing from Zhejiang University, with notable members including academicians and professors, indicating strong academic credentials and industry influence, but lacks evidence of significant commercial success or large-scale execution.", "objectives": "The project has a clear focus on autonomous driving for special vehicles and outlines key milestones, but the buyer pathway and demand validation are somewhat vague.", "strategy": "The strategy is coherent with a focus on both domestic and international markets and includes significant local funding, but lacks detailed evidence of competitive differentiation.", "innovation": "The project showcases significant innovation with the development of unique technologies and a strong IP portfolio, but does not fully meet the criteria for a new mechanistic class.", "feasibility": "The project has a structured financing plan and clear milestones, indicating reasonable feasibility, but faces market risks due to the competitive landscape."}
+[INVEST] investment scores: {'team': 0.7, 'objectives': 0.65, 'strategy': 0.7, 'innovation': 0.75, 'feasibility': 0.7}
+[TIMING] investment_scoring elapsed_sec=3.680
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=358 strengths=3 concerns=3 recommendations=3 score=0.690 (qa=0.597 invest=0.700)
+[DIM_OUTPUT] objectives: summary_chars=296 strengths=1 concerns=2 recommendations=3 score=0.635 (qa=0.496 invest=0.650)
+[DIM_OUTPUT] strategy: summary_chars=253 strengths=2 concerns=2 recommendations=2 score=0.683 (qa=0.525 invest=0.700)
+[DIM_OUTPUT] innovation: summary_chars=261 strengths=1 concerns=2 recommendations=2 score=0.730 (qa=0.549 invest=0.750)
+[DIM_OUTPUT] feasibility: summary_chars=254 strengths=2 concerns=3 recommendations=2 score=0.685 (qa=0.552 invest=0.700)
+[TIMING] clean_dimension_blocks elapsed_sec=0.009
+[TIMING] build_overall_from_dims elapsed_sec=0.003
+[TIMING] write_outputs elapsed_sec=0.001
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p6__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p6__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p6__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p6__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=GO overall_score=0.685 confidence=0.799
+[STAGE_6] Completed Stage 6 elapsed_sec=17.353
+[RUN] provider=openai stage=generate_final_report pid=p6__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid p6__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=p6__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p6__openai/postproc/final_payload.json size_bytes=81480
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p6__openai/ai_expert_opinion.md size_bytes=10319
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p6__openai/ai_expert_opinion.json size_bytes=11398
+[TIMING] read_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qas=7 rationales=0 general_insights=10 score=59.7
+[DIM_INPUT] objectives: qas=6 rationales=0 general_insights=10 score=49.6
+[DIM_INPUT] strategy: qas=7 rationales=1 general_insights=10 score=52.5
+[DIM_INPUT] innovation: qas=7 rationales=1 general_insights=10 score=54.9
+[DIM_INPUT] feasibility: qas=7 rationales=2 general_insights=10 score=55.2
+[SECTION] executive_summary included=True chars=2969 elapsed_sec=0.000
+[SECTION] expert_review chars=9545 elapsed_sec=0.000
+[SECTION] qa_traceability chars=24757 qas_available=34 qas_shown=34 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.000
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p6__openai_final_report.md size_bytes=58457
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p6__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=34 report_chars=37513
+[STAGE_7] Completed Stage 7 elapsed_sec=0.004
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/p6/provider_lifecycle_summary.json
+[23:06:03] [STAGE6+7] OK pid=p6
+[23:06:03] [STAGE6+7] Starting pid=p7
+[LIFECYCLE] base_pid=p7 configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=p7__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid p7__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=p7__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p7__openai/postproc/metrics.json size_bytes=548308
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p7__openai/postproc/final_payload.json size_bytes=98776
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.001
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Weak signal; this dimension appears to have clear limitations or limited evidence.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Weak signal; this dimension appears to have clear limitations or limited evidence.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p7__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=74484
+[LLM_CALL] done attempts=1 elapsed_sec=13.77
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=6758
+[LLM_CALL] done attempts=1 elapsed_sec=4.28
+[INVEST] investment categories: {"team": "T-A", "objectives": "O-B", "strategy": "S-B", "innovation": "I-B", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The team includes Dr. Kong Na and Dr. Tao Wei from prestigious institutions like Harvard Medical School and MIT, along with Robert Langer, a co-founder of Moderna, indicating a strong academic and industry background. Their significant publication record supports the T-A category.", "objectives": "The project has clear objectives, including submitting an IND application and targeting a specific patient population, but lacks detailed buyer pathway evidence, placing it in O-B.", "strategy": "The strategy outlines key tasks and objectives, including patent applications and financing plans, but lacks strong evidence of a competitive moat, leading to a score in S-B.", "innovation": "The project features a unique linear mRNA scaffold and circularization technology, which are novel advancements, but does not fully meet the criteria for I-A, thus scoring in I-B.", "feasibility": "The project has a defined budget and funding commitments, along with a robust timeline, but lacks detailed breakdowns, placing it in F-B."}
+[INVEST] investment scores: {'team': 0.85, 'objectives': 0.7, 'strategy': 0.65, 'innovation': 0.8, 'feasibility': 0.75}
+[TIMING] investment_scoring elapsed_sec=4.282
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=311 strengths=1 concerns=3 recommendations=3 score=0.814 (qa=0.488 invest=0.850)
+[DIM_OUTPUT] objectives: summary_chars=253 strengths=2 concerns=3 recommendations=3 score=0.682 (qa=0.520 invest=0.700)
+[DIM_OUTPUT] strategy: summary_chars=243 strengths=2 concerns=2 recommendations=2 score=0.633 (qa=0.478 invest=0.650)
+[DIM_OUTPUT] innovation: summary_chars=266 strengths=2 concerns=2 recommendations=3 score=0.772 (qa=0.525 invest=0.800)
+[DIM_OUTPUT] feasibility: summary_chars=222 strengths=2 concerns=3 recommendations=3 score=0.725 (qa=0.504 invest=0.750)
+[TIMING] clean_dimension_blocks elapsed_sec=0.007
+[TIMING] build_overall_from_dims elapsed_sec=0.003
+[TIMING] write_outputs elapsed_sec=0.001
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p7__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p7__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p7__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p7__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=GO overall_score=0.726 confidence=0.656
+[STAGE_6] Completed Stage 6 elapsed_sec=18.070
+[RUN] provider=openai stage=generate_final_report pid=p7__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid p7__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=p7__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p7__openai/postproc/final_payload.json size_bytes=98776
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p7__openai/ai_expert_opinion.md size_bytes=10010
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p7__openai/ai_expert_opinion.json size_bytes=11160
+[TIMING] read_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qas=7 rationales=3 general_insights=10 score=48.8
+[DIM_INPUT] objectives: qas=7 rationales=3 general_insights=10 score=52.0
+[DIM_INPUT] strategy: qas=8 rationales=2 general_insights=10 score=47.8
+[DIM_INPUT] innovation: qas=7 rationales=3 general_insights=10 score=52.5
+[DIM_INPUT] feasibility: qas=8 rationales=3 general_insights=10 score=50.4
+[SECTION] executive_summary included=True chars=2807 elapsed_sec=0.000
+[SECTION] expert_review chars=9227 elapsed_sec=0.000
+[SECTION] qa_traceability chars=60352 qas_available=37 qas_shown=37 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.000
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p7__openai_final_report.md size_bytes=72628
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p7__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=37 report_chars=72628
+[STAGE_7] Completed Stage 7 elapsed_sec=0.004
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/p7/provider_lifecycle_summary.json
+[23:06:22] [STAGE6+7] OK pid=p7
+[23:06:22] [STAGE6+7] Starting pid=p8
+[LIFECYCLE] base_pid=p8 configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=p8__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid p8__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=p8__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p8__openai/postproc/metrics.json size_bytes=510848
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p8__openai/postproc/final_payload.json size_bytes=92020
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Weak signal; this dimension appears to have clear limitations or limited evidence.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=10 missing=0 score_hint='Weak signal; this dimension appears to have clear limitations or limited evidence.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p8__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=74283
+[LLM_CALL] done attempts=1 elapsed_sec=14.78
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=7162
+[LLM_CALL] done attempts=1 elapsed_sec=4.30
+[INVEST] investment categories: {"team": "T-B", "objectives": "O-B", "strategy": "S-B", "innovation": "I-B", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The team includes Dr. Zhenlong Liu and Prof. Guojun Chen, who are recognized experts, but there is no evidence of their specific achievements or commercial success that would elevate the score to T-A.", "objectives": "The project outlines clear milestones and a defined product focus, but the buyer pathway and demand validation are somewhat vague.", "strategy": "The strategy includes collaboration with strategic partners and a phased funding approach, but lacks strong evidence of a competitive moat.", "innovation": "The project features patented technology and novel applications of AI in drug delivery, but does not fully meet the criteria for I-A due to the absence of a completely new mechanistic class.", "feasibility": "The project identifies various risks and has some mitigation strategies in place, but the budget and timeline details are not fully itemized."}
+[INVEST] investment scores: {'team': 0.65, 'objectives': 0.7, 'strategy': 0.65, 'innovation': 0.75, 'feasibility': 0.6}
+[TIMING] investment_scoring elapsed_sec=4.300
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=324 strengths=2 concerns=3 recommendations=3 score=0.637 (qa=0.519 invest=0.650)
+[DIM_OUTPUT] objectives: summary_chars=284 strengths=3 concerns=2 recommendations=2 score=0.677 (qa=0.471 invest=0.700)
+[DIM_OUTPUT] strategy: summary_chars=266 strengths=2 concerns=2 recommendations=3 score=0.635 (qa=0.501 invest=0.650)
+[DIM_OUTPUT] innovation: summary_chars=272 strengths=2 concerns=2 recommendations=3 score=0.726 (qa=0.507 invest=0.750)
+[DIM_OUTPUT] feasibility: summary_chars=261 strengths=3 concerns=3 recommendations=3 score=0.588 (qa=0.479 invest=0.600)
+[TIMING] clean_dimension_blocks elapsed_sec=0.009
+[TIMING] build_overall_from_dims elapsed_sec=0.003
+[TIMING] write_outputs elapsed_sec=0.001
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p8__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p8__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p8__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p8__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=HOLD overall_score=0.651 confidence=0.633
+[STAGE_6] Completed Stage 6 elapsed_sec=19.101
+[RUN] provider=openai stage=generate_final_report pid=p8__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid p8__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=p8__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/p8__openai/postproc/final_payload.json size_bytes=92020
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p8__openai/ai_expert_opinion.md size_bytes=9817
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/p8__openai/ai_expert_opinion.json size_bytes=10987
+[TIMING] read_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qas=7 rationales=3 general_insights=10 score=51.9
+[DIM_INPUT] objectives: qas=7 rationales=3 general_insights=10 score=47.1
+[DIM_INPUT] strategy: qas=7 rationales=3 general_insights=10 score=50.1
+[DIM_INPUT] innovation: qas=6 rationales=3 general_insights=10 score=50.7
+[DIM_INPUT] feasibility: qas=7 rationales=3 general_insights=10 score=47.9
+[SECTION] executive_summary included=True chars=2920 elapsed_sec=0.000
+[SECTION] expert_review chars=9038 elapsed_sec=0.000
+[SECTION] qa_traceability chars=56628 qas_available=34 qas_shown=34 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.000
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p8__openai_final_report.md size_bytes=68828
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/p8__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=34 report_chars=68828
+[STAGE_7] Completed Stage 7 elapsed_sec=0.004
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/p8/provider_lifecycle_summary.json
+[23:06:42] [STAGE6+7] OK pid=p8
+[23:06:42] [STAGE6+7] Starting pid=pA
+[LIFECYCLE] base_pid=pA configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=pA__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid pA__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=pA__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pA__openai/postproc/metrics.json size_bytes=524988
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pA__openai/postproc/final_payload.json size_bytes=92515
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pA__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=33107
+[LLM_CALL] done attempts=1 elapsed_sec=12.00
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=6815
+[LLM_CALL] done attempts=1 elapsed_sec=4.29
+[INVEST] investment categories: {"team": "T-B", "objectives": "O-B", "strategy": "S-B", "innovation": "I-B", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The team has extensive experience with core members having over ten years in top semiconductor companies, which qualifies them for T-B. However, there is no evidence of exceptional performance or leadership in a major company.", "objectives": "The project has clear milestones for production and operational timelines, but the buyer pathway or demand validation is somewhat vague, placing it in O-B.", "strategy": "The strategy includes joint ventures and partnerships, but lacks strong evidence of a competitive moat or market validation, leading to a score in S-B.", "innovation": "The project demonstrates significant innovation with advanced semiconductor technologies and numerous patents, but it lacks a completely new mechanistic class, placing it in I-B.", "feasibility": "The project has a comprehensive budget plan and clear investment strategy, with a reasonable budget and partial detail, justifying a score in F-B."}
+[INVEST] investment scores: {'team': 0.65, 'objectives': 0.7, 'strategy': 0.65, 'innovation': 0.7, 'feasibility': 0.75}
+[TIMING] investment_scoring elapsed_sec=4.296
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=289 strengths=3 concerns=2 recommendations=3 score=0.641 (qa=0.557 invest=0.650)
+[DIM_OUTPUT] objectives: summary_chars=254 strengths=2 concerns=2 recommendations=2 score=0.683 (qa=0.534 invest=0.700)
+[DIM_OUTPUT] strategy: summary_chars=238 strengths=2 concerns=2 recommendations=3 score=0.646 (qa=0.610 invest=0.650)
+[DIM_OUTPUT] innovation: summary_chars=205 strengths=1 concerns=3 recommendations=2 score=0.690 (qa=0.598 invest=0.700)
+[DIM_OUTPUT] feasibility: summary_chars=198 strengths=2 concerns=3 recommendations=3 score=0.733 (qa=0.579 invest=0.750)
+[TIMING] clean_dimension_blocks elapsed_sec=0.009
+[TIMING] build_overall_from_dims elapsed_sec=0.003
+[TIMING] write_outputs elapsed_sec=0.001
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pA__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pA__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pA__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pA__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=GO overall_score=0.681 confidence=0.782
+[STAGE_6] Completed Stage 6 elapsed_sec=16.314
+[RUN] provider=openai stage=generate_final_report pid=pA__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid pA__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=pA__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pA__openai/postproc/final_payload.json size_bytes=92515
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pA__openai/ai_expert_opinion.md size_bytes=9376
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pA__openai/ai_expert_opinion.json size_bytes=10449
+[TIMING] read_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qas=7 rationales=0 general_insights=10 score=55.7
+[DIM_INPUT] objectives: qas=6 rationales=1 general_insights=10 score=53.4
+[DIM_INPUT] strategy: qas=7 rationales=3 general_insights=10 score=61.0
+[DIM_INPUT] innovation: qas=8 rationales=1 general_insights=10 score=59.8
+[DIM_INPUT] feasibility: qas=9 rationales=1 general_insights=10 score=57.9
+[SECTION] executive_summary included=True chars=2647 elapsed_sec=0.000
+[SECTION] expert_review chars=8575 elapsed_sec=0.000
+[SECTION] qa_traceability chars=28670 qas_available=37 qas_shown=37 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.001
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/pA__openai_final_report.md size_bytes=65608
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/pA__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=37 report_chars=40134
+[STAGE_7] Completed Stage 7 elapsed_sec=0.005
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/pA/provider_lifecycle_summary.json
+[23:06:59] [STAGE6+7] OK pid=pA
+[23:06:59] [STAGE6+7] Starting pid=pB
+[LIFECYCLE] base_pid=pB configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=pB__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid pB__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=pB__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pB__openai/postproc/metrics.json size_bytes=507872
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pB__openai/postproc/final_payload.json size_bytes=88404
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pB__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=31965
+[LLM_CALL] done attempts=1 elapsed_sec=12.85
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=6030
+[LLM_CALL] done attempts=1 elapsed_sec=5.00
+[INVEST] investment categories: {"team": "T-B", "objectives": "O-B", "strategy": "S-B", "innovation": "I-B", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The team consists of over 70 experienced engineers with a strong track record in mass production, delivering over 3 billion units on time and maintaining a DPPM rate of less than 5, which supports a score in T-B.", "objectives": "The proposal outlines a clear vision to support Chinese manufacturers and disrupt Western dominance, but lacks specific quantified market gap details, placing it in O-B.", "strategy": "The strategy includes targeting next-generation products and has strong market validation with over 20 world-class customers, but lacks a clear competitive moat, leading to a score in S-B.", "innovation": "The project holds multiple patents and presents significant technological advancements, including a conversion efficiency of 98% for the Charge Pump, qualifying it for I-B.", "feasibility": "The company has a proven track record of timely delivery and low defect rates, with a diverse product portfolio, supporting a score in F-B."}
+[INVEST] investment scores: {'team': 0.75, 'objectives': 0.65, 'strategy': 0.7, 'innovation': 0.8, 'feasibility': 0.75}
+[TIMING] investment_scoring elapsed_sec=5.000
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=260 strengths=2 concerns=3 recommendations=2 score=0.731 (qa=0.557 invest=0.750)
+[DIM_OUTPUT] objectives: summary_chars=259 strengths=2 concerns=2 recommendations=2 score=0.639 (qa=0.540 invest=0.650)
+[DIM_OUTPUT] strategy: summary_chars=253 strengths=1 concerns=2 recommendations=2 score=0.684 (qa=0.543 invest=0.700)
+[DIM_OUTPUT] innovation: summary_chars=248 strengths=1 concerns=3 recommendations=2 score=0.777 (qa=0.574 invest=0.800)
+[DIM_OUTPUT] feasibility: summary_chars=242 strengths=2 concerns=2 recommendations=2 score=0.729 (qa=0.543 invest=0.750)
+[TIMING] clean_dimension_blocks elapsed_sec=0.007
+[TIMING] build_overall_from_dims elapsed_sec=0.003
+[TIMING] write_outputs elapsed_sec=0.001
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pB__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pB__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pB__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pB__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=GO overall_score=0.714 confidence=0.787
+[STAGE_6] Completed Stage 6 elapsed_sec=17.867
+[RUN] provider=openai stage=generate_final_report pid=pB__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid pB__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=pB__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pB__openai/postproc/final_payload.json size_bytes=88404
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pB__openai/ai_expert_opinion.md size_bytes=9990
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pB__openai/ai_expert_opinion.json size_bytes=11016
+[TIMING] read_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qas=8 rationales=0 general_insights=10 score=55.7
+[DIM_INPUT] objectives: qas=6 rationales=0 general_insights=10 score=54.0
+[DIM_INPUT] strategy: qas=8 rationales=0 general_insights=10 score=54.3
+[DIM_INPUT] innovation: qas=7 rationales=0 general_insights=10 score=57.4
+[DIM_INPUT] feasibility: qas=7 rationales=0 general_insights=10 score=54.3
+[SECTION] executive_summary included=True chars=3083 elapsed_sec=0.000
+[SECTION] expert_review chars=9204 elapsed_sec=0.000
+[SECTION] qa_traceability chars=27049 qas_available=36 qas_shown=36 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.000
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/pB__openai_final_report.md size_bytes=63802
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/pB__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=36 report_chars=39578
+[STAGE_7] Completed Stage 7 elapsed_sec=0.004
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/pB/provider_lifecycle_summary.json
+[23:07:17] [STAGE6+7] OK pid=pB
+[23:07:17] [STAGE6+7] Starting pid=pC
+[LIFECYCLE] base_pid=pC configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=pC__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid pC__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=pC__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pC__openai/postproc/metrics.json size_bytes=508931
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pC__openai/postproc/final_payload.json size_bytes=89916
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pC__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=32349
+[LLM_CALL] done attempts=1 elapsed_sec=10.69
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=5376
+[LLM_CALL] done attempts=1 elapsed_sec=3.65
+[INVEST] investment categories: {"team": "T-C", "objectives": "O-B", "strategy": "S-B", "innovation": "I-C", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The team has a structured hierarchy and defined roles, but lacks evidence of exceptional performance or deep domain expertise, placing it in T-C.", "objectives": "The project has a clear goal of establishing 100 colleges and addressing talent demand, but lacks specific buyer pathways or detailed market validation, fitting O-B.", "strategy": "The strategy includes integration of industry standards and a clear growth plan, but lacks strong evidence of competitive moat or execution validation, placing it in S-B.", "innovation": "The development of standardized educational products is a novel approach, but it does not present a new mechanistic class or strong quantitative validation, fitting I-C.", "feasibility": "The project has a strong resource base and low operational risk, with a reasonable budget and milestones, placing it in F-B."}
+[INVEST] investment scores: {'team': 0.55, 'objectives': 0.65, 'strategy': 0.7, 'innovation': 0.5, 'feasibility': 0.75}
+[TIMING] investment_scoring elapsed_sec=3.655
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=329 strengths=3 concerns=2 recommendations=3 score=0.554 (qa=0.590 invest=0.550)
+[DIM_OUTPUT] objectives: summary_chars=294 strengths=2 concerns=2 recommendations=3 score=0.641 (qa=0.564 invest=0.650)
+[DIM_OUTPUT] strategy: summary_chars=286 strengths=2 concerns=2 recommendations=2 score=0.683 (qa=0.532 invest=0.700)
+[DIM_OUTPUT] innovation: summary_chars=275 strengths=2 concerns=2 recommendations=2 score=0.507 (qa=0.566 invest=0.500)
+[DIM_OUTPUT] feasibility: summary_chars=259 strengths=2 concerns=2 recommendations=2 score=0.733 (qa=0.581 invest=0.750)
+[TIMING] clean_dimension_blocks elapsed_sec=0.008
+[TIMING] build_overall_from_dims elapsed_sec=0.004
+[TIMING] write_outputs elapsed_sec=0.001
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pC__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pC__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pC__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pC__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=HOLD overall_score=0.626 confidence=0.804
+[STAGE_6] Completed Stage 6 elapsed_sec=14.360
+[RUN] provider=openai stage=generate_final_report pid=pC__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid pC__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=pC__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pC__openai/postproc/final_payload.json size_bytes=89916
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pC__openai/ai_expert_opinion.md size_bytes=9869
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pC__openai/ai_expert_opinion.json size_bytes=10921
+[TIMING] read_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qas=7 rationales=1 general_insights=10 score=59.0
+[DIM_INPUT] objectives: qas=6 rationales=1 general_insights=10 score=56.4
+[DIM_INPUT] strategy: qas=8 rationales=0 general_insights=10 score=53.2
+[DIM_INPUT] innovation: qas=8 rationales=3 general_insights=10 score=56.6
+[DIM_INPUT] feasibility: qas=7 rationales=1 general_insights=10 score=58.1
+[SECTION] executive_summary included=True chars=3045 elapsed_sec=0.000
+[SECTION] expert_review chars=9074 elapsed_sec=0.000
+[SECTION] qa_traceability chars=27132 qas_available=36 qas_shown=36 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.000
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/pC__openai_final_report.md size_bytes=63339
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/pC__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=36 report_chars=39493
+[STAGE_7] Completed Stage 7 elapsed_sec=0.004
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/pC/provider_lifecycle_summary.json
+[23:07:32] [STAGE6+7] OK pid=pC
+[23:07:32] [STAGE6+7] Starting pid=pD
+[LIFECYCLE] base_pid=pD configured_providers=['openai'] provider_count=1 stages=['ai_expert_opinion', 'generate_final_report']
+[LIFECYCLE] healthy_providers=['openai'] healthy_count=1
+[LIFECYCLE] running_providers=['openai'] workers=1
+[RUN] provider=openai stage=ai_expert_opinion pid=pD__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/ai_expert_opinion.py --pid pD__openai --provider openai
+[STAGE_6] Starting Stage 6: AI expert opinion
+[STAGE_6] Purpose: turn Stage 5 post-processed answers and metrics into a final expert-style review.
+[INPUT] proposal_id=pD__openai
+[INPUT] metrics_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pD__openai/postproc/metrics.json size_bytes=524167
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pD__openai/postproc/final_payload.json size_bytes=93040
+[CONFIG] provider=openai model=gpt-4o-mini force_local=False dry_run=False
+[TIMING] build_dim_inputs elapsed_sec=0.000
+[DIM_INPUT] team: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] objectives: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] strategy: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] innovation: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[DIM_INPUT] feasibility: qa_samples=6 general_insights=10 covered=0 missing=10 score_hint='Medium-to-weak signal; several weaknesses or information gaps may exist.'
+[OK] prompt written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pD__openai/ai_expert_opinion.prompt.json
+[LLM_CALL] start model=gpt-4o-mini max_tokens=2600 temperature=0.25 payload_chars=32965
+[LLM_CALL] done attempts=1 elapsed_sec=16.60
+[LLM_CALL] start model=gpt-4o-mini max_tokens=600 temperature=0.0 payload_chars=6821
+[LLM_CALL] done attempts=1 elapsed_sec=4.92
+[INVEST] investment categories: {"team": "T-B", "objectives": "O-B", "strategy": "S-B", "innovation": "I-B", "feasibility": "F-B"}
+[INVEST] investment rationale: {"team": "The team includes Chen Zhixiang, the CTO, with over 35 years of experience in semiconductor design, and Tang Xiao, the general manager, with over 15 years of experience in corporate governance. This indicates strong industry experience but does not fully meet the criteria for T-A.", "objectives": "The project has a clear goal of going public by June 30, 2024, and developing high-efficiency charge pump chips, but lacks detailed buyer pathway or demand validation.", "strategy": "The strategy includes leveraging charge pump technology for mobile applications and establishing a supply chain procurement system, but lacks strong evidence of a competitive moat.", "innovation": "The company holds 14 patents and has developed unique technologies like a solar charging chip and high-efficiency charge pump technology, but the innovation is more of a refinement rather than a completely new class.", "feasibility": "The company is expanding production capacity and has an IP protection strategy, but the budget and timeline details are vague, indicating some risks in execution."}
+[INVEST] investment scores: {'team': 0.65, 'objectives': 0.58, 'strategy': 0.65, 'innovation': 0.75, 'feasibility': 0.65}
+[TIMING] investment_scoring elapsed_sec=4.920
+[INVEST] investment scoring succeeded for 5/5 dims
+[DIM_OUTPUT] team: summary_chars=304 strengths=3 concerns=3 recommendations=3 score=0.640 (qa=0.549 invest=0.650)
+[DIM_OUTPUT] objectives: summary_chars=292 strengths=2 concerns=2 recommendations=3 score=0.583 (qa=0.608 invest=0.580)
+[DIM_OUTPUT] strategy: summary_chars=261 strengths=2 concerns=1 recommendations=1 score=0.640 (qa=0.546 invest=0.650)
+[DIM_OUTPUT] innovation: summary_chars=243 strengths=2 concerns=2 recommendations=1 score=0.733 (qa=0.578 invest=0.750)
+[DIM_OUTPUT] feasibility: summary_chars=262 strengths=2 concerns=1 recommendations=2 score=0.636 (qa=0.509 invest=0.650)
+[TIMING] clean_dimension_blocks elapsed_sec=0.009
+[TIMING] build_overall_from_dims elapsed_sec=0.004
+[TIMING] write_outputs elapsed_sec=0.002
+[OUTPUT] expert_output_dir=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pD__openai
+[OK] ai_expert_opinion.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pD__openai/ai_expert_opinion.json
+[OK] ai_expert_opinion.md written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pD__openai/ai_expert_opinion.md
+[OK] stage6_ai_expert_opinion_audit.json written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pD__openai/stage6_ai_expert_opinion_audit.json
+[SUMMARY] mode=llm llm_attempted=True verdict=HOLD overall_score=0.647 confidence=0.781
+[STAGE_6] Completed Stage 6 elapsed_sec=21.541
+[RUN] provider=openai stage=generate_final_report pid=pD__openai cmd=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/.venv/bin/python src/tools/generate_final_report.py --pid pD__openai
+[STAGE_7] Starting Stage 7: final report compilation
+[STAGE_7] Purpose: compile executive summary, expert opinion, and selected Q&A into one Markdown report.
+[INPUT] proposal_id=pD__openai
+[INPUT] final_payload_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/refined_answers/pD__openai/postproc/final_payload.json size_bytes=93040
+[INPUT] expert_markdown_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pD__openai/ai_expert_opinion.md size_bytes=9055
+[INPUT] expert_json_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/expert_reports/pD__openai/ai_expert_opinion.json size_bytes=10077
+[TIMING] read_inputs elapsed_sec=0.001
+[DIM_INPUT] team: qas=8 rationales=0 general_insights=10 score=54.9
+[DIM_INPUT] objectives: qas=6 rationales=0 general_insights=10 score=60.8
+[DIM_INPUT] strategy: qas=8 rationales=0 general_insights=10 score=54.6
+[DIM_INPUT] innovation: qas=8 rationales=2 general_insights=10 score=57.8
+[DIM_INPUT] feasibility: qas=7 rationales=0 general_insights=10 score=50.9
+[SECTION] executive_summary included=True chars=2976 elapsed_sec=0.000
+[SECTION] expert_review chars=8273 elapsed_sec=0.000
+[SECTION] qa_traceability chars=27801 qas_available=37 qas_shown=37 elapsed_sec=0.000
+[TIMING] assemble_report elapsed_sec=0.001
+[TIMING] write_report elapsed_sec=0.000
+[OUTPUT] report_path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/pD__openai_final_report.md size_bytes=64402
+[OK] stage7_final_report_audit written path=/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/reports/pD__openai_stage7_final_report_audit.json
+[SUMMARY] sections=executive_summary:True, expert_review:True, qa_traceability:True qas_shown=37 report_chars=39292
+[STAGE_7] Completed Stage 7 elapsed_sec=0.005
+[OK] provider lifecycle summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/provider_lifecycles/pD/provider_lifecycle_summary.json
+[23:07:55] [STAGE6+7] OK pid=pD
+[23:07:55] [COPY] Collecting final reports → Results/reports/
+[23:07:55] [COPY]   p1 → p1_final_report.md
+[23:07:55] [COPY]   p2 → p2_final_report.md
+[23:07:55] [COPY]   p3 → p3_final_report.md
+[23:07:55] [COPY]   p4 → p4_final_report.md
+[23:07:55] [COPY]   p5 → p5_final_report.md
+[23:07:55] [COPY]   p6 → p6_final_report.md
+[23:07:55] [COPY]   p7 → p7_final_report.md
+[23:07:55] [COPY]   p8 → p8_final_report.md
+[23:07:55] [COPY]   pA → pA_final_report.md
+[23:07:55] [COPY]   pB → pB_final_report.md
+[23:07:55] [COPY]   pC → pC_final_report.md
+[23:07:55] [COPY]   pD → pD_final_report.md
+[23:07:55] [COPY] Copied 12/12 reports
+[23:07:55] [EVAL] Copied ExpertsEvaluations.xlsx → /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/evaluations/human/human_scores.xlsx
+[23:07:55] [EVAL] Running evaluation → /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/DeltaProjectDatasets/Results/evaluation
+[DEBUG] Workbook sheets: ['Sheet1']
+[DEBUG] Selected sheet: Sheet1 (non_empty_rows=15)
+[DEBUG] Total rows read: 16
+[DEBUG] Header row index: 1, mapping: {'team': 3, 'objective': 4, 'strategy': 5, 'advantages': 6, 'feasibility': 7, 'overall_ranking': 8, 'verdict': 9}
+[DEBUG] Inferred file_name column index: 1
+[DEBUG] Report files loaded: 22
+[DEBUG] LLM score fallback files loaded: 23
+[OK] summary written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/DeltaProjectDatasets/Results/evaluation/evaluation_summary.json
+[OK] report written: /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/DeltaProjectDatasets/Results/evaluation/evaluation_report.xlsx
+[23:07:56] [EVAL] OK
+
+============================================================
+[23:07:56] [DONE] Reports copied: 12/12
+[23:07:56] [DONE] Stage 6+7 failures: none
+[23:07:56] [DONE] Evaluation: ok
+[23:07:56] [DONE] Results → /Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/DeltaProjectDatasets/Results
+============================================================

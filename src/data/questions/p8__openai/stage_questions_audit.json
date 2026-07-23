@@ -1,0 +1,622 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "p8__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/p8__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 340,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project has assembled a diverse team of world-class experts, including Dr. Zhenlong Liu and Prof. Guojun Chen, to tackle technical challenges. The team structure includes a management team with defined roles, such as CEO, COO, and sales directors, alongside a dedicated resear ...",
+        "first_key_point_preview": "The project includes a management team with roles such as CEO, COO, and sales directors.",
+        "first_risk_preview": "The project may face challenges related to the technical capabilities of the assembled team.",
+        "first_mitigation_preview": "The project plans to collaborate with strategic partners like Merck and Fujifilm to leverage existing resources for overcoming technical hurdles."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.13,
+        "raw_chars": 4016,
+        "usage": {
+          "prompt_tokens": 3403,
+          "completion_tokens": 858,
+          "total_tokens": 4261
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "leadership experience",
+        "technical expertise",
+        "regulatory compliance",
+        "collaboration with Merck",
+        "team capacity assessment",
+        "governance structures",
+        "drug development experience",
+        "AI applications",
+        "respiratory disease therapies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "validation_and_compliance_experience": 1,
+          "team_capacity_and_bandwidth": 1,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the leadership experience of the management team, including the CEO and COO, align with the project's objectives in developing innovative therapies and AI applications?",
+          "question_en_preview": "How does the leadership experience of the management team, including the CEO and COO, align with the project's objectives in developing innovative therapies and AI applications?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise do Dr. Zhenlong Liu and Prof. Guojun Chen bring to the project, and how does this expertise address the technical challenges outlined in the proposal?",
+          "question_en_preview": "What specific expertise do Dr. Zhenlong Liu and Prof. Guojun Chen bring to the project, and how does this expertise address the technical challenges outlined in the proposal?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the focus on respiratory disease therapies, what experience does the team have in navigating regulatory compliance and validation processes for drug development?",
+          "question_en_preview": "Given the focus on respiratory disease therapies, what experience does the team have in navigating regulatory compliance and validation processes for drug development?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Considering the current workload and the presence of full-time members and strategic partners, does the team have sufficient capacity to meet the project's demands? Please evaluate any potential gaps.",
+          "question_en_preview": "Considering the current workload and the presence of full-time members and strategic partners, does the team have sufficient capacity to meet the project's demands? Please evaluate any potential gaps."
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How effective is the collaboration with strategic partners like Merck and Fujifilm in mitigating the technical challenges faced by the team? What evidence supports this?",
+          "question_en_preview": "How effective is the collaboration with strategic partners like Merck and Fujifilm in mitigating the technical challenges faced by the team? What evidence supports this?"
+        }
+      ],
+      "elapsed_sec": 8.13,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 415,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 2,
+        "summary_preview": "The project aims to develop a lung-targeted broad-spectrum antiviral RNA/LNP therapy, focusing on diseases such as COVID-19 and various viral infections. Key milestones include establishing a laboratory and core team within the first six months, followed by technology development ...",
+        "first_key_point_preview": "The project focuses on lung-targeted broad-spectrum antiviral RNA/LNP therapy.",
+        "first_risk_preview": "The application includes short-term activation of broad-spectrum antiviral status in high-risk exposure populations.",
+        "first_mitigation_preview": "In vivo experiments and dose optimization will be conducted."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.05,
+        "raw_chars": 4402,
+        "usage": {
+          "prompt_tokens": 3496,
+          "completion_tokens": 915,
+          "total_tokens": 4411
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "broad-spectrum antiviral therapy",
+        "clinical trial applications",
+        "success metrics",
+        "market share targets",
+        "laboratory establishment",
+        "core team formation",
+        "value creation logic",
+        "risk exposure populations",
+        "milestone feasibility",
+        "impact assessment"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the project's objectives align with the urgent need for a lung-targeted broad-spectrum antiviral therapy, particularly in high-risk exposure populations? Please discuss any evidence supporting this alignment.",
+          "question_en_preview": "How well do the project's objectives align with the urgent need for a lung-targeted broad-spectrum antiviral therapy, particularly in high-risk exposure populations? Please discuss any evidence supporting this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed milestones, particularly the establishment of a laboratory and core team within the first six months. What factors could impact this timeline?",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed milestones, particularly the establishment of a laboratory and core team within the first six months. What factors could impact this timeline?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific success metrics will be used to evaluate the project's outcomes, particularly regarding the product launch and market share targets? How will these metrics be measured?",
+          "question_en_preview": "What specific success metrics will be used to evaluate the project's outcomes, particularly regarding the product launch and market share targets? How will these metrics be measured?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic do you find the project's objectives in balancing ambition with feasibility, particularly regarding the timeline for clinical trial applications? What evidence would increase your conf ...",
+          "question_en_preview": "On a scale of 1 to 5, how realistic do you find the project's objectives in balancing ambition with feasibility, particularly regarding the timeline for clinical trial applications? What evidence would increase your conf ..."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project plan to create value and capture revenue through its objectives, particularly in relation to the short-term activation of broad-spectrum antiviral status? What assumptions underpin this logic?",
+          "question_en_preview": "How does the project plan to create value and capture revenue through its objectives, particularly in relation to the short-term activation of broad-spectrum antiviral status? What assumptions underpin this logic?"
+        }
+      ],
+      "elapsed_sec": 10.05,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 337,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a lung-targeted broad-spectrum antiviral RNA/LNP therapy, leveraging AI models for precision delivery and collaborating with strategic partners to overcome technical challenges. It focuses on establishing market influence through existing networks and  ...",
+        "first_key_point_preview": "The project utilizes AI models to enhance the precision of lung-targeted small nucleic acid RNA for antiviral delivery.",
+        "first_risk_preview": "The application includes short-term activation of broad-spectrum antiviral status in high-risk exposure populations.",
+        "first_mitigation_preview": "AI models are used to improve the precision of lung-targeted small nucleic acid RNA for broad-spectrum antiviral delivery."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.06,
+        "raw_chars": 4728,
+        "usage": {
+          "prompt_tokens": 3533,
+          "completion_tokens": 988,
+          "total_tokens": 4521
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "AI models for precision delivery",
+        "strategic partnerships",
+        "market influence strategy",
+        "in vivo experiments",
+        "phased funding strategy",
+        "broad-spectrum antiviral",
+        "dose optimization",
+        "scaling challenges",
+        "collaboration benefits",
+        "technical hurdles"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "commercialization_and_market_entry": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to leverage AI models to enhance the precision of lung-targeted small nucleic acid RNA for antiviral delivery, and what are the major trade-offs considered in this approach?",
+          "question_en_preview": "How does the project plan to leverage AI models to enhance the precision of lung-targeted small nucleic acid RNA for antiviral delivery, and what are the major trade-offs considered in this approach?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies will the project employ to establish market influence quickly through existing partner networks, and how will these strategies mitigate competitive pressures?",
+          "question_en_preview": "What specific strategies will the project employ to establish market influence quickly through existing partner networks, and how will these strategies mitigate competitive pressures?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key milestones for in vivo experiments and dose optimization in the project's development and validation path, and how will success be measured at each stage?",
+          "question_en_preview": "What are the key milestones for in vivo experiments and dose optimization in the project's development and validation path, and how will success be measured at each stage?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the phased funding strategy align with the project's revenue model, and what evidence supports the sustainability of this model over time?",
+          "question_en_preview": "How does the phased funding strategy align with the project's revenue model, and what evidence supports the sustainability of this model over time?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Given the risk associated with the short-term activation of broad-spectrum antiviral status in high-risk exposure populations, how sufficient are the proposed mitigations using AI models for precision delivery?",
+          "question_en_preview": "Given the risk associated with the short-term activation of broad-spectrum antiviral status in high-risk exposure populations, how sufficient are the proposed mitigations using AI models for precision delivery?"
+        }
+      ],
+      "elapsed_sec": 16.06,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 336,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project showcases significant innovation through the development of lung-targeted stable lipid nanoparticles (LNPs) and the application of AI models to enhance drug delivery systems. Key patented technologies and advancements in gene engineering and AI drug screening are cent ...",
+        "first_key_point_preview": "The project includes patented technology for lung-targeted stable lipid nanoparticles, enhancing gene delivery.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Technological advancements, such as gene engineering and AI drug screening, are improving the efficiency of new drug development."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.45,
+        "raw_chars": 3855,
+        "usage": {
+          "prompt_tokens": 3444,
+          "completion_tokens": 836,
+          "total_tokens": 4280
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "lung-targeted stable lipid nanoparticles",
+        "AI drug screening",
+        "gene engineering advancements",
+        "efficiency of drug development",
+        "patented technology advantages",
+        "precision RNA delivery",
+        "risk of obsolescence",
+        "competitive differentiation",
+        "evidence for innovation",
+        "platform extensibility"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "mitigation_and_risk_management": 1,
+          "platform_and_extensibility": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the development of lung-targeted stable lipid nanoparticles (LNPs) represent a true novelty compared to existing drug delivery systems?",
+          "question_en_preview": "How does the development of lung-targeted stable lipid nanoparticles (LNPs) represent a true novelty compared to existing drug delivery systems?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages do the patented technologies for lung-targeted stable lipid nanoparticles offer over existing alternatives in terms of efficiency and safety?",
+          "question_en_preview": "What clear advantages do the patented technologies for lung-targeted stable lipid nanoparticles offer over existing alternatives in terms of efficiency and safety?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of AI models in improving the precision of lung-targeted small nucleic acid RNA delivery?",
+          "question_en_preview": "What evidence supports the effectiveness of AI models in improving the precision of lung-targeted small nucleic acid RNA delivery?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the obsolescence or commoditization of the technologies developed in this project?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the obsolescence or commoditization of the technologies developed in this project?"
+        },
+        {
+          "aspect": "mitigation_and_risk_management",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How sufficient are the proposed technological advancements, such as gene engineering and AI drug screening, in mitigating the risks associated with the innovation?",
+          "question_en_preview": "How sufficient are the proposed technological advancements, such as gene engineering and AI drug screening, in mitigating the risks associated with the innovation?"
+        }
+      ],
+      "elapsed_sec": 9.45,
+      "final_question_count": 6
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 442,
+        "key_points_count": 6,
+        "risks_count": 4,
+        "mitigations_count": 3,
+        "summary_preview": "The feasibility of the project is influenced by various risks, including the urgent need for addressing high-risk pathogens, challenges in RNA drug delivery, and market entry competition. The project has identified technical, funding, and regulatory risks, but it also has a struc ...",
+        "first_key_point_preview": "The project addresses urgent needs for high-risk pathogens and zoonotic diseases.",
+        "first_risk_preview": "The project faces risks related to urgent needs for high-risk pathogens and challenges in RNA drug delivery.",
+        "first_mitigation_preview": "In vivo experiments and dose optimization are part of the testing process to address technical risks."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.0,
+        "raw_chars": 4075,
+        "usage": {
+          "prompt_tokens": 3556,
+          "completion_tokens": 871,
+          "total_tokens": 4427
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "in vivo testing",
+        "RNA drug delivery challenges",
+        "funding sources",
+        "regulatory approval process",
+        "operational execution clarity",
+        "implementation barriers",
+        "risk mitigation strategies",
+        "clinical trial intensity",
+        "technology optimization",
+        "laboratory resource utilization"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "risk_management": 1,
+          "funding_and_budget_planning": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "operational_execution_plan": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies does the project have in place to mitigate the risks associated with urgent needs for high-risk pathogens and challenges in RNA drug delivery?",
+          "question_en_preview": "What specific strategies does the project have in place to mitigate the risks associated with urgent needs for high-risk pathogens and challenges in RNA drug delivery?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to address funding pressure risks arising from the high intensity of R&D and clinical trials, and what are the anticipated sources of funding?",
+          "question_en_preview": "How does the project plan to address funding pressure risks arising from the high intensity of R&D and clinical trials, and what are the anticipated sources of funding?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the anticipated challenges in obtaining regulatory approvals for clinical trials and product launches, and how does the project plan to navigate these challenges?",
+          "question_en_preview": "What are the anticipated challenges in obtaining regulatory approvals for clinical trials and product launches, and how does the project plan to navigate these challenges?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1-5, how clear and specific is the operational execution plan for the project, particularly regarding key tasks, owners, and timelines? What evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1-5, how clear and specific is the operational execution plan for the project, particularly regarding key tasks, owners, and timelines? What evidence would increase your confidence in this assessment?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation in real production or regulatory settings does the project foresee, and how does it plan to address these barriers?",
+          "question_en_preview": "What potential barriers to implementation in real production or regulatory settings does the project foresee, and how does it plan to address these barriers?"
+        }
+      ],
+      "elapsed_sec": 10.01,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-06-16T21:20:57Z",
+  "elapsed_sec": 53.7,
+  "total_questions": 34,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/p8__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/p8__openai/generated_questions_detail.json"
+}

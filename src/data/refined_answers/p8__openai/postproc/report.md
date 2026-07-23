@@ -1,0 +1,188 @@
+# Post-Processing Report - p8__openai
+
+- Generated at: 2026-06-16 17:25:19
+- Metadata: {"generated_at": "2026-06-16 17:25:19", "pid": "p8__openai", "schema": "refined_items.v2.proposal_aware_with_general_insights", "args": {"refine": true, "max_tokens": 2200, "group_size": 3}}
+
+## Overview
+- Overall score (0-1): **0.495**  ##########----------
+- Overall confidence (0-1): **0.633**  #############-------
+- Global consistency (mean Jaccard): **0.377**
+- Global contradiction (mean): **0.066**
+- Estimated placeholder-noise share: 0.0%
+- Estimated few-bullets share: 0.0%
+- Fallback selection share: 0.0%
+- Provider statistics: openai: selected=34 | avg_alpha=0.687 | avg_final=0.468
+
+## Dimension Breakdown
+### team - score 0.519  ##########----------
+- Reference hints, not facts: leadership experience; technical expertise; regulatory compliance; collaboration with Merck; team capacity assessment; governance structures; drug development experience; AI applications
+- Mean alignment / drift: **0.51 / 0.06**
+- Main score contributors: length, claims, structure
+- Main penalty factors: dimension_drift
+- **Top evidence phrases, authority hits first**:
+  - Details on the leadership team's past projects or successes in drug development or AI applications.
+  - Details on the team's previous projects or successes in drug development or AI applications would strengthen the proposa
+  - Information on regulatory compliance experience or outcomes from collaborations with Merck and Fujifilm would provide ad
+- **General insights, not project achievements**:
+  - Typically, successful projects in drug development require leaders with proven experience in the industry.
+  - Common pitfalls include insufficient leadership experience in relevant sectors, which can hinder project execution.
+  - Evidence of past successes and relevant experience is crucial for building investor and stakeholder confidence.
+  - In projects involving innovative therapies, the expertise of team members should be clearly linked to project goals.
+  - Common pitfalls include failing to articulate how expert knowledge will be utilized effectively.
+- **Strengths**:
+  - Q1: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.55)
+  - Q2: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.46)
+  - Q3: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.65)
+  - Q7: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.80)
+- **Risks**:
+  - Q1: possible cross-dimension drift (drift=0.25); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q5: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q6: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+- **Representative snippets**:
+  - Q1: The management team includes a CEO and COO, indicating a structured leadership approach that aligns with the project's objectives of developing innovative thera...
+  - Q2: Dr. Zhenlong Liu and Prof. Guojun Chen possess expertise in virology, immunology, and drug development, which may help address the technical challenges outlined...
+  - Q3: The proposal highlights a focus on respiratory disease therapies, but it lacks specific details on the team's experience with regulatory compliance and validati...
+  - Q4: The proposal indicates a diverse team with defined roles, including a management team and a dedicated research team, suggesting a structured approach to workloa...
+  - Q5: The collaboration with strategic partners like Merck and Fujifilm is identified as a strategy to address technical challenges, indicating a potential reliance o...
+  - Q6: The proposal does not provide specific details regarding governance structures for decision-making or conflict-of-interest handling within the team, which shoul...
+- Median bullet count, estimated: 4
+
+### objectives - score 0.471  #########-----------
+- Reference hints, not facts: By 12-18 months, the project aims to submit clinical trial applications and validate GMP production.; broad-spectrum antiviral therapy; clinical trial applications; success metrics; market share targets; laboratory establishment; core team formation; value creation logic
+- Mean alignment / drift: **0.44 / 0.11**
+- Main score contributors: length, structure, claims
+- Main penalty factors: dimension_drift
+- **Top evidence phrases, authority hits first**:
+  - Details on pricing strategies and market entry plans post-launch.
+  - Details on regulatory approval processes and success metrics could enhance understanding of project viability.
+  - Details on regulatory pathways and success metrics for the broad-spectrum antiviral therapy.
+- **General insights, not project achievements**:
+  - Successful health interventions typically require alignment with current public health needs and evidence of demand.
+  - Engagement with healthcare stakeholders can validate the urgency of the proposed solution.
+  - Market research is essential to understand the specific needs and preferences of target populations.
+  - Common pitfalls in biotech projects include underestimating the time required for regulatory approvals.
+  - A clear staffing model and recruitment strategy are essential for meeting project timelines.
+- **Strengths**:
+  - Q3: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.44)
+  - Q4: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.72)
+  - Q5: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.43)
+  - Q7: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.78)
+- **Risks**:
+  - Q2: possible cross-dimension drift (drift=0.20); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q4: possible cross-dimension drift (drift=0.35); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q5: possible cross-dimension drift (drift=0.15); review dimension boundary manually
+- **Representative snippets**:
+  - Q1: The project's objectives are aligned with the need for a lung-targeted broad-spectrum antiviral therapy, particularly in the context of ongoing viral infections...
+  - Q2: The proposed milestones, particularly the establishment of a laboratory and core team within the first six months, are reasonable but contingent on various fact...
+  - Q3: The proposal outlines key milestones but lacks specific success metrics for evaluating project outcomes related to product launch and market share targets, whic...
+  - Q4: The project's objectives include a timeline for clinical trial applications within 12-18 months, which may present challenges given the complexities typically a...
+  - Q5: The project aims to create value through the development of a lung-targeted antiviral therapy, which could address significant unmet medical needs in high-risk ...
+  - Q6: The proposal does not provide sufficient details on the prioritization of objectives, particularly regarding the sequence and interdependencies of milestones, w...
+- Median bullet count, estimated: 3
+
+### strategy - score 0.501  ##########----------
+- Reference hints, not facts: The project will employ generative design and RNN to explore potential immune agonist candidates.; AI models for precision delivery; strategic partnerships; market influence strategy; in vivo experiments; phased funding strategy; broad-spectrum antiviral; dose optimization
+- Mean alignment / drift: **0.57 / 0.00**
+- Main score contributors: length, claims, calibrated_confidence
+- Main penalty factors: overclaim
+- **Top evidence phrases, authority hits first**:
+  - A detailed scaling strategy that includes operational capacity and supply chain management plans would enhance the proje
+  - Details on financial projections and revenue milestones could support the sustainability of the funding strategy.
+  - Information on contingency plans for potential bottlenecks could provide additional assurance.
+- **General insights, not project achievements**:
+  - In AI-driven projects, it is crucial to establish a clear validation pathway to ensure model reliability.
+  - Common pitfalls include underestimating the complexity of integrating AI solutions into existing workflows.
+  - Evidence of successful AI model performance in similar applications can strengthen investor confidence.
+  - Establishing market influence often requires clear communication of unique value propositions to potential partners and customers.
+  - Common pitfalls include over-reliance on partnerships without a solid independent value proposition.
+- **Strengths**:
+  - Q1: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.73)
+  - Q2: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.64)
+  - Q3: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.57)
+  - Q4: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.41)
+  - Q5: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.55)
+- **Risks**:
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+- **Representative snippets**:
+  - Q1: The project plans to leverage AI models to enhance the precision of lung-targeted small nucleic acid RNA by utilizing generative design and recurrent neural net...
+  - Q2: The project aims to establish market influence by leveraging existing partnerships with Merck and Fujifilm, utilizing their networks and reputations to enhance ...
+  - Q3: Key milestones for in vivo experiments should include the initiation of trials to assess the efficacy of the lung-targeted antiviral therapy, with success poten...
+  - Q4: The phased funding strategy aims to attract long-term investors by leveraging existing networks and partnerships, which could potentially provide a steady reven...
+  - Q5: The proposed mitigations using AI models for precision delivery aim to enhance the effectiveness of the antiviral therapy, which is important given the associat...
+  - Q6: The project identifies potential challenges in transitioning from early validation to large-scale rollout, particularly regarding technical hurdles and ensuring...
+- Median bullet count, estimated: 4
+
+### innovation - score 0.507  ##########----------
+- Reference hints, not facts: The project features generative design and recurrent neural networks (RNN) to explore potential immune agonist candidate; The project aims to address the market demand for efficient and safe RNA delivery systems.; lung-targeted stable lipid nanoparticles; AI drug screening; gene engineering advancements; efficiency of drug development; patented technology advantages; precision RNA delivery
+- Mean alignment / drift: **0.64 / 0.02**
+- Main score contributors: length, claims
+- Main penalty factors: dimension_drift
+- **Top evidence phrases, authority hits first**:
+  - Case studies or pilot results demonstrating the application of AI models would provide stronger evidence.
+  - Further details on patent protections and market analysis would strengthen the understanding of obsolescence risks.
+  - Further market analysis or strategic planning documents could clarify potential applications.
+- **General insights, not project achievements**:
+  - Novelty in drug delivery systems often hinges on the specificity and efficiency of targeting mechanisms.
+  - Common pitfalls include underestimating the importance of stability and controlled release in drug efficacy.
+  - Evidence of innovation typically requires comparative studies with existing technologies to validate claims.
+  - Efficiency and safety are critical metrics for evaluating new drug delivery systems.
+  - Patented technologies should be supported by clinical evidence to substantiate claims of superiority.
+- **Strengths**:
+  - Q1: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.70)
+  - Q2: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.79)
+  - Q3: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.62)
+  - Q4: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.49)
+  - Q5: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.64)
+- **Risks**:
+  - Q6: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+- **Representative snippets**:
+  - Q1: The development of lung-targeted stable lipid nanoparticles (LNPs) showcases innovation by utilizing advanced gene engineering techniques to potentially enhance...
+  - Q2: The patented technologies for lung-targeted stable lipid nanoparticles are designed to enhance stability and controlled release, which are important factors for...
+  - Q3: The proposal states that AI models are utilized to enhance the precision of lung-targeted small nucleic acid RNA delivery, but it does not provide specific evid...
+  - Q4: The proposal lacks detailed risk analysis regarding obsolescence or commoditization, which is important for understanding the long-term viability of the technol...
+  - Q5: The proposed advancements in gene engineering and AI drug screening are positioned as significant innovations, but the proposal does not provide quantitative as...
+  - Q6: The innovations in lung-targeted stable lipid nanoparticles and AI drug screening may have applications beyond their current scope; however, the proposal does n...
+- Median bullet count, estimated: 4
+
+### feasibility - score 0.479  ##########----------
+- Reference hints, not facts: in vivo testing; RNA drug delivery challenges; funding sources; regulatory approval process; operational execution clarity; implementation barriers; risk mitigation strategies; clinical trial intensity
+- Mean alignment / drift: **0.48 / 0.09**
+- Main score contributors: length, structure, alignment
+- Main penalty factors: dimension_drift
+- **Top evidence phrases, authority hits first**:
+  - Anticipated regulatory pathways and timelines that could assist in assessing approval risks.
+  - Details on success metrics for in vivo testing from the feasibility overview section.
+  - Feasibility overview section detailing in vivo testing and dose optimization strategies.
+- **General insights, not project achievements**:
+  - Common strategies in similar projects include phased testing to validate technology and reduce risks.
+  - Engaging with regulatory bodies early can help clarify approval pathways and requirements.
+  - Utilizing partnerships can provide critical resources and expertise to accelerate development.
+  - Funding strategies for R&D projects typically include grants, partnerships, and venture capital.
+  - High R&D intensity can strain financial resources, making it critical to establish a diverse funding base early in the project.
+- **Strengths**:
+  - Q1: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.46)
+  - Q3: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.51)
+  - Q5: enough claims with good structure/alignment (auth=0.00, cover=0.20, align=0.86)
+  - Q7: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.63)
+- **Risks**:
+  - Q1: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q2: possible cross-dimension drift (drift=0.25); review dimension boundary manually
+  - Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended
+  - Q3: possible cross-dimension drift (drift=0.10); review dimension boundary manually
+- **Representative snippets**:
+  - Q1: The project plans to conduct in vivo experiments to test RNA drug delivery efficacy, which may help address technical risks associated with high-risk pathogens....
+  - Q2: The project plans to address funding pressure risks by leveraging existing laboratory resources, which may help mitigate the need for high upfront capital inves...
+  - Q3: Anticipated challenges in obtaining regulatory approvals include lengthy clinical trial processes and the complexity of demonstrating safety and efficacy for RN...
+  - Q4: The operational execution plan currently lacks specific key tasks, ownership assignments, and timelines, which may hinder clarity on project progression.
+While ...
+  - Q5: The project identifies several barriers to implementation, including technical challenges in RNA drug delivery, funding pressures due to high R&D intensity, and...
+  - Q6: The proposal states that there is a lack of specific details on the alignment of timeline and resources, particularly regarding funding and resource allocation....
+- Median bullet count, estimated: 3
+
+> Note: this report is based only on structured candidate-answer metrics, including length, claims, evidence hints, authority/coverage diagnostics, structure, consistency, confidence, and dimension alignment. General insights are industry-context suggestions and do not mean the project has already met those requirements. Before final use, manually check alignment with the original proposal and supporting evidence.

@@ -1,0 +1,616 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt15__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt15__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 259,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team behind Pronti, led by creator Mila Banerjee, is focused on designing, engineering, and user testing an outfit maker app. Pronti is a Canadian startup that began in 2021 and has partnered with Aille Design to enhance the project through collaboration.",
+        "first_key_point_preview": "Mila Banerjee is the creator of Pronti - Outfit Maker.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.52,
+        "raw_chars": 3902,
+        "usage": {
+          "prompt_tokens": 3319,
+          "completion_tokens": 841,
+          "total_tokens": 4160
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "leadership experience",
+        "app design expertise",
+        "engineering skills",
+        "collaboration with Aille Design",
+        "project governance",
+        "decision-making processes",
+        "team capacity assessment",
+        "validation experience",
+        "risk management strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 1,
+          "governance_and_decision_making": 1,
+          "validation_and_compliance_experience": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Mila Banerjee's leadership experience and prior execution record position the team to successfully advance the Pronti project from design to user testing?",
+          "question_en_preview": "How does Mila Banerjee's leadership experience and prior execution record position the team to successfully advance the Pronti project from design to user testing?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does the team possess in app design and engineering that supports the development of the Pronti outfit maker app?",
+          "question_en_preview": "What specific expertise does the team possess in app design and engineering that supports the development of the Pronti outfit maker app?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the partnership with Aille Design enhance the team's capacity to deliver the Pronti app, and what benefits does this collaboration bring?",
+          "question_en_preview": "How does the partnership with Aille Design enhance the team's capacity to deliver the Pronti app, and what benefits does this collaboration bring?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Given the current workload and the team's engagement in designing and engineering, do you believe they have sufficient capacity to meet project milestones? Please evaluate any potential risks.",
+          "question_en_preview": "Given the current workload and the team's engagement in designing and engineering, do you believe they have sufficient capacity to meet project milestones? Please evaluate any potential risks."
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures are in place to ensure effective decision-making and conflict resolution within the Pronti team, especially given the limited risk information provided?",
+          "question_en_preview": "What governance structures are in place to ensure effective decision-making and conflict resolution within the Pronti team, especially given the limited risk information provided?"
+        }
+      ],
+      "elapsed_sec": 10.52,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 292,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to revolutionize personal fashion through the Pronti app, which assists users in getting ready faster and buying smarter. Key milestones include the app's beta release, significant technology improvements, and features that enhance user engagement and inclusivity ...",
+        "first_key_point_preview": "Pronti is designed to help users choose outfits more efficiently, aiming to reduce the average 17 minutes spent daily on outfit selection.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "An improved UI/UX design for Pronti was implemented in September 2021, along with major technology improvements in November 2021 and smarter buying features introduced in June 2022."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.03,
+        "raw_chars": 3411,
+        "usage": {
+          "prompt_tokens": 3486,
+          "completion_tokens": 755,
+          "total_tokens": 4241
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "user feedback",
+        "market research",
+        "success metrics",
+        "UN Sustainability Goal 12",
+        "milestone execution",
+        "technology improvements",
+        "value creation",
+        "user engagement",
+        "quantifiable outcomes"
+      ],
+      "cleaned_question_count": 5,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How effectively does the Pronti app address the stated need for users to reduce the average 17 minutes spent daily on outfit selection? Please evaluate the urgency of this need based on user feedback or market research.",
+          "question_en_preview": "How effectively does the Pronti app address the stated need for users to reduce the average 17 minutes spent daily on outfit selection? Please evaluate the urgency of this need based on user feedback or market research."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness of the proposed milestones for the Pronti app, including the beta release and subsequent technology improvements. Are these milestones executable within the stated timelines?",
+          "question_en_preview": "Evaluate the reasonableness of the proposed milestones for the Pronti app, including the beta release and subsequent technology improvements. Are these milestones executable within the stated timelines?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics should be established to measure the effectiveness of the Pronti app in achieving its objectives? How can these metrics be quantified?",
+          "question_en_preview": "What specific success metrics should be established to measure the effectiveness of the Pronti app in achieving its objectives? How can these metrics be quantified?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the Pronti app create value for its users and align with the UN Sustainability Goal 12? Discuss the business logic behind its objectives.",
+          "question_en_preview": "How does the Pronti app create value for its users and align with the UN Sustainability Goal 12? Discuss the business logic behind its objectives."
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Assess the balance between ambition and feasibility in the objectives set for the Pronti app. Are the goals too idealistic or appropriately ambitious given the current market conditions?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the objectives set for the Pronti app. Are the goals too idealistic or appropriately ambitious given the current market conditions?"
+        }
+      ],
+      "elapsed_sec": 12.03,
+      "final_question_count": 5
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 360,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Pronti's strategy focuses on leveraging AI technology to enhance user experience by providing personalized outfit recommendations and integrating retail e-commerce into its platform. The project aims to accommodate a growing user base by implementing a cloud platform for scaling  ...",
+        "first_key_point_preview": "Pronti is a free app designed to help users get ready faster and buy smarter.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.49,
+        "raw_chars": 4595,
+        "usage": {
+          "prompt_tokens": 3513,
+          "completion_tokens": 995,
+          "total_tokens": 4508
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Kickstarter funding strategy",
+        "user waitlist implementation",
+        "retail e-commerce integration",
+        "AI-driven recommendations",
+        "scaling challenges",
+        "operational readiness stages",
+        "partnership opportunities",
+        "solution delivery rationale",
+        "market entry strategy evidence",
+        "compliance and quality strategies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Pronti's integration of retail e-commerce into its platform enhance its market entry strategy, and what evidence supports this approach?",
+          "question_en_preview": "How does Pronti's integration of retail e-commerce into its platform enhance its market entry strategy, and what evidence supports this approach?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale does Pronti provide for its current solution delivery strategy, and what alternatives were considered during its design?",
+          "question_en_preview": "What rationale does Pronti provide for its current solution delivery strategy, and what alternatives were considered during its design?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the scaling problem indicated by the implementation of a waitlist for new users, what development and validation stages does Pronti plan to undertake to ensure operational readiness?",
+          "question_en_preview": "Given the scaling problem indicated by the implementation of a waitlist for new users, what development and validation stages does Pronti plan to undertake to ensure operational readiness?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is Pronti's funding strategy through a Kickstarter campaign for supporting additional software developers, and what evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is Pronti's funding strategy through a Kickstarter campaign for supporting additional software developers, and what evidence would increase your confidence in this assessment?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential risks does Pronti face in scaling its platform to accommodate a growing user base, and how might these risks impact its long-term strategy?",
+          "question_en_preview": "What potential risks does Pronti face in scaling its platform to accommodate a growing user base, and how might these risks impact its long-term strategy?"
+        }
+      ],
+      "elapsed_sec": 16.49,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 276,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project showcases innovation through inclusive design and advanced AI technology. Aille Design's t-shirts are crafted for Braille readers, while Pronti's app utilizes machine learning to provide personalized shopping experiences based on user preferences and interactions.",
+        "first_key_point_preview": "Aille Design's t-shirts are inclusive and fully legible for Braille readers.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.29,
+        "raw_chars": 5446,
+        "usage": {
+          "prompt_tokens": 3415,
+          "completion_tokens": 1223,
+          "total_tokens": 4638
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "Braille design innovation",
+        "personalized shopping experience",
+        "AI learning capabilities",
+        "evidence of effectiveness",
+        "intellectual property strategy",
+        "competitive differentiation",
+        "user engagement metrics",
+        "market longevity risks",
+        "customer segment expansion",
+        "premium materials in design"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 2,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Aille Design's t-shirt innovation for Braille readers compare to existing products in terms of inclusivity and design quality? Please provide specific examples from the proposal.",
+          "question_en_preview": "How does Aille Design's t-shirt innovation for Braille readers compare to existing products in terms of inclusivity and design quality? Please provide specific examples from the proposal."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does Pronti's AI technology offer compared to traditional shopping apps? Discuss aspects such as personalization and user engagement based on the proposal's key points.",
+          "question_en_preview": "What clear advantages does Pronti's AI technology offer compared to traditional shopping apps? Discuss aspects such as personalization and user engagement based on the proposal's key points."
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of Pronti's personalized recommendations and AI learning capabilities? How does this evidence strengthen the innovation's credibility?",
+          "question_en_preview": "What evidence supports the effectiveness of Pronti's personalized recommendations and AI learning capabilities? How does this evidence strengthen the innovation's credibility?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee for the innovation's longevity in the market? How might these risks impact the project's success?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee for the innovation's longevity in the market? How might these risks impact the project's success?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies does the project have in place for protecting its intellectual property, particularly regarding the unique aspects of Aille Design's t-shirts and Pronti's AI technology?",
+          "question_en_preview": "What strategies does the project have in place for protecting its intellectual property, particularly regarding the unique aspects of Aille Design's t-shirts and Pronti's AI technology?"
+        }
+      ],
+      "elapsed_sec": 15.29,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 352,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Pronti project is supported by a range of improvements and funding strategies, although it faces risks related to technology scaling and potential bugs. The project has implemented various enhancements to its technology and user interface, and it has secure ...",
+        "first_key_point_preview": "Pronti has implemented an improved UI/UX design and major technology improvements, including an image cropper.",
+        "first_risk_preview": "There is a risk of more bugs or issues in Pronti's technology architecture.",
+        "first_mitigation_preview": "Pronti believes the risk of bugs is small and will be mitigated by technology mentors and campaign funds."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.08,
+        "raw_chars": 3576,
+        "usage": {
+          "prompt_tokens": 3510,
+          "completion_tokens": 827,
+          "total_tokens": 4337
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "technology improvements",
+        "Kickstarter funding",
+        "scaling strategy",
+        "waitlist implementation",
+        "bug mitigation",
+        "operational timeline",
+        "resource alignment",
+        "risk assessment",
+        "user capacity",
+        "cloud platform utilization"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "resources_and_infrastructure": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific improvements have been made to Pronti's technology architecture to mitigate the risk of bugs as it scales?",
+          "question_en_preview": "What specific improvements have been made to Pronti's technology architecture to mitigate the risk of bugs as it scales?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the CA$ 5,147 raised through the Kickstarter campaign align with the overall budget and funding strategy for Pronti's development?",
+          "question_en_preview": "How does the CA$ 5,147 raised through the Kickstarter campaign align with the overall budget and funding strategy for Pronti's development?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key tasks and timelines associated with addressing the scaling problems indicated by the implementation of a waitlist for new users?",
+          "question_en_preview": "What are the key tasks and timelines associated with addressing the scaling problems indicated by the implementation of a waitlist for new users?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Given the identified risks of bugs in Pronti's technology architecture, how effective are the proposed mitigations involving technology mentors and campaign funds?",
+          "question_en_preview": "Given the identified risks of bugs in Pronti's technology architecture, how effective are the proposed mitigations involving technology mentors and campaign funds?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation could arise from scaling Pronti's technology 100x, and how might these be addressed?",
+          "question_en_preview": "What potential barriers to implementation could arise from scaling Pronti's technology 100x, and how might these be addressed?"
+        }
+      ],
+      "elapsed_sec": 14.08,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T18:59:53Z",
+  "elapsed_sec": 68.43,
+  "total_questions": 34,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt15__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt15__openai/generated_questions_detail.json"
+}

@@ -1,0 +1,623 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt65__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt65__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 228,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by an individual named Aryan and involves collaboration with experienced developers to enhance platform integration. The team is focused on following best practices to ensure a streamlined integration process.",
+        "first_key_point_preview": "The project was created by an individual named Aryan.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.55,
+        "raw_chars": 3535,
+        "usage": {
+          "prompt_tokens": 3271,
+          "completion_tokens": 761,
+          "total_tokens": 4032
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Aryan's leadership experience",
+        "platform integration best practices",
+        "team capacity assessment",
+        "validation and compliance expertise",
+        "governance structures",
+        "collaboration stability",
+        "execution risk management"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is Aryan's prior execution record in leading similar projects, and how does it position the team to advance this initiative?",
+          "question_en_preview": "What is Aryan's prior execution record in leading similar projects, and how does it position the team to advance this initiative?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the team's collaboration with experienced developers enhance their expertise in platform integration, and what specific best practices are being implemented?",
+          "question_en_preview": "How does the team's collaboration with experienced developers enhance their expertise in platform integration, and what specific best practices are being implemented?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the current workload and any parallel projects, does the team have sufficient capacity to ensure timely execution of this project?",
+          "question_en_preview": "Given the current workload and any parallel projects, does the team have sufficient capacity to ensure timely execution of this project?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance in platform integration, and how might this impact the project's success?",
+          "question_en_preview": "What experience does the team have with validation and compliance in platform integration, and how might this impact the project's success?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What governance structures are in place to manage decision-making and conflict-of-interest handling within the team?",
+          "question_en_preview": "What governance structures are in place to manage decision-making and conflict-of-interest handling within the team?"
+        }
+      ],
+      "elapsed_sec": 9.56,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 327,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Park Project aims to alleviate urban congestion and environmental impact by providing a mobile app that connects drivers with available parking spots. Key objectives include reducing circling time, idling, and CO₂ emissions, while enhancing user convenience through features l ...",
+        "first_key_point_preview": "The Park Project aims to reduce circling time, which contributes to inner-city congestion.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The project aims to reduce circling time, idling, and CO₂ emissions, which are key mitigations for urban congestion and environmental impact."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.81,
+        "raw_chars": 3516,
+        "usage": {
+          "prompt_tokens": 3453,
+          "completion_tokens": 771,
+          "total_tokens": 4224
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "urban congestion reduction",
+        "CO₂ emissions decrease",
+        "real-time spot sharing",
+        "success metrics definition",
+        "milestone feasibility",
+        "peer-to-peer parking solution",
+        "user convenience features",
+        "impact on city traffic",
+        "environmental impact mitigation"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of The Park Project align with the stated need to alleviate urban congestion and environmental impact? Please discuss any gaps in this alignment.",
+          "question_en_preview": "How well do the objectives of The Park Project align with the stated need to alleviate urban congestion and environmental impact? Please discuss any gaps in this alignment."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "To what extent are the overall goals of The Park Project clear and focused, particularly regarding reducing circling time and CO₂ emissions? Are there any unrelated sub-goals that could dilute focus?",
+          "question_en_preview": "To what extent are the overall goals of The Park Project clear and focused, particularly regarding reducing circling time and CO₂ emissions? Are there any unrelated sub-goals that could dilute focus?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for The Park Project, and how reasonable and executable do you find them in the context of the objectives outlined? Please identify any potential challenges.",
+          "question_en_preview": "What are the proposed milestones for The Park Project, and how reasonable and executable do you find them in the context of the objectives outlined? Please identify any potential challenges."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What specific success metrics should The Park Project establish to measure the effectiveness of its objectives, such as reductions in circling time or CO₂ emissions? Are these metrics quantifiable?",
+          "question_en_preview": "What specific success metrics should The Park Project establish to measure the effectiveness of its objectives, such as reductions in circling time or CO₂ emissions? Are these metrics quantifiable?"
+        }
+      ],
+      "elapsed_sec": 11.81,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 380,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to enhance data accuracy through the implementation of the Park Coins system and real-time checks. It is currently 107% funded with 10 days remaining in its Kickstarter campaign and will adhere to privacy regulations in both Canada and the U.S. The rollout will b ...",
+        "first_key_point_preview": "The project is currently 107% funded with 10 days left in its Kickstarter campaign.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "To improve data accuracy, strong incentives are being built through the Park Coins system and real-time checks."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.52,
+        "raw_chars": 4500,
+        "usage": {
+          "prompt_tokens": 3506,
+          "completion_tokens": 960,
+          "total_tokens": 4466
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Kickstarter campaign funding",
+        "Park Coins system",
+        "real-time checks",
+        "user feedback metrics",
+        "privacy regulations compliance",
+        "unit economics impact",
+        "scalability risks",
+        "partnership collaborations",
+        "wave rollout strategy",
+        "data accuracy improvement"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "quality_compliance_strategy": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to leverage the current 107% funding status in its Kickstarter campaign to enhance its market entry strategy and secure further adoption?",
+          "question_en_preview": "How does the project plan to leverage the current 107% funding status in its Kickstarter campaign to enhance its market entry strategy and secure further adoption?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the design of the Park Coins system and real-time checks for improving data accuracy, and how will these trade-offs impact user experience?",
+          "question_en_preview": "What are the major trade-offs considered in the design of the Park Coins system and real-time checks for improving data accuracy, and how will these trade-offs impact user experience?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the planned wave rollout strategy, what specific metrics will be used to monitor user feedback, and how will this feedback influence subsequent phases of development?",
+          "question_en_preview": "Given the planned wave rollout strategy, what specific metrics will be used to monitor user feedback, and how will this feedback influence subsequent phases of development?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How will adherence to privacy regulations in Canada and the U.S. be ensured throughout the project's lifecycle, and what specific compliance measures are in place?",
+          "question_en_preview": "How will adherence to privacy regulations in Canada and the U.S. be ensured throughout the project's lifecycle, and what specific compliance measures are in place?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What is the expected impact of the Park Coins system on the project's unit economics, particularly in terms of user retention and revenue generation?",
+          "question_en_preview": "What is the expected impact of the Park Coins system on the project's unit economics, particularly in terms of user retention and revenue generation?"
+        }
+      ],
+      "elapsed_sec": 11.52,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 260,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Park Project introduces an innovative mobile app that leverages community and crowdsharing to identify real-time available parking spots. Its design supports long-term relevance and adaptability, allowing for feature evolution and contributions from users.",
+        "first_key_point_preview": "The Park Project is a mobile app designed to find real-time available parking spots.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.52,
+        "raw_chars": 4322,
+        "usage": {
+          "prompt_tokens": 3379,
+          "completion_tokens": 955,
+          "total_tokens": 4334
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "real-time parking availability",
+        "community engagement model",
+        "user experience advantages",
+        "scalability to new cities",
+        "intellectual property protection",
+        "evidence of effectiveness",
+        "competitive differentiation",
+        "risk of commoditization",
+        "crowdsharing functionality"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 4
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "platform_and_extensibility": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does The Park Project's mobile app differentiate itself from existing parking solutions in terms of real-time availability and community engagement?",
+          "question_en_preview": "How does The Park Project's mobile app differentiate itself from existing parking solutions in terms of real-time availability and community engagement?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does The Park Project offer compared to traditional parking apps, particularly in terms of user experience and community involvement?",
+          "question_en_preview": "What specific advantages does The Park Project offer compared to traditional parking apps, particularly in terms of user experience and community involvement?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of The Park Project's community and crowdsharing model in identifying real-time parking spots?",
+          "question_en_preview": "What evidence supports the effectiveness of The Park Project's community and crowdsharing model in identifying real-time parking spots?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How scalable is The Park Project's app in terms of adapting to new cities or use cases, and what factors could influence its extensibility?",
+          "question_en_preview": "How scalable is The Park Project's app in terms of adapting to new cities or use cases, and what factors could influence its extensibility?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to The Park Project becoming obsolete or commoditized?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to The Park Project becoming obsolete or commoditized?"
+        }
+      ],
+      "elapsed_sec": 11.52,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 267,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by a well-defined budget and resource allocation, including the use of platforms like Firebase and Google Cloud. However, challenges exist regarding platform integration complexity, which may impact the project's execution.",
+        "first_key_point_preview": "The project budget includes a total of CA$ 4,385 raised, with specific allocations for various expenses.",
+        "first_risk_preview": "The project faces challenges with platform integration complexity.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.43,
+        "raw_chars": 3793,
+        "usage": {
+          "prompt_tokens": 3435,
+          "completion_tokens": 822,
+          "total_tokens": 4257
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "budget allocation justification",
+        "platform integration challenges",
+        "user feedback integration",
+        "customer acceptance evidence",
+        "project rollout timeline",
+        "risk mitigation strategies",
+        "resource alignment assessment",
+        "Kickstarter campaign funding",
+        "Firebase and Google Cloud utilization"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "resources_and_infrastructure": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the current budget allocation of CA$ 4,385 support the project's long-term feasibility, and what evidence can you provide to justify this allocation?",
+          "question_en_preview": "How does the current budget allocation of CA$ 4,385 support the project's long-term feasibility, and what evidence can you provide to justify this allocation?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific challenges related to platform integration complexity have been identified, and how might they impact the project's execution?",
+          "question_en_preview": "What specific challenges related to platform integration complexity have been identified, and how might they impact the project's execution?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Can you outline the key tasks and timeline for the rollout of the Park Project, and how user feedback will be integrated into the development process?",
+          "question_en_preview": "Can you outline the key tasks and timeline for the rollout of the Park Project, and how user feedback will be integrated into the development process?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "Given the identified risk of platform integration complexity, what specific mitigations do you plan to implement to address this risk?",
+          "question_en_preview": "Given the identified risk of platform integration complexity, what specific mitigations do you plan to implement to address this risk?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What evidence do you have regarding customer acceptance and procurement feasibility for the Park Project, and what gaps exist in this information?",
+          "question_en_preview": "What evidence do you have regarding customer acceptance and procurement feasibility for the Park Project, and what gaps exist in this information?"
+        }
+      ],
+      "elapsed_sec": 12.43,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T20:34:12Z",
+  "elapsed_sec": 56.84,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt65__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt65__openai/generated_questions_detail.json"
+}

@@ -1,0 +1,625 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt52__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt52__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 160,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by Russell Douglas, who is responsible for the creation of the app. His role is central to the development and execution of the project.",
+        "first_key_point_preview": "Russell Douglas is the creator of the app.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 23.51,
+        "raw_chars": 4646,
+        "usage": {
+          "prompt_tokens": 3240,
+          "completion_tokens": 978,
+          "total_tokens": 4218
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Russell Douglas's prior projects",
+        "domain-specific expertise",
+        "project governance structure",
+        "validation experience",
+        "team capacity assessment",
+        "collaboration partnerships",
+        "conflict resolution mechanisms",
+        "execution track record",
+        "resource allocation strategy"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Russell Douglas's experience as the creator of the app position him to lead the project effectively? Please provide specific examples of his prior execution record that support this.",
+          "question_en_preview": "How does Russell Douglas's experience as the creator of the app position him to lead the project effectively? Please provide specific examples of his prior execution record that support this."
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does Russell Douglas possess that is relevant to the app's development and execution? How does this expertise contribute to addressing the target customer problem?",
+          "question_en_preview": "What specific domain expertise does Russell Douglas possess that is relevant to the app's development and execution? How does this expertise contribute to addressing the target customer problem?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current workload and any parallel projects, does the team have sufficient capacity and resources to ensure the successful execution of this project? Please explain any potential constraints.",
+          "question_en_preview": "Given the current workload and any parallel projects, does the team have sufficient capacity and resources to ensure the successful execution of this project? Please explain any potential constraints."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance in the context of app development? How might the lack of specified mitigation measures impact the project's success?",
+          "question_en_preview": "What experience does the team have with validation and compliance in the context of app development? How might the lack of specified mitigation measures impact the project's success?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What governance and decision-making processes are in place for the project, and how do they ensure effective oversight and conflict resolution? Please provide details.",
+          "question_en_preview": "What governance and decision-making processes are in place for the project, and how do they ensure effective oversight and conflict resolution? Please provide details."
+        }
+      ],
+      "elapsed_sec": 23.51,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 370,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a video-based job recruitment app called CMe, which addresses challenges faced by applicants using traditional CVs. Key objectives include reducing the need for in-person meetings and travel for interviews, condensing the recruitment process timeline,  ...",
+        "first_key_point_preview": "The project aims to address common challenges applicants face when applying for jobs using traditional CVs.",
+        "first_risk_preview": "The project addresses common challenges applicants face when applying for jobs using traditional CVs.",
+        "first_mitigation_preview": "The project aims to reduce the need for in-person meetings, thereby reducing travel for interviews."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.9,
+        "raw_chars": 3673,
+        "usage": {
+          "prompt_tokens": 3425,
+          "completion_tokens": 822,
+          "total_tokens": 4247
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "video recruitment app",
+        "job application timeline",
+        "success metrics",
+        "recruitment challenges",
+        "user engagement features",
+        "value creation for employers",
+        "milestone execution",
+        "applicant experience",
+        "travel reduction impact"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How effectively does the project align its objectives with the challenges faced by applicants using traditional CVs? Please provide evidence of the urgency of this need.",
+          "question_en_preview": "How effectively does the project align its objectives with the challenges faced by applicants using traditional CVs? Please provide evidence of the urgency of this need."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the proposed milestones for the project, and how realistic are they in terms of execution within the next 12 to 36 months?",
+          "question_en_preview": "What are the proposed milestones for the project, and how realistic are they in terms of execution within the next 12 to 36 months?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics does the project include to measure the effectiveness of the CMe app in addressing recruitment challenges?",
+          "question_en_preview": "What quantifiable success metrics does the project include to measure the effectiveness of the CMe app in addressing recruitment challenges?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the initiative create value for job seekers and employers, and what is the expected impact on the recruitment process?",
+          "question_en_preview": "How does the initiative create value for job seekers and employers, and what is the expected impact on the recruitment process?"
+        }
+      ],
+      "elapsed_sec": 11.9,
+      "final_question_count": 8
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 309,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to achieve a funding goal of $50,000 to cover monthly expenses, complete marketing literature, and enhance the app over a six-month period. Currently, the project is funded at 107%, indicating a successful funding strategy despite previous unsuccessful attempts t ...",
+        "first_key_point_preview": "The project has a funding goal of $50,000 to support various operational needs.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 31.76,
+        "raw_chars": 4802,
+        "usage": {
+          "prompt_tokens": 3487,
+          "completion_tokens": 1023,
+          "total_tokens": 4510
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding strategy effectiveness",
+        "user adoption evidence",
+        "financial sustainability assumptions",
+        "milestones for user engagement",
+        "trade-offs in delivery strategy",
+        "compliance measures for app features",
+        "partnership engagement plans",
+        "time-sensitive funding risks",
+        "operational capabilities enhancement"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 3
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 7,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to utilize the $50,000 funding to enhance its marketing literature and app features, and what evidence supports the effectiveness of this strategy in achieving user adoption?",
+          "question_en_preview": "How does the project plan to utilize the $50,000 funding to enhance its marketing literature and app features, and what evidence supports the effectiveness of this strategy in achieving user adoption?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project is currently funded at 107%, what assumptions underlie this funding success, and how do they impact the project's financial sustainability over the next six months?",
+          "question_en_preview": "Given that the project is currently funded at 107%, what assumptions underlie this funding success, and how do they impact the project's financial sustainability over the next six months?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the major trade-offs considered in the project's strategy to achieve its funding goal, and how might these affect the delivery of the app's features?",
+          "question_en_preview": "What are the major trade-offs considered in the project's strategy to achieve its funding goal, and how might these affect the delivery of the app's features?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific milestones does the project aim to achieve within the six-month funding period, and how will these milestones validate the app's features and user engagement?",
+          "question_en_preview": "What specific milestones does the project aim to achieve within the six-month funding period, and how will these milestones validate the app's features and user engagement?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "Considering the time-sensitive nature of the funding strategy, what risks does the project face if it fails to secure additional funding before the deadline, and how might this impact its scalability?",
+          "question_en_preview": "Considering the time-sensitive nature of the funding strategy, what risks does the project face if it fails to secure additional funding before the deadline, and how might this impact its scalability?"
+        }
+      ],
+      "elapsed_sec": 31.76,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 254,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces innovative features such as video resumes and customizable profiles, enhancing user engagement and personalization. Additionally, the app facilitates user connectivity through messaging, which supports networking and collaboration.",
+        "first_key_point_preview": "CMe's mockups include a feature for creating video resumes that show skills and add tags.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.43,
+        "raw_chars": 4260,
+        "usage": {
+          "prompt_tokens": 3340,
+          "completion_tokens": 926,
+          "total_tokens": 4266
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "video resume feature",
+        "customizable profiles",
+        "user engagement metrics",
+        "messaging feature effectiveness",
+        "intellectual property strategy",
+        "competitive edge risks",
+        "customer segment extension",
+        "user feedback collection",
+        "innovation validation evidence"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the feature of creating video resumes differentiate the project from existing platforms, and what evidence supports its novelty?",
+          "question_en_preview": "How does the feature of creating video resumes differentiate the project from existing platforms, and what evidence supports its novelty?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "In what ways does the customizable profile feature enhance user value compared to similar offerings in the market?",
+          "question_en_preview": "In what ways does the customizable profile feature enhance user value compared to similar offerings in the market?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What types of user engagement metrics or feedback have been collected to validate the effectiveness of the messaging feature for user connectivity?",
+          "question_en_preview": "What types of user engagement metrics or feedback have been collected to validate the effectiveness of the messaging feature for user connectivity?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could affect the project's competitive edge in the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could affect the project's competitive edge in the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies are in place to protect the intellectual property associated with the innovative features of the project, such as video resumes and customizable profiles?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property associated with the innovative features of the project, such as video resumes and customizable profiles?"
+        }
+      ],
+      "elapsed_sec": 14.43,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 324,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project has a funding goal of $50,000, with a stretch goal of $100,000 to cover monthly expenses and quality assurance tests. Currently, the project is funded at 107% and is hosted on Kickstarter, based in Toronto, Canada. The funding period is from March 15, 2024, to April 1 ...",
+        "first_key_point_preview": "The Kickstarter goal for the project is $50,000.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 20.44,
+        "raw_chars": 4161,
+        "usage": {
+          "prompt_tokens": 3453,
+          "completion_tokens": 896,
+          "total_tokens": 4349
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding goal",
+        "budget allocation",
+        "monthly expenses",
+        "quality assurance tests",
+        "implementation barriers",
+        "customer acceptance",
+        "project timeline",
+        "risk identification",
+        "resource alignment",
+        "funding period"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "rating": 2,
+          "analysis": 4
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Given that the project has a funding goal of $50,000 and is currently funded at 107%, how realistic is the budget allocation for monthly expenses and quality assurance tests? Please provide evidence that would support a  ...",
+          "question_en_preview": "Given that the project has a funding goal of $50,000 and is currently funded at 107%, how realistic is the budget allocation for monthly expenses and quality assurance tests? Please provide evidence that would support a  ..."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for the project between now and the end of the funding period on April 14, 2024? How do these align with the project's funding goals?",
+          "question_en_preview": "What specific tasks and timelines are outlined for the project between now and the end of the funding period on April 14, 2024? How do these align with the project's funding goals?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "The proposal indicates limited risk information. What potential risks could arise from this lack of detail, and how might they impact the project's feasibility?",
+          "question_en_preview": "The proposal indicates limited risk information. What potential risks could arise from this lack of detail, and how might they impact the project's feasibility?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence exists to support the feasibility of customer acceptance and funding within the remaining 10 days of the Kickstarter campaign? If this information is lacking, please discuss its potential impact.",
+          "question_en_preview": "What evidence exists to support the feasibility of customer acceptance and funding within the remaining 10 days of the Kickstarter campaign? If this information is lacking, please discuss its potential impact."
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation could the project face in real production or deployment settings, particularly given the limited risk information provided?",
+          "question_en_preview": "What barriers to implementation could the project face in real production or deployment settings, particularly given the limited risk information provided?"
+        }
+      ],
+      "elapsed_sec": 20.44,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T20:09:12Z",
+  "elapsed_sec": 102.05,
+  "total_questions": 39,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt52__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt52__openai/generated_questions_detail.json"
+}

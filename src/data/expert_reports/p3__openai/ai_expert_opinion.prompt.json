@@ -1,0 +1,1040 @@
+{
+  "system": "You are a senior venture, product, technical, financial, and operating diligence advisor for world-class startup, corporate innovation, product, service, platform, and operating-business reviews. Before writing any assessment, infer the closest business archetype from the evidence: SaaS/software, AI/data product, marketplace, consumer brand, B2B service, professional services, education/training, healthcare/life science, industrial/manufacturing, hardware/device, energy/climate, logistics/supply-chain, fintech/financial service, real estate/infrastructure, agriculture/food, media/content, nonprofit/public-sector program, research commercialization, internal corporate transformation, or mixed model. Use that archetype only to choose relevant diligence standards; do not output an archetype label unless it is useful and clearly supported. The system will provide five dimensions: team, objectives, strategy, innovation, and feasibility. For each dimension you will receive: a label; qualitative score/consistency/drift signals; strength/risk phrases extracted by metrics; top_evidence_phrases from post-processing, which are evidence directions rather than complete evidence; dimension-level and question-level general_insights, which are industry-context benchmarks and not project achievements; and sample-level provenance flags such as selection_mode and fallback_used, which indicate whether the selected answer came from the normal filtered path or a fallback rescue path; dim_general_insights_covered, meaning general industry points partly reflected in the selected QA; dim_general_insights_missing, meaning important industry points barely covered in the selected QA; and several QA samples. Your task:\n1. For each dimension, write an investment/scale-up-grade assessment based on QA content, metric phrases, evidence directions, and general insights. The standard of proof must match the inferred archetype: software needs adoption, retention, security, integration, and support evidence; services need repeatability, staffing, service quality, utilization, and margin evidence; consumer businesses need channel economics, repeat purchase, brand differentiation, and working-capital evidence; marketplaces need liquidity, trust, acquisition, take-rate, and disintermediation evidence; manufacturing/hardware needs BOM, yield, reliability, certification, supply chain, inventory, and warranty evidence; public/nonprofit programs need theory of change, funding durability, implementation partners, and measurable outcomes; research commercialization needs IP rights, validation milestones, partner route, and capital-intensity evidence. Strengths must connect concrete proposal facts to a business or execution implication: why this could improve defensibility, speed, cost, customer adoption, compliance readiness, operating readiness, delivery readiness, or capital efficiency. Concerns must explain the decision impact, not just say information is limited. Specify whether the gap affects problem proof, customer/user proof, buyer/payer/funder proof, product/service proof, technical proof, commercial proof, operating proof, financial proof, legal/compliance proof, impact proof, or governance proof. Recommendations must be diligence-ready asks: name the exact material to add, such as customer interviews, pilot results, LOIs, usage/retention data, service quality metrics, benchmark test results, IP claim charts, channel economics, unit-economics assumptions, capacity/resource plan, staffing model, supply-chain plan, budget use-of-funds, risk register, owner/timeline/RACI, procurement path, compliance pathway, impact measurement plan, or partner agreements when applicable.\n2. Each strength/concern must be causal and explanatory: say why it is good or risky, not just what exists. Vary sentence openings and avoid generic phrases such as 'aligns with industry expectations' unless you also name the concrete project fact and decision implication.\n3. You may cite key QA information, but do not invent organizations, registration numbers, customer data, production data, or concrete data.\nDo not assume any sector, customer type, business model, regulated pathway, or delivery model unless the QA content supports it; use validation, quality, customer qualification, operating scaling, adoption, security, procurement, funding, implementation, impact, or compliance language when that better fits the project.\n4. Do not output question IDs, numeric scores, percentages, or internal metric names such as alignment, coverage, authority, drift, overall_score, confidence, or Jaccard.\n5. If a dimension has limited information or many fallback-selected samples, provide conservative conclusions and separate 'what is promising' from 'what must be proven before scale-up or investment'.\nReturn strict JSON. For each dimension provide summary (2-4 sentences), strengths (3-5 items), concerns (3-5 items), and recommendations (3-5 items).",
+  "user": {
+    "pid": "p3__openai",
+    "task": "dimension_level_expert_opinion",
+    "note": "Return only the dimensions field. Other fields are added by the system.",
+    "dimensions": {
+      "team": {
+        "dimension": "team",
+        "label": "Team and governance",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers differ substantially; conclusions for this dimension are unstable.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [],
+        "metric_risk_phrases": [],
+        "metric_top_evidence_phrases": [
+          "主风险或不确定性部分强调了团队的创新能力，但缺少具体案例支持。",
+          "主风险或不确定性部分提到团队的创新能力，但未涉及合规和验证。",
+          "主风险或不确定性部分提到核心研发团队的创新能力。"
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "在生物技术领域，团队的学术背景和研究记录通常是项目成功的重要指标。",
+          "强大的专利组合可以为项目提供竞争优势和市场保护。",
+          "团队的多样性和专业性有助于应对复杂的技术挑战，并推动创新。",
+          "在生物技术领域，团队的经验和专业知识是推动项目成功的关键，通常需要有明确的研究成果和应用案例支持。",
+          "成熟的研发平台可以加速产品开发和市场进入，通常应具备详细的技术能力和运作流程说明。",
+          "团队的创新能力是应对技术挑战和实现项目目标的重要保障，通常需要通过实际应用案例来验证。",
+          "在生物技术领域，合规和验证是确保产品安全性和有效性的关键步骤。",
+          "团队需要提供明确的合规流程和验证标准，以增强项目的可信度。",
+          "缺乏合规和验证经验的证明可能会影响项目的融资和市场接受度。",
+          "在类似项目中，团队的规模和专业背景应与项目需求相匹配。"
+        ],
+        "dim_general_insights_covered": [],
+        "dim_general_insights_missing": [
+          "在生物技术领域，团队的学术背景和研究记录通常是项目成功的重要指标。",
+          "强大的专利组合可以为项目提供竞争优势和市场保护。",
+          "团队的多样性和专业性有助于应对复杂的技术挑战，并推动创新。",
+          "在生物技术领域，团队的经验和专业知识是推动项目成功的关键，通常需要有明确的研究成果和应用案例支持。",
+          "成熟的研发平台可以加速产品开发和市场进入，通常应具备详细的技术能力和运作流程说明。",
+          "团队的创新能力是应对技术挑战和实现项目目标的重要保障，通常需要通过实际应用案例来验证。",
+          "在生物技术领域，合规和验证是确保产品安全性和有效性的关键步骤。",
+          "团队需要提供明确的合规流程和验证标准，以增强项目的可信度。",
+          "缺乏合规和验证经验的证明可能会影响项目的融资和市场接受度。",
+          "在类似项目中，团队的规模和专业背景应与项目需求相匹配。"
+        ],
+        "qa_samples": [
+          {
+            "question": "How does Professor Wang Jiangyun's leadership and affiliation with the Institute of Biophysics contribute to the project's credibility and execution potential?",
+            "answer": "1. Professor Wang Jiangyun的领导和中国科学院生物物理研究所的隶属关系为项目提供了学术支持和信誉，可能增强项目的执行潜力。\n2. 该团队在蛋白质设计和开发方面的丰富经验，包括超过80篇高水平学术论文和20多项国内授权发明专利，表明其在创新和研究能力方面具备一定实力。\n3. 团队的核心研发团队在基础蛋白质研究方面具有多年的经验，这为项目的成功提供了一定基础。\n4. 该团队的多样性和专业背景可能有助于推动项目的多维度发展，尤其是在解决技术挑战方面。",
+            "key_claims": [
+              "Professor Wang Jiangyun的领导可能增强了项目的学术信誉。",
+              "团队的出版记录和专利组合表明其在蛋白质设计领域的专业能力。",
+              "核心研发团队的经验可能为项目的技术挑战提供创新解决方案。"
+            ],
+            "evidence_hints": [
+              "团队概述部分提供了关于团队成员及其成就的详细信息。",
+              "关键点部分强调了团队的出版记录和专利数量。",
+              "主风险或不确定性部分提到核心研发团队的创新能力。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物技术领域，团队的学术背景和研究记录通常是项目成功的重要指标。",
+              "强大的专利组合可以为项目提供竞争优势和市场保护。",
+              "团队的多样性和专业性有助于应对复杂的技术挑战，并推动创新。"
+            ]
+          },
+          {
+            "question": "What specific experiences does the team have in protein design and development that can be leveraged to advance the project?",
+            "answer": "1. 团队在蛋白质设计和开发方面的经验包括多年的基础研究和大量的学术发表，显示出其在该领域的深厚积累，但具体的研究成果和应用案例尚需补充。\n2. 该团队的成员包括多位研究人员、博士后和研究生，形成了一个多层次的研究结构，有助于知识的传承和技术的进步，然而团队成员的具体角色和贡献尚未详细说明。\n3. 团队的核心成员在解决蛋白质结合相关的技术挑战方面具有创新能力，这为项目的成功实施提供了保障，但需要进一步的案例或数据来证明其创新能力的实际应用。\n4. 该团队的成熟研发平台和试点测试平台为项目的推进提供了必要的技术支持，但具体的技术能力和平台的运作细节仍需补充说明。",
+            "key_claims": [
+              "团队成员的多样性和经验为项目的成功实施提供了支持，但具体的贡献尚需明确。",
+              "成熟的研发平台和试点测试平台是项目推进的关键资源，需进一步阐明其运作方式。",
+              "团队在技术挑战上的创新能力是项目成功的重要因素，但需提供更多实际应用的证据。"
+            ],
+            "evidence_hints": [
+              "团队概述部分描述了团队的结构和成员背景，但缺乏具体的研究成果信息。",
+              "关键点部分提到成熟的研发平台和试点测试平台，但未详细说明其运作和技术能力。",
+              "主风险或不确定性部分强调了团队的创新能力，但缺少具体案例支持。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物技术领域，团队的经验和专业知识是推动项目成功的关键，通常需要有明确的研究成果和应用案例支持。",
+              "成熟的研发平台可以加速产品开发和市场进入，通常应具备详细的技术能力和运作流程说明。",
+              "团队的创新能力是应对技术挑战和实现项目目标的重要保障，通常需要通过实际应用案例来验证。"
+            ]
+          },
+          {
+            "question": "What evidence exists to demonstrate the team's experience with validation and compliance in protein research, particularly regarding the development of the Protein Design Platform?",
+            "answer": "1. 提案中未明确提供团队在蛋白质研究领域的验证和合规经验的具体证据，缺乏相关的实施细节。\n2. 尽管团队拥有强大的学术背景和专利组合，但仍需更多信息来证明其在产品开发和市场合规方面的能力。\n3. 目前的材料未显示团队在蛋白质设计平台开发过程中遵循的具体合规标准或验证流程。\n4. 团队的创新能力虽已被提及，但缺乏对其如何进行验证和合规管理的具体说明。",
+            "key_claims": [
+              "提案未提供关于团队合规和验证经验的具体证据。",
+              "缺乏对蛋白质设计平台开发过程中的合规标准的说明。",
+              "团队的验证和合规能力仍需进一步的证明材料。"
+            ],
+            "evidence_hints": [
+              "主风险或不确定性部分提到团队的创新能力，但未涉及合规和验证。",
+              "提案中缺乏关于合规流程或验证标准的具体描述。",
+              "关键点部分未提及团队在产品开发中的合规经验。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物技术领域，合规和验证是确保产品安全性和有效性的关键步骤。",
+              "团队需要提供明确的合规流程和验证标准，以增强项目的可信度。",
+              "缺乏合规和验证经验的证明可能会影响项目的融资和市场接受度。"
+            ]
+          },
+          {
+            "question": "Given the current team composition of 2 researchers, 7 associate researchers, and 5 postdoctoral researchers, do you believe the team has sufficient capacity to handle the project's demands? Please explain your reasoning.",
+            "answer": "1. 根据当前团队构成，包括2名研究人员、7名副研究人员和5名博士后研究人员，团队在处理项目需求方面的能力可能存在一定的不足，尤其是在高强度的研发工作中，需要进一步评估团队的工作分配。\n2. 团队的强大出版记录和专利组合表明其在创新和研究能力方面的基础较为扎实，但具体的工作负载和项目需求尚未明确，建议提供相关的详细信息。\n3. 建议评估团队的资源配置，以确保能够有效应对项目的各项挑战，特别是在技术创新和研发进度方面。",
+            "key_claims": [
+              "团队的构成可能不足以完全满足项目的需求，尤其是在高强度的研发工作中。",
+              "团队的出版记录和专利数量显示出其在研究领域的实力。",
+              "缺乏对项目具体需求和工作负载的详细说明。"
+            ],
+            "evidence_hints": [
+              "团队构成和能力的描述，特别是关于项目需求的具体信息",
+              "项目的工作负载和资源配置的详细计划"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，团队的规模和专业背景应与项目需求相匹配。",
+              "常见的陷阱包括团队成员的工作负载不均和缺乏明确的角色分配。",
+              "建议建立清晰的沟通机制和决策流程，以提高团队的协作效率。"
+            ]
+          },
+          {
+            "question": "What strategic collaborations or partnerships does the team have that could enhance the project's execution and innovation capabilities?",
+            "answer": "1. 提案中未明确提到任何战略合作或伙伴关系，这可能会影响项目的执行和创新能力，因此需要补充相关信息。\n2. 建议团队考虑与其他研究机构或行业合作伙伴建立合作，以提升技术开发和市场应用的能力。\n3. 建立合作关系可以为项目带来额外的资源、知识和市场渠道，从而可能增强项目的成功概率。",
+            "key_claims": [
+              "提案中缺乏关于战略合作或伙伴关系的具体信息。",
+              "缺乏合作关系可能会限制项目的创新能力和市场应用。",
+              "建议寻求外部合作以增强项目的执行力。"
+            ],
+            "evidence_hints": [
+              "提案中关于合作关系的描述或缺乏相关信息的部分",
+              "团队与外部机构的合作记录或潜在合作机会的分析"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，战略合作通常能够提供额外的资源和专业知识。",
+              "常见的陷阱包括未能有效利用外部资源和缺乏合作协议的明确性。",
+              "建议在项目初期就建立合作伙伴关系，以便于后续的资源整合和技术共享。"
+            ]
+          },
+          {
+            "question": "How does the team plan to manage decision-making and conflict-of-interest situations to ensure project integrity and quality control?",
+            "answer": "1. 提案中未提供关于决策管理和利益冲突情况的具体计划，这可能影响项目的完整性和质量控制。\n2. 建议建立明确的决策流程和利益冲突管理机制，以确保项目的透明度和公正性。\n3. 团队可以考虑定期召开会议，讨论项目进展和潜在的利益冲突，以确保所有成员的意见得到充分考虑。",
+            "key_claims": [
+              "缺乏关于决策管理和利益冲突的具体计划。",
+              "建立明确的决策流程对于项目的完整性和质量控制至关重要。",
+              "建议定期讨论项目进展以确保透明度。"
+            ],
+            "evidence_hints": [
+              "提案中关于决策流程和利益冲突管理的部分",
+              "团队内部沟通和决策机制的描述"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，透明的决策过程和利益冲突管理机制是确保项目成功的关键。",
+              "常见的陷阱包括决策过程不透明和缺乏利益冲突管理。",
+              "建议在项目初期就明确决策流程，以提高团队的协作效率和项目的执行力。"
+            ]
+          }
+        ]
+      },
+      "objectives": {
+        "dimension": "objectives",
+        "label": "Project objectives",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers differ substantially; conclusions for this dimension are unstable.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [],
+        "metric_risk_phrases": [],
+        "metric_top_evidence_phrases": [
+          "可以通过市场调研报告或客户反馈来支持对市场需求的理解和验证。",
+          "市场风险部分，特别是关于竞争的描述，以及任何市场调研或客户反馈的材料",
+          "跟踪与合作伙伴的协议或意向书，以证明市场进入策略的有效性。"
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "在类似项目中，通常需要明确的市场需求分析和客户反馈以验证项目目标的相关性。",
+          "行业内的成功项目通常会有清晰的市场适应性策略，以应对竞争风险。",
+          "建议进行用户发现和市场验证，以确保项目目标与实际需求一致。",
+          "在生物技术项目中，合理的里程碑设定应包括具体的时间框架和资源配置。",
+          "项目实施的可执行性通常依赖于团队的技术能力和市场资源的可获取性。",
+          "成功的项目通常需要定期评估进展并根据市场反馈调整里程碑。",
+          "在类似项目中，通常需要明确的量化成功指标，以便于评估项目的进展和成果。",
+          "成功的项目往往会有清晰的验证方法，以确保指标的可靠性和有效性。",
+          "建议进行定期评估和反馈机制的建立，以促进项目的持续改进。",
+          "在生物技术领域，成功的项目通常需要明确的市场需求分析和客户反馈。"
+        ],
+        "dim_general_insights_covered": [],
+        "dim_general_insights_missing": [
+          "在类似项目中，通常需要明确的市场需求分析和客户反馈以验证项目目标的相关性。",
+          "行业内的成功项目通常会有清晰的市场适应性策略，以应对竞争风险。",
+          "建议进行用户发现和市场验证，以确保项目目标与实际需求一致。",
+          "在生物技术项目中，合理的里程碑设定应包括具体的时间框架和资源配置。",
+          "项目实施的可执行性通常依赖于团队的技术能力和市场资源的可获取性。",
+          "成功的项目通常需要定期评估进展并根据市场反馈调整里程碑。",
+          "在类似项目中，通常需要明确的量化成功指标，以便于评估项目的进展和成果。",
+          "成功的项目往往会有清晰的验证方法，以确保指标的可靠性和有效性。",
+          "建议进行定期评估和反馈机制的建立，以促进项目的持续改进。",
+          "在生物技术领域，成功的项目通常需要明确的市场需求分析和客户反馈。"
+        ],
+        "qa_samples": [
+          {
+            "question": "How well do the project's objectives align with the stated industry demands for functional antibody binding proteins? Please evaluate the urgency of this alignment.",
+            "answer": "1. 项目目标与行业对功能性抗体结合蛋白的需求高度一致，特别是在提高纯化过程效率和降低生产成本方面，显示出一定的市场紧迫性。\n2. 通过整合蛋白设计与非天然氨基酸修饰技术，项目旨在克服传统抗体结合蛋白结构的局限性，符合行业创新的需求。\n3. 然而，市场竞争激烈，可能影响项目目标的实现，尤其是在生产和技术领域的竞争壁垒方面，建议进一步分析具体竞争对手及其技术优势。\n4. 建议进一步明确与行业需求的具体对接方式，以增强项目的市场适应性，特别是在功能性抗体结合蛋白的应用场景方面。",
+            "key_claims": [
+              "项目目标与行业需求的紧迫性相符，特别是在纯化过程和成本方面。",
+              "项目目标的创新性与行业趋势一致，显示出市场潜力。"
+            ],
+            "evidence_hints": [
+              "项目目标部分，特别是关于行业需求的描述和市场竞争分析。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，通常需要明确的市场需求分析和客户反馈以验证项目目标的相关性。",
+              "行业内的成功项目通常会有清晰的市场适应性策略，以应对竞争风险。",
+              "建议进行用户发现和市场验证，以确保项目目标与实际需求一致。"
+            ]
+          },
+          {
+            "question": "Are the proposed milestones, such as establishing production platforms and applying for patents by 2025, reasonable and executable? What evidence supports your assessment?",
+            "answer": "1. 项目提出的里程碑，例如在2025年前建立生产平台和申请专利，具有合理性和可执行性，但具体的实施步骤和资源配置尚需进一步明确。\n2. 项目计划通过与中国科学院生物物理研究所的合作来推动技术创新，这为里程碑的实现提供了支持，但需要更多细节来评估合作的具体影响。\n3. 项目仍需提供关于生产平台具体实施步骤和资源配置的详细信息，以增强可执行性。",
+            "key_claims": [
+              "里程碑的设定与项目目标一致，具有可行性，但缺乏实施细节。",
+              "与研究机构的合作为项目提供了技术支持的可能性，但具体合作内容尚不明确。"
+            ],
+            "evidence_hints": [
+              "项目关键点部分提到的里程碑和合作计划"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物技术项目中，合理的里程碑设定应包括具体的时间框架和资源配置。",
+              "项目实施的可执行性通常依赖于团队的技术能力和市场资源的可获取性。",
+              "成功的项目通常需要定期评估进展并根据市场反馈调整里程碑。"
+            ]
+          },
+          {
+            "question": "What clear and quantifiable success metrics are outlined in the project objectives, particularly regarding the enhancement of purification processes and cost reduction? How might these metrics be validated?",
+            "answer": "1. 项目目标中提到的成功指标，如提高纯化过程的重用率和降低生产成本，尚未具体量化，需补充详细的量化目标。\n2. 当前缺乏关于如何验证这些指标的详细信息，这可能影响项目的可衡量性，需要制定具体的验证计划。\n3. 建议明确具体的成功指标，并制定验证这些指标的计划，以确保项目的可评估性。\n4. 在行业内，通常需要量化的成功指标和验证方法，以便于跟踪项目进展和成果。",
+            "key_claims": [
+              "项目目标的成功指标尚未具体量化，影响可评估性。",
+              "缺乏验证成功指标的具体计划，可能影响项目的透明度和可追踪性。"
+            ],
+            "evidence_hints": [
+              "项目目标部分，特别是关于成功指标的描述和验证方法的缺失。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，通常需要明确的量化成功指标，以便于评估项目的进展和成果。",
+              "成功的项目往往会有清晰的验证方法，以确保指标的可靠性和有效性。",
+              "建议进行定期评估和反馈机制的建立，以促进项目的持续改进。"
+            ]
+          },
+          {
+            "question": "How does the initiative create value and capture revenue through its objectives, particularly in relation to overcoming traditional limitations in antibody binding protein structures?",
+            "answer": "1. 该项目通过整合蛋白质设计与非天然氨基酸修饰技术，旨在克服传统抗体结合蛋白结构的局限性，从而创造价值。具体目标包括提高纯化过程的效率和降低抗体生产成本，这将影响市场需求和客户满意度，需要进一步的数据支持以验证其市场影响。\n2. 项目的关键目标是开发功能性抗体结合蛋白，以满足行业需求，这将为公司创造潜在的收入来源，但仍需提供具体的市场需求分析和客户反馈。\n3. 通过申请中国专利，项目有潜力增强其市场竞争力和知识产权保护，但需要详细说明专利申请的具体计划和预期成果。\n4. 项目的成功实施可能有助于建立行业内的技术领导地位，吸引更多的合作伙伴和客户，但需要进一步的市场验证和合作伙伴关系的具体信息。",
+            "key_claims": [
+              "项目通过创新技术提升抗体生产效率和降低成本，具有潜在的市场价值，但需进一步验证。",
+              "专利申请计划可能增强项目的市场竞争力和知识产权保护，具体实施细节尚需补充。",
+              "开发功能性抗体结合蛋白将直接满足行业需求，创造潜在收入，但需提供市场需求的具体数据。"
+            ],
+            "evidence_hints": [
+              "项目目标部分，特别是关于抗体结合蛋白开发和专利申请的描述"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物技术领域，成功的项目通常需要明确的市场需求分析和客户反馈。",
+              "一般而言，技术创新需要清晰的商业化路径和知识产权策略，以确保市场竞争力。",
+              "在类似项目中，建立合作伙伴关系和行业联系是成功的关键因素。",
+              "通常，项目需要详细的财务预测和市场进入策略，以吸引投资者和合作伙伴。"
+            ]
+          },
+          {
+            "question": "On a scale of 1 to 5, how realistic are the project's objectives given the competitive barriers in the production, technology, and market sectors? What evidence would increase your confidence in this assessment?",
+            "answer": "1. 考虑到市场竞争的激烈程度，项目的目标在1到5的评分中可评为3。尽管项目有明确的创新方向，但市场上已有多个竞争者，需进一步分析其竞争优势。\n2. 项目的成功依赖于其技术创新的独特性和市场需求的准确把握，目前材料中尚未充分展示这些方面的具体数据。\n3. 增强信心的证据应包括客户反馈、市场调研数据和竞争分析，这些信息能够验证项目的市场适应性，并需在后续材料中补充。\n4. 此外，项目的合作伙伴关系和技术开发的进展也将是评估其目标实现可能性的关键因素，需提供相关进展的具体信息。",
+            "key_claims": [
+              "项目目标的现实性受到市场竞争的影响，评分为3。",
+              "当前材料缺乏市场调研和客户反馈数据，限制了对目标实现可能性的评估。",
+              "技术创新的独特性和市场需求的准确把握是成功的关键，需进一步证明。"
+            ],
+            "evidence_hints": [
+              "市场风险部分，特别是关于竞争的描述，以及任何市场调研或客户反馈的材料"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物技术行业，项目目标的现实性通常需要通过市场调研和客户反馈来验证。",
+              "竞争分析是评估项目成功可能性的关键因素，通常需要详细的行业报告和市场数据。",
+              "一般而言，项目需要清晰的技术差异化策略，以在竞争中脱颖而出。",
+              "成功的项目通常会有明确的里程碑和进度跟踪，以确保目标的实现。"
+            ]
+          },
+          {
+            "question": "If the proposal does not provide sufficient details on the timeline for establishing large-scale synthesis capabilities, please state this information gap and discuss its impact on the project's feasibility.",
+            "answer": "1. 提案中未提供关于建立大规模合成能力的具体时间表，这一信息缺失可能影响项目的可行性评估。\n2. 缺乏明确的时间框架可能导致投资者对项目进展的信心不足，从而影响融资和合作机会。\n3. 建立大规模合成能力的时间表对于确保项目按计划推进至关重要，建议制定详细的项目管理计划和里程碑设定。\n4. 建议在后续材料中补充时间表，以增强项目的透明度和可行性。",
+            "key_claims": [
+              "项目缺乏关于大规模合成能力建立的具体时间表，影响可行性评估。",
+              "时间框架的缺失可能导致投资者信心不足，影响融资机会。",
+              "建立时间表对于项目的透明度和可行性至关重要。"
+            ],
+            "evidence_hints": [
+              "项目目标部分，特别是关于大规模合成能力的描述"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物技术项目中，明确的时间表和里程碑是成功实施的关键因素。",
+              "通常，项目需要详细的进度跟踪和管理计划，以确保按时交付。",
+              "缺乏时间框架可能导致资源配置不当和项目延误，影响整体可行性。",
+              "一般而言，项目应定期更新时间表，以反映进展和调整计划。"
+            ]
+          }
+        ]
+      },
+      "strategy": {
+        "dimension": "strategy",
+        "label": "Implementation path and strategy",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers differ substantially; conclusions for this dimension are unstable.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [],
+        "metric_risk_phrases": [],
+        "metric_top_evidence_phrases": [
+          "关键点中提到的市场风险应对策略",
+          "与中国科学院生物物理研究所的合作细节和预期成果",
+          "市场进入策略的详细信息"
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "在生物技术领域，整合新技术通常需要详细的市场调研和技术评估。",
+          "常见的陷阱包括对竞争对手的市场分析不足。",
+          "确保技术有效性的验证阶段应包括实验室测试和临床试验。",
+          "在技术整合过程中，需关注知识产权和专利申请的及时性。",
+          "生物技术项目的开发和验证通常需要严格的实验设计和文档记录。",
+          "常见的实施障碍包括资源分配不足和时间管理不当。",
+          "确保合规性和安全性是生物产品开发的关键。",
+          "验证阶段应包括多次迭代和反馈机制，以提高产品质量。",
+          "市场进入策略应包括对竞争对手的详细分析和客户需求的评估。",
+          "常见的市场进入陷阱包括缺乏有效的营销和销售策略。"
+        ],
+        "dim_general_insights_covered": [],
+        "dim_general_insights_missing": [
+          "在生物技术领域，整合新技术通常需要详细的市场调研和技术评估。",
+          "常见的陷阱包括对竞争对手的市场分析不足。",
+          "确保技术有效性的验证阶段应包括实验室测试和临床试验。",
+          "在技术整合过程中，需关注知识产权和专利申请的及时性。",
+          "生物技术项目的开发和验证通常需要严格的实验设计和文档记录。",
+          "常见的实施障碍包括资源分配不足和时间管理不当。",
+          "确保合规性和安全性是生物产品开发的关键。",
+          "验证阶段应包括多次迭代和反馈机制，以提高产品质量。",
+          "市场进入策略应包括对竞争对手的详细分析和客户需求的评估。",
+          "常见的市场进入陷阱包括缺乏有效的营销和销售策略。"
+        ],
+        "qa_samples": [
+          {
+            "question": "How does the project plan to integrate advanced protein design with non-natural amino acid modification to innovate antibody-binding proteins, and what alternatives were considered during this process?",
+            "answer": "1. 项目计划通过将先进的蛋白质设计与非天然氨基酸修饰相结合，创新抗体结合蛋白，具体方法包括利用AI和合理设计建立全面的技术系统。\n2. 在整合过程中，提案未明确列出其他可能考虑的技术替代方案的具体细节，需补充相关信息以评估技术多样性。\n3. 项目通过与中国科学院生物物理研究所的合作来应对市场风险，确保技术的市场适应性，具体合作内容尚需进一步说明。\n4. 项目计划通过多样化研发管道和加强专利申请来降低技术风险，相关实施细节和时间表需进一步明确。",
+            "key_claims": [
+              "项目计划通过AI和合理设计的结合来创新抗体结合蛋白。",
+              "提案未提供关于考虑的替代方案的具体信息，需补充相关细节。",
+              "通过与研究机构的合作，项目旨在降低市场风险，但具体合作内容尚需进一步说明。"
+            ],
+            "evidence_hints": [
+              "策略概述部分提到的整合方法和合作计划",
+              "关键点中提到的市场风险应对策略"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物技术领域，整合新技术通常需要详细的市场调研和技术评估。",
+              "常见的陷阱包括对竞争对手的市场分析不足。",
+              "确保技术有效性的验证阶段应包括实验室测试和临床试验。",
+              "在技术整合过程中，需关注知识产权和专利申请的及时性。"
+            ]
+          },
+          {
+            "question": "What specific stages of development and validation will the project undergo to ensure the effectiveness of the antibody-binding proteins, and how will these stages be validated?",
+            "answer": "1. 项目计划建立一个完整的技术系统，包括AI驱动的合理设计、快速合成验证和智能迭代优化，以支持抗体结合蛋白的开发。\n2. 开发阶段将包括实验室测试和初步验证，以确保抗体结合蛋白的有效性，但具体的实验设计和验证方法尚需补充。\n3. 验证阶段的具体方法在提案中未详细说明，需要进一步的实验设计文档来支持这一部分。\n4. 项目需制定明确的里程碑，以便有效跟踪各阶段的进展和成果，确保项目按计划推进。",
+            "key_claims": [
+              "项目计划通过建立技术系统来支持抗体结合蛋白的开发。",
+              "验证阶段的具体方法在提案中未详细说明，需要补充相关信息。",
+              "需要明确的里程碑来跟踪项目进展，以确保项目的有效实施。"
+            ],
+            "evidence_hints": [
+              "策略概述中提到的技术系统",
+              "提案中关于验证阶段的描述"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "生物技术项目的开发和验证通常需要严格的实验设计和文档记录。",
+              "常见的实施障碍包括资源分配不足和时间管理不当。",
+              "确保合规性和安全性是生物产品开发的关键。",
+              "验证阶段应包括多次迭代和反馈机制，以提高产品质量。"
+            ]
+          },
+          {
+            "question": "Given the intense competition in the antibody purification market, what is the project's strategy for market entry and customer acquisition?",
+            "answer": "1. 项目计划通过与中国科学院生物物理研究所的合作来降低市场风险，并利用其专业知识进行市场分析，但具体的合作细节和预期成果尚需补充。\n2. 项目将通过多样化的研发管道来增强市场竞争力，降低对单一产品的依赖，具体的管道多样化策略和实施计划需要进一步明确。\n3. 针对市场竞争，项目需要建立清晰的市场进入策略，包括目标客户群体和营销渠道，当前提案中对此的具体内容仍缺乏详细信息。\n4. 项目还需关注市场反馈，以及时调整产品和策略，确保客户需求得到满足，具体的反馈机制和调整流程尚未说明。",
+            "key_claims": [
+              "项目通过合作来降低市场风险，但具体合作细节尚需补充。",
+              "多样化研发管道是增强市场竞争力的策略，具体实施计划需要进一步明确。",
+              "需要明确的市场进入策略和客户群体，当前缺乏详细信息。"
+            ],
+            "evidence_hints": [
+              "关键点中提到的市场风险应对策略",
+              "提案中关于研发管道多样化的描述"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "市场进入策略应包括对竞争对手的详细分析和客户需求的评估。",
+              "常见的市场进入陷阱包括缺乏有效的营销和销售策略。",
+              "建立客户反馈机制对于产品调整和市场适应性至关重要。",
+              "确保产品的合规性和质量是市场成功的基础。"
+            ]
+          },
+          {
+            "question": "How does the project plan to address the strict regulatory requirements for products used in antibody drug purification, and what measures are in place to ensure compliance?",
+            "answer": "1. 项目计划通过最小化整体纯化过程的变化来应对严格的监管要求，以确保符合相关规定，但具体的合规措施尚需补充说明。\n2. 项目策略包括建立全面的技术系统，以整合AI和理性设计，从而提高产品的合规性，具体实施细节仍需进一步明确。\n3. 技术风险的缓解措施包括多样化研发管道和加强专利申请，以确保在监管合规方面的稳健性，但具体的专利策略和研发管道细节尚未提供。\n4. 项目还计划与中国科学院生物物理研究所合作，以增强对市场风险的应对能力，并确保符合监管要求，合作的具体内容和预期成果需要进一步阐明。",
+            "key_claims": [
+              "项目通过最小化过程变化来应对监管要求，但具体措施尚需补充。",
+              "与研究机构的合作有助于增强市场风险的应对能力，具体合作细节仍需明确。"
+            ],
+            "evidence_hints": [
+              "项目策略概述部分，特别是关于监管风险的应对措施的具体内容",
+              "与中国科学院生物物理研究所的合作细节和预期成果"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "生物制药领域的项目通常需要严格遵循监管要求，确保产品的安全性和有效性。",
+              "常见的合规性问题包括产品测试、文档记录和质量控制。",
+              "建议建立强有力的质量管理体系，以确保持续符合监管标准。",
+              "在项目初期，进行全面的风险评估和合规性审查是至关重要的。"
+            ]
+          },
+          {
+            "question": "On a scale of 1 to 5, how realistic is the project's budget and unit economics in relation to its operational scalability and market entry strategy? Please provide evidence that would support a higher score.",
+            "answer": "1. 项目的预算和单位经济学的现实性在于其综合技术系统的建立和市场风险的应对策略，但具体的预算细节仍需补充。\n2. 项目强调通过多样化研发管道来降低技术风险，这可能有助于提高预算的合理性，但缺乏具体的经济学分析。\n3. 当前材料未提供具体的预算细节和单位经济学分析，限制了对其现实性的全面评估。\n4. 在市场进入策略方面，项目的合作伙伴关系可能会增强其市场竞争力，但仍需详细说明如何利用这些合作关系来提升预算的可行性。",
+            "key_claims": [
+              "项目的技术系统和市场风险应对策略可能提高预算的现实性，但具体细节尚需补充。",
+              "缺乏具体的预算和经济学分析限制了对项目可行性的评估。"
+            ],
+            "evidence_hints": [
+              "项目的预算和单位经济学分析部分",
+              "市场进入策略的详细信息"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物制药领域，预算的合理性通常依赖于研发成本、市场需求和竞争分析。",
+              "常见的预算问题包括成本超支、资源分配不当和市场需求预测不准确。",
+              "建议在项目初期进行详细的市场调研和财务建模，以确保预算的可行性。",
+              "确保与关键利益相关者的沟通，以便及时调整预算和资源分配。"
+            ]
+          },
+          {
+            "question": "What role does the collaboration with the Institute of Biophysics of the Chinese Academy of Sciences play in mitigating market risks, and how will this partnership enhance the project's strategy?",
+            "answer": "1. 与中国科学院生物物理研究所的合作将为项目提供专业知识和技术支持，可能有助于降低市场风险，但具体的合作细节仍需补充。\n2. 该合作关系可能增强项目的研发能力，从而提升其市场竞争力，但需要更多证据来支持这一点。\n3. 通过与研究机构的合作，项目能够更好地应对市场竞争，并提高产品的创新性，具体的创新成果尚未明确。\n4. 此外，该合作将有助于确保项目在技术和监管方面的合规性，但相关合规性措施的具体内容仍需进一步说明。",
+            "key_claims": [
+              "合作关系可能增强项目的研发能力和市场竞争力，但需要更多证据支持。",
+              "该合作有助于降低市场风险并确保合规性，但具体措施尚需补充。"
+            ],
+            "evidence_hints": [
+              "项目与中国科学院生物物理研究所的合作细节",
+              "市场风险的应对策略部分"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物制药行业，合作伙伴关系可以显著提高研发效率和市场响应能力。",
+              "常见的合作陷阱包括沟通不畅、目标不一致和资源分配不当。",
+              "建议在合作初期明确各方的角色和责任，以避免潜在的冲突。",
+              "确保定期评估合作效果，以便及时调整战略和资源配置。"
+            ]
+          }
+        ]
+      },
+      "innovation": {
+        "dimension": "innovation",
+        "label": "Technology and product innovation",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers differ substantially; conclusions for this dimension are unstable.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [
+          "Q2: enough claims with good structure/alignment (auth=0.00, cover=0.00, align=0.49)"
+        ],
+        "metric_risk_phrases": [
+          "Q2: possible cross-dimension drift (drift=0.15); review dimension boundary manually",
+          "Penalty applied for possible overclaim, weak structure, or residual redline content; spot-check recommended"
+        ],
+        "metric_top_evidence_phrases": [
+          "新蛋白质设计平台针对抗体结合蛋白",
+          "AI开发预计加速研发过程，减少开发周期",
+          "与外部投资者或合作伙伴的潜在合作协议或讨论记录。"
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "通常需要进行市场竞争分析以验证优势。",
+          "研发项目应有明确的里程碑和可衡量的目标。",
+          "技术风险管理和资金需求应详细列出以增强可行性。",
+          "在类似项目中，知识产权保护是成功的关键因素。",
+          "这些是一般行业考虑，并不意味着项目已经满足这些要求。",
+          "通常需要明确的市场需求和客户反馈以验证产品价值。",
+          "在类似项目中，专利和知识产权的保护至关重要。",
+          "研发进展的透明度和可验证性是投资者关注的重点。",
+          "技术验证和性能基准测试是成功的关键。",
+          "这些是一般行业考虑，并不意味着项目已满足这些要求。"
+        ],
+        "dim_general_insights_covered": [],
+        "dim_general_insights_missing": [
+          "通常需要进行市场竞争分析以验证优势。",
+          "研发项目应有明确的里程碑和可衡量的目标。",
+          "技术风险管理和资金需求应详细列出以增强可行性。",
+          "在类似项目中，知识产权保护是成功的关键因素。",
+          "这些是一般行业考虑，并不意味着项目已经满足这些要求。",
+          "通常需要明确的市场需求和客户反馈以验证产品价值。",
+          "在类似项目中，专利和知识产权的保护至关重要。",
+          "研发进展的透明度和可验证性是投资者关注的重点。",
+          "技术验证和性能基准测试是成功的关键。",
+          "这些是一般行业考虑，并不意味着项目已满足这些要求。"
+        ],
+        "qa_samples": [
+          {
+            "question": "How does the novel protein design platform specifically improve upon existing solutions in antibody binding proteins, particularly in terms of binding affinity and stability?",
+            "answer": "1. 项目提出了一种新型蛋白质设计平台，专注于抗体结合蛋白的研发。\n2. 该平台旨在提高抗体结合蛋白的结合亲和力和稳定性，但目前缺乏对现有解决方案的具体比较数据。\n3. 需要更多证据来证明AI模型的有效性及其在研发加速方面的具体效果。\n4. 项目面临高研发和创新成本的技术风险，需要持续投资以保持技术优势。",
+            "key_claims": [
+              "项目开发了专有的人工智能模型以加速研发过程。",
+              "该平台强调通过专利保护建立知识产权护城河。",
+              "结合亲和力和稳定性显著优于现有解决方案，但缺乏具体数据支持。"
+            ],
+            "evidence_hints": [
+              "新蛋白质设计平台针对抗体结合蛋白",
+              "显著提高结合亲和力和稳定性",
+              "专有人工智能模型加速研发过程"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "通常需要进行市场竞争分析以验证优势。",
+              "研发项目应有明确的里程碑和可衡量的目标。",
+              "技术风险管理和资金需求应详细列出以增强可行性。",
+              "在类似项目中，知识产权保护是成功的关键因素。",
+              "这些是一般行业考虑，并不意味着项目已经满足这些要求。"
+            ]
+          },
+          {
+            "question": "What clear advantages does the project offer compared to existing antibody binding protein solutions, particularly regarding performance and cost-effectiveness?",
+            "answer": "1. 项目提出了一种新型蛋白质设计平台，强调专利保护，需进一步明确其市场定位和应用场景。\n2. 该平台在结合亲和力和稳定性方面有潜力优于现有解决方案，但需要更多数据支持其性能优势。\n3. 需要提供更多关于成本效益和市场需求的证据，以评估商业可行性。\n4. 未来几个月需收集研发进展和技术验证的详细数据，以增强投资者信心。",
+            "key_claims": [
+              "项目开发了专有的人工智能模型以加速研发过程，需验证其实际效果。",
+              "该平台在结合亲和力和稳定性方面显著优于天然蛋白A，但缺乏具体的比较数据。",
+              "项目面临高研发成本的技术风险，需要持续投资以保持竞争优势。"
+            ],
+            "evidence_hints": [
+              "新蛋白质设计平台针对抗体结合蛋白，需进一步说明其市场需求。",
+              "显著改善结合亲和力和稳定性的具体数据尚未提供。",
+              "专有人工智能模型加速研发过程的具体成效需要进一步验证。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "通常需要明确的市场需求和客户反馈以验证产品价值。",
+              "在类似项目中，专利和知识产权的保护至关重要。",
+              "研发进展的透明度和可验证性是投资者关注的重点。",
+              "技术验证和性能基准测试是成功的关键。",
+              "这些是一般行业考虑，并不意味着项目已满足这些要求。"
+            ]
+          },
+          {
+            "question": "What strategies are in place to establish and maintain a patent moat around the proprietary artificial intelligence model and the innovations in protein design?",
+            "answer": "1. 项目提出了新型蛋白质设计平台，旨在提高结合亲和力和稳定性。\n2. 计划通过专利保护建立知识产权护城河，但缺乏具体实施策略的详细信息。\n3. 技术风险包括高研发成本，需持续投资以维持技术优势。\n4. 提供的AI模型预计可加速研发过程，但尚未提供市场验证数据以支持其有效性。",
+            "key_claims": [
+              "项目旨在改善抗体结合蛋白的稳定性和亲和力。",
+              "团队具备源创新能力以应对技术挑战。",
+              "项目强调通过专有知识产权建立专利护城河。"
+            ],
+            "evidence_hints": [
+              "新蛋白质设计平台针对抗体结合蛋白",
+              "强调建立专利护城河",
+              "AI开发预计加速研发过程，减少开发周期"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "通常，研发项目需清晰的专利策略和实施计划。",
+              "高研发成本是生物技术项目的常见风险，需考虑资金来源和持续投资。",
+              "市场验证和客户反馈是技术产品成功的关键，需在产品开发后期进行。",
+              "需提供详细的知识产权申请和保护策略，以确保技术优势。",
+              "这些是一般行业考虑，并不意味着项目已满足这些要求。"
+            ]
+          },
+          {
+            "question": "What evidence supports the claims of improved binding affinity and stability of the self-developed binding protein compared to natural protein A?",
+            "answer": "1. 提案中提到自开发的结合蛋白在结合亲和力方面显著优于天然蛋白A，但缺乏具体的实验数据或比较分析来支持这一声明，需提供相关实验结果以验证该改进。\n2. 提案强调通过专有的人工智能模型加速研发过程，以期在50%的时间内完成开发周期，但缺乏具体的实施细节和效果评估，需补充相关信息以支持这一主张。\n3. 尽管提案指出结合蛋白的稳定性和抗高浓度氢氧化钠及蛋白酶水解的能力，但没有提供具体的实验结果或对比数据，需进一步的验证以支持这些改进的声明。\n4. 目前的材料未显示关于结合蛋白性能的直接证据或测试结果，需进一步的验证以支持这些改进的声明。",
+            "key_claims": [
+              "结合蛋白在结合亲和力方面显著优于天然蛋白A的声明缺乏具体数据支持，需提供实验数据。",
+              "提案中提到的人工智能模型可能加速研发过程，但缺乏具体的实施细节和效果评估。",
+              "结合蛋白的稳定性和抗性改进的具体证据未在提案中提供，需补充相关实验结果。"
+            ],
+            "evidence_hints": [
+              "需要实验数据或比较分析来支持结合亲和力的改进声明。",
+              "提案中关于人工智能模型的具体实施细节和效果的进一步证据。",
+              "结合蛋白性能的直接测试结果或数据。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物技术领域，通常需要通过实验数据来验证产品性能的改进。",
+              "结合蛋白的性能改进需要明确的实验设计和对照组，以确保结果的可靠性。",
+              "知识产权的建立需有明确的专利申请和保护策略，以确保技术优势的持续性。"
+            ]
+          },
+          {
+            "question": "Given the technical risks associated with high R&D costs, how does the project plan to sustain its technological advantage over time?",
+            "answer": "1. 提案中提到高研发成本的技术风险，项目计划通过持续投资和利用人工智能加速研发来应对这一风险。\n2. 需要制定详细的资金管理计划，以确保在高研发成本的情况下仍能持续进行技术开发。\n3. 建议建立定期评估机制，以监测研发进展和技术优势的保持情况。\n4. 需探索与外部投资者或合作伙伴的合作，以分担研发成本和风险。",
+            "key_claims": [
+              "项目计划通过持续投资和人工智能加速研发来应对高研发成本的技术风险。",
+              "缺乏详细的资金管理计划可能影响技术优势的持续性。",
+              "建立定期评估机制有助于监测技术优势的保持情况。"
+            ],
+            "evidence_hints": [
+              "需要资金管理计划的详细描述和实施方案。",
+              "提案中关于评估机制的具体实施细节。",
+              "与外部投资者或合作伙伴的潜在合作协议或讨论记录。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "高研发成本是生物技术项目中的常见挑战，需有明确的资金管理策略。",
+              "持续的技术创新需要定期的评估和反馈机制，以确保项目的方向和目标。",
+              "与外部合作伙伴的合作可以有效分担风险和成本，增强项目的可持续性。"
+            ]
+          },
+          {
+            "question": "How does the innovation in protein design extend to other potential applications or customer segments beyond antibody binding proteins?",
+            "answer": "1. 提案未明确说明蛋白设计创新如何扩展到其他潜在应用或客户细分市场，需补充相关信息。\n2. 需要进一步的市场调研，以识别蛋白设计技术在其他领域的应用潜力，建议制定调研计划。\n3. 建议探索与行业专家或潜在客户的合作，以验证技术在不同应用中的适用性，需明确合作的具体步骤。\n4. 需制定战略计划，明确如何将现有技术推广到新的市场或应用领域，包括目标市场的识别和进入策略。",
+            "key_claims": [
+              "提案中缺乏关于蛋白设计创新扩展到其他应用的具体信息，需补充相关内容。",
+              "市场调研的缺乏可能限制了技术的潜在应用识别，需进行详细调研。",
+              "与行业专家的合作有助于验证技术在不同领域的适用性，建议明确合作方式。"
+            ],
+            "evidence_hints": [
+              "需要市场调研报告或分析，以识别潜在的应用领域，建议制定调研计划。",
+              "提案中关于与行业专家或潜在客户的合作计划，需提供具体合作框架。",
+              "战略计划的详细描述，以推广现有技术到新的市场，需包括市场进入策略。"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "生物技术创新的市场扩展通常需要深入的市场调研和行业分析。",
+              "与行业合作伙伴的合作可以加速技术的市场推广和应用。",
+              "战略计划应包括明确的市场进入策略和目标客户细分。"
+            ]
+          }
+        ]
+      },
+      "feasibility": {
+        "dimension": "feasibility",
+        "label": "Resources and feasibility",
+        "score_hint": "Medium-to-weak signal; several weaknesses or information gaps may exist.",
+        "alignment_hint": "Candidate answers differ substantially; conclusions for this dimension are unstable.",
+        "drift_hint": "Answers stay close to the same core topic; drift is low.",
+        "metric_strength_phrases": [],
+        "metric_risk_phrases": [],
+        "metric_top_evidence_phrases": [
+          "与生物物理研究所的合作协议或计划",
+          "产品质量控制的相关数据",
+          "关于融资目标和市场竞争分析的支持材料"
+        ],
+        "metric_redlined_samples": [],
+        "dim_general_insights": [
+          "一般来说，类似项目需要详细的预算分配和使用计划，以确保资金的有效利用。",
+          "通常，项目预算应考虑市场竞争和法律风险的影响，以避免资金短缺。",
+          "在预算执行过程中，项目应定期评估资金使用情况，以便及时调整。",
+          "在类似项目中，通常需要制定详细的法律风险管理策略，以确保项目的顺利推进。",
+          "一般来说，项目应与相关机构建立合作关系，以增强技术和市场支持。",
+          "法律风险的透明度和应对措施的清晰性是项目可行性的重要因素。",
+          "在类似项目中，通常需要制定详细的实施计划，以确保项目按时推进。",
+          "一般来说，项目应明确关键任务和时间节点，以便有效管理风险。",
+          "实施计划的透明度和可行性是项目成功的重要因素。",
+          "在抗体纯化材料市场中，客户接受度通常依赖于产品的性能和成本效益。"
+        ],
+        "dim_general_insights_covered": [],
+        "dim_general_insights_missing": [
+          "一般来说，类似项目需要详细的预算分配和使用计划，以确保资金的有效利用。",
+          "通常，项目预算应考虑市场竞争和法律风险的影响，以避免资金短缺。",
+          "在预算执行过程中，项目应定期评估资金使用情况，以便及时调整。",
+          "在类似项目中，通常需要制定详细的法律风险管理策略，以确保项目的顺利推进。",
+          "一般来说，项目应与相关机构建立合作关系，以增强技术和市场支持。",
+          "法律风险的透明度和应对措施的清晰性是项目可行性的重要因素。",
+          "在类似项目中，通常需要制定详细的实施计划，以确保项目按时推进。",
+          "一般来说，项目应明确关键任务和时间节点，以便有效管理风险。",
+          "实施计划的透明度和可行性是项目成功的重要因素。",
+          "在抗体纯化材料市场中，客户接受度通常依赖于产品的性能和成本效益。"
+        ],
+        "qa_samples": [
+          {
+            "question": "How realistic is the total budget of 3010万元 over three years for the project, and what evidence supports this budget allocation?",
+            "answer": "1. 项目的总预算为3010万元，计划在三年内使用，当前材料显示该预算有结构化的规划支持。\n2. 项目的强项在于其针对市场竞争的战略合作与创新技术，这可能有助于提升预算的合理性，但具体效果尚需进一步验证。\n3. 项目面临国内行业挑战和法律案件的风险，这可能影响预算的执行和资金的有效利用，建议对此进行更深入的分析。\n4. 建议进一步提供详细的预算分配和使用计划，以增强对预算合理性的信心，并明确如何应对市场竞争和法律风险。",
+            "key_claims": [
+              "项目的预算有结构化的规划，但缺乏详细的预算分配信息。",
+              "市场竞争和法律风险可能影响预算的执行，需进一步分析。",
+              "项目的战略合作可能有助于提升预算的合理性，但具体效果尚需验证。"
+            ],
+            "evidence_hints": [
+              "预算计划的详细分配和使用计划",
+              "市场竞争分析和法律风险评估"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "一般来说，类似项目需要详细的预算分配和使用计划，以确保资金的有效利用。",
+              "通常，项目预算应考虑市场竞争和法律风险的影响，以避免资金短缺。",
+              "在预算执行过程中，项目应定期评估资金使用情况，以便及时调整。"
+            ]
+          },
+          {
+            "question": "What specific strategies are in place to mitigate the risks associated with domestic industry challenges and legal cases related to antibody purification?",
+            "answer": "1. 项目计划通过与中国科学院生物物理研究所的合作来应对国内行业挑战和法律案件风险。\n2. 该合作可能为项目提供技术支持和市场资源，增强抗风险能力。\n3. 然而，当前材料未详细说明具体的法律案件及其潜在影响，信息仍显不足。\n4. 建议进一步明确法律风险的具体情况及应对策略，以增强项目的可行性。",
+            "key_claims": [
+              "项目通过合作来应对行业挑战和法律风险，但具体法律案件信息不足。",
+              "与研究机构的合作可能增强项目的技术和市场支持。",
+              "需要更详细的法律风险评估和应对措施。"
+            ],
+            "evidence_hints": [
+              "法律案件的具体情况及其影响评估",
+              "与生物物理研究所的合作协议或计划"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，通常需要制定详细的法律风险管理策略，以确保项目的顺利推进。",
+              "一般来说，项目应与相关机构建立合作关系，以增强技术和市场支持。",
+              "法律风险的透明度和应对措施的清晰性是项目可行性的重要因素。"
+            ]
+          },
+          {
+            "question": "What are the key tasks and timelines outlined in the implementation plan to address capacity limitations and raw material risks in antibody production?",
+            "answer": "1. 项目计划通过改进设计平台和增强合成生物学及高通量筛选能力来应对产能限制和原材料风险，但具体的实施细节尚未明确。\n2. 当前材料未提供具体的任务和时间表，缺乏详细的实施计划，这对项目的可行性构成挑战。\n3. 项目的实施时间表和关键任务的明确性对解决产能和原材料风险至关重要，需进一步补充相关信息。\n4. 建议制定详细的实施计划，包括时间节点和关键任务，以增强项目的可行性。",
+            "key_claims": [
+              "项目计划通过技术改进来解决产能和原材料风险，但缺乏具体实施细节。",
+              "实施时间表和关键任务的明确性对项目成功至关重要，需补充相关信息。",
+              "需要制定详细的实施计划以增强可行性。"
+            ],
+            "evidence_hints": [
+              "详细的实施计划和时间表",
+              "关键任务的具体描述和时间节点"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在类似项目中，通常需要制定详细的实施计划，以确保项目按时推进。",
+              "一般来说，项目应明确关键任务和时间节点，以便有效管理风险。",
+              "实施计划的透明度和可行性是项目成功的重要因素。"
+            ]
+          },
+          {
+            "question": "What evidence exists to support the feasibility of customer acceptance and procurement in the context of market competition for antibody purification materials?",
+            "answer": "1. 项目计划通过与中国科学院生物物理研究所的合作来应对市场竞争，显示出其在客户接受度和采购方面的潜力。\n2. 目前缺乏有关客户反馈或市场调研的数据，需补充以全面评估客户接受度。\n3. 项目面临来自其他抗体纯化材料和设备公司的激烈竞争，这可能影响客户的采购决策，需进一步分析市场竞争的具体影响。\n4. 需要进行市场分析和客户调研，以验证客户对新产品的接受程度和需求。",
+            "key_claims": [
+              "项目通过合作来增强市场竞争力的策略是有效的，但仍需具体的客户反馈以支持这一点。",
+              "市场竞争的激烈程度可能影响客户的采购意愿，需进一步验证其具体影响。",
+              "缺乏具体的市场调研数据，限制了对客户接受度的全面评估。"
+            ],
+            "evidence_hints": [
+              "提案中关于市场竞争的描述和与研究所的合作计划",
+              "需要市场调研报告或客户反馈数据来支持客户接受度的评估"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在抗体纯化材料市场中，客户接受度通常依赖于产品的性能和成本效益。",
+              "竞争分析和客户调研是评估市场接受度的关键步骤。",
+              "与行业内知名机构的合作可以提升产品的市场认可度和信任度。"
+            ]
+          },
+          {
+            "question": "What potential barriers to implementation have been identified, particularly regarding product quality stability and regulatory compliance?",
+            "answer": "1. 项目面临的主要障碍包括产品质量稳定性风险，生产过程中的微小波动可能影响产品一致性，需要制定相应的监控和调整措施。\n2. 法律案件和国内行业挑战可能影响项目的实施进度和合规性，需评估潜在的法律风险并制定应对策略。\n3. 严格的监管要求可能导致产品在抗体药物纯化中的合规风险，需确保符合相关法规的要求。\n4. 需要建立质量控制体系，以确保产品在生产过程中的一致性和稳定性，并进行定期评估和改进。",
+            "key_claims": [
+              "产品质量稳定性是实施过程中的一个关键风险，需重点关注并采取措施。",
+              "法律和行业挑战可能会对项目的实施造成延误，需制定应对计划。",
+              "监管合规性是抗体纯化产品成功上市的必要条件，需确保符合相关法规。"
+            ],
+            "evidence_hints": [
+              "提案中关于产品质量稳定性和法律挑战的描述",
+              "需要质量控制和合规性评估的相关文档"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在生物制药领域，产品质量的稳定性是关键成功因素，需建立有效的质量管理体系。",
+              "合规性和法律风险管理是确保项目顺利实施的重要环节，需定期进行合规性审查。",
+              "建立有效的质量管理体系可以降低产品不合规的风险，需制定详细的质量控制流程。"
+            ]
+          },
+          {
+            "question": "On a scale of 1-5, how sufficient are the proposed mitigations, such as collaboration with the Institute of Biophysics, in addressing the identified market risks? Please provide evidence for your rating.",
+            "answer": "1. 与中国科学院生物物理研究所的合作是一个积极的举措，旨在通过技术创新来应对市场风险。\n2. 该合作可能在一定程度上增强项目的技术能力和市场竞争力，因此我将其评估为4分。\n3. 然而，仍需关注合作的具体成果和时间框架，以确保其有效性。\n4. 需要定期评估合作进展，以确保风险得到有效管理。",
+            "key_claims": [
+              "合作的潜力在于增强技术能力，但具体成果尚未明确。",
+              "合作的有效性和市场风险的应对能力需要进一步验证。",
+              "合作的进展和成果是评估市场风险管理的关键。"
+            ],
+            "evidence_hints": [
+              "提案中关于与研究所合作的描述",
+              "需要合作协议和进展报告来支持评估"
+            ],
+            "provider": "openai",
+            "selection_mode": "filtered",
+            "fallback_used": false,
+            "general_insights": [
+              "在应对市场风险时，技术合作是常见的策略。",
+              "定期评估合作效果可以确保项目目标的实现。",
+              "合作伙伴的选择和管理对项目成功至关重要。"
+            ]
+          }
+        ]
+      }
+    },
+    "output_schema_hint": {
+      "type": "object",
+      "required": [
+        "dimensions"
+      ],
+      "properties": {
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "team": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "objectives": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "strategy": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "innovation": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "feasibility": {
+              "type": "object",
+              "required": [
+                "summary",
+                "strengths",
+                "concerns",
+                "recommendations"
+              ],
+              "properties": {
+                "summary": {
+                  "type": "string"
+                },
+                "strengths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "concerns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recommendations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,618 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km31__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km31__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 169,
+        "key_points_count": 1,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is initiated by Aniket Raj, who is a core team member responsible for its creation. Further details about the team composition or structure are not provided.",
+        "first_key_point_preview": "The project was created by Aniket Raj.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.48,
+        "raw_chars": 4532,
+        "usage": {
+          "prompt_tokens": 3239,
+          "completion_tokens": 987,
+          "total_tokens": 4226
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership experience",
+        "domain expertise",
+        "team capacity",
+        "collaboration networks",
+        "governance structure",
+        "decision-making process",
+        "project oversight",
+        "execution risks",
+        "team composition",
+        "commitment capacity"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 5
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 5,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific leadership experience does Aniket Raj have that qualifies him to lead this project, and how does this experience align with the project's objectives?",
+          "question_en_preview": "What specific leadership experience does Aniket Raj have that qualifies him to lead this project, and how does this experience align with the project's objectives?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited details about the team composition, what are the potential implications for the project's success due to the absence of diverse domain expertise?",
+          "question_en_preview": "Given the limited details about the team composition, what are the potential implications for the project's success due to the absence of diverse domain expertise?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the current workload of Aniket Raj and any other team members affect their capacity to commit to this project, considering the lack of information on team size and structure?",
+          "question_en_preview": "How does the current workload of Aniket Raj and any other team members affect their capacity to commit to this project, considering the lack of information on team size and structure?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential risks arise from the absence of information regarding collaboration networks or partnerships that could support the project's execution?",
+          "question_en_preview": "What potential risks arise from the absence of information regarding collaboration networks or partnerships that could support the project's execution?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What governance structures or decision-making processes are in place to ensure effective oversight of the project, given the limited information provided?",
+          "question_en_preview": "What governance structures or decision-making processes are in place to ensure effective oversight of the project, given the limited information provided?"
+        }
+      ],
+      "elapsed_sec": 10.48,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 385,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Hitch project aims to create an online application-based service that facilitates seamless, comfortable, and safe backpack traveling. It focuses on low-cost travel options while allowing guests to choose their hosts based on user reviews and select preferred routes. The proje ...",
+        "first_key_point_preview": "Hitch aims to make backpack traveling seamless, comfortable, and safe.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.79,
+        "raw_chars": 3818,
+        "usage": {
+          "prompt_tokens": 3390,
+          "completion_tokens": 833,
+          "total_tokens": 4223
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "customer demand evidence",
+        "market opportunity analysis",
+        "clear project goals",
+        "milestone feasibility",
+        "quantifiable success metrics",
+        "balance of ambition and realism"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 5
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "business_or_impact_logic": 1,
+          "evidence_strength": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of the Hitch project align with the stated need for seamless, comfortable, and safe backpack traveling? Please discuss any evidence of customer demand or market opportunity that supports this a ...",
+          "question_en_preview": "How well do the objectives of the Hitch project align with the stated need for seamless, comfortable, and safe backpack traveling? Please discuss any evidence of customer demand or market opportunity that supports this a ..."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent are the overall goals of the Hitch project clear and focused? Are there any unrelated sub-goals that could dilute the project's effectiveness?",
+          "question_en_preview": "To what extent are the overall goals of the Hitch project clear and focused? Are there any unrelated sub-goals that could dilute the project's effectiveness?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the Hitch project, and how reasonable and executable do you find them? Please provide an analysis of the timeline's feasibility.",
+          "question_en_preview": "What are the proposed milestones for the Hitch project, and how reasonable and executable do you find them? Please provide an analysis of the timeline's feasibility."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics does the Hitch project propose to measure its objectives? How do these metrics align with the project's goals?",
+          "question_en_preview": "What clear and quantifiable success metrics does the Hitch project propose to measure its objectives? How do these metrics align with the project's goals?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how well does the Hitch project balance ambition with realism in its objectives? Please provide evidence that would support a higher score.",
+          "question_en_preview": "On a scale of 1 to 5, how well does the Hitch project balance ambition with realism in its objectives? Please provide evidence that would support a higher score."
+        }
+      ],
+      "elapsed_sec": 10.79,
+      "final_question_count": 8
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 361,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Hitch project aims to create an online application-based service that enhances the backpack traveling experience by providing features for hitching rides, hosting, and social events. The service is designed to be cost-effective, allowing travelers to utilize its features with ...",
+        "first_key_point_preview": "Hitch is an online application-based service aimed at making backpack traveling seamless, comfortable, and safe.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.71,
+        "raw_chars": 4840,
+        "usage": {
+          "prompt_tokens": 3503,
+          "completion_tokens": 1029,
+          "total_tokens": 4532
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user reviews",
+        "cost-effective service",
+        "customer demand evidence",
+        "revenue model",
+        "service adoption metrics",
+        "validation steps",
+        "scaling challenges",
+        "quality compliance measures",
+        "partnership collaborations",
+        "trade-offs in design"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 3
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Hitch project plan to attract and retain users for its online application-based service, particularly in terms of pricing and value proposition? Please discuss any evidence of customer demand or interest.",
+          "question_en_preview": "How does the Hitch project plan to attract and retain users for its online application-based service, particularly in terms of pricing and value proposition? Please discuss any evidence of customer demand or interest."
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that Hitch aims to provide its services at minimal costs to users, what is the projected revenue model, and how will it ensure sustainability and profitability? What metrics will be used to evaluate financial perfo ...",
+          "question_en_preview": "Given that Hitch aims to provide its services at minimal costs to users, what is the projected revenue model, and how will it ensure sustainability and profitability? What metrics will be used to evaluate financial perfo ..."
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the major trade-offs considered in the design of the Hitch service, particularly regarding the features for hitching rides and hosting? How will these trade-offs impact user experience and service adoption?",
+          "question_en_preview": "What are the major trade-offs considered in the design of the Hitch service, particularly regarding the features for hitching rides and hosting? How will these trade-offs impact user experience and service adoption?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What validation steps will Hitch undertake to ensure that its features meet user needs and expectations? Are there any planned pilot programs or user testing phases?",
+          "question_en_preview": "What validation steps will Hitch undertake to ensure that its features meet user needs and expectations? Are there any planned pilot programs or user testing phases?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "As Hitch aims to enhance the backpack traveling experience, what are the anticipated challenges in scaling the service to a larger user base, and how does the team plan to address these challenges?",
+          "question_en_preview": "As Hitch aims to enhance the backpack traveling experience, what are the anticipated challenges in scaling the service to a larger user base, and how does the team plan to address these challenges?"
+        }
+      ],
+      "elapsed_sec": 10.71,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 6,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 124,
+        "key_points_count": 0,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The proposal contains limited explicit information about the innovation dimension, so a detailed summary cannot be produced.",
+        "first_key_point_preview": "<none>",
+        "first_risk_preview": "The proposal provides limited detail for the innovation dimension, which may affect evaluation quality.",
+        "first_mitigation_preview": "The proposal does not specify how to address or mitigate this information gap."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 7.45,
+        "raw_chars": 4199,
+        "usage": {
+          "prompt_tokens": 3154,
+          "completion_tokens": 899,
+          "total_tokens": 4053
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "innovation novelty assessment",
+        "competitive advantages evidence",
+        "intellectual property strategy",
+        "evidence for market readiness",
+        "scalability risks",
+        "obsolescence mitigation strategies"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6
+        },
+        "priorities": {
+          "1": 2,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "ip_and_protection": 1,
+          "evidence_strength_for_innovation": 1,
+          "platform_and_extensibility": 1,
+          "risk_of_obsolescence_or_commoditization": 1
+        },
+        "linked_to_key_points": 0,
+        "linked_to_risks": 6,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited information provided in the proposal, how do you assess the novelty of the innovation compared to existing solutions in the market? Please identify any specific gaps in information that hinder this asse ...",
+          "question_en_preview": "Given the limited information provided in the proposal, how do you assess the novelty of the innovation compared to existing solutions in the market? Please identify any specific gaps in information that hinder this asse ..."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the proposed innovation have over existing alternatives, and how can these advantages be substantiated? If the proposal lacks details, please note the impact of this gap on your evaluation.",
+          "question_en_preview": "What specific advantages does the proposed innovation have over existing alternatives, and how can these advantages be substantiated? If the proposal lacks details, please note the impact of this gap on your evaluation."
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the proposal address intellectual property protection for the innovation, and what are the potential implications of the current lack of detail on this aspect?",
+          "question_en_preview": "How does the proposal address intellectual property protection for the innovation, and what are the potential implications of the current lack of detail on this aspect?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What types of evidence would strengthen the case for the innovation's effectiveness and market readiness? Please specify any missing evidence that could enhance the proposal's credibility.",
+          "question_en_preview": "What types of evidence would strengthen the case for the innovation's effectiveness and market readiness? Please specify any missing evidence that could enhance the proposal's credibility."
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "Considering the current information gap, how might the innovation be extended to other markets or use cases? What risks does this gap present for scalability?",
+          "question_en_preview": "Considering the current information gap, how might the innovation be extended to other markets or use cases? What risks does this gap present for scalability?"
+        }
+      ],
+      "elapsed_sec": 7.45,
+      "final_question_count": 6
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 320,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Hitch project is impacted by several factors, including its location in Montreal, Canada, and the cancellation of its funding in October 2022. Additionally, the project's success relies on user engagement, as features depend on user quantities and guests' a ...",
+        "first_key_point_preview": "Hitch is based in Montreal, Canada.",
+        "first_risk_preview": "Hitch faces challenges in building trust among users.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.27,
+        "raw_chars": 4568,
+        "usage": {
+          "prompt_tokens": 3423,
+          "completion_tokens": 983,
+          "total_tokens": 4406
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "user engagement strategies",
+        "trust-building measures",
+        "budget allocation plan",
+        "Montreal resources",
+        "timeline alignment",
+        "customer acceptance strategies",
+        "sustainability plan",
+        "user quantity dependence",
+        "risk management strategies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "implementation_barriers": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "resources_and_infrastructure": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the funding for the Hitch project was canceled on October 1, 2022, what are the implications for the project's budget allocation and sustainability plan moving forward?",
+          "question_en_preview": "Given that the funding for the Hitch project was canceled on October 1, 2022, what are the implications for the project's budget allocation and sustainability plan moving forward?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific barriers does Hitch face in building trust among users, and how might these barriers impact user engagement and the overall success of the project?",
+          "question_en_preview": "What specific barriers does Hitch face in building trust among users, and how might these barriers impact user engagement and the overall success of the project?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the Hitch project plan to ensure user engagement, considering that its features depend on user quantities? What specific strategies are in place to attract and retain users?",
+          "question_en_preview": "How does the Hitch project plan to ensure user engagement, considering that its features depend on user quantities? What specific strategies are in place to attract and retain users?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "Considering the identified risk of challenges in building trust among users, what risk management strategies could be implemented to mitigate this issue?",
+          "question_en_preview": "Considering the identified risk of challenges in building trust among users, what risk management strategies could be implemented to mitigate this issue?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What resources and infrastructure are currently in place for the Hitch project in Montreal, and how do they support the project's long-term feasibility?",
+          "question_en_preview": "What resources and infrastructure are currently in place for the Hitch project in Montreal, and how do they support the project's long-term feasibility?"
+        }
+      ],
+      "elapsed_sec": 10.27,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T22:14:40Z",
+  "elapsed_sec": 49.71,
+  "total_questions": 39,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km31__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km31__openai/generated_questions_detail.json"
+}

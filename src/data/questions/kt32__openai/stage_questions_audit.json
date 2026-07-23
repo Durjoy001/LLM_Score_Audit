@@ -1,0 +1,614 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt32__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt32__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 353,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team behind the Sinked project is led by founder Prit Patel, who has extensive experience in social media, technology, marketing, and software. The team consists of skilled developers, designers, and social media enthusiasts, all dedicated to making Sinked a reality and enhan ...",
+        "first_key_point_preview": "Prit Patel is the founder of Sinked.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.99,
+        "raw_chars": 4158,
+        "usage": {
+          "prompt_tokens": 3362,
+          "completion_tokens": 874,
+          "total_tokens": 4236
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Prit Patel's background",
+        "team expertise in software development",
+        "beta testing collaboration",
+        "project governance structure",
+        "capacity for project execution",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Prit Patel's extensive experience in social media, technology, marketing, and software position the team to advance the Sinked project to its intended application and market deployment?",
+          "question_en_preview": "How does Prit Patel's extensive experience in social media, technology, marketing, and software position the team to advance the Sinked project to its intended application and market deployment?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise do the developers, designers, and social media enthusiasts bring to the Sinked project, and how does this expertise contribute to addressing the target customer problem?",
+          "question_en_preview": "What specific expertise do the developers, designers, and social media enthusiasts bring to the Sinked project, and how does this expertise contribute to addressing the target customer problem?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Considering the current workload and potential parallel projects, does the team have sufficient capacity and bandwidth to effectively execute the Sinked project? Please evaluate any gaps in this information.",
+          "question_en_preview": "Considering the current workload and potential parallel projects, does the team have sufficient capacity and bandwidth to effectively execute the Sinked project? Please evaluate any gaps in this information."
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What strategies does the team have in place to leverage collaboration with backers during beta testing to enhance the Sinked project's features, and how might this impact the project's success?",
+          "question_en_preview": "What strategies does the team have in place to leverage collaboration with backers during beta testing to enhance the Sinked project's features, and how might this impact the project's success?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the lack of specified mitigation measures for risks associated with the team, how might this impact the project's ability to navigate compliance and validation challenges?",
+          "question_en_preview": "Given the lack of specified mitigation measures for risks associated with the team, how might this impact the project's ability to navigate compliance and validation challenges?"
+        }
+      ],
+      "elapsed_sec": 10.99,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 362,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project Sinked aims to revolutionize social media management by providing a unified platform for users to manage multiple accounts efficiently. Key objectives include developing a Minimum Viable Product (MVP) that integrates various social media feeds and tools, ensuring a us ...",
+        "first_key_point_preview": "The core mission of Sinked is to simplify social media management for users overwhelmed by managing multiple accounts.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The project aims to improve social media management for users around the world."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 22.86,
+        "raw_chars": 3975,
+        "usage": {
+          "prompt_tokens": 3443,
+          "completion_tokens": 865,
+          "total_tokens": 4308
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user-friendly experience",
+        "MVP development timeline",
+        "beta testing feedback",
+        "social media integration tools",
+        "quantifiable success metrics",
+        "value creation logic",
+        "user engagement strategies",
+        "content curation AI",
+        "market need validation"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined are the overall goals of the Sinked project, particularly in relation to simplifying social media management for users? Are there any unrelated sub-goals that could dilute focus?",
+          "question_en_preview": "How clearly defined are the overall goals of the Sinked project, particularly in relation to simplifying social media management for users? Are there any unrelated sub-goals that could dilute focus?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the Sinked project align with the urgent need for users to manage multiple social media accounts effectively? What evidence supports this alignment?",
+          "question_en_preview": "To what extent does the Sinked project align with the urgent need for users to manage multiple social media accounts effectively? What evidence supports this alignment?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Are the proposed milestones for developing the Minimum Viable Product (MVP) and conducting beta testing realistic and executable within the specified timeframes?",
+          "question_en_preview": "Are the proposed milestones for developing the Minimum Viable Product (MVP) and conducting beta testing realistic and executable within the specified timeframes?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics will be used to evaluate the performance of the Sinked platform post-launch? How will these metrics inform future iterations?",
+          "question_en_preview": "What quantifiable success metrics will be used to evaluate the performance of the Sinked platform post-launch? How will these metrics inform future iterations?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Sinked project plan to create value and capture revenue through its social media management platform? What is the underlying logic of its business model?",
+          "question_en_preview": "How does the Sinked project plan to create value and capture revenue through its social media management platform? What is the underlying logic of its business model?"
+        }
+      ],
+      "elapsed_sec": 22.86,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 430,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy for Sinked focuses on revolutionizing social media management by integrating multiple feeds into a single platform. The project aims to develop a Minimum Viable Product (MVP) that includes advanced content curation powered by AI, allowing users to enhance their socia ...",
+        "first_key_point_preview": "Sinked aims to improve social media management for users worldwide.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The project aims to improve social media management for users around the world."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 22.73,
+        "raw_chars": 3753,
+        "usage": {
+          "prompt_tokens": 3526,
+          "completion_tokens": 847,
+          "total_tokens": 4373
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "MVP validation process",
+        "user feedback incorporation",
+        "market positioning strategy",
+        "partnership structure",
+        "budget realism",
+        "scaling challenges",
+        "content curation AI",
+        "Kickstarter funding impact",
+        "user experience trade-offs",
+        "social media management tools"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Sinked plan to position itself in the social media management market, and what strategies will it employ to attract users to its platform?",
+          "question_en_preview": "How does Sinked plan to position itself in the social media management market, and what strategies will it employ to attract users to its platform?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the design of Sinked's Minimum Viable Product (MVP), and how will these affect user experience?",
+          "question_en_preview": "What are the major trade-offs considered in the design of Sinked's Minimum Viable Product (MVP), and how will these affect user experience?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What steps will Sinked take to validate its MVP with users, and how will feedback from beta testing be incorporated into the final product?",
+          "question_en_preview": "What steps will Sinked take to validate its MVP with users, and how will feedback from beta testing be incorporated into the final product?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given that Sinked is currently funded at 107% on Kickstarter, how does this funding impact its budget realism and financial projections for the MVP development?",
+          "question_en_preview": "Given that Sinked is currently funded at 107% on Kickstarter, how does this funding impact its budget realism and financial projections for the MVP development?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential partnerships does Sinked foresee as critical for its success in the social media management space, and how will these partnerships be structured?",
+          "question_en_preview": "What potential partnerships does Sinked foresee as critical for its success in the social media management space, and how will these partnerships be structured?"
+        }
+      ],
+      "elapsed_sec": 22.73,
+      "final_question_count": 6
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 230,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces innovative features in social media management through advanced AI integration. It aims to address existing gaps in the market by providing unique solutions that enhance user engagement and content curation.",
+        "first_key_point_preview": "The platform integrates content from multiple streaming platforms like Twitch, YouTube, and Kick Streaming.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The AI will suggest strategies to improve reach and interaction on social media."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.29,
+        "raw_chars": 4007,
+        "usage": {
+          "prompt_tokens": 3400,
+          "completion_tokens": 874,
+          "total_tokens": 4274
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "multi-platform integration",
+        "unique social media features",
+        "customer engagement enhancement",
+        "evidence of social media management issues",
+        "AI-driven interaction strategies",
+        "risk of technology commoditization",
+        "extensibility to other markets",
+        "competitive differentiation",
+        "user engagement metrics"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "mitigation_and_risk_controls": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the integration of content from multiple streaming platforms like Twitch, YouTube, and Kick Streaming represent a true novelty compared to existing social media management solutions?",
+          "question_en_preview": "How does the integration of content from multiple streaming platforms like Twitch, YouTube, and Kick Streaming represent a true novelty compared to existing social media management solutions?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific features does Sinked offer that are not available in existing social media management platforms, and how do these features enhance customer value?",
+          "question_en_preview": "What specific features does Sinked offer that are not available in existing social media management platforms, and how do these features enhance customer value?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the claim that there is a real problem in the way social media is managed today, and how does this evidence inform the innovation presented by Sinked?",
+          "question_en_preview": "What evidence supports the claim that there is a real problem in the way social media is managed today, and how does this evidence inform the innovation presented by Sinked?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of Sinked's offering within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of Sinked's offering within the next 3-5 years?"
+        },
+        {
+          "aspect": "mitigation_and_risk_controls",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How sufficient are the proposed AI-driven strategies to improve reach and interaction on social media in mitigating the identified risks associated with the innovation?",
+          "question_en_preview": "How sufficient are the proposed AI-driven strategies to improve reach and interaction on social media in mitigating the identified risks associated with the innovation?"
+        }
+      ],
+      "elapsed_sec": 12.29,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 402,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Sinked project is supported by a well-prepared team and a structured timeline that includes buffers for unexpected issues. However, risks such as potential development delays and complexities in integrating multiple social media platforms have been identifi ...",
+        "first_key_point_preview": "The experienced team is prepared to handle challenges related to integrating social media platforms.",
+        "first_risk_preview": "Development delays are a potential risk in the software project.",
+        "first_mitigation_preview": "The project aims to improve social media management for users around the world."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.38,
+        "raw_chars": 3690,
+        "usage": {
+          "prompt_tokens": 3461,
+          "completion_tokens": 792,
+          "total_tokens": 4253
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding level",
+        "development timeline",
+        "integration complexities",
+        "implementation barriers",
+        "resource alignment",
+        "customer acceptance",
+        "procurement processes",
+        "risk mitigation strategies",
+        "operational tasks",
+        "social media management"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the current funding level of 107% on Kickstarter impact the project's budget allocation and sustainability plan?",
+          "question_en_preview": "How does the current funding level of 107% on Kickstarter impact the project's budget allocation and sustainability plan?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines have been established to mitigate the risk of potential development delays in the software project?",
+          "question_en_preview": "What specific tasks and timelines have been established to mitigate the risk of potential development delays in the software project?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How are the complexities associated with integrating multiple social media platforms being addressed in the project plan?",
+          "question_en_preview": "How are the complexities associated with integrating multiple social media platforms being addressed in the project plan?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation have been identified, and how does the team plan to overcome them in real production settings?",
+          "question_en_preview": "What barriers to implementation have been identified, and how does the team plan to overcome them in real production settings?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how well does the timeline align with the available resources, considering potential bottlenecks or staffing gaps? Please provide evidence that would improve your score.",
+          "question_en_preview": "On a scale of 1 to 5, how well does the timeline align with the available resources, considering potential bottlenecks or staffing gaps? Please provide evidence that would improve your score."
+        }
+      ],
+      "elapsed_sec": 13.38,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T19:25:04Z",
+  "elapsed_sec": 82.26,
+  "total_questions": 33,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt32__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt32__openai/generated_questions_detail.json"
+}

@@ -1,0 +1,624 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km12__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km12__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 217,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'Handscoped' is led by Dennis Khelvaly, who is also its creator. The project is based in Montreal, Canada, and community management will primarily take place on Discord, with updates shared on Kickstarter.",
+        "first_key_point_preview": "Dennis Khelvaly is the creator and leader of the project 'Handscoped'.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.21,
+        "raw_chars": 3558,
+        "usage": {
+          "prompt_tokens": 3306,
+          "completion_tokens": 773,
+          "total_tokens": 4079
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "leadership qualifications",
+        "community management expertise",
+        "Discord engagement strategy",
+        "Kickstarter update plan",
+        "governance structure",
+        "validation experience",
+        "collaboration potential",
+        "project management capacity",
+        "decision-making process"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "governance_and_decision_making": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific leadership experience does Dennis Khelvaly have that qualifies him to lead the project 'Handscoped' and advance it to its intended application?",
+          "question_en_preview": "What specific leadership experience does Dennis Khelvaly have that qualifies him to lead the project 'Handscoped' and advance it to its intended application?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the team's expertise align with the community management needs of 'Handscoped', particularly in utilizing Discord and Kickstarter for engagement?",
+          "question_en_preview": "How does the team's expertise align with the community management needs of 'Handscoped', particularly in utilizing Discord and Kickstarter for engagement?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited information on the team's current workload, how might this impact their capacity to manage the project effectively?",
+          "question_en_preview": "Given the limited information on the team's current workload, how might this impact their capacity to manage the project effectively?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What governance structures or decision-making processes are in place to ensure effective management of the project 'Handscoped'?",
+          "question_en_preview": "What governance structures or decision-making processes are in place to ensure effective management of the project 'Handscoped'?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What experience does the team have with validation and compliance in similar projects, and how might this affect the project's success?",
+          "question_en_preview": "What experience does the team have with validation and compliance in similar projects, and how might this affect the project's success?"
+        }
+      ],
+      "elapsed_sec": 12.21,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 370,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'Handscoped' aims to develop a first-person shooter game where players use their phones as controllers. Key objectives include inviting backers to alpha testing, testing gameplay mechanics, and creating a playable online FPS. The alpha is scheduled to start 4-5 months ...",
+        "first_key_point_preview": "The main goals of the alpha include testing novel controls, server stability, gameplay flow, and identifying bugs.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Players can climb ranking leaderboards as they improve their aiming skills."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.5,
+        "raw_chars": 3551,
+        "usage": {
+          "prompt_tokens": 3430,
+          "completion_tokens": 757,
+          "total_tokens": 4187
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "alpha testing timeline",
+        "gameplay mechanics evaluation",
+        "novel control testing",
+        "server stability metrics",
+        "competitive FPS market need",
+        "backer engagement strategy",
+        "success metrics clarity",
+        "scope prioritization",
+        "ambition vs feasibility balance"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2,
+          "yes_no": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the project's objectives align with the stated need for a refreshing new take on competitiveness in FPS games? Please evaluate the urgency of this alignment.",
+          "question_en_preview": "How well do the project's objectives align with the stated need for a refreshing new take on competitiveness in FPS games? Please evaluate the urgency of this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Are the proposed milestones for alpha testing, including inviting backers and testing gameplay mechanics, reasonable and executable within the 4-5 month timeline after the Kickstarter campaign? Please provide your assess ...",
+          "question_en_preview": "Are the proposed milestones for alpha testing, including inviting backers and testing gameplay mechanics, reasonable and executable within the 4-5 month timeline after the Kickstarter campaign? Please provide your assess ..."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics will be used to evaluate the alpha testing phase, particularly regarding novel controls and server stability? How clear and quantifiable are these metrics?",
+          "question_en_preview": "What specific success metrics will be used to evaluate the alpha testing phase, particularly regarding novel controls and server stability? How clear and quantifiable are these metrics?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "yes_no",
+          "priority": 2,
+          "question_preview": "Considering the project's ambition to create a playable online FPS with intuitive mechanics, do you believe the objectives strike a good balance between ambition and feasibility? Please justify your answer.",
+          "question_en_preview": "Considering the project's ambition to create a playable online FPS with intuitive mechanics, do you believe the objectives strike a good balance between ambition and feasibility? Please justify your answer."
+        },
+        {
+          "aspect": "scope_and_prioritization",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "Does the project scope appear too broad or does it maintain a clear focus on the key objectives of gameplay mechanics and server stability? Please provide your analysis.",
+          "question_en_preview": "Does the project scope appear too broad or does it maintain a clear focus on the key objectives of gameplay mechanics and server stability? Please provide your analysis."
+        }
+      ],
+      "elapsed_sec": 8.5,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 336,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a new online first-person shooter (FPS) game titled 'Handscoped', focusing on innovative gameplay mechanics and ethical data practices. Key strategies include a unique movement design, a commitment to artist consent in data usage, and a structured alph ...",
+        "first_key_point_preview": "The game aims to deliver a refreshing new take on competitiveness in FPS games.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.62,
+        "raw_chars": 3859,
+        "usage": {
+          "prompt_tokens": 3530,
+          "completion_tokens": 876,
+          "total_tokens": 4406
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "alpha testing metrics",
+        "ethical data procurement",
+        "gameplay mechanics trade-offs",
+        "financial target strategies",
+        "server stability evaluation",
+        "artist consent compliance",
+        "budget realism evidence",
+        "scalability risks",
+        "unique movement design",
+        "competitive FPS innovation"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "quality_compliance_strategy": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the development of the unique movement design for 'Handscoped', and how do they impact gameplay experience?",
+          "question_en_preview": "What are the major trade-offs considered in the development of the unique movement design for 'Handscoped', and how do they impact gameplay experience?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the structured alpha testing phase contribute to refining gameplay and server stability, and what specific metrics will be used to evaluate its success?",
+          "question_en_preview": "How does the structured alpha testing phase contribute to refining gameplay and server stability, and what specific metrics will be used to evaluate its success?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the funding goal of $8,756, what strategies are in place to ensure that the project meets its financial targets and successfully transitions to market?",
+          "question_en_preview": "Given the funding goal of $8,756, what strategies are in place to ensure that the project meets its financial targets and successfully transitions to market?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the ethical data procurement policy for artist consent impact the overall compliance strategy for 'Handscoped', and what measures are in place to uphold this policy?",
+          "question_en_preview": "How does the ethical data procurement policy for artist consent impact the overall compliance strategy for 'Handscoped', and what measures are in place to uphold this policy?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget for 'Handscoped' given the funding goal of $8,756, and what evidence would increase confidence in this assessment?",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget for 'Handscoped' given the funding goal of $8,756, and what evidence would increase confidence in this assessment?"
+        }
+      ],
+      "elapsed_sec": 9.62,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 377,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'Handscoped' introduces innovative gameplay mechanics by allowing players to control their characters using phone motion sensors, aiming to redefine competitiveness in first-person shooter games. It incorporates novel technologies for game controls, combat, and graphi ...",
+        "first_key_point_preview": "Players control their characters using their phone's motion sensors, which is a novel approach in gaming.",
+        "first_risk_preview": "Players must learn the strengths and weaknesses of locations on all maps in 'Handscoped'.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.07,
+        "raw_chars": 4224,
+        "usage": {
+          "prompt_tokens": 3422,
+          "completion_tokens": 924,
+          "total_tokens": 4346
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "motion sensor gameplay",
+        "AI-generated content effectiveness",
+        "competitive advantages in gaming",
+        "player engagement metrics",
+        "risk of commoditization",
+        "intellectual property strategy",
+        "gameplay mechanics innovation",
+        "visual diversity in games",
+        "extensibility to other genres"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the use of phone motion sensors for character control in 'Handscoped' compare to existing control mechanisms in first-person shooter games, and what evidence supports its novelty?",
+          "question_en_preview": "How does the use of phone motion sensors for character control in 'Handscoped' compare to existing control mechanisms in first-person shooter games, and what evidence supports its novelty?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does 'Handscoped' offer over traditional first-person shooter games in terms of gameplay mechanics, and how do these advantages enhance player engagement?",
+          "question_en_preview": "What specific advantages does 'Handscoped' offer over traditional first-person shooter games in terms of gameplay mechanics, and how do these advantages enhance player engagement?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What types of evidence are available to demonstrate the effectiveness of the AI-generated content in 'Handscoped', particularly regarding player satisfaction and visual diversity?",
+          "question_en_preview": "What types of evidence are available to demonstrate the effectiveness of the AI-generated content in 'Handscoped', particularly regarding player satisfaction and visual diversity?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the reliance on novel gameplay mechanics, what risks does 'Handscoped' face regarding potential obsolescence or commoditization within the gaming industry, and how might these risks impact its long-term viability?",
+          "question_en_preview": "Given the reliance on novel gameplay mechanics, what risks does 'Handscoped' face regarding potential obsolescence or commoditization within the gaming industry, and how might these risks impact its long-term viability?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How can the innovative mechanics and AI-generated content in 'Handscoped' be extended to other gaming genres or platforms, and what challenges might arise in this process?",
+          "question_en_preview": "How can the innovative mechanics and AI-generated content in 'Handscoped' be extended to other gaming genres or platforms, and what challenges might arise in this process?"
+        }
+      ],
+      "elapsed_sec": 8.07,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 319,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project 'Handscoped - FPS Game Where Your Phone Is The Controller' is challenged by inherent risks associated with its novel technology. The project has faced funding difficulties, as the initial goal was not met by the specified deadline, which may impact  ...",
+        "first_key_point_preview": "The project aims to deliver a refreshing new take on competitiveness in FPS games.",
+        "first_risk_preview": "The project faces inherent risks associated with its novel technology.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.71,
+        "raw_chars": 3997,
+        "usage": {
+          "prompt_tokens": 3447,
+          "completion_tokens": 844,
+          "total_tokens": 4291
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter campaign",
+        "alpha launch timeline",
+        "novel technology risks",
+        "budget allocation",
+        "customer acceptance barriers",
+        "implementation plan details",
+        "funding sources diversity",
+        "project timeline alignment",
+        "feedback from backers",
+        "system integration challenges"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific funding sources are being pursued to support the project, and how does the budget allocation align with the project's goals and timeline?",
+          "question_en_preview": "What specific funding sources are being pursued to support the project, and how does the budget allocation align with the project's goals and timeline?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How detailed is the implementation plan for the project, particularly regarding key tasks, owners, dependencies, and the timeline leading up to the alpha launch?",
+          "question_en_preview": "How detailed is the implementation plan for the project, particularly regarding key tasks, owners, dependencies, and the timeline leading up to the alpha launch?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the inherent risks associated with the novel technology, what specific strategies or measures are being considered to mitigate these risks?",
+          "question_en_preview": "Given the inherent risks associated with the novel technology, what specific strategies or measures are being considered to mitigate these risks?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation have been identified, particularly in relation to customer acceptance and system integration for the phone controller technology?",
+          "question_en_preview": "What potential barriers to implementation have been identified, particularly in relation to customer acceptance and system integration for the phone controller technology?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how well-aligned are the project's timeline and resources, particularly in light of the funding difficulties mentioned? What evidence would increase your confidence in this alignment?",
+          "question_en_preview": "On a scale of 1 to 5, how well-aligned are the project's timeline and resources, particularly in light of the funding difficulties mentioned? What evidence would increase your confidence in this alignment?"
+        }
+      ],
+      "elapsed_sec": 8.71,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T21:53:14Z",
+  "elapsed_sec": 47.12,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km12__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km12__openai/generated_questions_detail.json"
+}

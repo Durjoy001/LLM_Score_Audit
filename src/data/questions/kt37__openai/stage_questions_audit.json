@@ -1,0 +1,619 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt37__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt37__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 226,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Seyran Ghazaryan, who is also the creator of DocAI. The team is dedicated to the continuous enhancement of DocAI and has established strong partnerships with AI research entities to support their efforts.",
+        "first_key_point_preview": "The project was created and is led by Seyran Ghazaryan.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 22.9,
+        "raw_chars": 4827,
+        "usage": {
+          "prompt_tokens": 3285,
+          "completion_tokens": 1057,
+          "total_tokens": 4342
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "Seyran Ghazaryan",
+        "DocAI enhancement",
+        "AI research partnerships",
+        "team capacity assessment",
+        "governance structures",
+        "validation experience",
+        "decision-making process",
+        "domain expertise",
+        "execution capability",
+        "risk management"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "collaboration_network": 1,
+          "team_capacity_and_bandwidth": 2,
+          "governance_and_decision_making": 1,
+          "validation_and_compliance_experience": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Seyran Ghazaryan's prior experience with DocAI and other projects position the team to successfully advance this initiative?",
+          "question_en_preview": "How does Seyran Ghazaryan's prior experience with DocAI and other projects position the team to successfully advance this initiative?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does the team possess in AI and related technologies that supports the continuous enhancement of DocAI?",
+          "question_en_preview": "What specific expertise does the team possess in AI and related technologies that supports the continuous enhancement of DocAI?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How do the established partnerships with AI research entities enhance the team's capability to execute the project effectively?",
+          "question_en_preview": "How do the established partnerships with AI research entities enhance the team's capability to execute the project effectively?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the current workload and commitments, does the team have sufficient capacity to focus on the continuous enhancement of DocAI? If not, what are the implications?",
+          "question_en_preview": "Given the current workload and commitments, does the team have sufficient capacity to focus on the continuous enhancement of DocAI? If not, what are the implications?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What governance structures are in place to ensure effective decision-making and conflict resolution within the team, especially given the limited risk information provided?",
+          "question_en_preview": "What governance structures are in place to ensure effective decision-making and conflict resolution within the team, especially given the limited risk information provided?"
+        }
+      ],
+      "elapsed_sec": 22.9,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 356,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "DocAI aims to transform static PDF files into interactive, conversational platforms, enhancing user experience through real-time interactions and AI-generated content. The project seeks to refine its user interface for broader accessibility and aims to meet the growing demands of ...",
+        "first_key_point_preview": "DocAI is designed to transform static PDF files into interactive, conversational platforms.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "DocAI is committed to continuous improvement based on user feedback and technological advancements."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.88,
+        "raw_chars": 4647,
+        "usage": {
+          "prompt_tokens": 3425,
+          "completion_tokens": 957,
+          "total_tokens": 4382
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user feedback incorporation",
+        "scalable cloud infrastructure",
+        "quantifiable success metrics",
+        "market opportunity alignment",
+        "real-time interaction capabilities",
+        "business logic for revenue capture",
+        "milestones for AI enhancement",
+        "document management transformation",
+        "user experience improvement"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "overall_goal_clarity": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does DocAI's objective of transforming static PDF files into interactive platforms align with the identified user needs and market opportunity? If the proposal does not provide sufficient details on user needs,  ...",
+          "question_en_preview": "How well does DocAI's objective of transforming static PDF files into interactive platforms align with the identified user needs and market opportunity? If the proposal does not provide sufficient details on user needs,  ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the proposed milestones for DocAI's development, particularly regarding enhancing AI linguistic capabilities and scalable cloud infrastructure? Are these milestones reasonable and executable within the stated ti ...",
+          "question_en_preview": "What are the proposed milestones for DocAI's development, particularly regarding enhancing AI linguistic capabilities and scalable cloud infrastructure? Are these milestones reasonable and executable within the stated ti ..."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics does DocAI plan to implement to measure the effectiveness of its transformation of PDF files into interactive platforms? If the proposal lacks specific metrics, please identify this gap  ...",
+          "question_en_preview": "What quantifiable success metrics does DocAI plan to implement to measure the effectiveness of its transformation of PDF files into interactive platforms? If the proposal lacks specific metrics, please identify this gap  ..."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does DocAI's objective of enhancing document management through user feedback and technological advancements create value and capture revenue? Please analyze the business logic behind these objectives.",
+          "question_en_preview": "How does DocAI's objective of enhancing document management through user feedback and technological advancements create value and capture revenue? Please analyze the business logic behind these objectives."
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic do you find DocAI's objectives in terms of ambition versus feasibility? Please provide evidence that would increase your confidence in the project's feasibility.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic do you find DocAI's objectives in terms of ambition versus feasibility? Please provide evidence that would increase your confidence in the project's feasibility."
+        }
+      ],
+      "elapsed_sec": 16.89,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 393,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "DocAI's strategy focuses on utilizing cutting-edge AI technology to transform static PDF files into interactive platforms, enhancing user engagement through real-time interactions. The project aims to secure funding through a Kickstarter campaign to support further development of ...",
+        "first_key_point_preview": "DocAI utilizes cutting-edge AI technology to enhance document management processes.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "DocAI is committed to continuous improvement based on user feedback and technological advancements."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 23.42,
+        "raw_chars": 4325,
+        "usage": {
+          "prompt_tokens": 3506,
+          "completion_tokens": 952,
+          "total_tokens": 4458
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Kickstarter funding strategy",
+        "user engagement metrics",
+        "AI engine validation stages",
+        "budget realism evidence",
+        "risk assessment",
+        "scaling milestones",
+        "partnership collaborations",
+        "agile development approach",
+        "user feedback incorporation",
+        "interactive platform features"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does DocAI plan to secure funding through the Kickstarter campaign, and what evidence supports the likelihood of achieving the funding goal?",
+          "question_en_preview": "How does DocAI plan to secure funding through the Kickstarter campaign, and what evidence supports the likelihood of achieving the funding goal?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs in DocAI's strategy to transform static PDF files into interactive platforms, and how will these trade-offs impact user engagement?",
+          "question_en_preview": "What are the major trade-offs in DocAI's strategy to transform static PDF files into interactive platforms, and how will these trade-offs impact user engagement?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation stages will DocAI implement to ensure the effectiveness of its AI engine in enhancing document management processes?",
+          "question_en_preview": "What validation stages will DocAI implement to ensure the effectiveness of its AI engine in enhancing document management processes?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is DocAI's budget for the Kickstarter campaign, and what specific evidence would increase confidence in this assessment?",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is DocAI's budget for the Kickstarter campaign, and what specific evidence would increase confidence in this assessment?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee in DocAI's strategy, and how might these impact the project's success?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee in DocAI's strategy, and how might these impact the project's success?"
+        }
+      ],
+      "elapsed_sec": 23.42,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 338,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "DocAI represents a significant innovation in document management by transforming static PDFs into interactive platforms that facilitate real-time user interactions. The tool employs advanced technologies such as AI, natural language processing, and optical character recognition t ...",
+        "first_key_point_preview": "DocAI utilizes cutting-edge AI technology to enhance document management processes.",
+        "first_risk_preview": "Navigating the swiftly evolving landscape of artificial intelligence presents unique risks and challenges.",
+        "first_mitigation_preview": "The architecture of DocAI is designed to reduce its environmental footprint over time."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.47,
+        "raw_chars": 4339,
+        "usage": {
+          "prompt_tokens": 3417,
+          "completion_tokens": 951,
+          "total_tokens": 4368
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "AI technology in document management",
+        "real-time user interaction",
+        "advanced OCR technology",
+        "environmental impact reduction",
+        "competitive advantages",
+        "intellectual property protections",
+        "evidence of effectiveness",
+        "extension to new use cases",
+        "navigating AI landscape risks"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does DocAI's use of AI technology for document management compare to existing solutions in the market? Please provide specific examples of its novelty.",
+          "question_en_preview": "How does DocAI's use of AI technology for document management compare to existing solutions in the market? Please provide specific examples of its novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does DocAI offer over traditional document management systems, particularly in terms of user interaction and environmental impact?",
+          "question_en_preview": "What specific advantages does DocAI offer over traditional document management systems, particularly in terms of user interaction and environmental impact?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of DocAI's advanced OCR technology in improving text recognition accuracy? How has this been validated?",
+          "question_en_preview": "What evidence supports the effectiveness of DocAI's advanced OCR technology in improving text recognition accuracy? How has this been validated?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific challenges does DocAI face in navigating the rapidly evolving landscape of artificial intelligence, and how might these challenges impact its long-term viability?",
+          "question_en_preview": "What specific challenges does DocAI face in navigating the rapidly evolving landscape of artificial intelligence, and how might these challenges impact its long-term viability?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "In what ways can DocAI's architecture be extended to serve additional customer segments or use cases beyond its current application?",
+          "question_en_preview": "In what ways can DocAI's architecture be extended to serve additional customer segments or use cases beyond its current application?"
+        }
+      ],
+      "elapsed_sec": 14.47,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 412,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the DocAI project is influenced by its funding status, technological capabilities, and operational framework. The project was launched on Kickstarter, but its funding goal was not met, which poses a significant challenge to its development. However, the project ...",
+        "first_key_point_preview": "The project was launched on Kickstarter but did not reach its funding goal by September 14, 2024.",
+        "first_risk_preview": "Navigating the swiftly evolving landscape of artificial intelligence presents unique risks and challenges.",
+        "first_mitigation_preview": "DocAI is committed to continuous improvement based on user feedback and technological advancements."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.83,
+        "raw_chars": 4088,
+        "usage": {
+          "prompt_tokens": 3466,
+          "completion_tokens": 848,
+          "total_tokens": 4314
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding goal",
+        "operational framework in Toronto",
+        "continuous improvement strategy",
+        "data privacy protocols",
+        "customer acceptance measures",
+        "implementation barriers",
+        "risk identification",
+        "AI landscape challenges",
+        "budget allocation strategies",
+        "resource alignment"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "implementation_barriers": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project did not meet its funding goal on Kickstarter, what alternative funding sources or strategies are being considered to ensure the project's sustainability?",
+          "question_en_preview": "Given that the project did not meet its funding goal on Kickstarter, what alternative funding sources or strategies are being considered to ensure the project's sustainability?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the operational framework in Toronto support the implementation of DocAI, and what specific tasks and timelines are outlined to ensure successful execution?",
+          "question_en_preview": "How does the operational framework in Toronto support the implementation of DocAI, and what specific tasks and timelines are outlined to ensure successful execution?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific risks have been identified in navigating the evolving landscape of artificial intelligence, and how does the commitment to continuous improvement address these risks?",
+          "question_en_preview": "What specific risks have been identified in navigating the evolving landscape of artificial intelligence, and how does the commitment to continuous improvement address these risks?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What measures are in place to ensure secure data handling and compliance with data privacy protocols, and how will these measures impact customer acceptance?",
+          "question_en_preview": "What measures are in place to ensure secure data handling and compliance with data privacy protocols, and how will these measures impact customer acceptance?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how aligned are the project's timelines and resources, particularly in light of the unmet funding goal? What evidence would increase your confidence in this alignment?",
+          "question_en_preview": "On a scale of 1 to 5, how aligned are the project's timelines and resources, particularly in light of the unmet funding goal? What evidence would increase your confidence in this alignment?"
+        }
+      ],
+      "elapsed_sec": 13.83,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T19:34:43Z",
+  "elapsed_sec": 91.51,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt37__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt37__openai/generated_questions_detail.json"
+}

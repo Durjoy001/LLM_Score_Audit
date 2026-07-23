@@ -1,0 +1,616 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "km15__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/km15__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 201,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team is led by Yassine Ziou, who is both the creator and founder of Ziou's Gym. He is identified as an Industrial Engineer and a Sports Enthusiast, indicating a relevant background for the project.",
+        "first_key_point_preview": "Yassine Ziou is the creator and founder of Ziou's Gym.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.15,
+        "raw_chars": 3835,
+        "usage": {
+          "prompt_tokens": 3297,
+          "completion_tokens": 836,
+          "total_tokens": 4133
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "founder experience",
+        "industrial engineering background",
+        "sports industry knowledge",
+        "project execution capacity",
+        "validation experience",
+        "strategic partnerships",
+        "team workload assessment",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Yassine Ziou's experience as the creator and founder of Ziou's Gym position him to lead this initiative effectively?",
+          "question_en_preview": "How does Yassine Ziou's experience as the creator and founder of Ziou's Gym position him to lead this initiative effectively?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "In what ways does Yassine Ziou's background as an Industrial Engineer and Sports Enthusiast contribute to the team's understanding of the target customer problem and product domain?",
+          "question_en_preview": "In what ways does Yassine Ziou's background as an Industrial Engineer and Sports Enthusiast contribute to the team's understanding of the target customer problem and product domain?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited information provided, how might the current workload and commitments of Yassine Ziou affect the team's capacity to execute this project successfully?",
+          "question_en_preview": "Given the limited information provided, how might the current workload and commitments of Yassine Ziou affect the team's capacity to execute this project successfully?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential risks arise from the absence of specified mitigation measures regarding the team's experience with validation and compliance in this project?",
+          "question_en_preview": "What potential risks arise from the absence of specified mitigation measures regarding the team's experience with validation and compliance in this project?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategic partnerships or collaborations could enhance the team's execution capacity and credibility, given the current lack of detail in the proposal?",
+          "question_en_preview": "What strategic partnerships or collaborations could enhance the team's execution capacity and credibility, given the current lack of detail in the proposal?"
+        }
+      ],
+      "elapsed_sec": 9.16,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 278,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Ziou's Gym aims to enhance fitness tracking and community engagement through various features and improvements over the next few years. Key objectives include adding guided exercises, developing AI-powered program suggestions, and making the app available on multiple platforms.",
+        "first_key_point_preview": "Ziou's Gym intends to improve muscle tracking features.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Backers of the project will help improve Ziou's Gym and add new features."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.76,
+        "raw_chars": 4200,
+        "usage": {
+          "prompt_tokens": 3385,
+          "completion_tokens": 917,
+          "total_tokens": 4302
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "fitness tracking features",
+        "guided exercises",
+        "AI-powered program suggestions",
+        "community engagement metrics",
+        "milestone execution",
+        "success metrics alignment",
+        "scope prioritization",
+        "realism in objectives",
+        "user engagement strategies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "milestones_and_timeline": 2,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of Ziou's Gym align with the stated need for enhanced fitness tracking and community engagement? Please evaluate the urgency of this need based on the key points provided.",
+          "question_en_preview": "How well do the objectives of Ziou's Gym align with the stated need for enhanced fitness tracking and community engagement? Please evaluate the urgency of this need based on the key points provided."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the proposed milestones for the development of the new features, such as guided exercises and AI-powered suggestions? Are these milestones reasonable and executable within the stated timeline?",
+          "question_en_preview": "What are the proposed milestones for the development of the new features, such as guided exercises and AI-powered suggestions? Are these milestones reasonable and executable within the stated timeline?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics will be used to evaluate the effectiveness of the new features and community engagement initiatives? How do these metrics align with the overall objectives of Ziou's Gym?",
+          "question_en_preview": "What specific success metrics will be used to evaluate the effectiveness of the new features and community engagement initiatives? How do these metrics align with the overall objectives of Ziou's Gym?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the objectives outlined, do you believe the goals set by Ziou's Gym strike a balance between ambition and feasibility? Please provide reasoning based on the key points and any potential challenges.",
+          "question_en_preview": "Considering the objectives outlined, do you believe the goals set by Ziou's Gym strike a balance between ambition and feasibility? Please provide reasoning based on the key points and any potential challenges."
+        }
+      ],
+      "elapsed_sec": 10.76,
+      "final_question_count": 8
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 280,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Ziou's Gym is a comprehensive fitness app designed to assist users in planning workouts, tracking progress, and achieving fitness goals. The app features custom workout creation, guided exercises, and nutrition plans, aiming to enhance user engagement and consistency in training.",
+        "first_key_point_preview": "Ziou's Gym is designed to help users train with purpose and stay consistent.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.28,
+        "raw_chars": 3524,
+        "usage": {
+          "prompt_tokens": 3475,
+          "completion_tokens": 789,
+          "total_tokens": 4264
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user engagement metrics",
+        "feature validation plan",
+        "pricing strategy",
+        "user acquisition channels",
+        "unit economics analysis",
+        "scaling challenges",
+        "compliance issues",
+        "real-world effectiveness",
+        "custom workout features",
+        "nutrition plan integration"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the design of Ziou's Gym to help users train with purpose and stay consistent, and what alternative solutions were considered?",
+          "question_en_preview": "What rationale supports the design of Ziou's Gym to help users train with purpose and stay consistent, and what alternative solutions were considered?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Ziou's Gym plan to validate the effectiveness of its features, such as visual muscle targeting and progress analytics, in real-world settings?",
+          "question_en_preview": "How does Ziou's Gym plan to validate the effectiveness of its features, such as visual muscle targeting and progress analytics, in real-world settings?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the go-to-market strategy for Ziou's Gym, particularly regarding pricing and user acquisition channels?",
+          "question_en_preview": "What is the go-to-market strategy for Ziou's Gym, particularly regarding pricing and user acquisition channels?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What are the expected unit economics for Ziou's Gym, including user retention and revenue generation strategies?",
+          "question_en_preview": "What are the expected unit economics for Ziou's Gym, including user retention and revenue generation strategies?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What challenges does Ziou's Gym anticipate in scaling its user base, and how does it plan to address these challenges?",
+          "question_en_preview": "What challenges does Ziou's Gym anticipate in scaling its user base, and how does it plan to address these challenges?"
+        }
+      ],
+      "elapsed_sec": 8.28,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 373,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Ziou's Gym demonstrates innovation through its comprehensive app features, including guided exercises, workout tracking, and tailored nutrition plans. The app's unique selling points include video demonstrations for proper technique, visual muscle targeting, and the ability for u ...",
+        "first_key_point_preview": "The app includes 71+ guided exercises with video demonstrations to ensure correct technique.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 8.65,
+        "raw_chars": 3772,
+        "usage": {
+          "prompt_tokens": 3406,
+          "completion_tokens": 846,
+          "total_tokens": 4252
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "guided exercises",
+        "workout tracking",
+        "user engagement",
+        "fitness app comparison",
+        "intellectual property strategy",
+        "scalability potential",
+        "customer satisfaction evidence",
+        "competitive advantages",
+        "risk of obsolescence"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Ziou's Gym app's feature set, including guided exercises and workout tracking, compare to existing fitness apps in terms of innovation and uniqueness?",
+          "question_en_preview": "How does Ziou's Gym app's feature set, including guided exercises and workout tracking, compare to existing fitness apps in terms of innovation and uniqueness?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does Ziou's Gym app offer over competing fitness applications, particularly regarding user engagement and workout effectiveness?",
+          "question_en_preview": "What specific advantages does Ziou's Gym app offer over competing fitness applications, particularly regarding user engagement and workout effectiveness?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the app's features, such as guided exercises and workout tracking, in improving user performance and satisfaction?",
+          "question_en_preview": "What evidence supports the effectiveness of the app's features, such as guided exercises and workout tracking, in improving user performance and satisfaction?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the app's features within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the app's features within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How scalable is the innovation presented in Ziou's Gym app for potential expansion into other fitness-related services or customer segments?",
+          "question_en_preview": "How scalable is the innovation presented in Ziou's Gym app for potential expansion into other fitness-related services or customer segments?"
+        }
+      ],
+      "elapsed_sec": 8.65,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 305,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Ziou's Gym project is challenged by risks related to software development timelines and feature implementation. The project has faced funding difficulties, which may impact its overall execution. However, there are plans to enhance muscle tracking features  ...",
+        "first_key_point_preview": "The main risks for the project are related to software development timelines and feature implementation.",
+        "first_risk_preview": "The main risks for the Ziou's Gym project are related to software development timelines and feature implementation.",
+        "first_mitigation_preview": "Ziou's Gym intends to improve muscle tracking features."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.03,
+        "raw_chars": 3800,
+        "usage": {
+          "prompt_tokens": 3429,
+          "completion_tokens": 814,
+          "total_tokens": 4243
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding strategies",
+        "software development timelines",
+        "feature implementation risks",
+        "customer acceptance evidence",
+        "communication processes",
+        "implementation barriers"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "risk_management": 1,
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "implementation_barriers": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies will be implemented to address the risks related to software development timelines and feature implementation for the Ziou's Gym project?",
+          "question_en_preview": "What specific strategies will be implemented to address the risks related to software development timelines and feature implementation for the Ziou's Gym project?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project was unsuccessful in reaching its funding goal, what alternative funding strategies are being considered to ensure the project's sustainability?",
+          "question_en_preview": "Given that the project was unsuccessful in reaching its funding goal, what alternative funding strategies are being considered to ensure the project's sustainability?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How will Yassine Ziou ensure effective communication with backers regarding any delays, and what operational processes are in place to manage these communications?",
+          "question_en_preview": "How will Yassine Ziou ensure effective communication with backers regarding any delays, and what operational processes are in place to manage these communications?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation have been identified for the Ziou's Gym project, particularly in relation to software feature integration and user adoption?",
+          "question_en_preview": "What barriers to implementation have been identified for the Ziou's Gym project, particularly in relation to software feature integration and user adoption?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "What evidence exists to support the feasibility of customer acceptance for the enhanced muscle tracking features planned for the Ziou's Gym app?",
+          "question_en_preview": "What evidence exists to support the feasibility of customer acceptance for the enhanced muscle tracking features planned for the Ziou's Gym app?"
+        }
+      ],
+      "elapsed_sec": 9.03,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T21:54:11Z",
+  "elapsed_sec": 45.89,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km15__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/km15__openai/generated_questions_detail.json"
+}

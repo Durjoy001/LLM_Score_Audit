@@ -1,0 +1,620 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt14__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt14__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 295,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team at Storyay consists of experienced professionals dedicated to ensuring the project's success. Key members include Lance Slack, the CEO and Co-Founder, Chris Noon, the Creative Director, and Sara, the Chief Content Officer, each bringing significant expertise in their res ...",
+        "first_key_point_preview": "Lance Slack is the CEO and Co-Founder of Storyay, with over 30 years of experience in digital development.",
+        "first_risk_preview": "Delays in production or shipping could impact timelines for Storyay.",
+        "first_mitigation_preview": "The team at Storyay is dedicated to overcoming risks and challenges to ensure smooth and timely delivery for all backers."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.23,
+        "raw_chars": 3918,
+        "usage": {
+          "prompt_tokens": 3395,
+          "completion_tokens": 856,
+          "total_tokens": 4251
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Lance Slack experience",
+        "Chris Noon creative expertise",
+        "Sara content direction",
+        "local operational focus",
+        "production timeline management",
+        "team capacity assessment",
+        "dedication to delivery",
+        "collaboration with local writers",
+        "risk mitigation strategies"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Lance Slack's 30 years of experience in digital development position him to lead Storyay in overcoming production and shipping delays?",
+          "question_en_preview": "How does Lance Slack's 30 years of experience in digital development position him to lead Storyay in overcoming production and shipping delays?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise do Chris Noon and Sara bring to the project that enhances Storyay's ability to deliver quality content and manage operational challenges?",
+          "question_en_preview": "What specific expertise do Chris Noon and Sara bring to the project that enhances Storyay's ability to deliver quality content and manage operational challenges?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the team's dedication to overcoming risks, how does their current workload and involvement in parallel projects affect their capacity to ensure timely delivery for backers?",
+          "question_en_preview": "Given the team's dedication to overcoming risks, how does their current workload and involvement in parallel projects affect their capacity to ensure timely delivery for backers?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What role do local writers and illustrators play in Storyay's operational model, and how does this local focus contribute to the project's success?",
+          "question_en_preview": "What role do local writers and illustrators play in Storyay's operational model, and how does this local focus contribute to the project's success?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have in managing production timelines and compliance, and how does this experience mitigate the risk of delays in production or shipping?",
+          "question_en_preview": "What experience does the team have in managing production timelines and compliance, and how does this experience mitigate the risk of delays in production or shipping?"
+        }
+      ],
+      "elapsed_sec": 15.23,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 328,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Storyay project aims to enhance children's literacy and enjoyment of reading through personalized, interactive letters. It seeks to address the decline in children's reading engagement by providing tailored stories that resonate with their interests, thereby fostering a love  ...",
+        "first_key_point_preview": "Storyay is designed to improve children's literacy with interactive, personalized letters mailed home.",
+        "first_risk_preview": "The project faces the challenge of getting kids excited about reading in a digital world.",
+        "first_mitigation_preview": "Storyay aims to improve children's enjoyment of reading by providing personalized stories that resonate with their interests."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.11,
+        "raw_chars": 3477,
+        "usage": {
+          "prompt_tokens": 3427,
+          "completion_tokens": 755,
+          "total_tokens": 4182
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "personalized stories",
+        "children's literacy improvement",
+        "reading engagement metrics",
+        "project milestones",
+        "success measurement",
+        "digital reading challenges",
+        "stakeholder alignment",
+        "impact evaluation",
+        "user engagement strategies"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the Storyay project align with the urgent need to enhance children's reading engagement in a digital world? Please discuss any evidence that supports this alignment.",
+          "question_en_preview": "How well does the Storyay project align with the urgent need to enhance children's reading engagement in a digital world? Please discuss any evidence that supports this alignment."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent is the overall goal of Storyay clear and focused on enhancing children's literacy through personalized letters? Are there any unrelated sub-goals that could dilute this focus?",
+          "question_en_preview": "To what extent is the overall goal of Storyay clear and focused on enhancing children's literacy through personalized letters? Are there any unrelated sub-goals that could dilute this focus?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the proposed milestones for the Storyay project, and how reasonable and executable are they within the specified timelines? Please evaluate the feasibility of these milestones.",
+          "question_en_preview": "What are the proposed milestones for the Storyay project, and how reasonable and executable are they within the specified timelines? Please evaluate the feasibility of these milestones."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics does the Storyay project include to measure improvements in children's literacy and reading enjoyment? How effective are these metrics in capturing the project's impact?",
+          "question_en_preview": "What quantifiable success metrics does the Storyay project include to measure improvements in children's literacy and reading enjoyment? How effective are these metrics in capturing the project's impact?"
+        }
+      ],
+      "elapsed_sec": 11.11,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 374,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The Storyay project aims to create personalized, serialized stories for children, incorporating their names and interests. The project has a funding goal of CA$ 14,900 and has successfully attracted CA$ 15,577 from 61 backers. The team has developed efficient systems for personal ...",
+        "first_key_point_preview": "Storyay creates personalized, serialized stories featuring a child's name, interests, and details.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.8,
+        "raw_chars": 4152,
+        "usage": {
+          "prompt_tokens": 3525,
+          "completion_tokens": 895,
+          "total_tokens": 4420
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "personalization systems validation",
+        "customer demand strategies",
+        "funding goal achievement",
+        "partnership structure",
+        "budget realism evidence",
+        "scaling strategy",
+        "project delivery model",
+        "interactive puzzles integration",
+        "transparent communication with backers"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the choice of creating personalized, serialized stories for children, and what alternatives were considered during the development of the Storyay project?",
+          "question_en_preview": "What rationale supports the choice of creating personalized, serialized stories for children, and what alternatives were considered during the development of the Storyay project?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the team plan to validate the personalization systems developed for Storyay, and what metrics will be used to assess their effectiveness?",
+          "question_en_preview": "How does the team plan to validate the personalization systems developed for Storyay, and what metrics will be used to assess their effectiveness?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the funding goal of CA$ 14,900 and the amount raised so far, what strategies does the team have in place to ensure continued customer demand and support for the Storyay project?",
+          "question_en_preview": "Given the funding goal of CA$ 14,900 and the amount raised so far, what strategies does the team have in place to ensure continued customer demand and support for the Storyay project?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget for the Storyay project, considering the current funding and projected costs? Please provide evidence that would increase your confidence in this rating.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget for the Storyay project, considering the current funding and projected costs? Please provide evidence that would increase your confidence in this rating."
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What partnerships or collaborations does the team envision to enhance the delivery and reach of the Storyay project, and how will these partnerships be structured?",
+          "question_en_preview": "What partnerships or collaborations does the team envision to enhance the delivery and reach of the Storyay project, and how will these partnerships be structured?"
+        }
+      ],
+      "elapsed_sec": 12.8,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 311,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project showcases innovation through personalized storytelling, where each package includes interactive elements tailored to children's interests. It emphasizes screen-free engagement and utilizes local writers and illustrators to create unique content, distinguishing itself  ...",
+        "first_key_point_preview": "Storyay creates personalized, serialized stories featuring a child's name, interests, and details.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.42,
+        "raw_chars": 3592,
+        "usage": {
+          "prompt_tokens": 3403,
+          "completion_tokens": 788,
+          "total_tokens": 4191
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "personalized storytelling",
+        "interactive puzzles",
+        "screen-free engagement",
+        "local writers and illustrators",
+        "Kirkus Review",
+        "customer engagement evidence",
+        "competitive advantages",
+        "intellectual property strategy",
+        "scalability potential"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Storyay's approach to personalized storytelling compare to existing products in the market, particularly in terms of innovation and engagement?",
+          "question_en_preview": "How does Storyay's approach to personalized storytelling compare to existing products in the market, particularly in terms of innovation and engagement?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does Storyay offer over AI-generated alternatives in terms of customer value and engagement?",
+          "question_en_preview": "What specific advantages does Storyay offer over AI-generated alternatives in terms of customer value and engagement?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of Storyay's personalized storytelling approach, particularly regarding customer engagement and satisfaction?",
+          "question_en_preview": "What evidence supports the effectiveness of Storyay's personalized storytelling approach, particularly regarding customer engagement and satisfaction?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee for Storyay's offering becoming obsolete or commoditized in the next few years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee for Storyay's offering becoming obsolete or commoditized in the next few years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How scalable is Storyay's innovation in terms of extending to other customer segments or use cases beyond personalized storytelling?",
+          "question_en_preview": "How scalable is Storyay's innovation in terms of extending to other customer segments or use cases beyond personalized storytelling?"
+        }
+      ],
+      "elapsed_sec": 9.42,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 357,
+        "key_points_count": 6,
+        "risks_count": 5,
+        "mitigations_count": 2,
+        "summary_preview": "The feasibility of the Storyay project is influenced by various risks including production delays, challenges in maintaining personalization accuracy, and potential errors during the personalization process. The team is committed to addressing these risks and has established part ...",
+        "first_key_point_preview": "The team is dedicated to overcoming risks and challenges to ensure smooth delivery for backers.",
+        "first_risk_preview": "Production and fulfillment delays are identified as a risk for the project.",
+        "first_mitigation_preview": "The team is dedicated to overcoming risks and challenges to ensure smooth and timely delivery for all backers."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.33,
+        "raw_chars": 4590,
+        "usage": {
+          "prompt_tokens": 3512,
+          "completion_tokens": 986,
+          "total_tokens": 4498
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "production delays",
+        "personalization accuracy",
+        "quality control measures",
+        "scaling production",
+        "customer acceptance barriers",
+        "budget allocation realism",
+        "fulfillment challenges",
+        "risk mitigation strategies",
+        "supply chain disruptions",
+        "order volume management"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "risk_management": 2,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "funding_and_budget_planning": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "resources_and_infrastructure": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 3
+      },
+      "question_previews": [
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies does the team have in place to mitigate the identified risks of production and fulfillment delays, and how effective are these strategies likely to be?",
+          "question_en_preview": "What specific strategies does the team have in place to mitigate the identified risks of production and fulfillment delays, and how effective are these strategies likely to be?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the team plan to address the challenges of maintaining personalization accuracy, and what measures are in place to minimize errors during the personalization process?",
+          "question_en_preview": "How does the team plan to address the challenges of maintaining personalization accuracy, and what measures are in place to minimize errors during the personalization process?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "If the campaign exceeds expectations, what specific challenges does the team anticipate in fulfilling a high volume of orders, and how do they plan to scale production to meet this demand?",
+          "question_en_preview": "If the campaign exceeds expectations, what specific challenges does the team anticipate in fulfilling a high volume of orders, and how do they plan to scale production to meet this demand?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how realistic is the team's budget allocation for addressing the identified risks, and what evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1-5, how realistic is the team's budget allocation for addressing the identified risks, and what evidence would increase your confidence in this assessment?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to customer acceptance or procurement does the team foresee, and how do they plan to address these barriers?",
+          "question_en_preview": "What potential barriers to customer acceptance or procurement does the team foresee, and how do they plan to address these barriers?"
+        }
+      ],
+      "elapsed_sec": 14.34,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T18:57:16Z",
+  "elapsed_sec": 62.9,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt14__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt14__openai/generated_questions_detail.json"
+}

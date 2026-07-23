@@ -1,0 +1,615 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "ds1p3",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/ds1p3/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 396,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by Professor Wang Jiangyun, affiliated with the Institute of Biophysics at the Chinese Academy of Sciences, and includes a diverse group of experts in various roles such as Chief Scientist, Chief Technology Officer, and Chief Commercial Officer. The team h ...",
+        "first_key_point_preview": "Professor Wang Jiangyun leads the project team and is affiliated with the Institute of Biophysics, Chinese Academy of Sciences.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.55,
+        "raw_chars": 4711,
+        "usage": {
+          "prompt_tokens": 3414,
+          "completion_tokens": 1023,
+          "total_tokens": 4437
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "Professor Wang Jiangyun",
+        "Institute of Biophysics",
+        "patents held",
+        "publication record",
+        "basic protein research",
+        "R&D platform maturity",
+        "strategic collaborations",
+        "governance structures",
+        "team workload assessment",
+        "validation experience"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 2,
+          "validation_and_compliance_experience": 1,
+          "team_capacity_and_bandwidth": 1,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Professor Wang Jiangyun's leadership experience and affiliation with the Institute of Biophysics contribute to the project's potential for success?",
+          "question_en_preview": "How does Professor Wang Jiangyun's leadership experience and affiliation with the Institute of Biophysics contribute to the project's potential for success?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What evidence supports the team's depth of expertise in basic protein research and its relevance to the project's objectives?",
+          "question_en_preview": "What evidence supports the team's depth of expertise in basic protein research and its relevance to the project's objectives?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential challenges could arise regarding the team's experience with validation and compliance in this project?",
+          "question_en_preview": "Given the limited risk information provided, what potential challenges could arise regarding the team's experience with validation and compliance in this project?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the current workload of the team impact their capacity to effectively execute this project, considering their involvement in parallel projects?",
+          "question_en_preview": "How does the current workload of the team impact their capacity to effectively execute this project, considering their involvement in parallel projects?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategic collaborations or partnerships does the team have that could enhance the project's execution and market entry?",
+          "question_en_preview": "What strategic collaborations or partnerships does the team have that could enhance the project's execution and market entry?"
+        }
+      ],
+      "elapsed_sec": 12.55,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 415,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to innovate in the field of antibody-binding proteins through the integration of artificial intelligence and rational design, addressing key industry challenges. It sets specific milestones, including the establishment of a protein design platform and improvement ...",
+        "first_key_point_preview": "The project aims to strengthen supply-demand collaboration and improve the overall efficiency of the innovation chain.",
+        "first_risk_preview": "The strategy to address market risks includes collaborating with the Institute of Biophysics of the Chinese Academy of Sciences to innovate new antibody-binding proteins through protein artificial intelligence and rational design.",
+        "first_mitigation_preview": "The project aims to optimize production pathways and form competitive advantages in the field of artificial intelligence protein design."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.18,
+        "raw_chars": 4329,
+        "usage": {
+          "prompt_tokens": 3469,
+          "completion_tokens": 904,
+          "total_tokens": 4373
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "protein design platform",
+        "10-fold improvement",
+        "production efficiency",
+        "cost reduction",
+        "collaborative innovation center",
+        "market opportunity",
+        "success metrics",
+        "industry challenges",
+        "ambition vs feasibility"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the project's objectives align with the stated industry challenges and market opportunities in antibody drugs and purification materials? Please provide evidence of this alignment.",
+          "question_en_preview": "How well do the project's objectives align with the stated industry challenges and market opportunities in antibody drugs and purification materials? Please provide evidence of this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness and executability of the project's milestones, particularly the establishment of a protein design platform and improvements in production efficiency by 2025. What evidence supports your assess ...",
+          "question_en_preview": "Evaluate the reasonableness and executability of the project's milestones, particularly the establishment of a protein design platform and improvements in production efficiency by 2025. What evidence supports your assess ..."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics will be used to measure the project's goal of achieving a 10-fold improvement in detection performance for immunodiagnostics? How will these metrics be tracked?",
+          "question_en_preview": "What specific success metrics will be used to measure the project's goal of achieving a 10-fold improvement in detection performance for immunodiagnostics? How will these metrics be tracked?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the initiative plan to create value and capture revenue through its objectives, particularly in the context of reducing costs associated with protein production? Please elaborate on the business logic.",
+          "question_en_preview": "How does the initiative plan to create value and capture revenue through its objectives, particularly in the context of reducing costs associated with protein production? Please elaborate on the business logic."
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how balanced are the project's ambitions against its feasibility, particularly regarding the timeline for achieving its objectives? What evidence would increase your confidence in this balance?",
+          "question_en_preview": "On a scale of 1 to 5, how balanced are the project's ambitions against its feasibility, particularly regarding the timeline for achieving its objectives? What evidence would increase your confidence in this balance?"
+        }
+      ],
+      "elapsed_sec": 12.18,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 345,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project employs a multifaceted strategy to innovate antibody binding proteins, utilizing non-natural amino acid technology and a new generation protein design platform. It aims to address market challenges through collaboration with the Institute of Biophysics and focuses on  ...",
+        "first_key_point_preview": "The project utilizes non-natural amino acid technology to develop new pathways for antibody binding proteins.",
+        "first_risk_preview": "The project faces risks associated with the new pathway for antibody binding protein issues using non-natural amino acid technology.",
+        "first_mitigation_preview": "The strategy to mitigate technical risks includes diversifying the R&D pipeline and implementing a risk assessment mechanism, as well as strengthening patent applications and production system monitoring."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.69,
+        "raw_chars": 4672,
+        "usage": {
+          "prompt_tokens": 3555,
+          "completion_tokens": 987,
+          "total_tokens": 4542
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "non-natural amino acid technology",
+        "antibody binding proteins",
+        "Institute of Biophysics collaboration",
+        "R&D pipeline diversification",
+        "risk assessment mechanism",
+        "domestic platform solution",
+        "market entry strategy",
+        "production pathway optimization",
+        "technical risk mitigation",
+        "scaling strategy challenges"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 2,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to leverage non-natural amino acid technology to innovate antibody binding proteins, and what are the major trade-offs involved in this approach?",
+          "question_en_preview": "How does the project plan to leverage non-natural amino acid technology to innovate antibody binding proteins, and what are the major trade-offs involved in this approach?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific validation stages will the project undergo to ensure the effectiveness of the new antibody binding proteins developed through artificial intelligence and rational design?",
+          "question_en_preview": "What specific validation stages will the project undergo to ensure the effectiveness of the new antibody binding proteins developed through artificial intelligence and rational design?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "In what ways does the proposed domestic platform solution aim to counter foreign brand monopolies in the antibody market, and what is the expected impact on market entry?",
+          "question_en_preview": "In what ways does the proposed domestic platform solution aim to counter foreign brand monopolies in the antibody market, and what is the expected impact on market entry?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the project plan to ensure the sustainability of its revenue model while diversifying the R&D pipeline, and what metrics will be used to assess its success?",
+          "question_en_preview": "How does the project plan to ensure the sustainability of its revenue model while diversifying the R&D pipeline, and what metrics will be used to assess its success?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific measures are included in the risk assessment mechanism to mitigate technical risks associated with the new pathway for antibody binding proteins?",
+          "question_en_preview": "What specific measures are included in the risk assessment mechanism to mitigate technical risks associated with the new pathway for antibody binding proteins?"
+        }
+      ],
+      "elapsed_sec": 12.69,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 363,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces innovative technologies for antibody binding proteins, utilizing non-natural amino acids to overcome limitations of traditional methods, particularly in pH sensitivity. It aims to establish a robust patent portfolio and features a new generation protein des ...",
+        "first_key_point_preview": "The project employs non-natural amino acid technology to address pH sensitivity limitations of natural amino acids.",
+        "first_risk_preview": "The non-natural amino acid technology may face challenges in addressing the limitations of natural amino acids, particularly in pH sensitivity.",
+        "first_mitigation_preview": "Accelerated AI development is expected to reduce research cycles by 50%."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.36,
+        "raw_chars": 5871,
+        "usage": {
+          "prompt_tokens": 3438,
+          "completion_tokens": 1216,
+          "total_tokens": 4654
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "non-natural amino acid technology",
+        "pH sensitivity limitations",
+        "binding affinity improvement",
+        "patent portfolio strategy",
+        "high-throughput screening algorithm",
+        "accelerated AI development",
+        "competitive advantages",
+        "evidence for innovation",
+        "extensibility to other applications",
+        "risk mitigation measures"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "ip_and_protection": 1,
+          "risk_of_obsolescence_or_commoditization": 2,
+          "evidence_strength_for_innovation": 2,
+          "platform_and_extensibility": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the non-natural amino acid technology specifically improve upon the limitations of traditional methods in addressing pH sensitivity? Please provide evidence supporting this claim.",
+          "question_en_preview": "How does the non-natural amino acid technology specifically improve upon the limitations of traditional methods in addressing pH sensitivity? Please provide evidence supporting this claim."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What competitive advantages does the new generation protein design platform offer compared to existing solutions in terms of binding affinity and stability? How is this evidenced?",
+          "question_en_preview": "What competitive advantages does the new generation protein design platform offer compared to existing solutions in terms of binding affinity and stability? How is this evidenced?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What strategies are in place to establish and maintain a robust patent portfolio, and how do these strategies support long-term competitive advantage?",
+          "question_en_preview": "What strategies are in place to establish and maintain a robust patent portfolio, and how do these strategies support long-term competitive advantage?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified risk that the non-natural amino acid technology may not fully address pH sensitivity limitations, what specific challenges do you foresee, and how might they impact the project's innovation?",
+          "question_en_preview": "Given the identified risk that the non-natural amino acid technology may not fully address pH sensitivity limitations, what specific challenges do you foresee, and how might they impact the project's innovation?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What types of experimental or operational evidence are being collected to validate the effectiveness of the high-throughput screening algorithm for protein design? How will this evidence be used to support claims of inno ...",
+          "question_en_preview": "What types of experimental or operational evidence are being collected to validate the effectiveness of the high-throughput screening algorithm for protein design? How will this evidence be used to support claims of inno ..."
+        }
+      ],
+      "elapsed_sec": 16.36,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 520,
+        "key_points_count": 6,
+        "risks_count": 3,
+        "mitigations_count": 3,
+        "summary_preview": "The feasibility of the project is influenced by various risks including capacity limitations, raw material availability, and technical challenges in protein insertion and binding regulation. The project has a budget of 3,010,000 yuan over three years and plans to initiate Series  ...",
+        "first_key_point_preview": "The project addresses capacity limitations and raw material risks in domestic ecosystems.",
+        "first_risk_preview": "The project faces capacity limitations and raw material risks in domestic ecosystems.",
+        "first_mitigation_preview": "The strategy to mitigate technical risks includes diversifying the R&D pipeline and implementing a risk assessment mechanism."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.52,
+        "raw_chars": 3541,
+        "usage": {
+          "prompt_tokens": 3564,
+          "completion_tokens": 763,
+          "total_tokens": 4327
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "budget allocation",
+        "capacity limitations",
+        "raw material availability",
+        "technical challenges",
+        "market competition",
+        "R&D pipeline diversification",
+        "Series A financing",
+        "implementation barriers",
+        "regulatory risks",
+        "stakeholder involvement"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "risk_management": 2,
+          "operational_execution_plan": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 2
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How realistic is the budget of 3,010,000 yuan over three years for the project, and what evidence supports this assessment?",
+          "question_en_preview": "How realistic is the budget of 3,010,000 yuan over three years for the project, and what evidence supports this assessment?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies are in place to mitigate the identified risks related to capacity limitations and raw material availability?",
+          "question_en_preview": "What specific strategies are in place to mitigate the identified risks related to capacity limitations and raw material availability?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the implementation plan for addressing the technical challenges in regulating binding force changes, and who are the key stakeholders involved?",
+          "question_en_preview": "What is the implementation plan for addressing the technical challenges in regulating binding force changes, and who are the key stakeholders involved?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation have been identified in the proposal, particularly regarding competition in the antibody purification market?",
+          "question_en_preview": "What barriers to implementation have been identified in the proposal, particularly regarding competition in the antibody purification market?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How does the timeline for initiating Series A financing in the fourth year align with the project's operational needs and milestones?",
+          "question_en_preview": "How does the timeline for initiating Series A financing in the fourth year align with the project's operational needs and milestones?"
+        }
+      ],
+      "elapsed_sec": 9.52,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-06-10T19:02:37Z",
+  "elapsed_sec": 63.31,
+  "total_questions": 37,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p3/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/ds1p3/generated_questions_detail.json"
+}

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kickstarter Real-World Validation Study — Detailed Results</title>
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 11px;
+    color: #0b0b0b;
+    background: #f9f9f7;
+    padding: 20px;
+  }
+
+  .cover {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+    color: #fff;
+    border-radius: 12px;
+    padding: 48px 40px;
+    margin-bottom: 32px;
+  }
+  .cover h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .cover .subtitle { font-size: 13px; color: #a0aec0; margin-bottom: 24px; line-height: 1.6; }
+  .cover .meta { display: flex; gap: 32px; flex-wrap: wrap; }
+  .cover .meta-item .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #718096; }
+  .cover .meta-item .value { font-size: 13px; color: #e2e8f0; margin-top: 2px; }
+  .cover .stat-row { display: flex; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
+  .cover .stat-box {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 12px 20px;
+    text-align: center;
+    min-width: 110px;
+  }
+  .cover .stat-box .sval { font-size: 22px; font-weight: 700; color: #68d391; }
+  .cover .stat-box.warn .sval { color: #fc8181; }
+  .cover .stat-box .slbl { font-size: 9px; color: #a0aec0; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+
+  .intro-box {
+    background: #fff;
+    border-left: 4px solid #2a78d6;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  .intro-box h2 { font-size: 13px; margin-bottom: 8px; color: #184f95; }
+  .intro-box p { line-height: 1.7; color: #4a5568; margin-bottom: 10px; }
+  .intro-box p:last-child { margin-bottom: 0; }
+
+  .section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    page-break-inside: avoid;
+  }
+  .section h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a202c;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 16px;
+  }
+  .section h3 { font-size: 12.5px; font-weight: 700; color: #2d3748; margin: 18px 0 8px; }
+  .section p { line-height: 1.75; color: #4a5568; margin-bottom: 10px; }
+  .section p:last-child { margin-bottom: 0; }
+  .plain { background: #ebf8ff; border: 1px solid #bee3f8; border-radius: 8px; padding: 12px 16px; font-size: 10.5px; color: #2c5282; line-height: 1.7; margin: 10px 0 16px; }
+  .plain b { color: #184f95; }
+
+  table { border-collapse: collapse; width: 100%; margin-bottom: 6px; font-size: 10.5px; }
+  thead { background: #edf2f7; }
+  th, td { border: 1px solid #e2e8f0; padding: 6px 8px; text-align: center; }
+  th { font-weight: 600; color: #2d3748; font-size: 10px; }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  .pid { font-weight: 600; text-align: left; padding-left: 10px; color: #2d3748; }
+  .dim-name { text-align: left; padding-left: 10px; font-weight: 600; }
+  .st-num { text-align: right; font-variant-numeric: tabular-nums; padding-right: 12px; }
+  .row-total { background: #ebf8ff !important; border-left: 3px solid #2a78d6; font-weight: 600; }
+
+  .bar-bg { background:#e1e0d9; border-radius:4px; height:10px; width:150px; overflow:hidden; display:inline-block; vertical-align:middle; }
+  .bar-fill { height:100%; border-radius:4px; }
+  .bar-fill.pos { background: linear-gradient(90deg,#6da7ec,#184f95); }
+  .bar-fill.neg { background: linear-gradient(90deg,#e87ba4,#9b2c2c); }
+
+  .sig-strong { color: #006300; font-weight: 700; }
+  .sig-mid { color: #b7791f; font-weight: 700; }
+  .sig-ns { color: #898781; }
+
+  .mini-table { font-size: 9.5px; margin-top: 6px; }
+  .mini-table th, .mini-table td { padding: 4px 6px; }
+  .meta-card { flex: 1; border-radius: 8px; padding: 14px 16px; }
+  .plus-card { background: #f0fff4; border: 1px solid #9ae6b4; }
+  .minus-card { background: #fff5f5; border: 1px solid #feb2b2; }
+  .meta-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .plus-card .meta-label { color: #006300; }
+  .minus-card .meta-label { color: #9b2c2c; }
+  .dim-meta { display: flex; gap: 14px; margin: 12px 0; }
+  .tag-good { background:#c6f6d5; color:#22543d; border-radius:4px; padding:1px 6px; font-size:9px; font-weight:700; }
+  .tag-bad { background:#fed7d7; color:#742a2a; border-radius:4px; padding:1px 6px; font-size:9px; font-weight:700; }
+
+  .scatter-svg { width: 100%; height: auto; margin-top: 10px; }
+  .grid-line { stroke: #e1e0d9; stroke-width: 1; }
+  .axis-label { font-size: 9px; fill: #898781; }
+  .axis-title { font-size: 10px; fill: #52514e; font-weight: 600; }
+  .plot-border { fill: none; stroke: #c3c2b7; stroke-width: 1; }
+  .ref-line { stroke: #eda100; stroke-width: 1.2; stroke-dasharray: 4 3; }
+  .ref-label { font-size: 8.5px; fill: #b7791f; font-weight: 600; }
+  .pt-success { fill: #0ca30c; fill-opacity: 0.75; stroke: #006300; stroke-width: 0.6; }
+  .pt-fail { fill: #d03b3b; fill-opacity: 0.55; stroke: #9b2c2c; stroke-width: 0.6; }
+  .scatter-legend { display: flex; gap: 24px; justify-content: center; margin-top: 8px; font-size: 10px; color: #4a5568; }
+  .leg-item { display: flex; align-items: center; gap: 6px; }
+  .leg-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+  .outcome-box { border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; }
+  .outcome-good { background: #f0fff4; border-left: 4px solid #0ca30c; }
+  .outcome-bad { background: #fff5f5; border-left: 4px solid #d03b3b; }
+  .outcome-box h4 { font-size: 11.5px; font-weight: 700; margin-bottom: 6px; }
+  .outcome-good h4 { color: #006300; }
+  .outcome-bad h4 { color: #9b2c2c; }
+  .outcome-box ul, .findings-list ul { margin-left: 18px; line-height: 1.8; color: #4a5568; }
+  .outcome-box li, .findings-list li { margin-bottom: 6px; }
+
+  .findings-list { background: #fffaf0; border: 1px solid #f6ad55; border-left: 4px solid #ed8936; border-radius: 8px; padding: 16px 20px; }
+  .findings-list li b { color: #1a202c; }
+
+  .glossary { margin-top: 10px; border: 1px solid #bee3f8; border-radius: 8px; padding: 14px 18px; background: #ebf8ff; }
+  .glossary h3 { font-size: 11.5px; font-weight: 700; color: #184f95; margin-bottom: 10px; }
+  .gloss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .gloss-item { background: #fff; border-radius: 6px; padding: 10px 12px; border: 1px solid #bee3f8; }
+  .gloss-term { font-size: 10.5px; font-weight: 700; color: #184f95; margin-bottom: 4px; }
+  .gloss-def { font-size: 9.5px; color: #4a5568; line-height: 1.6; }
+
+  .footnote { font-size: 9.5px; color: #898781; font-style: italic; line-height: 1.6; margin-top: 10px; border-top: 1px solid #e2e8f0; padding-top: 8px; }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .section { box-shadow: none; }
+    .cover { border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+  
+    <div class="cover">
+      <h1>Kickstarter Real-World Validation Study</h1>
+      <div class="subtitle">AI proposal-review pipeline scores vs. actual crowdfunding outcomes &mdash; a real-world,
+      out-of-domain test of the same 9-stage evaluation system validated earlier on VC/biotech proposals.</div>
+      <div class="meta">
+        <div class="meta-item"><div class="label">Generated</div><div class="value">July 17, 2026  13:55</div></div>
+        <div class="meta-item"><div class="label">Dataset</div><div class="value">Kickstarter (Toronto + Montreal)</div></div>
+        <div class="meta-item"><div class="label">Ground truth</div><div class="value">Actual campaign funded (%)</div></div>
+        <div class="meta-item"><div class="label">Success rule</div><div class="value">Funded % &ge; 100 (all-or-nothing)</div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="sval">141</div><div class="slbl">Proposals scored</div></div>
+        <div class="stat-box"><div class="sval">+0.366</div><div class="slbl">Combined Spearman &rho;</div></div>
+        <div class="stat-box"><div class="sval">83%</div><div class="slbl">Verdict accuracy</div></div>
+        <div class="stat-box warn"><div class="sval">0</div><div class="slbl">GO verdicts issued</div></div>
+      </div>
+    </div>
+    <div class="intro-box">
+      <h2>What is this report, in plain terms?</h2>
+      <p>Earlier validation of this AI proposal-review pipeline compared its scores to opinions from human experts
+      on 12 biotech/semiconductor investment proposals. That is a useful but "soft" test &mdash; human experts can
+      disagree with each other, and there is no single objectively correct answer.</p>
+      <p>This report is a harder, "hard-money" test. We ran the exact same pipeline, unmodified, on 141 real
+      Kickstarter crowdfunding campaigns (104 from Toronto, 37 from Montreal) and compared its scores against
+      what actually happened: whether the campaign was fully funded by real backers. Kickstarter is "all-or-nothing"
+      &mdash; a campaign that reaches 99% of its goal collects $0 &mdash; so "funded % &ge; 100" is an unambiguous,
+      objective pass/fail line with no room for interpretation.</p>
+      <p>The question this answers: <b>does the AI's sense of "this looks fundable" line up with what real people
+      actually funded with real money?</b></p>
+    </div>
+    <div class="section">
+      <h2>1. Methodology</h2>
+      <p>141 Kickstarter campaign PDFs were run through the unmodified 9-stage review pipeline (the same one used
+      for the biotech/semiconductor validation), producing an AI overall score (0&ndash;1), five dimension scores
+      (Team, Objective, Strategy, Advantages, Feasibility), and a GO / HOLD / NO-GO verdict for each proposal.</p>
+      <div class="plain">
+        <b>In simple terms:</b> the AI never saw the funding outcome. It only read the campaign pitch (like a
+        prospective backer would) and produced a score. We then, separately, looked up what actually happened on
+        Kickstarter and checked whether the two lined up.
+      </div>
+      <h3>Metrics used</h3>
+      <p><b>Spearman rank correlation (&rho;):</b> do proposals the AI ranked higher also tend to be the ones that
+      raised more money, relative to their goal? Ranges from &minus;1 (perfectly backwards) to +1 (perfectly
+      aligned); 0 means no relationship. Used instead of a straight-line correlation because funding % is extremely
+      skewed (most campaigns raise 0&ndash;150% of goal, a few raise over 1000%).</p>
+      <p><b>Classification (GO vs. actual success):</b> treating the AI's verdict as a prediction ("GO" = predicted
+      success) and checking it against whether the campaign actually hit 100% funding.</p>
+      <p><b>Holm correction:</b> when testing many correlations at once (5 dimensions x 3 groups), some will look
+      "significant" by chance alone. The Holm correction tightens the significance bar to account for that, so a
+      result that survives it is safer to trust.</p>
+    </div>
+    <div class="section">
+      <h2>2. Overall Result: Does the AI Score Predict Real Funding Success?</h2>
+      <div class="plain">
+        <b>Short answer:</b> yes, weakly-to-moderately, and the relationship is statistically real (not chance).
+        Proposals the AI scored higher were, on average, more likely to have actually been funded &mdash; but the
+        relationship is far from perfect.
+      </div>
+      
+    <table>
+      <thead><tr><th>Group</th><th>n</th><th>Spearman &rho;</th><th>Strength</th><th>Significance</th></tr></thead>
+      <tbody>
+        <tr class="">
+          <td class="pid">Toronto</td>
+          <td>104</td>
+          <td class="st-num">+0.314</td>
+          <td><div class="bar-bg"><div class="bar-fill pos" style="width:52.4%"></div></div></td>
+          <td><span class="sig-strong">p &lt; 0.01</span></td>
+        </tr>
+        <tr class="">
+          <td class="pid">Montreal</td>
+          <td>37</td>
+          <td class="st-num">+0.506</td>
+          <td><div class="bar-bg"><div class="bar-fill pos" style="width:84.3%"></div></div></td>
+          <td><span class="sig-strong">p &lt; 0.01</span></td>
+        </tr>
+        <tr class="row-total">
+          <td class="pid">Combined</td>
+          <td>141</td>
+          <td class="st-num">+0.366</td>
+          <td><div class="bar-bg"><div class="bar-fill pos" style="width:61.0%"></div></div></td>
+          <td><span class="sig-strong">p &lt; 0.01</span></td>
+        </tr></tbody>
+    </table>
+      <p style="margin-top:10px">Montreal shows a stronger relationship (&rho;=0.506) than Toronto (&rho;=0.314)
+      despite having a third of the sample size &mdash; worth flagging as a city-level difference rather than
+      treating the combined number as uniform across cities.</p>
+    </div>
+    <div class="section">
+      <h2>3. Which Scoring Dimension Predicts Real Success Best?</h2>
+      
+    <table>
+      <thead><tr><th>Dimension</th><th>Spearman &rho; (combined, n=141)</th><th>Strength</th><th>Significance</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="dim-name">Feasibility</td>
+          <td class="st-num">+0.344</td>
+          <td><div class="bar-bg"><div class="bar-fill pos" style="width:57.3%"></div></div></td>
+          <td><span class="sig-strong">p &lt; 0.01</span></td>
+        </tr>
+        <tr>
+          <td class="dim-name">Strategy</td>
+          <td class="st-num">+0.252</td>
+          <td><div class="bar-bg"><div class="bar-fill pos" style="width:42.0%"></div></div></td>
+          <td><span class="sig-strong">p &lt; 0.05</span></td>
+        </tr>
+        <tr>
+          <td class="dim-name">Advantages / Innovation</td>
+          <td class="st-num">+0.201</td>
+          <td><div class="bar-bg"><div class="bar-fill pos" style="width:33.6%"></div></div></td>
+          <td><span class="sig-strong">p &lt; 0.05</span></td>
+        </tr>
+        <tr>
+          <td class="dim-name">Team</td>
+          <td class="st-num">+0.160</td>
+          <td><div class="bar-bg"><div class="bar-fill pos" style="width:26.7%"></div></div></td>
+          <td><span class="sig-ns">not sig.</span></td>
+        </tr>
+        <tr>
+          <td class="dim-name">Objective</td>
+          <td class="st-num">+0.088</td>
+          <td><div class="bar-bg"><div class="bar-fill pos" style="width:14.6%"></div></div></td>
+          <td><span class="sig-ns">not sig.</span></td>
+        </tr></tbody>
+    </table>
+      <div class="plain">
+        <b>In simple terms:</b> <b>Feasibility</b> (can this actually be built/delivered) and <b>Strategy</b>
+        (is the plan coherent) are the AI's dimensions that most closely track what real backers rewarded.
+        <b>Team</b> and <b>Objective</b> show little to no relationship with real funding outcomes &mdash; the
+        opposite pattern from the biotech dataset, where Team was one of the stronger predictors of what human
+        experts liked.
+      </div>
+    </div>
+    <div class="section">
+      <h2>4. Can the Pipeline's GO / HOLD / NO-GO Verdict Predict a Successful Campaign?</h2>
+      
+    <table>
+      <thead><tr><th>Group</th><th>Accuracy</th><th>Recall (success)</th>
+      <th>TP</th><th>FP</th><th>FN</th><th>TN</th></tr></thead>
+      <tbody>
+        <tr class="">
+          <td class="pid">Toronto</td>
+          <td>81.7%</td>
+          <td>0.0%</td>
+          <td>0</td>
+          <td>0</td>
+          <td>19</td>
+          <td>85</td>
+        </tr>
+        <tr class="">
+          <td class="pid">Montreal</td>
+          <td>86.5%</td>
+          <td>0.0%</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>32</td>
+        </tr>
+        <tr class="row-total">
+          <td class="pid">Combined</td>
+          <td>83.0%</td>
+          <td>0.0%</td>
+          <td>0</td>
+          <td>0</td>
+          <td>24</td>
+          <td>117</td>
+        </tr></tbody>
+    </table>
+      <div class="plain">
+        <b>The headline problem:</b> across all 141 campaigns, the pipeline issued
+        <b>116 HOLD</b> and <b>25 NO-GO</b> verdicts, and
+        <b>0 GO</b> verdicts. It never once said "GO" &mdash; not even for the campaign that
+        raised 151% of its goal. That means <b>recall on real successes is 0%</b>: as currently calibrated, the
+        pipeline's decision layer cannot flag a winning Kickstarter campaign as such, no matter how well it actually
+        performs. The 83% "accuracy" figure above is not meaningful on its own &mdash; it is inflated by the fact
+        that 83% of Kickstarter campaigns in this dataset failed anyway, so "always predict failure" scores well by
+        default.
+      </div>
+    </div>
+    <div class="section">
+      <h2>5. AI Score vs. Actual Funding Outcome (Every Proposal)</h2>
+      <p>Each dot is one Kickstarter campaign. The horizontal axis is the actual money raised (as a percent of
+      the funding goal, log scale, so both small and huge outcomes are visible). The vertical axis is the AI's
+      overall score. The dashed lines mark the two thresholds that matter: 100% funding (real-world success) and
+      the pipeline's actual "GO" decision rule, <b>score &ge; 0.725</b> (the rule also allows confidence &ge; 0.811
+      as an alternative trigger; no Kickstarter proposal reaches that either, so the score line alone explains the
+      outcome here).</p>
+      
+    <svg viewBox="0 0 720 360" class="scatter-svg" role="img" aria-label="Scatter plot of AI overall score versus actual Kickstarter funding percentage">
+      <line x1="56.0" y1="24" x2="56.0" y2="316" class="grid-line"/><text x="56.0" y="332" class="axis-label" text-anchor="middle">0%</text><line x1="229.6" y1="24" x2="229.6" y2="316" class="grid-line"/><text x="229.6" y="332" class="axis-label" text-anchor="middle">10%</text><line x1="390.1" y1="24" x2="390.1" y2="316" class="grid-line"/><text x="390.1" y="332" class="axis-label" text-anchor="middle">100%</text><line x1="556.1" y1="24" x2="556.1" y2="316" class="grid-line"/><text x="556.1" y="332" class="axis-label" text-anchor="middle">1000%</text><line x1="56" y1="292.8" x2="696" y2="292.8" class="grid-line"/><text x="48" y="295.8" class="axis-label" text-anchor="end">0.20</text><line x1="56" y1="246.5" x2="696" y2="246.5" class="grid-line"/><text x="48" y="249.5" class="axis-label" text-anchor="end">0.30</text><line x1="56" y1="200.1" x2="696" y2="200.1" class="grid-line"/><text x="48" y="203.1" class="axis-label" text-anchor="end">0.40</text><line x1="56" y1="153.8" x2="696" y2="153.8" class="grid-line"/><text x="48" y="156.8" class="axis-label" text-anchor="end">0.50</text><line x1="56" y1="107.4" x2="696" y2="107.4" class="grid-line"/><text x="48" y="110.4" class="axis-label" text-anchor="end">0.60</text><line x1="56" y1="61.1" x2="696" y2="61.1" class="grid-line"/><text x="48" y="64.1" class="axis-label" text-anchor="end">0.70</text>
+      <line x1="390.1" y1="24" x2="390.1" y2="316" class="ref-line"/><text x="394.1" y="36" class="ref-label">funded &ge; 100%</text>
+      <line x1="56" y1="49.5" x2="696" y2="49.5" class="ref-line"/><text x="692.0" y="43.5" class="ref-label" text-anchor="end">GO threshold (score &ge; 0.725)</text>
+      <circle cx="395.0" cy="108.4" r="4.2" class="pt-success"><title>kt1 (Toronto): funded 107%, AI score 0.60</title></circle><circle cx="395.0" cy="126.0" r="4.2" class="pt-success"><title>kt2 (Toronto): funded 107%, AI score 0.56</title></circle><circle cx="398.2" cy="95.4" r="4.2" class="pt-success"><title>kt3 (Toronto): funded 112%, AI score 0.63</title></circle><circle cx="424.8" cy="120.9" r="4.2" class="pt-success"><title>kt4 (Toronto): funded 162%, AI score 0.57</title></circle><circle cx="476.3" cy="123.7" r="4.2" class="pt-success"><title>kt5 (Toronto): funded 331%, AI score 0.56</title></circle><circle cx="407.3" cy="125.0" r="4.2" class="pt-success"><title>kt6 (Toronto): funded 127%, AI score 0.56</title></circle><circle cx="398.2" cy="130.1" r="4.2" class="pt-success"><title>kt7 (Toronto): funded 112%, AI score 0.55</title></circle><circle cx="411.1" cy="125.5" r="4.2" class="pt-success"><title>kt8 (Toronto): funded 134%, AI score 0.56</title></circle><circle cx="442.1" cy="103.7" r="4.2" class="pt-success"><title>kt9 (Toronto): funded 206%, AI score 0.61</title></circle><circle cx="419.7" cy="89.4" r="4.2" class="pt-success"><title>kt10 (Toronto): funded 151%, AI score 0.64</title></circle><circle cx="449.4" cy="115.8" r="4.2" class="pt-success"><title>kt11 (Toronto): funded 228%, AI score 0.58</title></circle><circle cx="397.6" cy="157.9" r="4.2" class="pt-success"><title>kt12 (Toronto): funded 111%, AI score 0.49</title></circle><circle cx="527.7" cy="104.6" r="4.2" class="pt-success"><title>kt13 (Toronto): funded 675%, AI score 0.61</title></circle><circle cx="393.6" cy="109.7" r="4.2" class="pt-success"><title>kt14 (Toronto): funded 105%, AI score 0.59</title></circle><circle cx="392.2" cy="124.1" r="4.2" class="pt-success"><title>kt15 (Toronto): funded 103%, AI score 0.56</title></circle><circle cx="390.1" cy="128.7" r="4.2" class="pt-success"><title>kt16 (Toronto): funded 100%, AI score 0.55</title></circle><circle cx="390.8" cy="110.2" r="4.2" class="pt-success"><title>kt17 (Toronto): funded 101%, AI score 0.59</title></circle><circle cx="413.2" cy="198.3" r="4.2" class="pt-success"><title>kt18 (Toronto): funded 138%, AI score 0.40</title></circle><circle cx="426.5" cy="139.9" r="4.2" class="pt-success"><title>kt19 (Toronto): funded 166%, AI score 0.53</title></circle><circle cx="135.5" cy="164.4" r="4.2" class="pt-fail"><title>kt20 (Toronto): funded 2%, AI score 0.48</title></circle><circle cx="156.4" cy="145.4" r="4.2" class="pt-fail"><title>kt21 (Toronto): funded 3%, AI score 0.52</title></circle><circle cx="185.7" cy="120.9" r="4.2" class="pt-fail"><title>kt22 (Toronto): funded 5%, AI score 0.57</title></circle><circle cx="56.0" cy="104.6" r="4.2" class="pt-fail"><title>kt23 (Toronto): funded 0%, AI score 0.61</title></circle><circle cx="222.7" cy="126.0" r="4.2" class="pt-fail"><title>kt24 (Toronto): funded 9%, AI score 0.56</title></circle><circle cx="106.2" cy="134.3" r="4.2" class="pt-fail"><title>kt25 (Toronto): funded 1%, AI score 0.54</title></circle><circle cx="324.8" cy="146.4" r="4.2" class="pt-fail"><title>kt26 (Toronto): funded 40%, AI score 0.52</title></circle><circle cx="252.0" cy="93.1" r="4.2" class="pt-fail"><title>kt27 (Toronto): funded 14%, AI score 0.63</title></circle><circle cx="56.0" cy="232.1" r="4.2" class="pt-fail"><title>kt28 (Toronto): funded 0%, AI score 0.33</title></circle><circle cx="56.0" cy="114.4" r="4.2" class="pt-fail"><title>kt29 (Toronto): funded 0%, AI score 0.58</title></circle><circle cx="56.0" cy="122.7" r="4.2" class="pt-fail"><title>kt30 (Toronto): funded 0%, AI score 0.57</title></circle><circle cx="56.0" cy="203.8" r="4.2" class="pt-fail"><title>kt31 (Toronto): funded 0%, AI score 0.39</title></circle><circle cx="56.0" cy="110.7" r="4.2" class="pt-fail"><title>kt32 (Toronto): funded 0%, AI score 0.59</title></circle><circle cx="289.0" cy="105.1" r="4.2" class="pt-fail"><title>kt33 (Toronto): funded 24%, AI score 0.60</title></circle><circle cx="56.0" cy="123.7" r="4.2" class="pt-fail"><title>kt34 (Toronto): funded 0%, AI score 0.56</title></circle><circle cx="135.5" cy="94.0" r="4.2" class="pt-fail"><title>kt35 (Toronto): funded 2%, AI score 0.63</title></circle><circle cx="106.2" cy="104.6" r="4.2" class="pt-fail"><title>kt36 (Toronto): funded 1%, AI score 0.61</title></circle><circle cx="56.0" cy="139.9" r="4.2" class="pt-fail"><title>kt37 (Toronto): funded 0%, AI score 0.53</title></circle><circle cx="206.5" cy="177.4" r="4.2" class="pt-fail"><title>kt38 (Toronto): funded 7%, AI score 0.45</title></circle><circle cx="196.9" cy="120.9" r="4.2" class="pt-fail"><title>kt39 (Toronto): funded 6%, AI score 0.57</title></circle><circle cx="185.7" cy="179.7" r="4.2" class="pt-fail"><title>kt40 (Toronto): funded 5%, AI score 0.44</title></circle><circle cx="135.5" cy="121.3" r="4.2" class="pt-fail"><title>kt41 (Toronto): funded 2%, AI score 0.57</title></circle><circle cx="106.2" cy="110.7" r="4.2" class="pt-fail"><title>kt42 (Toronto): funded 1%, AI score 0.59</title></circle><circle cx="319.3" cy="162.1" r="4.2" class="pt-fail"><title>kt43 (Toronto): funded 37%, AI score 0.48</title></circle><circle cx="56.0" cy="232.1" r="4.2" class="pt-fail"><title>kt44 (Toronto): funded 0%, AI score 0.33</title></circle><circle cx="56.0" cy="144.5" r="4.2" class="pt-fail"><title>kt45 (Toronto): funded 0%, AI score 0.52</title></circle><circle cx="135.5" cy="123.7" r="4.2" class="pt-fail"><title>kt46 (Toronto): funded 2%, AI score 0.56</title></circle><circle cx="56.0" cy="218.2" r="4.2" class="pt-fail"><title>kt47 (Toronto): funded 0%, AI score 0.36</title></circle><circle cx="206.5" cy="142.2" r="4.2" class="pt-fail"><title>kt48 (Toronto): funded 7%, AI score 0.53</title></circle><circle cx="172.5" cy="88.9" r="4.2" class="pt-fail"><title>kt49 (Toronto): funded 4%, AI score 0.64</title></circle><circle cx="56.0" cy="143.1" r="4.2" class="pt-fail"><title>kt50 (Toronto): funded 0%, AI score 0.52</title></circle><circle cx="56.0" cy="122.7" r="4.2" class="pt-fail"><title>kt51 (Toronto): funded 0%, AI score 0.57</title></circle><circle cx="106.2" cy="123.2" r="4.2" class="pt-fail"><title>kt52 (Toronto): funded 1%, AI score 0.57</title></circle><circle cx="156.4" cy="146.4" r="4.2" class="pt-fail"><title>kt53 (Toronto): funded 3%, AI score 0.52</title></circle><circle cx="229.6" cy="176.0" r="4.2" class="pt-fail"><title>kt54 (Toronto): funded 10%, AI score 0.45</title></circle><circle cx="56.0" cy="164.9" r="4.2" class="pt-fail"><title>kt55 (Toronto): funded 0%, AI score 0.48</title></circle><circle cx="56.0" cy="126.0" r="4.2" class="pt-fail"><title>kt56 (Toronto): funded 0%, AI score 0.56</title></circle><circle cx="311.3" cy="227.5" r="4.2" class="pt-fail"><title>kt57 (Toronto): funded 33%, AI score 0.34</title></circle><circle cx="196.9" cy="215.4" r="4.2" class="pt-fail"><title>kt58 (Toronto): funded 6%, AI score 0.37</title></circle><circle cx="172.5" cy="142.2" r="4.2" class="pt-fail"><title>kt59 (Toronto): funded 4%, AI score 0.53</title></circle><circle cx="56.0" cy="125.5" r="4.2" class="pt-fail"><title>kt60 (Toronto): funded 0%, AI score 0.56</title></circle><circle cx="56.0" cy="140.8" r="4.2" class="pt-fail"><title>kt61 (Toronto): funded 0%, AI score 0.53</title></circle><circle cx="56.0" cy="105.1" r="4.2" class="pt-fail"><title>kt62 (Toronto): funded 0%, AI score 0.60</title></circle><circle cx="106.2" cy="102.3" r="4.2" class="pt-fail"><title>kt63 (Toronto): funded 1%, AI score 0.61</title></circle><circle cx="56.0" cy="145.4" r="4.2" class="pt-fail"><title>kt64 (Toronto): funded 0%, AI score 0.52</title></circle><circle cx="135.5" cy="119.0" r="4.2" class="pt-fail"><title>kt65 (Toronto): funded 2%, AI score 0.57</title></circle><circle cx="56.0" cy="183.4" r="4.2" class="pt-fail"><title>kt66 (Toronto): funded 0%, AI score 0.44</title></circle><circle cx="56.0" cy="106.5" r="4.2" class="pt-fail"><title>kt67 (Toronto): funded 0%, AI score 0.60</title></circle><circle cx="56.0" cy="164.9" r="4.2" class="pt-fail"><title>kt68 (Toronto): funded 0%, AI score 0.48</title></circle><circle cx="156.4" cy="93.5" r="4.2" class="pt-fail"><title>kt69 (Toronto): funded 3%, AI score 0.63</title></circle><circle cx="106.2" cy="115.3" r="4.2" class="pt-fail"><title>kt70 (Toronto): funded 1%, AI score 0.58</title></circle><circle cx="56.0" cy="119.9" r="4.2" class="pt-fail"><title>kt71 (Toronto): funded 0%, AI score 0.57</title></circle><circle cx="106.2" cy="233.5" r="4.2" class="pt-fail"><title>kt72 (Toronto): funded 1%, AI score 0.33</title></circle><circle cx="56.0" cy="182.5" r="4.2" class="pt-fail"><title>kt73 (Toronto): funded 0%, AI score 0.44</title></circle><circle cx="196.9" cy="160.7" r="4.2" class="pt-fail"><title>kt74 (Toronto): funded 6%, AI score 0.48</title></circle><circle cx="56.0" cy="167.2" r="4.2" class="pt-fail"><title>kt75 (Toronto): funded 0%, AI score 0.47</title></circle><circle cx="56.0" cy="125.5" r="4.2" class="pt-fail"><title>kt76 (Toronto): funded 0%, AI score 0.56</title></circle><circle cx="56.0" cy="265.0" r="4.2" class="pt-fail"><title>kt77 (Toronto): funded 0%, AI score 0.26</title></circle><circle cx="56.0" cy="151.9" r="4.2" class="pt-fail"><title>kt78 (Toronto): funded 0%, AI score 0.50</title></circle><circle cx="172.5" cy="177.4" r="4.2" class="pt-fail"><title>kt79 (Toronto): funded 4%, AI score 0.45</title></circle><circle cx="56.0" cy="110.2" r="4.2" class="pt-fail"><title>kt80 (Toronto): funded 0%, AI score 0.59</title></circle><circle cx="56.0" cy="230.7" r="4.2" class="pt-fail"><title>kt81 (Toronto): funded 0%, AI score 0.33</title></circle><circle cx="56.0" cy="164.0" r="4.2" class="pt-fail"><title>kt82 (Toronto): funded 0%, AI score 0.48</title></circle><circle cx="56.0" cy="246.9" r="4.2" class="pt-fail"><title>kt83 (Toronto): funded 0%, AI score 0.30</title></circle><circle cx="56.0" cy="195.0" r="4.2" class="pt-fail"><title>kt84 (Toronto): funded 0%, AI score 0.41</title></circle><circle cx="56.0" cy="101.4" r="4.2" class="pt-fail"><title>kt85 (Toronto): funded 0%, AI score 0.61</title></circle><circle cx="56.0" cy="164.0" r="4.2" class="pt-fail"><title>kt86 (Toronto): funded 0%, AI score 0.48</title></circle><circle cx="56.0" cy="163.0" r="4.2" class="pt-fail"><title>kt87 (Toronto): funded 0%, AI score 0.48</title></circle><circle cx="235.9" cy="145.9" r="4.2" class="pt-fail"><title>kt88 (Toronto): funded 11%, AI score 0.52</title></circle><circle cx="56.0" cy="161.7" r="4.2" class="pt-fail"><title>kt89 (Toronto): funded 0%, AI score 0.48</title></circle><circle cx="56.0" cy="278.9" r="4.2" class="pt-fail"><title>kt90 (Toronto): funded 0%, AI score 0.23</title></circle><circle cx="56.0" cy="182.5" r="4.2" class="pt-fail"><title>kt91 (Toronto): funded 0%, AI score 0.44</title></circle><circle cx="56.0" cy="201.1" r="4.2" class="pt-fail"><title>kt92 (Toronto): funded 0%, AI score 0.40</title></circle><circle cx="172.5" cy="120.4" r="4.2" class="pt-fail"><title>kt93 (Toronto): funded 4%, AI score 0.57</title></circle><circle cx="56.0" cy="161.2" r="4.2" class="pt-fail"><title>kt94 (Toronto): funded 0%, AI score 0.48</title></circle><circle cx="56.0" cy="165.4" r="4.2" class="pt-fail"><title>kt95 (Toronto): funded 0%, AI score 0.47</title></circle><circle cx="56.0" cy="120.9" r="4.2" class="pt-fail"><title>kt96 (Toronto): funded 0%, AI score 0.57</title></circle><circle cx="56.0" cy="176.5" r="4.2" class="pt-fail"><title>kt97 (Toronto): funded 0%, AI score 0.45</title></circle><circle cx="313.4" cy="121.3" r="4.2" class="pt-fail"><title>kt98 (Toronto): funded 34%, AI score 0.57</title></circle><circle cx="56.0" cy="164.4" r="4.2" class="pt-fail"><title>kt99 (Toronto): funded 0%, AI score 0.48</title></circle><circle cx="56.0" cy="126.0" r="4.2" class="pt-fail"><title>kt100 (Toronto): funded 0%, AI score 0.56</title></circle><circle cx="106.2" cy="109.7" r="4.2" class="pt-fail"><title>kt101 (Toronto): funded 1%, AI score 0.59</title></circle><circle cx="222.7" cy="145.9" r="4.2" class="pt-fail"><title>kt102 (Toronto): funded 9%, AI score 0.52</title></circle><circle cx="156.4" cy="126.0" r="4.2" class="pt-fail"><title>kt103 (Toronto): funded 3%, AI score 0.56</title></circle><circle cx="56.0" cy="163.5" r="4.2" class="pt-fail"><title>kt104 (Toronto): funded 0%, AI score 0.48</title></circle><circle cx="589.6" cy="101.9" r="4.2" class="pt-success"><title>km1 (Montreal): funded 1588%, AI score 0.61</title></circle><circle cx="665.5" cy="96.3" r="4.2" class="pt-success"><title>km2 (Montreal): funded 4534%, AI score 0.62</title></circle><circle cx="391.5" cy="110.7" r="4.2" class="pt-success"><title>km3 (Montreal): funded 102%, AI score 0.59</title></circle><circle cx="583.6" cy="124.6" r="4.2" class="pt-success"><title>km4 (Montreal): funded 1462%, AI score 0.56</title></circle><circle cx="500.6" cy="105.6" r="4.2" class="pt-success"><title>km5 (Montreal): funded 464%, AI score 0.60</title></circle><circle cx="241.7" cy="141.3" r="4.2" class="pt-fail"><title>km6 (Montreal): funded 12%, AI score 0.53</title></circle><circle cx="56.0" cy="162.1" r="4.2" class="pt-fail"><title>km7 (Montreal): funded 0%, AI score 0.48</title></circle><circle cx="283.0" cy="181.1" r="4.2" class="pt-fail"><title>km8 (Montreal): funded 22%, AI score 0.44</title></circle><circle cx="56.0" cy="124.1" r="4.2" class="pt-fail"><title>km9 (Montreal): funded 0%, AI score 0.56</title></circle><circle cx="56.0" cy="200.1" r="4.2" class="pt-fail"><title>km10 (Montreal): funded 0%, AI score 0.40</title></circle><circle cx="172.5" cy="190.9" r="4.2" class="pt-fail"><title>km11 (Montreal): funded 4%, AI score 0.42</title></circle><circle cx="56.0" cy="164.4" r="4.2" class="pt-fail"><title>km12 (Montreal): funded 0%, AI score 0.48</title></circle><circle cx="256.7" cy="109.7" r="4.2" class="pt-fail"><title>km13 (Montreal): funded 15%, AI score 0.59</title></circle><circle cx="106.2" cy="161.2" r="4.2" class="pt-fail"><title>km14 (Montreal): funded 1%, AI score 0.48</title></circle><circle cx="106.2" cy="126.0" r="4.2" class="pt-fail"><title>km15 (Montreal): funded 1%, AI score 0.56</title></circle><circle cx="256.7" cy="197.3" r="4.2" class="pt-fail"><title>km16 (Montreal): funded 15%, AI score 0.41</title></circle><circle cx="306.9" cy="146.4" r="4.2" class="pt-fail"><title>km17 (Montreal): funded 31%, AI score 0.52</title></circle><circle cx="304.6" cy="130.6" r="4.2" class="pt-fail"><title>km18 (Montreal): funded 30%, AI score 0.55</title></circle><circle cx="172.5" cy="104.6" r="4.2" class="pt-fail"><title>km19 (Montreal): funded 4%, AI score 0.61</title></circle><circle cx="56.0" cy="139.9" r="4.2" class="pt-fail"><title>km20 (Montreal): funded 0%, AI score 0.53</title></circle><circle cx="56.0" cy="246.0" r="4.2" class="pt-fail"><title>km21 (Montreal): funded 0%, AI score 0.30</title></circle><circle cx="56.0" cy="157.0" r="4.2" class="pt-fail"><title>km22 (Montreal): funded 0%, AI score 0.49</title></circle><circle cx="315.4" cy="146.8" r="4.2" class="pt-fail"><title>km23 (Montreal): funded 35%, AI score 0.52</title></circle><circle cx="56.0" cy="232.1" r="4.2" class="pt-fail"><title>km24 (Montreal): funded 0%, AI score 0.33</title></circle><circle cx="56.0" cy="162.1" r="4.2" class="pt-fail"><title>km25 (Montreal): funded 0%, AI score 0.48</title></circle><circle cx="56.0" cy="237.2" r="4.2" class="pt-fail"><title>km26 (Montreal): funded 0%, AI score 0.32</title></circle><circle cx="56.0" cy="167.7" r="4.2" class="pt-fail"><title>km27 (Montreal): funded 0%, AI score 0.47</title></circle><circle cx="56.0" cy="128.7" r="4.2" class="pt-fail"><title>km28 (Montreal): funded 0%, AI score 0.55</title></circle><circle cx="256.7" cy="107.0" r="4.2" class="pt-fail"><title>km29 (Montreal): funded 15%, AI score 0.60</title></circle><circle cx="241.7" cy="124.1" r="4.2" class="pt-fail"><title>km30 (Montreal): funded 12%, AI score 0.56</title></circle><circle cx="106.2" cy="221.4" r="4.2" class="pt-fail"><title>km31 (Montreal): funded 1%, AI score 0.35</title></circle><circle cx="269.2" cy="145.9" r="4.2" class="pt-fail"><title>km32 (Montreal): funded 18%, AI score 0.52</title></circle><circle cx="56.0" cy="181.6" r="4.2" class="pt-fail"><title>km33 (Montreal): funded 0%, AI score 0.44</title></circle><circle cx="135.5" cy="126.4" r="4.2" class="pt-fail"><title>km34 (Montreal): funded 2%, AI score 0.56</title></circle><circle cx="272.9" cy="199.2" r="4.2" class="pt-fail"><title>km35 (Montreal): funded 19%, AI score 0.40</title></circle><circle cx="56.0" cy="122.7" r="4.2" class="pt-fail"><title>km36 (Montreal): funded 0%, AI score 0.57</title></circle><circle cx="56.0" cy="215.9" r="4.2" class="pt-fail"><title>km37 (Montreal): funded 0%, AI score 0.37</title></circle>
+      <text x="376.0" y="356" class="axis-title" text-anchor="middle">Actual Kickstarter funding (% of goal, log scale)</text>
+      <text x="16" y="170.0" class="axis-title" text-anchor="middle" transform="rotate(-90 16 170.0)">AI overall score (0&ndash;1)</text>
+      <rect x="56" y="24" width="640" height="292" class="plot-border"/>
+    </svg>
+    <div class="scatter-legend">
+      <span class="leg-item"><span class="leg-dot pt-success"></span>Actually funded (&ge; 100% of goal), n=24</span>
+      <span class="leg-item"><span class="leg-dot pt-fail"></span>Not funded (&lt; 100% of goal), n=117</span>
+    </div>
+      <div class="plain">
+        <b>What to look for:</b> green (funded) dots sit slightly higher on average than red (not funded) dots
+        &mdash; that is the positive correlation. But <b>no dot of either color gets close to the 0.725 GO line</b>
+        &mdash; the highest score in the entire dataset (0.640) still falls nearly 0.09 short of it &mdash; so the
+        top-right "confidently predicted success" quadrant is empty. The signal exists in the ranking; it just
+        never gets strong enough, on the AI's own scoring scale, to trigger a GO.
+      </div>
+    </div>
+    <div class="section">
+      <h2>6. Highest- and Lowest-Scored Proposals</h2>
+      <p>The AI's own top pick, <b>kt49</b>, scored 0.640 &mdash; the highest of any Kickstarter proposal, but still
+      well short of the 0.725 GO threshold &mdash; and was correctly verdicted HOLD; the campaign itself only raised
+      4% of its goal (a real failure). Meanwhile <b>kt10</b> scored almost identically (0.639), was also correctly
+      verdicted HOLD, yet was actually funded at 151%. Both examples illustrate the same underlying point: overall
+      score has a real but noisy relationship to outcome, and near-identical scores can sit on either side of the
+      real funding outcome &mdash; a ceiling on what proposal text alone can predict, not a bug in the verdict
+      logic itself.</p>
+      
+    <div class="dim-meta">
+      <div class="meta-card plus-card" style="flex:1">
+        <div class="meta-label">Highest AI Scores</div>
+        <table class="mini-table">
+          <thead><tr><th>PID</th><th>City</th><th>AI score</th><th>Funded</th><th>Outcome</th><th>Verdict</th></tr></thead>
+          <tbody>
+        <tr>
+          <td class="pid">kt49</td>
+          <td>Toronto</td>
+          <td class="st-num">0.640</td>
+          <td class="st-num">4%</td>
+          <td><span class="tag-bad">not funded</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="pid">kt10</td>
+          <td>Toronto</td>
+          <td class="st-num">0.639</td>
+          <td class="st-num">151%</td>
+          <td><span class="tag-good">funded</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="pid">kt27</td>
+          <td>Toronto</td>
+          <td class="st-num">0.631</td>
+          <td class="st-num">14%</td>
+          <td><span class="tag-bad">not funded</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="pid">kt69</td>
+          <td>Toronto</td>
+          <td class="st-num">0.630</td>
+          <td class="st-num">3%</td>
+          <td><span class="tag-bad">not funded</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="pid">kt35</td>
+          <td>Toronto</td>
+          <td class="st-num">0.629</td>
+          <td class="st-num">2%</td>
+          <td><span class="tag-bad">not funded</span></td>
+          <td>N</td>
+        </tr></tbody>
+        </table>
+      </div>
+      <div class="meta-card minus-card" style="flex:1">
+        <div class="meta-label">Lowest AI Scores</div>
+        <table class="mini-table">
+          <thead><tr><th>PID</th><th>City</th><th>AI score</th><th>Funded</th><th>Outcome</th><th>Verdict</th></tr></thead>
+          <tbody>
+        <tr>
+          <td class="pid">kt90</td>
+          <td>Toronto</td>
+          <td class="st-num">0.230</td>
+          <td class="st-num">0%</td>
+          <td><span class="tag-bad">not funded</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="pid">kt77</td>
+          <td>Toronto</td>
+          <td class="st-num">0.260</td>
+          <td class="st-num">0%</td>
+          <td><span class="tag-bad">not funded</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="pid">kt83</td>
+          <td>Toronto</td>
+          <td class="st-num">0.299</td>
+          <td class="st-num">0%</td>
+          <td><span class="tag-bad">not funded</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="pid">km21</td>
+          <td>Montreal</td>
+          <td class="st-num">0.301</td>
+          <td class="st-num">0%</td>
+          <td><span class="tag-bad">not funded</span></td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td class="pid">km26</td>
+          <td>Montreal</td>
+          <td class="st-num">0.320</td>
+          <td class="st-num">0%</td>
+          <td><span class="tag-bad">not funded</span></td>
+          <td>N</td>
+        </tr></tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+    <div class="section">
+      <h2>7. Positive and Negative Outcomes</h2>
+      <p>Framed for a research paper: what this experiment supports, and what it exposes as a limitation.</p>
+
+      <div class="outcome-box outcome-good">
+        <h4>Positive outcomes (supports the pipeline's validity)</h4>
+        <ul>
+          <li>The AI's ranking of proposals correlates with <b>real, independently-verifiable, financial outcomes</b>
+          &mdash; not just human opinion &mdash; and the correlation (&rho;=0.366 combined, n=141) is statistically
+          significant even after correcting for multiple comparisons (Holm p &lt; 0.001).</li>
+          <li>The result replicates across <b>two independent cities</b> (Toronto &rho;=0.314, Montreal &rho;=0.506)
+          scored with the same unmodified pipeline, which is evidence the signal is not an artifact of one dataset.</li>
+          <li>Funded campaigns scored 0.573 on average vs. 0.499 for unfunded ones &mdash; a consistent, directionally
+          correct gap that shows up even though it never crosses the pipeline's own GO threshold.</li>
+          <li><b>Feasibility</b> and <b>Strategy</b> are meaningful, transferable predictors of real-world funding
+          success, generalizing beyond the biotech domain the rubric was originally designed for.</li>
+          <li>This is a genuine <b>out-of-domain generalization test</b>: the pipeline was built and tuned for
+          VC/biotech proposals, never touched for Kickstarter, and still produced a significant signal on a
+          completely different proposal genre (consumer/creative crowdfunding) and outcome type (crowd funding vs.
+          expert judgment).</li>
+        </ul>
+      </div>
+
+      <div class="outcome-box outcome-bad">
+        <h4>Negative outcomes / limitations (should be reported honestly)</h4>
+        <ul>
+          <li>The pipeline's <b>decision layer (GO/HOLD/NO-GO) is miscalibrated for this dataset</b>: its GO rule
+          (score &ge; 0.725 OR confidence &ge; 0.811, transferred unmodified from the 12-proposal biotech dataset
+          it was tuned on) issued zero GO verdicts across 141 campaigns, including one that raised 151% of its goal
+          &mdash; recall on real successes is 0%. The highest AI score in the whole dataset (0.640) still falls
+          short of the 0.725 cutoff by a wide margin, so this isn't a borderline miscalibration &mdash; the
+          threshold is structurally out of reach for this domain.</li>
+          <li>The 83% classification "accuracy" is misleading in isolation: it mainly reflects the base rate
+          (83% of campaigns failed anyway), not the model's discriminative power on the positive class.</li>
+          <li><b>Team</b> and <b>Objective</b> dimension scores show no significant relationship with real funding
+          outcomes (Team: Holm p=0.115, Objective: Holm p=0.302) &mdash; these dimensions may be measuring signals
+          that matter to expert reviewers but not to crowd backers, or may not transfer well outside the biotech
+          domain.</li>
+          <li>Correlation strength (&rho;&asymp;0.37) is moderate, not strong &mdash; roughly 13% of the variance in
+          funding rank is explained by AI score rank (&rho;&sup2;), leaving most of what determines a campaign's
+          success unexplained by the pipeline.</li>
+          <li>Toronto and Montreal show meaningfully different correlation strengths (0.314 vs. 0.506) on the same
+          pipeline, suggesting some sensitivity to sample composition or city-specific campaign characteristics
+          that has not been investigated.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <h2>8. Interesting Findings Worth Highlighting in a Paper</h2>
+      <div class="findings-list">
+        <ul>
+          <li><b>Cross-domain generalization without retuning:</b> a pipeline calibrated entirely on biotech/hardware
+          VC proposals produces a statistically significant, positive correlation with real consumer-crowdfunding
+          outcomes it was never tuned on &mdash; a natural "transfer" or "external validity" result.</li>
+          <li><b>Dimension importance flips across domains:</b> Team dominates in the expert-judged biotech dataset,
+          but is one of the weakest, non-significant predictors in the real-money Kickstarter dataset, where
+          Feasibility and Strategy dominate instead. This is a clean, quotable contrast between "what experts value"
+          and "what crowds actually fund."</li>
+          <li><b>The score ceiling sits structurally below the GO threshold:</b> the single highest-scoring proposal
+          in the entire 141-campaign set (0.640) still falls nearly 0.09 short of the 0.725 GO cutoff &mdash; not a
+          borderline miss, but a domain-wide ceiling effect (see the earlier Team-dimension analysis for why).
+          A nearly identically-scored proposal pair, <b>kt49</b> (0.640, correctly HOLD, only raised 4%) and
+          <b>kt10</b> (0.639, correctly HOLD, actually funded at 151%), also shows that even where scores agree
+          almost exactly, real outcomes can diverge completely &mdash; a clean illustration of the ceiling on what
+          proposal text alone can predict, independent of the threshold question.</li>
+          <li><b>A real-world validation without expert raters:</b> unlike the biotech dataset (limited to 12
+          proposals because human expert time is the bottleneck), the Kickstarter ground truth is free, objective,
+          and scales to any sample size &mdash; a methodological point worth making about how this kind of pipeline
+          can be validated cheaply going forward.</li>
+          <li><b>All-or-nothing funding as a clean binary label:</b> Kickstarter's own funding mechanic
+          (0% payout below 100% of goal) removes the ambiguity that usually plagues "success" labels in this kind of
+          study &mdash; there is no partial-credit judgment call being smuggled into the ground truth.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Glossary (Plain-Language)</h2>
+      <div class="glossary">
+        <div class="gloss-grid">
+          <div class="gloss-item">
+            <div class="gloss-term">Spearman correlation (&rho;)</div>
+            <div class="gloss-def">Measures whether two rankings move together, ignoring exact values. +1 = perfectly
+            aligned rankings, 0 = no relationship, &minus;1 = perfectly reversed.</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">p-value</div>
+            <div class="gloss-def">The probability of seeing a correlation this strong purely by chance if there were
+            actually no relationship. Smaller = more confident the relationship is real.</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">Holm correction</div>
+            <div class="gloss-def">A stricter significance bar applied when running many tests at once, to avoid
+            false positives from testing many things and reporting only the ones that happened to look significant.</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">Recall (on successes)</div>
+            <div class="gloss-def">Of all campaigns that actually succeeded, what fraction did the AI correctly flag
+            as GO? 0% means it caught none of them.</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">Precision</div>
+            <div class="gloss-def">Of all campaigns the AI flagged as GO, what fraction actually succeeded? Undefined
+            here because the AI never flagged any campaign as GO.</div>
+          </div>
+          <div class="gloss-item">
+            <div class="gloss-term">All-or-nothing funding</div>
+            <div class="gloss-def">Kickstarter's rule: campaigns that don't reach 100% of their goal collect $0.
+            There is no partial success, which is what makes "funded % &ge; 100" an unambiguous label.</div>
+          </div>
+        </div>
+      </div>
+      <div class="footnote">
+        Source data: results/Kickstarter/evaluation/evaluation_summary.json (generated 2026-07-15).
+        Report generated by generate_kickstarter_report.py.
+      </div>
+    </div>
+</body>
+</html>

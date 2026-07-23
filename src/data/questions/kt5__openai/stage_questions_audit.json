@@ -1,0 +1,614 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt5__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt5__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 262,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'Code a 2D Mobile Game in less than 6 hours' is led by P.J. Paweska, who is also responsible for its creation and the associated Kickstarter campaign. P.J. Paweska's involvement spans multiple aspects of the project, including the course development.",
+        "first_key_point_preview": "P.J. Paweska is the lead and creator of the project 'Code a 2D Mobile Game in less than 6 hours'.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 17.39,
+        "raw_chars": 4988,
+        "usage": {
+          "prompt_tokens": 3324,
+          "completion_tokens": 1093,
+          "total_tokens": 4417
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Kickstarter campaign experience",
+        "game development expertise",
+        "course creation background",
+        "project leadership track record",
+        "collaborative partnerships",
+        "validation process experience",
+        "time management capacity",
+        "risk mitigation strategies",
+        "team workload assessment"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 5
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does P.J. Paweska's prior experience in leading projects and campaigns contribute to the successful execution of 'Code a 2D Mobile Game in less than 6 hours'? Please provide specific examples of past achievements.",
+          "question_en_preview": "How does P.J. Paweska's prior experience in leading projects and campaigns contribute to the successful execution of 'Code a 2D Mobile Game in less than 6 hours'? Please provide specific examples of past achievements."
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific expertise does P.J. Paweska possess in game development and course creation that supports the project's objectives? How does this expertise align with the needs of the target audience?",
+          "question_en_preview": "What specific expertise does P.J. Paweska possess in game development and course creation that supports the project's objectives? How does this expertise align with the needs of the target audience?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited information on the team's current workload and other commitments, how might this impact P.J. Paweska's ability to dedicate sufficient time and resources to the project? What are the potential consequenc ...",
+          "question_en_preview": "Given the limited information on the team's current workload and other commitments, how might this impact P.J. Paweska's ability to dedicate sufficient time and resources to the project? What are the potential consequenc ..."
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing partnerships or collaborations does P.J. Paweska have that could enhance the project's success? How stable and complementary are these relationships?",
+          "question_en_preview": "What existing partnerships or collaborations does P.J. Paweska have that could enhance the project's success? How stable and complementary are these relationships?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does P.J. Paweska have with validation processes or compliance in game development or educational content? How might this experience mitigate potential risks associated with the project?",
+          "question_en_preview": "What experience does P.J. Paweska have with validation processes or compliance in game development or educational content? How might this experience mitigate potential risks associated with the project?"
+        }
+      ],
+      "elapsed_sec": 17.39,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 323,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to teach participants how to design and code a 2D mobile game using the Flame Engine and Flutter within a structured course format. It focuses on delivering essential game development fundamentals and practical coding skills in less than 6 hours, culminating in t ...",
+        "first_key_point_preview": "The course is designed to help users set up and understand the language elements of Flutter/Dart.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.93,
+        "raw_chars": 3471,
+        "usage": {
+          "prompt_tokens": 3425,
+          "completion_tokens": 751,
+          "total_tokens": 4176
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "course objectives clarity",
+        "alignment with user needs",
+        "milestones for course delivery",
+        "success metrics for learning",
+        "realism of learning goals",
+        "game development fundamentals",
+        "participant outcomes assessment"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "market_driven"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2
+        },
+        "aspects": {
+          "unmet_need_alignment": 2,
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Based on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, assess the initiative's positioning, compe ...",
+          "question_en_preview": "Drawing on the proposal's description of target users/customers/beneficiaries, market or need size, growth, main alternatives, buyers/payers/funders, channels, or target segments, how would you assess the initiative's po ..."
+        },
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused are the overall goals of the project in teaching participants to design and code a 2D mobile game? Are there any unrelated sub-goals that could distract from this focus?",
+          "question_en_preview": "How clear and focused are the overall goals of the project in teaching participants to design and code a 2D mobile game? Are there any unrelated sub-goals that could distract from this focus?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the objectives of the course align with the needs of game enthusiasts and coders who want to create their own mobile games? What evidence supports the urgency of this alignment?",
+          "question_en_preview": "To what extent do the objectives of the course align with the needs of game enthusiasts and coders who want to create their own mobile games? What evidence supports the urgency of this alignment?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Are the proposed milestones for the course's development and delivery reasonable and executable within the stated timeline of less than 6 hours? What specific milestones are outlined?",
+          "question_en_preview": "Are the proposed milestones for the course's development and delivery reasonable and executable within the stated timeline of less than 6 hours? What specific milestones are outlined?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics are defined for the course, particularly regarding participant outcomes and the effectiveness of learning game development fundamentals?",
+          "question_en_preview": "What clear and quantifiable success metrics are defined for the course, particularly regarding participant outcomes and the effectiveness of learning game development fundamentals?"
+        }
+      ],
+      "elapsed_sec": 12.93,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 336,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project strategy focuses on enhancing the course content and optimizing the game code through community pledges. It emphasizes a streamlined teaching approach that prioritizes essential concepts and incorporates Software Engineering principles alongside the Flame Engine, a li ...",
+        "first_key_point_preview": "The campaign seeks pledges to polish the course, render it, and optimize the game code.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The campaign seeks pledges to polish the course, render it, and optimize the game code."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 14.48,
+        "raw_chars": 3890,
+        "usage": {
+          "prompt_tokens": 3511,
+          "completion_tokens": 844,
+          "total_tokens": 4355
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "community pledges",
+        "streamlined teaching approach",
+        "Software Engineering principles",
+        "Flame Engine optimization",
+        "milestones for validation",
+        "market positioning strategy",
+        "budget realism",
+        "quality assurance measures",
+        "scaling strategy",
+        "course content optimization"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the initiative plan to validate the effectiveness of the streamlined teaching approach and the incorporation of Software Engineering principles alongside the Flame Engine?",
+          "question_en_preview": "How does the initiative plan to validate the effectiveness of the streamlined teaching approach and the incorporation of Software Engineering principles alongside the Flame Engine?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific milestones will the initiative set to ensure the successful optimization of the game code and course content through community pledges?",
+          "question_en_preview": "What specific milestones will the initiative set to ensure the successful optimization of the game code and course content through community pledges?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the focus on essential concepts, how does the initiative plan to position its course in the market to attract pledges and ensure adoption?",
+          "question_en_preview": "Given the focus on essential concepts, how does the initiative plan to position its course in the market to attract pledges and ensure adoption?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1-5, how realistic is the budget for optimizing the game code and course content based on the pledges? Please provide evidence that would increase your score.",
+          "question_en_preview": "On a scale of 1-5, how realistic is the budget for optimizing the game code and course content based on the pledges? Please provide evidence that would increase your score."
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What measures are in place to ensure the quality and compliance of the course content and game code optimization process?",
+          "question_en_preview": "What measures are in place to ensure the quality and compliance of the course content and game code optimization process?"
+        }
+      ],
+      "elapsed_sec": 14.48,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 422,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces the Flame Engine, a minimalist 2D game engine built on the Flutter framework, which allows for efficient mobile game development. It emphasizes a lightweight design, enabling developers to create games with a single code base for multiple platforms, includi ...",
+        "first_key_point_preview": "The Flame Engine is a minimalist 2D game engine that operates on the Flutter framework.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.0,
+        "raw_chars": 4446,
+        "usage": {
+          "prompt_tokens": 3449,
+          "completion_tokens": 982,
+          "total_tokens": 4431
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Flutter framework advantages",
+        "2D game engine comparison",
+        "Game Loop process effectiveness",
+        "Intellectual property strategy",
+        "Scalability to other platforms",
+        "Customer value differentiation",
+        "Evidence for innovation strength",
+        "Risks of obsolescence",
+        "Competitive edge analysis"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the Flame Engine's minimalist design and use of the Flutter framework compare to existing 2D game engines in terms of innovation and technical novelty?",
+          "question_en_preview": "How does the Flame Engine's minimalist design and use of the Flutter framework compare to existing 2D game engines in terms of innovation and technical novelty?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the Flame Engine offer over traditional game engines in terms of customer value, performance, and scalability?",
+          "question_en_preview": "What specific advantages does the Flame Engine offer over traditional game engines in terms of customer value, performance, and scalability?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the Flame Engine's architecture and functionality, particularly regarding the 'Game Loop' process?",
+          "question_en_preview": "What evidence supports the effectiveness of the Flame Engine's architecture and functionality, particularly regarding the 'Game Loop' process?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the Flame Engine becoming obsolete or commoditized within the next few years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the Flame Engine becoming obsolete or commoditized within the next few years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How scalable is the Flame Engine in terms of extending its use to other customer segments or platforms beyond mobile game development?",
+          "question_en_preview": "How scalable is the Flame Engine in terms of extending its use to other customer segments or platforms beyond mobile game development?"
+        }
+      ],
+      "elapsed_sec": 13.0,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 265,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is supported by the creators' confidence in timely course delivery and the absence of anticipated shipping issues. The project is based in Toronto, Canada, and has received funding from backers, which contributes to its resource base.",
+        "first_key_point_preview": "The creators express confidence in delivering the course on time due to their experience in teaching and software development.",
+        "first_risk_preview": "The creators do not envision any issues or delays in delivering the course.",
+        "first_mitigation_preview": "The campaign seeks pledges to polish the course, render it, and optimize the game code."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 15.25,
+        "raw_chars": 4034,
+        "usage": {
+          "prompt_tokens": 3472,
+          "completion_tokens": 879,
+          "total_tokens": 4351
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "funding sources",
+        "course delivery timeline",
+        "teaching experience",
+        "risk validation",
+        "implementation barriers",
+        "budget allocation realism",
+        "customer acceptance",
+        "contingency plans",
+        "project milestones",
+        "backer contributions"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "resources_and_infrastructure": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "funding_and_budget_planning": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the funding of CA$ 1,655 from 27 backers contribute to the long-term resource stability of the project, and what additional funding sources are being considered?",
+          "question_en_preview": "How does the funding of CA$ 1,655 from 27 backers contribute to the long-term resource stability of the project, and what additional funding sources are being considered?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined to ensure the timely delivery of the course, and how do the creators' experiences in teaching and software development inform this plan?",
+          "question_en_preview": "What specific tasks and timelines are outlined to ensure the timely delivery of the course, and how do the creators' experiences in teaching and software development inform this plan?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the creators do not foresee any issues or delays in delivering the course, how can this confidence be validated, and what contingency plans are in place if unforeseen risks arise?",
+          "question_en_preview": "Given that the creators do not foresee any issues or delays in delivering the course, how can this confidence be validated, and what contingency plans are in place if unforeseen risks arise?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential barriers to implementation in real production settings have been identified, and how does the project plan to address these barriers?",
+          "question_en_preview": "What potential barriers to implementation in real production settings have been identified, and how does the project plan to address these barriers?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget allocation for polishing the course, rendering it, and optimizing the game code? Please provide evidence that would increase your score.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget allocation for polishing the course, rendering it, and optimizing the game code? Please provide evidence that would increase your score."
+        }
+      ],
+      "elapsed_sec": 15.25,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T18:44:14Z",
+  "elapsed_sec": 73.07,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt5__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt5__openai/generated_questions_detail.json"
+}

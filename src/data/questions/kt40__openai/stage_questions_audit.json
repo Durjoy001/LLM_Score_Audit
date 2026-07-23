@@ -1,0 +1,602 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt40__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt40__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 339,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Hunter Huang and consists of a team of Ph.D. students from the University of Toronto, all of whom are passionate AI enthusiasts. The team has dedicated significant time to research, development, and testing, aiming to create a platform that positively impact ...",
+        "first_key_point_preview": "The project was created by Hunter Huang.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.99,
+        "raw_chars": 4525,
+        "usage": {
+          "prompt_tokens": 3329,
+          "completion_tokens": 966,
+          "total_tokens": 4295
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership experience",
+        "Ph.D. expertise",
+        "research development hours",
+        "collaboration networks",
+        "validation challenges",
+        "capacity assessment",
+        "project execution",
+        "team bandwidth",
+        "impact-driven approach"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Hunter Huang's leadership experience and track record contribute to the project's potential for success in achieving its objectives?",
+          "question_en_preview": "How does Hunter Huang's leadership experience and track record contribute to the project's potential for success in achieving its objectives?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise do the Ph.D. students from the University of Toronto bring to the project, and how does it align with the project's goals?",
+          "question_en_preview": "What specific domain expertise do the Ph.D. students from the University of Toronto bring to the project, and how does it align with the project's goals?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the team's dedication to research, development, and testing, do they have sufficient capacity and bandwidth to meet the project's demands? Please evaluate any potential risks associated with their current wor ...",
+          "question_en_preview": "Considering the team's dedication to research, development, and testing, do they have sufficient capacity and bandwidth to meet the project's demands? Please evaluate any potential risks associated with their current wor ..."
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What existing collaboration networks or partnerships does the team have that could enhance the project's execution and impact?",
+          "question_en_preview": "What existing collaboration networks or partnerships does the team have that could enhance the project's execution and impact?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, how does the team plan to address potential validation and compliance challenges as the project progresses?",
+          "question_en_preview": "Given the limited risk information provided, how does the team plan to address potential validation and compliance challenges as the project progresses?"
+        }
+      ],
+      "elapsed_sec": 13.99,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 253,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to democratize AI technology, making it accessible to everyone, anywhere, and at any time. Key objectives include empowering users to explore their creativity with AI tools and enhancing decision-making and problem-solving capabilities.",
+        "first_key_point_preview": "The project is called 'ChatGPT and AI Art built into iMessage'.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The platform is designed to help people make better decisions, solve complex problems, and enhance their quality of life."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.8,
+        "raw_chars": 3547,
+        "usage": {
+          "prompt_tokens": 3405,
+          "completion_tokens": 786,
+          "total_tokens": 4191
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "AI accessibility metrics",
+        "user engagement statistics",
+        "milestone execution timeline",
+        "decision-making enhancement",
+        "problem-solving capabilities",
+        "quality of life improvement",
+        "user feedback mechanisms",
+        "market adoption strategies",
+        "success measurement criteria"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused is the overall goal of democratizing AI technology, and are there any unrelated sub-goals that could dilute this focus?",
+          "question_en_preview": "How clear and focused is the overall goal of democratizing AI technology, and are there any unrelated sub-goals that could dilute this focus?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent does the project align with the stated need for accessible AI tools, and how urgent is this need among potential users?",
+          "question_en_preview": "To what extent does the project align with the stated need for accessible AI tools, and how urgent is this need among potential users?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the planned future milestones for expanding the reach of the chatbot service, and how reasonable and executable are these timelines?",
+          "question_en_preview": "What are the planned future milestones for expanding the reach of the chatbot service, and how reasonable and executable are these timelines?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What specific metrics will be used to measure the success of the initiative in enhancing decision-making and problem-solving capabilities?",
+          "question_en_preview": "What specific metrics will be used to measure the success of the initiative in enhancing decision-making and problem-solving capabilities?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the initiative create value and capture revenue or funding, particularly in relation to its goal of enhancing quality of life?",
+          "question_en_preview": "How does the initiative create value and capture revenue or funding, particularly in relation to its goal of enhancing quality of life?"
+        }
+      ],
+      "elapsed_sec": 13.8,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 333,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a platform named ONE800 that provides users access to various AI tools, including language models and art generation tools. Future milestones include expanding the iMessage chatbot service to Android users and promoting user engagement. The project see ...",
+        "first_key_point_preview": "The platform ONE800 allows access to a wide range of AI tools, including language models and art generation tools.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 22.06,
+        "raw_chars": 3799,
+        "usage": {
+          "prompt_tokens": 3467,
+          "completion_tokens": 832,
+          "total_tokens": 4299
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "user engagement strategy",
+        "Kickstarter funding rationale",
+        "development milestones",
+        "budget realism",
+        "scaling risks",
+        "partnership opportunities"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to promote user engagement for the ONE800 platform, and what specific strategies will be employed to attract users to the iMessage chatbot service as it expands to Android?",
+          "question_en_preview": "How does the project plan to promote user engagement for the ONE800 platform, and what specific strategies will be employed to attract users to the iMessage chatbot service as it expands to Android?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the choice of Kickstarter as a funding source for the ONE800 project, and what alternatives were considered?",
+          "question_en_preview": "What rationale supports the choice of Kickstarter as a funding source for the ONE800 project, and what alternatives were considered?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the key milestones for the development and validation of the ONE800 platform, particularly regarding the transition from iMessage to Android?",
+          "question_en_preview": "What are the key milestones for the development and validation of the ONE800 platform, particularly regarding the transition from iMessage to Android?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget for the ONE800 project, considering the funding through Kickstarter? Please provide evidence that would increase your score.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget for the ONE800 project, considering the funding through Kickstarter? Please provide evidence that would increase your score."
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee in scaling the ONE800 platform, and how might these impact its market entry strategy?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee in scaling the ONE800 platform, and how might these impact its market entry strategy?"
+        }
+      ],
+      "elapsed_sec": 22.06,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 6,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 124,
+        "key_points_count": 0,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The proposal contains limited explicit information about the innovation dimension, so a detailed summary cannot be produced.",
+        "first_key_point_preview": "<none>",
+        "first_risk_preview": "The proposal provides limited detail for the innovation dimension, which may affect evaluation quality.",
+        "first_mitigation_preview": "The proposal does not specify how to address or mitigate this information gap."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.79,
+        "raw_chars": 4029,
+        "usage": {
+          "prompt_tokens": 3154,
+          "completion_tokens": 853,
+          "total_tokens": 4007
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "competitive advantages",
+        "customer adoption metrics",
+        "innovation validation",
+        "intellectual property strategy",
+        "scalability barriers",
+        "risk of commoditization"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1
+        },
+        "priorities": {
+          "1": 2,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "evidence_strength_for_innovation": 1,
+          "platform_and_extensibility": 1,
+          "ip_and_protection": 1
+        },
+        "linked_to_key_points": 0,
+        "linked_to_risks": 4,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited information provided in the proposal, how does the initiative differentiate itself from existing solutions in the market? Please identify any specific innovations or unique features that could be consid ...",
+          "question_en_preview": "Given the limited information provided in the proposal, how does the initiative differentiate itself from existing solutions in the market? Please identify any specific innovations or unique features that could be consid ..."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What competitive advantages does the initiative claim to have over similar offerings? How might these advantages impact customer adoption and market positioning?",
+          "question_en_preview": "What competitive advantages does the initiative claim to have over similar offerings? How might these advantages impact customer adoption and market positioning?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the potential risks of obsolescence or commoditization for the innovation described in the proposal? How might these risks affect the long-term viability of the initiative?",
+          "question_en_preview": "What are the potential risks of obsolescence or commoditization for the innovation described in the proposal? How might these risks affect the long-term viability of the initiative?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the lack of detailed evidence in the proposal, what types of validation or proof would strengthen the case for the innovation? What specific metrics or data would be most impactful?",
+          "question_en_preview": "Considering the lack of detailed evidence in the proposal, what types of validation or proof would strengthen the case for the innovation? What specific metrics or data would be most impactful?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How might the innovation be extended to other customer segments or use cases? What are the potential barriers to scalability and how could they be addressed?",
+          "question_en_preview": "How might the innovation be extended to other customer segments or use cases? What are the potential barriers to scalability and how could they be addressed?"
+        }
+      ],
+      "elapsed_sec": 13.8,
+      "final_question_count": 6
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 300,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is impacted by several factors, including the limited accessibility of the iMessage chatbot, which is only available to users with Apple devices. The team has identified future milestones to expand the service's reach and is actively working to prom ...",
+        "first_key_point_preview": "The iMessage chatbot can only be accessed by users with iPhones or other Apple devices.",
+        "first_risk_preview": "A risk identified is the limited reach of iMessage chatbots, which can only be accessed by users with iPhones or other Apple devices.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 22.54,
+        "raw_chars": 5362,
+        "usage": {
+          "prompt_tokens": 3426,
+          "completion_tokens": 1142,
+          "total_tokens": 4568
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "Kickstarter funding strategy",
+        "user engagement promotion",
+        "future milestones alignment",
+        "customer acceptance challenges",
+        "implementation barriers",
+        "risk mitigation strategies",
+        "budget allocation realism",
+        "Apple device accessibility",
+        "expansion reach planning"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "funding_and_budget_planning": 2,
+          "operational_execution_plan": 1,
+          "risk_management": 2,
+          "timeline_and_resource_alignment": 1,
+          "implementation_barriers": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the iMessage chatbot can only be accessed by users with Apple devices, how does the team plan to address potential customer acceptance and procurement challenges in expanding its user base?",
+          "question_en_preview": "Given that the iMessage chatbot can only be accessed by users with Apple devices, how does the team plan to address potential customer acceptance and procurement challenges in expanding its user base?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the team plan to secure additional funding after the unsuccessful Kickstarter campaign, and what alternative funding sources are being considered to support the project's future milestones?",
+          "question_en_preview": "How does the team plan to secure additional funding after the unsuccessful Kickstarter campaign, and what alternative funding sources are being considered to support the project's future milestones?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific milestones has the team identified to expand the reach of the iMessage chatbot service, and how do these align with the overall operational execution plan?",
+          "question_en_preview": "What specific milestones has the team identified to expand the reach of the iMessage chatbot service, and how do these align with the overall operational execution plan?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the identified risk of limited reach due to the iMessage chatbot's accessibility only to Apple device users, what strategies does the team have in place to mitigate this risk?",
+          "question_en_preview": "Considering the identified risk of limited reach due to the iMessage chatbot's accessibility only to Apple device users, what strategies does the team have in place to mitigate this risk?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the team plan to align its resources and timeline with the future milestones for expanding the chatbot service, and what potential bottlenecks have been identified?",
+          "question_en_preview": "How does the team plan to align its resources and timeline with the future milestones for expanding the chatbot service, and what potential bottlenecks have been identified?"
+        }
+      ],
+      "elapsed_sec": 22.55,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T19:38:35Z",
+  "elapsed_sec": 86.2,
+  "total_questions": 34,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt40__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt40__openai/generated_questions_detail.json"
+}

@@ -1,0 +1,620 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt101__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt101__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 200,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is led by Sivakumar Boju, who is the founder and developer of Near22. He has experience in building mobile apps and backend systems, which contributes to the team's technical capabilities.",
+        "first_key_point_preview": "Sivakumar Boju is the creator of Near22.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.38,
+        "raw_chars": 3230,
+        "usage": {
+          "prompt_tokens": 3269,
+          "completion_tokens": 694,
+          "total_tokens": 3963
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "Sivakumar Boju",
+        "mobile app development",
+        "backend systems expertise",
+        "domain-specific validation",
+        "team capacity assessment",
+        "collaboration stability",
+        "project execution risk",
+        "resource allocation",
+        "technical capabilities"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 1,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Sivakumar Boju's experience in building mobile apps and backend systems position the team to advance the project to its intended application and scale?",
+          "question_en_preview": "How does Sivakumar Boju's experience in building mobile apps and backend systems position the team to advance the project to its intended application and scale?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does the team possess that is relevant to the challenges faced by the project, and how does this expertise enhance the project's potential for success?",
+          "question_en_preview": "What specific domain expertise does the team possess that is relevant to the challenges faced by the project, and how does this expertise enhance the project's potential for success?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the current workload and any parallel projects, does the team have sufficient time and resources to commit to this project effectively?",
+          "question_en_preview": "Given the current workload and any parallel projects, does the team have sufficient time and resources to commit to this project effectively?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What experience does the team have with validation and compliance in the context of this project, and how might the lack of specified mitigation measures impact project execution?",
+          "question_en_preview": "What experience does the team have with validation and compliance in the context of this project, and how might the lack of specified mitigation measures impact project execution?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What existing collaborations or partnerships does the team have that could support the project's execution, and how stable are these relationships?",
+          "question_en_preview": "What existing collaborations or partnerships does the team have that could support the project's execution, and how stable are these relationships?"
+        }
+      ],
+      "elapsed_sec": 9.39,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 259,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Near22 aims to launch a privacy-focused chat app that allows users to connect without logins or tracking. The project includes milestones such as launching the public iOS app and releasing the Android beta, while also exploring use cases for small businesses.",
+        "first_key_point_preview": "Near22 intends to launch the public iOS app on the App Store.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Near22 intends to add advanced privacy features like local-only queues and BLE optimizations."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.34,
+        "raw_chars": 3552,
+        "usage": {
+          "prompt_tokens": 3389,
+          "completion_tokens": 768,
+          "total_tokens": 4157
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "privacy-focused chat app",
+        "user engagement metrics",
+        "milestone execution feasibility",
+        "revenue capture strategy",
+        "market demand for privacy",
+        "success metrics definition",
+        "business use cases exploration",
+        "community growth strategy",
+        "advanced privacy features"
+      ],
+      "cleaned_question_count": 5,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does Near22's objective of launching a privacy-focused chat app align with the current market demand for privacy in communication? Please discuss any evidence of this alignment.",
+          "question_en_preview": "How well does Near22's objective of launching a privacy-focused chat app align with the current market demand for privacy in communication? Please discuss any evidence of this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness of the milestones set by Near22, including the launch of the public iOS app and the release of the Android beta. Are these milestones executable within the proposed timelines?",
+          "question_en_preview": "Evaluate the reasonableness of the milestones set by Near22, including the launch of the public iOS app and the release of the Android beta. Are these milestones executable within the proposed timelines?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quantifiable success metrics should Near22 establish to measure the effectiveness of its privacy-focused chat app? Discuss how these metrics could reflect user engagement and satisfaction.",
+          "question_en_preview": "What quantifiable success metrics should Near22 establish to measure the effectiveness of its privacy-focused chat app? Discuss how these metrics could reflect user engagement and satisfaction."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does Near22 plan to create value and capture revenue through its privacy-focused chat app? Discuss the business logic behind the initiative and any potential revenue streams.",
+          "question_en_preview": "How does Near22 plan to create value and capture revenue through its privacy-focused chat app? Discuss the business logic behind the initiative and any potential revenue streams."
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in Near22's objectives. Are the goals set for the chat app too idealistic or appropriately ambitious given the current market landscape?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in Near22's objectives. Are the goals set for the chat app too idealistic or appropriately ambitious given the current market landscape?"
+        }
+      ],
+      "elapsed_sec": 10.35,
+      "final_question_count": 5
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 356,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Near22 is a privacy-focused chat application designed to enable users to connect with people nearby without the need for logins or tracking. The project aims to launch a public iOS app and release an Android beta, while also exploring small business use cases. Funding from Kickst ...",
+        "first_key_point_preview": "Near22 is a privacy-first chat app that allows users to discover and connect with people nearby without logins or tracking.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Near22 intends to add advanced privacy features like local-only queues and BLE optimizations."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.48,
+        "raw_chars": 4615,
+        "usage": {
+          "prompt_tokens": 3521,
+          "completion_tokens": 982,
+          "total_tokens": 4503
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Kickstarter funding strategy",
+        "privacy features validation",
+        "user adoption strategies",
+        "development milestones",
+        "scalability challenges",
+        "market positioning",
+        "quality compliance measures",
+        "operational budget realism",
+        "partnership opportunities",
+        "trade-offs in user experience"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "quality_compliance_strategy": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Near22 plan to position itself in the market against existing chat applications, and what specific strategies will be employed to secure user adoption and funding through Kickstarter?",
+          "question_en_preview": "How does Near22 plan to position itself in the market against existing chat applications, and what specific strategies will be employed to secure user adoption and funding through Kickstarter?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the development of Near22, particularly regarding privacy features and user experience, and how will these influence the delivery timeline?",
+          "question_en_preview": "What are the major trade-offs considered in the development of Near22, particularly regarding privacy features and user experience, and how will these influence the delivery timeline?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific milestones does Near22 plan to achieve during the development and validation stages for both the iOS and Android applications, and how will these be measured?",
+          "question_en_preview": "What specific milestones does Near22 plan to achieve during the development and validation stages for both the iOS and Android applications, and how will these be measured?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quality and compliance measures will Near22 implement to ensure the privacy features meet user expectations and regulatory standards?",
+          "question_en_preview": "What quality and compliance measures will Near22 implement to ensure the privacy features meet user expectations and regulatory standards?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Given the reliance on Kickstarter funding, how realistic is Near22's budget for development and operational costs, and what assumptions underpin this financial model?",
+          "question_en_preview": "Given the reliance on Kickstarter funding, how realistic is Near22's budget for development and operational costs, and what assumptions underpin this financial model?"
+        }
+      ],
+      "elapsed_sec": 12.49,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 327,
+        "key_points_count": 7,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "Near22 introduces innovative features aimed at reducing environmental impact and enhancing user experience. The product is designed as a digital-only solution, minimizing unnecessary data collection and energy usage, while also incorporating functionalities such as Bluetooth-base ...",
+        "first_key_point_preview": "Near22 is a digital-only product designed to reduce environmental impact compared to physical goods.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Near22 is designed to reduce environmental impact and minimize unnecessary data collection, which serves as a mitigation strategy."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.69,
+        "raw_chars": 5064,
+        "usage": {
+          "prompt_tokens": 3428,
+          "completion_tokens": 1138,
+          "total_tokens": 4566
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "environmental impact reduction",
+        "Bluetooth-based discovery",
+        "digital-only solution",
+        "user experience enhancement",
+        "intellectual property strategy",
+        "scalability of innovation",
+        "competitive differentiation",
+        "evidence of effectiveness",
+        "group interaction functionality"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 2,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "ip_and_protection": 1,
+          "platform_and_extensibility": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Near22's design as a digital-only product compare to existing physical goods in terms of environmental impact? Please provide evidence to support your assessment.",
+          "question_en_preview": "How does Near22's design as a digital-only product compare to existing physical goods in terms of environmental impact? Please provide evidence to support your assessment."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does Near22 offer over similar digital solutions in terms of user experience and environmental sustainability? Please cite relevant key points.",
+          "question_en_preview": "What specific advantages does Near22 offer over similar digital solutions in terms of user experience and environmental sustainability? Please cite relevant key points."
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of Near22's features, such as Bluetooth-based discovery and group interaction functionalities? How robust is this evidence?",
+          "question_en_preview": "What evidence supports the effectiveness of Near22's features, such as Bluetooth-based discovery and group interaction functionalities? How robust is this evidence?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to Near22's obsolescence or commoditization within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to Near22's obsolescence or commoditization within the next 3-5 years?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What strategies does Near22 have in place to protect its intellectual property, particularly regarding its innovative features and functionalities?",
+          "question_en_preview": "What strategies does Near22 have in place to protect its intellectual property, particularly regarding its innovative features and functionalities?"
+        }
+      ],
+      "elapsed_sec": 11.69,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 363,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the Near22 project is supported by the existence of a working beta, which mitigates the risk of not delivering the product. The project is based in Toronto, Canada, and has developed its core app and infrastructure. However, there are potential delays due to Ap ...",
+        "first_key_point_preview": "Near22 has a working beta, which reduces the risk of 'never shipping'.",
+        "first_risk_preview": "The project may face delays due to App Store review timelines.",
+        "first_mitigation_preview": "The existence of a working beta reduces the risk of 'never shipping'."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.47,
+        "raw_chars": 3868,
+        "usage": {
+          "prompt_tokens": 3449,
+          "completion_tokens": 846,
+          "total_tokens": 4295
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "working beta",
+        "App Store review timelines",
+        "Bluetooth tuning",
+        "community support",
+        "budget allocation",
+        "implementation plan",
+        "risk mitigation strategies",
+        "resource alignment",
+        "development timeline",
+        "operational execution"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "operational_execution_plan": 1,
+          "implementation_barriers": 1,
+          "risk_management": 1,
+          "funding_and_budget_planning": 1,
+          "timeline_and_resource_alignment": 1,
+          "resources_and_infrastructure": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the existence of a working beta for Near22 influence the implementation plan, particularly in terms of key tasks and timelines?",
+          "question_en_preview": "How does the existence of a working beta for Near22 influence the implementation plan, particularly in terms of key tasks and timelines?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific strategies are in place to address potential delays caused by App Store review timelines for Near22?",
+          "question_en_preview": "What specific strategies are in place to address potential delays caused by App Store review timelines for Near22?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How significant is the risk posed by Bluetooth behavior differences across devices for the development of Near22, and what mitigations are planned?",
+          "question_en_preview": "How significant is the risk posed by Bluetooth behavior differences across devices for the development of Near22, and what mitigations are planned?"
+        },
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic is the budget allocation for scaling backend services for Near22, considering the dependency on community support? What evidence would increase your confidence in this assessment?",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the budget allocation for scaling backend services for Near22, considering the dependency on community support? What evidence would increase your confidence in this assessment?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "If the proposal does not provide sufficient details on the timeline for addressing Bluetooth tuning issues, please state this information gap and discuss its impact on the feasibility assessment for Near22.",
+          "question_en_preview": "If the proposal does not provide sufficient details on the timeline for addressing Bluetooth tuning issues, please state this information gap and discuss its impact on the feasibility assessment for Near22."
+        }
+      ],
+      "elapsed_sec": 12.47,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T21:33:35Z",
+  "elapsed_sec": 56.39,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt101__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt101__openai/generated_questions_detail.json"
+}

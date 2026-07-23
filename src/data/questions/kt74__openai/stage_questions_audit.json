@@ -1,0 +1,625 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt74__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt74__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 373,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team consists of several key members, each responsible for different initiatives. Marcus Verbrugge leads the 'Starting a Prayerwalking Movement', while Patrick Munroe-Smith is associated with 'Faire in the Field: Year Two!', and Lindsay is involved with 'Laughing Gull ...",
+        "first_key_point_preview": "Marcus Verbrugge is the creator of the project 'Starting a Prayerwalking Movement'.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 16.04,
+        "raw_chars": 4457,
+        "usage": {
+          "prompt_tokens": 3351,
+          "completion_tokens": 956,
+          "total_tokens": 4307
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "leadership experience",
+        "domain expertise",
+        "project management capacity",
+        "validation experience",
+        "collaboration partnerships",
+        "governance structure",
+        "conflict resolution",
+        "project execution",
+        "team workload assessment"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "yes_no": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 5,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Marcus Verbrugge's leadership in 'Starting a Prayerwalking Movement' demonstrate his ability to advance this project towards its intended application and impact?",
+          "question_en_preview": "How does Marcus Verbrugge's leadership in 'Starting a Prayerwalking Movement' demonstrate his ability to advance this project towards its intended application and impact?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific domain expertise does Patrick Munroe-Smith bring from his work on 'Faire in the Field: Year Two!' that is relevant to the current project?",
+          "question_en_preview": "What specific domain expertise does Patrick Munroe-Smith bring from his work on 'Faire in the Field: Year Two!' that is relevant to the current project?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "yes_no",
+          "priority": 2,
+          "question_preview": "Considering the current workload of the team members involved in various initiatives, do you believe they have sufficient capacity to commit to this project? Please explain your reasoning.",
+          "question_en_preview": "Considering the current workload of the team members involved in various initiatives, do you believe they have sufficient capacity to commit to this project? Please explain your reasoning."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have in validation or compliance processes that could support the successful execution of this project, especially given the lack of specified mitigation measures?",
+          "question_en_preview": "What experience does the team have in validation or compliance processes that could support the successful execution of this project, especially given the lack of specified mitigation measures?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What existing collaborations or partnerships does the team have that could enhance the project's execution and mitigate potential risks?",
+          "question_en_preview": "What existing collaborations or partnerships does the team have that could enhance the project's execution and mitigate potential risks?"
+        }
+      ],
+      "elapsed_sec": 16.04,
+      "final_question_count": 9
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 283,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop an app for tracking and posting prayer walks online, with a goal to complete the app development by next summer. It envisions prayerwalking every street in the community monthly and includes a website to log routes and visualize community prayer covera ...",
+        "first_key_point_preview": "The project aims to develop an app to track and post prayer walks online.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.96,
+        "raw_chars": 4064,
+        "usage": {
+          "prompt_tokens": 3419,
+          "completion_tokens": 873,
+          "total_tokens": 4292
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "app development timeline",
+        "community prayer tracking",
+        "success metrics",
+        "user engagement",
+        "value creation logic",
+        "milestone feasibility",
+        "unmet need alignment",
+        "impact delivery",
+        "debugging process"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "milestones_and_timeline": 1,
+          "unmet_need_alignment": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused is the overall goal of developing an app for tracking and posting prayer walks online? Are there any unrelated sub-goals that could distract from this primary objective?",
+          "question_en_preview": "How clear and focused is the overall goal of developing an app for tracking and posting prayer walks online? Are there any unrelated sub-goals that could distract from this primary objective?"
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Evaluate the reasonableness of the proposed timeline for app development, which includes 3 months for initial development and another 3 months for thorough debugging. Are these milestones executable within the stated tim ...",
+          "question_en_preview": "Evaluate the reasonableness of the proposed timeline for app development, which includes 3 months for initial development and another 3 months for thorough debugging. Are these milestones executable within the stated tim ..."
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "To what extent do the objectives of the project align with the stated unmet need for community prayer tracking? How urgent is this need based on the project's goals?",
+          "question_en_preview": "To what extent do the objectives of the project align with the stated unmet need for community prayer tracking? How urgent is this need based on the project's goals?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics can be established for the app's performance and user engagement? How will these metrics be tracked and reported?",
+          "question_en_preview": "What clear and quantifiable success metrics can be established for the app's performance and user engagement? How will these metrics be tracked and reported?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the initiative create value and deliver impact through the app for tracking prayer walks? What is the logic behind capturing user engagement and community involvement?",
+          "question_en_preview": "How does the initiative create value and deliver impact through the app for tracking prayer walks? What is the logic behind capturing user engagement and community involvement?"
+        }
+      ],
+      "elapsed_sec": 13.97,
+      "final_question_count": 6
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 352,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project focuses on developing a smartphone app and a website to facilitate prayerwalking by allowing users to log their routes and track community engagement. It aims to achieve significant community outreach by envisioning prayerwalking every street monthly and has set a fun ...",
+        "first_key_point_preview": "The project aims to develop an app to track and post prayer walks online.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.62,
+        "raw_chars": 4189,
+        "usage": {
+          "prompt_tokens": 3502,
+          "completion_tokens": 917,
+          "total_tokens": 4419
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "community engagement metrics",
+        "user adoption strategies",
+        "funding sustainability",
+        "partnership collaborations",
+        "validation of prayerwalking effectiveness",
+        "scaling risks",
+        "revenue model alignment",
+        "quality compliance measures",
+        "user feedback mechanisms",
+        "outreach strategies"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 2,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "partnership_and_business_model": 1,
+          "scaling_and_globalization": 1,
+          "quality_compliance_strategy": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the decision to develop both a smartphone app and a website for tracking prayerwalking routes, and what alternatives were considered?",
+          "question_en_preview": "What rationale supports the decision to develop both a smartphone app and a website for tracking prayerwalking routes, and what alternatives were considered?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to validate the effectiveness of the app and website in facilitating prayerwalking and community engagement?",
+          "question_en_preview": "How does the project plan to validate the effectiveness of the app and website in facilitating prayerwalking and community engagement?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the project is currently 629% funded, what strategies will be employed to sustain user engagement and adoption of the app and website over time?",
+          "question_en_preview": "Given that the project is currently 629% funded, what strategies will be employed to sustain user engagement and adoption of the app and website over time?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the projected revenue model for the app and website, and how does it align with the funding goal of $14,122?",
+          "question_en_preview": "What is the projected revenue model for the app and website, and how does it align with the funding goal of $14,122?"
+        },
+        {
+          "aspect": "partnership_and_business_model",
+          "answer_type": "open",
+          "priority": 3,
+          "question_preview": "What partnerships or collaborations are being pursued to enhance the outreach and effectiveness of the prayerwalking initiative?",
+          "question_en_preview": "What partnerships or collaborations are being pursued to enhance the outreach and effectiveness of the prayerwalking initiative?"
+        }
+      ],
+      "elapsed_sec": 13.62,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 251,
+        "key_points_count": 2,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project introduces an innovative website, www.prayerwalking.ca, designed to log prayerwalking routes and visualize community areas that have been prayed through. This platform aims to enhance community engagement and tracking of prayer activities.",
+        "first_key_point_preview": "The website serves as a tool for logging prayerwalking routes.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.58,
+        "raw_chars": 4184,
+        "usage": {
+          "prompt_tokens": 3326,
+          "completion_tokens": 904,
+          "total_tokens": 4230
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "community engagement metrics",
+        "user feedback",
+        "competitive analysis",
+        "novel features",
+        "risk assessment",
+        "evidence of impact",
+        "extension to other initiatives",
+        "user experience advantages"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the website www.prayerwalking.ca compare to existing tools for logging community engagement and prayer activities? Please provide specific examples of its novelty.",
+          "question_en_preview": "How does the website www.prayerwalking.ca compare to existing tools for logging community engagement and prayer activities? Please provide specific examples of its novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does www.prayerwalking.ca offer over alternative approaches for community prayer tracking? Consider aspects such as user experience, functionality, and community impact.",
+          "question_en_preview": "What clear advantages does www.prayerwalking.ca offer over alternative approaches for community prayer tracking? Consider aspects such as user experience, functionality, and community impact."
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the website in enhancing community engagement and tracking prayer activities? Please detail any user feedback, pilot studies, or metrics that validate its impact.",
+          "question_en_preview": "What evidence supports the effectiveness of the website in enhancing community engagement and tracking prayer activities? Please detail any user feedback, pilot studies, or metrics that validate its impact."
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the website's offering within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee that could lead to the obsolescence or commoditization of the website's offering within the next 3-5 years?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How could the innovation represented by www.prayerwalking.ca be extended to other community engagement initiatives or geographic areas? What are the potential use cases beyond its current application?",
+          "question_en_preview": "How could the innovation represented by www.prayerwalking.ca be extended to other community engagement initiatives or geographic areas? What are the potential use cases beyond its current application?"
+        }
+      ],
+      "elapsed_sec": 10.58,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 325,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to develop a smartphone app and a website to facilitate prayerwalking, with a funding goal of $14,122. The Kickstarter campaign was launched to raise $20,000, but the initial funding attempt was unsuccessful. The project has outlined a timeline for app developmen ...",
+        "first_key_point_preview": "The project aims to raise $20,000 through a Kickstarter campaign to develop an iPhone and Android app.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 31.46,
+        "raw_chars": 4162,
+        "usage": {
+          "prompt_tokens": 3482,
+          "completion_tokens": 873,
+          "total_tokens": 4355
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter campaign strategy",
+        "funding alternatives",
+        "app development timeline",
+        "debugging phases",
+        "identified risks",
+        "user adoption barriers",
+        "resource alignment evidence",
+        "customer acceptance strategies",
+        "implementation challenges"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the initial Kickstarter campaign to raise $20,000 was unsuccessful, what alternative funding strategies are being considered to meet the project's funding goal of $14,122?",
+          "question_en_preview": "Given that the initial Kickstarter campaign to raise $20,000 was unsuccessful, what alternative funding strategies are being considered to meet the project's funding goal of $14,122?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How detailed is the implementation plan for the app development, particularly regarding the timeline for debugging and trials, and who are the key stakeholders responsible for each phase?",
+          "question_en_preview": "How detailed is the implementation plan for the app development, particularly regarding the timeline for debugging and trials, and who are the key stakeholders responsible for each phase?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific risks have been identified for the project, considering the limited risk information provided, and how might these impact the feasibility of the app's development and launch?",
+          "question_en_preview": "What specific risks have been identified for the project, considering the limited risk information provided, and how might these impact the feasibility of the app's development and launch?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation in real production or deployment settings have been considered, especially regarding user adoption and system integration for the app?",
+          "question_en_preview": "What barriers to implementation in real production or deployment settings have been considered, especially regarding user adoption and system integration for the app?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how aligned are the project's timeline and resources, particularly in light of the unsuccessful funding attempt? What evidence would increase your confidence in this alignment?",
+          "question_en_preview": "On a scale of 1 to 5, how aligned are the project's timeline and resources, particularly in light of the unsuccessful funding attempt? What evidence would increase your confidence in this alignment?"
+        }
+      ],
+      "elapsed_sec": 31.46,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T20:51:45Z",
+  "elapsed_sec": 85.69,
+  "total_questions": 38,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt74__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt74__openai/generated_questions_detail.json"
+}

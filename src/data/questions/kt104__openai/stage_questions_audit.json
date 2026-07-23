@@ -1,0 +1,621 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt104__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt104__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 329,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team is led by Lars Jensen, the creator of the 'yogagym' project, and includes certified experienced yoga instructors responsible for developing educational content and exercises. The team is focused on creating a test group to evaluate the content and exercises, whic ...",
+        "first_key_point_preview": "Lars Jensen is the creator of the 'yogagym' project.",
+        "first_risk_preview": "The project aims to create a test group to evaluate content and exercises to manage risk.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.33,
+        "raw_chars": 4471,
+        "usage": {
+          "prompt_tokens": 3328,
+          "completion_tokens": 930,
+          "total_tokens": 4258
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Lars Jensen's project leadership",
+        "yogagym project experience",
+        "certified yoga instructors",
+        "test group evaluation",
+        "risk management experience",
+        "team capacity assessment",
+        "governance processes",
+        "educational content development",
+        "project execution record"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does Lars Jensen's experience as the creator of the 'yogagym' project position him to lead this initiative effectively? Please provide specific examples of his prior execution record that would support this.",
+          "question_en_preview": "How does Lars Jensen's experience as the creator of the 'yogagym' project position him to lead this initiative effectively? Please provide specific examples of his prior execution record that would support this."
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific qualifications and experiences do the certified experienced yoga instructors bring to the development of educational content and exercises? How do these qualifications align with the project’s objectives?",
+          "question_en_preview": "What specific qualifications and experiences do the certified experienced yoga instructors bring to the development of educational content and exercises? How do these qualifications align with the project’s objectives?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the current workload and any parallel projects, does the team have sufficient capacity and resources to effectively create a test group for evaluating content and exercises? Please discuss any potential limit ...",
+          "question_en_preview": "Considering the current workload and any parallel projects, does the team have sufficient capacity and resources to effectively create a test group for evaluating content and exercises? Please discuss any potential limit ..."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with managing risks associated with creating a test group to evaluate content and exercises? How might this experience contribute to the project's success?",
+          "question_en_preview": "What experience does the team have with managing risks associated with creating a test group to evaluate content and exercises? How might this experience contribute to the project's success?"
+        },
+        {
+          "aspect": "governance_and_decision_making",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the proposal does not specify mitigation measures for the identified risk of creating a test group, what governance or decision-making processes could be implemented to address this risk effectively?",
+          "question_en_preview": "Given that the proposal does not specify mitigation measures for the identified risk of creating a test group, what governance or decision-making processes could be implemented to address this risk effectively?"
+        }
+      ],
+      "elapsed_sec": 10.33,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 310,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project, titled 'yogagym - the on demand yoga studio for everybody everywhere', aims to provide an online yoga service accessible anytime and anywhere. It is structured into three phases: developing a website and mobile app, creating content for the applications, and deployin ...",
+        "first_key_point_preview": "The project aims to create a test group to evaluate content and exercises to manage risk.",
+        "first_risk_preview": "The project aims to create a test group to evaluate content and exercises to manage risk.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.87,
+        "raw_chars": 3644,
+        "usage": {
+          "prompt_tokens": 3416,
+          "completion_tokens": 853,
+          "total_tokens": 4269
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "test group evaluation",
+        "content management risk",
+        "website and app development",
+        "user access deployment",
+        "quantifiable success metrics",
+        "value creation logic",
+        "yoga training levels",
+        "service accessibility",
+        "milestone execution feasibility"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "key_point_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "key_point_traceability": 1
+        },
+        "linked_to_key_points": 2,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clear and focused are the overall goals of the project 'yogagym'? Are there any unrelated sub-goals that could distract from the main objective?",
+          "question_en_preview": "How clear and focused are the overall goals of the project 'yogagym'? Are there any unrelated sub-goals that could distract from the main objective?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the objectives of 'yogagym' align with the stated unmet need for accessible yoga services? Please evaluate the urgency of this alignment.",
+          "question_en_preview": "To what extent do the objectives of 'yogagym' align with the stated unmet need for accessible yoga services? Please evaluate the urgency of this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Are the proposed phases for 'yogagym'—developing the website and app, creating content, and deploying the service—reasonable and executable within the suggested timelines?",
+          "question_en_preview": "Are the proposed phases for 'yogagym'—developing the website and app, creating content, and deploying the service—reasonable and executable within the suggested timelines?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What clear and quantifiable success metrics can be established for 'yogagym' to measure the effectiveness of the service once deployed?",
+          "question_en_preview": "What clear and quantifiable success metrics can be established for 'yogagym' to measure the effectiveness of the service once deployed?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the initiative 'yogagym' create value and capture revenue? Please explain the business or impact logic behind the objectives.",
+          "question_en_preview": "How does the initiative 'yogagym' create value and capture revenue? Please explain the business or impact logic behind the objectives."
+        }
+      ],
+      "elapsed_sec": 11.87,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 321,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The strategy for the yogagym project focuses on developing an online yoga service that provides users with flexible access to classes and instructor support. The project is structured in three phases: developing the website and mobile app, creating content for the applications, a ...",
+        "first_key_point_preview": "The project aims to create an online yoga service accessible anytime and anywhere.",
+        "first_risk_preview": "The deployment of the website in the Microsoft Azure cloud presents a risk that needs to be managed for flexibility.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.88,
+        "raw_chars": 5101,
+        "usage": {
+          "prompt_tokens": 3491,
+          "completion_tokens": 1083,
+          "total_tokens": 4574
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "user acquisition strategy",
+        "unit economics analysis",
+        "scaling considerations",
+        "partnership structure",
+        "quality compliance measures",
+        "go-to-market strategy",
+        "feedback utilization strategy",
+        "risk management in cloud deployment",
+        "phased development approach",
+        "content delivery methods"
+      ],
+      "cleaned_question_count": 9,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 2
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "quality_compliance_strategy": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "data_and_real_world_evidence_strategy": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs considered in the development of the online yoga service, particularly regarding the flexibility of access and instructor support?",
+          "question_en_preview": "What are the major trade-offs considered in the development of the online yoga service, particularly regarding the flexibility of access and instructor support?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the phased approach of developing the website and mobile app, creating content, and deploying the service ensure effective validation and readiness for user access?",
+          "question_en_preview": "How does the phased approach of developing the website and mobile app, creating content, and deploying the service ensure effective validation and readiness for user access?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What is the proposed go-to-market strategy for the online yoga service, and how does it address user acquisition and retention?",
+          "question_en_preview": "What is the proposed go-to-market strategy for the online yoga service, and how does it address user acquisition and retention?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the risk associated with deploying the website in the Microsoft Azure cloud, what quality and compliance strategies are in place to mitigate potential issues?",
+          "question_en_preview": "Given the risk associated with deploying the website in the Microsoft Azure cloud, what quality and compliance strategies are in place to mitigate potential issues?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "What are the expected unit economics for the online yoga service, particularly in terms of pricing and user retention, and how do these support the overall business model?",
+          "question_en_preview": "What are the expected unit economics for the online yoga service, particularly in terms of pricing and user retention, and how do these support the overall business model?"
+        }
+      ],
+      "elapsed_sec": 11.88,
+      "final_question_count": 9
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 6,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 124,
+        "key_points_count": 0,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The proposal contains limited explicit information about the innovation dimension, so a detailed summary cannot be produced.",
+        "first_key_point_preview": "<none>",
+        "first_risk_preview": "The proposal provides limited detail for the innovation dimension, which may affect evaluation quality.",
+        "first_mitigation_preview": "The proposal does not specify how to address or mitigate this information gap."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.39,
+        "raw_chars": 4465,
+        "usage": {
+          "prompt_tokens": 3154,
+          "completion_tokens": 971,
+          "total_tokens": 4125
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "innovation comparison",
+        "competitive advantages",
+        "intellectual property strategy",
+        "evidence of innovation",
+        "extension potential",
+        "risk of obsolescence",
+        "customer value proposition",
+        "performance metrics",
+        "cost advantages",
+        "market differentiation"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6
+        },
+        "priorities": {
+          "1": 2,
+          "2": 2,
+          "3": 2
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "ip_and_protection": 1,
+          "evidence_strength_for_innovation": 1,
+          "platform_and_extensibility": 1,
+          "risk_of_obsolescence_or_commoditization": 1
+        },
+        "linked_to_key_points": 0,
+        "linked_to_risks": 6,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited information provided in the proposal, how does the innovation compare to the current state of the art in its field? Please identify any specific areas where it may offer true novelty.",
+          "question_en_preview": "Given the limited information provided in the proposal, how does the innovation compare to the current state of the art in its field? Please identify any specific areas where it may offer true novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the innovation have over existing similar or alternative approaches, particularly in terms of customer value, performance, or cost? If this information is not available, please discuss the impl ...",
+          "question_en_preview": "What clear advantages does the innovation have over existing similar or alternative approaches, particularly in terms of customer value, performance, or cost? If this information is not available, please discuss the impl ..."
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What strategies are in place for protecting intellectual property related to the innovation, and how do these strategies support medium- to long-term competition? If this information is not provided, please evaluate the  ...",
+          "question_en_preview": "What strategies are in place for protecting intellectual property related to the innovation, and how do these strategies support medium- to long-term competition? If this information is not provided, please evaluate the  ..."
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What types of evidence (experimental, operational, market) are available to support the claims of innovation? If the proposal lacks this evidence, please discuss how this affects the overall evaluation.",
+          "question_en_preview": "What types of evidence (experimental, operational, market) are available to support the claims of innovation? If the proposal lacks this evidence, please discuss how this affects the overall evaluation."
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does the innovation allow for potential extension to other customer segments or use cases? If this potential is not clearly defined, please assess the risk associated with this lack of clarity.",
+          "question_en_preview": "How does the innovation allow for potential extension to other customer segments or use cases? If this potential is not clearly defined, please assess the risk associated with this lack of clarity."
+        }
+      ],
+      "elapsed_sec": 12.39,
+      "final_question_count": 6
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 337,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is challenged by the need to stay within budget and on schedule during its phases, as well as the requirement to develop user-friendly content and ensure a positive user experience. The project will utilize Microsoft Azure for hosting, which is inte ...",
+        "first_key_point_preview": "The project aims to stay within budget and on time during its first phase.",
+        "first_risk_preview": "The project faces challenges in staying within budget and on time, developing user-friendly content, and ensuring a good user experience.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.76,
+        "raw_chars": 4053,
+        "usage": {
+          "prompt_tokens": 3457,
+          "completion_tokens": 852,
+          "total_tokens": 4309
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "budget allocation evidence",
+        "user-friendly content development",
+        "user experience evaluation",
+        "risk management strategies",
+        "customer acceptance evidence",
+        "timeline-resource alignment",
+        "implementation barriers",
+        "Microsoft Azure hosting",
+        "project phase tasks",
+        "flexibility in project execution"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "implementation_barriers": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How realistic is the project's budget allocation for staying within budget during its first phase, and what specific evidence supports this assessment?",
+          "question_en_preview": "How realistic is the project's budget allocation for staying within budget during its first phase, and what specific evidence supports this assessment?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific tasks and timelines are outlined for the second and third phases of the project, and how do they ensure the development of user-friendly content and a positive user experience?",
+          "question_en_preview": "What specific tasks and timelines are outlined for the second and third phases of the project, and how do they ensure the development of user-friendly content and a positive user experience?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the identified risk of challenges in staying within budget and on time, what additional risk management strategies could be implemented to mitigate these challenges?",
+          "question_en_preview": "Given the identified risk of challenges in staying within budget and on time, what additional risk management strategies could be implemented to mitigate these challenges?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence exists to support the feasibility of customer acceptance of the website and mobile app, particularly in relation to the user experience challenges identified?",
+          "question_en_preview": "What evidence exists to support the feasibility of customer acceptance of the website and mobile app, particularly in relation to the user experience challenges identified?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1-5, how well does the project align its timeline with the resources available for each phase, and what evidence would increase your confidence in this alignment?",
+          "question_en_preview": "On a scale of 1-5, how well does the project align its timeline with the resources available for each phase, and what evidence would increase your confidence in this alignment?"
+        }
+      ],
+      "elapsed_sec": 9.76,
+      "final_question_count": 7
+    }
+  },
+  "generated_at": "2026-07-15T21:37:57Z",
+  "elapsed_sec": 56.24,
+  "total_questions": 36,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt104__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt104__openai/generated_questions_detail.json"
+}

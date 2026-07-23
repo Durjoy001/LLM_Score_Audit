@@ -1,0 +1,611 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt2__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt2__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 445,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project 'JAVA: SOLID Principles and Top Design Patterns' is led by P.J. Paweska, who is a core team member. The team possesses prior experience in delivering successful courses, indicating a strong capability in educational project execution. Proficiency in SOLID Principles a ...",
+        "first_key_point_preview": "The project is led by P.J. Paweska.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 18.41,
+        "raw_chars": 4704,
+        "usage": {
+          "prompt_tokens": 3355,
+          "completion_tokens": 996,
+          "total_tokens": 4351
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "P.J. Paweska leadership",
+        "successful course delivery",
+        "SOLID Principles expertise",
+        "Design Patterns proficiency",
+        "collaboration networks",
+        "validation experience",
+        "team capacity assessment",
+        "educational content quality",
+        "project execution confidence"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "collaboration_network": 1,
+          "validation_and_compliance_experience": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does P.J. Paweska's leadership experience specifically contribute to the project's potential for successful execution and delivery of educational courses?",
+          "question_en_preview": "How does P.J. Paweska's leadership experience specifically contribute to the project's potential for successful execution and delivery of educational courses?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What evidence supports the team's proficiency in SOLID Principles and Design Patterns, and how does this expertise enhance their capability to deliver high-quality educational content?",
+          "question_en_preview": "What evidence supports the team's proficiency in SOLID Principles and Design Patterns, and how does this expertise enhance their capability to deliver high-quality educational content?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given the team's prior experience in delivering successful courses, do they currently have the capacity and bandwidth to take on this project? Please evaluate any potential constraints.",
+          "question_en_preview": "Given the team's prior experience in delivering successful courses, do they currently have the capacity and bandwidth to take on this project? Please evaluate any potential constraints."
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What collaborative networks does the team have in place that could support the successful execution of this project, and how stable are these relationships?",
+          "question_en_preview": "What collaborative networks does the team have in place that could support the successful execution of this project, and how stable are these relationships?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific validation or compliance experience does the team possess that could mitigate risks associated with delivering educational content in the software development sector?",
+          "question_en_preview": "What specific validation or compliance experience does the team possess that could mitigate risks associated with delivering educational content in the software development sector?"
+        }
+      ],
+      "elapsed_sec": 18.42,
+      "final_question_count": 7
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 425,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 2,
+        "summary_preview": "The project aims to enhance Java developers' skills by teaching them SOLID principles and design patterns, ultimately transitioning them from coding to architecting robust software systems. It includes a structured course that emphasizes practical applications, such as optimizing ...",
+        "first_key_point_preview": "The course focuses on mastering SOLID principles and design patterns to improve software architecture.",
+        "first_risk_preview": "The course includes a challenge to architect a solution for John Conway's Game of Life simulation, which may pose difficulties for participants.",
+        "first_mitigation_preview": "The maintainability of code reduces maintenance effort and time, helping to address potential challenges."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.0,
+        "raw_chars": 4112,
+        "usage": {
+          "prompt_tokens": 3490,
+          "completion_tokens": 838,
+          "total_tokens": 4328
+        }
+      },
+      "raw_question_count": 5,
+      "search_hints": [
+        "SOLID principles mastery",
+        "design patterns application",
+        "real-world problem-solving",
+        "course success metrics",
+        "architectural challenge assessment",
+        "value creation logic",
+        "milestone feasibility",
+        "complexity management",
+        "student optimization skills"
+      ],
+      "cleaned_question_count": 5,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 2
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well does the project align its objectives with the stated need for enhancing Java developers' skills, particularly in mastering SOLID principles and design patterns? If the proposal does not provide sufficient detai ...",
+          "question_en_preview": "How well does the project align its objectives with the stated need for enhancing Java developers' skills, particularly in mastering SOLID principles and design patterns? If the proposal does not provide sufficient detai ..."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness and executability of the proposed milestones for the course, particularly regarding the challenge to architect a solution for John Conway's Game of Life simulation. What evidence supports your ...",
+          "question_en_preview": "Evaluate the reasonableness and executability of the proposed milestones for the course, particularly regarding the challenge to architect a solution for John Conway's Game of Life simulation. What evidence supports your ..."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear and quantifiable success metrics does the project propose to measure the effectiveness of the course in enhancing Java developers' skills? If the proposal lacks specific metrics, please identify this gap and d ...",
+          "question_en_preview": "What clear and quantifiable success metrics does the project propose to measure the effectiveness of the course in enhancing Java developers' skills? If the proposal lacks specific metrics, please identify this gap and d ..."
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the initiative explain its value creation and revenue capture through the course objectives? Discuss the business logic that underpins the transition from coding to architecting robust software systems.",
+          "question_en_preview": "How does the initiative explain its value creation and revenue capture through the course objectives? Discuss the business logic that underpins the transition from coding to architecting robust software systems."
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in the project's objectives, particularly regarding the complexity of the architectural challenges presented. Are the goals too idealistic or appropriately ambitious?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the project's objectives, particularly regarding the complexity of the architectural challenges presented. Are the goals too idealistic or appropriately ambitious?"
+        }
+      ],
+      "elapsed_sec": 13.0,
+      "final_question_count": 5
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 338,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to reshape software development education by leveraging Java and its associated principles and frameworks. It emphasizes the use of S.O.L.I.D Principles and Design Patterns to manage complexity and enhance collaboration among developers, while also utilizing tool ...",
+        "first_key_point_preview": "The project seeks to reshape software development education through a focus on Java.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "Developers can focus on specific components without needing a deep grasp of the entire codebase, leading to improved teamwork."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 19.71,
+        "raw_chars": 4862,
+        "usage": {
+          "prompt_tokens": 3532,
+          "completion_tokens": 1043,
+          "total_tokens": 4575
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Kickstarter funding strategy",
+        "S.O.L.I.D Principles application",
+        "Design Patterns in education",
+        "Validation stages for effectiveness",
+        "Quality compliance strategies",
+        "Scaling risks and mitigations",
+        "Partnership collaboration models",
+        "Budget and financial model realism",
+        "Market entry strategy"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "business_model_and_unit_economics": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the project plan to secure funding and support beyond the initial CA$ 536 raised from 7 backers on Kickstarter, and what are the implications of this funding strategy on its long-term sustainability?",
+          "question_en_preview": "How does the project plan to secure funding and support beyond the initial CA$ 536 raised from 7 backers on Kickstarter, and what are the implications of this funding strategy on its long-term sustainability?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the major trade-offs in the proposed solution design that leverages S.O.L.I.D Principles and Design Patterns, and how do these trade-offs impact the project's ability to manage complexity in software development ...",
+          "question_en_preview": "What are the major trade-offs in the proposed solution design that leverages S.O.L.I.D Principles and Design Patterns, and how do these trade-offs impact the project's ability to manage complexity in software development ..."
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What validation stages does the project plan to implement to ensure the effectiveness of its educational approach using Java, and how will these stages be measured?",
+          "question_en_preview": "What validation stages does the project plan to implement to ensure the effectiveness of its educational approach using Java, and how will these stages be measured?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "On a scale of 1 to 5, how realistic is the project's budget and financial model given the current funding status and projected costs for development and marketing? Please provide evidence that would increase your score.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic is the project's budget and financial model given the current funding status and projected costs for development and marketing? Please provide evidence that would increase your score."
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What quality and compliance strategies are in place to ensure that the educational content meets industry standards, and how will these be validated?",
+          "question_en_preview": "What quality and compliance strategies are in place to ensure that the educational content meets industry standards, and how will these be validated?"
+        }
+      ],
+      "elapsed_sec": 19.71,
+      "final_question_count": 8
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 304,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project emphasizes the use of design patterns and SOLID principles to enhance software development. These methodologies improve code quality, facilitate communication among developers, and provide standard solutions to common challenges, ultimately leading to more maintainabl ...",
+        "first_key_point_preview": "Design patterns save time and ensure effective problem-solving by providing standard solutions.",
+        "first_risk_preview": "Design patterns are established solutions to common software challenges.",
+        "first_mitigation_preview": "Design patterns save time and ensure effective problem-solving by providing standard solutions."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.6,
+        "raw_chars": 3764,
+        "usage": {
+          "prompt_tokens": 3405,
+          "completion_tokens": 817,
+          "total_tokens": 4222
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "design patterns",
+        "SOLID principles",
+        "code quality",
+        "maintainability",
+        "software development methodologies",
+        "evidence of effectiveness",
+        "competitive advantages",
+        "long-term relevance",
+        "extensibility to other contexts"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the use of design patterns and SOLID principles in this project represent true novelty compared to existing software development methodologies?",
+          "question_en_preview": "How does the use of design patterns and SOLID principles in this project represent true novelty compared to existing software development methodologies?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What clear advantages does the project offer over existing software development approaches, particularly in terms of code quality and maintainability?",
+          "question_en_preview": "What clear advantages does the project offer over existing software development approaches, particularly in terms of code quality and maintainability?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of design patterns in improving software development outcomes, and how does this evidence strengthen the project's innovation claims?",
+          "question_en_preview": "What evidence supports the effectiveness of design patterns in improving software development outcomes, and how does this evidence strengthen the project's innovation claims?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that design patterns are established solutions, what risks does this pose for the project's long-term relevance and competitiveness?",
+          "question_en_preview": "Given that design patterns are established solutions, what risks does this pose for the project's long-term relevance and competitiveness?"
+        },
+        {
+          "aspect": "platform_and_extensibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How can the innovation extend to other software development contexts or customer segments beyond the initial application?",
+          "question_en_preview": "How can the innovation extend to other software development contexts or customer segments beyond the initial application?"
+        }
+      ],
+      "elapsed_sec": 12.6,
+      "final_question_count": 7
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 323,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project is based in Toronto, Canada, and aims to reshape software development education, particularly focusing on Java, which remains relevant and in demand. The course is designed for Java developers, ensuring a structured progression and utilizing various technologies to en ...",
+        "first_key_point_preview": "The project has received CA$ 536 from 7 backers.",
+        "first_risk_preview": "Unforeseen circumstances could potentially delay the course launch or module releases.",
+        "first_mitigation_preview": "Buffer times have been factored in to account for unforeseen circumstances that could delay course launch or module release."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 23.96,
+        "raw_chars": 5525,
+        "usage": {
+          "prompt_tokens": 3433,
+          "completion_tokens": 1178,
+          "total_tokens": 4611
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "Kickstarter funding",
+        "Java developer demand",
+        "course delivery timeline",
+        "buffer times for delays",
+        "customer enrollment metrics",
+        "implementation barriers",
+        "resource sufficiency",
+        "budget allocation realism",
+        "course structure progression",
+        "staffing gap strategies"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 2,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "implementation_barriers": 1,
+          "resources_and_infrastructure": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project has received CA$ 536 from 7 backers, how does this funding align with the overall budget required for course development and delivery? What additional funding sources are being pursued to ensure su ...",
+          "question_en_preview": "Given that the project has received CA$ 536 from 7 backers, how does this funding align with the overall budget required for course development and delivery? What additional funding sources are being pursued to ensure su ..."
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the defined course structure ensure a step-by-step progression for learners, and what specific tasks and timelines are in place to support the implementation of this structure?",
+          "question_en_preview": "How does the defined course structure ensure a step-by-step progression for learners, and what specific tasks and timelines are in place to support the implementation of this structure?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific unforeseen circumstances have been identified that could delay the course launch or module releases, and how effective are the buffer times factored in as a mitigation strategy?",
+          "question_en_preview": "What specific unforeseen circumstances have been identified that could delay the course launch or module releases, and how effective are the buffer times factored in as a mitigation strategy?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the demand for Java developers, what evidence supports the feasibility of customer acceptance and enrollment in the course? How will this be measured post-launch?",
+          "question_en_preview": "Considering the demand for Java developers, what evidence supports the feasibility of customer acceptance and enrollment in the course? How will this be measured post-launch?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What potential bottlenecks or staffing gaps have been identified in the timeline for course development, and how are these being addressed to ensure alignment with resource availability?",
+          "question_en_preview": "What potential bottlenecks or staffing gaps have been identified in the timeline for course development, and how are these being addressed to ensure alignment with resource availability?"
+        }
+      ],
+      "elapsed_sec": 23.96,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T18:35:06Z",
+  "elapsed_sec": 87.69,
+  "total_questions": 35,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt2__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt2__openai/generated_questions_detail.json"
+}

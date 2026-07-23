@@ -1,0 +1,620 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt72__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt72__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 200,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project team currently consists of a single member, Christian, who is developing a Discord Bot named NexusBot. Christian has a background in Computer Programming, although he is a college dropout.",
+        "first_key_point_preview": "Christian is the only member of the team at the moment.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.89,
+        "raw_chars": 4767,
+        "usage": {
+          "prompt_tokens": 3274,
+          "completion_tokens": 1024,
+          "total_tokens": 4298
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "programming skills",
+        "Discord Bot development",
+        "project leadership",
+        "collaboration network",
+        "validation experience",
+        "workload capacity",
+        "compliance processes",
+        "single team member risks",
+        "technical expertise"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 4,
+          "3": 1
+        },
+        "aspects": {
+          "leadership_experience": 2,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that Christian is the only member of the team, how does his background in Computer Programming position him to lead the development and deployment of NexusBot effectively?",
+          "question_en_preview": "Given that Christian is the only member of the team, how does his background in Computer Programming position him to lead the development and deployment of NexusBot effectively?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific programming skills or experiences does Christian possess that are directly relevant to the development of a Discord Bot, and how do they enhance the project's potential for success?",
+          "question_en_preview": "What specific programming skills or experiences does Christian possess that are directly relevant to the development of a Discord Bot, and how do they enhance the project's potential for success?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering Christian is currently the sole team member, what is his current workload and capacity to manage the development of NexusBot alongside any other commitments?",
+          "question_en_preview": "Considering Christian is currently the sole team member, what is his current workload and capacity to manage the development of NexusBot alongside any other commitments?"
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does Christian have with validation or compliance processes that may be necessary for the successful deployment of NexusBot, especially in the context of Discord's platform policies?",
+          "question_en_preview": "What experience does Christian have with validation or compliance processes that may be necessary for the successful deployment of NexusBot, especially in the context of Discord's platform policies?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Given that the proposal does not mention any collaborators or partners, how might the lack of a collaboration network impact the project's development and market entry for NexusBot?",
+          "question_en_preview": "Given that the proposal does not mention any collaborators or partners, how might the lack of a collaboration network impact the project's development and market entry for NexusBot?"
+        }
+      ],
+      "elapsed_sec": 13.89,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 423,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project aims to enhance the functionality of a Discord Bot named NexusBot by connecting it to a website and ensuring it operates smoothly across different servers. The funding goal is set at $4,095, with a funding period from January 18, 2024, to March 17, 2024. Additionally, ...",
+        "first_key_point_preview": "The project aims to connect the Discord Bot to a website for enhanced functionality.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 24.02,
+        "raw_chars": 4604,
+        "usage": {
+          "prompt_tokens": 3449,
+          "completion_tokens": 1024,
+          "total_tokens": 4473
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Discord Bot functionality",
+        "NexusBot performance metrics",
+        "funding goal assessment",
+        "user needs alignment",
+        "project timeline feasibility",
+        "success metrics definition",
+        "scope prioritization analysis",
+        "ambition vs feasibility balance",
+        "milestones execution plan"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 3
+        },
+        "aspects": {
+          "overall_goal_clarity": 1,
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 2,
+          "outcome_and_success_metrics": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 0,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "overall_goal_clarity",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How clearly defined are the overall goals of the NexusBot project, particularly in terms of enhancing functionality and ensuring smooth operation across different servers?",
+          "question_en_preview": "How clearly defined are the overall goals of the NexusBot project, particularly in terms of enhancing functionality and ensuring smooth operation across different servers?"
+        },
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "To what extent do the objectives of the NexusBot project align with the identified needs of Discord users for enhanced bot functionality? Please discuss any gaps in this alignment.",
+          "question_en_preview": "To what extent do the objectives of the NexusBot project align with the identified needs of Discord users for enhanced bot functionality? Please discuss any gaps in this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Evaluate the reasonableness of the funding period from January 18, 2024, to March 17, 2024, in relation to the project's objectives and expected milestones. Are there any potential challenges?",
+          "question_en_preview": "Evaluate the reasonableness of the funding period from January 18, 2024, to March 17, 2024, in relation to the project's objectives and expected milestones. Are there any potential challenges?"
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What specific success metrics should be established to evaluate the performance of the NexusBot once it is connected to the website? How can these metrics be quantified?",
+          "question_en_preview": "What specific success metrics should be established to evaluate the performance of the NexusBot once it is connected to the website? How can these metrics be quantified?"
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "Assess the balance between ambition and feasibility in the NexusBot project's objectives. Are the goals set by Christian realistic given the funding and timeline?",
+          "question_en_preview": "Assess the balance between ambition and feasibility in the NexusBot project's objectives. Are the goals set by Christian realistic given the funding and timeline?"
+        }
+      ],
+      "elapsed_sec": 24.02,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 274,
+        "key_points_count": 4,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The NexusBot project aims to enhance functionality by connecting a Discord Bot to a website, with a focus on ensuring fast and smooth performance across different servers. The funding goal is set at $4,095, and the funding period is from January 18, 2024, to March 17, 2024.",
+        "first_key_point_preview": "The project aims to connect the Discord Bot to a website for enhanced functionality.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.6,
+        "raw_chars": 3620,
+        "usage": {
+          "prompt_tokens": 3484,
+          "completion_tokens": 793,
+          "total_tokens": 4277
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Discord Bot integration",
+        "performance validation stages",
+        "funding goal alignment",
+        "unit economics analysis",
+        "risk assessment for scaling",
+        "partnership strategy",
+        "market entry strategy",
+        "operational readiness",
+        "customer qualification metrics",
+        "development cost breakdown"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 4,
+          "rating": 2,
+          "open": 1
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What rationale supports the decision to connect the Discord Bot to a website, and what alternatives were considered for enhancing functionality?",
+          "question_en_preview": "What rationale supports the decision to connect the Discord Bot to a website, and what alternatives were considered for enhancing functionality?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What validation stages are planned to ensure the NexusBot performs smoothly across different servers, and how will these be measured?",
+          "question_en_preview": "What validation stages are planned to ensure the NexusBot performs smoothly across different servers, and how will these be measured?"
+        },
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How does the funding goal of $4,095 align with the expected costs of development and market entry for the NexusBot project?",
+          "question_en_preview": "How does the funding goal of $4,095 align with the expected costs of development and market entry for the NexusBot project?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the anticipated unit economics for the NexusBot project, and how will these support its sustainability post-launch?",
+          "question_en_preview": "What are the anticipated unit economics for the NexusBot project, and how will these support its sustainability post-launch?"
+        },
+        {
+          "aspect": "scaling_and_globalization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the current lack of detailed risk information, what potential risks could arise during the scaling of the NexusBot project, and how might they impact its rollout?",
+          "question_en_preview": "Given the current lack of detailed risk information, what potential risks could arise during the scaling of the NexusBot project, and how might they impact its rollout?"
+        }
+      ],
+      "elapsed_sec": 10.61,
+      "final_question_count": 7
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 8,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 243,
+        "key_points_count": 3,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The project emphasizes innovation through the use of AI-generated content and the development of a custom AI system. It aims to enhance user interaction with a bot that facilitates learning about both the creator and the underlying technology.",
+        "first_key_point_preview": "The project plans to utilize AI-generated content.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 11.16,
+        "raw_chars": 4201,
+        "usage": {
+          "prompt_tokens": 3341,
+          "completion_tokens": 924,
+          "total_tokens": 4265
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "AI-generated content effectiveness",
+        "user interaction bot advantages",
+        "intellectual property protection strategy",
+        "evidence for AI system performance",
+        "risk of commoditization",
+        "platform extensibility potential",
+        "customer segment expansion",
+        "innovation validation metrics",
+        "competitive differentiation factors"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 4
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "ip_and_protection": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the use of AI-generated content in this project compare to existing solutions in terms of novelty and effectiveness?",
+          "question_en_preview": "How does the use of AI-generated content in this project compare to existing solutions in terms of novelty and effectiveness?"
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does the proposed bot for user interaction offer over current educational tools or platforms?",
+          "question_en_preview": "What specific advantages does the proposed bot for user interaction offer over current educational tools or platforms?"
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What strategies are in place to protect the intellectual property associated with the custom AI system being developed for this project?",
+          "question_en_preview": "What strategies are in place to protect the intellectual property associated with the custom AI system being developed for this project?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of the AI-generated content and the custom AI system in enhancing user learning and interaction?",
+          "question_en_preview": "What evidence supports the effectiveness of the AI-generated content and the custom AI system in enhancing user learning and interaction?"
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the obsolescence or commoditization of the AI system within the next 3-5 years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee regarding the obsolescence or commoditization of the AI system within the next 3-5 years?"
+        }
+      ],
+      "elapsed_sec": 11.16,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 260,
+        "key_points_count": 5,
+        "risks_count": 2,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the project is challenged by several factors, including limited funding and the individual's lack of experience in AI development. The project has raised only $49 from four backers, and the funding goal of $4,095 was not met by the deadline.",
+        "first_key_point_preview": "The project raised $49 from four backers, indicating limited financial support.",
+        "first_risk_preview": "The challenge of making the website part of the project.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.76,
+        "raw_chars": 4691,
+        "usage": {
+          "prompt_tokens": 3440,
+          "completion_tokens": 988,
+          "total_tokens": 4428
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "funding sustainability",
+        "website integration strategy",
+        "AI development experience",
+        "self-learning programming resources",
+        "customer acceptance indicators",
+        "implementation barriers",
+        "timeline-resource alignment",
+        "risk mitigation strategies",
+        "stakeholder buy-in evidence",
+        "financial support analysis"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 4
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "resources_and_infrastructure": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1,
+          "timeline_and_resource_alignment": 1,
+          "implementation_barriers": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that the project raised only $49 from four backers and did not meet its funding goal of $4,095, how do you assess the project's financial sustainability and potential for follow-on financing?",
+          "question_en_preview": "Given that the project raised only $49 from four backers and did not meet its funding goal of $4,095, how do you assess the project's financial sustainability and potential for follow-on financing?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific steps does the individual plan to take to integrate the website into the project, considering the identified challenge?",
+          "question_en_preview": "What specific steps does the individual plan to take to integrate the website into the project, considering the identified challenge?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the individual's lack of prior experience in AI development impact the project's risk profile, and what strategies could be employed to mitigate this risk?",
+          "question_en_preview": "How does the individual's lack of prior experience in AI development impact the project's risk profile, and what strategies could be employed to mitigate this risk?"
+        },
+        {
+          "aspect": "resources_and_infrastructure",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "Considering the individual's self-learning journey in programming after dropping out of college, what resources or support systems could enhance their ability to execute the project effectively?",
+          "question_en_preview": "Considering the individual's self-learning journey in programming after dropping out of college, what resources or support systems could enhance their ability to execute the project effectively?"
+        },
+        {
+          "aspect": "approval_payment_or_customer_acceptance_feasibility",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence or indicators can be provided to demonstrate realistic customer acceptance and stakeholder buy-in for the project, given the current funding and experience limitations?",
+          "question_en_preview": "What evidence or indicators can be provided to demonstrate realistic customer acceptance and stakeholder buy-in for the project, given the current funding and experience limitations?"
+        }
+      ],
+      "elapsed_sec": 12.76,
+      "final_question_count": 8
+    }
+  },
+  "generated_at": "2026-07-15T20:47:13Z",
+  "elapsed_sec": 72.45,
+  "total_questions": 38,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt72__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt72__openai/generated_questions_detail.json"
+}

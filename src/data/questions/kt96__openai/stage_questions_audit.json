@@ -1,0 +1,626 @@
+{
+  "stage": "stage_3_generate_questions",
+  "purpose": "Generate grounded, dimension-specific evaluation questions from dimensions_v2.json.",
+  "proposal_id": "kt96__openai",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "min_q_per_dim": 5,
+  "max_q_per_dim": 10,
+  "input_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/extracted/kt96__openai/dimensions_v2.json",
+  "dimensions": {
+    "team": {
+      "skipped": false,
+      "dimension": "team",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "leadership_experience",
+        "domain_expertise",
+        "validation_and_compliance_experience",
+        "collaboration_network",
+        "governance_and_decision_making",
+        "team_capacity_and_bandwidth"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "team",
+        "summary_chars": 332,
+        "key_points_count": 5,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The team at myinsightiq consists of a small group including a researcher, an engineer, and two interns, all of whom have over 15 years of experience in UX and tech design. The organization focuses on developing an AI-powered speech-to-text platform that facilitates insights, guid ...",
+        "first_key_point_preview": "The team includes a researcher, an engineer, and two interns.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "The proposal does not specify mitigation measures for this dimension."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 13.47,
+        "raw_chars": 5105,
+        "usage": {
+          "prompt_tokens": 3346,
+          "completion_tokens": 1081,
+          "total_tokens": 4427
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "UX design experience",
+        "AI-powered platform",
+        "speech-to-text technology",
+        "team capacity assessment",
+        "collaboration partnerships",
+        "validation experience",
+        "governance processes",
+        "decision-making framework",
+        "project execution track record"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "yes_no": 1,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "aspects": {
+          "leadership_experience": 1,
+          "domain_expertise": 1,
+          "team_capacity_and_bandwidth": 2,
+          "validation_and_compliance_experience": 1,
+          "collaboration_network": 1,
+          "governance_and_decision_making": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "leadership_experience",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does the combined leadership experience of the researcher and engineer contribute to advancing the AI-powered speech-to-text platform towards its intended application and market deployment?",
+          "question_en_preview": "How does the combined leadership experience of the researcher and engineer contribute to advancing the AI-powered speech-to-text platform towards its intended application and market deployment?"
+        },
+        {
+          "aspect": "domain_expertise",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given that all team members have over 15 years of experience in UX and tech design, how does this expertise specifically enhance the development and functionality of the speech-to-text platform?",
+          "question_en_preview": "Given that all team members have over 15 years of experience in UX and tech design, how does this expertise specifically enhance the development and functionality of the speech-to-text platform?"
+        },
+        {
+          "aspect": "team_capacity_and_bandwidth",
+          "answer_type": "yes_no",
+          "priority": 2,
+          "question_preview": "Considering the current team composition of a researcher, an engineer, and two interns, do you believe the team has sufficient capacity and bandwidth to effectively develop and launch the AI-powered speech-to-text platfo ...",
+          "question_en_preview": "Considering the current team composition of a researcher, an engineer, and two interns, do you believe the team has sufficient capacity and bandwidth to effectively develop and launch the AI-powered speech-to-text platfo ..."
+        },
+        {
+          "aspect": "validation_and_compliance_experience",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What experience does the team have with validation and compliance processes that are relevant to the development of the AI-powered speech-to-text platform, and how might this impact the project's success?",
+          "question_en_preview": "What experience does the team have with validation and compliance processes that are relevant to the development of the AI-powered speech-to-text platform, and how might this impact the project's success?"
+        },
+        {
+          "aspect": "collaboration_network",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "What existing collaborations or partnerships does the team have that could support the development and market entry of the AI-powered speech-to-text platform, and how stable are these relationships?",
+          "question_en_preview": "What existing collaborations or partnerships does the team have that could support the development and market entry of the AI-powered speech-to-text platform, and how stable are these relationships?"
+        }
+      ],
+      "elapsed_sec": 13.47,
+      "final_question_count": 8
+    },
+    "objectives": {
+      "skipped": false,
+      "dimension": "objectives",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "overall_goal_clarity",
+        "unmet_need_alignment",
+        "milestones_and_timeline",
+        "outcome_and_success_metrics",
+        "business_or_impact_logic",
+        "scope_and_prioritization",
+        "realism_and_ambition_balance"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "objectives",
+        "summary_chars": 352,
+        "key_points_count": 6,
+        "risks_count": 3,
+        "mitigations_count": 2,
+        "summary_preview": "The objectives of the myinsightiq project focus on making AI accessible and intuitive for a wide range of users, particularly those often left behind by technology. The project aims to enhance productivity and creativity through real-world applications while addressing risks rela ...",
+        "first_key_point_preview": "myinsightiq aims to make AI intuitive, voice-driven, and easy to adopt, eliminating barriers to learning and accessibility.",
+        "first_risk_preview": "Without accessible education, millions risk being left behind in the context of AI.",
+        "first_mitigation_preview": "MyInsightIQ prioritizes sustainability through optimized cloud computing, energy-efficient servers, and reusable AI workflows."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.9,
+        "raw_chars": 3944,
+        "usage": {
+          "prompt_tokens": 3515,
+          "completion_tokens": 899,
+          "total_tokens": 4414
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "AI education accessibility",
+        "real-world AI applications",
+        "success metrics",
+        "project milestones",
+        "value creation logic",
+        "digital inclusion",
+        "user engagement strategies",
+        "impact measurement",
+        "risk of obsolescence",
+        "sustainability in AI"
+      ],
+      "cleaned_question_count": 7,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "unmet_need_alignment": 1,
+          "milestones_and_timeline": 1,
+          "outcome_and_success_metrics": 1,
+          "business_or_impact_logic": 1,
+          "realism_and_ambition_balance": 1,
+          "scope_and_prioritization": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 4,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "unmet_need_alignment",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How well do the objectives of the myinsightiq project align with the stated need to prevent millions from being left behind in AI education? Please discuss any evidence that supports this alignment.",
+          "question_en_preview": "How well do the objectives of the myinsightiq project align with the stated need to prevent millions from being left behind in AI education? Please discuss any evidence that supports this alignment."
+        },
+        {
+          "aspect": "milestones_and_timeline",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What are the proposed milestones for the myinsightiq project, and how reasonable and executable are they within the stated timelines? Please provide any supporting details.",
+          "question_en_preview": "What are the proposed milestones for the myinsightiq project, and how reasonable and executable are they within the stated timelines? Please provide any supporting details."
+        },
+        {
+          "aspect": "outcome_and_success_metrics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific success metrics does the myinsightiq project plan to use to measure the impact of making AI accessible? How quantifiable are these metrics?",
+          "question_en_preview": "What specific success metrics does the myinsightiq project plan to use to measure the impact of making AI accessible? How quantifiable are these metrics?"
+        },
+        {
+          "aspect": "business_or_impact_logic",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How does the myinsightiq project plan to create value and capture revenue through its objectives? Please explain the business or impact logic behind these objectives.",
+          "question_en_preview": "How does the myinsightiq project plan to create value and capture revenue through its objectives? Please explain the business or impact logic behind these objectives."
+        },
+        {
+          "aspect": "realism_and_ambition_balance",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "On a scale of 1 to 5, how realistic do you find the objectives of the myinsightiq project in balancing ambition with feasibility? Please provide evidence that would justify a higher score.",
+          "question_en_preview": "On a scale of 1 to 5, how realistic do you find the objectives of the myinsightiq project in balancing ambition with feasibility? Please provide evidence that would justify a higher score."
+        }
+      ],
+      "elapsed_sec": 12.9,
+      "final_question_count": 7
+    },
+    "strategy": {
+      "skipped": false,
+      "dimension": "strategy",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "solution_delivery_strategy",
+        "development_and_validation_path",
+        "quality_compliance_strategy",
+        "commercialization_and_market_entry",
+        "business_model_and_unit_economics",
+        "partnership_and_business_model",
+        "data_and_real_world_evidence_strategy",
+        "scaling_and_globalization"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "strategy",
+        "summary_chars": 338,
+        "key_points_count": 6,
+        "risks_count": 2,
+        "mitigations_count": 2,
+        "summary_preview": "The strategy for myinsightiq focuses on leveraging AI technology to enhance user accessibility and efficiency through speech-driven interactions. The project aims to support multiple AI models while ensuring privacy and security, with a funding strategy that includes allocations  ...",
+        "first_key_point_preview": "myinsightiq is designed to work seamlessly with third-party AI models, emphasizing privacy and security.",
+        "first_risk_preview": "The job market is evolving, and without AI skills, many risk becoming obsolete.",
+        "first_mitigation_preview": "MyInsightIQ prioritizes sustainability through optimized cloud computing, energy-efficient servers, and reusable AI workflows."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 12.69,
+        "raw_chars": 5054,
+        "usage": {
+          "prompt_tokens": 3597,
+          "completion_tokens": 1095,
+          "total_tokens": 4692
+        }
+      },
+      "raw_question_count": 8,
+      "search_hints": [
+        "user adoption strategy",
+        "fund allocation breakdown",
+        "third-party AI integration",
+        "validation stages",
+        "privacy compliance",
+        "scaling challenges",
+        "partnership collaborations",
+        "real-world data utilization",
+        "speech-driven interactions",
+        "AI model support"
+      ],
+      "cleaned_question_count": 10,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage",
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 5,
+          "open": 3,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 2,
+          "2": 4,
+          "3": 4
+        },
+        "aspects": {
+          "commercialization_and_market_entry": 1,
+          "business_model_and_unit_economics": 1,
+          "solution_delivery_strategy": 1,
+          "development_and_validation_path": 1,
+          "quality_compliance_strategy": 1,
+          "scaling_and_globalization": 1,
+          "partnership_and_business_model": 1,
+          "data_and_real_world_evidence_strategy": 1,
+          "evidence_strength": 2
+        },
+        "linked_to_key_points": 6,
+        "linked_to_risks": 2,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "commercialization_and_market_entry",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does myinsightiq plan to position itself in the market to ensure user adoption, particularly in light of the evolving job market and the risk of excluding non-tech-savvy users?",
+          "question_en_preview": "How does myinsightiq plan to position itself in the market to ensure user adoption, particularly in light of the evolving job market and the risk of excluding non-tech-savvy users?"
+        },
+        {
+          "aspect": "business_model_and_unit_economics",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What is the expected allocation of funds from Kickstarter towards R&D and server resources, and how does this allocation support the overall business model and unit economics of myinsightiq?",
+          "question_en_preview": "What is the expected allocation of funds from Kickstarter towards R&D and server resources, and how does this allocation support the overall business model and unit economics of myinsightiq?"
+        },
+        {
+          "aspect": "solution_delivery_strategy",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What are the major trade-offs considered in the design of myinsightiq, particularly regarding the integration of third-party AI models while ensuring user privacy and security?",
+          "question_en_preview": "What are the major trade-offs considered in the design of myinsightiq, particularly regarding the integration of third-party AI models while ensuring user privacy and security?"
+        },
+        {
+          "aspect": "development_and_validation_path",
+          "answer_type": "open",
+          "priority": 2,
+          "question_preview": "What validation stages does myinsightiq plan to implement to ensure the effectiveness of its speech-driven interactions and AI model support?",
+          "question_en_preview": "What validation stages does myinsightiq plan to implement to ensure the effectiveness of its speech-driven interactions and AI model support?"
+        },
+        {
+          "aspect": "quality_compliance_strategy",
+          "answer_type": "analysis",
+          "priority": 3,
+          "question_preview": "How does myinsightiq ensure compliance with privacy and security standards while utilizing AI technology for speech-driven interactions?",
+          "question_en_preview": "How does myinsightiq ensure compliance with privacy and security standards while utilizing AI technology for speech-driven interactions?"
+        }
+      ],
+      "elapsed_sec": 12.69,
+      "final_question_count": 10
+    },
+    "innovation": {
+      "skipped": false,
+      "dimension": "innovation",
+      "configured_min_q": 6,
+      "configured_max_q": 9,
+      "configured_aspects": [
+        "novelty_vs_state_of_art",
+        "differentiation_and_competitive_edge",
+        "ip_and_protection",
+        "evidence_strength_for_innovation",
+        "platform_and_extensibility",
+        "risk_of_obsolescence_or_commoditization"
+      ],
+      "target_min": 5,
+      "target_max": 9,
+      "input_stats": {
+        "dimension": "innovation",
+        "summary_chars": 406,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "MyInsightIQ introduces innovative speech-powered technology that simplifies AI interactions, making them accessible and multilingual. The project holds multiple patents, including for a Context Aware Personalization system and context-based driver monitoring, which enhance its te ...",
+        "first_key_point_preview": "MyInsightIQ utilizes speech-powered technology to simplify AI interactions, making them easy and inclusive.",
+        "first_risk_preview": "The proposal provides limited or no detailed risk information for this dimension.",
+        "first_mitigation_preview": "MyInsightIQ addresses complexity in AI through its speech-powered technology, ensuring inclusivity and multilingual support."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 10.44,
+        "raw_chars": 4752,
+        "usage": {
+          "prompt_tokens": 3438,
+          "completion_tokens": 1026,
+          "total_tokens": 4464
+        }
+      },
+      "raw_question_count": 7,
+      "search_hints": [
+        "Context Aware Personalization patent",
+        "context-based driver monitoring patent",
+        "multilingual communication support",
+        "user efficiency enhancement",
+        "experimental data on technology effectiveness",
+        "risk of technology obsolescence",
+        "extensibility to new customer segments",
+        "energy-efficient practices",
+        "cloud computing optimization"
+      ],
+      "cleaned_question_count": 8,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [
+        "rating_coverage"
+      ],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "analysis": 6,
+          "rating": 2
+        },
+        "priorities": {
+          "1": 4,
+          "2": 4
+        },
+        "aspects": {
+          "novelty_vs_state_of_art": 1,
+          "differentiation_and_competitive_edge": 1,
+          "ip_and_protection": 1,
+          "evidence_strength_for_innovation": 2,
+          "risk_of_obsolescence_or_commoditization": 1,
+          "platform_and_extensibility": 1,
+          "evidence_strength": 1
+        },
+        "linked_to_key_points": 5,
+        "linked_to_risks": 1,
+        "linked_to_mitigations": 0
+      },
+      "question_previews": [
+        {
+          "aspect": "novelty_vs_state_of_art",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "How does MyInsightIQ's speech-powered technology compare to existing AI interaction methods in terms of accessibility and multilingual support? Please provide evidence of its novelty.",
+          "question_en_preview": "How does MyInsightIQ's speech-powered technology compare to existing AI interaction methods in terms of accessibility and multilingual support? Please provide evidence of its novelty."
+        },
+        {
+          "aspect": "differentiation_and_competitive_edge",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific advantages does MyInsightIQ's technology offer over traditional AI systems in terms of user efficiency and interaction quality? Please cite relevant key points.",
+          "question_en_preview": "What specific advantages does MyInsightIQ's technology offer over traditional AI systems in terms of user efficiency and interaction quality? Please cite relevant key points."
+        },
+        {
+          "aspect": "ip_and_protection",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "How do the patents held by MyInsightIQ, particularly for the Context Aware Personalization system and context-based driver monitoring, strengthen its competitive position in the market?",
+          "question_en_preview": "How do the patents held by MyInsightIQ, particularly for the Context Aware Personalization system and context-based driver monitoring, strengthen its competitive position in the market?"
+        },
+        {
+          "aspect": "evidence_strength_for_innovation",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What evidence supports the effectiveness of MyInsightIQ's technology in enhancing user interactions and efficiency? Please discuss any experimental or operational data available.",
+          "question_en_preview": "What evidence supports the effectiveness of MyInsightIQ's technology in enhancing user interactions and efficiency? Please discuss any experimental or operational data available."
+        },
+        {
+          "aspect": "risk_of_obsolescence_or_commoditization",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "Given the limited risk information provided, what potential risks do you foresee for MyInsightIQ's technology becoming obsolete or commoditized within the next few years?",
+          "question_en_preview": "Given the limited risk information provided, what potential risks do you foresee for MyInsightIQ's technology becoming obsolete or commoditized within the next few years?"
+        }
+      ],
+      "elapsed_sec": 10.45,
+      "final_question_count": 8
+    },
+    "feasibility": {
+      "skipped": false,
+      "dimension": "feasibility",
+      "configured_min_q": 7,
+      "configured_max_q": 10,
+      "configured_aspects": [
+        "resources_and_infrastructure",
+        "funding_and_budget_planning",
+        "operational_execution_plan",
+        "risk_management",
+        "approval_payment_or_customer_acceptance_feasibility",
+        "implementation_barriers",
+        "timeline_and_resource_alignment"
+      ],
+      "target_min": 6,
+      "target_max": 10,
+      "input_stats": {
+        "dimension": "feasibility",
+        "summary_chars": 268,
+        "key_points_count": 6,
+        "risks_count": 1,
+        "mitigations_count": 1,
+        "summary_preview": "The feasibility of the myinsightiq project is supported by its focus on sustainability, efficient resource allocation, and user-friendly technology. However, there are notable delivery risks related to software development and AI integration that need to be addressed.",
+        "first_key_point_preview": "The project is based in Toronto, Canada, which may influence its operational capabilities.",
+        "first_risk_preview": "There are delivery risks and challenges associated with the software development, AI integration, and scaling infrastructure for myinsightiq.",
+        "first_mitigation_preview": "MyInsightIQ prioritizes sustainability through optimized cloud computing, energy-efficient servers, and reusable AI workflows."
+      },
+      "llm_call": {
+        "ok": true,
+        "elapsed_sec": 9.82,
+        "raw_chars": 3965,
+        "usage": {
+          "prompt_tokens": 3459,
+          "completion_tokens": 842,
+          "total_tokens": 4301
+        }
+      },
+      "raw_question_count": 6,
+      "search_hints": [
+        "Kickstarter funding allocation",
+        "software development challenges",
+        "AI integration risks",
+        "optimized cloud computing",
+        "energy-efficient servers",
+        "user adoption barriers",
+        "project timeline alignment",
+        "Free Plan customer acceptance",
+        "sustainability focus",
+        "delivery risk mitigations"
+      ],
+      "cleaned_question_count": 6,
+      "skipped_non_dict": 0,
+      "skipped_missing_text": 0,
+      "invalid_answer_type_count": 0,
+      "invalid_priority_count": 0,
+      "fallback_questions_added": [],
+      "truncation_applied": false,
+      "distribution": {
+        "answer_types": {
+          "rating": 3,
+          "analysis": 3
+        },
+        "priorities": {
+          "1": 2,
+          "2": 3,
+          "3": 1
+        },
+        "aspects": {
+          "funding_and_budget_planning": 1,
+          "operational_execution_plan": 1,
+          "risk_management": 1,
+          "implementation_barriers": 1,
+          "timeline_and_resource_alignment": 1,
+          "approval_payment_or_customer_acceptance_feasibility": 1
+        },
+        "linked_to_key_points": 3,
+        "linked_to_risks": 3,
+        "linked_to_mitigations": 1
+      },
+      "question_previews": [
+        {
+          "aspect": "funding_and_budget_planning",
+          "answer_type": "rating",
+          "priority": 1,
+          "question_preview": "How sufficient is the funding from Kickstarter for R&D, AI development, and server resources in supporting the long-term sustainability of the myinsightiq project?",
+          "question_en_preview": "How sufficient is the funding from Kickstarter for R&D, AI development, and server resources in supporting the long-term sustainability of the myinsightiq project?"
+        },
+        {
+          "aspect": "operational_execution_plan",
+          "answer_type": "analysis",
+          "priority": 1,
+          "question_preview": "What specific challenges related to software development and AI integration does the myinsightiq project face, and how does the team plan to address these delivery risks?",
+          "question_en_preview": "What specific challenges related to software development and AI integration does the myinsightiq project face, and how does the team plan to address these delivery risks?"
+        },
+        {
+          "aspect": "risk_management",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "Given the identified delivery risks, how effective are the proposed mitigations, such as optimized cloud computing and energy-efficient servers, in ensuring project feasibility?",
+          "question_en_preview": "Given the identified delivery risks, how effective are the proposed mitigations, such as optimized cloud computing and energy-efficient servers, in ensuring project feasibility?"
+        },
+        {
+          "aspect": "implementation_barriers",
+          "answer_type": "analysis",
+          "priority": 2,
+          "question_preview": "What barriers to implementation in real production or operational settings does the myinsightiq project anticipate, particularly regarding user adoption and system integration?",
+          "question_en_preview": "What barriers to implementation in real production or operational settings does the myinsightiq project anticipate, particularly regarding user adoption and system integration?"
+        },
+        {
+          "aspect": "timeline_and_resource_alignment",
+          "answer_type": "rating",
+          "priority": 2,
+          "question_preview": "How well-aligned are the project’s timeline and resources, particularly in relation to the delivery risks associated with software development and AI integration?",
+          "question_en_preview": "How well-aligned are the project’s timeline and resources, particularly in relation to the delivery risks associated with software development and AI integration?"
+        }
+      ],
+      "elapsed_sec": 9.82,
+      "final_question_count": 6
+    }
+  },
+  "generated_at": "2026-07-15T21:25:56Z",
+  "elapsed_sec": 59.34,
+  "total_questions": 39,
+  "simple_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt96__openai/generated_questions.json",
+  "active_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/config/question_sets/generated_questions.json",
+  "detail_output_path": "/Users/durjoy/Documents/Ebovir/YangtzeDeltaApplication/src/data/questions/kt96__openai/generated_questions_detail.json"
+}
