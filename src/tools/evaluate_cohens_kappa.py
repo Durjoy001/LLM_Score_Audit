@@ -338,15 +338,86 @@ def _collect_ai_scores(provider_filter: str = "") -> Dict[str, Dict[str, Any]]:
     return mapping
 
 
+# A substring-match key must be at least this many characters (after stripping any
+# file extension) to be trusted. This blocks degenerate keys such as a bare "4"
+# produced by a source document literally named "4.pdf" (a Kickstarter proposal),
+# which would otherwise substring-match almost any human filename containing a "4".
+_MIN_FUZZY_KEY_LEN = 4
+
+
+def _is_degenerate_key(key: str) -> bool:
+    """True if a key is too short or numerically trivial to be safe for substring
+    matching (e.g. '4' or '4.pdf'). Such keys are only ever used for EXACT matches,
+    never for the fuzzy fallback."""
+    core = re.sub(r"\.(pdf|pptx|ppt|docx|doc|txt|md)$", "", str(key or "")).strip()
+    return len(core) < _MIN_FUZZY_KEY_LEN or core.isdigit()
+
+
+def _ai_map_from_canonical(json_path: Path) -> Dict[str, Dict[str, Any]]:
+    """Build the AI score map from a frozen canonical scores JSON instead of
+    scanning src/data/reports (which is gitignored and known to drift).
+
+    Expects the schema written by build_canonical_ai_scores.py:
+        {"canonical": {"<pid>": {team, objective, strategy, advantages,
+                                 feasibility, overall_ranking, verdict,
+                                 confidence, file_name, ...}, ...}}
+    All scores are already on the 0-1 scale; the recorded verdict is the
+    published OR-logic verdict. Keys are the same normalized filename / pid
+    forms _find_record() looks up.
+    """
+    data = read_json(json_path).get("canonical", {})
+    mapping: Dict[str, Dict[str, Any]] = {}
+    for pid, rec in data.items():
+        scores: Dict[str, Any] = {c: rec.get(c) for c in COLUMNS}
+        scores["verdict"] = rec.get("verdict", "N")
+        fn = rec.get("file_name", "") or ""
+        record = {
+            "pid": pid,
+            "pid_base": pid,
+            "source_filename": fn,
+            "source_stem": _stem_name(fn),
+            "provider": "canonical",
+            "scores_path": str(json_path),
+            "scores": scores,
+        }
+        for key in {_normalize_name(fn), _normalize_key(fn), _stem_name(fn), pid}:
+            if key:
+                mapping[key] = record
+    _log("DEBUG", f"Canonical AI scores loaded: {len(data)} proposals from {json_path}")
+    return mapping
+
+
 def _find_record(ai_map: Dict[str, Dict[str, Any]], human_raw: str) -> Optional[Dict[str, Any]]:
+    """Resolve a human filename to an AI record.
+
+    Priority order:
+      1. EXACT match on any normalized form (these include the meta-derived
+         original_filename / stem keys, so meta-based identity always wins first).
+      2. Guarded substring fallback: degenerate keys (see _is_degenerate_key) are
+         skipped, the most specific (longest-overlap) candidate is chosen for
+         determinism, and a WARNING is logged so the fuzzy path is never silent.
+    """
+    # 1) exact match — highest priority, covers meta-derived keys
     for key in (_normalize_name(human_raw), _stem_name(human_raw), _normalize_key(human_raw)):
         if key and key in ai_map:
             return ai_map[key]
+
+    # 2) guarded substring fallback
     human_key = _normalize_key(human_raw)
-    if human_key:
+    if human_key and not _is_degenerate_key(human_key):
+        best: Optional[Tuple[int, str, Dict[str, Any]]] = None
         for key, record in ai_map.items():
+            if _is_degenerate_key(key):
+                continue
             if human_key in key or key in human_key:
-                return record
+                specificity = min(len(human_key), len(key))
+                if best is None or specificity > best[0]:
+                    best = (specificity, key, record)
+        if best is not None:
+            _log("WARN", f"fuzzy fallback matched human file {human_raw!r} -> "
+                         f"pid={best[2].get('pid')!r} via key {best[1]!r} "
+                         f"(no exact match found)")
+            return best[2]
     return None
 
 
@@ -570,6 +641,7 @@ def _column_metrics(
         return {"n": 0}
 
     rho, spearman_p = _spearman(pairs)
+    spearman_ci_lo, spearman_ci_hi = _bootstrap_ci(pairs, lambda p: _spearman(p)[0])
     mean_diff, bias_p = _bias_stats(pairs)
 
     if is_ranking:
@@ -595,6 +667,7 @@ def _column_metrics(
 
     result["spearman_r"] = rho
     result["spearman_p"] = spearman_p
+    result["spearman_ci95"] = [spearman_ci_lo, spearman_ci_hi]
     result["mean_diff"] = mean_diff
     result["bias_p"] = bias_p
 
@@ -612,9 +685,14 @@ def _column_metrics(
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Evaluate human vs AI score agreement.")
-    ap.add_argument("--human_xlsx", type=str, default=str(HUMAN_DIR / "human_scores.xlsx"))
+    ap.add_argument("--human_xlsx", type=str, default=str(HUMAN_DIR / "human_scores.xlsx"),
+                    help="Human ground-truth Excel file (single-rater or consensus).")
+    ap.add_argument("--ai_scores_json", type=str, default="",
+                    help="Frozen canonical AI scores JSON (e.g. canonical/canonical_ai_scores_dataset1.json). "
+                         "When set, AI scores are read from it instead of scanning the gitignored src/data cache, "
+                         "making the run reproducible against the pinned canonical set.")
     ap.add_argument("--out_dir", type=str, default="")
-    ap.add_argument("--provider", type=str, default="", help="Optional provider filter.")
+    ap.add_argument("--provider", type=str, default="", help="Optional provider filter (ignored with --ai_scores_json).")
     args = ap.parse_args()
 
     human_path = Path(args.human_xlsx)
@@ -640,7 +718,13 @@ def main() -> None:
             _log("DEBUG", f"Inferred file_name column index: {inferred}")
 
     data_rows = rows[header_row_idx + 1:]
-    ai_map = _collect_ai_scores(args.provider)
+    if args.ai_scores_json:
+        ai_scores_path = Path(args.ai_scores_json)
+        if not ai_scores_path.exists():
+            raise FileNotFoundError(f"Canonical AI scores JSON not found: {ai_scores_path}")
+        ai_map = _ai_map_from_canonical(ai_scores_path)
+    else:
+        ai_map = _collect_ai_scores(args.provider)
 
     per_item: List[Dict[str, Any]] = []
     pairs_by_col: Dict[str, List[Tuple[float, float]]] = {c: [] for c in COLUMNS}
@@ -763,13 +847,14 @@ def main() -> None:
         "weighted_kappa", "wk_ci_lo", "wk_ci_hi",
         "unweighted_kappa",
         "icc", "icc_ci_lo", "icc_ci_hi",
-        "spearman_r", "spearman_p",
+        "spearman_r", "spearman_p", "sp_ci_lo", "sp_ci_hi",
         "mean_human", "mean_ai", "mean_diff", "bias_p",
     ])
     for col in COLUMNS:
         m = metrics.get(col, {})
         wk_ci = m.get("weighted_kappa_ci95") or [None, None]
         icc_ci = m.get("icc_ci95") or [None, None]
+        sp_ci = m.get("spearman_ci95") or [None, None]
         ws_met.append([
             col,
             m.get("n"),
@@ -783,6 +868,8 @@ def main() -> None:
             icc_ci[1],
             m.get("spearman_r"),
             m.get("spearman_p"),
+            sp_ci[0],
+            sp_ci[1],
             m.get("mean_human"),
             m.get("mean_ai"),
             m.get("mean_diff"),
