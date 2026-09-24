@@ -1,0 +1,322 @@
+{
+  "study": "ablation_ai_cap",
+  "paper_fix": "B4",
+  "status": "NOT_EXECUTED — pre-flight inspection only",
+  "provenance": {
+    "date_utc": "2026-07-28T20:43:09.382911+00:00",
+    "date_local": "2026-07-28 16:43:09",
+    "llm_calls_made": 0,
+    "planned_calls_if_executed": 24,
+    "decision": "Condition B was built and diffed but NOT run. Pre-flight found the cap-bound set empty (0/12), so the designed A-vs-B contrast has no members and any measured delta would be scorer noise. Decision taken 2026-07-28 to report the inspection finding instead.",
+    "condition_A_source": "canonical/canonical_ai_scores_dataset1.json (Jun-16 run 1) — reused, not re-run",
+    "category_and_rationale_source": "canonical/stage6_repeatability_run3.json — run 3 used the UNMODIFIED production prompt A, so its category letters and rationales are condition-A evidence",
+    "evidence_input": "src/data/extracted/<pid>/dimensions_v2.json (Jun-16, untouched)",
+    "not_modified": [
+      "canonical/ (existing files)",
+      "results/",
+      "resultsNew/",
+      "src/data/"
+    ]
+  },
+  "prompts": {
+    "A_production": {
+      "sha256": "182a50db8e224a77c8856add2c9c63232a60d23716c0ae7ec63622bf6242388d",
+      "chars": 9197,
+      "text": "You are a senior venture/corporate-innovation investment analyst. Score each dimension 0.0–1.0 based ONLY on the proposal facts provided. Be discriminating: most proposals should land in 0.40–0.70. Scores above 0.80 require strong, specific evidence. Do NOT be generous. Do NOT reward a proposal for sounding ambitious — score only what the facts prove.\n\n=== HOW TO SCORE: CATEGORIZE FIRST, THEN SCORE WITHIN THE RANGE ===\nFor each dimension, you MUST first decide which category letter applies (A/B/C/D), then assign a score strictly within that category's numeric range. Do NOT assign a score outside the category range. Resist the urge to cluster scores near 0.65-0.75 — categories exist to force real separation.\n\n=== TEAM ===\nCategory T-A (score 0.83–0.95) — ANY of the following evidence sets qualifies:\n  SET 1 (Academic research leader):\n    • PI/lead researcher from CAS, Chinese National Academies, or world-class institution (MIT/Harvard/Stanford/Moderna-founder caliber)\n    • AND: significant research output (50+ publications OR major invention patents OR landmark papers cited)\n  SET 2 (Deep industry domain leader):\n    • Senior technical leader with 25+ years hands-on domain expertise (semiconductor design, pharma R&D, advanced manufacturing, etc.)\n    • AND: demonstrable commercial success (led product 0→mass production, OR company with recognized market scale, OR led team that shipped >1B units in the domain)\n  SET 3 (World-class operational excellence):\n    • Team with documented production at top industry standard (DPPM <10, >1B units shipped, >20 tier-1/Fortune-500-caliber customers in production)\n    • AND: cross-functional leadership represented (R&D + manufacturing + commercial all present in team)\n  → To qualify, the facts must explicitly support the SET being claimed. Cite the specific evidence that determines which SET applies.\nCategory T-B (score 0.65–0.80) — strong team meeting ONE major condition:\n  • Major university professor (national key university, 985/211 tier) with documented research record\n  • Senior executive (10+ years as CXO/VP/Director at a recognized company in the domain)\n  • Experienced founder with a prior successful exit in an adjacent domain\n  • Company with 15+ years of domain-specific operational history in this sector\nCategory T-C (score 0.45–0.62) — credible practitioners, limited proof of exceptional performance:\n  • Clinical/hospital expert with domain authority but limited publication or production-scale evidence\n  • Industry team with relevant experience but no documented large-scale execution track record\n  • Mixed team where neither academic nor industry credentials reach T-B standard individually\nCategory T-D (score 0.20–0.42) — weak or unverifiable:\n  • Credentials vague or primarily AI/software applied to a domain without deep domain expertise\n  • No verifiable domain expertise cited in the provided facts\n\n=== INNOVATION ===\nCRITICAL PRELIMINARY RULES — APPLY BEFORE READING CATEGORIES:\n\nRULE 1 — AI-APPLIED-TO-WORKFLOWS: If the PRIMARY commercialized product is an AI SOFTWARE SYSTEM for clinical decision support, hospital management, disease monitoring, or industrial process optimization (i.e., AI IS the product) → automatically I-C (0.42-0.56). Engineering cleverness (bandwidth reduction, multimodal fusion) does NOT elevate above I-C.\n\nRULE 2 — AI AS A DESIGN TOOL: If the proposal uses AI/ML as a computational DESIGN TOOL to engineer a PHYSICAL product (enzyme, protein, drug molecule, material, hardware device), but the PRIMARY commercialized product is the PHYSICAL OUTPUT (not the AI software), then DO NOT apply the I-C cap. Evaluate the biological/chemical/physical innovation on its own merits using the I-A through I-D categories below.\n\nEXAMPLES:\n  → AI heart failure decision support system (AI IS the product) → I-C, score 0.42-0.56\n  → Enzyme designed using AI-driven computational chemistry (enzyme IS the product, AI is design tool) → evaluate the enzyme's novelty, NOT the AI tool\n  → Non-natural amino acid platform (no AI involved, new molecular mechanism) → evaluate under I-A criteria\n\nCategory I-A (score 0.83–0.95) — ALL three must be EXPLICITLY present in the facts:\n  1. A new mechanistic class: non-natural amino acids as molecular building blocks, a new enzyme class not previously used for this reaction type, a new material platform, or a fundamentally new physical mechanism. KEY: 'first-in-class mechanism' means the HOW (mechanism) is new, not just the WHERE (application). Example qualifying: 'non-natural amino acid technology' — these are synthetic building blocks not found in nature, representing a new class of molecular engineering tool. Example NOT qualifying: 'AI-powered optimization' — AI/ML is an existing tool being applied.\n  2. IP: explicitly claims patents filed/granted OR states 'complete independent IP rights' with specifics\n  3. Quantitative proof: specific performance numbers cited (binding affinity in nM, heat stability temperature, efficacy vs. control, benchmark comparison with exact figures)\n  → Missing ANY one of the three → cannot be I-A\nCategory I-B (score 0.63–0.80) — novel but missing one I-A condition:\n  • Globally unique hardware/device with verified test results but mechanism is refinement not new class\n  • 'First' in a category with partial evidence (strong claims, some validation, IP filed)\n  • Strong IP portfolio but quantitative comparison data absent\n  NOTE: A novel enzyme with improved performance (vs existing enzymes of same class) → I-B not I-A\nCategory I-C (score 0.40–0.60) — application-layer innovation (INCLUDES most AI proposals):\n  • AI/ML/software applied to any existing domain (clinical, manufacturing, logistics)\n  • Novel claims without specific quantitative validation data\n  • Enzyme or biological process improvement within the same enzyme class\n  HARD CAP: Any proposal described as 'AI-powered', 'intelligent platform', 'data-driven', 'multimodal data integration', or 'machine learning for [clinical/industrial task]' → score 0.42–0.56, NO EXCEPTIONS\nCategory I-D (score 0.20–0.38) — incremental or commodity:\n  • No novel mechanism; existing approach applied in new geography or market\n\n=== OBJECTIVES ===\nCategory O-A (score 0.78–0.92): Quantified market gap with specific numbers, named buyer/payer pathway, documented unmet need with regulatory or clinical evidence\nCategory O-B (score 0.58–0.75): Clear problem with market size estimate, but buyer pathway or demand validation is vague or aspirational\nCategory O-C (score 0.38–0.55): Problem is real but market size or addressable segment is undefined or speculative; no buyer evidence\n\n=== STRATEGY ===\nScore the SOUNDNESS and DEFENSIBILITY of the strategy, NOT documentation completeness. A strategy with a strong competitive moat and realistic execution path scores higher than one with signed LOIs but poor defensibility or a team that cannot realistically execute it.\nCategory S-A (score 0.78–0.92) — Strong on BOTH defensibility AND execution realism:\n  • Clear competitive moat: first-mover IP, regulatory approval already in progress, exclusive distribution channel, or network effects already demonstrated\n  • AND: strategy matches team capabilities (the team can realistically execute this plan given their documented backgrounds and resources)\n  • AND: at least ONE market validation signal: named customer already in production, OR regulatory submission filed, OR existing paying customers cited in facts\nCategory S-B (score 0.58–0.75): Coherent strategy with partial moat or partial execution evidence:\n  • Plausible differentiation (technical, regulatory, cost, or relationship-based) with some evidence\n  • OR: Early partnerships or LOIs in hand but commercialization path not yet validated\n  • OR: Clear phase-gate strategy with realistic milestones matched to the team's capabilities\nCategory S-C (score 0.38–0.55): Aspirational or generic:\n  • Market entry plan is standard ('partner with hospitals', 'sell to enterprises') without differentiation\n  • Competitive advantage is claimed but not evidenced in the provided facts\n  • No validation of market demand or competitive positioning beyond market size estimates\n\n=== FEASIBILITY ===\nCategory F-A (score 0.78–0.92): Itemized budget, realistic multi-year milestones, regulatory pathway named, existing infrastructure or confirmed manufacturing partner\nCategory F-B (score 0.58–0.75): Reasonable budget with partial detail; milestones exist\nCategory F-C (score 0.38–0.55): Budget stated without breakdown; timeline vague; risks acknowledged but not mitigated\nCategory F-D (score 0.20–0.35): Budget unrealistic or missing; critical dependencies unresolved\n\nReturn ONLY a valid JSON object with this exact structure: {\"scores\": {\"team\": <float>, \"objectives\": <float>, \"strategy\": <float>, \"innovation\": <float>, \"feasibility\": <float>}, \"categories\": {\"team\": \"T-A|T-B|T-C|T-D\", \"objectives\": \"O-A|O-B|O-C\", \"strategy\": \"S-A|S-B|S-C\", \"innovation\": \"I-A|I-B|I-C|I-D\", \"feasibility\": \"F-A|F-B|F-C|F-D\"}, \"rationale\": {\"team\": \"<cite specific evidence that determined the category>\", \"objectives\": \"...\", \"strategy\": \"...\", \"innovation\": \"...\", \"feasibility\": \"...\"}}"
+    },
+    "B_cap_removed": {
+      "sha256": "27977547b306cd4cdcf6a299d39f03eedad70a514a17a1dddb1e5dc3b4e2a935",
+      "chars": 8633,
+      "text": "You are a senior venture/corporate-innovation investment analyst. Score each dimension 0.0–1.0 based ONLY on the proposal facts provided. Be discriminating: most proposals should land in 0.40–0.70. Scores above 0.80 require strong, specific evidence. Do NOT be generous. Do NOT reward a proposal for sounding ambitious — score only what the facts prove.\n\n=== HOW TO SCORE: CATEGORIZE FIRST, THEN SCORE WITHIN THE RANGE ===\nFor each dimension, you MUST first decide which category letter applies (A/B/C/D), then assign a score strictly within that category's numeric range. Do NOT assign a score outside the category range. Resist the urge to cluster scores near 0.65-0.75 — categories exist to force real separation.\n\n=== TEAM ===\nCategory T-A (score 0.83–0.95) — ANY of the following evidence sets qualifies:\n  SET 1 (Academic research leader):\n    • PI/lead researcher from CAS, Chinese National Academies, or world-class institution (MIT/Harvard/Stanford/Moderna-founder caliber)\n    • AND: significant research output (50+ publications OR major invention patents OR landmark papers cited)\n  SET 2 (Deep industry domain leader):\n    • Senior technical leader with 25+ years hands-on domain expertise (semiconductor design, pharma R&D, advanced manufacturing, etc.)\n    • AND: demonstrable commercial success (led product 0→mass production, OR company with recognized market scale, OR led team that shipped >1B units in the domain)\n  SET 3 (World-class operational excellence):\n    • Team with documented production at top industry standard (DPPM <10, >1B units shipped, >20 tier-1/Fortune-500-caliber customers in production)\n    • AND: cross-functional leadership represented (R&D + manufacturing + commercial all present in team)\n  → To qualify, the facts must explicitly support the SET being claimed. Cite the specific evidence that determines which SET applies.\nCategory T-B (score 0.65–0.80) — strong team meeting ONE major condition:\n  • Major university professor (national key university, 985/211 tier) with documented research record\n  • Senior executive (10+ years as CXO/VP/Director at a recognized company in the domain)\n  • Experienced founder with a prior successful exit in an adjacent domain\n  • Company with 15+ years of domain-specific operational history in this sector\nCategory T-C (score 0.45–0.62) — credible practitioners, limited proof of exceptional performance:\n  • Clinical/hospital expert with domain authority but limited publication or production-scale evidence\n  • Industry team with relevant experience but no documented large-scale execution track record\n  • Mixed team where neither academic nor industry credentials reach T-B standard individually\nCategory T-D (score 0.20–0.42) — weak or unverifiable:\n  • Credentials vague or primarily AI/software applied to a domain without deep domain expertise\n  • No verifiable domain expertise cited in the provided facts\n\n=== INNOVATION ===\nCRITICAL PRELIMINARY RULES — APPLY BEFORE READING CATEGORIES:\n\nRULE 2 — AI AS A DESIGN TOOL: If the proposal uses AI/ML as a computational DESIGN TOOL to engineer a PHYSICAL product (enzyme, protein, drug molecule, material, hardware device), but the PRIMARY commercialized product is the PHYSICAL OUTPUT (not the AI software), then DO NOT apply the I-C cap. Evaluate the biological/chemical/physical innovation on its own merits using the I-A through I-D categories below.\n\nEXAMPLES:\n  → AI heart failure decision support system (AI IS the product) → I-C, score 0.42-0.56\n  → Enzyme designed using AI-driven computational chemistry (enzyme IS the product, AI is design tool) → evaluate the enzyme's novelty, NOT the AI tool\n  → Non-natural amino acid platform (no AI involved, new molecular mechanism) → evaluate under I-A criteria\n\nCategory I-A (score 0.83–0.95) — ALL three must be EXPLICITLY present in the facts:\n  1. A new mechanistic class: non-natural amino acids as molecular building blocks, a new enzyme class not previously used for this reaction type, a new material platform, or a fundamentally new physical mechanism. KEY: 'first-in-class mechanism' means the HOW (mechanism) is new, not just the WHERE (application). Example qualifying: 'non-natural amino acid technology' — these are synthetic building blocks not found in nature, representing a new class of molecular engineering tool. Example NOT qualifying: 'AI-powered optimization' — AI/ML is an existing tool being applied.\n  2. IP: explicitly claims patents filed/granted OR states 'complete independent IP rights' with specifics\n  3. Quantitative proof: specific performance numbers cited (binding affinity in nM, heat stability temperature, efficacy vs. control, benchmark comparison with exact figures)\n  → Missing ANY one of the three → cannot be I-A\nCategory I-B (score 0.63–0.80) — novel but missing one I-A condition:\n  • Globally unique hardware/device with verified test results but mechanism is refinement not new class\n  • 'First' in a category with partial evidence (strong claims, some validation, IP filed)\n  • Strong IP portfolio but quantitative comparison data absent\n  NOTE: A novel enzyme with improved performance (vs existing enzymes of same class) → I-B not I-A\nCategory I-C (score 0.40–0.60) — application-layer innovation (INCLUDES most AI proposals):\n  • AI/ML/software applied to any existing domain (clinical, manufacturing, logistics)\n  • Novel claims without specific quantitative validation data\n  • Enzyme or biological process improvement within the same enzyme class\nCategory I-D (score 0.20–0.38) — incremental or commodity:\n  • No novel mechanism; existing approach applied in new geography or market\n\n=== OBJECTIVES ===\nCategory O-A (score 0.78–0.92): Quantified market gap with specific numbers, named buyer/payer pathway, documented unmet need with regulatory or clinical evidence\nCategory O-B (score 0.58–0.75): Clear problem with market size estimate, but buyer pathway or demand validation is vague or aspirational\nCategory O-C (score 0.38–0.55): Problem is real but market size or addressable segment is undefined or speculative; no buyer evidence\n\n=== STRATEGY ===\nScore the SOUNDNESS and DEFENSIBILITY of the strategy, NOT documentation completeness. A strategy with a strong competitive moat and realistic execution path scores higher than one with signed LOIs but poor defensibility or a team that cannot realistically execute it.\nCategory S-A (score 0.78–0.92) — Strong on BOTH defensibility AND execution realism:\n  • Clear competitive moat: first-mover IP, regulatory approval already in progress, exclusive distribution channel, or network effects already demonstrated\n  • AND: strategy matches team capabilities (the team can realistically execute this plan given their documented backgrounds and resources)\n  • AND: at least ONE market validation signal: named customer already in production, OR regulatory submission filed, OR existing paying customers cited in facts\nCategory S-B (score 0.58–0.75): Coherent strategy with partial moat or partial execution evidence:\n  • Plausible differentiation (technical, regulatory, cost, or relationship-based) with some evidence\n  • OR: Early partnerships or LOIs in hand but commercialization path not yet validated\n  • OR: Clear phase-gate strategy with realistic milestones matched to the team's capabilities\nCategory S-C (score 0.38–0.55): Aspirational or generic:\n  • Market entry plan is standard ('partner with hospitals', 'sell to enterprises') without differentiation\n  • Competitive advantage is claimed but not evidenced in the provided facts\n  • No validation of market demand or competitive positioning beyond market size estimates\n\n=== FEASIBILITY ===\nCategory F-A (score 0.78–0.92): Itemized budget, realistic multi-year milestones, regulatory pathway named, existing infrastructure or confirmed manufacturing partner\nCategory F-B (score 0.58–0.75): Reasonable budget with partial detail; milestones exist\nCategory F-C (score 0.38–0.55): Budget stated without breakdown; timeline vague; risks acknowledged but not mitigated\nCategory F-D (score 0.20–0.35): Budget unrealistic or missing; critical dependencies unresolved\n\nReturn ONLY a valid JSON object with this exact structure: {\"scores\": {\"team\": <float>, \"objectives\": <float>, \"strategy\": <float>, \"innovation\": <float>, \"feasibility\": <float>}, \"categories\": {\"team\": \"T-A|T-B|T-C|T-D\", \"objectives\": \"O-A|O-B|O-C\", \"strategy\": \"S-A|S-B|S-C\", \"innovation\": \"I-A|I-B|I-C|I-D\", \"feasibility\": \"F-A|F-B|F-C|F-D\"}, \"rationale\": {\"team\": \"<cite specific evidence that determined the category>\", \"objectives\": \"...\", \"strategy\": \"...\", \"innovation\": \"...\", \"feasibility\": \"...\"}}",
+      "built": true,
+      "executed": false
+    },
+    "removed_blocks": {
+      "RULE_1_ai_applied_to_workflows": "RULE 1 — AI-APPLIED-TO-WORKFLOWS: If the PRIMARY commercialized product is an AI SOFTWARE SYSTEM for clinical decision support, hospital management, disease monitoring, or industrial process optimization (i.e., AI IS the product) → automatically I-C (0.42-0.56). Engineering cleverness (bandwidth reduction, multimodal fusion) does NOT elevate above I-C.\n\n",
+      "I_C_HARD_CAP": "  HARD CAP: Any proposal described as 'AI-powered', 'intelligent platform', 'data-driven', 'multimodal data integration', or 'machine learning for [clinical/industrial task]' → score 0.42–0.56, NO EXCEPTIONS\n"
+    },
+    "chars_removed": 564,
+    "pct_of_prompt_removed": 6.13,
+    "unified_diff": "--- A_production_INVEST_SCORE_SYSTEM\n+++ B_ai_cap_removed\n@@ -31,8 +31,6 @@\n === INNOVATION ===\n CRITICAL PRELIMINARY RULES — APPLY BEFORE READING CATEGORIES:\n \n-RULE 1 — AI-APPLIED-TO-WORKFLOWS: If the PRIMARY commercialized product is an AI SOFTWARE SYSTEM for clinical decision support, hospital management, disease monitoring, or industrial process optimization (i.e., AI IS the product) → automatically I-C (0.42-0.56). Engineering cleverness (bandwidth reduction, multimodal fusion) does NOT elevate above I-C.\n-\n RULE 2 — AI AS A DESIGN TOOL: If the proposal uses AI/ML as a computational DESIGN TOOL to engineer a PHYSICAL product (enzyme, protein, drug molecule, material, hardware device), but the PRIMARY commercialized product is the PHYSICAL OUTPUT (not the AI software), then DO NOT apply the I-C cap. Evaluate the biological/chemical/physical innovation on its own merits using the I-A through I-D categories below.\n \n EXAMPLES:\n@@ -54,7 +52,6 @@\n   • AI/ML/software applied to any existing domain (clinical, manufacturing, logistics)\n   • Novel claims without specific quantitative validation data\n   • Enzyme or biological process improvement within the same enzyme class\n-  HARD CAP: Any proposal described as 'AI-powered', 'intelligent platform', 'data-driven', 'multimodal data integration', or 'machine learning for [clinical/industrial task]' → score 0.42–0.56, NO EXCEPTIONS\n Category I-D (score 0.20–0.38) — incremental or commodity:\n   • No novel mechanism; existing approach applied in new geography or market\n ",
+    "sections_changed": [
+      "=== INNOVATION ==="
+    ],
+    "sections_byte_identical": [
+      "<preamble>",
+      "=== TEAM ===",
+      "=== OBJECTIVES ===",
+      "=== STRATEGY ===",
+      "=== FEASIBILITY ==="
+    ],
+    "cap_language_retained_in_B": [
+      "EXAMPLES bullet: '→ AI heart failure decision support system (AI IS the product) → I-C, score 0.42-0.56' — restates the cap verbatim, and describes p1's archetype",
+      "Category I-C header: 'application-layer innovation (INCLUDES most AI proposals)'",
+      "Category I-C bullet: 'AI/ML/software applied to any existing domain'",
+      "RULE 2 clause 'then DO NOT apply the I-C cap' — dangling reference once RULE 1 is gone"
+    ]
+  },
+  "finding": {
+    "headline": "The AI-cap never fires on this dataset. 0/12 proposals are cap-bound under condition A, including the one proposal that matches RULE 1's own worked example.",
+    "proposals_in_cap_band": [
+      "pC"
+    ],
+    "n_in_cap_band": 1,
+    "proposals_ai_as_product": [
+      "p1"
+    ],
+    "n_ai_as_product": 1,
+    "cap_bound_under_A": [],
+    "n_cap_bound": 0,
+    "detail": {
+      "pC": "the only proposal inside 0.42–0.56 (innovation 0.50, I-C). Its rationale is 'standardized educational products and training programs … application-layer innovation without quantitative validation' — an education business with NO AI signal terms in its innovation evidence. It reaches I-C through the ordinary band definition, which this ablation leaves intact, so removing the cap should not move it.",
+      "p1": "the clearest AI-as-product proposal (clinical decision-support large model) and a near-verbatim match to the prompt's own example 'AI heart failure decision support system → I-C, score 0.42-0.56'. It scored innovation 0.75, category I-B — ABOVE the cap band. Its rationale never invokes the cap. The hard cap, marked 'NO EXCEPTIONS', did not bind on the case it was written for."
+    },
+    "category_distribution_under_A": {
+      "I-B": 11,
+      "I-C": 1
+    },
+    "what_this_does_and_does_not_show": {
+      "shows": "The cap is inert as a binding constraint on these 12 proposals: it never pulled a score into 0.42–0.56.",
+      "does_not_show": "That the cap had zero influence. It could still anchor AI-flavoured proposals downward WITHIN I-B (e.g. p1 at 0.75 rather than 0.80+). Testing that needs condition B to actually run, and would require also removing the EXAMPLES bullet, which still states the cap band for p1's archetype."
+    }
+  },
+  "noise_floor_context": {
+    "source": "canonical/stage6_repeatability_3run_analysis.json (3 runs, prompt A)",
+    "mad_overall_score": 0.0056,
+    "max_per_dimension_cell_range": 0.12,
+    "innovation_dimension_variation": "4/12 proposals varied across the 3 runs, max range 0.045 (blended)",
+    "implication": "Any A-vs-B innovation delta would have to exceed the per-cell non-determinism range (up to ±0.12 observed, 0.05 typical) to be distinguishable from scorer noise. With 0/12 cap-bound proposals there is no mechanism to produce a delta that large."
+  },
+  "per_proposal": {
+    "p1": {
+      "condition_A": {
+        "innovation_invest_score": 0.75,
+        "innovation_blended_score": 0.735,
+        "innovation_category": "I-B",
+        "innovation_rationale": "The project introduces a heart failure large model undergoing patent application and features advanced technologies, but the innovation is more of a refinement rather than a completely new class, thus scoring lower than I-A.",
+        "overall_score": 0.68,
+        "verdict": "HOLD/NO-GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": false,
+        "ai_signal_terms_in_innovation_evidence": [
+          "algorithm",
+          "large model"
+        ],
+        "ai_as_product_per_RULE1": true,
+        "cap_bound_under_A": false
+      }
+    },
+    "p2": {
+      "condition_A": {
+        "innovation_invest_score": 0.7,
+        "innovation_blended_score": 0.674,
+        "innovation_category": "I-B",
+        "innovation_rationale": "The project shows advancements in enzyme design and efficiency, with improved protease activity and molecular redesign techniques, but does not fully meet the criteria for a new mechanistic class.",
+        "overall_score": 0.69,
+        "verdict": "HOLD/NO-GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": false,
+        "ai_signal_terms_in_innovation_evidence": [
+          "ai"
+        ],
+        "ai_as_product_per_RULE1": false,
+        "cap_bound_under_A": false
+      }
+    },
+    "p3": {
+      "condition_A": {
+        "innovation_invest_score": 0.75,
+        "innovation_blended_score": 0.735,
+        "innovation_category": "I-B",
+        "innovation_rationale": "The project introduces a novel protein design platform and aims to establish a patent moat, but the innovation is more of a refinement rather than a completely new mechanistic class.",
+        "overall_score": 0.709,
+        "verdict": "GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": false,
+        "ai_signal_terms_in_innovation_evidence": [
+          "artificial intelligence"
+        ],
+        "ai_as_product_per_RULE1": false,
+        "cap_bound_under_A": false
+      }
+    },
+    "p4": {
+      "condition_A": {
+        "innovation_invest_score": 0.8,
+        "innovation_blended_score": 0.781,
+        "innovation_category": "I-B",
+        "innovation_rationale": "The project claims significant improvements in treatment efficacy and holds 100% of the core patents for the second-generation TTF technology, but does not present a completely new mechanistic class, qualifying it for I-B.",
+        "overall_score": 0.691,
+        "verdict": "HOLD/NO-GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": false,
+        "ai_signal_terms_in_innovation_evidence": [
+          "algorithm"
+        ],
+        "ai_as_product_per_RULE1": false,
+        "cap_bound_under_A": false
+      }
+    },
+    "p5": {
+      "condition_A": {
+        "innovation_invest_score": 0.8,
+        "innovation_blended_score": 0.78,
+        "innovation_category": "I-B",
+        "innovation_rationale": "The project presents significant innovations in propulsion technology, including unique patents and substantial reductions in size and cost, qualifying it for I-B.",
+        "overall_score": 0.658,
+        "verdict": "HOLD/NO-GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": false,
+        "ai_signal_terms_in_innovation_evidence": [],
+        "ai_as_product_per_RULE1": false,
+        "cap_bound_under_A": false
+      }
+    },
+    "p6": {
+      "condition_A": {
+        "innovation_invest_score": 0.75,
+        "innovation_blended_score": 0.73,
+        "innovation_category": "I-B",
+        "innovation_rationale": "The project presents novel technologies such as the SmartOSEK operating system and a heterogeneous multi-processor computing unit, but these innovations are refinements rather than entirely new classes, thus qualifying for I-B.",
+        "overall_score": 0.685,
+        "verdict": "HOLD/NO-GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": false,
+        "ai_signal_terms_in_innovation_evidence": [
+          "algorithm",
+          "artificial intelligence",
+          "data-driven",
+          "intelligent",
+          "machine learning"
+        ],
+        "ai_as_product_per_RULE1": null,
+        "cap_bound_under_A": false
+      }
+    },
+    "p7": {
+      "condition_A": {
+        "innovation_invest_score": 0.8,
+        "innovation_blended_score": 0.772,
+        "innovation_category": "I-B",
+        "innovation_rationale": "The project features a unique linear mRNA scaffold and circularization technology, which are novel advancements in mRNA delivery, but does not fully meet the criteria for I-A, thus scoring in I-B.",
+        "overall_score": 0.726,
+        "verdict": "GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": false,
+        "ai_signal_terms_in_innovation_evidence": [],
+        "ai_as_product_per_RULE1": false,
+        "cap_bound_under_A": false
+      }
+    },
+    "p8": {
+      "condition_A": {
+        "innovation_invest_score": 0.75,
+        "innovation_blended_score": 0.726,
+        "innovation_category": "I-B",
+        "innovation_rationale": "The project presents novel technologies such as lung-targeted stable lipid nanoparticles and AI applications, but it does not fully meet the criteria for I-A due to the absence of a completely new mechanistic class, thus scoring in I-B.",
+        "overall_score": 0.651,
+        "verdict": "HOLD/NO-GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": false,
+        "ai_signal_terms_in_innovation_evidence": [
+          "ai"
+        ],
+        "ai_as_product_per_RULE1": false,
+        "cap_bound_under_A": false
+      }
+    },
+    "pA": {
+      "condition_A": {
+        "innovation_invest_score": 0.7,
+        "innovation_blended_score": 0.69,
+        "innovation_category": "I-B",
+        "innovation_rationale": "The project demonstrates significant innovation with advanced semiconductor technologies and numerous patents filed, but the mechanisms are refinements rather than entirely new classes, qualifying it for I-B.",
+        "overall_score": 0.681,
+        "verdict": "HOLD/NO-GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": false,
+        "ai_signal_terms_in_innovation_evidence": [],
+        "ai_as_product_per_RULE1": false,
+        "cap_bound_under_A": false
+      }
+    },
+    "pB": {
+      "condition_A": {
+        "innovation_invest_score": 0.8,
+        "innovation_blended_score": 0.777,
+        "innovation_category": "I-B",
+        "innovation_rationale": "The project holds multiple patents and demonstrates significant technological advancements, including a Charge Pump with 98% efficiency, but does not introduce a completely new mechanistic class, thus qualifying for I-B.",
+        "overall_score": 0.714,
+        "verdict": "HOLD/NO-GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": false,
+        "ai_signal_terms_in_innovation_evidence": [
+          "ai"
+        ],
+        "ai_as_product_per_RULE1": false,
+        "cap_bound_under_A": false
+      }
+    },
+    "pC": {
+      "condition_A": {
+        "innovation_invest_score": 0.5,
+        "innovation_blended_score": 0.507,
+        "innovation_category": "I-C",
+        "innovation_rationale": "The organization has developed standardized educational products and training programs, but this is more application-layer innovation without quantitative validation, placing it in I-C.",
+        "overall_score": 0.626,
+        "verdict": "HOLD/NO-GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": true,
+        "ai_signal_terms_in_innovation_evidence": [],
+        "ai_as_product_per_RULE1": false,
+        "cap_bound_under_A": false
+      }
+    },
+    "pD": {
+      "condition_A": {
+        "innovation_invest_score": 0.75,
+        "innovation_blended_score": 0.733,
+        "innovation_category": "I-B",
+        "innovation_rationale": "The company holds multiple patents and has developed unique technologies, but the innovations are refinements rather than entirely new classes, which places it in I-B.",
+        "overall_score": 0.647,
+        "verdict": "HOLD/NO-GO"
+      },
+      "condition_B": null,
+      "cap_analysis": {
+        "in_cap_band_0.42_0.56": false,
+        "ai_signal_terms_in_innovation_evidence": [],
+        "ai_as_product_per_RULE1": false,
+        "cap_bound_under_A": false
+      }
+    }
+  },
+  "paper_metrics_condition_A": {
+    "note": "Condition B not run, so no B-side recomputation exists.",
+    "spearman_overall_vs_consensus": 0.1747,
+    "spearman_advantages_vs_consensus": 0.1472,
+    "verdict_accuracy": 0.8333,
+    "source": "resultsNew/Dataset1/evaluation/evaluation_summary_consensus.json (read-only)"
+  }
+}

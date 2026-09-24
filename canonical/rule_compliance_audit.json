@@ -1,0 +1,674 @@
+{
+  "audit": "stage6_call_b_rule_compliance",
+  "status": "COMPLETE",
+  "llm_calls_made": 0,
+  "provenance": {
+    "date_local": "2026-07-28 17:30:06",
+    "date_utc": "2026-07-28T21:30:06.358274+00:00",
+    "method": "re-analysis of category+score pairs already recorded in existing run logs and run-3 output; no model was queried",
+    "sources": {
+      "results/Dataset1/rerun_stage6_7_iw90.log": 12,
+      "results/kickstarter_full_run.log": 127,
+      "canonical/stage6_repeatability_run3.json": 12
+    },
+    "n_calls": 151,
+    "n_category_cells": 755,
+    "prompt_sha256": "182a50db8e224a77c8856add2c9c63232a60d23716c0ae7ec63622bf6242388d",
+    "band_ranges_parsed_from_prompt": {
+      "F-A": [
+        0.78,
+        0.92
+      ],
+      "F-B": [
+        0.58,
+        0.75
+      ],
+      "F-C": [
+        0.38,
+        0.55
+      ],
+      "F-D": [
+        0.2,
+        0.35
+      ],
+      "I-A": [
+        0.83,
+        0.95
+      ],
+      "I-B": [
+        0.63,
+        0.8
+      ],
+      "I-C": [
+        0.4,
+        0.6
+      ],
+      "I-D": [
+        0.2,
+        0.38
+      ],
+      "O-A": [
+        0.78,
+        0.92
+      ],
+      "O-B": [
+        0.58,
+        0.75
+      ],
+      "O-C": [
+        0.38,
+        0.55
+      ],
+      "S-A": [
+        0.78,
+        0.92
+      ],
+      "S-B": [
+        0.58,
+        0.75
+      ],
+      "S-C": [
+        0.38,
+        0.55
+      ],
+      "T-A": [
+        0.83,
+        0.95
+      ],
+      "T-B": [
+        0.65,
+        0.8
+      ],
+      "T-C": [
+        0.45,
+        0.62
+      ],
+      "T-D": [
+        0.2,
+        0.42
+      ]
+    },
+    "not_modified": [
+      "canonical/ (existing files)",
+      "results/",
+      "resultsNew/",
+      "src/data/"
+    ]
+  },
+  "check1_schema_validity": {
+    "invalid_cells": 8,
+    "total_cells": 755,
+    "rate": 0.0106,
+    "detail": "model returned 'S-D' 8x; the strategy rubric defines only S-A/S-B/S-C and the prompt's own output schema states \"strategy\": \"S-A|S-B|S-C\". Never validated in code: categories are logged, not checked.",
+    "violations": [
+      {
+        "source": "Kickstarter",
+        "dimension": "strategy",
+        "returned": "S-D",
+        "allowed": [
+          "S-A",
+          "S-B",
+          "S-C"
+        ]
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "strategy",
+        "returned": "S-D",
+        "allowed": [
+          "S-A",
+          "S-B",
+          "S-C"
+        ]
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "strategy",
+        "returned": "S-D",
+        "allowed": [
+          "S-A",
+          "S-B",
+          "S-C"
+        ]
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "strategy",
+        "returned": "S-D",
+        "allowed": [
+          "S-A",
+          "S-B",
+          "S-C"
+        ]
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "strategy",
+        "returned": "S-D",
+        "allowed": [
+          "S-A",
+          "S-B",
+          "S-C"
+        ]
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "strategy",
+        "returned": "S-D",
+        "allowed": [
+          "S-A",
+          "S-B",
+          "S-C"
+        ]
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "strategy",
+        "returned": "S-D",
+        "allowed": [
+          "S-A",
+          "S-B",
+          "S-C"
+        ]
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "strategy",
+        "returned": "S-D",
+        "allowed": [
+          "S-A",
+          "S-B",
+          "S-C"
+        ]
+      }
+    ]
+  },
+  "check2_score_within_declared_band": {
+    "checked": 747,
+    "compliant": 725,
+    "rate": 0.9705,
+    "per_dimension": {
+      "team": {
+        "n": 151,
+        "ok": 133,
+        "rate": 0.8808
+      },
+      "objectives": {
+        "n": 151,
+        "ok": 150,
+        "rate": 0.9934
+      },
+      "strategy": {
+        "n": 143,
+        "ok": 141,
+        "rate": 0.986
+      },
+      "innovation": {
+        "n": 151,
+        "ok": 151,
+        "rate": 1.0
+      },
+      "feasibility": {
+        "n": 151,
+        "ok": 150,
+        "rate": 0.9934
+      }
+    },
+    "per_band": {
+      "F-B": {
+        "n": 112,
+        "ok": 111,
+        "range": [
+          0.58,
+          0.75
+        ],
+        "rate": 0.9911
+      },
+      "F-C": {
+        "n": 21,
+        "ok": 21,
+        "range": [
+          0.38,
+          0.55
+        ],
+        "rate": 1.0
+      },
+      "F-D": {
+        "n": 18,
+        "ok": 18,
+        "range": [
+          0.2,
+          0.35
+        ],
+        "rate": 1.0
+      },
+      "I-B": {
+        "n": 98,
+        "ok": 98,
+        "range": [
+          0.63,
+          0.8
+        ],
+        "rate": 1.0
+      },
+      "I-C": {
+        "n": 42,
+        "ok": 42,
+        "range": [
+          0.4,
+          0.6
+        ],
+        "rate": 1.0
+      },
+      "I-D": {
+        "n": 11,
+        "ok": 11,
+        "range": [
+          0.2,
+          0.38
+        ],
+        "rate": 1.0
+      },
+      "O-B": {
+        "n": 130,
+        "ok": 130,
+        "range": [
+          0.58,
+          0.75
+        ],
+        "rate": 1.0
+      },
+      "O-C": {
+        "n": 21,
+        "ok": 20,
+        "range": [
+          0.38,
+          0.55
+        ],
+        "rate": 0.9524
+      },
+      "S-B": {
+        "n": 119,
+        "ok": 119,
+        "range": [
+          0.58,
+          0.75
+        ],
+        "rate": 1.0
+      },
+      "S-C": {
+        "n": 24,
+        "ok": 22,
+        "range": [
+          0.38,
+          0.55
+        ],
+        "rate": 0.9167
+      },
+      "T-A": {
+        "n": 4,
+        "ok": 4,
+        "range": [
+          0.83,
+          0.95
+        ],
+        "rate": 1.0
+      },
+      "T-B": {
+        "n": 20,
+        "ok": 19,
+        "range": [
+          0.65,
+          0.8
+        ],
+        "rate": 0.95
+      },
+      "T-C": {
+        "n": 76,
+        "ok": 59,
+        "range": [
+          0.45,
+          0.62
+        ],
+        "rate": 0.7763
+      },
+      "T-D": {
+        "n": 51,
+        "ok": 51,
+        "range": [
+          0.2,
+          0.42
+        ],
+        "rate": 1.0
+      }
+    },
+    "direction": {
+      "below_floor": 22,
+      "above_ceiling": 0
+    },
+    "violations": [
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-B",
+        "score": 0.58,
+        "band": [
+          0.65,
+          0.8
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "feasibility",
+        "category": "F-B",
+        "score": 0.5,
+        "band": [
+          0.58,
+          0.75
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "strategy",
+        "category": "S-C",
+        "score": 0.2,
+        "band": [
+          0.38,
+          0.55
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "objectives",
+        "category": "O-C",
+        "score": 0.2,
+        "band": [
+          0.38,
+          0.55
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "strategy",
+        "category": "S-C",
+        "score": 0.2,
+        "band": [
+          0.38,
+          0.55
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      },
+      {
+        "source": "Kickstarter",
+        "dimension": "team",
+        "category": "T-C",
+        "score": 0.4,
+        "band": [
+          0.45,
+          0.62
+        ],
+        "direction": "below_floor"
+      }
+    ]
+  },
+  "check3_internal_contradiction_I_C": {
+    "header_range": [
+      0.4,
+      0.6
+    ],
+    "rule1_and_hardcap_range": [
+      0.42,
+      0.56
+    ],
+    "detail": "the prompt states two different numeric ranges for the same I-C band",
+    "n_I_C_cells": 42,
+    "inside_header_range": 42,
+    "inside_cap_range": 19,
+    "cap_range_compliance": 0.4524,
+    "score_distribution": {
+      "0.4": 14,
+      "0.42": 12,
+      "0.45": 1,
+      "0.5": 2,
+      "0.56": 4,
+      "0.6": 9
+    }
+  },
+  "check4_global_calibration": {
+    "instruction_most_in_0.40_0.70": {
+      "n": 533,
+      "of": 755,
+      "rate": 0.706,
+      "verdict": "followed"
+    },
+    "instruction_above_0.80_needs_strong_evidence": {
+      "n": 4,
+      "of": 755,
+      "rate": 0.0053,
+      "verdict": "followed (conservatively)"
+    }
+  },
+  "check5_ai_cap_rule1": {
+    "precondition": "AI IS the commercialised product (clinical decision support)",
+    "matching_proposal": "p1 (clinical decision-support large model) — matches the prompt's own worked example verbatim",
+    "rule_requires": {
+      "category": "I-C",
+      "range": [
+        0.42,
+        0.56
+      ],
+      "strength": "NO EXCEPTIONS"
+    },
+    "actually_assigned": {
+      "category": "I-B",
+      "score": 0.75
+    },
+    "rationale": "The project introduces a heart failure large model undergoing patent application and features advanced technologies, but the innovation is more of a refinement rather than a completely new class, thus scoring lower than I-A.",
+    "rule_applied": false
+  },
+  "check6_band_firing": {
+    "note": "top ('A') band firing rate across all calls",
+    "per_dimension": {
+      "team": {
+        "A_fired": 4,
+        "of": 151
+      },
+      "objectives": {
+        "A_fired": 0,
+        "of": 151
+      },
+      "strategy": {
+        "A_fired": 0,
+        "of": 151
+      },
+      "innovation": {
+        "A_fired": 0,
+        "of": 151
+      },
+      "feasibility": {
+        "A_fired": 0,
+        "of": 151
+      }
+    }
+  }
+}

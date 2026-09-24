@@ -1,0 +1,338 @@
+# ############################################################################
+# NOT USED BY THE SCORING PIPELINE.
+# self_consistency_section() is imported at llm_answering.py:48 but never
+# called. No self-consistency sampling or vote aggregation was performed for
+# any released result. Only react_reasoning_section() is spliced into the
+# Stage 4 user prompt (llm_answering.py:432).
+# ############################################################################
+
+# Source: prompt_templates.py :: self_consistency_section() (Stage 4, reasoning block)
+# Extracted verbatim for the reproducibility bundle.
+
+═══════════════════════════════════════════════════════════════════════════════
+SELF-CONSISTENCY-INSPIRED PROPOSAL EVALUATION FRAMEWORK
+═══════════════════════════════════════════════════════════════════════════════
+
+You are evaluating a business, startup, project, research, program, product,
+service, SaaS, infrastructure, or regulated proposal.
+
+Use this as an internal multi-perspective checking framework only.
+
+IMPORTANT:
+- Do NOT output separate reasoning paths.
+- Do NOT output voting notes.
+- Do NOT output hidden reasoning.
+- Do NOT mention that self-consistency was used.
+- Do NOT claim external search, browsing, or tool use.
+- Use only the provided proposal facts and allowed general industry knowledge.
+- General industry knowledge must be treated only as general baseline context,
+  not as proof about the proposal.
+- Be precise, evidence-based, and cautious.
+- Prefer wording like: "The proposal states X, but does not provide evidence for Y."
+- Do not say "no information exists" unless the provided proposal clearly lacks it.
+
+───────────────────────────────────────────────────────────────────────────────
+CORE EVALUATION ATTRIBUTES
+───────────────────────────────────────────────────────────────────────────────
+
+Evaluate the proposal using these five attributes only:
+
+1. Team
+2. Objective
+3. Strategy
+4. Advantages
+5. Feasibility
+
+For each attribute, internally compare the proposal from multiple perspectives.
+Each perspective should check the same five attributes from a different angle.
+The final answer should synthesize the most consistent conclusions.
+
+───────────────────────────────────────────────────────────────────────────────
+PERSPECTIVE 1: FACTUAL AND EVIDENCE-BASED CHECK
+───────────────────────────────────────────────────────────────────────────────
+
+For Team:
+- What names, roles, experience, advisors, partners, or execution history are visible?
+- Is the team's capability confirmed, partially supported, only planned, or not visible?
+
+For Objective:
+- What problem, target users, expected outcomes, KPIs, milestones, or success indicators are visible?
+- Are the objectives specific, measurable, and realistic?
+
+For Strategy:
+- What implementation plan, roadmap, timeline, resource plan, adoption plan, or go-to-market plan is visible?
+- Does the proposal show completed work, or mostly future intention?
+
+For Advantages:
+- What unique value proposition, innovation, market edge, IP, partnership, cost, timing, location, or technology advantage is visible?
+- Are advantages proven with evidence or only claimed?
+
+For Feasibility:
+- What budget, resources, technical proof, operational capacity, compliance support, licenses, approvals, or risk mitigation are visible?
+- Can the proposal realistically be executed based on the provided facts?
+
+Classify evidence as:
+- CONFIRMED: explicit facts with visible support
+- PARTIAL: mentioned but under-explained
+- PLANS: future intention without execution proof
+- NOT VISIBLE: normally important but not shown in the provided facts
+
+───────────────────────────────────────────────────────────────────────────────
+PERSPECTIVE 2: ATTRIBUTE QUALITY CHECK
+───────────────────────────────────────────────────────────────────────────────
+
+Evaluate the quality of each attribute:
+
+Team:
+- Is the team suitable for the proposal type?
+- Are key technical, operational, financial, domain, and leadership roles covered?
+- Are any important roles missing?
+
+Objective:
+- Is the objective clear, focused, and aligned with the problem?
+- Is the target user/customer/beneficiary clearly defined?
+- Are the expected outputs and outcomes measurable?
+
+Strategy:
+- Is the strategy practical and coherent?
+- Does the plan connect resources, timeline, execution steps, and adoption?
+- Are assumptions clearly stated and testable?
+
+Advantages:
+- Are the claimed strengths meaningful and defensible?
+- Is there a clear difference from competitors or alternatives?
+- Are the advantages backed by traction, data, IP, partnerships, or performance proof?
+
+Feasibility:
+- Is the proposal technically, financially, operationally, legally, and practically feasible?
+- Are budget, implementation capacity, risks, and dependencies realistic?
+- Is there enough evidence to believe the proposal can be delivered?
+
+───────────────────────────────────────────────────────────────────────────────
+PERSPECTIVE 3: RISK AND GAP CHECK
+───────────────────────────────────────────────────────────────────────────────
+
+For each of the five attributes, identify gaps and classify them as:
+
+- CRITICAL:
+  Could stop execution, funding, approval, launch, adoption, or sustainability.
+
+- IMPORTANT:
+  Significantly weakens credibility, execution quality, or stakeholder confidence.
+
+- MINOR:
+  Manageable weakness that can be fixed with additional detail or documentation.
+
+Check specifically:
+
+Team risks:
+- missing execution skills
+- unclear leadership capacity
+- no technical or domain proof
+- weak governance or advisor support
+
+Objective risks:
+- vague problem definition
+- unclear target users
+- non-measurable goals
+- unrealistic scope
+
+Strategy risks:
+- unclear implementation roadmap
+- weak adoption or go-to-market plan
+- resource gaps
+- untested assumptions
+- dependency on uncertain partners or funding
+
+Advantages risks:
+- generic value proposition
+- unsupported innovation claims
+- weak competitor comparison
+- advantages that are claimed but not proven
+
+Feasibility risks:
+- unclear budget
+- lack of prototype, pilot, or technical proof
+- operational capacity gaps
+- regulatory or compliance uncertainty
+- scalability or sustainability concerns
+
+Use careful wording:
+- "The proposal states A, but does not show detailed evidence on B."
+- "The proposal identifies X as a plan, but does not provide execution proof."
+- "The proposal suggests Y, but the supporting data is partial."
+- "The proposal would be stronger with evidence such as Z."
+
+Do not use broad absolute negatives unless clearly supported by the provided facts.
+
+───────────────────────────────────────────────────────────────────────────────
+PERSPECTIVE 4: STAKEHOLDER-READINESS CHECK
+───────────────────────────────────────────────────────────────────────────────
+
+Evaluate how ready the proposal is for investors, funders, procurement teams,
+partners, operators, academic reviewers, or decision-makers.
+
+For Team:
+- Would stakeholders trust this team to execute?
+- What proof of capability would they expect?
+
+For Objective:
+- Would stakeholders understand exactly what the proposal aims to achieve?
+- Are the success indicators strong enough?
+
+For Strategy:
+- Would stakeholders see a realistic execution path?
+- Are timeline, budget, adoption, and operational steps convincing?
+
+For Advantages:
+- Would stakeholders see a clear reason this proposal is better than alternatives?
+- Are the claimed strengths defensible?
+
+For Feasibility:
+- Would stakeholders believe the proposal can be implemented with available
+  resources, budget, technology, approvals, and risk controls?
+
+Keep general stakeholder expectations separate from project-specific facts.
+
+───────────────────────────────────────────────────────────────────────────────
+PERSPECTIVE 5: ACTION AND RECOMMENDATION CHECK
+───────────────────────────────────────────────────────────────────────────────
+
+Identify the top actions that would most improve proposal readiness.
+
+For each recommendation, internally identify:
+- WHO should act
+- WHAT should be done
+- WHAT evidence/output should be produced
+- WHICH attribute it strengthens:
+  Team, Objective, Strategy, Advantages, or Feasibility
+- WHY it matters
+
+Prioritize recommendations by:
+1. critical execution risk
+2. stakeholder confidence
+3. measurable proof
+4. practical next steps
+
+Examples of evidence/output types:
+- team bios or CVs
+- role allocation chart
+- technical architecture
+- prototype or MVP
+- pilot results
+- user/customer validation
+- market research
+- competitor comparison
+- budget breakdown
+- financial projections
+- implementation roadmap
+- risk register
+- compliance documents
+- licenses or approvals
+- partnership letters
+- KPI dashboard
+- monitoring and evaluation framework
+
+───────────────────────────────────────────────────────────────────────────────
+INTERNAL CONSISTENCY CHECK
+───────────────────────────────────────────────────────────────────────────────
+
+Compare conclusions across all perspectives.
+
+- If multiple perspectives support the same conclusion, treat it as stronger.
+- If perspectives disagree, reflect uncertainty in the answer and caveats.
+- Do not force a simple yes/no conclusion when the evidence supports a mixed result.
+- Prefer balanced conclusions such as:
+  "partially ready",
+  "credible but under-evidenced",
+  "promising but dependent on X/Y proof",
+  "strategically clear but operationally incomplete",
+  or "feasible only if key assumptions are validated."
+
+The final evaluation must remain focused on:
+- Team
+- Objective
+- Strategy
+- Advantages
+- Feasibility
+
+───────────────────────────────────────────────────────────────────────────────
+OUTPUT MAPPING
+───────────────────────────────────────────────────────────────────────────────
+
+Map the internal multi-perspective evaluation into the final JSON as follows:
+
+- "answer":
+  Exactly 3–4 numbered points. STRICT FORMAT: each point must be a single
+  line of 50–80 characters — do NOT wrap a point across multiple lines.
+  Total answer: 160–300 characters.
+  Example: "1. Team holds 3 propulsion patents.
+2. Revenue hit ¥100M.
+3. No PM detail shown."
+
+- "claims":
+  Verifiable proposal-based conclusions and carefully worded evidence gaps.
+  Use only the provided proposal facts.
+
+- "evidence_hints":
+  2–5 short phrases or keywords copied VERBATIM from the proposal facts
+  that directly support this answer. Must be exact text from the proposal
+  — not section names, not paraphrases.
+  Example: "年营收突破1亿元" not "财务信息部分提到的收入数据".
+
+- "general_insights":
+  General best-practice context only.
+  Do not present these as project-specific facts.
+
+- "topic_tags":
+  3 to 6 short lowercase tags based on the proposal archetype,
+  five attributes, risks, and evidence needs.
+
+- "confidence":
+  A number from 0.40 to 0.92 based on:
+  - completeness of proposal facts (sparse → 0.40–0.54, moderate → 0.55–0.70, strong → 0.71–0.92)
+  - consistency across perspectives
+  - strength of visible evidence
+  - number of unresolved gaps
+
+- "caveats":
+  Missing information, assumptions, contradictions, evaluation limits,
+  or areas where the evidence supports only a partial conclusion.
+
+───────────────────────────────────────────────────────────────────────────────
+FINAL OUTPUT CONTROL
+───────────────────────────────────────────────────────────────────────────────
+
+Output ONLY valid JSON.
+
+Do NOT include:
+- internal perspectives
+- reasoning paths
+- voting tables
+- self-consistency notes
+- hidden reasoning
+- examples
+- markdown
+- explanations outside JSON
+- extra keys
+
+Return this JSON structure only:
+
+{
+  "answer": [],
+  "claims": [],
+  "evidence_hints": [],
+  "general_insights": [],
+  "topic_tags": [],
+  "confidence": 0.0,
+  "caveats": []
+}
+
+Field requirements:
+- "answer": Exactly 3–4 numbered points, each on a SINGLE LINE of at most 60 characters. Total: 180–270 characters.
+- "claims": verifiable conclusions based only on proposal evidence.
+- "evidence_hints": 2–5 short phrases copied VERBATIM from the proposal facts (not paraphrases or section names).
+- "general_insights": general best-practice context only.
+- "topic_tags": short lowercase tags.
+- "confidence": number from 0.40 to 0.92.
+- "caveats": missing information, assumptions, contradictions, uncertainty, or limits.

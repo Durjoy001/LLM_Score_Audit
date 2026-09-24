@@ -1,0 +1,112 @@
+# Source: extract_facts_by_chunk.py :: FACT_PROMPT (Stage 1, user role)
+# Extracted verbatim for the reproducibility bundle.
+
+You are a fact extractor. Your job is to extract atomic facts, one by one, from a short proposal text chunk.
+
+Critical constraints:
+1. Process only the current text chunk. Do not infer content from other pages or external context.
+2. Do not invent any institution, person, company, partner, customer, country, city, domain term, product name,
+   technology name, model name, project name, market size, user count, beneficiary count, CAGR, or other concrete number.
+3. Do not use speculative language such as "may", "likely", "generally", "typically", "usually",
+   "probably", "potentially", or "it is believed that", unless that wording appears in the source text
+   and you are faithfully restating it.
+4. Every fact must be traceable to the source text. You may lightly paraphrase, but preserve key source
+   phrases such as product names, service names, technology names, institution names, pipeline names, domain terms, and model names.
+5. Keep each fact to 1-2 sentences whenever possible. Be specific and verifiable.
+6. Do not repeat the same fact in slightly different wording within the same response.
+
+Target domain:
+- Any business, startup, research, product, service, platform, operating, public-sector, nonprofit, infrastructure,
+  education, healthcare, manufacturing, software, finance, consumer, logistics, energy, agriculture, or mixed proposal.
+- Do not assume a specific domain, customer type, business model, regulated pathway, or delivery model unless it is present in the text.
+
+Definition of an atomic fact:
+- A fact should express one relatively independent statement that can stand alone.
+- Do not merge many topics into one long sentence.
+- If one sentence mentions both team composition and a milestone timeline, split it into two facts.
+- If one sentence contains multiple important ideas, such as team background plus technical route plus target market,
+  split it into multiple facts.
+
+High-priority content:
+- If the text introduces a project team, core members, leaders, CEO, COO, co-founders, operators, professors, specialists,
+  or similar people, split each member's information into multiple facts when possible. Capture at least:
+  - role or identity plus affiliated institution;
+  - main business, operating, research, product, service, or domain area;
+  - project-relevant experience or success cases.
+- If the text contains market analysis, such as market size, CAGR, growth rate, regional share,
+  competitors, sales, customer/user/beneficiary groups, buyer/payer/funder groups, or competitive landscape, split every important number and conclusion
+  into separate facts and label them with type="market".
+
+Extraction quantity and granularity:
+- Split long sentences into multiple facts so each fact focuses on one topic.
+- If the chunk is information-rich, try to extract 15-25 facts.
+- If the chunk has little information, fewer than 10 facts or even an empty list is acceptable.
+- The maximum number of facts is 25. Do not exceed 25 facts.
+
+Dimension labels:
+- "team": facts about teams, people, institutions, roles, responsibilities, and collaboration.
+- "objectives": overall goals, staged goals, KPIs, pipeline goals, and subproject goals.
+- "strategy": technical route, clinical route, regulatory route, collaboration strategy, commercial strategy,
+  market-entry strategy, and operating model.
+- "innovation": technical, product, or business-model novelty; comparison with existing approaches;
+  patents, unique resources, and evidence advantages.
+- "feasibility": resources, budget, funding, implementation path, risks and mitigations, timeline,
+  reimbursement or payment environment, and execution practicality.
+
+Dimension tagging requirements:
+- If a fact clearly relates to any dimension above, include that dimension in dimensions.
+- One fact may belong to multiple dimensions, such as ["team", "strategy"].
+- Every fact must include at least one dimension. If uncertain, use ["feasibility"] as the fallback.
+- Prefer adding relevant dimensions over leaving a related fact under-labeled.
+
+Allowed type values:
+- "team_member": a member's identity, institution, research direction, or project role.
+- "org_structure": team or company structure, division of work, or staffing proportions.
+- "collaboration": international collaboration, academic-industry collaboration, or cross-region coordination.
+- "resource": laboratories, platforms, data, partner resources, or similar assets.
+- "pipeline": a pipeline or subproject goal, indication, or technical route.
+- "milestone": a concrete task or milestone for a stage, including time information.
+- "market": market size, CAGR, target countries/customers, market drivers, or competitive landscape.
+- "tech_route": technical, algorithmic, or experimental route.
+- "product": product/platform form or business model.
+- "ip_asset": patents, proprietary technology, unique datasets, or other IP assets.
+- "evidence": animal, clinical, real-world, or other evidence and its conclusions.
+- "budget_item": budget amount or cost structure for a stage or purpose.
+- "funding_source": funding source, such as internal funds, VC, grants, or partnerships.
+- "risk": technical, market, funding, regulatory, AI, or other risks and uncertainties.
+- "mitigation": mitigation or response measures for risks.
+- "ai_model": a specific AI model, algorithm, or architecture.
+- "clinical_design": clinical trial or validation design, including phase, enrollment, and endpoints.
+- "regulatory": regulatory path, ethics approval, registration strategy, reimbursement, or payment policy.
+- "other": a project-relevant fact that does not fit the other types.
+
+Tagging hints:
+- Market size, CAGR, target countries/customers, competitors, payment, or reimbursement usually maps to
+  type "market" or "regulatory".
+- Funding, budget, cost, and staged investment usually map to "budget_item" or "funding_source".
+- Risks, uncertainties, bottlenecks, and challenges map to "risk".
+- Responses to risks or problems map to "mitigation".
+- Specific AI models, algorithms, or architectures map to "ai_model".
+- Patent numbers, PCT filings, core IP, or unique datasets map to "ip_asset".
+- If unsure about type, use "other", but choose the closest specific type when possible.
+
+Dimension coverage requirement:
+- If the chunk contains multiple kinds of information, such as team, objectives, technical or commercial strategy,
+  innovation, feasibility, or risk, try to ensure the extracted facts cover those dimensions.
+- Do not concentrate all facts in one dimension while ignoring other relevant content in the same chunk.
+- When you need to prioritize, keep facts that represent different dimensions and themes rather than repeatedly
+  refining the same minor point.
+
+Output format:
+- Return a JSON object with exactly one top-level key: "facts".
+- "facts" must be an array of fact objects.
+- Each fact object must use this shape:
+  {
+    "text": "A natural-language fact, preferably 1-2 specific sentences.",
+    "dimensions": ["team", "strategy"],
+    "type": "team_member"
+  }
+- Do not output a meta field. The system adds metadata automatically.
+- If the current chunk contains no useful facts, return {"facts": []}.
+- Do not output explanations or comments. Output JSON only.
+Now process the text chunk below.

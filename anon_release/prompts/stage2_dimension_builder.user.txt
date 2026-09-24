@@ -1,0 +1,117 @@
+# Source: build_dimensions_from_facts.py :: DIMENSION_PROMPT_TEMPLATE (Stage 2, user role)
+# Extracted verbatim for the reproducibility bundle.
+
+You are a rigorous project-review assistant. Based only on the extracted fact list,
+generate a structured summary for one evaluation dimension.
+
+Hard constraints:
+1. Use only the information provided in the fact list. Do not invent organizations,
+   people, diseases, drugs, technologies, models, pipeline names, market numbers,
+   patient counts, CAGR values, or any other figures.
+2. Do not use speculative phrases such as "based on common knowledge",
+   "industry practice", "generally", "usually", "likely", or "probably" unless
+   that wording is itself present in the original facts.
+3. You may merge, deduplicate, and compress facts, but every key_point, risk, and
+   mitigation must be traceable to at least one fact text.
+4. Summarize only the current dimension. You may mention strongly related facts,
+   but do not drift into generic evaluation of other dimensions.
+
+Current dimension: {dimension_name}
+
+Representative focus examples for this dimension:
+- team:
+  - Core team members, organizations, titles, research areas, and project roles.
+  - Organization structure, cross-border collaboration, and division of work.
+  - Composition of partner teams from other institutions.
+- objectives:
+  - Overall goals, such as what the project aims to achieve in 3-5 years.
+  - Stage milestones such as 0-6, 6-12, 12-18, or 18-36 months.
+  - Goals for each pipeline or subproject.
+- strategy:
+  - Technical route, including AI, algorithmic, or experimental pathways.
+  - Partnership strategy, business model, and market-entry plan.
+  - Operating model, domestic/international coordination, and regulatory path.
+- innovation:
+  - Innovation in technology, product, or operating model.
+  - Advantages over existing approaches.
+  - Key patents, distinctive data/resources, and validation evidence.
+- feasibility:
+  - Resource base, such as labs, platforms, and partners.
+  - Budget, funding plan, and funding sources.
+  - Risk matrix and mitigation measures across technical, market, funding,
+    regulatory, AI-model, or other risks.
+  - Timeline, implementation path, enrollment, adherence, and other feasibility factors.
+
+Input JSON structure (payload):
+
+payload = {
+  "all_facts": [
+    {
+      "text": "One natural-language fact",
+      "dimensions": ["team", "strategy"],
+      "type": "team_member, pipeline, etc.",
+      "meta": { ... }
+    },
+    ...
+  ],
+  "risk_facts": [
+    // Facts with type = "risk" or text that clearly includes risk/challenge wording.
+  ],
+  "mitigation_facts": [
+    // Facts with type = "mitigation" or text that clearly includes mitigation/solution wording.
+  ]
+}
+
+Your tasks:
+
+1. Classify, deduplicate, and merge all_facts mentally. Identify the most important
+   and representative points for the current dimension.
+   - Cover different fact types seen in this dimension when possible.
+2. Output exactly one JSON object in this format:
+
+{
+  "summary": "string, 2-4 English sentences summarizing this dimension based only on facts",
+  "key_points": [
+    "string, specific point 1 traceable to at least one fact",
+    "string, specific point 2",
+    "... if enough facts exist, output 6-10 non-duplicative key points."
+  ],
+  "risks": [
+    "string, risk summarized from risk_facts",
+    "If risk_facts is empty, say that the proposal provides limited or no detailed risk information for this dimension.",
+    "Do not invent risks that the proposal did not state.",
+    "..."
+  ],
+  "mitigations": [
+    "string, mitigation for a risk, based on mitigation_facts or explicit strategies/mechanisms in all_facts",
+    "If mitigation_facts is empty and all_facts has no clear mitigation, say that the proposal does not specify mitigation measures for this dimension.",
+    "Do not invent solutions.",
+    "..."
+  ]
+}
+
+Key point count requirements:
+- If all_facts has 20 or more facts, try to output 6-10 non-duplicative key_points.
+- If all_facts has 8-19 facts, output 5-8 key_points when possible.
+- If all_facts has 7 or fewer facts, output 3-5 key_points as supported by the facts.
+- In every case, cover different types of information instead of repeating the same fact type.
+
+Coverage requirements by dimension:
+- team: if team_member, org_structure, and collaboration facts exist, cover each type.
+- objectives: cover both overall goals and staged milestones if both are present.
+- strategy: cover technical route, market/customer information, partnership/business model,
+  funding source, and regulatory path when present.
+- innovation: prioritize innovation points such as ip_asset, ai_model, or tech_route,
+  plus available evidence.
+- feasibility: include resources/capabilities, budget/funding, risks/mitigations, and
+  timeline or implementation difficulty when present.
+
+Risk and mitigation constraints:
+- Generate "risks" primarily from risk_facts.
+- Generate "mitigations" primarily from mitigation_facts, and use all_facts only when
+  it explicitly mentions a response strategy.
+- Do not assume risks or mitigations that are not present in the text.
+
+Additional requirements:
+- Only describe what the proposal text shows.
+- Output no text outside the JSON object. Do not explain or add comments.

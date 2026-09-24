@@ -1,0 +1,126 @@
+# ############################################################################
+# NOT USED BY THE SCORING PIPELINE.
+# cot_reasoning_section() is imported at llm_answering.py:48 but never called.
+# Only react_reasoning_section() is spliced into the Stage 4 user prompt
+# (llm_answering.py:432). This file is included for completeness of the
+# prompt_templates.py module and did NOT influence any released score.
+# ############################################################################
+
+# Source: prompt_templates.py :: cot_reasoning_section() (Stage 4, reasoning block)
+# Extracted verbatim for the reproducibility bundle.
+
+CHAIN-OF-THOUGHT PROPOSAL EVALUATION PROMPT
+
+You are evaluating a business, project, startup, research, or program proposal.
+
+Think through the evaluation step by step before answering.
+Do not reveal your full chain-of-thought.
+Use your reasoning only to produce the final structured JSON output.
+
+Step 1: Understand the proposal
+Identify the type of proposal:
+- business/startup
+- SaaS/software
+- hardware/product
+- service business
+- public program
+- research project
+- infrastructure project
+- regulated product
+- other
+
+Identify the main problem, target users, and expected outcome.
+
+Step 2: Evaluate Team
+Reason about whether the team can execute the proposal.
+Consider:
+- relevant experience
+- technical capability
+- business or operational capability
+- domain expertise
+- missing roles
+- advisors, partners, or governance support
+- execution track record
+
+Step 3: Evaluate Objectives
+Reason about whether the objectives are clear and realistic.
+Consider:
+- problem-solution fit
+- target users or beneficiaries
+- measurable goals
+- success indicators
+- milestones
+- scope realism
+
+Step 4: Evaluate Strategy
+Reason about whether the plan is practical and coherent.
+Consider:
+- implementation approach
+- roadmap or timeline
+- resource allocation
+- go-to-market or adoption plan
+- completed work versus future intention
+- assumptions that still need validation
+
+Step 5: Evaluate Advantages
+Reason about whether the proposal has meaningful strengths.
+Consider:
+- unique value proposition
+- innovation
+- competitive edge
+- intellectual property
+- technology, data, partnerships, cost, timing, or location advantages
+- whether each advantage is proven or only claimed
+
+Step 6: Evaluate Feasibility
+Reason about whether the proposal can realistically be executed.
+Consider:
+- technical practicality
+- budget and funding needs
+- available resources
+- operational capacity
+- legal, regulatory, or compliance issues
+- key risks and dependencies
+
+Step 7: Synthesize the evaluation
+Compare the proposal facts against what would normally be expected for this type of proposal.
+Separate:
+- confirmed facts
+- partial evidence
+- plans or intentions
+- missing evidence
+- critical risks
+- practical recommendations
+
+Final output rules:
+- Output only valid JSON.
+- Do not reveal the chain-of-thought.
+- Do not include these steps in the answer.
+- Do not include examples.
+- Do not add extra keys.
+- Be precise and evidence-based.
+- Prefer wording like: "The proposal states X, but does not provide evidence for Y."
+- Do not say "no information exists" unless the proposal clearly does not include it.
+
+Return this JSON structure only:
+
+{
+  "answer": [],
+  "claims": [],
+  "evidence_hints": [],
+  "general_insights": [],
+  "topic_tags": [],
+  "confidence": 0.0,
+  "caveats": []
+}
+
+Field requirements:
+- "answer": Exactly 3–4 numbered points. STRICT FORMAT: each point must be a single line of 50–80 characters — do NOT wrap a point across multiple lines. Total answer: 160–300 characters. Example: "1. Team holds 3 propulsion patents.
+2. Revenue hit ¥100M last year.
+3. No cross-disciplinary PM detail shown."
+- "claims": verifiable conclusions based only on proposal evidence.
+- "evidence_hints": 2–5 short phrases or keywords copied VERBATIM from the proposal facts that directly support this answer. Must be exact text from the proposal — not section names, not paraphrases. Example: "年营收突破1亿元" not "财务信息部分提到的收入数据".
+- "general_insights": general best-practice context only, not project-specific claims.
+- "topic_tags": short lowercase tags.
+- "confidence": number from 0.40 to 0.92. Use 0.40–0.54 when proposal facts are sparse or vague; 0.55–0.70 for moderate evidence; 0.71–0.92 when evidence is strong and specific.
+- "caveats": missing information, assumptions, contradictions, or evaluation limits.

@@ -1,0 +1,1195 @@
+{
+  "provenance": {
+    "study": "cross_provider_replication",
+    "paper_fix": "B3",
+    "description": "Stage 6 Call B re-run under Gemini on the 12 Dataset1 proposals, reading the untouched Jun-16 dimensions_v2.json evidence used by the canonical OpenAI run.",
+    "stage": "stage_6_call_b_investment_scoring",
+    "date_utc": "2026-07-29T17:04:15.371963+00:00",
+    "date_local": "2026-07-29 13:05:00",
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "model_tier": "Flash-Lite (GA) -- tier match for gpt-4o-mini; not a Pro/flagship model",
+    "temperature": 0.0,
+    "seed_requested": 42,
+    "seed_reached_provider": false,
+    "seed_note": "Gemini exposes no seed parameter; llm_provider._call_gemini does not receive or forward `seed`. This arm is UNSEEDED while the OpenAI arm is nominally seeded (best-effort).",
+    "thinking_level": "minimal",
+    "thinking_note": "Gemini 3.x thinks by default and thinking tokens draw on maxOutputTokens; pinned to 'minimal' to protect the 600-token Call B budget and stay comparable to non-reasoning gpt-4o-mini. 2.5-era thinkingBudget=0 is rejected with HTTP 400 by 3.x.",
+    "max_tokens": 600,
+    "invest_weight": 0.9,
+    "runs": 2,
+    "verdict_rule": "GO iff overall >= 0.725 OR confidence >= 0.811; NO-GO iff overall < 0.40 or blended innovation < 0.30 or blended feasibility < 0.30; else HOLD",
+    "evidence_source": "existing src/data/extracted/<pid>__openai/dimensions_v2.json (Jun-16); no re-extraction performed",
+    "frozen_inputs": "qa_echo, dim_weights and confidence taken from canonical/canonical_ai_scores_dataset1.json (Stage-5 output, identical across providers by construction)",
+    "system_prompt_sha256": "182a50db8e224a77c8856add2c9c63232a60d23716c0ae7ec63622bf6242388d",
+    "code_source": "src.tools.ai_expert_opinion.investment_score_from_dims",
+    "credential_source": "GEMINI_API_KEY environment variable",
+    "elapsed_sec": 45.17,
+    "failures": {
+      "gemini_run1": [],
+      "gemini_run2": []
+    },
+    "not_modified": [
+      "canonical/ (existing files)",
+      "results/",
+      "resultsNew/",
+      "src/data/ (all stages)"
+    ]
+  },
+  "gemini_run1": {
+    "p1": {
+      "pid": "p1",
+      "pipeline_pid": "p1__openai",
+      "file_name": "1-附件1：心衰专病大模型BP.pdf",
+      "overall_score": 0.6725,
+      "dimension_scores_blended": {
+        "team": 0.7337,
+        "objectives": 0.8198,
+        "strategy": 0.6432,
+        "innovation": 0.4921,
+        "feasibility": 0.6887
+      },
+      "invest_scores_raw": {
+        "team": 0.75,
+        "objectives": 0.85,
+        "strategy": 0.65,
+        "innovation": 0.48,
+        "feasibility": 0.7
+      },
+      "qa_scores_frozen": {
+        "team": 0.587,
+        "objectives": 0.548,
+        "strategy": 0.582,
+        "innovation": 0.601,
+        "feasibility": 0.587
+      },
+      "confidence": 0.786,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-A",
+        "strategy": "S-B",
+        "innovation": "I-C",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "Led by Professor Zhang Liang, a medical doctorate with extensive experience in cardiac surgeries, alongside experts from Fuwai Hospital and Anhui Chest Hospital, fulfilling the T-B criteria for senior medical domain experts.",
+        "objectives": "Addresses a quantified market gap targeting over 12 million heart failure patients in China with a clear clinical and economic rationale.",
+        "strategy": "Coherent strategy outlining a multi-agent AI framework and data center model, though commercialization channels like C-end charging and medical insurance are still in early planning stages.",
+        "innovation": "The proposal features an AI software system for heart failure management and clinical decision support. Under Rule 1 (AI-applied-to-workflows), this falls strictly into I-C (0.42-0.56) despite engineering elements like compression algorithms.",
+        "feasibility": "Includes a 56 million yuan funding requirement, a 3-year timeline, and infrastructure plans (Provincial and City-level sub-centers), though detailed long-term risk mitigations remain sparse."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p1__openai/dimensions_v2.json",
+        "sha256": "6ce6d936f7bf83e69c25f2702a0776c169d96636aa90132fcf03b578a178208b",
+        "mtime_utc": "2026-06-16T20:15:49.517685+00:00"
+      }
+    },
+    "p2": {
+      "pid": "p2",
+      "pipeline_pid": "p2__openai",
+      "file_name": "2-附件1：2025_0410新型高端酶制剂的智能化创制与应用.pdf",
+      "overall_score": 0.6341,
+      "dimension_scores_blended": {
+        "team": 0.7011,
+        "objectives": 0.6314,
+        "strategy": 0.6679,
+        "innovation": 0.5122,
+        "feasibility": 0.6639
+      },
+      "invest_scores_raw": {
+        "team": 0.72,
+        "objectives": 0.65,
+        "strategy": 0.68,
+        "innovation": 0.52,
+        "feasibility": 0.68
+      },
+      "qa_scores_frozen": {
+        "team": 0.531,
+        "objectives": 0.464,
+        "strategy": 0.559,
+        "innovation": 0.442,
+        "feasibility": 0.519
+      },
+      "confidence": 0.6397,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-C",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "Dr. Zhang Lu Jia is affiliated with East China Normal University and New York University (Shanghai) with a documented research record (70+ SCI papers, nearly 1400 citations), fitting T-B criteria for a major university professor with a strong publication record.",
+        "objectives": "The project outlines clear goals around high-performance enzyme products and import substitution with quantified metrics (multiples like 5x, 3x, 2.1x), but specific buyer pathways and market demand validation are somewhat aspirational or generalized.",
+        "strategy": "Coherent import substitution strategy addressing domestic enzyme raw material supply issues, supported by industrial collaborations (e.g., 瑞沃德公司, 美农生物), though competitive moat and definitive commercial traction remain early-stage.",
+        "innovation": "The project relies on AI models ('driven by artificial intelligence', 'enzyme transformation activity prediction and evolutionary experimental validation'). Per Rule 1/Category I-C criteria, AI-driven computational optimization of existing enzyme classes falls under application-layer innovation with a score capped in the I-C range.",
+        "feasibility": "Provides a clear percentage-based funding allocation plan (40% platform, 25% production, 20% market, 15% R&D personnel), multi-year milestones, and access to computational/experimental data, balanced against technical challenges like soy protein hydrolysis."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p2__openai/dimensions_v2.json",
+        "sha256": "8995442846c2c3d2924152fa78462f6bc36b9ee231fc296afc2c89f319d7c19b",
+        "mtime_utc": "2026-06-16T20:27:29.152961+00:00"
+      }
+    },
+    "p3": {
+      "pid": "p3",
+      "pipeline_pid": "p3__openai",
+      "file_name": "3-附件1：基于非天然氨基酸调控的高效抗体结合蛋白.pdf",
+      "overall_score": 0.7202,
+      "dimension_scores_blended": {
+        "team": 0.8239,
+        "objectives": 0.6393,
+        "strategy": 0.6456,
+        "innovation": 0.8252,
+        "feasibility": 0.6669
+      },
+      "invest_scores_raw": {
+        "team": 0.85,
+        "objectives": 0.65,
+        "strategy": 0.65,
+        "innovation": 0.85,
+        "feasibility": 0.68
+      },
+      "qa_scores_frozen": {
+        "team": 0.589,
+        "objectives": 0.543,
+        "strategy": 0.606,
+        "innovation": 0.602,
+        "feasibility": 0.549
+      },
+      "confidence": 0.8182,
+      "verdict": "GO",
+      "categories": {
+        "team": "T-A",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-A",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "PI Professor Wang Jiangyun is affiliated with the Institute of Biophysics, Chinese Academy of Sciences (CAS), meeting the academic research leader threshold for SET 1. The team has published over 80 high-level academic works and holds over 20 domestic authorized invention patents.",
+        "objectives": "The project outlines specific aims such as improving antibody purification, enhancing column reuse rates, and establishing large-scale synthesis by 2025 with 1-2 patent applications, but buyer pathways remain somewhat aspirational and general.",
+        "strategy": "Plausible differentiation through non-natural amino acid modification and protein design with collaboration from CAS, but commercialization channels rely heavily on standard industry adoption without named production customers yet.",
+        "innovation": "Qualifies for I-A: Features a new mechanistic class using non-natural amino acid modification technology as molecular building blocks for antibody binding proteins, explicitly claims proprietary intellectual property and patents, and cites performance improvements over natural protein A.",
+        "feasibility": "Includes a structured 3-year total budget of 3010万元, clear milestones, and a 20-person full-time team in Huai'an, though regulatory and scale-up risks remain across the production process."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p3__openai/dimensions_v2.json",
+        "sha256": "281d5f419e083559cc5b383bb8ddc3435024f75db2e3209bfb7c1a095f25b87f",
+        "mtime_utc": "2026-06-16T20:36:21.537944+00:00"
+      }
+    },
+    "p4": {
+      "pid": "p4",
+      "pipeline_pid": "p4__openai",
+      "file_name": "4-附件1：（简介版）中国首创的第二代肿瘤治疗电场（TTF）解决方案【水印】(1)",
+      "overall_score": 0.6653,
+      "dimension_scores_blended": {
+        "team": 0.7062,
+        "objectives": 0.6445,
+        "strategy": 0.6152,
+        "innovation": 0.6914,
+        "feasibility": 0.6662
+      },
+      "invest_scores_raw": {
+        "team": 0.72,
+        "objectives": 0.65,
+        "strategy": 0.62,
+        "innovation": 0.7,
+        "feasibility": 0.68
+      },
+      "qa_scores_frozen": {
+        "team": 0.582,
+        "objectives": 0.595,
+        "strategy": 0.572,
+        "innovation": 0.614,
+        "feasibility": 0.542
+      },
+      "confidence": 0.7834,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-B",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "The team includes professors from Peking and Tsinghua Universities, founders/executives with medical device experience, and Dr. Palti (founding member of Novocure), fitting T-B criteria as senior domain experts and experienced founders.",
+        "objectives": "The proposal outlines a clear roadmap with milestones from 2021 to 2024 and NMPA approvals by T+36, fitting O-B due to a clear milestone structure but lacking deeply quantified buyer/payer pathway details.",
+        "strategy": "Coherent strategy focused on developing second-generation TTF products with 25 million yuan angel financing and a pre-financing valuation of 200 million yuan, fitting S-B with early-stage differentiation and a clear plan before human pilot trials.",
+        "innovation": "The project involves second-generation Tumor Treatment Fields (TTF) technology with multi-dimensional optimization of electrical field design, 100% core patents, and performance improvements, qualifying for I-B as a novel hardware/device mechanism refinement with IP.",
+        "feasibility": "Structured budget allocation (e.g., 50% external technical cooperation, 14% technical staff) and a 25 million yuan angel financing target, with a detailed timeline to commercial operations, fitting F-B reasonable budget with partial detail."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p4__openai/dimensions_v2.json",
+        "sha256": "0e371deb2750e4e37b06dc96f5a3d2f02f13eb0a165a245dacbfbc4fdb842ffc",
+        "mtime_utc": "2026-06-16T20:44:50.287409+00:00"
+      }
+    },
+    "p5": {
+      "pid": "p5",
+      "pipeline_pid": "p5__openai",
+      "file_name": "5-bp1.pdf",
+      "overall_score": 0.7524,
+      "dimension_scores_blended": {
+        "team": 0.8264,
+        "objectives": 0.7958,
+        "strategy": 0.7135,
+        "innovation": 0.735,
+        "feasibility": 0.7031
+      },
+      "invest_scores_raw": {
+        "team": 0.85,
+        "objectives": 0.82,
+        "strategy": 0.72,
+        "innovation": 0.75,
+        "feasibility": 0.72
+      },
+      "qa_scores_frozen": {
+        "team": 0.614,
+        "objectives": 0.578,
+        "strategy": 0.655,
+        "innovation": 0.6,
+        "feasibility": 0.551
+      },
+      "confidence": 0.7791,
+      "verdict": "GO",
+      "categories": {
+        "team": "T-A",
+        "objectives": "O-A",
+        "strategy": "S-B",
+        "innovation": "I-B",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "Qualifies for Set 1 / Set 3 of Category T-A as the team includes the Chinese Academy of Sciences' Shanghai Micro Satellite Innovation Research Institute (CAS institution, world-class research institution) alongside key leaders like Dr. Jian Cai (deputy director at Microelectronics Research Institute) with documented research output and actual delivery of micro thrusters in orbit.",
+        "objectives": "Category O-A applies as there is a clearly quantified delivery schedule (100 micro thrusters over five years, first delivered in 2019), specific flight verification achievements, and defined application needs for low Earth orbit satellite constellations.",
+        "strategy": "Category S-B applies because there is a clear commercialization path and collaboration with CAS institutes, but funding needs and market adoption details beyond initial constellation deliveries are partially outlined without full commercial scale proof.",
+        "innovation": "Category I-B applies as the project demonstrates novel hardware (world's only microscale laser micro-thruster capable of launching, specific impulse up to 10000 seconds, 7 invention patents) but represents refinement and miniaturization within existing propulsion classes rather than a brand new fundamental mechanism class.",
+        "feasibility": "Category F-B applies due to clear technical bottleneck analysis, cost reduction metrics (saving 3 million in launch costs), and investment cash flow projections, though comprehensive risk mitigation details across all areas remain limited."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p5__openai/dimensions_v2.json",
+        "sha256": "5710a3610d59c29f626d06141ad1e2121135ed0c198d82b556af00f7109a04e1",
+        "mtime_utc": "2026-06-16T20:55:30.877531+00:00"
+      }
+    },
+    "p6": {
+      "pid": "p6",
+      "pipeline_pid": "p6__openai",
+      "file_name": "6-bp2.pdf",
+      "overall_score": 0.6433,
+      "dimension_scores_blended": {
+        "team": 0.7347,
+        "objectives": 0.6616,
+        "strategy": 0.6375,
+        "innovation": 0.5229,
+        "feasibility": 0.6672
+      },
+      "invest_scores_raw": {
+        "team": 0.75,
+        "objectives": 0.68,
+        "strategy": 0.65,
+        "innovation": 0.52,
+        "feasibility": 0.68
+      },
+      "qa_scores_frozen": {
+        "team": 0.597,
+        "objectives": 0.496,
+        "strategy": 0.525,
+        "innovation": 0.549,
+        "feasibility": 0.552
+      },
+      "confidence": 0.7991,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-C",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "The team is led by a professor from Zhejiang University (a 985/211 tier national key university) with notable academicians serving on the technical advisory committee, fitting category T-B.",
+        "objectives": "The proposal outlines a clear problem and market size/timeline goals for autonomous driving in special vehicles, but the specific buyer pathway and validated demand are somewhat aspirational, placing it in O-B.",
+        "strategy": "The strategy outlines a clear phase-gate development and targets domestic/international special vehicle markets, backed by significant local funding and partnerships, qualifying for S-B.",
+        "innovation": "The innovation centers around autonomous driving intelligent computing units, operating systems, and machine learning/big data approaches. Under RULE 1, AI and intelligent computing systems applied to vehicle automation fall under application-layer innovation, capping the score in I-C.",
+        "feasibility": "The project has a clear timeline, alignment with industrial policies, risk management framework, and a structured financing plan, but lacks detailed itemized budgeting, placing it in F-B."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p6__openai/dimensions_v2.json",
+        "sha256": "70c164a6948da198eb142aa60e496d7e7a718a5971f2341894840c6197e21425",
+        "mtime_utc": "2026-06-16T21:03:45.678507+00:00"
+      }
+    },
+    "p7": {
+      "pid": "p7",
+      "pipeline_pid": "p7__openai",
+      "file_name": "7-04-1.（项目经理汇报）LPNP-mRNA免疫调节因子项目.pptx",
+      "overall_score": 0.8007,
+      "dimension_scores_blended": {
+        "team": 0.8408,
+        "objectives": 0.79,
+        "strategy": 0.7678,
+        "innovation": 0.8175,
+        "feasibility": 0.7884
+      },
+      "invest_scores_raw": {
+        "team": 0.88,
+        "objectives": 0.82,
+        "strategy": 0.8,
+        "innovation": 0.85,
+        "feasibility": 0.82
+      },
+      "qa_scores_frozen": {
+        "team": 0.488,
+        "objectives": 0.52,
+        "strategy": 0.478,
+        "innovation": 0.525,
+        "feasibility": 0.504
+      },
+      "confidence": 0.656,
+      "verdict": "GO",
+      "categories": {
+        "team": "T-A",
+        "objectives": "O-A",
+        "strategy": "S-A",
+        "innovation": "I-A",
+        "feasibility": "F-A"
+      },
+      "rationale": {
+        "team": "Meets Category T-A (Set 1 - Academic research leader): Includes world-class figures such as Robert Langer (Moderna co-founder and targeted drug delivery expert), Harvard Medical School and MIT affiliations, and significant high-impact journal publications in PNAS and Science Translational Medicine.",
+        "objectives": "Meets Category O-A: Clear, quantified market and clinical objectives including targeting a specific patient population of 125,000 in China by 2025, an IND application submission timeline for early 2026, and specific clinical trial stages.",
+        "strategy": "Meets Category S-A: Strong defensibility via self-developed LPNP delivery systems and proprietary mRNA synthesis technology platforms, matched with a clear phase-gate execution plan and Series A financing target.",
+        "innovation": "Meets Category I-A: Features a first-in-class mechanistic platform (novel circularization technology, unique linear mRNA scaffold, and lipid-polymer hybrid delivery systems), explicit patent goals (8+ invention patents), and quantitative preclinical data.",
+        "feasibility": "Meets Category F-A: Itemized budget totaling 35.2 million yuan with confirmed team financial commitments (3.15 million yuan), clear milestones, and defined multi-year implementation phases."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p7__openai/dimensions_v2.json",
+        "sha256": "0bf8d47d7686d40c5a775e77b9874d935b24642bca1d3c2ac56628f8f90d9b95",
+        "mtime_utc": "2026-06-16T21:12:02.707880+00:00"
+      }
+    },
+    "p8": {
+      "pid": "p8",
+      "pipeline_pid": "p8__openai",
+      "file_name": "8-2025_10 Ebovir_LNP 拨投结合项目商业计划书.pptx",
+      "overall_score": 0.5671,
+      "dimension_scores_blended": {
+        "team": 0.5469,
+        "objectives": 0.6321,
+        "strategy": 0.5901,
+        "innovation": 0.4827,
+        "feasibility": 0.5879
+      },
+      "invest_scores_raw": {
+        "team": 0.55,
+        "objectives": 0.65,
+        "strategy": 0.6,
+        "innovation": 0.48,
+        "feasibility": 0.6
+      },
+      "qa_scores_frozen": {
+        "team": 0.519,
+        "objectives": 0.471,
+        "strategy": 0.501,
+        "innovation": 0.507,
+        "feasibility": 0.479
+      },
+      "confidence": 0.633,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-C",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-C",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "Includes named experts (Dr. Zhenlong Liu, Prof. Guojun Chen) and functional roles, but lacks documented large-scale production records or world-class Tier-1 enterprise execution proof, placing it in Category T-C.",
+        "objectives": "Clear focus on lung-targeted broad-spectrum antiviral RNA/LNP therapy with explicit phased milestones (lab setup, IND filing, market launch), though buyer and commercial pathways remain somewhat general, fitting Category O-B.",
+        "strategy": "Coherent phase-gate plan utilizing AI models for precision delivery and strategic partnerships (Merck, Fujifilm), but commercialization and competitive moats rely heavily on partner networks without fully validated customer traction yet, fitting Category S-B.",
+        "innovation": "The proposal heavily relies on AI models and generative design (RNN) for drug screening, gene/drug delivery models, and LNP optimization. Per Rule 1, AI-driven platform approaches fall under Category I-C.",
+        "feasibility": "Structured phase-by-phase implementation plan with in vivo testing, leveraging existing partner labs, and milestones for 6 to 36 months, though standard risks regarding funding pressure and clinical trials apply, matching Category F-B."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p8__openai/dimensions_v2.json",
+        "sha256": "449e2fc184e708be54a26e815f3159aee3f2c61c15d135648f9c59f8302766f0",
+        "mtime_utc": "2026-06-16T21:20:03.794367+00:00"
+      }
+    },
+    "pA": {
+      "pid": "pA",
+      "pipeline_pid": "pA__openai",
+      "file_name": "A_安海半导体产业化方案v1.4-YF.pdf",
+      "overall_score": 0.6801,
+      "dimension_scores_blended": {
+        "team": 0.7307,
+        "objectives": 0.7914,
+        "strategy": 0.673,
+        "innovation": 0.7078,
+        "feasibility": 0.5259
+      },
+      "invest_scores_raw": {
+        "team": 0.75,
+        "objectives": 0.82,
+        "strategy": 0.68,
+        "innovation": 0.72,
+        "feasibility": 0.52
+      },
+      "qa_scores_frozen": {
+        "team": 0.557,
+        "objectives": 0.534,
+        "strategy": 0.61,
+        "innovation": 0.598,
+        "feasibility": 0.579
+      },
+      "confidence": 0.7822,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-A",
+        "strategy": "S-B",
+        "innovation": "I-B",
+        "feasibility": "F-C"
+      },
+      "rationale": {
+        "team": "Core members have over ten years of experience in top semiconductor companies and CTO Dr. Zhang Shuai is involved in multiple national projects, placing this in T-B.",
+        "objectives": "Clear market gap identified with quantified manufacturing capacity targets (120,000 pieces per month for 8-in, 240,000 units by Year 5) and named target sectors.",
+        "strategy": "Coherent strategy with joint ventures established with well-known domestic listed companies and EMS/SMT enterprises, though full execution validation across all phases is pending.",
+        "innovation": "Novel platforms (new generation IGBT platform, deep submicron BCD technology) with over 80 patents applied for, but lacks quantitative benchmarking data to meet I-A.",
+        "feasibility": "Total planned investment is massive (260 billion Yuan) with broad funding sources, but timeline and budget breakdown details are vague and carry high execution risks for such scale."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/pA__openai/dimensions_v2.json",
+        "sha256": "0b1d455723bd1f7005ba989d1fe81a26d4f43e3d6ee74fbedf28b01f351e2ebc",
+        "mtime_utc": "2026-06-16T21:31:20.674736+00:00"
+      }
+    },
+    "pB": {
+      "pid": "pB",
+      "pipeline_pid": "pB__openai",
+      "file_name": "B_BMT技术（基石资本)v01.pptx",
+      "overall_score": 0.7918,
+      "dimension_scores_blended": {
+        "team": 0.8657,
+        "objectives": 0.819,
+        "strategy": 0.7923,
+        "innovation": 0.6694,
+        "feasibility": 0.8193
+      },
+      "invest_scores_raw": {
+        "team": 0.9,
+        "objectives": 0.85,
+        "strategy": 0.82,
+        "innovation": 0.68,
+        "feasibility": 0.85
+      },
+      "qa_scores_frozen": {
+        "team": 0.557,
+        "objectives": 0.54,
+        "strategy": 0.543,
+        "innovation": 0.574,
+        "feasibility": 0.543
+      },
+      "confidence": 0.7869,
+      "verdict": "GO",
+      "categories": {
+        "team": "T-A",
+        "objectives": "O-A",
+        "strategy": "S-A",
+        "innovation": "I-C",
+        "feasibility": "F-A"
+      },
+      "rationale": {
+        "team": "Matches SET 3 (World-class operational excellence): documented production with DPPM < 5 (less than 5), > 3B units shipped, and > 20 world-class customers in production.",
+        "objectives": "Quantified market with a total addressable market of approximately 100 billion RMB, clear buyer pathways targeting Chinese smartphone manufacturers, and addressing specific domestic substitution needs.",
+        "strategy": "Strong competitive moat with > 20 world-class customers already in mass production, growing annual revenue, and clear differentiation against major competitors like TI and MTK.",
+        "innovation": "Includes proprietary chips and hardware features (e.g., Charge Pump with 98% efficiency), but also incorporates AI/deep learning optimization (BLE AI MESH utilizes deep learning). Under the critical preliminary rules, systems leveraging machine learning/deep learning for network stability fall under I-C.",
+        "feasibility": "Demonstrated operational infrastructure with > 3B units delivered, DPPM < 5, and > 20 world-class customers in production, confirming existing manufacturing capabilities and supply chain execution."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/pB__openai/dimensions_v2.json",
+        "sha256": "92a162c3e632050c09e8ae6c8d97da15223a57f83a79bdc4fdb804ad8ba54294",
+        "mtime_utc": "2026-06-16T21:39:56.267490+00:00"
+      }
+    },
+    "pC": {
+      "pid": "pC",
+      "pipeline_pid": "pC__openai",
+      "file_name": "C_1.ZX学院商业计划书20210328.pptx",
+      "overall_score": 0.5585,
+      "dimension_scores_blended": {
+        "team": 0.527,
+        "objectives": 0.6144,
+        "strategy": 0.5932,
+        "innovation": 0.4616,
+        "feasibility": 0.5981
+      },
+      "invest_scores_raw": {
+        "team": 0.52,
+        "objectives": 0.62,
+        "strategy": 0.6,
+        "innovation": 0.45,
+        "feasibility": 0.6
+      },
+      "qa_scores_frozen": {
+        "team": 0.59,
+        "objectives": 0.564,
+        "strategy": 0.532,
+        "innovation": 0.566,
+        "feasibility": 0.581
+      },
+      "confidence": 0.8041,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-C",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-C",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "The team has operational experience and defined organizational roles with a General Manager and departments, but lacks world-class academic research leaders or 25+ year senior domain experts with massive commercial scale.",
+        "objectives": "The project sets a clear goal to establish 100 ZX*** colleges from 2022 to 2024 with specific cohort sizes targeting semiconductor and integrated circuit talent demand, but specific buyer/payer pathways are somewhat generic.",
+        "strategy": "Coherent strategy focusing on school-enterprise cooperation and integrating industry standards into teaching content, supported by prior educational experience and a structured expansion plan, though lacking advanced moat details.",
+        "innovation": "The proposal focuses on standardized educational products and training programs for applied talent cultivation, representing an application-layer innovation rather than a novel hardware/tech mechanism or AI breakthrough.",
+        "feasibility": "Reasonable operational plan with defined workspace and server investments, joint-venture risk control, and low perceived operational risk due to prior educational experience, but lacks detailed multi-year itemized financial budgets."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/pC__openai/dimensions_v2.json",
+        "sha256": "baf371ef883e47cfb7cb076cccd1e4fc840137d1c233fbf7894e08c9eb326f2f",
+        "mtime_utc": "2026-06-16T21:47:50.533058+00:00"
+      }
+    },
+    "pD": {
+      "pid": "pD",
+      "pipeline_pid": "pD__openai",
+      "file_name": "D_210614大瞬科技投决报告.pptx",
+      "overall_score": 0.6967,
+      "dimension_scores_blended": {
+        "team": 0.7299,
+        "objectives": 0.7088,
+        "strategy": 0.6846,
+        "innovation": 0.7328,
+        "feasibility": 0.6359
+      },
+      "invest_scores_raw": {
+        "team": 0.75,
+        "objectives": 0.72,
+        "strategy": 0.7,
+        "innovation": 0.75,
+        "feasibility": 0.65
+      },
+      "qa_scores_frozen": {
+        "team": 0.549,
+        "objectives": 0.608,
+        "strategy": 0.546,
+        "innovation": 0.578,
+        "feasibility": 0.509
+      },
+      "confidence": 0.7806,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-B",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "The team meets Category T-B criteria as key members include a CTO with over 35 years of experience in semiconductor design and an experienced management group primarily originating from O2Micro with stable operational history.",
+        "objectives": "The objectives include specific milestones such as going public by June 30, 2024, and developing high-efficiency charge pump chips, with clear sales revenue concentration, fitting Category O-B.",
+        "strategy": "The strategy demonstrates clear differentiation and relationships with tier-1 mobile customers like OPPO, Xiaomi, and vivo, alongside supply chain adjustments, matching Category S-B.",
+        "innovation": "The company holds 14 patents (11 invention patents) and achieves 97%-98% high efficiency in charge pumps, placing it in Category I-B as a novel hardware/device with verified test results and IP, though missing some absolute multi-factor I-A criteria.",
+        "feasibility": "The feasibility plan outlines production capacity expansion and supply chain setup, but faces noted risks of insufficient production capacity and upstream dependencies, fitting Category F-B."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/pD__openai/dimensions_v2.json",
+        "sha256": "a676fe2548ce56c971cf69ab880226df81db1fc64bda2c65860d3fbd03a4ecfb",
+        "mtime_utc": "2026-06-16T21:56:14.201841+00:00"
+      }
+    }
+  },
+  "gemini_run2": {
+    "p1": {
+      "pid": "p1",
+      "pipeline_pid": "p1__openai",
+      "file_name": "1-附件1：心衰专病大模型BP.pdf",
+      "overall_score": 0.6674,
+      "dimension_scores_blended": {
+        "team": 0.7067,
+        "objectives": 0.8198,
+        "strategy": 0.6432,
+        "innovation": 0.4921,
+        "feasibility": 0.6887
+      },
+      "invest_scores_raw": {
+        "team": 0.72,
+        "objectives": 0.85,
+        "strategy": 0.65,
+        "innovation": 0.48,
+        "feasibility": 0.7
+      },
+      "qa_scores_frozen": {
+        "team": 0.587,
+        "objectives": 0.548,
+        "strategy": 0.582,
+        "innovation": 0.601,
+        "feasibility": 0.587
+      },
+      "confidence": 0.786,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-A",
+        "strategy": "S-B",
+        "innovation": "I-C",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "Led by Professor Zhang Liang with a medical doctorate and extensive cardiac surgery experience, alongside institutional backing from Fuwai Hospital and Anhui Chest Hospital, placing it solidly in category T-B.",
+        "objectives": "Clearly quantifies a targeted population of over 12 million heart failure patients in China, addressing a significant regional diagnosis/treatment gap and economic burden with specific clinical aims.",
+        "strategy": "Coherent strategy outlining a multi-agent AI system and various monetization models (C-end charging, API services, subscription), though commercial defensibility and execution partnerships require further validation.",
+        "innovation": "The primary commercialized product is an AI software system and large model for clinical decision support and hospital management. Per Rule 1 (AI-Applied-to-Workflows), this falls under application-layer innovation category I-C.",
+        "feasibility": "Includes a defined 56 million yuan budget, three-year timeline, and infrastructure plans (Provincial AI Data Center and sub-centers), though detailed risk mitigations are partially lacking."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p1__openai/dimensions_v2.json",
+        "sha256": "6ce6d936f7bf83e69c25f2702a0776c169d96636aa90132fcf03b578a178208b",
+        "mtime_utc": "2026-06-16T20:15:49.517685+00:00"
+      }
+    },
+    "p2": {
+      "pid": "p2",
+      "pipeline_pid": "p2__openai",
+      "file_name": "2-附件1：2025_0410新型高端酶制剂的智能化创制与应用.pdf",
+      "overall_score": 0.6279,
+      "dimension_scores_blended": {
+        "team": 0.7281,
+        "objectives": 0.6044,
+        "strategy": 0.6679,
+        "innovation": 0.5122,
+        "feasibility": 0.6369
+      },
+      "invest_scores_raw": {
+        "team": 0.75,
+        "objectives": 0.62,
+        "strategy": 0.68,
+        "innovation": 0.52,
+        "feasibility": 0.65
+      },
+      "qa_scores_frozen": {
+        "team": 0.531,
+        "objectives": 0.464,
+        "strategy": 0.559,
+        "innovation": 0.442,
+        "feasibility": 0.519
+      },
+      "confidence": 0.6397,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-C",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "Dr. Zhang Lu Jia is affiliated with national key universities (East China Normal University and New York University Shanghai) and the team has published over 70 SCI papers, placing them in category T-B (major university professor with documented research record).",
+        "objectives": "The project outlines specific aims around enzyme products, import substitution, and quantified improvements (multiples like 5x, 3x, 2.1x), but exact market size numbers are vague, fitting O-B.",
+        "strategy": "Coherent import substitution strategy addressing domestic enzyme supply issues, with partnerships (瑞沃德公司, 美农生物) and clear funding allocations, but lacks named tier-1 customers currently in volume production, fitting S-B.",
+        "innovation": "The project uses AI models and computational tools for enzyme mutation prediction and design, but the underlying product is an enzyme improvement rather than a new mechanistic class of molecular building block. Furthermore, it explicitly relies on AI-driven design tools, and improvements are within existing enzyme classes, triggering the I-C application-layer/AI-driven category cap.",
+        "feasibility": "Provides an itemized funding allocation budget (40% platform, 25% production, 20% market, 15% R&D), extensive experimental data, and municipal/provincial science awards, but acknowledges unresolved technical execution challenges regarding soy protein hydrolysis, fitting F-B."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p2__openai/dimensions_v2.json",
+        "sha256": "8995442846c2c3d2924152fa78462f6bc36b9ee231fc296afc2c89f319d7c19b",
+        "mtime_utc": "2026-06-16T20:27:29.152961+00:00"
+      }
+    },
+    "p3": {
+      "pid": "p3",
+      "pipeline_pid": "p3__openai",
+      "file_name": "3-附件1：基于非天然氨基酸调控的高效抗体结合蛋白.pdf",
+      "overall_score": 0.7472,
+      "dimension_scores_blended": {
+        "team": 0.8509,
+        "objectives": 0.6843,
+        "strategy": 0.6456,
+        "innovation": 0.8702,
+        "feasibility": 0.6849
+      },
+      "invest_scores_raw": {
+        "team": 0.88,
+        "objectives": 0.7,
+        "strategy": 0.65,
+        "innovation": 0.9,
+        "feasibility": 0.7
+      },
+      "qa_scores_frozen": {
+        "team": 0.589,
+        "objectives": 0.543,
+        "strategy": 0.606,
+        "innovation": 0.602,
+        "feasibility": 0.549
+      },
+      "confidence": 0.8182,
+      "verdict": "GO",
+      "categories": {
+        "team": "T-A",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-A",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "Meets SET 1: PI Professor Wang Jiangyun is affiliated with the Institute of Biophysics, Chinese Academy of Sciences, and the team has published over 80 high-level academic works and holds over 20 domestic authorized invention patents.",
+        "objectives": "Clear problem definition and goals regarding antibody production, purification, and non-natural amino acid modification, but specific buyer/payer pathways are largely aspirational.",
+        "strategy": "Coherent strategy utilizing Institute of Biophysics collaboration and proprietary technology, but relies heavily on standard commercial entry and faces intense market competition.",
+        "innovation": "Meets I-A criteria: introduces a new mechanistic class (non-natural amino acid modification technology and proprietary protein design platform), claims independent IP/patents, and cites performance improvements over natural protein A.",
+        "feasibility": "Provides a specific 3-year total budget (3010万元) and structured milestones, but faces notable market and regulatory risks with partial mitigation details."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p3__openai/dimensions_v2.json",
+        "sha256": "281d5f419e083559cc5b383bb8ddc3435024f75db2e3209bfb7c1a095f25b87f",
+        "mtime_utc": "2026-06-16T20:36:21.537944+00:00"
+      }
+    },
+    "p4": {
+      "pid": "p4",
+      "pipeline_pid": "p4__openai",
+      "file_name": "4-附件1：（简介版）中国首创的第二代肿瘤治疗电场（TTF）解决方案【水印】(1)",
+      "overall_score": 0.6795,
+      "dimension_scores_blended": {
+        "team": 0.7332,
+        "objectives": 0.6445,
+        "strategy": 0.6422,
+        "innovation": 0.6914,
+        "feasibility": 0.6842
+      },
+      "invest_scores_raw": {
+        "team": 0.75,
+        "objectives": 0.65,
+        "strategy": 0.65,
+        "innovation": 0.7,
+        "feasibility": 0.7
+      },
+      "qa_scores_frozen": {
+        "team": 0.582,
+        "objectives": 0.595,
+        "strategy": 0.572,
+        "innovation": 0.614,
+        "feasibility": 0.542
+      },
+      "confidence": 0.7834,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-B",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "The team includes major university professors from Peking University and Tsinghua University, plus experienced founders like Dr. Palti (founding member of Novocure) and executive leaders, matching T-B criteria.",
+        "objectives": "The proposal outlines a clear milestone structure for second-generation TTF engineering development up to NMPA approval, but lacks detailed market size numbers or specific payer/buyer pathway quantification.",
+        "strategy": "Coherent phase-gate strategy with clear technical differentiation (second-generation TTF platform, independent IP) and reasonable funding plan, but lacks named commercial customers or validated distribution channels.",
+        "innovation": "Represents a novel second-generation hardware/device platform for tumor treatment fields (TTF) with independent IP and multi-dimensional electrical field optimization, though specific quantitative binding or clinical data points are limited.",
+        "feasibility": "Includes an itemized budget plan (e.g., 50% external tech cooperation, 14% technical staff), a 25 million yuan angel financing target, and a structured timeline up to T+36, though risk mitigations are sparse."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p4__openai/dimensions_v2.json",
+        "sha256": "0e371deb2750e4e37b06dc96f5a3d2f02f13eb0a165a245dacbfbc4fdb842ffc",
+        "mtime_utc": "2026-06-16T20:44:50.287409+00:00"
+      }
+    },
+    "p5": {
+      "pid": "p5",
+      "pipeline_pid": "p5__openai",
+      "file_name": "5-bp1.pdf",
+      "overall_score": 0.7144,
+      "dimension_scores_blended": {
+        "team": 0.8264,
+        "objectives": 0.6878,
+        "strategy": 0.6955,
+        "innovation": 0.735,
+        "feasibility": 0.6401
+      },
+      "invest_scores_raw": {
+        "team": 0.85,
+        "objectives": 0.7,
+        "strategy": 0.7,
+        "innovation": 0.75,
+        "feasibility": 0.65
+      },
+      "qa_scores_frozen": {
+        "team": 0.614,
+        "objectives": 0.578,
+        "strategy": 0.655,
+        "innovation": 0.6,
+        "feasibility": 0.551
+      },
+      "confidence": 0.7791,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-A",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-B",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "Meets SET 1 of T-A: includes CAS Micro-Satellite Innovation Research Institute (CAS/Chinese National Academies institution) with documented spaceflight delivery track record.",
+        "objectives": "Clear milestones and delivery schedules for micro thrusters over five years with flight verifications completed, but buyer/payer pathways are somewhat generalized.",
+        "strategy": "Coherent development path with established collaborations (Shanghai Micro Satellite Innovation Research Institute) and funding plans, but commercial customer acquisition scale lacks detailed validation.",
+        "innovation": "Globally unique claims such as microscale laser micro-thruster and high specific impulse solid-state systems with 7 invention patents, but lacks comprehensive quantitative benchmark comparisons across all metrics to reach I-A.",
+        "feasibility": "Identifies technical bottlenecks and mitigations with cash flow projections and budget figures, but specific risk management detail is somewhat limited."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p5__openai/dimensions_v2.json",
+        "sha256": "5710a3610d59c29f626d06141ad1e2121135ed0c198d82b556af00f7109a04e1",
+        "mtime_utc": "2026-06-16T20:55:30.877531+00:00"
+      }
+    },
+    "p6": {
+      "pid": "p6",
+      "pipeline_pid": "p6__openai",
+      "file_name": "6-bp2.pdf",
+      "overall_score": 0.627,
+      "dimension_scores_blended": {
+        "team": 0.7347,
+        "objectives": 0.6346,
+        "strategy": 0.6105,
+        "innovation": 0.5229,
+        "feasibility": 0.6402
+      },
+      "invest_scores_raw": {
+        "team": 0.75,
+        "objectives": 0.65,
+        "strategy": 0.62,
+        "innovation": 0.52,
+        "feasibility": 0.65
+      },
+      "qa_scores_frozen": {
+        "team": 0.597,
+        "objectives": 0.496,
+        "strategy": 0.525,
+        "innovation": 0.549,
+        "feasibility": 0.552
+      },
+      "confidence": 0.7991,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-C",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "Led by Yang Guoqing from Zhejiang University with national key university credentials and prominent academic advisory members (academicians Wu Chaohui, Li Jun, He Jifeng), qualifying under T-B.",
+        "objectives": "Clear problem definition and timeline with specific market targets (over 20 types of special autonomous driving scenarios) and milestones, but buyer pathway remains somewhat high-level.",
+        "strategy": "Coherent strategy targeting special vehicles with a clear phase-gate roadmap and local financing support, but specific named production customers or validated commercial contracts are not detailed.",
+        "innovation": "The primary technologies described rely on AI, machine learning algorithms, big data-driven approaches, and operating systems for autonomous driving (AI/software-applied-to-workflows), hitting the I-C category hard cap.",
+        "feasibility": "Reasonable timeline, aligned industrial policies, and structured risk management table with clear funding plans, though complete granular budget breakdowns are limited."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p6__openai/dimensions_v2.json",
+        "sha256": "70c164a6948da198eb142aa60e496d7e7a718a5971f2341894840c6197e21425",
+        "mtime_utc": "2026-06-16T21:03:45.678507+00:00"
+      }
+    },
+    "p7": {
+      "pid": "p7",
+      "pipeline_pid": "p7__openai",
+      "file_name": "7-04-1.（项目经理汇报）LPNP-mRNA免疫调节因子项目.pptx",
+      "overall_score": 0.8182,
+      "dimension_scores_blended": {
+        "team": 0.8588,
+        "objectives": 0.817,
+        "strategy": 0.7858,
+        "innovation": 0.8445,
+        "feasibility": 0.7884
+      },
+      "invest_scores_raw": {
+        "team": 0.9,
+        "objectives": 0.85,
+        "strategy": 0.82,
+        "innovation": 0.88,
+        "feasibility": 0.82
+      },
+      "qa_scores_frozen": {
+        "team": 0.488,
+        "objectives": 0.52,
+        "strategy": 0.478,
+        "innovation": 0.525,
+        "feasibility": 0.504
+      },
+      "confidence": 0.656,
+      "verdict": "GO",
+      "categories": {
+        "team": "T-A",
+        "objectives": "O-A",
+        "strategy": "S-A",
+        "innovation": "I-A",
+        "feasibility": "F-A"
+      },
+      "rationale": {
+        "team": "Fits SET 1 (Academic research leader) and world-class caliber: includes Robert Langer (renowned expert, Moderna co-founder), Dr. Kong Na, Dr. Tao Wei, and researchers from Harvard Medical School and MIT with high-impact publications in journals like PNAS and Science Translational Medicine.",
+        "objectives": "Clear market gap and quantified target population (125,000 patients in China by 2025) with specific clinical development milestones including IND application submission by early 2026.",
+        "strategy": "Strong competitive moat via self-developed LPNP delivery systems, novel circular mRNA platform, clear preclinical and clinical execution pathway, and structured financing plans.",
+        "innovation": "Meets all I-A criteria: features a fundamentally new class/mechanism (novel circularization technology, unique linear mRNA scaffold, lipid-polymer hybrid delivery systems), explicit IP goals (8+ invention patents), and specific preclinical/functional advantages cited.",
+        "feasibility": "Well-defined budget (total 35.2 million yuan with 3.15 million yuan team commitment), robust multi-year milestone timeline, and established technical platforms addressing storage and delivery challenges."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p7__openai/dimensions_v2.json",
+        "sha256": "0bf8d47d7686d40c5a775e77b9874d935b24642bca1d3c2ac56628f8f90d9b95",
+        "mtime_utc": "2026-06-16T21:12:02.707880+00:00"
+      }
+    },
+    "p8": {
+      "pid": "p8",
+      "pipeline_pid": "p8__openai",
+      "file_name": "8-2025_10 Ebovir_LNP 拨投结合项目商业计划书.pptx",
+      "overall_score": 0.5966,
+      "dimension_scores_blended": {
+        "team": 0.6639,
+        "objectives": 0.6321,
+        "strategy": 0.6081,
+        "innovation": 0.4827,
+        "feasibility": 0.6059
+      },
+      "invest_scores_raw": {
+        "team": 0.68,
+        "objectives": 0.65,
+        "strategy": 0.62,
+        "innovation": 0.48,
+        "feasibility": 0.62
+      },
+      "qa_scores_frozen": {
+        "team": 0.519,
+        "objectives": 0.471,
+        "strategy": 0.501,
+        "innovation": 0.507,
+        "feasibility": 0.479
+      },
+      "confidence": 0.633,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-C",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "Includes named professors (Dr. Zhenlong Liu and Prof. Guojun Chen) and industry partners (Merck, Fujifilm), aligning with T-B criteria for experienced individuals/partnerships.",
+        "objectives": "Defines clear objectives and milestones (lab setup, technology development, clinical trial application submission within 18 months), but lacks specific quantitative buyer/payer pathways or detailed market size numbers.",
+        "strategy": "Coherent phase-gate strategy leveraging strategic partnerships and AI-driven precision delivery, though commercialization and competitive defensibility details remain standard/partial.",
+        "innovation": "The project relies heavily on AI models for gene and drug delivery models and drug screening, triggering the hard cap for AI-applied workflows under Category I-C (0.42-0.56).",
+        "feasibility": "Outlines structured phases, in vivo testing, and partner laboratory resource utilization to mitigate risks, though detailed multi-year itemized budgets are absent."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/p8__openai/dimensions_v2.json",
+        "sha256": "449e2fc184e708be54a26e815f3159aee3f2c61c15d135648f9c59f8302766f0",
+        "mtime_utc": "2026-06-16T21:20:03.794367+00:00"
+      }
+    },
+    "pA": {
+      "pid": "pA",
+      "pipeline_pid": "pA__openai",
+      "file_name": "A_安海半导体产业化方案v1.4-YF.pdf",
+      "overall_score": 0.7054,
+      "dimension_scores_blended": {
+        "team": 0.7037,
+        "objectives": 0.8184,
+        "strategy": 0.691,
+        "innovation": 0.7348,
+        "feasibility": 0.5979
+      },
+      "invest_scores_raw": {
+        "team": 0.72,
+        "objectives": 0.85,
+        "strategy": 0.7,
+        "innovation": 0.75,
+        "feasibility": 0.6
+      },
+      "qa_scores_frozen": {
+        "team": 0.557,
+        "objectives": 0.534,
+        "strategy": 0.61,
+        "innovation": 0.598,
+        "feasibility": 0.579
+      },
+      "confidence": 0.7822,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-A",
+        "strategy": "S-B",
+        "innovation": "I-B",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "The facts state that core members have over ten years of experience in top semiconductor companies and CTO Dr. Zhang Shuai is involved in national projects, fitting the T-B criteria of senior executives/experienced domain leaders.",
+        "objectives": "The proposal defines clear, highly quantified production milestones (e.g., 120,000 pieces per month for 8-in, 720,000 annual output, and timeline targets), addressing a clear domestic import-substitution and industrial chain gap.",
+        "strategy": "Coherent strategy utilizing joint ventures and strategic partnerships targeting multiple sectors (home appliances, auto, etc.) and entering clients via ODM/OEM, but lacking fully proven end-customer production contracts in the text.",
+        "innovation": "Features a novel device platform (new generation IGBT platform, deep submicron BCD technology, over 80 patents applied), but lacks complete quantitative benchmark comparison data or non-natural/first-in-class mechanistic breakthroughs required for I-A.",
+        "feasibility": "Detailed multi-phase investment budget provided (total 260 billion Yuan with specific phase breakdowns and government/social capital structure), but a project of this massive capital scale carries heavy execution and timeline dependencies."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/pA__openai/dimensions_v2.json",
+        "sha256": "0b1d455723bd1f7005ba989d1fe81a26d4f43e3d6ee74fbedf28b01f351e2ebc",
+        "mtime_utc": "2026-06-16T21:31:20.674736+00:00"
+      }
+    },
+    "pB": {
+      "pid": "pB",
+      "pipeline_pid": "pB__openai",
+      "file_name": "B_BMT技术（基石资本)v01.pptx",
+      "overall_score": 0.7908,
+      "dimension_scores_blended": {
+        "team": 0.8477,
+        "objectives": 0.792,
+        "strategy": 0.7923,
+        "innovation": 0.7054,
+        "feasibility": 0.8193
+      },
+      "invest_scores_raw": {
+        "team": 0.88,
+        "objectives": 0.82,
+        "strategy": 0.82,
+        "innovation": 0.72,
+        "feasibility": 0.85
+      },
+      "qa_scores_frozen": {
+        "team": 0.557,
+        "objectives": 0.54,
+        "strategy": 0.543,
+        "innovation": 0.574,
+        "feasibility": 0.543
+      },
+      "confidence": 0.7869,
+      "verdict": "GO",
+      "categories": {
+        "team": "T-A",
+        "objectives": "O-A",
+        "strategy": "S-A",
+        "innovation": "I-B",
+        "feasibility": "F-A"
+      },
+      "rationale": {
+        "team": "The team qualifies for T-A, Set 3 (World-class operational excellence): documented production at top industry standard with DPPM < 5, >3B units shipped, and >20 tier-1 world-class customers in production.",
+        "objectives": "Quantified market with a total addressable market of ~100 billion RMB, clear buyer/payer pathway targeting smartphone manufacturers, and specific next-generation product goals.",
+        "strategy": "Strong competitive moat backed by >20 world-class customers in production, clear positioning against competitors like TI and MTK, and demonstrated market traction with growing annual revenue.",
+        "innovation": "Proprietary IP and patents (CN108574120, etc.) with specific performance metrics (Charge Pump conversion efficiency of 98%), but falls under I-B as the mechanism is a high-efficiency refinement in power management rather than an entirely new mechanistic class.",
+        "feasibility": "Demonstrated existing manufacturing and operational infrastructure with >3 billion units successfully delivered at ultra-low defect rates (<5 DPPM) and >20 world-class customers already in production."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/pB__openai/dimensions_v2.json",
+        "sha256": "92a162c3e632050c09e8ae6c8d97da15223a57f83a79bdc4fdb804ad8ba54294",
+        "mtime_utc": "2026-06-16T21:39:56.267490+00:00"
+      }
+    },
+    "pC": {
+      "pid": "pC",
+      "pipeline_pid": "pC__openai",
+      "file_name": "C_1.ZX学院商业计划书20210328.pptx",
+      "overall_score": 0.5602,
+      "dimension_scores_blended": {
+        "team": 0.527,
+        "objectives": 0.6144,
+        "strategy": 0.5482,
+        "innovation": 0.4616,
+        "feasibility": 0.6431
+      },
+      "invest_scores_raw": {
+        "team": 0.52,
+        "objectives": 0.62,
+        "strategy": 0.55,
+        "innovation": 0.45,
+        "feasibility": 0.65
+      },
+      "qa_scores_frozen": {
+        "team": 0.59,
+        "objectives": 0.564,
+        "strategy": 0.532,
+        "innovation": 0.566,
+        "feasibility": 0.581
+      },
+      "confidence": 0.8041,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-C",
+        "objectives": "O-B",
+        "strategy": "S-C",
+        "innovation": "I-C",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "The team has relevant operational experience with defined roles, an organizational structure, and government collaboration history, but lacks documented world-class academic research leaders or 25+ year domain giants, placing it in category T-C.",
+        "objectives": "The project outlines clear targets (establishing 100 ZX*** colleges from 2022 to 2024, 300 students per cohort) and addresses talent demand in strategic industries, but specific buyer/payer pathways are somewhat generalized, fitting O-B.",
+        "strategy": "The strategy focuses on school-enterprise cooperation and integrating industry standards, but relies on standard educational expansion and partnership plans without a distinct, hard-to-copy competitive moat documented in the facts, fitting S-C.",
+        "innovation": "The innovation involves standardized educational products and training programs for applied talent cultivation, representing an application-layer service model rather than a foundational technical breakthrough, fitting I-C.",
+        "feasibility": "Feasibility is supported by concrete resource plans (workspace, servers), joint venture risk controls, and low financial risk tied to signed agreements, though the budget lacks granular line-item breakdown, fitting F-B."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/pC__openai/dimensions_v2.json",
+        "sha256": "baf371ef883e47cfb7cb076cccd1e4fc840137d1c233fbf7894e08c9eb326f2f",
+        "mtime_utc": "2026-06-16T21:47:50.533058+00:00"
+      }
+    },
+    "pD": {
+      "pid": "pD",
+      "pipeline_pid": "pD__openai",
+      "file_name": "D_210614大瞬科技投决报告.pptx",
+      "overall_score": 0.6933,
+      "dimension_scores_blended": {
+        "team": 0.7299,
+        "objectives": 0.6728,
+        "strategy": 0.7026,
+        "innovation": 0.7328,
+        "feasibility": 0.6359
+      },
+      "invest_scores_raw": {
+        "team": 0.75,
+        "objectives": 0.68,
+        "strategy": 0.72,
+        "innovation": 0.75,
+        "feasibility": 0.65
+      },
+      "qa_scores_frozen": {
+        "team": 0.549,
+        "objectives": 0.608,
+        "strategy": 0.546,
+        "innovation": 0.578,
+        "feasibility": 0.509
+      },
+      "confidence": 0.7806,
+      "verdict": "HOLD",
+      "categories": {
+        "team": "T-B",
+        "objectives": "O-B",
+        "strategy": "S-B",
+        "innovation": "I-B",
+        "feasibility": "F-B"
+      },
+      "rationale": {
+        "team": "The team qualifies for T-B as Chen Zhixiang, the CTO, has over 35 years of experience in semiconductor design and has worked at major companies, backed by an experienced core management team primarily from O2Micro.",
+        "objectives": "The objectives outline clear targets including going public by June 30, 2024, and specific sales products like charge pump chips, but lack detailed buyer/payer pathway validation, placing it in O-B.",
+        "strategy": "The strategy demonstrates clear market positioning and relationships with major tier-1 customers like OPPO, Xiaomi, and vivo, with supply chain adjustments, aligning with S-B.",
+        "innovation": "The innovation meets I-B criteria as the company holds 14 patents (11 invention patents) and achieves specific performance metrics (97%-98% efficiency, globally unique large-scale production charge pump SD77313), though it represents power management refinements rather than a brand-new mechanistic class.",
+        "feasibility": "Feasibility is rated F-B due to stated production capacity expansion plans and established supply chain systems, though risks regarding upstream supply and production capacity constraints remain partially mitigated."
+      },
+      "evidence_input": {
+        "path": "src/data/extracted/pD__openai/dimensions_v2.json",
+        "sha256": "a676fe2548ce56c971cf69ab880226df81db1fc64bda2c65860d3fbd03a4ecfb",
+        "mtime_utc": "2026-06-16T21:56:14.201841+00:00"
+      }
+    }
+  }
+}

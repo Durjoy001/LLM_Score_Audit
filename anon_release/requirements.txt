@@ -1,0 +1,29 @@
+# Detected from the imports of the scripts in src/.
+# The three pinned versions below are what the verification path was checked
+# against. They are NOT a record of the environment the original scoring runs
+# used; that was not captured at the time.
+
+# --- Required to reproduce every metric in data/scores.csv (no API key needed)
+pandas==2.3.1
+numpy==1.26.4
+scipy==1.16.0
+
+# --- Required only for the metric scripts that read the human-rater workbooks
+#     (those workbooks are not distributed; see README "What cannot be reproduced")
+openpyxl
+
+# --- Required only to re-run the stochastic scoring pipeline against a live API
+requests
+python-dotenv
+openai
+
+# --- Required only for Stage 0 document/text preparation (PDF/DOCX/PPTX + OCR)
+pdfplumber
+pdf2image
+pytesseract
+Pillow
+python-docx
+python-pptx
+
+# --- Optional: only if PROVIDER=gemini for the cross-provider check
+# google-genai

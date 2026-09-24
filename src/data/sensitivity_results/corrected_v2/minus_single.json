@@ -1,0 +1,1710 @@
+{
+  "generated_at": "2026-09-16T18:40:49.157430+00:00",
+  "method": "\nPer-sub-rubric MINUS test: one report per proposal x sub-rubric, with ONLY that sub-rubric's passages removed.\n\nRun rescore_corrected.py first: this reuses its baseline scores (first baseline run), its scorer call and its\nneutral report IDs, so the comparison uses identical settings (temperature 0, no expert-opinion JSON).\n\nFor each of the cells in removed_text_review.py that have something to remove:\n  target     MINUS passes when the removed sub-rubric scores below its baseline (excluded at baseline 1)\n  spillover  for the other 7 sub-rubrics in the same report, how often the score dropped although none of\n             their evidence was removed; compared with how often scores drop between two identical baseline runs\n\nOutput: src/data/sensitivity_results/corrected_v2/minus_single.json\n\nUsage:\n    python3 rescore_minus_single.py --build_only\n    python3 rescore_minus_single.py\n",
+  "checks": [
+    {
+      "pid": "p1",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R5_moat",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x29afe8e259__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p1",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R6_partners",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xbdd3162e52__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p1",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xa0308e85ca__openai",
+      "baseline": 4,
+      "minus_single": 3,
+      "result": "PASS"
+    },
+    {
+      "pid": "p1",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R1_problem_clarity",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x469ed635c0__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p1",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R7_problem_solution_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xdb5f53d2e0__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p1",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R1_mechanism_novelty",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xb5d7cca9f9__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p1",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R2_ip_status",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xfe0cae8ce3__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p1",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R8_adoption_readiness",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xf0d2278799__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p1",
+      "dimension": "team",
+      "sub_rubric": "team_R2_credentials",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x2ee37e1d50__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p1",
+      "dimension": "team",
+      "sub_rubric": "team_R6_complementarity",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xff779f2c9b__openai",
+      "baseline": 3,
+      "minus_single": 3,
+      "result": "FAIL"
+    },
+    {
+      "pid": "p1",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R1_budget_detail",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xa49a15c241__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p1",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R3_infrastructure",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x1ada4d5285__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p1",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R5_risk_mitigation",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xaccd65a8a5__openai",
+      "baseline": 1,
+      "minus_single": 2,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p2",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R2_milestones",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x6093309c43__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p2",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R5_moat",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x382a38bde3__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p2",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R6_partners",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x0dc1e66deb__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p2",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x37ac51f4f9__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p2",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R1_problem_clarity",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x79d0d2a6d1__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p2",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R1_mechanism_novelty",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x650f71b409__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p2",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R3_performance_proof",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x4a4c75e31d__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p2",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R6_platform_potential",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x0b77bc3fbe__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p2",
+      "dimension": "team",
+      "sub_rubric": "team_R1_composition",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xa595f9a769__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p2",
+      "dimension": "team",
+      "sub_rubric": "team_R2_credentials",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xef5f75712f__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p2",
+      "dimension": "team",
+      "sub_rubric": "team_R6_complementarity",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x7c79f7fe20__openai",
+      "baseline": 3,
+      "minus_single": 3,
+      "result": "FAIL"
+    },
+    {
+      "pid": "p2",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R1_budget_detail",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x46fbd40c14__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p2",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R3_infrastructure",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x422c370634__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p2",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R8_sustainability",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xd3f1755b19__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p3",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R5_moat",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xfeb03508fa__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R6_partners",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x573a7df283__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x45ee698c7f__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R8_timing",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xe6d43ae72d__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R1_problem_clarity",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x3cd8f5527c__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R5_why_now",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x208afc95ef__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p3",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R6_competitive_context",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x0f430e7e8e__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R1_mechanism_novelty",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xcb2884812e__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R2_ip_status",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x51e66e920b__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p3",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R5_defensibility",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xe528098556__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "team",
+      "sub_rubric": "team_R1_composition",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x1f219bbfca__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "team",
+      "sub_rubric": "team_R2_credentials",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x9cb04b1deb__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "team",
+      "sub_rubric": "team_R6_complementarity",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x4d02ed797a__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R1_budget_detail",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x42424f8d18__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p3",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R3_infrastructure",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x124e273de8__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R2_milestones",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xe510869afa__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R5_moat",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xf20cb6634b__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R6_partners",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x8ece5fab4e__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p4",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xf0a3d033d1__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R1_problem_clarity",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xb34d379eea__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R7_problem_solution_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xa03c300efa__openai",
+      "baseline": 3,
+      "minus_single": 3,
+      "result": "FAIL"
+    },
+    {
+      "pid": "p4",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R1_mechanism_novelty",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x899a67b9ac__openai",
+      "baseline": 4,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R2_ip_status",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xe6aa7e0ba1__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R3_performance_proof",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xe9d4577dbc__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R7_validation_signals",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x203ede5205__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "team",
+      "sub_rubric": "team_R2_credentials",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x8ec5e18b32__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "team",
+      "sub_rubric": "team_R6_complementarity",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x6cb5bc51e9__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R1_budget_detail",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x880956c942__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R2_funding_secured",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x1440ea3810__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p4",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R3_infrastructure",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xe37311f9d7__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p4",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R5_risk_mitigation",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x220ea32cae__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p5",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R2_milestones",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xebd32f4476__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p5",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R5_moat",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xb223ce3467__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p5",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R6_partners",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xdf8b493283__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p5",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x4139d5240d__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p5",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R8_addressability",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xd22ca7a4bb__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p5",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R1_mechanism_novelty",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x7a9e98c29c__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p5",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R5_defensibility",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x111172d1f6__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p5",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R7_validation_signals",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x0dcb96bc28__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p5",
+      "dimension": "team",
+      "sub_rubric": "team_R2_credentials",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x95f1e32aa7__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p5",
+      "dimension": "team",
+      "sub_rubric": "team_R6_complementarity",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x55ee986659__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p5",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R1_budget_detail",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x22b7279202__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p5",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R2_funding_secured",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xb6e630a490__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p5",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R3_infrastructure",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x50b1b74387__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p5",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R4_technical_readiness",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x77eac897de__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p5",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R8_sustainability",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x0397f4cade__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p6",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R6_partners",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x995caadb73__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p6",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xe57b4c70ab__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p6",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R8_timing",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xd3225480d4__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p6",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R1_problem_clarity",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xf775468713__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p6",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R5_why_now",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x99204e1d58__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p6",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R1_mechanism_novelty",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xd82417d456__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p6",
+      "dimension": "team",
+      "sub_rubric": "team_R2_credentials",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x116db936d6__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p6",
+      "dimension": "team",
+      "sub_rubric": "team_R6_complementarity",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xcc4a796b29__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p6",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R2_funding_secured",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x69db847498__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p6",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R3_infrastructure",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x1cda4ab2d0__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p6",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R5_risk_mitigation",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x805066bbcd__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p7",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R2_milestones",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xbe155fac53__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p7",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R5_moat",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x73486ed2c2__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p7",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x5effc5bd38__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p7",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R1_problem_clarity",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x29eefc42ac__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p7",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R4_unmet_need_evidence",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x28beb5733f__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p7",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R7_problem_solution_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x586b2abac0__openai",
+      "baseline": 3,
+      "minus_single": 3,
+      "result": "FAIL"
+    },
+    {
+      "pid": "p7",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R1_mechanism_novelty",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xa401e0193c__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p7",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R3_performance_proof",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x08816e4318__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p7",
+      "dimension": "team",
+      "sub_rubric": "team_R1_composition",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x452278a306__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p7",
+      "dimension": "team",
+      "sub_rubric": "team_R2_credentials",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x565c9e9bc8__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p7",
+      "dimension": "team",
+      "sub_rubric": "team_R5_capacity",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x9d11a8a3b7__openai",
+      "baseline": 2,
+      "minus_single": 2,
+      "result": "FAIL"
+    },
+    {
+      "pid": "p7",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R1_budget_detail",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xde7fe71644__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p7",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R2_funding_secured",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x43c8f8add1__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p7",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R4_technical_readiness",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x642c52fc52__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p8",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R5_moat",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x18e2152df3__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p8",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R6_partners",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xd05bbf6c49__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p8",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xaf35913bfb__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p8",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R1_problem_clarity",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xb68d8ced3f__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p8",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R5_why_now",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x617d3faa6e__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p8",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R6_competitive_context",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xbf7bcdec49__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p8",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R7_problem_solution_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xfe8355464f__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p8",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R1_mechanism_novelty",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x008605bfc7__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "p8",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R5_defensibility",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x585d5b53b1__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p8",
+      "dimension": "team",
+      "sub_rubric": "team_R1_composition",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x46fcb606b2__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p8",
+      "dimension": "team",
+      "sub_rubric": "team_R6_complementarity",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xc20b41c5ba__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p8",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R2_funding_secured",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x3dbeb8d6b6__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "p8",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R3_infrastructure",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x90ed28b4cb__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "p8",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R5_risk_mitigation",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xbbf5f515db__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pA",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R5_moat",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x23214b395c__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pA",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R6_partners",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x7aa14c0354__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pA",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x0a8c581329__openai",
+      "baseline": 3,
+      "minus_single": 3,
+      "result": "FAIL"
+    },
+    {
+      "pid": "pA",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R1_problem_clarity",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x89435cb072__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pA",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R7_problem_solution_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xb064ecfb19__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "pA",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R2_ip_status",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x2d76eca664__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pA",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R3_performance_proof",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x3ef097cc8e__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pA",
+      "dimension": "team",
+      "sub_rubric": "team_R2_credentials",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xd0ea10eeb1__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pA",
+      "dimension": "team",
+      "sub_rubric": "team_R3_track_record",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x1640aa3b70__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pA",
+      "dimension": "team",
+      "sub_rubric": "team_R4_governance",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x7e45adf73c__openai",
+      "baseline": 2,
+      "minus_single": 2,
+      "result": "FAIL"
+    },
+    {
+      "pid": "pA",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R2_funding_secured",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xe4502fe665__openai",
+      "baseline": 5,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pA",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R3_infrastructure",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xd9ab0072cc__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pB",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R1_gtm",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xa384e3032b__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R5_moat",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xc6672dcf25__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R6_partners",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x6fd126a769__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x1a780db879__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R8_timing",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x379062d4e3__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R1_problem_clarity",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xc58b3875ca__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R3_buyer_pathway",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xe9b5e6b30f__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pB",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R5_why_now",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x5d4a661c38__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R6_competitive_context",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xb55de1e1e2__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pB",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R7_problem_solution_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x28cb64362c__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R2_ip_status",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x077bcb299e__openai",
+      "baseline": 5,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R3_performance_proof",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xf5f8e5b555__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pB",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R6_platform_potential",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xcfed653d1c__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R7_validation_signals",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xf76a5401a3__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pB",
+      "dimension": "team",
+      "sub_rubric": "team_R2_credentials",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xc4076540fc__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "team",
+      "sub_rubric": "team_R3_track_record",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xee37863ade__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R4_technical_readiness",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x8aa25edd0a__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R6_resource_timeline_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x1f9bec6126__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pB",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R8_sustainability",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x0667f0507a__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pC",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R2_milestones",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xf330515e8f__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pC",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R6_partners",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x9937c51606__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pC",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xcd4f2f0721__openai",
+      "baseline": 3,
+      "minus_single": 3,
+      "result": "FAIL"
+    },
+    {
+      "pid": "pC",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R1_problem_clarity",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xb6e335fb87__openai",
+      "baseline": 3,
+      "minus_single": 3,
+      "result": "FAIL"
+    },
+    {
+      "pid": "pC",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R8_addressability",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xd73ca25f47__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pC",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R1_mechanism_novelty",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xe11cb04720__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pC",
+      "dimension": "team",
+      "sub_rubric": "team_R2_credentials",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xc1a3b7528b__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pC",
+      "dimension": "team",
+      "sub_rubric": "team_R3_track_record",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x793e81976c__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pC",
+      "dimension": "team",
+      "sub_rubric": "team_R4_governance",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x665aa5259f__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pC",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R3_infrastructure",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x80b8c5a3df__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pC",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R4_technical_readiness",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xafd2a2851e__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pC",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R5_risk_mitigation",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xa434dfe593__openai",
+      "baseline": 2,
+      "minus_single": 2,
+      "result": "FAIL"
+    },
+    {
+      "pid": "pD",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R1_gtm",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xad99a01294__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pD",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R2_milestones",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xa63d144e69__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pD",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R5_moat",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x5c7a982416__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pD",
+      "dimension": "strategy",
+      "sub_rubric": "strategy_R7_team_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xc50ca13dc0__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "pD",
+      "dimension": "objectives",
+      "sub_rubric": "objectives_R6_competitive_context",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x26d7163234__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pD",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R1_mechanism_novelty",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xf54ae247b8__openai",
+      "baseline": 3,
+      "minus_single": 2,
+      "result": "PASS"
+    },
+    {
+      "pid": "pD",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R3_performance_proof",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x66e7f80640__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pD",
+      "dimension": "advantages",
+      "sub_rubric": "advantages_R5_defensibility",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x2d42253bd5__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pD",
+      "dimension": "team",
+      "sub_rubric": "team_R1_composition",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x056f3a1153__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pD",
+      "dimension": "team",
+      "sub_rubric": "team_R2_credentials",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x85db213f1b__openai",
+      "baseline": 4,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pD",
+      "dimension": "team",
+      "sub_rubric": "team_R4_governance",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2xb716ce87f1__openai",
+      "baseline": 3,
+      "minus_single": 1,
+      "result": "PASS"
+    },
+    {
+      "pid": "pD",
+      "dimension": "team",
+      "sub_rubric": "team_R6_complementarity",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x7768c9b945__openai",
+      "baseline": 3,
+      "minus_single": 3,
+      "result": "FAIL"
+    },
+    {
+      "pid": "pD",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R3_infrastructure",
+      "rubric_type": "doc-verifiable",
+      "report_id": "r2x3615dfb498__openai",
+      "baseline": 1,
+      "minus_single": 1,
+      "result": "EXCLUDED"
+    },
+    {
+      "pid": "pD",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R5_risk_mitigation",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2x06994aad50__openai",
+      "baseline": 2,
+      "minus_single": 2,
+      "result": "FAIL"
+    },
+    {
+      "pid": "pD",
+      "dimension": "feasibility",
+      "sub_rubric": "feasibility_R6_resource_timeline_fit",
+      "rubric_type": "judgment-dep",
+      "report_id": "r2xf48068c0f9__openai",
+      "baseline": 2,
+      "minus_single": 1,
+      "result": "PASS"
+    }
+  ],
+  "spillover_drop_rate": 0.41751824817518246,
+  "spillover_n": 685,
+  "noise_drop_rate": 0.05319148936170213,
+  "noise_n": 282
+}

@@ -3,9 +3,23 @@
 **Verified: 2026-07-27**
 
 This folder is the **pinned, authoritative** source of AI scores for the paper.
-It exists because `src/data/` is **gitignored** (untracked) and the scorer is
-**not deterministic**, which together caused a silent score-drift incident (see
-below). These files are checked into git so they cannot drift again.
+It exists because the scorer is **not deterministic** and the pipeline cache was
+**not yet under version control when the runs happened**, which together caused a
+silent score-drift incident (see below). These files are checked into git so they
+cannot drift again.
+
+> **Correction (2026-07-28).** An earlier version of this note stated that
+> `src/data/` is *gitignored (untracked)*. That is **false**. `.gitignore`
+> contains only `.DS_Store`, `__pycache__/`, `*.pyc`, `.env`, `.venv/` and
+> `node_modules/`; no rule matches `src/data`, and `git ls-files src/data`
+> returns **5,305 tracked files** (422 of them under `src/data/reports`).
+> The accurate reason the drift went unnoticed is chronological, not
+> gitignore-related: the repository's **initial commit is `c41dc3d`
+> (2026-07-22)**, which is *after* both the Jun-16 and the Jun-18 Stage 6/7
+> runs. Git therefore only ever recorded the **post-drift** Jun-18 state — the
+> Jun-16 outputs were overwritten in place before version control existed, so
+> no diff could have surfaced the change. Everything the drift argument
+> concludes still holds; only the stated mechanism was wrong.
 
 ## Files
 
@@ -47,3 +61,11 @@ below). These files are checked into git so they cannot drift again.
 3. If the pipeline is ever re-run, treat the output as a *new sample*, not a
    correction of these numbers, unless the model snapshot is pinned and
    determinism is independently re-verified.
+4. **A third sample now exists** (2026-07-28, `stage6_repeatability_run3.json`,
+   same `gpt-4o-mini` alias / `temperature=0` / `seed=42` / identical evidence).
+   It weakens the "snapshot change" hypothesis floated in the §6(b) note of
+   `CANONICAL_RESULTS_SUMMARY.md`: run 3 agrees with the Jun-16 baseline on
+   **48/60** dimension cells while the Jun-18 run agrees on only **35/60**, i.e.
+   a run six weeks later resembles the baseline *more* than the two-days-later
+   run does. That pattern fits ordinary sampling noise better than a directional
+   snapshot change. See `stage6_repeatability_3run_analysis.md`.

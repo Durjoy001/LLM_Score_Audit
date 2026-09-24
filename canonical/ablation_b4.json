@@ -1,0 +1,2013 @@
+{
+  "study": "B4_ablate_heuristic_rules",
+  "paper_fix": "B4",
+  "provenance": {
+    "analysis_date_utc": "2026-07-29T17:37:59.047265+00:00",
+    "analysis_llm_calls": 0,
+    "cap_ablation_calls": 96,
+    "cap_ablation_provenance": {
+      "study": "b4_cap_ablation",
+      "paper_fix": "B4",
+      "date_utc": "2026-07-29T17:28:54.440051+00:00",
+      "date_local": "2026-07-29 13:34:47",
+      "arms": {
+        "openai": "gpt-4o-mini",
+        "gemini": "gemini-3.5-flash-lite"
+      },
+      "variants": {
+        "B_cap_removed": {
+          "sha256": "27977547b306cd4cdcf6a299d39f03eedad70a514a17a1dddb1e5dc3b4e2a935",
+          "chars": 8633,
+          "role": "condition B — pre-built variant; removes RULE 1 + HARD CAP line ONLY. Cap language survives (see contamination)."
+        },
+        "C_cap_fully_removed": {
+          "sha256": "926d894bca342c43e4f8c76fad26d28b8c6e45699707b666355486328afa5eae",
+          "chars": 8485,
+          "role": "condition C — genuine cap ablation; all directive cap language and the p1-archetype worked example removed"
+        }
+      },
+      "condition_A_source": {
+        "openai": "canonical/canonical_ai_scores_dataset1.json + stage6_repeatability_run3.json",
+        "gemini": "canonical/cross_provider_gemini_raw.json (2 runs)"
+      },
+      "runs_per_cell": 2,
+      "temperature": 0.0,
+      "seed_requested": 42,
+      "seed_reached_provider": {
+        "openai": true,
+        "gemini": false
+      },
+      "gemini_thinking_level": "minimal",
+      "max_tokens": 600,
+      "invest_weight": 0.9,
+      "evidence_source": "src/data/extracted/<pid>__openai/dimensions_v2.json (Jun-16, untouched)",
+      "frozen_inputs": "qa_echo, dim_weights, confidence from canonical_ai_scores_dataset1.json",
+      "elapsed_sec": 353.05,
+      "failures": {
+        "openai__B_cap_removed__run1": [],
+        "openai__B_cap_removed__run2": [],
+        "openai__C_cap_fully_removed__run1": [],
+        "openai__C_cap_fully_removed__run2": [],
+        "gemini__B_cap_removed__run1": [],
+        "gemini__B_cap_removed__run2": [],
+        "gemini__C_cap_fully_removed__run1": [],
+        "gemini__C_cap_fully_removed__run2": []
+      },
+      "not_modified": [
+        "canonical/ (existing files)",
+        "results/",
+        "resultsNew/",
+        "src/data/"
+      ]
+    },
+    "prompt_variants": "canonical/b4_prompt_variants.json (A sha 182a50db…, B sha 27977547…, C sha 926d894b…)",
+    "kickstarter_invest_qa_recovery": {
+      "method": "fingerprint match of the five [DIM_OUTPUT] score= values against canonical/canonical_kickstarter_scores.json, plus an independent blended@0.90 reproduction check",
+      "tolerance": 0.0015,
+      "blend_check_tolerance": 0.006,
+      "n_canonical": 141,
+      "n_blocks_parsed": 127,
+      "n_recovered": 125,
+      "n_ambiguous": 2,
+      "n_unmatched": 0,
+      "n_blend_fail": 0,
+      "max_blend_residual": 0.0005,
+      "usable_for_blend_sweep": true,
+      "note": "pids not recovered are EXCLUDED from the Kickstarter blend sweep and reported; none are imputed."
+    },
+    "ground_truth": {
+      "dataset1": "3-rater panel consensus (median dims, mean overall/20, majority verdict)",
+      "kickstarter": "funded_pct >= 100 (real outcome), n=141"
+    },
+    "not_modified": [
+      "canonical/ (existing files)",
+      "results/",
+      "resultsNew/",
+      "src/data/"
+    ]
+  },
+  "component_1_cap_ablation": {
+    "cohort": {
+      "openai": {
+        "condition_A_cells_used": [
+          "openai__A__run3"
+        ],
+        "cap_fires_any_run": [
+          "pC"
+        ],
+        "cap_fires_all_runs": [
+          "pC"
+        ],
+        "i_c_any_run": [
+          "pC"
+        ]
+      },
+      "gemini": {
+        "condition_A_cells_used": [
+          "gemini__A__run1",
+          "gemini__A__run2"
+        ],
+        "cap_fires_any_run": [
+          "p1",
+          "p2",
+          "p6",
+          "p8",
+          "pC"
+        ],
+        "cap_fires_all_runs": [
+          "p1",
+          "p2",
+          "p6",
+          "p8",
+          "pC"
+        ],
+        "i_c_any_run": [
+          "p1",
+          "p2",
+          "p6",
+          "p8",
+          "pB",
+          "pC"
+        ]
+      }
+    },
+    "effects": {
+      "openai": {
+        "cap_cohort": [
+          "pC"
+        ],
+        "non_cohort": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "pA",
+          "pB",
+          "pD"
+        ],
+        "innovation_delta": {
+          "cohort": {
+            "B_minus_A": {
+              "n": 1,
+              "mean": 0.1,
+              "max_abs": 0.1
+            },
+            "C_minus_A": {
+              "n": 1,
+              "mean": 0.1,
+              "max_abs": 0.1
+            }
+          },
+          "non_cohort": {
+            "B_minus_A": {
+              "n": 11,
+              "mean": 0.0182,
+              "max_abs": 0.05
+            },
+            "C_minus_A": {
+              "n": 11,
+              "mean": 0.0205,
+              "max_abs": 0.05
+            }
+          }
+        },
+        "overall_delta": {
+          "cohort": {
+            "B_minus_A": {
+              "n": 1,
+              "mean": 0.0561,
+              "max_abs": 0.0561
+            },
+            "C_minus_A": {
+              "n": 1,
+              "mean": 0.0561,
+              "max_abs": 0.0561
+            }
+          },
+          "non_cohort": {
+            "B_minus_A": {
+              "n": 11,
+              "mean": 0.0042,
+              "max_abs": 0.0195
+            },
+            "C_minus_A": {
+              "n": 11,
+              "mean": 0.0044,
+              "max_abs": 0.0212
+            }
+          }
+        },
+        "per_proposal": {
+          "p1": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.75,
+              "B": 0.775,
+              "C": 0.75
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.025,
+              "C_minus_A": 0.0
+            },
+            "overall": {
+              "A": 0.6805,
+              "B": 0.6987,
+              "C": 0.6992
+            },
+            "delta_overall": {
+              "B_minus_A": 0.0182,
+              "C_minus_A": 0.0187
+            },
+            "categories": {
+              "A": [
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "p2": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.7,
+              "B": 0.75,
+              "C": 0.75
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.05,
+              "C_minus_A": 0.05
+            },
+            "overall": {
+              "A": 0.6904,
+              "B": 0.6896,
+              "C": 0.6896
+            },
+            "delta_overall": {
+              "B_minus_A": -0.0008,
+              "C_minus_A": -0.0008
+            },
+            "categories": {
+              "A": [
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "p3": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.75,
+              "B": 0.775,
+              "C": 0.8
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.025,
+              "C_minus_A": 0.05
+            },
+            "overall": {
+              "A": 0.6937,
+              "B": 0.6984,
+              "C": 0.703
+            },
+            "delta_overall": {
+              "B_minus_A": 0.0047,
+              "C_minus_A": 0.0093
+            },
+            "categories": {
+              "A": [
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "GO"
+              ],
+              "B": [
+                "GO",
+                "GO"
+              ],
+              "C": [
+                "GO",
+                "GO"
+              ]
+            }
+          },
+          "p4": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.8,
+              "B": 0.8,
+              "C": 0.8
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.0
+            },
+            "overall": {
+              "A": 0.6914,
+              "B": 0.6914,
+              "C": 0.6914
+            },
+            "delta_overall": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.0
+            },
+            "categories": {
+              "A": [
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "p5": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.8,
+              "B": 0.8,
+              "C": 0.8
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.0
+            },
+            "overall": {
+              "A": 0.6466,
+              "B": 0.6568,
+              "C": 0.667
+            },
+            "delta_overall": {
+              "B_minus_A": 0.0102,
+              "C_minus_A": 0.0204
+            },
+            "categories": {
+              "A": [
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "p6": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.75,
+              "B": 0.8,
+              "C": 0.8
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.05,
+              "C_minus_A": 0.05
+            },
+            "overall": {
+              "A": 0.6853,
+              "B": 0.7048,
+              "C": 0.7048
+            },
+            "delta_overall": {
+              "B_minus_A": 0.0195,
+              "C_minus_A": 0.0195
+            },
+            "categories": {
+              "A": [
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "p7": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.8,
+              "B": 0.8,
+              "C": 0.8
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.0
+            },
+            "overall": {
+              "A": 0.7313,
+              "B": 0.7288,
+              "C": 0.7262
+            },
+            "delta_overall": {
+              "B_minus_A": -0.0025,
+              "C_minus_A": -0.0051
+            },
+            "categories": {
+              "A": [
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "GO"
+              ],
+              "B": [
+                "GO",
+                "GO"
+              ],
+              "C": [
+                "GO",
+                "GO"
+              ]
+            }
+          },
+          "p8": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.75,
+              "B": 0.75,
+              "C": 0.775
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.025
+            },
+            "overall": {
+              "A": 0.6515,
+              "B": 0.6515,
+              "C": 0.6587
+            },
+            "delta_overall": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.0072
+            },
+            "categories": {
+              "A": [
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "pA": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.7,
+              "B": 0.75,
+              "C": 0.75
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.05,
+              "C_minus_A": 0.05
+            },
+            "overall": {
+              "A": 0.6808,
+              "B": 0.68,
+              "C": 0.6596
+            },
+            "delta_overall": {
+              "B_minus_A": -0.0008,
+              "C_minus_A": -0.0212
+            },
+            "categories": {
+              "A": [
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "pB": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.8,
+              "B": 0.8,
+              "C": 0.8
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.0
+            },
+            "overall": {
+              "A": 0.714,
+              "B": 0.714,
+              "C": 0.714
+            },
+            "delta_overall": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.0
+            },
+            "categories": {
+              "A": [
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "pC": {
+            "in_cap_cohort": true,
+            "innovation_invest": {
+              "A": 0.5,
+              "B": 0.6,
+              "C": 0.6
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.1,
+              "C_minus_A": 0.1
+            },
+            "overall": {
+              "A": 0.5882,
+              "B": 0.6443,
+              "C": 0.6443
+            },
+            "delta_overall": {
+              "B_minus_A": 0.0561,
+              "C_minus_A": 0.0561
+            },
+            "categories": {
+              "A": [
+                "I-C"
+              ],
+              "B": [
+                "I-C",
+                "I-C"
+              ],
+              "C": [
+                "I-C",
+                "I-C"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "pD": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.75,
+              "B": 0.75,
+              "C": 0.75
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.0
+            },
+            "overall": {
+              "A": 0.6678,
+              "B": 0.6652,
+              "C": 0.6678
+            },
+            "delta_overall": {
+              "B_minus_A": -0.0026,
+              "C_minus_A": 0.0
+            },
+            "categories": {
+              "A": [
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          }
+        }
+      },
+      "gemini": {
+        "cap_cohort": [
+          "p1",
+          "p2",
+          "p6",
+          "p8",
+          "pC"
+        ],
+        "non_cohort": [
+          "p3",
+          "p4",
+          "p5",
+          "p7",
+          "pA",
+          "pB",
+          "pD"
+        ],
+        "innovation_delta": {
+          "cohort": {
+            "B_minus_A": {
+              "n": 5,
+              "mean": 0.007,
+              "max_abs": 0.04
+            },
+            "C_minus_A": {
+              "n": 5,
+              "mean": 0.049,
+              "max_abs": 0.145
+            }
+          },
+          "non_cohort": {
+            "B_minus_A": {
+              "n": 7,
+              "mean": -0.0121,
+              "max_abs": 0.115
+            },
+            "C_minus_A": {
+              "n": 7,
+              "mean": -0.0336,
+              "max_abs": 0.255
+            }
+          }
+        },
+        "overall_delta": {
+          "cohort": {
+            "B_minus_A": {
+              "n": 5,
+              "mean": -0.0105,
+              "max_abs": 0.0379
+            },
+            "C_minus_A": {
+              "n": 5,
+              "mean": -0.0004,
+              "max_abs": 0.0108
+            }
+          },
+          "non_cohort": {
+            "B_minus_A": {
+              "n": 7,
+              "mean": -0.0088,
+              "max_abs": 0.0405
+            },
+            "C_minus_A": {
+              "n": 7,
+              "mean": -0.0226,
+              "max_abs": 0.0501
+            }
+          }
+        },
+        "per_proposal": {
+          "p1": {
+            "in_cap_cohort": true,
+            "innovation_invest": {
+              "A": 0.48,
+              "B": 0.475,
+              "C": 0.535
+            },
+            "delta_innovation": {
+              "B_minus_A": -0.005,
+              "C_minus_A": 0.055
+            },
+            "overall": {
+              "A": 0.67,
+              "B": 0.6321,
+              "C": 0.6672
+            },
+            "delta_overall": {
+              "B_minus_A": -0.0379,
+              "C_minus_A": -0.0028
+            },
+            "categories": {
+              "A": [
+                "I-C",
+                "I-C"
+              ],
+              "B": [
+                "I-C",
+                "I-C"
+              ],
+              "C": [
+                "I-C",
+                "I-C"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD",
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "p2": {
+            "in_cap_cohort": true,
+            "innovation_invest": {
+              "A": 0.52,
+              "B": 0.52,
+              "C": 0.52
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.0
+            },
+            "overall": {
+              "A": 0.631,
+              "B": 0.629,
+              "C": 0.6234
+            },
+            "delta_overall": {
+              "B_minus_A": -0.002,
+              "C_minus_A": -0.0076
+            },
+            "categories": {
+              "A": [
+                "I-C",
+                "I-C"
+              ],
+              "B": [
+                "I-C",
+                "I-C"
+              ],
+              "C": [
+                "I-C",
+                "I-C"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD",
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "p3": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.875,
+              "B": 0.875,
+              "C": 0.62
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.255
+            },
+            "overall": {
+              "A": 0.7337,
+              "B": 0.7498,
+              "C": 0.6844
+            },
+            "delta_overall": {
+              "B_minus_A": 0.0161,
+              "C_minus_A": -0.0494
+            },
+            "categories": {
+              "A": [
+                "I-A",
+                "I-A"
+              ],
+              "B": [
+                "I-A",
+                "I-A"
+              ],
+              "C": [
+                "I-C",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "GO",
+                "GO"
+              ],
+              "B": [
+                "GO",
+                "GO"
+              ],
+              "C": [
+                "GO",
+                "GO"
+              ]
+            }
+          },
+          "p4": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.7,
+              "B": 0.72,
+              "C": 0.71
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.02,
+              "C_minus_A": 0.01
+            },
+            "overall": {
+              "A": 0.6724,
+              "B": 0.6835,
+              "C": 0.6692
+            },
+            "delta_overall": {
+              "B_minus_A": 0.0111,
+              "C_minus_A": -0.0032
+            },
+            "categories": {
+              "A": [
+                "I-B",
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD",
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "p5": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.75,
+              "B": 0.8,
+              "C": 0.85
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.05,
+              "C_minus_A": 0.1
+            },
+            "overall": {
+              "A": 0.7334,
+              "B": 0.7296,
+              "C": 0.754
+            },
+            "delta_overall": {
+              "B_minus_A": -0.0038,
+              "C_minus_A": 0.0206
+            },
+            "categories": {
+              "A": [
+                "I-B",
+                "I-B"
+              ],
+              "B": [
+                "I-A",
+                "I-B"
+              ],
+              "C": [
+                "I-A",
+                "I-A"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "GO",
+                "HOLD"
+              ],
+              "B": [
+                "GO",
+                "HOLD"
+              ],
+              "C": [
+                "GO",
+                "GO"
+              ]
+            }
+          },
+          "p6": {
+            "in_cap_cohort": true,
+            "innovation_invest": {
+              "A": 0.52,
+              "B": 0.52,
+              "C": 0.665
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.145
+            },
+            "overall": {
+              "A": 0.6351,
+              "B": 0.6244,
+              "C": 0.646
+            },
+            "delta_overall": {
+              "B_minus_A": -0.0107,
+              "C_minus_A": 0.0108
+            },
+            "categories": {
+              "A": [
+                "I-C",
+                "I-C"
+              ],
+              "B": [
+                "I-C",
+                "I-C"
+              ],
+              "C": [
+                "I-C",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD",
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "p7": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.865,
+              "B": 0.75,
+              "C": 0.855
+            },
+            "delta_innovation": {
+              "B_minus_A": -0.115,
+              "C_minus_A": -0.01
+            },
+            "overall": {
+              "A": 0.8095,
+              "B": 0.769,
+              "C": 0.7886
+            },
+            "delta_overall": {
+              "B_minus_A": -0.0405,
+              "C_minus_A": -0.0209
+            },
+            "categories": {
+              "A": [
+                "I-A",
+                "I-A"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-A",
+                "I-A"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "GO",
+                "GO"
+              ],
+              "B": [
+                "GO",
+                "GO"
+              ],
+              "C": [
+                "GO",
+                "GO"
+              ]
+            }
+          },
+          "p8": {
+            "in_cap_cohort": true,
+            "innovation_invest": {
+              "A": 0.48,
+              "B": 0.52,
+              "C": 0.525
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.04,
+              "C_minus_A": 0.045
+            },
+            "overall": {
+              "A": 0.5818,
+              "B": 0.578,
+              "C": 0.5733
+            },
+            "delta_overall": {
+              "B_minus_A": -0.0039,
+              "C_minus_A": -0.0085
+            },
+            "categories": {
+              "A": [
+                "I-C",
+                "I-C"
+              ],
+              "B": [
+                "I-C",
+                "I-C"
+              ],
+              "C": [
+                "I-C",
+                "I-C"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD",
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "pA": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.735,
+              "B": 0.735,
+              "C": 0.72
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.015
+            },
+            "overall": {
+              "A": 0.6927,
+              "B": 0.667,
+              "C": 0.6426
+            },
+            "delta_overall": {
+              "B_minus_A": -0.0257,
+              "C_minus_A": -0.0501
+            },
+            "categories": {
+              "A": [
+                "I-B",
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD",
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "pB": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.7,
+              "B": 0.7,
+              "C": 0.65
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.05
+            },
+            "overall": {
+              "A": 0.7913,
+              "B": 0.7602,
+              "C": 0.7505
+            },
+            "delta_overall": {
+              "B_minus_A": -0.0311,
+              "C_minus_A": -0.0408
+            },
+            "categories": {
+              "A": [
+                "I-C",
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-C",
+                "I-C"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "GO",
+                "GO"
+              ],
+              "B": [
+                "GO",
+                "GO"
+              ],
+              "C": [
+                "GO",
+                "GO"
+              ]
+            }
+          },
+          "pC": {
+            "in_cap_cohort": true,
+            "innovation_invest": {
+              "A": 0.45,
+              "B": 0.45,
+              "C": 0.45
+            },
+            "delta_innovation": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.0
+            },
+            "overall": {
+              "A": 0.5594,
+              "B": 0.5614,
+              "C": 0.5656
+            },
+            "delta_overall": {
+              "B_minus_A": 0.002,
+              "C_minus_A": 0.0063
+            },
+            "categories": {
+              "A": [
+                "I-C",
+                "I-C"
+              ],
+              "B": [
+                "I-C",
+                "I-C"
+              ],
+              "C": [
+                "I-C",
+                "I-C"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD",
+                "HOLD"
+              ],
+              "B": [
+                "HOLD",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          },
+          "pD": {
+            "in_cap_cohort": false,
+            "innovation_invest": {
+              "A": 0.75,
+              "B": 0.71,
+              "C": 0.735
+            },
+            "delta_innovation": {
+              "B_minus_A": -0.04,
+              "C_minus_A": -0.015
+            },
+            "overall": {
+              "A": 0.695,
+              "B": 0.7076,
+              "C": 0.6806
+            },
+            "delta_overall": {
+              "B_minus_A": 0.0126,
+              "C_minus_A": -0.0144
+            },
+            "categories": {
+              "A": [
+                "I-B",
+                "I-B"
+              ],
+              "B": [
+                "I-B",
+                "I-B"
+              ],
+              "C": [
+                "I-B",
+                "I-B"
+              ]
+            },
+            "verdicts": {
+              "A": [
+                "HOLD",
+                "HOLD"
+              ],
+              "B": [
+                "GO",
+                "HOLD"
+              ],
+              "C": [
+                "HOLD",
+                "HOLD"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "noise_floor": {
+      "overall_mad": 0.0056,
+      "overall_max_range": 0.0374,
+      "innovation_max_range": 0.045
+    },
+    "variant_shas": {
+      "B_cap_removed": {
+        "sha256": "27977547b306cd4cdcf6a299d39f03eedad70a514a17a1dddb1e5dc3b4e2a935",
+        "chars": 8633,
+        "role": "condition B — pre-built variant; removes RULE 1 + HARD CAP line ONLY. Cap language survives (see contamination)."
+      },
+      "C_cap_fully_removed": {
+        "sha256": "926d894bca342c43e4f8c76fad26d28b8c6e45699707b666355486328afa5eae",
+        "chars": 8485,
+        "role": "condition C — genuine cap ablation; all directive cap language and the p1-archetype worked example removed"
+      }
+    }
+  },
+  "component_2_verdict_rules": {
+    "thresholds": {
+      "tau_r": 0.725,
+      "tau_c": 0.811
+    },
+    "dataset1": {
+      "openai_canonical": {
+        "base_rate_positive": 0.3333,
+        "score_only": {
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4,
+          "tp": 1,
+          "fp": 0,
+          "fn": 3,
+          "tn": 8,
+          "n_predicted_go": 1,
+          "n": 12
+        },
+        "confidence_only": {
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4,
+          "tp": 1,
+          "fp": 0,
+          "fn": 3,
+          "tn": 8,
+          "n_predicted_go": 1,
+          "n": 12
+        },
+        "score_AND_confidence": {
+          "accuracy": 0.6667,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 4,
+          "tn": 8,
+          "n_predicted_go": 0,
+          "n": 12
+        },
+        "score_OR_confidence": {
+          "accuracy": 0.8333,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6667,
+          "tp": 2,
+          "fp": 0,
+          "fn": 2,
+          "tn": 8,
+          "n_predicted_go": 2,
+          "n": 12
+        }
+      },
+      "gemini_run1": {
+        "base_rate_positive": 0.3333,
+        "score_only": {
+          "accuracy": 0.5833,
+          "precision": 0.3333,
+          "recall": 0.25,
+          "f1": 0.2857,
+          "tp": 1,
+          "fp": 2,
+          "fn": 3,
+          "tn": 6,
+          "n_predicted_go": 3,
+          "n": 12
+        },
+        "confidence_only": {
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4,
+          "tp": 1,
+          "fp": 0,
+          "fn": 3,
+          "tn": 8,
+          "n_predicted_go": 1,
+          "n": 12
+        },
+        "score_AND_confidence": {
+          "accuracy": 0.6667,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 4,
+          "tn": 8,
+          "n_predicted_go": 0,
+          "n": 12
+        },
+        "score_OR_confidence": {
+          "accuracy": 0.6667,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2,
+          "tn": 6,
+          "n_predicted_go": 4,
+          "n": 12
+        }
+      },
+      "gemini_run2": {
+        "base_rate_positive": 0.3333,
+        "score_only": {
+          "accuracy": 0.75,
+          "precision": 0.6667,
+          "recall": 0.5,
+          "f1": 0.5714,
+          "tp": 2,
+          "fp": 1,
+          "fn": 2,
+          "tn": 7,
+          "n_predicted_go": 3,
+          "n": 12
+        },
+        "confidence_only": {
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4,
+          "tp": 1,
+          "fp": 0,
+          "fn": 3,
+          "tn": 8,
+          "n_predicted_go": 1,
+          "n": 12
+        },
+        "score_AND_confidence": {
+          "accuracy": 0.75,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4,
+          "tp": 1,
+          "fp": 0,
+          "fn": 3,
+          "tn": 8,
+          "n_predicted_go": 1,
+          "n": 12
+        },
+        "score_OR_confidence": {
+          "accuracy": 0.75,
+          "precision": 0.6667,
+          "recall": 0.5,
+          "f1": 0.5714,
+          "tp": 2,
+          "fp": 1,
+          "fn": 2,
+          "tn": 7,
+          "n_predicted_go": 3,
+          "n": 12
+        }
+      }
+    },
+    "kickstarter": {
+      "openai_canonical": {
+        "n": 141,
+        "base_rate_positive": 0.1702,
+        "max_ai_overall": 0.64,
+        "score_only": {
+          "accuracy": 0.8298,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 24,
+          "tn": 117,
+          "n_predicted_go": 0,
+          "n": 141
+        },
+        "confidence_only": {
+          "accuracy": 0.8298,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 24,
+          "tn": 117,
+          "n_predicted_go": 0,
+          "n": 141
+        },
+        "score_AND_confidence": {
+          "accuracy": 0.8298,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 24,
+          "tn": 117,
+          "n_predicted_go": 0,
+          "n": 141
+        },
+        "score_OR_confidence": {
+          "accuracy": 0.8298,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 24,
+          "tn": 117,
+          "n_predicted_go": 0,
+          "n": 141
+        }
+      }
+    }
+  },
+  "component_3_blend_sweep": {
+    "dataset1": {
+      "openai_canonical": {
+        "curve": {
+          "0.0": 0.0146,
+          "0.05": 0.0146,
+          "0.1": -0.0218,
+          "0.15": 0.0946,
+          "0.2": 0.0946,
+          "0.25": 0.0146,
+          "0.3": 0.0728,
+          "0.35": 0.0728,
+          "0.4": 0.0,
+          "0.45": 0.1019,
+          "0.5": 0.1019,
+          "0.55": 0.1237,
+          "0.6": 0.182,
+          "0.65": 0.2038,
+          "0.7": 0.182,
+          "0.75": 0.2184,
+          "0.8": 0.1383,
+          "0.85": 0.1165,
+          "0.9": 0.1747,
+          "0.95": 0.2111,
+          "1.0": 0.1747
+        },
+        "peak_rho": 0.2184,
+        "peak_iw": [
+          0.75
+        ],
+        "rho_at_production_iw_0.90": 0.1747,
+        "production_ties_peak": false,
+        "loo_selected_iw": [
+          0.75,
+          0.75,
+          0.95,
+          0.6,
+          0.75,
+          0.95,
+          0.15,
+          0.95,
+          0.95,
+          0.65,
+          0.75,
+          0.95
+        ],
+        "loo_iw_distinct": [
+          0.15,
+          0.6,
+          0.65,
+          0.75,
+          0.95
+        ],
+        "loo_production_selected_frac": 0.0
+      },
+      "gemini_run1": {
+        "curve": {
+          "0.0": 0.0146,
+          "0.05": 0.0364,
+          "0.1": 0.131,
+          "0.15": 0.131,
+          "0.2": 0.2693,
+          "0.25": 0.2329,
+          "0.3": 0.2329,
+          "0.35": 0.3494,
+          "0.4": 0.4658,
+          "0.45": 0.4804,
+          "0.5": 0.5241,
+          "0.55": 0.5241,
+          "0.6": 0.5459,
+          "0.65": 0.5459,
+          "0.7": 0.5459,
+          "0.75": 0.5459,
+          "0.8": 0.5823,
+          "0.85": 0.5604,
+          "0.9": 0.5604,
+          "0.95": 0.5604,
+          "1.0": 0.5604
+        },
+        "peak_rho": 0.5823,
+        "peak_iw": [
+          0.8
+        ],
+        "rho_at_production_iw_0.90": 0.5604,
+        "production_ties_peak": false,
+        "loo_selected_iw": [
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.5,
+          0.8,
+          0.8,
+          0.6,
+          0.8,
+          0.8
+        ],
+        "loo_iw_distinct": [
+          0.5,
+          0.6,
+          0.8
+        ],
+        "loo_production_selected_frac": 0.0
+      },
+      "gemini_run2": {
+        "curve": {
+          "0.0": 0.0146,
+          "0.05": 0.0946,
+          "0.1": 0.131,
+          "0.15": 0.2475,
+          "0.2": 0.3858,
+          "0.25": 0.3275,
+          "0.3": 0.3275,
+          "0.35": 0.4149,
+          "0.4": 0.4149,
+          "0.45": 0.5095,
+          "0.5": 0.5095,
+          "0.55": 0.5095,
+          "0.6": 0.5823,
+          "0.65": 0.5823,
+          "0.7": 0.5823,
+          "0.75": 0.5823,
+          "0.8": 0.5823,
+          "0.85": 0.5823,
+          "0.9": 0.6187,
+          "0.95": 0.6187,
+          "1.0": 0.6187
+        },
+        "peak_rho": 0.6187,
+        "peak_iw": [
+          0.9,
+          0.95,
+          1.0
+        ],
+        "rho_at_production_iw_0.90": 0.6187,
+        "production_ties_peak": true,
+        "loo_selected_iw": [
+          0.9,
+          0.6,
+          0.9,
+          0.9,
+          0.9,
+          0.6,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9
+        ],
+        "loo_iw_distinct": [
+          0.6,
+          0.9
+        ],
+        "loo_production_selected_frac": 0.8333
+      }
+    },
+    "kickstarter": {
+      "n": 125,
+      "n_excluded": 16,
+      "dimension_weights": "equal (1.0) — per-proposal Stage-5 weights not recorded for Kickstarter",
+      "curve_spearman_vs_funded_pct": {
+        "0.0": -0.038,
+        "0.05": 0.0771,
+        "0.1": 0.1538,
+        "0.15": 0.2138,
+        "0.2": 0.2635,
+        "0.25": 0.2885,
+        "0.3": 0.3068,
+        "0.35": 0.326,
+        "0.4": 0.3326,
+        "0.45": 0.3378,
+        "0.5": 0.3386,
+        "0.55": 0.3425,
+        "0.6": 0.3485,
+        "0.65": 0.3542,
+        "0.7": 0.361,
+        "0.75": 0.3665,
+        "0.8": 0.3681,
+        "0.85": 0.3667,
+        "0.9": 0.3686,
+        "0.95": 0.3687,
+        "1.0": 0.3741
+      },
+      "curve_auc_vs_funded_binary": {
+        "0.0": 0.521,
+        "0.05": 0.6176,
+        "0.1": 0.6865,
+        "0.15": 0.7361,
+        "0.2": 0.7707,
+        "0.25": 0.7906,
+        "0.3": 0.8012,
+        "0.35": 0.8077,
+        "0.4": 0.8088,
+        "0.45": 0.8083,
+        "0.5": 0.8061,
+        "0.55": 0.8061,
+        "0.6": 0.8086,
+        "0.65": 0.8105,
+        "0.7": 0.8132,
+        "0.75": 0.8173,
+        "0.8": 0.8192,
+        "0.85": 0.8175,
+        "0.9": 0.8186,
+        "0.95": 0.8181,
+        "1.0": 0.8203
+      },
+      "peak_rho": 0.3741,
+      "peak_iw": [
+        1.0
+      ],
+      "rho_at_production_iw_0.90": 0.3686,
+      "auc_at_production_iw_0.90": 0.8186,
+      "nested_cv_5fold": [
+        {
+          "fold": 0,
+          "n_train": 100,
+          "n_test": 25,
+          "inner_selected_iw": 1.0,
+          "inner_train_rho": 0.3381,
+          "outer_test_rho_at_selected": 0.5375,
+          "outer_test_rho_at_production_0.90": 0.534,
+          "outer_test_auc_at_selected": 0.8788,
+          "outer_test_auc_at_production_0.90": 0.8636
+        },
+        {
+          "fold": 1,
+          "n_train": 100,
+          "n_test": 25,
+          "inner_selected_iw": 1.0,
+          "inner_train_rho": 0.3548,
+          "outer_test_rho_at_selected": 0.386,
+          "outer_test_rho_at_production_0.90": 0.3787,
+          "outer_test_auc_at_selected": 0.8631,
+          "outer_test_auc_at_production_0.90": 0.8571
+        },
+        {
+          "fold": 2,
+          "n_train": 100,
+          "n_test": 25,
+          "inner_selected_iw": 1.0,
+          "inner_train_rho": 0.4301,
+          "outer_test_rho_at_selected": 0.0291,
+          "outer_test_rho_at_production_0.90": 0.0245,
+          "outer_test_auc_at_selected": 0.7065,
+          "outer_test_auc_at_production_0.90": 0.6957
+        },
+        {
+          "fold": 3,
+          "n_train": 100,
+          "n_test": 25,
+          "inner_selected_iw": 1.0,
+          "inner_train_rho": 0.3115,
+          "outer_test_rho_at_selected": 0.5718,
+          "outer_test_rho_at_production_0.90": 0.5708,
+          "outer_test_auc_at_selected": 0.7262,
+          "outer_test_auc_at_production_0.90": 0.7262
+        },
+        {
+          "fold": 4,
+          "n_train": 100,
+          "n_test": 25,
+          "inner_selected_iw": 1.0,
+          "inner_train_rho": 0.4296,
+          "outer_test_rho_at_selected": 0.2367,
+          "outer_test_rho_at_production_0.90": 0.2585,
+          "outer_test_auc_at_selected": 0.869,
+          "outer_test_auc_at_production_0.90": 0.881
+        }
+      ],
+      "nested_mean_test_rho_at_selected": 0.3522,
+      "nested_mean_test_rho_at_production": 0.3533,
+      "inner_selected_iws": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "component_4_score_vs_threshold_validity": {
+    "dataset1": {
+      "openai_canonical": {
+        "score_validity_rho": 0.1747,
+        "score_validity_auc": 0.625,
+        "threshold_validity_accuracy": 0.8333,
+        "threshold_validity_recall": 0.5
+      },
+      "gemini_run1": {
+        "score_validity_rho": 0.5604,
+        "score_validity_auc": 0.8125,
+        "threshold_validity_accuracy": 0.6667,
+        "threshold_validity_recall": 0.5
+      },
+      "gemini_run2": {
+        "score_validity_rho": 0.6187,
+        "score_validity_auc": 0.8438,
+        "threshold_validity_accuracy": 0.75,
+        "threshold_validity_recall": 0.5
+      }
+    },
+    "kickstarter": {
+      "n": 141,
+      "score_validity_rho_vs_funded_pct": 0.3659,
+      "score_validity_auc": 0.7644,
+      "max_ai_overall": 0.64,
+      "tau_r": 0.725,
+      "threshold_validity": {
+        "score_only": {
+          "accuracy": 0.8298,
+          "recall": 0.0,
+          "n_predicted_go": 0
+        },
+        "confidence_only": {
+          "accuracy": 0.8298,
+          "recall": 0.0,
+          "n_predicted_go": 0
+        },
+        "score_AND_confidence": {
+          "accuracy": 0.8298,
+          "recall": 0.0,
+          "n_predicted_go": 0
+        },
+        "score_OR_confidence": {
+          "accuracy": 0.8298,
+          "recall": 0.0,
+          "n_predicted_go": 0
+        }
+      },
+      "base_rate_positive": 0.1702
+    },
+    "ranking_by_score_validity": [
+      "gemini_run2",
+      "gemini_run1",
+      "openai_canonical"
+    ],
+    "ranking_by_thresholded_accuracy": [
+      "openai_canonical",
+      "gemini_run2",
+      "gemini_run1"
+    ],
+    "orderings_agree": false,
+    "interpretation": "If thresholded accuracy were a proxy for score validity the two orderings would agree. They do not: the arm with the best rank correlation is not the arm with the best thresholded accuracy. Kickstarter makes the same point with a real outcome: the AI's maximum overall score is below tau_r, so the score-only rule predicts zero GO, scoring high accuracy purely from the negative base rate while achieving zero recall and using no discriminative information at all."
+  }
+}
