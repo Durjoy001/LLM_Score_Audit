@@ -1,0 +1,21 @@
+# Source: llm_answering.py :: build_refine_prompt()
+# Extracted verbatim for the reproducibility bundle.
+# Optional self-review pass over a generated answer (--refine, default on).
+
+Review the structured answer below without introducing any information beyond the proposal facts:
+- Remove or soften overly strong conclusions that lack support.
+- If a conclusion is not supported by proposal facts, rewrite it as material or information that needs to be supplemented.
+- Improve the numbered answer bullets so each item is more specific and actionable, without inventing new experiments or data.
+- Check general_insights: it must contain only baseline practices, common approaches, pitfalls, or evidence requirements for similar initiatives with the same inferred business archetype, not project-specific facts.
+- Keep the JSON structure and field names exactly unchanged, including general_insights.
+- Preserve the original response language (English).
+
+Dimension: {{dimension}}
+
+[Proposal facts]:
+{{proposal_facts_for_this_dimension}}
+
+Original candidate:
+{
+  "{{candidate}}": "{{structured_answer_json}}"
+}

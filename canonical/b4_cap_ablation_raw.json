@@ -1,0 +1,3340 @@
+{
+  "provenance": {
+    "study": "b4_cap_ablation",
+    "paper_fix": "B4",
+    "date_utc": "2026-07-29T17:28:54.440051+00:00",
+    "date_local": "2026-07-29 13:34:47",
+    "arms": {
+      "openai": "gpt-4o-mini",
+      "gemini": "gemini-3.5-flash-lite"
+    },
+    "variants": {
+      "B_cap_removed": {
+        "sha256": "27977547b306cd4cdcf6a299d39f03eedad70a514a17a1dddb1e5dc3b4e2a935",
+        "chars": 8633,
+        "role": "condition B — pre-built variant; removes RULE 1 + HARD CAP line ONLY. Cap language survives (see contamination)."
+      },
+      "C_cap_fully_removed": {
+        "sha256": "926d894bca342c43e4f8c76fad26d28b8c6e45699707b666355486328afa5eae",
+        "chars": 8485,
+        "role": "condition C — genuine cap ablation; all directive cap language and the p1-archetype worked example removed"
+      }
+    },
+    "condition_A_source": {
+      "openai": "canonical/canonical_ai_scores_dataset1.json + stage6_repeatability_run3.json",
+      "gemini": "canonical/cross_provider_gemini_raw.json (2 runs)"
+    },
+    "runs_per_cell": 2,
+    "temperature": 0.0,
+    "seed_requested": 42,
+    "seed_reached_provider": {
+      "openai": true,
+      "gemini": false
+    },
+    "gemini_thinking_level": "minimal",
+    "max_tokens": 600,
+    "invest_weight": 0.9,
+    "evidence_source": "src/data/extracted/<pid>__openai/dimensions_v2.json (Jun-16, untouched)",
+    "frozen_inputs": "qa_echo, dim_weights, confidence from canonical_ai_scores_dataset1.json",
+    "elapsed_sec": 353.05,
+    "failures": {
+      "openai__B_cap_removed__run1": [],
+      "openai__B_cap_removed__run2": [],
+      "openai__C_cap_fully_removed__run1": [],
+      "openai__C_cap_fully_removed__run2": [],
+      "gemini__B_cap_removed__run1": [],
+      "gemini__B_cap_removed__run2": [],
+      "gemini__C_cap_fully_removed__run1": [],
+      "gemini__C_cap_fully_removed__run2": []
+    },
+    "not_modified": [
+      "canonical/ (existing files)",
+      "results/",
+      "resultsNew/",
+      "src/data/"
+    ]
+  },
+  "cells": {
+    "openai__B_cap_removed__run1": {
+      "p1": {
+        "pid": "p1",
+        "overall_score": 0.6805,
+        "dimension_scores_blended": {
+          "team": 0.6437,
+          "objectives": 0.6848,
+          "strategy": 0.6432,
+          "innovation": 0.7351,
+          "feasibility": 0.6887
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.7
+        },
+        "confidence": 0.786,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The project is led by Professor Zhang Liang, who has extensive surgical experience and academic credentials, indicating strong leadership. However, the team lacks a documented large-scale execution track record, which prevents a higher score.",
+          "objectives": "The project aims to standardize treatment for over 12 million heart failure patients in China and addresses significant challenges in heart failure management, indicating a clear problem and market size estimate.",
+          "strategy": "The strategy includes advanced AI technologies and a structured approach to heart failure management, but lacks strong evidence of a competitive moat or market validation signals.",
+          "innovation": "The project introduces a heart failure large model undergoing patent application and features advanced technologies, but it is not a completely new mechanistic class, which limits the score to I-B.",
+          "feasibility": "The project has a detailed budget plan and a structured approach to data management, but lacks comprehensive risk mitigation details, which keeps it from scoring higher."
+        }
+      },
+      "p2": {
+        "pid": "p2",
+        "overall_score": 0.6896,
+        "dimension_scores_blended": {
+          "team": 0.7281,
+          "objectives": 0.6314,
+          "strategy": 0.6859,
+          "innovation": 0.7192,
+          "feasibility": 0.6819
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.75,
+          "feasibility": 0.7
+        },
+        "confidence": 0.6397,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Zhang Lu Jia and Dr. Feng Yinghui, who have significant academic and industry experience, and the project has published over 70 SCI papers, indicating a strong research background. However, the evidence does not fully meet the criteria for T-A.",
+          "objectives": "The project aims to develop high-performance enzyme products with quantified improvements (5x, 3x, 2.1x), but the buyer pathway or demand validation is somewhat vague.",
+          "strategy": "The strategy addresses domestic enzyme supply issues and includes collaborations for cost-effective solutions, but lacks strong evidence of a competitive moat.",
+          "innovation": "The project demonstrates significant advancements in enzyme efficiency and design, with improved protease activity and new methods, but does not fully meet the criteria for I-A.",
+          "feasibility": "The project has a robust funding allocation plan and access to extensive experimental data, but faces challenges in hydrolyzing soy protein, indicating some risks."
+        }
+      },
+      "p3": {
+        "pid": "p3",
+        "overall_score": 0.703,
+        "dimension_scores_blended": {
+          "team": 0.8239,
+          "objectives": 0.6843,
+          "strategy": 0.6456,
+          "innovation": 0.7802,
+          "feasibility": 0.5949
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.8,
+          "feasibility": 0.6
+        },
+        "confidence": 0.8182,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The project team is led by Professor Wang Jiangyun from the Institute of Biophysics, Chinese Academy of Sciences, with over 80 publications and 20 patents, indicating strong academic and research credentials.",
+          "objectives": "The project outlines clear objectives related to antibody production and purification, including specific milestones and aims to establish large-scale synthesis capabilities by 2025, but lacks detailed buyer pathways.",
+          "strategy": "The strategy integrates advanced protein design and addresses market risks through collaboration, but lacks strong evidence of a competitive moat or market validation signals.",
+          "innovation": "The project introduces a novel protein design platform and aims to improve binding affinity and stability, but the mechanism is a refinement rather than a completely new class, thus qualifying for I-B.",
+          "feasibility": "The project has a structured budget and plans for financing, but faces significant market and regulatory risks, leading to a reasonable but not fully detailed feasibility assessment."
+        }
+      },
+      "p4": {
+        "pid": "p4",
+        "overall_score": 0.6914,
+        "dimension_scores_blended": {
+          "team": 0.6882,
+          "objectives": 0.6445,
+          "strategy": 0.5972,
+          "innovation": 0.7814,
+          "feasibility": 0.7292
+        },
+        "invest_scores_raw": {
+          "team": 0.7,
+          "objectives": 0.65,
+          "strategy": 0.6,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7834,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes members from prestigious institutions like Peking University and Tsinghua University, with strong R&D capabilities and practical experience in medical device approvals, qualifying them for T-B.",
+          "objectives": "The project outlines clear engineering development milestones and a timeline for NMPA approvals, but lacks specific market gap quantification, placing it in O-B.",
+          "strategy": "The strategy includes plans for hardware and software design and a funding target, but lacks strong competitive moat evidence, leading to a score in S-B.",
+          "innovation": "The project claims significant improvements in treatment efficacy and holds 100% of the core patents for the second-generation TTF technology, qualifying it for I-B.",
+          "feasibility": "The project has a well-defined budget and timeline with a clear funding plan, but lacks detailed risk mitigation measures, placing it in F-B."
+        }
+      },
+      "p5": {
+        "pid": "p5",
+        "overall_score": 0.6466,
+        "dimension_scores_blended": {
+          "team": 0.6464,
+          "objectives": 0.5798,
+          "strategy": 0.6505,
+          "innovation": 0.78,
+          "feasibility": 0.5771
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.58,
+          "strategy": 0.65,
+          "innovation": 0.8,
+          "feasibility": 0.58
+        },
+        "confidence": 0.7791,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes organizations specializing in satellite technology and key members with significant experience, but lacks evidence of exceptional performance or a strong track record in large-scale execution.",
+          "objectives": "The project outlines a clear goal of delivering 100 micro thrusters over five years, but lacks detailed buyer pathways or specific market validation.",
+          "strategy": "The strategy includes plans for funding and collaboration, but lacks strong evidence of a competitive moat or market validation signals.",
+          "innovation": "The project presents significant innovations in propulsion technology and holds multiple patents, indicating a strong position in the market, but lacks quantitative performance comparisons.",
+          "feasibility": "The proposal identifies technical challenges and potential mitigations, but the budget and timeline details are limited, indicating some feasibility concerns."
+        }
+      },
+      "p6": {
+        "pid": "p6",
+        "overall_score": 0.7048,
+        "dimension_scores_blended": {
+          "team": 0.6897,
+          "objectives": 0.6346,
+          "strategy": 0.6825,
+          "innovation": 0.7749,
+          "feasibility": 0.7302
+        },
+        "invest_scores_raw": {
+          "team": 0.7,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7991,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team is led by Yang Guoqing from Zhejiang University, with notable members including academicians and professors, indicating strong academic credentials and industry influence, but lacks evidence of commercial success or large-scale execution.",
+          "objectives": "The project aims to develop a high-performance computing platform for autonomous driving, with clear milestones and a focus on reducing costs, but lacks specific market gap quantification.",
+          "strategy": "The strategy targets both domestic and international markets with a clear financing plan and stages of implementation, but lacks detailed evidence of competitive differentiation.",
+          "innovation": "The project includes significant innovations such as the SmartOSEK operating system and a digital twin intelligent traffic system, with a strong IP portfolio, but does not present a completely new mechanistic class.",
+          "feasibility": "The project has a structured financing plan and timeline, with low technical and policy risks, but acknowledges market risks due to the competitive landscape."
+        }
+      },
+      "p7": {
+        "pid": "p7",
+        "overall_score": 0.7262,
+        "dimension_scores_blended": {
+          "team": 0.8138,
+          "objectives": 0.682,
+          "strategy": 0.6328,
+          "innovation": 0.7725,
+          "feasibility": 0.7254
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.656,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Kong Na and Dr. Tao Wei from prestigious institutions like Harvard Medical School and MIT, along with Robert Langer, a co-founder of Moderna, indicating a strong academic and industry background. Their significant publication record supports the T-A category.",
+          "objectives": "The project has clear objectives, including submitting an IND application and targeting a specific patient population, but lacks detailed buyer pathways or demand validation, placing it in O-B.",
+          "strategy": "The strategy outlines the development of IL-10@NPs and includes plans for patent applications and financing, but lacks strong evidence of a competitive moat or market validation, leading to a score in S-B.",
+          "innovation": "The project features a unique linear mRNA scaffold and circularization technology, which are novel advancements, but it does not fully meet the criteria for I-A due to the absence of a completely new mechanistic class, thus scoring in I-B.",
+          "feasibility": "The project has a defined budget and funding commitments, along with a robust timeline, but lacks detailed breakdowns and risk mitigations, placing it in F-B."
+        }
+      },
+      "p8": {
+        "pid": "p8",
+        "overall_score": 0.6515,
+        "dimension_scores_blended": {
+          "team": 0.6369,
+          "objectives": 0.6771,
+          "strategy": 0.6351,
+          "innovation": 0.7257,
+          "feasibility": 0.5879
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.6
+        },
+        "confidence": 0.633,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Zhenlong Liu and Prof. Guojun Chen, who are recognized experts, but there is no evidence of their specific achievements or commercial success that would elevate the score to T-A.",
+          "objectives": "The project has a clear focus on developing a lung-targeted antiviral therapy with defined milestones, but the buyer pathway and demand validation are somewhat vague.",
+          "strategy": "The strategy includes collaboration with strategic partners and a phased funding approach, but lacks strong evidence of a competitive moat or market validation signals.",
+          "innovation": "The project features patented technology for lung-targeted LNPs and utilizes AI models, but the innovation is more of a refinement rather than a completely new class, thus scoring it as I-B.",
+          "feasibility": "The project outlines risks and mitigation strategies, but the budget and timeline details are not fully itemized, leading to a score in the F-B range."
+        }
+      },
+      "pA": {
+        "pid": "pA",
+        "overall_score": 0.68,
+        "dimension_scores_blended": {
+          "team": 0.6407,
+          "objectives": 0.6834,
+          "strategy": 0.646,
+          "innovation": 0.7348,
+          "feasibility": 0.6879
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.7
+        },
+        "confidence": 0.7822,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has extensive experience with core members having over ten years in top semiconductor companies, and includes 2 PhD holders and 16 master's degree holders, which qualifies them under T-B.",
+          "objectives": "The project has clear production milestones and aims to establish a significant manufacturing capacity, but lacks detailed buyer pathway evidence, placing it in O-B.",
+          "strategy": "The strategy includes joint ventures and partnerships targeting various sectors, but lacks strong evidence of competitive moat, leading to a score in S-B.",
+          "innovation": "The project demonstrates significant innovation with advanced semiconductor technologies and numerous patents filed, but the mechanisms are refinements rather than entirely new classes, qualifying it for I-B.",
+          "feasibility": "The project has a comprehensive budget plan and clear investment strategy, but lacks detailed risk mitigation strategies, placing it in F-B."
+        }
+      },
+      "pB": {
+        "pid": "pB",
+        "overall_score": 0.714,
+        "dimension_scores_blended": {
+          "team": 0.7307,
+          "objectives": 0.639,
+          "strategy": 0.6843,
+          "innovation": 0.7774,
+          "feasibility": 0.7293
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7869,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team comprises over 70 experienced engineers with a majority holding master's degrees and has a strong track record in mass production, including delivering over 3 billion units on time with a DPPM rate of less than 5, indicating significant operational capability but lacking the depth of leadership or exceptional performance required for T-A.",
+          "objectives": "The proposal outlines a clear vision to support Chinese manufacturers and disrupt Western dominance, but lacks specific quantified market gap details or named buyer pathways, placing it in O-B.",
+          "strategy": "The strategy is coherent with a focus on expanding market presence and leveraging technology, supported by a growing annual revenue and validation from over 20 world-class customers, but lacks a strong competitive moat, thus fitting S-B.",
+          "innovation": "The project holds multiple patents and presents significant innovations in power management and connectivity, including a highly efficient Charge Pump technology, which qualifies it for I-B due to the absence of a completely new mechanistic class but strong IP and performance claims.",
+          "feasibility": "The company has a proven track record of timely delivery and low defect rates, with a diverse product portfolio and significant market opportunities, supporting a reasonable budget and milestones, thus fitting F-B."
+        }
+      },
+      "pC": {
+        "pid": "pC",
+        "overall_score": 0.6443,
+        "dimension_scores_blended": {
+          "team": 0.554,
+          "objectives": 0.6414,
+          "strategy": 0.6832,
+          "innovation": 0.5966,
+          "feasibility": 0.7331
+        },
+        "invest_scores_raw": {
+          "team": 0.55,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.6,
+          "feasibility": 0.75
+        },
+        "confidence": 0.8041,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has a structured hierarchy and defined roles, but lacks strong evidence of exceptional performance or deep domain expertise, placing it in T-C.",
+          "objectives": "The project has a clear goal of establishing 100 colleges and addressing talent demand, but lacks specific market gap quantification, placing it in O-B.",
+          "strategy": "The strategy includes integration of industry standards and cooperation with enterprises, showing some differentiation but lacking strong validation, placing it in S-B.",
+          "innovation": "The development of standardized educational products and training programs is innovative but lacks quantitative validation, placing it in I-C.",
+          "feasibility": "The project has a strong resource base and low operational risk, with a reasonable budget and milestones, placing it in F-B."
+        }
+      },
+      "pD": {
+        "pid": "pD",
+        "overall_score": 0.6627,
+        "dimension_scores_blended": {
+          "team": 0.6399,
+          "objectives": 0.6728,
+          "strategy": 0.6846,
+          "innovation": 0.7328,
+          "feasibility": 0.5909
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.68,
+          "strategy": 0.7,
+          "innovation": 0.75,
+          "feasibility": 0.6
+        },
+        "confidence": 0.7806,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Chen Zhixiang, the CTO, with over 35 years of experience in semiconductor design, and Tang Xiao, the general manager, with over 15 years of experience in corporate governance. This indicates strong industry experience but does not fully meet the criteria for T-A.",
+          "objectives": "The company aims to go public by June 30, 2024, and has developed a high-power 65W charger meeting OPPO's requirements, indicating a clear problem and market size estimate, but lacks detailed buyer pathway evidence.",
+          "strategy": "The strategy leverages charge pump technology for mobile applications and includes a supply chain procurement system, indicating a coherent strategy with some evidence of differentiation.",
+          "innovation": "The company holds 14 patents, including 11 invention patents, and has developed a unique solar charging chip, indicating significant innovation but missing some quantitative performance data.",
+          "feasibility": "The company is expanding production capacity and has an IP protection strategy, but the budget and timeline details are vague, leading to a reasonable but not fully detailed feasibility assessment."
+        }
+      }
+    },
+    "openai__B_cap_removed__run2": {
+      "p1": {
+        "pid": "p1",
+        "overall_score": 0.717,
+        "dimension_scores_blended": {
+          "team": 0.6437,
+          "objectives": 0.6848,
+          "strategy": 0.7332,
+          "innovation": 0.7801,
+          "feasibility": 0.7337
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.75,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.786,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The project is led by Professor Zhang Liang, who has extensive surgical experience and academic credentials, indicating strong leadership. However, the team lacks a documented large-scale execution track record, which prevents a higher score.",
+          "objectives": "The project aims to standardize treatment for over 12 million heart failure patients in China and addresses significant challenges in heart failure management, indicating a clear problem and market size estimate.",
+          "strategy": "The strategy includes a comprehensive heart failure management model with advanced AI technologies and a structured approach, showing plausible differentiation and some evidence of execution realism.",
+          "innovation": "The project introduces a heart failure large model undergoing patent application and features advanced technologies, indicating a novel approach, but it lacks some quantitative validation data.",
+          "feasibility": "The project has a detailed budget plan and a structured approach to data management, with a clear timeline and milestones, but lacks some detailed risk information."
+        }
+      },
+      "p2": {
+        "pid": "p2",
+        "overall_score": 0.6896,
+        "dimension_scores_blended": {
+          "team": 0.7281,
+          "objectives": 0.6314,
+          "strategy": 0.6859,
+          "innovation": 0.7192,
+          "feasibility": 0.6819
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.75,
+          "feasibility": 0.7
+        },
+        "confidence": 0.6397,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Zhang Lu Jia and Dr. Feng Yinghui, who have significant academic and industry experience, and the project has published over 70 SCI papers, indicating a strong research background. However, they do not meet the criteria for T-A as they are not from world-class institutions or do not have the extensive commercial success required.",
+          "objectives": "The project aims to develop high-performance enzyme products and has quantified improvements in various metrics, but the buyer pathway or demand validation is somewhat vague.",
+          "strategy": "The strategy addresses domestic enzyme supply issues and includes collaborations for cost-effective solutions, but lacks strong evidence of a competitive moat or market validation.",
+          "innovation": "The project demonstrates significant advancements in enzyme design and efficiency, with improvements in protease activity and methods for enzyme modification, but does not fully meet the criteria for I-A as it lacks a completely new mechanistic class.",
+          "feasibility": "The project has a robust resource base and a strategic funding allocation plan, but there are challenges in hydrolyzing soy protein that need careful management."
+        }
+      },
+      "p3": {
+        "pid": "p3",
+        "overall_score": 0.6937,
+        "dimension_scores_blended": {
+          "team": 0.8239,
+          "objectives": 0.6843,
+          "strategy": 0.6456,
+          "innovation": 0.7352,
+          "feasibility": 0.5949
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.6
+        },
+        "confidence": 0.8182,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The project team is led by Professor Wang Jiangyun from the Institute of Biophysics, Chinese Academy of Sciences, with over 80 publications and 20 patents, indicating strong academic and research credentials.",
+          "objectives": "The project outlines clear objectives to enhance antibody production and purification, with specific milestones and aims to apply for patents by 2025, but lacks detailed market validation.",
+          "strategy": "The strategy integrates advanced protein design and aims to mitigate market and regulatory risks through collaboration, but lacks strong evidence of a competitive moat.",
+          "innovation": "The project introduces a novel protein design platform and aims for significant improvements in binding affinity, but the mechanism is a refinement rather than a completely new class.",
+          "feasibility": "The project has a structured budget and plans for financing, but faces significant market and regulatory risks that are acknowledged but not fully mitigated."
+        }
+      },
+      "p4": {
+        "pid": "p4",
+        "overall_score": 0.6914,
+        "dimension_scores_blended": {
+          "team": 0.6882,
+          "objectives": 0.6445,
+          "strategy": 0.5972,
+          "innovation": 0.7814,
+          "feasibility": 0.7292
+        },
+        "invest_scores_raw": {
+          "team": 0.7,
+          "objectives": 0.65,
+          "strategy": 0.6,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7834,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes members from prestigious institutions like Peking University and Tsinghua University, with strong R&D capabilities and practical experience in medical device approvals, qualifying them for T-B.",
+          "objectives": "The project outlines clear engineering development milestones and a timeline for NMPA approvals, but lacks specific market gap quantification, placing it in O-B.",
+          "strategy": "The strategy includes plans for hardware and software design and a funding target, but lacks strong competitive moat evidence, leading to a score in S-B.",
+          "innovation": "The project claims significant innovations in TTF technology with independent IP rights and improved treatment efficacy, but does not fully meet the criteria for I-A, thus scoring in I-B.",
+          "feasibility": "The project has a well-defined budget and clear funding plan, with a structured timeline for implementation, justifying a score in F-B."
+        }
+      },
+      "p5": {
+        "pid": "p5",
+        "overall_score": 0.667,
+        "dimension_scores_blended": {
+          "team": 0.6464,
+          "objectives": 0.6878,
+          "strategy": 0.6505,
+          "innovation": 0.78,
+          "feasibility": 0.5771
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.8,
+          "feasibility": 0.58
+        },
+        "confidence": 0.7791,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes organizations like 中科院微小卫星创新研究院 and experienced members like 蔡建博士 and 蔡勇博士, indicating strong domain expertise but lacking the extensive track record required for T-A.",
+          "objectives": "The project has a clear goal of delivering 100 micro thrusters over five years, with specific milestones and past achievements, but lacks detailed buyer pathways or demand validation.",
+          "strategy": "The strategy outlines a comprehensive approach to market entry and funding, but lacks strong evidence of competitive moat or market validation signals.",
+          "innovation": "The project presents significant innovations in propulsion technology, including unique patents and substantial performance improvements, qualifying it for I-B.",
+          "feasibility": "The feasibility is reasonable with identified challenges and mitigations, but lacks detailed budget breakdowns or a clear regulatory pathway."
+        }
+      },
+      "p6": {
+        "pid": "p6",
+        "overall_score": 0.7048,
+        "dimension_scores_blended": {
+          "team": 0.6897,
+          "objectives": 0.6346,
+          "strategy": 0.6825,
+          "innovation": 0.7749,
+          "feasibility": 0.7302
+        },
+        "invest_scores_raw": {
+          "team": 0.7,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7991,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team is led by Yang Guoqing from Zhejiang University, with notable members including academicians and professors, indicating strong academic credentials and industry influence, but lacks evidence of commercial success or large-scale execution.",
+          "objectives": "The project aims to develop a high-performance computing platform for autonomous driving, with clear milestones and a focus on reducing costs, but lacks specific market gap quantification.",
+          "strategy": "The strategy targets both domestic and international markets with a clear financing plan and product development stages, but lacks strong evidence of competitive moat or market validation.",
+          "innovation": "The project includes significant innovations such as the SmartOSEK operating system and a digital twin intelligent traffic system, with a strong IP portfolio, but does not introduce a completely new mechanistic class.",
+          "feasibility": "The project has a structured financing plan and timeline, with low technical and policy risks, but acknowledges market risks due to the competitive landscape."
+        }
+      },
+      "p7": {
+        "pid": "p7",
+        "overall_score": 0.7313,
+        "dimension_scores_blended": {
+          "team": 0.7958,
+          "objectives": 0.727,
+          "strategy": 0.6328,
+          "innovation": 0.7725,
+          "feasibility": 0.7254
+        },
+        "invest_scores_raw": {
+          "team": 0.83,
+          "objectives": 0.75,
+          "strategy": 0.65,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.656,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Kong Na and Dr. Tao Wei from prestigious institutions like Harvard Medical School and MIT, along with Robert Langer, a co-founder of Moderna, indicating a strong academic and industry background. Their significant publication record supports the T-A category.",
+          "objectives": "The project has clear objectives, including submitting an IND application and targeting a specific patient population, but lacks detailed buyer pathways, placing it in O-B.",
+          "strategy": "The strategy outlines key tasks and objectives, including patent applications and financing, but lacks strong evidence of a competitive moat, leading to a score in S-B.",
+          "innovation": "The project features a unique linear mRNA scaffold and circularization technology, which are novel advancements, but it does not fully meet the criteria for I-A, thus scoring in I-B.",
+          "feasibility": "The project has a defined budget and funding plan, but lacks detailed breakdowns and timelines, placing it in F-B."
+        }
+      },
+      "p8": {
+        "pid": "p8",
+        "overall_score": 0.6515,
+        "dimension_scores_blended": {
+          "team": 0.6369,
+          "objectives": 0.6771,
+          "strategy": 0.6351,
+          "innovation": 0.7257,
+          "feasibility": 0.5879
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.6
+        },
+        "confidence": 0.633,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Zhenlong Liu and Prof. Guojun Chen, who are recognized experts, but there is no evidence of their specific achievements or commercial success that would elevate the score to T-A.",
+          "objectives": "The project outlines clear milestones and a focus on a specific therapy, but the buyer pathway and demand validation are somewhat vague.",
+          "strategy": "The strategy includes collaboration with strategic partners and a phased funding approach, but lacks strong evidence of a competitive moat or market validation.",
+          "innovation": "The project features patented technology and significant advancements in drug delivery, but the mechanism is a refinement rather than a completely new class, placing it in I-B.",
+          "feasibility": "The project identifies various risks and has some mitigation strategies, but the budget and timeline details are not fully itemized, leading to a score in F-B."
+        }
+      },
+      "pA": {
+        "pid": "pA",
+        "overall_score": 0.68,
+        "dimension_scores_blended": {
+          "team": 0.6407,
+          "objectives": 0.6834,
+          "strategy": 0.646,
+          "innovation": 0.7348,
+          "feasibility": 0.6879
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.7
+        },
+        "confidence": 0.7822,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has extensive experience with core members having over ten years in top semiconductor companies, and includes 2 PhD holders and 16 master's degree holders, which qualifies them for T-B.",
+          "objectives": "The project has specific milestones for production and operational timelines, including a clear capacity ramp-up plan, which supports a score in O-B.",
+          "strategy": "The strategy includes joint ventures and partnerships targeting various sectors, but lacks strong evidence of a competitive moat, placing it in S-B.",
+          "innovation": "The project demonstrates significant innovation with the development of advanced semiconductor technologies and has applied for numerous patents, qualifying it for I-B.",
+          "feasibility": "The project has a comprehensive budget plan and a clear investment strategy, but lacks detailed risk information, justifying a score in F-B."
+        }
+      },
+      "pB": {
+        "pid": "pB",
+        "overall_score": 0.714,
+        "dimension_scores_blended": {
+          "team": 0.7307,
+          "objectives": 0.639,
+          "strategy": 0.6843,
+          "innovation": 0.7774,
+          "feasibility": 0.7293
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7869,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team consists of over 70 experienced engineers with a majority holding master's degrees and has a strong track record in mass production, delivering over 3 billion units on time with a DPPM rate of less than 5, indicating significant operational capability but lacking individual high-level credentials to qualify for T-A.",
+          "objectives": "The proposal outlines a clear vision to support Chinese manufacturers and disrupt Western dominance, but lacks specific quantified market gap details or named buyer pathways, placing it in O-B.",
+          "strategy": "The strategy is coherent with a focus on expanding market presence and leveraging technology, supported by a growing annual revenue and a significant total addressable market, but lacks detailed execution validation, thus fitting S-B.",
+          "innovation": "The project includes multiple patents and innovative technologies, such as a Charge Pump with 98% efficiency, but does not introduce a completely new mechanistic class, placing it in I-B.",
+          "feasibility": "The company has a proven track record of timely delivery and low defect rates, indicating strong operational capabilities, but lacks detailed budget breakdowns or multi-year milestones, fitting F-B."
+        }
+      },
+      "pC": {
+        "pid": "pC",
+        "overall_score": 0.6443,
+        "dimension_scores_blended": {
+          "team": 0.554,
+          "objectives": 0.6414,
+          "strategy": 0.6832,
+          "innovation": 0.5966,
+          "feasibility": 0.7331
+        },
+        "invest_scores_raw": {
+          "team": 0.55,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.6,
+          "feasibility": 0.75
+        },
+        "confidence": 0.8041,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has a structured hierarchy and defined roles, but lacks evidence of exceptional performance or deep domain expertise, placing it in T-C.",
+          "objectives": "The project has a clear goal of establishing 100 colleges and addressing talent demand, but lacks specific buyer pathways or detailed market validation, fitting O-B.",
+          "strategy": "The strategy includes integration of industry standards and cooperation with enterprises, showing some differentiation but lacking strong validation signals, thus S-B.",
+          "innovation": "The development of standardized educational products is a novel approach, but lacks quantitative validation data, categorizing it as I-C.",
+          "feasibility": "The project has a strong resource base and low operational risk, with a reasonable budget and milestones, placing it in F-B."
+        }
+      },
+      "pD": {
+        "pid": "pD",
+        "overall_score": 0.6678,
+        "dimension_scores_blended": {
+          "team": 0.6399,
+          "objectives": 0.6458,
+          "strategy": 0.6846,
+          "innovation": 0.7328,
+          "feasibility": 0.6359
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.75,
+          "feasibility": 0.65
+        },
+        "confidence": 0.7806,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes experienced professionals with significant backgrounds in R&D and corporate governance, particularly Chen Zhixiang with over 35 years in semiconductor design, which supports a score in T-B.",
+          "objectives": "The proposal outlines clear objectives, including going public and developing specific products, but lacks detailed market validation, placing it in O-B.",
+          "strategy": "The strategy shows a coherent approach with established supply chain systems and relationships with major customers, but lacks strong evidence of competitive moat, leading to a score in S-B.",
+          "innovation": "The company holds multiple patents and has developed unique technologies, but the innovations are refinements rather than entirely new classes, justifying a score in I-B.",
+          "feasibility": "The company is expanding production capacity and has a procurement system in place, but risks remain regarding production capacity and supply chain dependencies, resulting in a score in F-B."
+        }
+      }
+    },
+    "openai__C_cap_fully_removed__run1": {
+      "p1": {
+        "pid": "p1",
+        "overall_score": 0.6992,
+        "dimension_scores_blended": {
+          "team": 0.6887,
+          "objectives": 0.6848,
+          "strategy": 0.6432,
+          "innovation": 0.7351,
+          "feasibility": 0.7337
+        },
+        "invest_scores_raw": {
+          "team": 0.7,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.75
+        },
+        "confidence": 0.786,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The project is led by Professor Zhang Liang, who has extensive surgical experience and academic credentials, indicating strong leadership in the domain. The team includes experts in cardiovascular medicine and AI, but lacks evidence of large-scale execution or commercial success.",
+          "objectives": "The project aims to standardize treatment for over 12 million heart failure patients in China and reduce regional disparities, indicating a clear problem and market size estimate, but lacks specific buyer pathway evidence.",
+          "strategy": "The strategy includes advanced AI technologies and a structured approach to heart failure management, but lacks strong evidence of a competitive moat or market validation signals.",
+          "innovation": "The project introduces a heart failure large model undergoing patent application and features advanced technologies, but the mechanism is a refinement rather than a completely new class, thus qualifying for I-B.",
+          "feasibility": "The project has a detailed budget plan and a structured approach to data management, with a timeline spanning approximately three years, but lacks detailed risk information."
+        }
+      },
+      "p2": {
+        "pid": "p2",
+        "overall_score": 0.6896,
+        "dimension_scores_blended": {
+          "team": 0.7281,
+          "objectives": 0.6314,
+          "strategy": 0.6859,
+          "innovation": 0.7192,
+          "feasibility": 0.6819
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.75,
+          "feasibility": 0.7
+        },
+        "confidence": 0.6397,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Zhang Lu Jia and Dr. Feng Yinghui, who have significant academic and industry experience, and the project has published over 70 SCI papers, indicating a strong research background. However, there is no evidence of commercial success or large-scale execution.",
+          "objectives": "The project aims to develop high-performance enzyme products with quantified improvements (5x, 3x, 2.1x), but the buyer pathway or demand validation is vague.",
+          "strategy": "The strategy addresses domestic enzyme supply issues and includes collaborations for cost-effective solutions, but lacks strong evidence of a competitive moat or market validation.",
+          "innovation": "The project shows significant advancements in enzyme efficiency and design, with improved protease activity and new methods, but does not fully meet the criteria for a new mechanistic class.",
+          "feasibility": "The project has a reasonable funding allocation plan and access to extensive experimental data, but faces challenges in hydrolyzing soy protein, indicating some risks."
+        }
+      },
+      "p3": {
+        "pid": "p3",
+        "overall_score": 0.703,
+        "dimension_scores_blended": {
+          "team": 0.8239,
+          "objectives": 0.6843,
+          "strategy": 0.6456,
+          "innovation": 0.7802,
+          "feasibility": 0.5949
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.8,
+          "feasibility": 0.6
+        },
+        "confidence": 0.8182,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The project team is led by Professor Wang Jiangyun from the Institute of Biophysics, Chinese Academy of Sciences, with over 80 publications and 20 patents, indicating strong academic leadership and research output.",
+          "objectives": "The project outlines clear objectives to enhance antibody production and purification, with specific milestones and aims to apply for patents by 2025, but lacks detailed market validation.",
+          "strategy": "The strategy integrates advanced protein design and aims to mitigate market and regulatory risks through collaboration, but lacks strong evidence of a competitive moat.",
+          "innovation": "The project introduces a novel protein design platform and claims significant improvements in binding affinity, but the mechanism is a refinement rather than a completely new class.",
+          "feasibility": "The project has a structured budget and plans for financing, but faces significant market and regulatory risks that could impact execution."
+        }
+      },
+      "p4": {
+        "pid": "p4",
+        "overall_score": 0.6914,
+        "dimension_scores_blended": {
+          "team": 0.6882,
+          "objectives": 0.6445,
+          "strategy": 0.5972,
+          "innovation": 0.7814,
+          "feasibility": 0.7292
+        },
+        "invest_scores_raw": {
+          "team": 0.7,
+          "objectives": 0.65,
+          "strategy": 0.6,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7834,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes members from prestigious institutions like Peking University and Tsinghua University, with strong R&D capabilities and practical experience in medical device approvals, qualifying them for T-B.",
+          "objectives": "The project outlines clear engineering development milestones and aims for NMPA approvals, but lacks specific market gap quantification, placing it in O-B.",
+          "strategy": "The strategy includes advanced electric field applications and a funding plan, but lacks strong evidence of competitive differentiation, leading to a score in S-B.",
+          "innovation": "The project claims significant innovations in TTF technology with independent IP rights and improved treatment efficacy, but the mechanism is a refinement rather than a completely new class, qualifying it for I-B.",
+          "feasibility": "The project has a well-defined budget and clear funding plan with a structured timeline, but lacks detailed risk mitigation measures, placing it in F-B."
+        }
+      },
+      "p5": {
+        "pid": "p5",
+        "overall_score": 0.667,
+        "dimension_scores_blended": {
+          "team": 0.6464,
+          "objectives": 0.6878,
+          "strategy": 0.6505,
+          "innovation": 0.78,
+          "feasibility": 0.5771
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.8,
+          "feasibility": 0.58
+        },
+        "confidence": 0.7791,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes experts from 中科院微小卫星创新研究院 and other organizations specializing in satellite technology, with key members having significant experience in aerospace. However, there is no evidence of a world-class institution or a senior technical leader with 25+ years of hands-on domain expertise, which limits the score to T-B.",
+          "objectives": "The project has a clear goal of delivering 100 micro thrusters over five years, with specific milestones and past achievements in flight verification. However, the buyer pathway or demand validation is somewhat vague, justifying a score in O-B.",
+          "strategy": "The strategy outlines a plan for developing advanced propulsion systems and includes funding strategies and collaboration with research institutes. However, while there is some evidence of a coherent strategy, it lacks strong competitive moats or execution evidence, leading to a score in S-B.",
+          "innovation": "The project presents significant innovations in propulsion technology, including unique patents and substantial reductions in size and cost. The presence of 7 invention patents supports a strong score in I-B, though it does not fully meet the criteria for I-A.",
+          "feasibility": "The feasibility is challenged by technical bottlenecks in electric propulsion technology, but there are identified mitigations and a positive cash flow trend projected. The budget is reasonable but lacks detailed breakdowns, justifying a score in F-B."
+        }
+      },
+      "p6": {
+        "pid": "p6",
+        "overall_score": 0.7048,
+        "dimension_scores_blended": {
+          "team": 0.6897,
+          "objectives": 0.6346,
+          "strategy": 0.6825,
+          "innovation": 0.7749,
+          "feasibility": 0.7302
+        },
+        "invest_scores_raw": {
+          "team": 0.7,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7991,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team is led by Yang Guoqing from Zhejiang University, which qualifies as a major university professor with a documented research record. The presence of academicians and a structured R&D department indicates strong expertise, but lacks the depth of commercial success or extensive operational history to reach T-A.",
+          "objectives": "The project outlines a clear goal of developing a high-performance computing platform for autonomous driving, with milestones and a focus on reducing costs. However, the buyer pathway and demand validation are somewhat vague, placing it in O-B.",
+          "strategy": "The strategy is coherent and targets both domestic and international markets, with a significant financing plan. However, while it shows some differentiation, it lacks strong evidence of a competitive moat, leading to a score in S-B.",
+          "innovation": "The project presents significant innovations, including the SmartOSEK operating system and a digital twin intelligent traffic system, along with a strong IP portfolio. However, it does not fully meet the criteria for I-A as it lacks a completely new mechanistic class, thus scoring in I-B.",
+          "feasibility": "The project has a structured financing plan and a clear timeline, indicating reasonable feasibility. The alignment with national policies and a risk management strategy further support this, but the budget lacks detailed breakdowns, placing it in F-B."
+        }
+      },
+      "p7": {
+        "pid": "p7",
+        "overall_score": 0.7262,
+        "dimension_scores_blended": {
+          "team": 0.8138,
+          "objectives": 0.682,
+          "strategy": 0.6328,
+          "innovation": 0.7725,
+          "feasibility": 0.7254
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.656,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Kong Na and Dr. Tao Wei from prestigious institutions like Harvard Medical School and MIT, along with Robert Langer, a co-founder of Moderna, indicating a strong academic and industry background. Their significant publication record supports the T-A category.",
+          "objectives": "The project has clear objectives, including submitting an IND application and targeting a specific patient population, but lacks detailed buyer pathways or demand validation, placing it in O-B.",
+          "strategy": "The strategy outlines the development of IL-10@NPs and includes plans for patent applications and financing, but lacks strong evidence of a competitive moat or market validation, fitting it into S-B.",
+          "innovation": "The project features a unique linear mRNA scaffold and circularization technology, which are innovative but do not fully meet the criteria for a new mechanistic class, thus categorized as I-B.",
+          "feasibility": "The project has a defined budget and funding plan, with commitments from the team, but lacks detailed breakdowns and timelines, placing it in F-B."
+        }
+      },
+      "p8": {
+        "pid": "p8",
+        "overall_score": 0.6515,
+        "dimension_scores_blended": {
+          "team": 0.6369,
+          "objectives": 0.6771,
+          "strategy": 0.6351,
+          "innovation": 0.7257,
+          "feasibility": 0.5879
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.6
+        },
+        "confidence": 0.633,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Zhenlong Liu and Prof. Guojun Chen, who are recognized experts, but there is no evidence of their specific achievements or commercial success that would elevate the score to T-A.",
+          "objectives": "The project has a clear focus on developing a lung-targeted antiviral therapy with defined milestones, but the buyer pathway and demand validation are somewhat vague.",
+          "strategy": "The strategy includes leveraging AI and partnerships with Merck and Fujifilm, but lacks strong evidence of a competitive moat or market validation signals.",
+          "innovation": "The project features patented technology for lung-targeted LNPs and uses AI for drug delivery, but the innovation is more of a refinement rather than a completely new class of mechanism.",
+          "feasibility": "The project outlines various risks and mitigation strategies, but the budget and timeline details are not fully itemized, leading to a moderate score."
+        }
+      },
+      "pA": {
+        "pid": "pA",
+        "overall_score": 0.6596,
+        "dimension_scores_blended": {
+          "team": 0.6407,
+          "objectives": 0.5754,
+          "strategy": 0.646,
+          "innovation": 0.7348,
+          "feasibility": 0.6879
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.58,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.7
+        },
+        "confidence": 0.7822,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has extensive experience with core members having over ten years in top semiconductor companies, and includes 2 PhD holders and 16 master's degree holders, which qualifies them under T-B.",
+          "objectives": "The project outlines clear production milestones and operational timelines, but lacks specific market gap quantification or buyer pathways, placing it in O-B.",
+          "strategy": "The strategy includes joint ventures and partnerships targeting various sectors, but lacks strong evidence of a competitive moat, leading to a score in S-B.",
+          "innovation": "The project demonstrates significant innovation with advanced semiconductor technologies and numerous patents filed, but the mechanisms are refinements rather than entirely new classes, qualifying it under I-B.",
+          "feasibility": "The project has a comprehensive budget plan and clear investment strategy, with significant planned investments, but lacks detailed risk mitigation strategies, placing it in F-B."
+        }
+      },
+      "pB": {
+        "pid": "pB",
+        "overall_score": 0.714,
+        "dimension_scores_blended": {
+          "team": 0.7307,
+          "objectives": 0.639,
+          "strategy": 0.6843,
+          "innovation": 0.7774,
+          "feasibility": 0.7293
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7869,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team consists of over 70 experienced engineers with a strong track record in mass production, delivering over 3 billion units on time and maintaining a DPPM rate of less than 5, which supports a score in T-B.",
+          "objectives": "The proposal outlines a clear vision to support Chinese manufacturers and disrupt Western dominance, but lacks specific market gap quantification, placing it in O-B.",
+          "strategy": "The strategy includes targeting next-generation products and has some market validation with over 20 world-class customers, but lacks a clear competitive moat, leading to a score in S-B.",
+          "innovation": "The project holds multiple patents and introduces significant innovations like a solar charging solution and a highly efficient Charge Pump, but the innovations are refinements rather than a new mechanistic class, qualifying it for I-B.",
+          "feasibility": "The company has a proven track record of timely delivery and low defect rates, with a diverse product portfolio and significant market opportunities, supporting a score in F-B."
+        }
+      },
+      "pC": {
+        "pid": "pC",
+        "overall_score": 0.6443,
+        "dimension_scores_blended": {
+          "team": 0.554,
+          "objectives": 0.6414,
+          "strategy": 0.6832,
+          "innovation": 0.5966,
+          "feasibility": 0.7331
+        },
+        "invest_scores_raw": {
+          "team": 0.55,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.6,
+          "feasibility": 0.75
+        },
+        "confidence": 0.8041,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has a structured hierarchy and defined roles, but lacks strong evidence of exceptional performance or deep domain expertise, placing it in T-C.",
+          "objectives": "The project has a clear goal of establishing 100 colleges and addressing talent demand, but lacks specific market size estimates or buyer pathways, fitting O-B.",
+          "strategy": "The strategy includes integration of industry standards and cooperation with enterprises, showing some differentiation but lacking strong validation, thus S-B.",
+          "innovation": "The development of standardized educational products and training programs is innovative but lacks quantitative validation, categorizing it as I-C.",
+          "feasibility": "The project has a strong resource base and low operational risk, with a reasonable budget and milestones, placing it in F-B."
+        }
+      },
+      "pD": {
+        "pid": "pD",
+        "overall_score": 0.6678,
+        "dimension_scores_blended": {
+          "team": 0.6399,
+          "objectives": 0.6908,
+          "strategy": 0.6396,
+          "innovation": 0.7328,
+          "feasibility": 0.6359
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.65
+        },
+        "confidence": 0.7806,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes experienced professionals with significant backgrounds in R&D and corporate governance, particularly Chen Zhixiang with over 35 years in semiconductor design, which qualifies them for T-B.",
+          "objectives": "The proposal outlines clear objectives, including going public and developing specific products, but lacks detailed buyer pathway validation, placing it in O-B.",
+          "strategy": "The strategy shows a coherent approach to leveraging technology and establishing supply chains, but lacks strong evidence of competitive moat, fitting it into S-B.",
+          "innovation": "The company holds multiple patents and has developed unique technologies, but the innovation is more of a refinement rather than a completely new class, thus scoring in I-B.",
+          "feasibility": "The company is expanding production capacity and has a procurement system in place, but the risks associated with production capacity and supply chain dependencies are acknowledged, placing it in F-B."
+        }
+      }
+    },
+    "openai__C_cap_fully_removed__run2": {
+      "p1": {
+        "pid": "p1",
+        "overall_score": 0.6992,
+        "dimension_scores_blended": {
+          "team": 0.6887,
+          "objectives": 0.6848,
+          "strategy": 0.6432,
+          "innovation": 0.7351,
+          "feasibility": 0.7337
+        },
+        "invest_scores_raw": {
+          "team": 0.7,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.75
+        },
+        "confidence": 0.786,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The project is led by Professor Zhang Liang, who has extensive surgical experience and academic credentials, indicating strong leadership in the domain. The team includes experts in cardiovascular medicine and AI, but lacks evidence of large-scale execution or commercial success.",
+          "objectives": "The project aims to standardize treatment for over 12 million heart failure patients and reduce regional disparities, indicating a clear problem and market size estimate, but lacks specific buyer pathway evidence.",
+          "strategy": "The strategy includes advanced AI technologies and a structured approach to heart failure management, but lacks strong evidence of a competitive moat or market validation signals.",
+          "innovation": "The project introduces a heart failure large model undergoing patent application and features innovative technologies, but the mechanism is a refinement rather than a completely new class.",
+          "feasibility": "The project has a detailed budget and a structured approach to data management, with a clear timeline and resource base, but lacks detailed risk information."
+        }
+      },
+      "p2": {
+        "pid": "p2",
+        "overall_score": 0.6896,
+        "dimension_scores_blended": {
+          "team": 0.7281,
+          "objectives": 0.6314,
+          "strategy": 0.6859,
+          "innovation": 0.7192,
+          "feasibility": 0.6819
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.75,
+          "feasibility": 0.7
+        },
+        "confidence": 0.6397,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Zhang Lu Jia and Dr. Feng Yinghui, who have significant academic and industry experience, and the project has published over 70 SCI papers, indicating a strong research background. However, there is no evidence of commercial success or large-scale execution.",
+          "objectives": "The project aims to develop high-performance enzyme products with quantified improvements (5x, 3x, 2.1x), but the buyer pathway or demand validation is vague.",
+          "strategy": "The strategy addresses domestic enzyme supply issues and includes collaborations for cost-effective solutions, but lacks strong evidence of a competitive moat or market validation.",
+          "innovation": "The project shows significant advancements in enzyme efficiency and design, with improved protease activity and new methods, but does not fully meet the criteria for a new mechanistic class.",
+          "feasibility": "The project has a robust funding allocation plan and access to extensive experimental data, but faces challenges in hydrolyzing soy protein, indicating some risks in execution."
+        }
+      },
+      "p3": {
+        "pid": "p3",
+        "overall_score": 0.703,
+        "dimension_scores_blended": {
+          "team": 0.8239,
+          "objectives": 0.6843,
+          "strategy": 0.6456,
+          "innovation": 0.7802,
+          "feasibility": 0.5949
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.8,
+          "feasibility": 0.6
+        },
+        "confidence": 0.8182,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The project team is led by Professor Wang Jiangyun from the Institute of Biophysics, Chinese Academy of Sciences, with over 80 publications and 20 patents, indicating strong academic leadership and research output.",
+          "objectives": "The project outlines clear objectives to enhance antibody production and purification, with specific milestones and aims to apply for patents by 2025, but lacks detailed market validation.",
+          "strategy": "The strategy integrates advanced protein design and aims to mitigate market and regulatory risks through collaboration, but lacks strong evidence of a competitive moat.",
+          "innovation": "The project introduces a novel protein design platform and aims for significant improvements in binding affinity, with a focus on establishing a patent moat, but does not fully meet the criteria for a new mechanistic class.",
+          "feasibility": "The project has a structured budget and addresses various risks, but the budget lacks detailed breakdown and the timeline is somewhat vague."
+        }
+      },
+      "p4": {
+        "pid": "p4",
+        "overall_score": 0.6914,
+        "dimension_scores_blended": {
+          "team": 0.6882,
+          "objectives": 0.6445,
+          "strategy": 0.5972,
+          "innovation": 0.7814,
+          "feasibility": 0.7292
+        },
+        "invest_scores_raw": {
+          "team": 0.7,
+          "objectives": 0.65,
+          "strategy": 0.6,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7834,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes members from prestigious institutions like Peking University and Tsinghua University, with strong R&D capabilities and practical experience in medical device approvals, qualifying them for T-B.",
+          "objectives": "The project outlines clear engineering development milestones and aims for NMPA approvals, but lacks specific market gap quantification, placing it in O-B.",
+          "strategy": "The strategy includes advanced electric field applications and a funding plan, but lacks strong evidence of competitive differentiation, leading to a score in S-B.",
+          "innovation": "The project claims significant innovations in TTF technology with independent IP rights and improved treatment efficacy, but the mechanism is a refinement rather than a completely new class, qualifying it for I-B.",
+          "feasibility": "The project has a well-defined budget and clear funding plan with a structured timeline, but lacks detailed risk mitigation measures, placing it in F-B."
+        }
+      },
+      "p5": {
+        "pid": "p5",
+        "overall_score": 0.667,
+        "dimension_scores_blended": {
+          "team": 0.6464,
+          "objectives": 0.6878,
+          "strategy": 0.6505,
+          "innovation": 0.78,
+          "feasibility": 0.5771
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.8,
+          "feasibility": 0.58
+        },
+        "confidence": 0.7791,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes experts from 中科院微小卫星创新研究院 and other organizations specializing in satellite technology, with key members having significant experience in aerospace. However, there is no evidence of a world-class institution or a senior technical leader with 25+ years of hands-on domain expertise, which limits the score to T-B.",
+          "objectives": "The project has a clear goal of delivering 100 micro thrusters over five years, with specific milestones and past achievements in flight verification. However, the buyer pathway or demand validation is somewhat vague, leading to a score in O-B.",
+          "strategy": "The strategy outlines a comprehensive approach to developing electric propulsion systems and includes funding plans and collaboration with research institutes. However, while there is some evidence of a coherent strategy, it lacks strong competitive moats or validation signals, resulting in a score of S-B.",
+          "innovation": "The project showcases significant innovations in propulsion technology, including unique patents and substantial reductions in size and cost. The presence of 7 invention patents and the development of a microscale laser micro-thruster support a strong score in I-B, though it does not fully meet the criteria for I-A.",
+          "feasibility": "The feasibility is challenged by technical bottlenecks in electric propulsion technology, but there are identified mitigations and a positive cash flow trend projected. The lack of detailed budget breakdowns and specific milestones leads to a score of F-B."
+        }
+      },
+      "p6": {
+        "pid": "p6",
+        "overall_score": 0.7048,
+        "dimension_scores_blended": {
+          "team": 0.6897,
+          "objectives": 0.6346,
+          "strategy": 0.6825,
+          "innovation": 0.7749,
+          "feasibility": 0.7302
+        },
+        "invest_scores_raw": {
+          "team": 0.7,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7991,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team is led by Yang Guoqing from Zhejiang University, with notable members including academicians and professors, indicating strong academic credentials and industry influence, but lacks evidence of large-scale execution.",
+          "objectives": "The project aims to develop a high-performance computing platform for autonomous driving, with clear milestones and a focus on reducing costs, but lacks specific market gap quantification.",
+          "strategy": "The strategy includes a clear target for both domestic and international markets and a significant financing plan, but lacks detailed evidence of competitive differentiation.",
+          "innovation": "The project includes significant innovations such as the SmartOSEK operating system and a strong IP portfolio with numerous patents, indicating a novel approach, but the mechanism is a refinement rather than a completely new class.",
+          "feasibility": "The project has a structured financing plan and a clear timeline for development, with low technical and policy risks, but acknowledges market risks due to the competitive landscape."
+        }
+      },
+      "p7": {
+        "pid": "p7",
+        "overall_score": 0.7262,
+        "dimension_scores_blended": {
+          "team": 0.8138,
+          "objectives": 0.682,
+          "strategy": 0.6328,
+          "innovation": 0.7725,
+          "feasibility": 0.7254
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.656,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Kong Na and Dr. Tao Wei, both with significant academic backgrounds, and Robert Langer, a co-founder of Moderna, indicating a strong academic and industry leadership. Their publication record in high-impact journals supports their expertise.",
+          "objectives": "The project has clear objectives, including the submission of an IND application and targeting a specific patient population, but lacks detailed buyer pathway evidence.",
+          "strategy": "The strategy outlines the development of a specific product and includes plans for patent applications and financing, but lacks strong evidence of a competitive moat.",
+          "innovation": "The project features a unique linear mRNA scaffold and circularization technology, which are novel advancements, but does not fully meet the criteria for a new mechanistic class.",
+          "feasibility": "The project has a defined budget and funding commitments, along with a robust timeline, but lacks detailed risk mitigation strategies."
+        }
+      },
+      "p8": {
+        "pid": "p8",
+        "overall_score": 0.6659,
+        "dimension_scores_blended": {
+          "team": 0.6369,
+          "objectives": 0.6771,
+          "strategy": 0.6621,
+          "innovation": 0.7707,
+          "feasibility": 0.5879
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.68,
+          "innovation": 0.8,
+          "feasibility": 0.6
+        },
+        "confidence": 0.633,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes Dr. Zhenlong Liu and Prof. Guojun Chen, who are recognized experts, but there is no evidence of their specific achievements or commercial success that would elevate the score to T-A.",
+          "objectives": "The project has a clear focus on developing a lung-targeted antiviral therapy with defined milestones, but the buyer pathway and demand validation are somewhat vague.",
+          "strategy": "The strategy includes leveraging AI and partnerships with Merck and Fujifilm, indicating a coherent approach, but lacks strong evidence of a competitive moat.",
+          "innovation": "The project features patented technology for lung-targeted LNPs and utilizes AI for drug delivery, indicating significant innovation, but it lacks quantitative performance data.",
+          "feasibility": "The project outlines risks and mitigation strategies, but the budget and timeline details are not fully itemized, leading to a moderate score."
+        }
+      },
+      "pA": {
+        "pid": "pA",
+        "overall_score": 0.6596,
+        "dimension_scores_blended": {
+          "team": 0.6407,
+          "objectives": 0.5754,
+          "strategy": 0.646,
+          "innovation": 0.7348,
+          "feasibility": 0.6879
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.58,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.7
+        },
+        "confidence": 0.7822,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has extensive experience with core members having over ten years in top semiconductor companies, which qualifies them for T-B. However, there is no evidence of exceptional performance or leadership in a major project.",
+          "objectives": "The project outlines clear production milestones and operational timelines, but lacks specific market gap quantification or buyer pathways, placing it in O-B.",
+          "strategy": "The strategy includes joint ventures and partnerships targeting various sectors, but lacks strong evidence of a competitive moat or market validation, leading to a score in S-B.",
+          "innovation": "The project demonstrates significant innovation with the development of advanced semiconductor technologies and numerous patents filed, but the mechanisms are refinements rather than entirely new classes, qualifying it for I-B.",
+          "feasibility": "The project has a comprehensive budget plan and clear investment strategy, with significant planned investments, but lacks detailed risk mitigation strategies, placing it in F-B."
+        }
+      },
+      "pB": {
+        "pid": "pB",
+        "overall_score": 0.714,
+        "dimension_scores_blended": {
+          "team": 0.7307,
+          "objectives": 0.639,
+          "strategy": 0.6843,
+          "innovation": 0.7774,
+          "feasibility": 0.7293
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.8,
+          "feasibility": 0.75
+        },
+        "confidence": 0.7869,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team consists of over 70 experienced engineers with a strong track record in mass production, delivering over 3 billion units on time and maintaining a DPPM rate of less than 5, which supports a score in T-B.",
+          "objectives": "The proposal outlines a clear vision to support Chinese manufacturers and disrupt Western dominance, but lacks specific market gap quantification, placing it in O-B.",
+          "strategy": "The strategy includes targeting next-generation products and has some market validation with over 20 world-class customers, but lacks a clear competitive moat, leading to a score in S-B.",
+          "innovation": "The project holds multiple patents and introduces significant innovations like a solar charging solution and a highly efficient Charge Pump, but the innovations are refinements rather than entirely new classes, qualifying it for I-B.",
+          "feasibility": "The company has a proven track record of timely delivery and low defect rates, with a diverse product portfolio and significant market opportunities, supporting a score in F-B."
+        }
+      },
+      "pC": {
+        "pid": "pC",
+        "overall_score": 0.6443,
+        "dimension_scores_blended": {
+          "team": 0.554,
+          "objectives": 0.6414,
+          "strategy": 0.6832,
+          "innovation": 0.5966,
+          "feasibility": 0.7331
+        },
+        "invest_scores_raw": {
+          "team": 0.55,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.6,
+          "feasibility": 0.75
+        },
+        "confidence": 0.8041,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has a structured hierarchy and defined roles, but lacks strong evidence of exceptional performance or deep domain expertise, placing it in T-C.",
+          "objectives": "The project has a clear goal of establishing 100 colleges and addressing talent demand, but lacks specific market size estimates or buyer pathways, fitting O-B.",
+          "strategy": "The strategy integrates industry standards and aims for significant growth, but lacks detailed evidence of competitive advantage, placing it in S-B.",
+          "innovation": "The development of standardized educational products is innovative but lacks quantitative validation or a new mechanistic class, fitting I-C.",
+          "feasibility": "The project has a strong resource base and low operational risk, with a reasonable budget and milestones, placing it in F-B."
+        }
+      },
+      "pD": {
+        "pid": "pD",
+        "overall_score": 0.6678,
+        "dimension_scores_blended": {
+          "team": 0.6399,
+          "objectives": 0.6908,
+          "strategy": 0.6396,
+          "innovation": 0.7328,
+          "feasibility": 0.6359
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.65
+        },
+        "confidence": 0.7806,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes experienced professionals with significant backgrounds in R&D and corporate governance, particularly Chen Zhixiang with over 35 years in semiconductor design, which qualifies them under T-B.",
+          "objectives": "The proposal outlines clear objectives, including going public and developing specific products, but lacks detailed buyer pathways, placing it in O-B.",
+          "strategy": "The strategy shows a coherent approach with some differentiation through supply chain management and customer relationships, but lacks strong evidence of a competitive moat, fitting it into S-B.",
+          "innovation": "The company holds multiple patents and has developed unique technologies, but the innovations are refinements rather than entirely new classes, placing it in I-B.",
+          "feasibility": "The company is expanding production capacity and has a procurement system in place, but the risks associated with production capacity and supply chain dependencies are acknowledged, fitting it into F-B."
+        }
+      }
+    },
+    "gemini__B_cap_removed__run1": {
+      "p1": {
+        "pid": "p1",
+        "overall_score": 0.6228,
+        "dimension_scores_blended": {
+          "team": 0.6437,
+          "objectives": 0.8198,
+          "strategy": 0.5532,
+          "innovation": 0.4651,
+          "feasibility": 0.6437
+        },
+        "invest_scores_raw": {
+          "team": 0.65,
+          "objectives": 0.85,
+          "strategy": 0.55,
+          "innovation": 0.45,
+          "feasibility": 0.65
+        },
+        "confidence": 0.786,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-A",
+          "strategy": "S-C",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Led by Professor Zhang Liang, a medical doctorate with extensive experience in cardiac surgeries, from a leading institution in heart failure management in China (Fuwai Hospital and Anhui Chest Hospital involvement). Meets Category T-B criteria for a senior medical expert/CXO-level figure with documented institutional backing.",
+          "objectives": "Clearly identifies a quantified market gap addressing over 12 million heart failure patients in China, targeting regional disparities, readmission rates, and health economics analysis. Meets Category O-A requirements.",
+          "strategy": "Proposes standard business models (C-end charging, API service provision, medical insurance, and subscriptions) without strong evidence of a defensible competitive moat beyond standard AI clinical decision tools. Fits Category S-C.",
+          "innovation": "The primary product is an AI/ML decision support system and large model for heart failure management, placing it in the application-layer innovation category (I-C cap applies). While data compression algorithms and multi-agent matrices are mentioned, the core offering is software/AI applied to clinical practice.",
+          "feasibility": "Includes a total funding requirement of 56 million yuan, a structured 3-year timeline, and specific operational centers, but lacks deep granularity on every risk mitigation, fitting Category F-B."
+        }
+      },
+      "p2": {
+        "pid": "p2",
+        "overall_score": 0.629,
+        "dimension_scores_blended": {
+          "team": 0.7281,
+          "objectives": 0.6044,
+          "strategy": 0.6409,
+          "innovation": 0.5122,
+          "feasibility": 0.6639
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.62,
+          "strategy": 0.65,
+          "innovation": 0.52,
+          "feasibility": 0.68
+        },
+        "confidence": 0.6397,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Dr. Zhang Lu Jia is affiliated with national key universities (East China Normal University and NYU Shanghai) and the team has published over 70 SCI papers with nearly 1400 citations, meeting the T-B criteria for a major university professor and documented research record.",
+          "objectives": "The project targets domestic enzyme raw material supply and import substitution with quantified performance improvements (multiples of 5x, 3x, 2.1x), but exact market size and buyer pathways remain broad or aspirational.",
+          "strategy": "Clear strategy focusing on import substitution and domestic enzyme supply with industry collaborations (e.g., 瑞沃德公司, 美农生物) and a structured funding allocation, placing it solidly in category S-B.",
+          "innovation": "The project uses AI models for enzyme transformation activity prediction and evolutionary experimental validation to improve enzymes within existing classes. Per Rule 2, since the enzyme is the product and AI is the design tool, and the improvements are optimizations/modifications within existing classes rather than a new mechanistic class, it falls under application-layer innovation (I-C).",
+          "feasibility": "Reasonable budget allocation (40% platform, 25% production, 20% market, 15% R&D) with experimental data and high-throughput prediction scale of hundreds of millions, though specific risks like soy protein hydrolysis remain noted."
+        }
+      },
+      "p3": {
+        "pid": "p3",
+        "overall_score": 0.7516,
+        "dimension_scores_blended": {
+          "team": 0.8509,
+          "objectives": 0.7023,
+          "strategy": 0.6726,
+          "innovation": 0.8702,
+          "feasibility": 0.6669
+        },
+        "invest_scores_raw": {
+          "team": 0.88,
+          "objectives": 0.72,
+          "strategy": 0.68,
+          "innovation": 0.9,
+          "feasibility": 0.68
+        },
+        "confidence": 0.8182,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-A",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Professor Wang Jiangyun is affiliated with the Institute of Biophysics, Chinese Academy of Sciences (CAS), meeting SET 1 criteria for an academic research leader. Additionally, the team has published over 80 high-level academic works and holds over 20 authorized invention patents.",
+          "objectives": "The project outlines clear goals regarding antibody purification, cost reduction, and functional antibody binding proteins, backed by a target to establish large-scale synthesis capabilities and apply for patents by 2025, though specific downstream buyer adoption pathways are somewhat aspirational.",
+          "strategy": "Coherent strategy combining rational protein design and non-natural amino acid modification with risk mitigation via the Chinese Academy of Sciences partnership and process minimization, though commercial execution path lacks named production customers.",
+          "innovation": "Meets all three I-A criteria: utilizes non-natural amino acid modification technology as a new mechanistic class, emphasizes a patent moat with independent IP rights, and targets significant performance improvements over natural protein A.",
+          "feasibility": "Provides a specific three-year budget (3010万元) and clear milestones including Series A financing and platform scaling, though risks regarding legal cases, raw materials, and process stability are noted."
+        }
+      },
+      "p4": {
+        "pid": "p4",
+        "overall_score": 0.6928,
+        "dimension_scores_blended": {
+          "team": 0.7332,
+          "objectives": 0.6895,
+          "strategy": 0.6692,
+          "innovation": 0.7094,
+          "feasibility": 0.6662
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.7,
+          "strategy": 0.68,
+          "innovation": 0.72,
+          "feasibility": 0.68
+        },
+        "confidence": 0.7834,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes major university professors from top-tier institutions (Peking University, Tsinghua University) and experienced industry leaders like Dr. Palti (founding member of Novocure), placing it firmly in category T-B.",
+          "objectives": "The proposal clearly outlines a timeline and milestones for second-generation TTF development and NMPA approvals up to commercial operations, but buyer pathways are less detailed, fitting category O-B.",
+          "strategy": "Coherent strategy to develop second-generation TTF with IP ownership and a clear funding/valuation plan, though commercial distribution channels and downstream partnerships remain early-stage.",
+          "innovation": "The project claims 100% core patents and advances over traditional TTF methods through multi-dimensional optimization and hardware/software design, representing a novel application/refinement rather than a completely new fundamental mechanism, fitting category I-B.",
+          "feasibility": "Detailed budget breakdown (50% external tech cooperation, 14% research staff), an angel financing target of 25 million yuan, and structured timelines are provided, aligning with category F-B."
+        }
+      },
+      "p5": {
+        "pid": "p5",
+        "overall_score": 0.7704,
+        "dimension_scores_blended": {
+          "team": 0.8264,
+          "objectives": 0.7958,
+          "strategy": 0.7855,
+          "innovation": 0.825,
+          "feasibility": 0.6401
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.82,
+          "strategy": 0.8,
+          "innovation": 0.85,
+          "feasibility": 0.65
+        },
+        "confidence": 0.7791,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-A",
+          "strategy": "S-A",
+          "innovation": "I-A",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes key organizations such as 中科院微小卫星创新研究院 (CAS Innovation Academy for Microsatellites) which is a world-class research institution, and key leaders like 蔡建博士 serving as deputy director, fulfilling the criteria for CAS research leader set T-A.",
+          "objectives": "The proposal defines clear, quantified milestones including delivering 100 micro thrusters over five years, specific delivery dates (end of 2019), and flight verification details, fulfilling O-A criteria.",
+          "strategy": "Strong defensibility with established collaboration with the Shanghai Micro Satellite Innovation Research Institute, clear commercial pathway for ultra-small deorbit thrusters, and named flight verification milestones, fulfilling S-A.",
+          "innovation": "Meets all three I-A conditions: a novel physical mechanism (world's only microscale laser micro-thruster, next-generation solid-state electric propulsion), 7 invention patents and 2 software copyrights, and specific quantitative performance figures (volume reduction to 1/5-1/10, specific impulse up to 10,000s).",
+          "feasibility": "Reasonable budget and cash flow projections with technical bottlenecks identified and mitigated via low dry weight thruster design, fitting F-B partial detail and risk mitigation."
+        }
+      },
+      "p6": {
+        "pid": "p6",
+        "overall_score": 0.6321,
+        "dimension_scores_blended": {
+          "team": 0.7617,
+          "objectives": 0.6346,
+          "strategy": 0.6105,
+          "innovation": 0.5229,
+          "feasibility": 0.6402
+        },
+        "invest_scores_raw": {
+          "team": 0.78,
+          "objectives": 0.65,
+          "strategy": 0.62,
+          "innovation": 0.52,
+          "feasibility": 0.65
+        },
+        "confidence": 0.7991,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team is led by a professor from a major national key university (Zhejiang University) with advisory support from notable academicians, meeting criteria T-B.",
+          "objectives": "The proposal outlines a clear product development and commercialization timeline targeting special autonomous driving scenarios, but buyer pathways and detailed demand validation remain somewhat aspirational, fitting O-B.",
+          "strategy": "The strategy targets domestic and international markets with a clear phased roadmap and financing plan, but specific distribution channels and named customers are not detailed, matching S-B.",
+          "innovation": "The project applies AI, machine learning, and heterogeneous multi-processors to autonomous driving computing units and operating systems. This represents application-layer innovation rather than a fundamentally new mechanistic class or non-natural molecular building block, placing it in category I-C.",
+          "feasibility": "The project has a clear timeline, policy alignment, and financing plan with local funding, but lacks a detailed itemized budget breakdown, fitting F-B."
+        }
+      },
+      "p7": {
+        "pid": "p7",
+        "overall_score": 0.7644,
+        "dimension_scores_blended": {
+          "team": 0.8408,
+          "objectives": 0.79,
+          "strategy": 0.6958,
+          "innovation": 0.7275,
+          "feasibility": 0.7704
+        },
+        "invest_scores_raw": {
+          "team": 0.88,
+          "objectives": 0.82,
+          "strategy": 0.72,
+          "innovation": 0.75,
+          "feasibility": 0.8
+        },
+        "confidence": 0.656,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-A",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-A"
+        },
+        "rationale": {
+          "team": "Meets SET 1 (academic research leader / world-class institution caliber): includes Robert Langer (renowned expert in targeted drug delivery and Moderna co-founder), alongside researchers from Harvard Medical School and MIT with publications in high-impact journals like PNAS and Science Translational Medicine.",
+          "objectives": "Clearly quantified market and clinical objectives: targets 125,000 patients in China by 2025, specific product development for IL-10mRNA@NPs in tumor immunotherapy, and a defined IND submission milestone for early 2026.",
+          "strategy": "Coherent strategy utilizing self-developed LPNP delivery and mRNA platforms, aiming for Series A financing (20M+ yuan) and patent generation, though commercial distribution partnerships are not yet fully detailed.",
+          "innovation": "Novel circularization technology and linear mRNA scaffolds improving protein expression, plus self-developed LPNP delivery systems with preclinical safety and efficacy data, fitting the I-B category as a novel platform with strong implementation but missing explicit first-in-class mechanistic classification criteria for I-A.",
+          "feasibility": "Well-defined total budget of 35.2 million yuan with 3.15 million yuan team commitment, paired with structured milestones, preclinical safety data, and cost-reducing circular mRNA attributes."
+        }
+      },
+      "p8": {
+        "pid": "p8",
+        "overall_score": 0.578,
+        "dimension_scores_blended": {
+          "team": 0.5469,
+          "objectives": 0.6321,
+          "strategy": 0.6081,
+          "innovation": 0.5187,
+          "feasibility": 0.5879
+        },
+        "invest_scores_raw": {
+          "team": 0.55,
+          "objectives": 0.65,
+          "strategy": 0.62,
+          "innovation": 0.52,
+          "feasibility": 0.6
+        },
+        "confidence": 0.633,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes named experts such as Dr. Zhenlong Liu and Prof. Guojun Chen alongside management roles and strategic partners like Merck and Fujifilm, but lacks documented large-scale production execution or premier world-class research output meeting T-A or T-B standards based strictly on the provided facts.",
+          "objectives": "The proposal defines clear short- and long-term milestones (such as lab setup, clinical trial applications, and product launch within 3 years) focused on lung-targeted antiviral RNA/LNP therapy, but buyer pathways and detailed market sizing are somewhat general.",
+          "strategy": "Presents a coherent phase-gate strategy leveraging AI models for delivery precision and partnering with established companies (Merck, Fujifilm), though competitive moat validation is partially dependent on unproven early-stage integrations.",
+          "innovation": "The primary innovations are AI-driven drug screening and generative design (using RNNs) applied to lung-targeted stable lipid nanoparticles (LNPs) and RNA delivery. Following Rule 2, since AI/computational methods are applied as design tools/platforms for delivery optimization, this falls under application-layer/technology refinement rather than a new fundamental mechanistic class, capping it at I-C.",
+          "feasibility": "Outlines a phased multi-year timeline with clear technical milestones and risk mitigations (in vivo testing, partner laboratory resource utilization), but lacks an explicit itemized budget breakdown."
+        }
+      },
+      "pA": {
+        "pid": "pA",
+        "overall_score": 0.6477,
+        "dimension_scores_blended": {
+          "team": 0.7037,
+          "objectives": 0.6654,
+          "strategy": 0.646,
+          "innovation": 0.7348,
+          "feasibility": 0.5079
+        },
+        "invest_scores_raw": {
+          "team": 0.72,
+          "objectives": 0.68,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.5
+        },
+        "confidence": 0.7822,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-C"
+        },
+        "rationale": {
+          "team": "Core members have over 10 years of experience in top semiconductor companies and CTOT Dr. Zhang Shuai is involved in national projects, fitting T-B criteria.",
+          "objectives": "The project outlines specific manufacturing capacity milestones and timelines, but buyer demand validation and specific customer traction are broad/aspirational.",
+          "strategy": "Coherent market entry plan targeting home appliances, computer, and automotive sectors through joint ventures and ODM/OEM partnerships, though competitive defensibility is moderate.",
+          "innovation": "Develops advanced semiconductor technologies like IGBT and deep submicron BCD platforms with patent filings (80+ domestic patents), but quantitative performance benchmark comparisons are missing.",
+          "feasibility": "Total planned investment is massive (260 billion Yuan) with a high-level budget structure, but detailed multi-year itemization and risk mitigations are largely vague."
+        }
+      },
+      "pB": {
+        "pid": "pB",
+        "overall_score": 0.7675,
+        "dimension_scores_blended": {
+          "team": 0.8477,
+          "objectives": 0.792,
+          "strategy": 0.7923,
+          "innovation": 0.6424,
+          "feasibility": 0.7743
+        },
+        "invest_scores_raw": {
+          "team": 0.88,
+          "objectives": 0.82,
+          "strategy": 0.82,
+          "innovation": 0.65,
+          "feasibility": 0.8
+        },
+        "confidence": 0.7869,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-A",
+          "strategy": "S-A",
+          "innovation": "I-B",
+          "feasibility": "F-A"
+        },
+        "rationale": {
+          "team": "Meets Category T-A Set 3: documented production at top industry standard with a DPPM rate of less than 5, over 3 billion units delivered on time without interruptions, and over 20 tier-1 world-class customers in production.",
+          "objectives": "Meets Category O-A: quantified market gap with a total addressable market of approximately 100 billion RMB, named buyer/payer pathways (smartphone manufacturers, laptop power management market), and clear strategic substitution goals against Western competitors.",
+          "strategy": "Meets Category S-A: strong competitive moat and market validation with over 20 world-class customers already in mass production, clear differentiation against competitors like TI and MTK, and strategy well-aligned with team's mass-production capabilities.",
+          "innovation": "Meets Category I-B: patented technologies with specific quantitative performance numbers (e.g., Charge Pump conversion efficiency of 98%, DPPM < 5), though primarily representing advanced product development and optimization rather than a fundamentally new molecular or physical mechanistic class.",
+          "feasibility": "Meets Category F-A: proven operational infrastructure with over 3 billion units successfully delivered, established manufacturing partners/processes, and multi-year product roadmap into next-generation target products."
+        }
+      },
+      "pC": {
+        "pid": "pC",
+        "overall_score": 0.5687,
+        "dimension_scores_blended": {
+          "team": 0.527,
+          "objectives": 0.6144,
+          "strategy": 0.5932,
+          "innovation": 0.4616,
+          "feasibility": 0.6431
+        },
+        "invest_scores_raw": {
+          "team": 0.52,
+          "objectives": 0.62,
+          "strategy": 0.6,
+          "innovation": 0.45,
+          "feasibility": 0.65
+        },
+        "confidence": 0.8041,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has a clear organizational structure and operational experience with government collaboration, but lacks world-class academic or deep technical domain research leaders as required for T-B or T-A.",
+          "objectives": "The proposal states a clear target of establishing 100 ZX*** colleges and addressing talent demands in semiconductors/integrated circuits, but lacks comprehensive buyer pathway details or detailed market demand validation.",
+          "strategy": "The strategy emphasizes school-enterprise cooperation and integrating industry standards with a clear expansion roadmap, though competitive moats are somewhat generic and rely heavily on educational execution.",
+          "innovation": "The innovation centers on standardized educational products and training programs for talent cultivation, representing an application-layer/process-layer approach rather than a first-in-class deep technology or physical product mechanism.",
+          "feasibility": "Feasibility is supported by concrete operational steps, workspace/server investments, risk control mechanisms like joint ventures, and conditional investment based on signed agreements, matching a solid F-B profile."
+        }
+      },
+      "pD": {
+        "pid": "pD",
+        "overall_score": 0.7397,
+        "dimension_scores_blended": {
+          "team": 0.7299,
+          "objectives": 0.8258,
+          "strategy": 0.7926,
+          "innovation": 0.7058,
+          "feasibility": 0.6629
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.85,
+          "strategy": 0.82,
+          "innovation": 0.72,
+          "feasibility": 0.68
+        },
+        "confidence": 0.7806,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-A",
+          "strategy": "S-A",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team meets the T-B condition of having a senior technical leader with extensive domain experience, specifically Chen Zhixiang, the CTO, who has over 35 years of experience in semiconductor design.",
+          "objectives": "The proposal outlines specific, quantified milestones and market objectives, including going public by June 30, 2024, charge pump and E-Marker chips accounting for over 50% of revenue, and established tier-1 relationships meeting OPPO's efficiency requirements.",
+          "strategy": "Demonstrates a clear competitive moat with proprietary charge pump technology capable of large-scale replacement, established supply chain procurement, and strategic relationships with major customers like OPPO, Xiaomi, and vivo, fulfilling S-A requirements.",
+          "innovation": "The company holds 14 patents (11 invention patents) and has developed globally unique charge pump chips achieving 97%-98% efficiency and large-scale production capability to replace Dialog's products, qualifying for I-B as a novel hardware product with strong validation.",
+          "feasibility": "Reasonable production expansion and supply chain setup are described, though specific multi-year itemized budgets are limited, placing it in the F-B category."
+        }
+      }
+    },
+    "gemini__B_cap_removed__run2": {
+      "p1": {
+        "pid": "p1",
+        "overall_score": 0.6413,
+        "dimension_scores_blended": {
+          "team": 0.6887,
+          "objectives": 0.7928,
+          "strategy": 0.5082,
+          "innovation": 0.5101,
+          "feasibility": 0.7067
+        },
+        "invest_scores_raw": {
+          "team": 0.7,
+          "objectives": 0.82,
+          "strategy": 0.5,
+          "innovation": 0.5,
+          "feasibility": 0.72
+        },
+        "confidence": 0.786,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-A",
+          "strategy": "S-C",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The project is led by Professor Zhang Liang, a medical doctorate with extensive experience in cardiac surgeries, from prominent medical institutions like Fuwai Hospital and Anhui Chest Hospital, fulfilling the T-B criteria for senior clinical experts and institutional leadership.",
+          "objectives": "Clearly quantified market and patient need addressing over 12 million heart failure patients in China, targeting regional disparities, readmission rates, and healthcare spending with named institutional partners.",
+          "strategy": "Employs a standard market entry and commercialization plan (C-end charging, API services, medical insurance, provincial data centers) without unique competitive moats or demonstrated paying customer validation in the text.",
+          "innovation": "AI/ML and large model/multi-agent software applied to heart failure diagnosis and clinical pathways (AI IS the product), falling under application-layer innovation (I-C).",
+          "feasibility": "Detailed funding requirement of 56 million yuan, a 3-year timeline, and explicit infrastructure plans (Provincial AI Data Center and city-level sub-centers), supporting a solid F-B feasibility score."
+        }
+      },
+      "p2": {
+        "pid": "p2",
+        "overall_score": 0.629,
+        "dimension_scores_blended": {
+          "team": 0.7281,
+          "objectives": 0.6044,
+          "strategy": 0.6409,
+          "innovation": 0.5122,
+          "feasibility": 0.6639
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.62,
+          "strategy": 0.65,
+          "innovation": 0.52,
+          "feasibility": 0.68
+        },
+        "confidence": 0.6397,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Dr. Zhang Lu Jia is affiliated with a national key university (East China Normal University), meeting the T-B condition of a major university professor with a documented research record (70+ SCI papers, 1400 citations).",
+          "objectives": "The project outlines clear goals around enzyme products and quantitative improvements (5x, 3x, 2.1x) with structured funding plans, but specific buyer pathways and market sizing details remain somewhat high-level.",
+          "strategy": "Coherent import-substitution strategy focusing on domestic enzyme raw materials with concrete collaborations (瑞沃德公司, 美农生物), though commercialization and competitive defensibility details are partially articulated.",
+          "innovation": "Applies AI models and computational tools for enzyme modification and process optimization within existing enzyme classes (such as prolyl endopeptidase and proteases), which falls under application-layer/process innovation (I-C).",
+          "feasibility": "Provides a clear percentage-based funding allocation plan (40% platform, 25% production, 20% market, 15% R&D personnel) and references extensive experimental/computational data, alongside acknowledged technical challenges like soy protein hydrolysis.",
+          "summary": "The proposal presents a credible academic-led team applying AI-driven computational methods to enzyme engineering and import substitution, backed by clear fund allocation, though limited to application-layer innovation and partially validated commercial pathways."
+        }
+      },
+      "p3": {
+        "pid": "p3",
+        "overall_score": 0.748,
+        "dimension_scores_blended": {
+          "team": 0.8509,
+          "objectives": 0.7023,
+          "strategy": 0.7356,
+          "innovation": 0.8252,
+          "feasibility": 0.6399
+        },
+        "invest_scores_raw": {
+          "team": 0.88,
+          "objectives": 0.72,
+          "strategy": 0.75,
+          "innovation": 0.85,
+          "feasibility": 0.65
+        },
+        "confidence": 0.8182,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-A",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Meets SET 1 of T-A: PI Professor Wang Jiangyun is affiliated with the Institute of Biophysics, Chinese Academy of Sciences, and the team has published over 80 high-level academic works and holds over 20 domestic authorized invention patents.",
+          "objectives": "Outlines clear objectives regarding antibody production, column reuse rates, and production costs, but the specific buyer/payer adoption pathway and deep clinical/commercial demand validation remain somewhat aspirational.",
+          "strategy": "Coherent strategy utilizing AI and non-natural amino acid modification to innovate antibody-binding proteins, with strong technical integration and risk mitigation, but commercialization and go-to-market execution paths are still developing.",
+          "innovation": "Meets I-A criteria: introduces a non-natural amino acid modification technology representing a new mechanistic class for molecular building blocks/protein engineering, explicitly claims proprietary intellectual property/patents, and highlights quantitative/qualitative improvements in binding affinity and stability over natural protein A.",
+          "feasibility": "Provides a clear 3-year total budget (3010万元) and structured milestones with a 20-person Huai'an team, but faces unresolved domestic industry and capacity/raw material risks typical of early-stage platform scaling."
+        }
+      },
+      "p4": {
+        "pid": "p4",
+        "overall_score": 0.6741,
+        "dimension_scores_blended": {
+          "team": 0.7332,
+          "objectives": 0.6175,
+          "strategy": 0.6422,
+          "innovation": 0.7094,
+          "feasibility": 0.6662
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.62,
+          "strategy": 0.65,
+          "innovation": 0.72,
+          "feasibility": 0.68
+        },
+        "confidence": 0.7834,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes major university professors from Peking University and Tsinghua University, and senior leaders like Dr. Palti (founding member of Novocure) and founders with relevant academic and technical backgrounds, fitting the T-B category for senior academic and industry personnel.",
+          "objectives": "The proposal sets a clear timeline and development milestones from 2021 to 2024 toward NMPA approval and commercial operations for a second-generation TTF solution, but buyer/payer pathways and detailed market size breakdowns are somewhat vague, fitting O-B.",
+          "strategy": "Coherent strategy to develop second-generation TTF products with 100% core patents and clear fundraising targets, though specific commercialization and distribution moats beyond patents are still early, fitting S-B.",
+          "innovation": "The project advances TTF technology with multi-dimensional optimization and holds core patents, representing a novel hardware/treatment system improvement over first-generation approaches, but quantitative clinical benchmark numbers are limited, fitting I-B.",
+          "feasibility": "Outlines a clear budget allocation (50% external research, 14% personnel), an angel financing target of 25 million yuan, and a structured timeline, but lacks detailed risk mitigation measures, fitting F-B."
+        }
+      },
+      "p5": {
+        "pid": "p5",
+        "overall_score": 0.6889,
+        "dimension_scores_blended": {
+          "team": 0.7364,
+          "objectives": 0.6878,
+          "strategy": 0.6505,
+          "innovation": 0.735,
+          "feasibility": 0.6401
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.7,
+          "strategy": 0.65,
+          "innovation": 0.75,
+          "feasibility": 0.65
+        },
+        "confidence": 0.7791,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes key institutional backing from the Chinese Academy of Sciences (CAS) Micro-Nano Satellite Research Institute and experienced leadership such as Dr. 蔡建 (deputy director at Microelectronics Research Institute) and Dr. 蔡勇 (strategic development at CIMC Enric), meeting the T-B standard for senior organizational and academic research backing.",
+          "objectives": "The project outlines specific milestones including delivering 100 micro thrusters over five years, completing flight verification of modules, and deploying systems for high-precision station keeping, but lacks detailed commercial buyer validation or explicit demand pathways beyond general constellation needs, placing it in O-B.",
+          "strategy": "The proposal presents a coherent roadmap with clear hardware milestones and collaborations with institutes like the Shanghai Micro Satellite Innovation Research Institute, but relies on standard funding rounds and generalized scaling plans without extensive pre-existing commercial contracts cited, fitting S-B.",
+          "innovation": "The project features significant innovations such as miniaturized electric propulsion systems reducing volume to 1/5-1/10 of chemical thrusters, holding 7 invention patents, and developing specific microscale laser/solid-state thrusters, though lacking the non-natural amino acid or first-in-class mechanistic benchmarks required for I-A.",
+          "feasibility": "The project addresses technical bottlenecks (such as xenon gas costs, dry mass, and storage density) with design mitigations and maps out investment cash flow trends, though precise multi-year budgeting details remain partial, fitting F-B."
+        }
+      },
+      "p6": {
+        "pid": "p6",
+        "overall_score": 0.6168,
+        "dimension_scores_blended": {
+          "team": 0.7347,
+          "objectives": 0.6076,
+          "strategy": 0.6375,
+          "innovation": 0.5229,
+          "feasibility": 0.5952
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.62,
+          "strategy": 0.65,
+          "innovation": 0.52,
+          "feasibility": 0.6
+        },
+        "confidence": 0.7991,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Led by professors from a top university (Zhejiang University, 985/211 tier) with academicians serving on the technical advisory committee, matching Category T-B.",
+          "objectives": "Clear market focus on autonomous driving for special vehicles with phased timelines and scale sales goals, but specific buyer pathways and validated demand figures are somewhat aspirational, fitting Category O-B.",
+          "strategy": "Coherent multi-stage implementation plan and market targeting, supported by significant local financing and partnerships, but specific differentiation beyond standard commercialization is less defined, fitting Category S-B.",
+          "innovation": "Applies AI, big data, and machine learning algorithms to autonomous driving computing units and operating systems. As an application-layer innovation combining AI and systems engineering, it falls under Category I-C.",
+          "feasibility": "Supported by alignment with national industrial policies, a risk management table, and clear development timelines, though detailed itemized budgets are absent, fitting Category F-B."
+        }
+      },
+      "p7": {
+        "pid": "p7",
+        "overall_score": 0.7736,
+        "dimension_scores_blended": {
+          "team": 0.8408,
+          "objectives": 0.817,
+          "strategy": 0.6958,
+          "innovation": 0.7275,
+          "feasibility": 0.7884
+        },
+        "invest_scores_raw": {
+          "team": 0.88,
+          "objectives": 0.85,
+          "strategy": 0.72,
+          "innovation": 0.75,
+          "feasibility": 0.82
+        },
+        "confidence": 0.656,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-A",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-A"
+        },
+        "rationale": {
+          "team": "Meets Team Category T-A (Set 1 - Academic research leader): Includes world-class researchers such as Robert Langer (co-founder of Moderna and renowned targeted drug delivery expert), Dr. Kong Na, Dr. Tao Wei, and high-impact journal publications in PNAS and Science Translational Medicine.",
+          "objectives": "Meets Category O-A: Clear, quantified market target (125,000 patients in China by 2025), specific clinical product (IL-10mRNA@NPs), named regulatory pathway with a concrete IND submission timeline in early 2026.",
+          "strategy": "Meets Category S-B: Coherent strategy leveraging self-developed LPNP delivery systems and mRNA synthesis platforms, with clear preclinical to clinical phases and Series A financing plans, but lacking named commercial customers or distribution partners yet.",
+          "innovation": "Meets Category I-B: Highly novel approach featuring a unique linear mRNA scaffold, circularization technology, and lipid-polymer hybrid delivery systems with preclinical safety data, but missing quantitative binding affinity or direct benchmark comparison numbers required for I-A.",
+          "feasibility": "Meets Category F-A: Itemized budget of 35.2 million yuan with 3.15 million yuan team commitments, multi-year timeline, established platforms, and detailed preclinical milestone roadmap."
+        }
+      },
+      "p8": {
+        "pid": "p8",
+        "overall_score": 0.578,
+        "dimension_scores_blended": {
+          "team": 0.5469,
+          "objectives": 0.6321,
+          "strategy": 0.6081,
+          "innovation": 0.5187,
+          "feasibility": 0.5879
+        },
+        "invest_scores_raw": {
+          "team": 0.55,
+          "objectives": 0.65,
+          "strategy": 0.62,
+          "innovation": 0.52,
+          "feasibility": 0.6
+        },
+        "confidence": 0.633,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes named researchers like Dr. Zhenlong Liu and Prof. Guojun Chen, along with pharmaceutical backgrounds, but lacks explicit documentation of top-tier academic leadership (CAS/MIT/Stanford equivalent with 50+ pubs) or massive commercial production scale (1B units shipped) required for higher tiers.",
+          "objectives": "The project clearly outlines an objective to develop a lung-targeted antiviral RNA/LNP therapy with phased milestones (6-month lab setup, 18-month clinical trial application), but specific quantified market size numbers and detailed buyer/payer pathways are not fully detailed.",
+          "strategy": "A coherent strategy exists utilizing AI models, strategic partnerships with Merck and Fujifilm, and a phased funding approach, though commercialization and competitive defensibility rely heavily on partner networks that require further validation.",
+          "innovation": "The project applies AI/ML models (generative design, RNN) and lipid nanoparticles (LNPs) for drug delivery and antiviral screening. Per the rules, AI used as a design tool for physical delivery systems where the output is an application/formulation falls into the application-layer category (I-C).",
+          "feasibility": "Structured phase-gate milestones and mitigation strategies using partner laboratory resources and in vivo testing are provided, but a detailed itemized budget breakdown is absent, placing it in the moderate feasibility tier."
+        }
+      },
+      "pA": {
+        "pid": "pA",
+        "overall_score": 0.6863,
+        "dimension_scores_blended": {
+          "team": 0.7307,
+          "objectives": 0.7914,
+          "strategy": 0.673,
+          "innovation": 0.7078,
+          "feasibility": 0.5529
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.82,
+          "strategy": 0.68,
+          "innovation": 0.72,
+          "feasibility": 0.55
+        },
+        "confidence": 0.7822,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-A",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-C"
+        },
+        "rationale": {
+          "team": "The core members have over 10 years of experience in top semiconductor companies, and CTO Dr. Zhang Shuai is involved in national projects, fitting T-B criteria for senior executives in the domain.",
+          "objectives": "Provides very specific production capacity milestones (120,000 pieces/month for 8-in, 240,000 units by Year 5, 720,000 units annual output) and well-defined industrial chain objectives, matching O-A.",
+          "strategy": "Coherent strategy with joint ventures and partnerships targeting home appliances, automotive, and other sectors, though execution and validation are still in early phases matching S-B.",
+          "innovation": "Develops advanced semiconductor technology platforms like a new generation IGBT platform and deep submicron BCD technology with over 80 patent applications, but lacks complete quantitative comparative proof for I-A, placing it in I-B.",
+          "feasibility": "Total planned investment is massive (260 billion Yuan) with a multi-phase structure, but details regarding budget itemization and specific risk mitigations are lacking, aligning with F-C."
+        }
+      },
+      "pB": {
+        "pid": "pB",
+        "overall_score": 0.7529,
+        "dimension_scores_blended": {
+          "team": 0.8207,
+          "objectives": 0.639,
+          "strategy": 0.7743,
+          "innovation": 0.7324,
+          "feasibility": 0.7923
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.65,
+          "strategy": 0.8,
+          "innovation": 0.75,
+          "feasibility": 0.82
+        },
+        "confidence": 0.7869,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-A",
+          "innovation": "I-B",
+          "feasibility": "F-A"
+        },
+        "rationale": {
+          "team": "Meets Category T-A SET 3 (World-class operational excellence): documented production with DPPM < 5 (less than 5), > 3 billion units shipped on time without interruption, and over 20 world-class customers in mass production.",
+          "objectives": "Defines target markets and product roadmap (precision power meters, foldable phone PMIC, etc.) and strategic vision to replace Western dominance, but exact revenue/market size figures are incomplete in the prompt text.",
+          "strategy": "Meets Category S-A: strong competitive moat supported by existing mass production with over 20 world-class customers, clear product differentiation against established competitors like TI and MTK, and proven market validation through growing annual revenue.",
+          "innovation": "Meets Category I-B: holds specific granted patents (e.g., CN108574120, CN200810007736.6) and cites quantitative technical performance (Charge Pump conversion efficiency of 98%), but represents application and architectural refinements rather than a completely new fundamental scientific mechanism class.",
+          "feasibility": "Meets Category F-A: strong operational track record demonstrated by 3 billion units shipped, DPPM < 5, over 20 tier-1 customers in mass production, and existing multi-product portfolio showing robust manufacturing and supply chain execution."
+        }
+      },
+      "pC": {
+        "pid": "pC",
+        "overall_score": 0.5541,
+        "dimension_scores_blended": {
+          "team": 0.527,
+          "objectives": 0.6144,
+          "strategy": 0.5482,
+          "innovation": 0.4616,
+          "feasibility": 0.6161
+        },
+        "invest_scores_raw": {
+          "team": 0.52,
+          "objectives": 0.62,
+          "strategy": 0.55,
+          "innovation": 0.45,
+          "feasibility": 0.62
+        },
+        "confidence": 0.8041,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-C",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has relevant operational experience with defined roles, an organizational structure, and government collaboration history, but lacks documented world-class academic leaders, 25+ year domain-defining experts, or massive production scale meeting T-A or T-B standards.",
+          "objectives": "The project outlines clear goals (establishing 100 colleges, 300 students per cohort, addressing semiconductor/IC talent demands), but specific long-term buyer/payer pathways or rigorous clinical/regulatory demand validation are lacking, placing it in O-B.",
+          "strategy": "The plan relies on standard school-enterprise cooperation and industry standard integration without deep differentiation or unique IP-based moats, fitting standard educational service expansion models (S-C).",
+          "innovation": "The proposal involves standardized educational products and training programs aimed at talent cultivation rather than a new first-in-class physical, chemical, or biological mechanism, representing application-layer innovation (I-C).",
+          "feasibility": "Includes reasonable risk controls (joint ventures for limited liability, conditional investment contingent on signed agreements, resource pools), though detailed multi-year itemized financial budgets are sparse, placing it solidly in F-B."
+        }
+      },
+      "pD": {
+        "pid": "pD",
+        "overall_score": 0.6755,
+        "dimension_scores_blended": {
+          "team": 0.7299,
+          "objectives": 0.6458,
+          "strategy": 0.6846,
+          "innovation": 0.6878,
+          "feasibility": 0.6359
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.65,
+          "strategy": 0.7,
+          "innovation": 0.7,
+          "feasibility": 0.65
+        },
+        "confidence": 0.7806,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Meets Category T-B criteria as it features a senior technical leader with 35+ years of experience in semiconductor design (Chen Zhixiang) and an experienced management team coming from O2Micro with long industry tenure.",
+          "objectives": "Meets Category O-B criteria as there are clear business objectives and market size/revenue segments mentioned (such as charge pump chips accounting for over 50% of revenue and named customer OPPO requirements), but the overall buyer pathway and long-term demand validation are somewhat standard or aspirational.",
+          "strategy": "Meets Category S-B criteria with plausible differentiation and major customer relationships (OPPO, Xiaomi, vivo) along with proactive supply chain management, though commercialization and distribution largely rely on standard distributor/agent models.",
+          "innovation": "Meets Category I-B criteria as the company holds 11 invention patents and demonstrates strong technical performance metrics (e.g., 97%-98% charge pump efficiency, unique solar charging chip), but the mechanisms represent refinements and high-efficiency implementations rather than an entirely new mechanistic class.",
+          "feasibility": "Meets Category F-B criteria due to recognized risks regarding production capacity and supply chain transitions accompanied by mitigation strategies (expanding production capacity, establishing independent supply chain), though detailed multi-year itemized budgets are absent."
+        }
+      }
+    },
+    "gemini__C_cap_fully_removed__run1": {
+      "p1": {
+        "pid": "p1",
+        "overall_score": 0.706,
+        "dimension_scores_blended": {
+          "team": 0.7337,
+          "objectives": 0.7928,
+          "strategy": 0.6702,
+          "innovation": 0.5551,
+          "feasibility": 0.7787
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.82,
+          "strategy": 0.68,
+          "innovation": 0.55,
+          "feasibility": 0.8
+        },
+        "confidence": 0.786,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-A",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-A"
+        },
+        "rationale": {
+          "team": "Led by Professor Zhang Liang with a medical doctorate and extensive experience, along with institutions like Fuwai Hospital and Anhui Chest Hospital, fitting the T-B criteria for a major university/hospital expert and senior clinical team.",
+          "objectives": "Quantified market gap with specific numbers (over 12 million heart failure patients in China), addressing regional disparities, readmission rates, and healthcare spending with clear health economics analysis.",
+          "strategy": "Coherent strategy with a multi-agent system matrix, clinical pathways, and monetization paths (C-end charging, API service, medical insurance), though commercialization path is still in exploratory/early partnership phases.",
+          "innovation": "Applies AI/transformer models and compression algorithms to medical data management and diagnosis; falls under application-layer/AI-powered tools applied to an existing domain (I-C).",
+          "feasibility": "Itemized budget of 56 million yuan, 3-year timeline with defined stages, provincial/city-level data center infrastructure plans, and quantified targets (e.g., reduce Treatment Decision Time by 50%)."
+        }
+      },
+      "p2": {
+        "pid": "p2",
+        "overall_score": 0.6239,
+        "dimension_scores_blended": {
+          "team": 0.7011,
+          "objectives": 0.6044,
+          "strategy": 0.6409,
+          "innovation": 0.5122,
+          "feasibility": 0.6639
+        },
+        "invest_scores_raw": {
+          "team": 0.72,
+          "objectives": 0.62,
+          "strategy": 0.65,
+          "innovation": 0.52,
+          "feasibility": 0.68
+        },
+        "confidence": 0.6397,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Dr. Zhang Lu Jia is affiliated with East China Normal University and New York University (Shanghai), supported by significant academic output (70+ SCI papers, ~1400 citations), fitting the T-B criteria for a major university professor with a documented research record.",
+          "objectives": "The project outlines clear goals around developing high-performance enzyme products and import substitution with quantified multiples (5x, 3x, 2.1x), but specific buyer pathways and granular end-user demand validation remain somewhat aspirational and broad.",
+          "strategy": "Coherent strategy focusing on import substitution of domestic enzyme raw materials and cost-effective solutions via collaborations (e.g., 瑞沃德公司, 美农生物), but lacking a deeply detailed competitive moat beyond standard industry partnerships.",
+          "innovation": "The primary product is enzyme performance improvement and modification (e.g., protease activity improved by 2x) using AI models as a computational design tool. This falls under application-layer or evolutionary process improvement within existing enzyme classes rather than a first-in-class non-natural molecular mechanism.",
+          "feasibility": "Reasonable and structured funding allocation plan (40% platform, 25% production, 20% market, 15% R&D) with extensive experimental and computational data backing, though technical challenges in specific applications like soy protein hydrolysis are acknowledged."
+        }
+      },
+      "p3": {
+        "pid": "p3",
+        "overall_score": 0.6626,
+        "dimension_scores_blended": {
+          "team": 0.8509,
+          "objectives": 0.6663,
+          "strategy": 0.6456,
+          "innovation": 0.5282,
+          "feasibility": 0.6399
+        },
+        "invest_scores_raw": {
+          "team": 0.88,
+          "objectives": 0.68,
+          "strategy": 0.65,
+          "innovation": 0.52,
+          "feasibility": 0.65
+        },
+        "confidence": 0.8182,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Meets SET 1 for Academic research leader: PI Professor Wang Jiangyun is affiliated with the Institute of Biophysics, Chinese Academy of Sciences (CAS), and the team has published over 80 high-level academic works and holds over 20 domestic authorized invention patents.",
+          "objectives": "Clear problem statement regarding antibody production and purification with specific goals like reducing costs and improving stability by 2025, but the buyer/payer pathway and specific demand validation remain somewhat aspirational.",
+          "strategy": "Coherent strategy utilizing AI and rational design combined with CAS collaboration, but commercialization and competitive defensibility rely on general positioning rather than named customer traction or exclusive channel validation.",
+          "innovation": "The proposal uses AI as a computational design tool to engineer proteins (non-natural amino acid modification), and while non-natural amino acids can be a mechanistic class, the core claims here focus on application-layer improvements (improved binding affinity vs natural protein A, purification performance) without providing the strict quantitative binding affinity numbers (in nM) required for I-A.",
+          "feasibility": "Itemized 3-year budget of 30.1 million RMB provided with structured milestones and a 20-person team in Huai'an, though some market and regulatory risks remain partially mitigated."
+        }
+      },
+      "p4": {
+        "pid": "p4",
+        "overall_score": 0.6704,
+        "dimension_scores_blended": {
+          "team": 0.7332,
+          "objectives": 0.6175,
+          "strategy": 0.6422,
+          "innovation": 0.6914,
+          "feasibility": 0.6662
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.62,
+          "strategy": 0.65,
+          "innovation": 0.7,
+          "feasibility": 0.68
+        },
+        "confidence": 0.7834,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes professors from major national key universities (Peking University, Tsinghua University) and experienced industry figures like Dr. Palti (founding member of Novocure) and founders with relevant academic affiliations, fitting Category T-B.",
+          "objectives": "The project outlines a clear roadmap for second-generation TTF product development with timelines leading to NMPA approval, but lacks detailed buyer or payer pathway validation.",
+          "strategy": "Coherent strategy focused on developing second-generation TTF hardware/software and raising 25 million yuan before human trials, but commercialization and market adoption plans remain broad and partially validated.",
+          "innovation": "Demonstrates advanced architectural design, multi-dimensional electrical field optimization, 100% of core patents, and efficacy improvements over traditional methods, but lacks complete quantitative comparative benchmarks across all parameters required for I-A.",
+          "feasibility": "Includes a defined angel financing target of 25 million yuan with explicit budget breakdown percentages (e.g., 50% for external research cooperation, 14% for technical staff) and a structured timeline, though risk mitigations are minimal."
+        }
+      },
+      "p5": {
+        "pid": "p5",
+        "overall_score": 0.7569,
+        "dimension_scores_blended": {
+          "team": 0.8264,
+          "objectives": 0.7958,
+          "strategy": 0.7135,
+          "innovation": 0.825,
+          "feasibility": 0.6401
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.82,
+          "strategy": 0.72,
+          "innovation": 0.85,
+          "feasibility": 0.65
+        },
+        "confidence": 0.7791,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-A",
+          "strategy": "S-B",
+          "innovation": "I-A",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes CAS institutions (中科院微小卫星创新研究院) and industry experts with leadership such as 蔡建博士 from the Microelectronics Research Institute, satisfying SET 1 (Academic research leader/CAS institution) and operational involvement in satellite constellations.",
+          "objectives": "Quantified targets are clearly established: 100 micro thrusters delivered over 5 years, first unit delivered by end of 2019, completed flight verification for modules, addressing a specific market gap in small satellite propulsion.",
+          "strategy": "Coherent strategy outlining low-cost electric propulsion development, multi-stage progress flowchart, and collaboration with research institutes, but financing and operational scaling details remain standard/partial.",
+          "innovation": "Meets all I-A criteria: claims a fundamentally new class/mechanism (world's only microscale laser micro-thruster, solid-state electric propulsion), holds explicitly stated IP (7 invention patents, 2 software copyrights), and provides quantitative performance figures (volume reduction to 1/5-1/10, specific impulse up to 10000 seconds).",
+          "feasibility": "Reasonable budget and cash flow projections with identified technical bottlenecks and mitigation via low dry weight thruster design, though detailed risk mitigations outside technical weight reduction are limited."
+        }
+      },
+      "p6": {
+        "pid": "p6",
+        "overall_score": 0.6229,
+        "dimension_scores_blended": {
+          "team": 0.7077,
+          "objectives": 0.6346,
+          "strategy": 0.6105,
+          "innovation": 0.5769,
+          "feasibility": 0.5952
+        },
+        "invest_scores_raw": {
+          "team": 0.72,
+          "objectives": 0.65,
+          "strategy": 0.62,
+          "innovation": 0.58,
+          "feasibility": 0.6
+        },
+        "confidence": 0.7991,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Led by Yang Guoqing from Zhejiang University with advisory members including academicians like Wu Chaohui, Li Jun, and He Jifeng, fitting the T-B category for major university professors and senior advisors with a documented research record.",
+          "objectives": "Clear problem definition and milestones (product development from 2018 to 2020, batch application from 2019 to 2022) targeting autonomous driving for special vehicles, though specific buyer/payer pathways are somewhat high-level.",
+          "strategy": "Coherent strategy targeting domestic and international special vehicle markets, backed by local funding plans and a phased rollout, but commercialization and competitive moats rely heavily on general market adoption claims.",
+          "innovation": "Features application-layer and system-level innovations such as the SmartOSEK operating system and heterogeneous multi-processor computing units, backed by patents, but the core mechanism is applied computing/AI in autonomous driving rather than a first-in-class fundamental molecular/physical mechanism.",
+          "feasibility": "Reasonable timeline with structured development phases, policy alignment, and risk management categories, though detailed itemized budgets are sparse in the provided facts."
+        }
+      },
+      "p7": {
+        "pid": "p7",
+        "overall_score": 0.7831,
+        "dimension_scores_blended": {
+          "team": 0.8408,
+          "objectives": 0.79,
+          "strategy": 0.6958,
+          "innovation": 0.8175,
+          "feasibility": 0.7704
+        },
+        "invest_scores_raw": {
+          "team": 0.88,
+          "objectives": 0.82,
+          "strategy": 0.72,
+          "innovation": 0.85,
+          "feasibility": 0.8
+        },
+        "confidence": 0.656,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-A",
+          "strategy": "S-B",
+          "innovation": "I-A",
+          "feasibility": "F-A"
+        },
+        "rationale": {
+          "team": "Meets SET 1 (Academic research leader) and Moderna-founder caliber via Robert Langer (renowned expert in targeted drug delivery and co-founder of Moderna), alongside Dr. Kong Na, Dr. Tao Wei, and high-impact publications in journals like PNAS and Science Translational Medicine.",
+          "objectives": "Quantified market gap with specific patient population numbers (125,000 in China by 2025), named buyer/payer pathway, specific product (IL-10mRNA@NPs), and clear regulatory/clinical milestones including IND submission by early 2026.",
+          "strategy": "Coherent strategy with self-developed LPNP delivery systems and mRNA synthesis platforms, multiple patent targets, and concrete preclinical/clinical milestones, though full commercial validation is pending clinical trial progression.",
+          "innovation": "Meets all three I-A criteria: a new mechanistic class (novel linear mRNA scaffold and circularization technology, non-natural/engineered structural approaches for mRNA stability and translation), explicitly claimed IP (target of 8+ invention patents), and specific performance data (half-life exceeding one week, reduced cytotoxicity, and IL-6 reduction).",
+          "feasibility": "Detailed itemized budget of 35.2 million yuan with 3.15 million yuan team commitment, realistic multi-year milestones, defined regulatory pathway (IND in 2026, phase I/II trials), and established technical platforms."
+        }
+      },
+      "p8": {
+        "pid": "p8",
+        "overall_score": 0.5632,
+        "dimension_scores_blended": {
+          "team": 0.5199,
+          "objectives": 0.6051,
+          "strategy": 0.6081,
+          "innovation": 0.5457,
+          "feasibility": 0.5429
+        },
+        "invest_scores_raw": {
+          "team": 0.52,
+          "objectives": 0.62,
+          "strategy": 0.62,
+          "innovation": 0.55,
+          "feasibility": 0.55
+        },
+        "confidence": 0.633,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-C"
+        },
+        "rationale": {
+          "team": "The facts mention Dr. Zhenlong Liu and Prof. Guojun Chen as part of an expert research team, and a management team with CEO, COO, and sales roles, but lack detailed, verifiable publication records or massive-scale industry track records to meet T-B standard. Fits T-C as a credible practitioner/academic team with limited proof of exceptional scale.",
+          "objectives": "The project outlines clear goals (lung-targeted antiviral RNA/LNP therapy, COVID-19, milestones over 36 months), but buyer/payer pathways and specific market size numbers are vague or aspirational, placing it in O-B.",
+          "strategy": "Coherent strategy utilizing AI models, strategic partnerships (Merck, Fujifilm), and a phased funding approach, but lacks named paying customers in production or validated commercial traction yet, aligning with S-B.",
+          "innovation": "The innovation relies on AI models and generative design (RNN) for drug screening and targeted RNA/LNP delivery. Under Rule 2 and category definitions, AI/ML-driven optimization and delivery enhancements fall under application-layer or improvement innovations (I-C) rather than first-in-class non-natural molecular building blocks.",
+          "feasibility": "Structured phase-gate approach with 6-36 month milestones and risk mitigations (in vivo testing, partner labs), but lacks an itemized budget breakdown, resulting in an F-C score."
+        }
+      },
+      "pA": {
+        "pid": "pA",
+        "overall_score": 0.638,
+        "dimension_scores_blended": {
+          "team": 0.7037,
+          "objectives": 0.6654,
+          "strategy": 0.646,
+          "innovation": 0.7078,
+          "feasibility": 0.4899
+        },
+        "invest_scores_raw": {
+          "team": 0.72,
+          "objectives": 0.68,
+          "strategy": 0.65,
+          "innovation": 0.72,
+          "feasibility": 0.48
+        },
+        "confidence": 0.7822,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-C"
+        },
+        "rationale": {
+          "team": "Core members have over 10 years of experience in top semiconductor companies and CTO Dr. Zhang Shuai is involved in national projects, fitting the T-B profile for senior executives with domain experience, though lacking the 25+ years or landmark scale of T-A.",
+          "objectives": "Clear quantitative timeline and targets (e.g., 120,000 pieces/month, operation by Month 19) with a recognized industry gap, but lacks specific named buyer/payer validation pathway.",
+          "strategy": "Coherent go-to-market plan targeting multiple sectors (automotive, home appliances, etc.) with joint ventures and strategic partnerships, but lacks concrete evidence of production customers already bound.",
+          "innovation": "Strong patent portfolio (>80 domestic patents, 1 US patent) and specific technology platforms (IGBT 900-6500V, deep submicron BCD), but constitutes hardware process/design refinement rather than a completely new fundamental mechanism class (I-B).",
+          "feasibility": "Massive planned total investment of 260 billion Yuan with capital sources outlined, but lacks itemized operational expenditure breakdown or detailed risk mitigations, placing it in F-C."
+        }
+      },
+      "pB": {
+        "pid": "pB",
+        "overall_score": 0.742,
+        "dimension_scores_blended": {
+          "team": 0.8207,
+          "objectives": 0.684,
+          "strategy": 0.7923,
+          "innovation": 0.6424,
+          "feasibility": 0.7743
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.7,
+          "strategy": 0.82,
+          "innovation": 0.65,
+          "feasibility": 0.8
+        },
+        "confidence": 0.7869,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-A",
+          "innovation": "I-C",
+          "feasibility": "F-A"
+        },
+        "rationale": {
+          "team": "Meets Team Category T-A, Set 3 criteria: documented production with DPPM <5 (less than 5), >3 billion units shipped, and over 20 world-class customers in mass production.",
+          "objectives": "Clear problem definition, vision to break Western dominance, and addressable market size mentioned (~100 billion RMB), but buyer pathway specifics remain high-level.",
+          "strategy": "Strong competitive moat via established mass production with 20+ world-class customers, clear next-generation product roadmap, and proven delivery execution.",
+          "innovation": "Application-layer and design improvements in power management, Charge Pump technology (98% efficiency), and patented chip solutions, but operating within existing classes of semiconductor/power IC architectures rather than a first-in-class mechanistic class.",
+          "feasibility": "Backed by proven operational infrastructure with >3 billion units shipped, DPPM under 5, and 20+ tier-1 customers currently in mass production, demonstrating complete manufacturing readiness."
+        }
+      },
+      "pC": {
+        "pid": "pC",
+        "overall_score": 0.5687,
+        "dimension_scores_blended": {
+          "team": 0.527,
+          "objectives": 0.6144,
+          "strategy": 0.5932,
+          "innovation": 0.4616,
+          "feasibility": 0.6431
+        },
+        "invest_scores_raw": {
+          "team": 0.52,
+          "objectives": 0.62,
+          "strategy": 0.6,
+          "innovation": 0.45,
+          "feasibility": 0.65
+        },
+        "confidence": 0.8041,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has relevant operational experience and a defined structure with a General Manager and departments, but lacks documented large-scale execution track records of top-tier academic or industry leaders meeting T-B or T-A standards.",
+          "objectives": "The proposal outlines clear goals (establishing 100 colleges from 2022 to 2024, 300 students per cohort) and addresses talent demand in semiconductors, but buyer and demand validation specifics are somewhat aspirational.",
+          "strategy": "The strategy focuses on school-enterprise cooperation and integrating industry standards into teaching with early success noted (100% employment rate), placing it in the coherent category with partial execution evidence.",
+          "innovation": "Standardized educational products and training programs aimed at applied talent cultivation represent application-layer and programmatic approaches rather than breakthrough foundational mechanisms.",
+          "feasibility": "Reasonable resources and risk mitigation mechanisms (joint ventures, investments post-agreement) are described alongside prior operational experience, supporting a solid mid-tier feasibility score."
+        }
+      },
+      "pD": {
+        "pid": "pD",
+        "overall_score": 0.6967,
+        "dimension_scores_blended": {
+          "team": 0.7299,
+          "objectives": 0.6908,
+          "strategy": 0.7026,
+          "innovation": 0.7328,
+          "feasibility": 0.6359
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.7,
+          "strategy": 0.72,
+          "innovation": 0.75,
+          "feasibility": 0.65
+        },
+        "confidence": 0.7806,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes key technical leadership meeting T-B criteria, such as Chen Zhixiang, the CTO, who has over 35 years of experience in semiconductor design.",
+          "objectives": "The project has clear objectives including going public by June 30, 2024, and developing high-efficiency charge pump chips with specific market products, though some broader buyer pathways are standard.",
+          "strategy": "Strategy features established relationships with major tier-1 mobile customers like OPPO, Xiaomi, and vivo, alongside supply chain adjustments, aligning with S-B criteria.",
+          "innovation": "Demonstrates strong technical performance (charge pump efficiency of 97%-98%, 14 patents, unique high-end chips like SD77313), fitting I-B as a globally unique hardware/device implementation with quantitative metrics.",
+          "feasibility": "Reasonable measures taken for production capacity expansion and supply chain setup, but faces noted risks regarding capacity constraints and upstream supply dependencies."
+        }
+      }
+    },
+    "gemini__C_cap_fully_removed__run2": {
+      "p1": {
+        "pid": "p1",
+        "overall_score": 0.6284,
+        "dimension_scores_blended": {
+          "team": 0.7067,
+          "objectives": 0.6398,
+          "strategy": 0.5982,
+          "innovation": 0.5281,
+          "feasibility": 0.6707
+        },
+        "invest_scores_raw": {
+          "team": 0.72,
+          "objectives": 0.65,
+          "strategy": 0.6,
+          "innovation": 0.52,
+          "feasibility": 0.68
+        },
+        "confidence": 0.786,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Led by Professor Zhang Liang (medical doctorate with extensive surgical experience) and supported by institutions like Fuwai Hospital and Anhui Chest Hospital, meeting the T-B standard for major medical university/hospital affiliation and domain experience.",
+          "objectives": "Addresses a clear clinical problem and quantifies the target market size (over 12 million heart failure patients in China), but specific buyer/payer pathways and validation remain somewhat aspirational, fitting O-B.",
+          "strategy": "Proposes a comprehensive heart failure management model integrating AI agents and clinical pathways with multiple revenue explorations (C-end, API, medical insurance), representing a coherent strategy with early structural planning, fitting S-B.",
+          "innovation": "Applies AI/LLM technology (transformer-based multi-agent system, ER compression algorithm) to the clinical domain of heart failure management. While technical performance metrics are cited, it represents application-layer innovation of software/AI rather than a new mechanistic class of biological or physical product, fitting I-C.",
+          "feasibility": "Includes a total funding requirement of 56 million yuan with a detailed budget covering operational costs, clear infrastructure plans (Provincial and City-level Data Centers), and a 3-year timeline, fitting F-B."
+        }
+      },
+      "p2": {
+        "pid": "p2",
+        "overall_score": 0.6228,
+        "dimension_scores_blended": {
+          "team": 0.7011,
+          "objectives": 0.6044,
+          "strategy": 0.6679,
+          "innovation": 0.5122,
+          "feasibility": 0.6369
+        },
+        "invest_scores_raw": {
+          "team": 0.72,
+          "objectives": 0.62,
+          "strategy": 0.68,
+          "innovation": 0.52,
+          "feasibility": 0.65
+        },
+        "confidence": 0.6397,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Dr. Zhang Lu Jia is affiliated with East China Normal University and New York University (Shanghai), supported by over 70 SCI papers and 1400 citations, meeting the T-B condition of a national key university professor with a documented research record.",
+          "objectives": "The project outlines clear goals around developing high-performance enzyme products and addressing import substitution with quantified metrics (5x, 3x, 2.1x), but specific buyer pathways and granular demand validation are somewhat aspirational.",
+          "strategy": "Coherent strategy focusing on import substitution for domestic enzyme raw materials and collaborations with named partners (瑞沃德公司, 美农生物), backed by a structured funding allocation, though commercialization pathways remain early.",
+          "innovation": "The project uses AI models and computational tools for enzyme transformation and molecular modification to improve protease activity and substrate selectivity. Per Rule 2, since the AI is a design tool and the product is an enzyme improvement within existing classes, it is evaluated as an application-layer/process-improvement innovation (I-C).",
+          "feasibility": "A detailed funding allocation breakdown is provided (40% platform, 25% production, 20% market, 15% personnel) along with computational and experimental infrastructure, though specific technical challenges like soy protein hydrolysis remain to be solved."
+        }
+      },
+      "p3": {
+        "pid": "p3",
+        "overall_score": 0.7061,
+        "dimension_scores_blended": {
+          "team": 0.8509,
+          "objectives": 0.6663,
+          "strategy": 0.6456,
+          "innovation": 0.7082,
+          "feasibility": 0.6669
+        },
+        "invest_scores_raw": {
+          "team": 0.88,
+          "objectives": 0.68,
+          "strategy": 0.65,
+          "innovation": 0.72,
+          "feasibility": 0.68
+        },
+        "confidence": 0.8182,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Meets SET 1 (Academic research leader): PI Professor Wang Jiangyun is affiliated with the Institute of Biophysics, Chinese Academy of Sciences, and the team has published over 80 high-level academic works and holds over 20 authorized invention patents.",
+          "objectives": "The project outlines specific aims such as enhancing purification processes, establishing large-scale synthesis of non-natural amino acids, and applying for patents by 2025, but specific quantitative buyer demand and validated market uptake pathways remain aspirational.",
+          "strategy": "Presents a coherent technical strategy combining AI, rational design, and non-natural amino acid modification, with risk mitigations such as minimizing process changes and collaborating with the CAS Institute of Biophysics, though commercial validation is early.",
+          "innovation": "Features non-natural amino acid modification technology and a proprietary AI model for protein design targeting antibody purification. However, it lacks fully articulated quantitative performance metrics (like explicit Kd in nM or exact benchmark comparisons) to cross the threshold into I-A.",
+          "feasibility": "Provides a clear 3-year total budget of 30.1 million RMB, a 20-person Huai'an team, and multi-year milestones including Series A financing, though capacity and market competition risks remain."
+        }
+      },
+      "p4": {
+        "pid": "p4",
+        "overall_score": 0.668,
+        "dimension_scores_blended": {
+          "team": 0.7062,
+          "objectives": 0.6175,
+          "strategy": 0.6692,
+          "innovation": 0.7094,
+          "feasibility": 0.6392
+        },
+        "invest_scores_raw": {
+          "team": 0.72,
+          "objectives": 0.62,
+          "strategy": 0.68,
+          "innovation": 0.72,
+          "feasibility": 0.65
+        },
+        "confidence": 0.7834,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes major university professors from Peking and Tsinghua University and experienced founders/executives (such as Dr. Palti, a founding member of Novocure, and founders with affiliations to Tsinghua and Rutgers), fitting Category T-B.",
+          "objectives": "The project outlines a clear development timeline and milestones for a second-generation TTF product leading up to NMPA approvals, but specific quantified market size or detailed buyer/payer pathway data is lacking.",
+          "strategy": "Coherent strategy with a clear product roadmap and patented technology positioning, though market entry relies on standard clinical trials and partnerships without fully validated commercial traction yet.",
+          "innovation": "The project claims 100% core patents for a second-generation TTF technology with multi-dimensional electric field optimization and improved survival rates, but lacks explicit numerical binding/affinity or extensive benchmark proof to meet the stringent first-in-class mechanistic criteria of I-A.",
+          "feasibility": "A structured budget breakdown (e.g., 50% external technical cooperation, 14% research-technical staff) and financing target of 25 million yuan are provided with a milestone timeline, fitting Category F-B."
+        }
+      },
+      "p5": {
+        "pid": "p5",
+        "overall_score": 0.7511,
+        "dimension_scores_blended": {
+          "team": 0.8264,
+          "objectives": 0.7958,
+          "strategy": 0.6505,
+          "innovation": 0.825,
+          "feasibility": 0.6671
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.82,
+          "strategy": 0.65,
+          "innovation": 0.85,
+          "feasibility": 0.68
+        },
+        "confidence": 0.7791,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-A",
+          "strategy": "S-B",
+          "innovation": "I-A",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Meets SET 1 (Academic research leader): Includes PI/lead researcher from Chinese National Academies (CAS - 中科院微小卫星创新研究院) with extensive organizational backing and significant applied engineering output in small satellite technology.",
+          "objectives": "Clear quantitative targets with named delivery milestones (100 micro thrusters over five years, first unit delivered by end of 2019, flight verification completed for specific solid microelectric modules) and specific application for LEO constellation systems.",
+          "strategy": "Coherent strategy involving collaboration with key research institutes and clear commercial development roadmap, though specific scaling and customer acquisition defensibility beyond initial partnerships is partially detailed.",
+          "innovation": "Meets I-A criteria: Demonstrates a new mechanistic class (all-solid-state electric propulsion / microscale laser micro-thruster technology), holds explicit IP (7 invention patents and 2 software copyrights), and cites specific quantitative performance metrics (specific impulse up to 10000 seconds, volume reduced to 1/5-1/10 of chemical thrusters).",
+          "feasibility": "Reasonable budget and financial cash flow projections provided with specific technical mitigations for launch weight and cost, though full multi-year itemized execution details are partially stated."
+        }
+      },
+      "p6": {
+        "pid": "p6",
+        "overall_score": 0.669,
+        "dimension_scores_blended": {
+          "team": 0.7077,
+          "objectives": 0.6346,
+          "strategy": 0.6645,
+          "innovation": 0.7299,
+          "feasibility": 0.6132
+        },
+        "invest_scores_raw": {
+          "team": 0.72,
+          "objectives": 0.65,
+          "strategy": 0.68,
+          "innovation": 0.75,
+          "feasibility": 0.62
+        },
+        "confidence": 0.7991,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "Led by Yang Guoqing from Zhejiang University with academicians (Wu Chaohui, Li Jun, He Jifeng) on the technical advisory committee, matching the major university professor / recognized domain leadership criteria in T-B.",
+          "objectives": "Clear problem definition, timeline, and targets to cover over 20 special autonomous driving scenarios, but specific buyer/payer pathways are somewhat generalized, fitting O-B.",
+          "strategy": "Coherent strategy targeting domestic and international markets with funding and staged rollout, but specific production-level customer validation or deep defensibility moats are partially stated, fitting S-B.",
+          "innovation": "Features unique domestic elements like the SmartOSEK operating system and heterogeneous multi-processor computing units with substantial patent applications (200 invention patents), but constitutes application-layer and hardware refinement rather than a new foundational mechanistic class, fitting I-B.",
+          "feasibility": "Outlines timelines, alignment with industrial policy, and risk management categories, though specific itemized budget breakdowns are limited, fitting F-B."
+        }
+      },
+      "p7": {
+        "pid": "p7",
+        "overall_score": 0.7941,
+        "dimension_scores_blended": {
+          "team": 0.8408,
+          "objectives": 0.817,
+          "strategy": 0.6958,
+          "innovation": 0.8265,
+          "feasibility": 0.7884
+        },
+        "invest_scores_raw": {
+          "team": 0.88,
+          "objectives": 0.85,
+          "strategy": 0.72,
+          "innovation": 0.86,
+          "feasibility": 0.82
+        },
+        "confidence": 0.656,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-A",
+          "strategy": "S-B",
+          "innovation": "I-A",
+          "feasibility": "F-A"
+        },
+        "rationale": {
+          "team": "Meets Team Category T-A (SET 1/Academic research leader caliber): Includes world-class researchers such as Robert Langer (Moderna co-founder), Dr. Kong Na, and Dr. Tao Wei, with publications in high-impact journals like PNAS and Science Translational Medicine, focusing on mRNA drug delivery.",
+          "objectives": "Meets Category O-A: Clear, quantified market gap and patient population (125,000 patients in China by 2025), specific product pipeline (IL-10mRNA@NPs), and explicit timeline for IND submission (early 2026).",
+          "strategy": "Meets Category S-B: Coherent strategy leveraging self-developed LPNP delivery systems and mRNA synthesis platforms, with clear milestones including preclinical evaluations and Series A financing, though commercialization distribution partnerships are not yet detailed.",
+          "innovation": "Meets Category I-A: Features a new mechanistic class and platform (unique linear mRNA scaffold, novel circularization technology, and lipid-polymer hybrid delivery systems), explicit IP goals (8+ invention patents), and specific preclinical findings (half-life exceeding one week, reduced inflammatory factor IL-6 without cytotoxicity).",
+          "feasibility": "Meets Category F-A: Detailed budget of 35.2 million yuan with 3.15 million yuan team commitment, structured multi-year development milestones, and technological improvements (circular mRNA reducing storage/cost barriers)."
+        }
+      },
+      "p8": {
+        "pid": "p8",
+        "overall_score": 0.5834,
+        "dimension_scores_blended": {
+          "team": 0.5469,
+          "objectives": 0.6321,
+          "strategy": 0.6351,
+          "innovation": 0.5007,
+          "feasibility": 0.6059
+        },
+        "invest_scores_raw": {
+          "team": 0.55,
+          "objectives": 0.65,
+          "strategy": 0.65,
+          "innovation": 0.5,
+          "feasibility": 0.62
+        },
+        "confidence": 0.633,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team includes named experts (Dr. Zhenlong Liu and Prof. Guojun Chen) and functional roles, but lacks documented large-scale execution track records, major publications, or extensive production history as required in higher categories.",
+          "objectives": "Clear problem definition and milestones for lung-targeted broad-spectrum antiviral RNA/LNP therapy, but quantitative market sizing and detailed buyer/payer pathway validation remain vague or aspirational.",
+          "strategy": "Coherent strategy utilizing AI models, partnerships (Merck, Fujifilm), and a phased funding approach, but commercialization and market entry plans rely heavily on partner networks without fully validated defensibility.",
+          "innovation": "Applies AI/ML computational design and recurrent neural networks (RNN) for drug delivery and immune agonist candidate exploration, representing an application-layer/design-tool innovation on existing LNP/RNA delivery methods.",
+          "feasibility": "Structured phase-gate approach with 6-month lab establishment, 12-18 month clinical application goals, and risk mitigation using partner resources, though budget is not fully itemized.",
+          "innovation_rule_applied": "Rule 2 (AI as a design tool): AI models and generative design are used to engineer RNA/LNP delivery and immune agonists; evaluated based on the application-layer innovation criteria."
+        }
+      },
+      "pA": {
+        "pid": "pA",
+        "overall_score": 0.6472,
+        "dimension_scores_blended": {
+          "team": 0.7307,
+          "objectives": 0.6654,
+          "strategy": 0.646,
+          "innovation": 0.7078,
+          "feasibility": 0.5079
+        },
+        "invest_scores_raw": {
+          "team": 0.75,
+          "objectives": 0.68,
+          "strategy": 0.65,
+          "innovation": 0.72,
+          "feasibility": 0.5
+        },
+        "confidence": 0.7822,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-C"
+        },
+        "rationale": {
+          "team": "Core team members have over 10 years of experience in top semiconductor companies and Dr. Zhang Shuai serves as CTO involved in national projects, fitting the T-B senior executive criterion.",
+          "objectives": "Clear capacity and production timelines and market size context are provided, but buyer demand validation and exact payer pathways remain aspirational.",
+          "strategy": "Coherent entry strategy with joint ventures and partnerships targeting key sectors (automobiles, home appliances), but lacks validation of full production execution against major incumbents.",
+          "innovation": "Novel technology platforms (IGBT, deep submicron BCD, SJ MOSFET) with over 80 patents applied, but lacks quantitative head-to-head performance benchmark data required for I-A.",
+          "feasibility": "Massive capital requirements (260 billion Yuan) with broad investment sources, but timeline and budget breakdown details are high-level with vague risk mitigations."
+        }
+      },
+      "pB": {
+        "pid": "pB",
+        "overall_score": 0.759,
+        "dimension_scores_blended": {
+          "team": 0.8207,
+          "objectives": 0.774,
+          "strategy": 0.7923,
+          "innovation": 0.6424,
+          "feasibility": 0.7743
+        },
+        "invest_scores_raw": {
+          "team": 0.85,
+          "objectives": 0.8,
+          "strategy": 0.82,
+          "innovation": 0.65,
+          "feasibility": 0.8
+        },
+        "confidence": 0.7869,
+        "verdict": "GO",
+        "categories": {
+          "team": "T-A",
+          "objectives": "O-A",
+          "strategy": "S-A",
+          "innovation": "I-C",
+          "feasibility": "F-A"
+        },
+        "rationale": {
+          "team": "Meets Team Category T-A SET 3: World-class operational excellence with documented production at top industry standard (DPPM < 5, >3B units shipped, over 20 world-class customers in production), supported by 70+ experienced engineers.",
+          "objectives": "Meets Strategy Category S-A: Strong competitive moat with over 20 world-class customers already in mass production, growing revenue, and clear product expansion pathways matching execution capabilities.",
+          "innovation": "Meets Innovation Category I-C: Application-layer and product-level advancements (e.g., 98% conversion efficiency Charge Pump, solar charging, BLE AI MESH) with quantitative metrics, but the core mechanisms represent refinements and chip-level designs rather than entirely new first-in-class molecular or physical mechanistic classes.",
+          "feasibility": "Meets Feasibility Category F-A: Proven execution infrastructure with >3 billion units successfully delivered, DPPM under 5, established world-class manufacturing/customer base, and clear product roadmap."
+        }
+      },
+      "pC": {
+        "pid": "pC",
+        "overall_score": 0.5626,
+        "dimension_scores_blended": {
+          "team": 0.527,
+          "objectives": 0.6144,
+          "strategy": 0.5932,
+          "innovation": 0.4616,
+          "feasibility": 0.6161
+        },
+        "invest_scores_raw": {
+          "team": 0.52,
+          "objectives": 0.62,
+          "strategy": 0.6,
+          "innovation": 0.45,
+          "feasibility": 0.62
+        },
+        "confidence": 0.8041,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-C",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-C",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The team has relevant operational experience and a structured organization with defined roles and prior government collaboration, but lacks documented large-scale academic or industry-leading credentials to reach T-B standard.",
+          "objectives": "The proposal clearly outlines a market gap and specific expansion goals (establishing 100 ZX*** colleges from 2022 to 2024 with 300 students per cohort), but specific buyer/payer validation and long-term demand metrics remain somewhat aspirational.",
+          "strategy": "Plausible differentiation through school-enterprise cooperation and integrating industry standards into teaching, with early traction mentioned (100% employment rate), but commercialization and partnership paths are still scaling.",
+          "innovation": "Application-layer innovation focused on standardized educational products, training programs, and vocational curriculum development rather than a novel scientific or technical breakthrough mechanism.",
+          "feasibility": "Reasonable resource planning with specified workspace, server investments, and risk mitigation mechanisms like joint ventures and post-agreement investments, though detailed multi-year itemized budgets are sparse."
+        }
+      },
+      "pD": {
+        "pid": "pD",
+        "overall_score": 0.6646,
+        "dimension_scores_blended": {
+          "team": 0.7029,
+          "objectives": 0.6458,
+          "strategy": 0.6666,
+          "innovation": 0.7058,
+          "feasibility": 0.6089
+        },
+        "invest_scores_raw": {
+          "team": 0.72,
+          "objectives": 0.65,
+          "strategy": 0.68,
+          "innovation": 0.72,
+          "feasibility": 0.62
+        },
+        "confidence": 0.7806,
+        "verdict": "HOLD",
+        "categories": {
+          "team": "T-B",
+          "objectives": "O-B",
+          "strategy": "S-B",
+          "innovation": "I-B",
+          "feasibility": "F-B"
+        },
+        "rationale": {
+          "team": "The CTO Chen Zhixiang has over 35 years of experience in semiconductor design and the management team has extensive industry experience primarily from O2Micro, meeting the T-B standard for a senior executive with 10+ years of domain experience.",
+          "objectives": "The company has clear objectives including going public and developing high-efficiency charge pump chips, and cites named customers like OPPO and specific products, but lacks detailed validation of the broader buyer/payer pathway.",
+          "strategy": "Strategy focuses on charge pump technology for mobile applications and maintains relationships with major customers like OPPO, Xiaomi, and vivo, with a coherent supply chain plan, representing a solid S-B approach.",
+          "innovation": "The company holds 14 patents (11 invention patents) and achieves specific high efficiencies (97%-98%) with charge pump technology and unique solar charging chips, fitting I-B as a novel hardware/device platform with quantitative performance metrics but lacking a brand-new first-in-class molecular or scientific mechanism.",
+          "feasibility": "The proposal notes production capacity expansion and supply chain setup to handle fast-charging market growth, though risks regarding upstream supply and capacity are present, placing it in F-B with reasonable budgeting/milestones and partial detail."
+        }
+      }
+    }
+  }
+}

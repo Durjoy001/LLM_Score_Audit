@@ -1,0 +1,351 @@
+# ############################################################################
+# LIVE: this is the reasoning block actually used, spliced into the Stage 4
+# user prompt at llm_answering.py:432.
+# ############################################################################
+
+# Source: prompt_templates.py :: react_reasoning_section() (Stage 4, reasoning block)
+# Extracted verbatim for the reproducibility bundle.
+
+═══════════════════════════════════════════════════════════════════════════════
+REACT-STYLE PROPOSAL EVALUATION FRAMEWORK
+═══════════════════════════════════════════════════════════════════════════════
+
+You are evaluating a business, startup, project, research, program, product,
+service, SaaS, infrastructure, or regulated proposal.
+
+Use a ReAct-style internal reasoning process:
+- Thought: understand what must be evaluated
+- Action: inspect the provided proposal facts
+- Observation: classify the evidence and gaps
+- Final: produce the structured JSON only
+
+IMPORTANT:
+- Do NOT output Thought / Action / Observation.
+- Do NOT reveal chain-of-thought.
+- Do NOT claim external search, browsing, or tool use.
+- Use only the provided proposal facts and allowed general industry knowledge.
+- General industry knowledge must be clearly treated as general baseline, not as proof about the proposal.
+- Be precise, evidence-based, and cautious.
+- Prefer wording like: "The proposal states X, but does not provide evidence for Y."
+- Do not say "no information exists" unless the provided proposal clearly lacks that information.
+
+───────────────────────────────────────────────────────────────────────────────
+INTERNAL REACT EVALUATION PROCESS
+───────────────────────────────────────────────────────────────────────────────
+
+STEP 1: Proposal Archetype Identification
+
+Thought:
+Determine what type of proposal is being evaluated.
+
+Action:
+Inspect the proposal facts for signals of:
+- business/startup
+- SaaS/software
+- hardware/product
+- service business
+- marketplace
+- public program
+- research project
+- infrastructure project
+- regulated product
+- other
+
+Observation:
+Identify the most likely archetype.
+If unclear, state that the proposal does not fully reveal the archetype.
+
+───────────────────────────────────────────────────────────────────────────────
+STEP 2: Attribute-by-Attribute Evidence Check
+───────────────────────────────────────────────────────────────────────────────
+
+Evaluate the proposal using these five attributes only:
+
+1. Team
+2. Objective
+3. Strategy
+4. Advantages
+5. Feasibility
+
+For EACH attribute, internally perform the following ReAct-style checks:
+
+Thought:
+What should be evaluated for this attribute?
+
+Action:
+Inspect the provided proposal facts and separate evidence into:
+
+- CONFIRMED:
+  Explicitly stated facts with visible support, such as names, roles,
+  experience, numbers, dates, milestones, results, documents, or clear claims.
+
+- PARTIAL:
+  Mentioned but lacking enough detail, proof, measurement, or explanation.
+
+- PLANS:
+  Future intentions, proposed actions, or goals without execution evidence.
+
+- NOT VISIBLE:
+  Information that is normally important but not shown in the provided facts.
+
+Observation:
+Compare the visible proposal evidence against what is normally expected
+for this proposal archetype.
+
+───────────────────────────────────────────────────────────────────────────────
+ATTRIBUTE-SPECIFIC EVALUATION CRITERIA
+───────────────────────────────────────────────────────────────────────────────
+
+A. Team
+
+Evaluate whether the team can realistically execute the proposal.
+
+Consider:
+- relevant founder/team experience
+- technical capability
+- business or operational capability
+- domain expertise
+- execution track record
+- missing roles
+- advisors, partners, or governance support
+- hiring or outsourcing needs
+- credibility of leadership
+
+Evidence to look for:
+- team bios
+- CVs or LinkedIn profiles
+- previous project history
+- technical portfolio
+- operational experience
+- advisors or partners
+- organizational chart
+- role allocation
+
+B. Objective
+
+Evaluate whether the proposal objectives are clear, realistic, and measurable.
+
+Consider:
+- problem-solution fit
+- target users, customers, or beneficiaries
+- clear expected outcome
+- measurable goals
+- success indicators or KPIs
+- milestones
+- scope realism
+- alignment between problem, solution, and impact
+
+Evidence to look for:
+- problem statement
+- objective list
+- target user definition
+- measurable KPIs
+- baseline data
+- expected outputs and outcomes
+- milestone timeline
+
+C. Strategy
+
+Evaluate whether the implementation plan is practical and coherent.
+
+Consider:
+- implementation approach
+- roadmap or timeline
+- resource allocation
+- go-to-market or adoption plan
+- customer acquisition or beneficiary outreach
+- operational workflow
+- completed work versus future intention
+- assumptions that need validation
+- dependency on partners, funding, regulation, or technology
+
+Evidence to look for:
+- roadmap
+- launch plan
+- marketing or adoption plan
+- operational plan
+- budget allocation
+- project timeline
+- pilot results
+- user testing
+- partnership plan
+- risk mitigation plan
+
+D. Advantages
+
+Evaluate whether the proposal has meaningful strengths or defensible value.
+
+Consider:
+- unique value proposition
+- innovation
+- competitive edge
+- intellectual property
+- technology advantage
+- data advantage
+- partnerships
+- cost advantage
+- timing or location advantage
+- market access
+- whether each advantage is proven or only claimed
+
+Evidence to look for:
+- competitor comparison
+- market research
+- IP/patent/trademark proof
+- exclusive partnerships
+- proprietary technology
+- user traction
+- cost analysis
+- testimonials
+- pilot outcomes
+- performance benchmarks
+
+E. Feasibility
+
+Evaluate whether the proposal can realistically be executed.
+
+Consider:
+- technical practicality
+- financial viability
+- budget and funding needs
+- available resources
+- operational capacity
+- legal, regulatory, or compliance issues
+- implementation risks
+- market or adoption risks
+- scalability
+- sustainability
+- key dependencies
+
+Evidence to look for:
+- financial projections
+- cost breakdown
+- funding plan
+- technical architecture
+- prototype or MVP
+- compliance documents
+- licenses or approvals
+- operational capacity
+- risk register
+- mitigation plan
+- scalability assumptions
+
+───────────────────────────────────────────────────────────────────────────────
+STEP 3: Gap and Risk Classification
+───────────────────────────────────────────────────────────────────────────────
+
+For each attribute, classify gaps as:
+
+- CRITICAL:
+  Could stop execution, funding, approval, launch, adoption, or sustainability.
+
+- IMPORTANT:
+  Significantly weakens credibility, execution quality, or stakeholder confidence.
+
+- MINOR:
+  Manageable weakness that can be fixed with additional detail or documentation.
+
+Avoid broad absolute negatives.
+Use careful wording:
+- "The proposal states A, but does not show detailed evidence on B."
+- "The proposal identifies X as a plan, but does not provide execution proof."
+- "The proposal suggests Y, but the supporting data is only partial."
+- "The proposal would be stronger with evidence such as Z."
+
+Flag visible contradictions, unclear assumptions, or unsupported claims.
+
+───────────────────────────────────────────────────────────────────────────────
+STEP 4: Recommendation Synthesis
+───────────────────────────────────────────────────────────────────────────────
+
+For the strongest recommendations, identify:
+
+- WHO should act
+- WHAT should be done
+- WHAT evidence should be produced
+- WHY it matters for Team, Objective, Strategy, Advantages, or Feasibility
+
+Prioritize recommendations by:
+1. critical execution risk
+2. stakeholder/investor confidence
+3. measurable proof
+4. practical next steps
+
+───────────────────────────────────────────────────────────────────────────────
+STEP 5: Final Output Mapping
+───────────────────────────────────────────────────────────────────────────────
+
+Map the internal evaluation into the final JSON as follows:
+
+- "answer":
+  Exactly 3–4 numbered points. STRICT FORMAT: each point must be a single
+  line of 50–80 characters — do NOT wrap a point across multiple lines.
+  Total answer: 160–300 characters.
+  Example: "1. Team holds 3 propulsion patents.
+2. Revenue hit ¥100M.
+3. No PM detail shown."
+
+- "claims":
+  Verifiable conclusions based only on the provided proposal evidence.
+  Include confirmed facts and carefully worded evidence gaps.
+
+- "evidence_hints":
+  2–5 short phrases or keywords copied VERBATIM from the proposal facts
+  that directly support this answer. Must be exact text from the proposal
+  — not section names, not paraphrases.
+  Example: "年营收突破1亿元" not "财务信息部分提到的收入数据".
+
+- "general_insights":
+  General best-practice context only.
+  Do not present these as project-specific facts.
+
+- "topic_tags":
+  3 to 6 short lowercase tags related to the proposal archetype,
+  five attributes, risks, and evidence needs.
+
+- "confidence":
+  A number from 0.40 to 0.92. Use 0.40–0.54 when proposal facts are
+  sparse or vague; 0.55–0.70 for moderate evidence; 0.71–0.92 when
+  evidence is strong and specific.
+
+- "caveats":
+  Missing information, assumptions, contradictions, incomplete evidence,
+  or evaluation limits.
+
+───────────────────────────────────────────────────────────────────────────────
+FINAL OUTPUT RULES
+───────────────────────────────────────────────────────────────────────────────
+
+Output ONLY valid JSON.
+
+Do NOT include:
+- Thought
+- Action
+- Observation
+- chain-of-thought
+- internal reasoning steps
+- explanations outside JSON
+- markdown
+- examples
+- extra keys
+
+Return this JSON structure only:
+
+{
+  "answer": [],
+  "claims": [],
+  "evidence_hints": [],
+  "general_insights": [],
+  "topic_tags": [],
+  "confidence": 0.0,
+  "caveats": []
+}
+
+Field requirements:
+- "answer": Exactly 3–4 numbered points, each on a SINGLE LINE of at most 60 characters. Total: 180–270 characters.
+- "claims": verifiable conclusions based only on proposal evidence.
+- "evidence_hints": 2–5 short phrases copied VERBATIM from the proposal facts (not paraphrases or section names).
+- "general_insights": general best-practice context only.
+- "topic_tags": short lowercase tags.
+- "confidence": number from 0.40 to 0.92.
+- "caveats": missing information, assumptions, contradictions, or limits.

@@ -1,0 +1,170 @@
+# Source: generate_questions.py :: QUESTION_PROMPT_TEMPLATE (Stage 3, user role)
+# Extracted verbatim for the reproducibility bundle.
+
+You are acting as a sector-agnostic venture, business, product, technical, and operating diligence expert and questionnaire-design consultant.
+Your task is to design an evaluation question set for one dimension of an AI-assisted review system.
+
+System context:
+- The system extracts five dimension summaries from a proposal: team / objectives / strategy / innovation / feasibility.
+- You are responsible only for this dimension: {dimension_name}.
+- You will receive this dimension's payload: summary + key_points + risks + mitigations.
+- Questions must be grounded in that payload, not generic review commentary.
+- Design questions for serious business, startup, investment, and scale-up diligence. Prefer questions that expose
+  whether the project has proof of problem urgency, product/service performance, customer demand, competitive
+  defensibility, go-to-market motion, execution milestones, unit economics or budget realism, operating scalability,
+  governance, compliance/security needs, and risk controls.
+
+{business_archetype_guide}
+
+Current dimension:
+- Dimension key: {dimension_name}
+- Dimension focus: {dimension_focus}
+
+Aspect configuration:
+- You will receive a JSON array of aspects, each shaped like:
+  {{
+    "id": "leadership_experience",
+    "desc": "Leadership experience and prior execution record of founders, project leaders, operators, sponsors, or core decision-makers."
+  }}
+- Use aspects as sub-directions for focused questions.
+- Read the payload first, decide which aspects are most relevant, and design questions around those aspects.
+- You do not need to cover every aspect, but cover at least 3-5 key aspects when possible.
+- For platform or long-term aspects such as platform_and_extensibility and scaling_and_globalization,
+  design at least one long-term or platform-oriented question. If the payload lacks relevant information,
+  ask the respondent to evaluate the risk created by that information gap.
+- If the initiative is not technology-centered, translate aspects into the closest useful business meaning:
+  "solution route" may mean service design, operating model, channel strategy, curriculum design, facility rollout,
+  financing structure, supply chain setup, partner delivery model, or public-program implementation.
+
+Content anchoring requirements:
+1. Explicitly use key_points, risks, and mitigations from the payload:
+   - At least half of the questions should link to one or more key_points.
+   - If risks exist, create at least two questions specifically about those risks.
+   - If mitigations exist, create at least one question assessing their sufficiency.
+2. Entity-name constraints:
+   - Do not introduce company, institution, university, customer, partner, platform, product, fund, country, or city names
+     that do not appear in the payload.
+   - If you need to refer to unnamed partners or institutions, use generic phrases such as
+     "an international enterprise", "a partner customer", "a research institution", or "a platform company".
+   - If an entity name appears in the payload, you may cite it exactly as written, but do not add new entity names
+     or invent foreign names for people.
+3. If a question requires target customer type, buyer/user separation, market size, pricing, proof of demand,
+   operating capacity, unit economics, approval path, impact metrics, efficacy improvement, or similar details that the
+   payload does not provide, phrase the question so the answer can first state the information gap and then analyze
+   its impact.
+4. Do not assume the project belongs to any specific sector, customer type, business model, operating model,
+   regulated pathway, or delivery setting unless the payload explicitly supports that. Use
+   domain-neutral wording such as validation, customer qualification, adoption, operating scalability, compliance,
+   security, procurement, delivery, or quality system when that better fits the project.
+
+Dimension-specific requirements:
+- If the dimension is team:
+  - Create at least two high-priority resume/track-record questions with priority 1 or 2.
+  - These should ask about core members, PIs, project leaders, prior project experience, domain experience,
+    compliance/validation experience when relevant, and translation from plan/prototype to launch, delivery, operation, or scale-up.
+  - They should ask respondents to judge whether the team can advance the project to its intended application,
+    validation, deployment, operation, scale-up, or commercialization path based on the team background actually present in the payload.
+- If the dimension is strategy:
+  - Create at least one high-priority question about the model by which the initiative reaches users/customers,
+    secures buyers/payers/funders, and sustains revenue, funding, adoption, or impact.
+  - If key_points mention market, CAGR, competition, customers, users, sales, procurement, pricing, funding,
+    adoption, or policy support, create at least one high-priority market/adoption-driven question about positioning,
+    competitive pressure, stakeholder adoption, route to market, or rollout strategy.
+  - These questions should link to relevant key_points when possible.
+- If the dimension is objectives:
+  - If key_points mention target users, buyers, beneficiaries, target customers, target market, funders, public need,
+    operational pain point, or market opportunity, create at least one question about alignment between objectives and
+    the stated need, value proposition, impact logic, or market opportunity.
+  - Allow the answer to identify missing information first when the payload is incomplete.
+
+Missing-information handling:
+- Questions should allow for insufficient proposal information.
+- For questions that depend on concrete metrics, countries, companies, milestones, or detailed assumptions,
+  include wording such as:
+  "If the proposal does not provide sufficient details on X, please first state this information gap and then
+  discuss its impact on the assessment."
+- Do not imply that missing details were definitely provided, because that can push later answer generation into
+  inventing facts.
+- For rating questions, ask for a 1-5 score plus the exact evidence that would move the score up. This makes the
+  downstream report more actionable for founders, investors, and operating teams.
+- Make every rating question decision-useful: specify what a low score would block and what evidence would raise confidence.
+
+links_to requirements:
+- For every question, identify which payload items it primarily targets:
+  - links_to.key_points: zero-based indexes into the key_points array, for example [0, 2].
+  - links_to.risks: zero-based indexes into the risks array.
+  - links_to.mitigations: zero-based indexes into the mitigations array.
+- If a question mainly targets missing information or a blind spot, all three lists may be empty.
+- Indexes must be integers and must start from 0.
+
+Question-design principles:
+1. Specificity:
+   - Questions must fit the current dimension and relevant aspects, not generic project-review topics.
+   - At least half of the questions must include a concrete noun or phrase from the payload, unless the payload is too sparse.
+2. Answerability:
+   - Questions should be answerable from general domain knowledge plus the dimension payload.
+   - Avoid relying on hidden details.
+   - Do not ask for exact numbers or complete company lists that are not present in the proposal unless the question
+     explicitly includes missing-information handling.
+3. Structured use:
+   - answer_type must be one of ["analysis", "rating", "yes_no", "open"].
+   - "analysis": asks for analytical text.
+   - "rating": supports a 1-5 or similar scoring scale.
+   - "yes_no": asks for a judgment and should invite a reason.
+   - "open": open-ended without a forced structure.
+   - Questions within one dimension should cover different aspects.
+4. Language and schema:
+   - Output professional English questions only.
+   - Populate both question and question_en fields. They may be identical or closely equivalent.
+   - Use generic references such as "the initiative", "the project", "the team", "the offering", "the operating model",
+     "the service", "the product", "the program", or "the solution" when that is clearer
+     than repeating long payload text.
+
+Quantity and priority requirements:
+- You will receive a target question range, such as [6, 9]. Stay within that range when possible:
+  - Use the upper end for information-rich dimensions.
+  - Use the lower end for sparse dimensions.
+- priority meanings:
+  - 1: high priority, core question.
+  - 2: medium priority, recommended question.
+  - 3: optional question.
+- Each dimension should have at least three priority=1 questions when possible.
+
+Answer-type mix:
+- Each dimension should include at least two rating questions for later quantitative scoring.
+- Each dimension should include at least three analysis questions for deeper written analysis.
+- Other questions may be yes_no or open.
+
+Search hints:
+- Also generate a "search_hints" list: 6-10 short phrases or terms (1-5 words each) that would appear in a
+  substantive, well-evidenced answer to the questions in this dimension.
+- These terms should DISCRIMINATE quality: they are the specific evidence markers, credentials, validation
+  artifacts, or technical anchors that a STRONG proposal would discuss — not generic topic words.
+- Ground hints in the dimension payload: use key domain terms, validation standards, approval pathways,
+  specific evidence types, or outcome metrics that a high-quality answer should reference.
+- Avoid generic nouns like "analysis", "plan", "team", "system", "proposal", "model" — they appear in every answer.
+- Good examples for feasibility: ["phase II trial", "IRB approval", "budget breakdown",
+  "clinical site identified", "regulatory pathway", "prospective validation", "endpoint definition"]
+- Good examples for team: ["principal investigator", "publications", "clinical trial experience",
+  "industry partnership", "regulatory submission experience"]
+- Return hints as a flat JSON array of strings.
+
+Output JSON structure:
+- Return a JSON object with exactly two top-level keys: "questions" and "search_hints".
+- "questions" must be an array of question objects with this shape:
+
+  {{
+    "aspect": "aspect id, such as leadership_experience or solution_delivery_strategy",
+    "question": "English question text",
+    "question_en": "English question text",
+    "answer_type": "analysis" | "rating" | "yes_no" | "open",
+    "priority": 1 | 2 | 3,
+    "links_to": {{
+      "key_points": [0, 2],
+      "risks": [],
+      "mitigations": []
+    }}
+  }}
+
+- "search_hints" must be a flat array of 6-10 strings.
+- Do not output any text outside JSON. Do not add explanations or comments.

@@ -1,0 +1,2489 @@
+{
+  "analysis": "stage6_call_b_3run_repeatability",
+  "method": {
+    "invest_weight": 0.9,
+    "verdict_rule": "GO iff overall >= 0.725 OR confidence >= 0.811; NO-GO iff overall < 0.40 or blended innovation < 0.30 or blended feasibility < 0.30; else HOLD",
+    "verdict_rule_applied_uniformly_to_all_runs": true,
+    "std": "sample standard deviation (ddof=1), n=3",
+    "ci": "percentile bootstrap, 1000 resamples, numpy default_rng(42); _bootstrap_ci imported unchanged from src/tools/evaluate_cohens_kappa.py",
+    "ci_caveat": "with n=3 the bootstrap CI can only span the observed values and is reported for method consistency, not as a precise interval estimate",
+    "frozen_across_runs": [
+      "qa_echo (Stage 5)",
+      "dim_weights",
+      "confidence (Stage 5)",
+      "dimensions_v2.json evidence input"
+    ]
+  },
+  "sources": {
+    "run1": "canonical/canonical_ai_scores_dataset1.json (Jun-16 baseline)",
+    "run2": "src/data/expert_reports/<pid>__openai/ai_expert_opinion.json (Jun-18)",
+    "run3": "canonical/stage6_repeatability_run3.json",
+    "run3_provenance": {
+      "run_label": "run3",
+      "description": "Third independent sample of Stage 6 Call B (deterministic investment-grade scoring), added to the 2-run repeatability check in Section 8.",
+      "stage": "stage_6_call_b_investment_scoring",
+      "date_utc": "2026-07-28T16:52:42.951210+00:00",
+      "date_local": "2026-07-28 12:53:36",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 0.0,
+      "seed": 42,
+      "max_tokens": 600,
+      "invest_weight": 0.9,
+      "verdict_rule": "GO iff overall >= 0.725 OR confidence >= 0.811; NO-GO iff overall < 0.40 or blended innovation < 0.30 or blended feasibility < 0.30; else HOLD",
+      "evidence_source": "existing src/data/extracted/<pid>/dimensions_v2.json (Jun-16); no re-extraction performed",
+      "frozen_inputs": "qa_echo, dim_weights and confidence taken from canonical/canonical_ai_scores_dataset1.json (Stage-5 output, never regenerated -> identical across runs 1/2/3)",
+      "system_prompt_sha256": "182a50db8e224a77c8856add2c9c63232a60d23716c0ae7ec63622bf6242388d",
+      "code_source": "src/tools/ai_expert_opinion.investment_score_from_dims",
+      "elapsed_sec": 53.74,
+      "n_proposals": 12,
+      "failures": [],
+      "not_modified": [
+        "canonical/canonical_ai_scores_dataset1.json",
+        "canonical/canonical_kickstarter_scores.json",
+        "results/",
+        "resultsNew/",
+        "src/data/ (all stages)"
+      ],
+      "credential_source": "OPENAI_API_KEY environment variable"
+    }
+  },
+  "summary": {
+    "n_proposals": 12,
+    "n_runs": 3,
+    "same_verdict_count": 12,
+    "same_verdict_rate": 1.0,
+    "flip_count": 0,
+    "flip_rate": 0.0,
+    "mean_absolute_deviation_from_3run_mean_overall": 0.0056,
+    "max_abs_deviation_overall": 0.0224,
+    "mean_std_overall_across_proposals": 0.0074,
+    "max_overall_range_across_proposals": 0.0374,
+    "n_proposals_identical_on_all_5_dimensions_across_3_runs": 1,
+    "n_proposals_with_any_dimension_variation": 11,
+    "flips": [],
+    "dimension_aggregates": {
+      "team": {
+        "mean_std_across_proposals": 0.0095,
+        "max_range_across_proposals": 0.09,
+        "n_proposals_with_any_variation": 4,
+        "pct_proposals_with_any_variation": 33.3
+      },
+      "objectives": {
+        "mean_std_across_proposals": 0.0244,
+        "max_range_across_proposals": 0.108,
+        "n_proposals_with_any_variation": 9,
+        "pct_proposals_with_any_variation": 75.0
+      },
+      "strategy": {
+        "mean_std_across_proposals": 0.0186,
+        "max_range_across_proposals": 0.045,
+        "n_proposals_with_any_variation": 9,
+        "pct_proposals_with_any_variation": 75.0
+      },
+      "innovation": {
+        "mean_std_across_proposals": 0.0087,
+        "max_range_across_proposals": 0.045,
+        "n_proposals_with_any_variation": 4,
+        "pct_proposals_with_any_variation": 33.3
+      },
+      "feasibility": {
+        "mean_std_across_proposals": 0.0087,
+        "max_range_across_proposals": 0.045,
+        "n_proposals_with_any_variation": 4,
+        "pct_proposals_with_any_variation": 33.3
+      }
+    }
+  },
+  "per_proposal": {
+    "p1": {
+      "file_name": "1-附件1：心衰专病大模型BP.pdf",
+      "confidence": 0.786,
+      "overall_runs": [
+        0.6805,
+        0.6805,
+        0.6805
+      ],
+      "overall": {
+        "mean": 0.6805,
+        "std": 0.0,
+        "ci95": [
+          0.6805,
+          0.6805
+        ],
+        "min": 0.6805,
+        "max": 0.6805,
+        "range": 0.0
+      },
+      "mean_abs_dev_from_3run_mean": 0.0,
+      "verdicts": {
+        "run1": "HOLD",
+        "run2": "HOLD",
+        "run3": "HOLD"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.6437,
+            0.6437,
+            0.6437
+          ],
+          "blended": {
+            "mean": 0.6437,
+            "std": 0.0,
+            "ci95": [
+              0.6437,
+              0.6437
+            ],
+            "min": 0.6437,
+            "max": 0.6437,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.65,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.65,
+            "std": 0.0,
+            "ci95": [
+              0.65,
+              0.65
+            ],
+            "min": 0.65,
+            "max": 0.65,
+            "range": 0.0
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.6848,
+            0.6848,
+            0.6848
+          ],
+          "blended": {
+            "mean": 0.6848,
+            "std": 0.0,
+            "ci95": [
+              0.6848,
+              0.6848
+            ],
+            "min": 0.6848,
+            "max": 0.6848,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.7,
+            "std": 0.0,
+            "ci95": [
+              0.7,
+              0.7
+            ],
+            "min": 0.7,
+            "max": 0.7,
+            "range": 0.0
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.6432,
+            0.6432,
+            0.6432
+          ],
+          "blended": {
+            "mean": 0.6432,
+            "std": 0.0,
+            "ci95": [
+              0.6432,
+              0.6432
+            ],
+            "min": 0.6432,
+            "max": 0.6432,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.65,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.65,
+            "std": 0.0,
+            "ci95": [
+              0.65,
+              0.65
+            ],
+            "min": 0.65,
+            "max": 0.65,
+            "range": 0.0
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.7351,
+            0.7351,
+            0.7351
+          ],
+          "blended": {
+            "mean": 0.7351,
+            "std": 0.0,
+            "ci95": [
+              0.7351,
+              0.7351
+            ],
+            "min": 0.7351,
+            "max": 0.7351,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.75,
+            "std": 0.0,
+            "ci95": [
+              0.75,
+              0.75
+            ],
+            "min": 0.75,
+            "max": 0.75,
+            "range": 0.0
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.6887,
+            0.6887,
+            0.6887
+          ],
+          "blended": {
+            "mean": 0.6887,
+            "std": 0.0,
+            "ci95": [
+              0.6887,
+              0.6887
+            ],
+            "min": 0.6887,
+            "max": 0.6887,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.7,
+            "std": 0.0,
+            "ci95": [
+              0.7,
+              0.7
+            ],
+            "min": 0.7,
+            "max": 0.7,
+            "range": 0.0
+          }
+        }
+      }
+    },
+    "p2": {
+      "file_name": "2-附件1：2025_0410新型高端酶制剂的智能化创制与应用.pdf",
+      "confidence": 0.6397,
+      "overall_runs": [
+        0.6904,
+        0.6904,
+        0.6904
+      ],
+      "overall": {
+        "mean": 0.6904,
+        "std": 0.0,
+        "ci95": [
+          0.6904,
+          0.6904
+        ],
+        "min": 0.6904,
+        "max": 0.6904,
+        "range": 0.0
+      },
+      "mean_abs_dev_from_3run_mean": 0.0,
+      "verdicts": {
+        "run1": "HOLD",
+        "run2": "HOLD",
+        "run3": "HOLD"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.7281,
+            0.7281,
+            0.7281
+          ],
+          "blended": {
+            "mean": 0.7281,
+            "std": 0.0,
+            "ci95": [
+              0.7281,
+              0.7281
+            ],
+            "min": 0.7281,
+            "max": 0.7281,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.75,
+            "std": 0.0,
+            "ci95": [
+              0.75,
+              0.75
+            ],
+            "min": 0.75,
+            "max": 0.75,
+            "range": 0.0
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.6314,
+            0.6764,
+            0.6314
+          ],
+          "blended": {
+            "mean": 0.6464,
+            "std": 0.026,
+            "ci95": [
+              0.6314,
+              0.6764
+            ],
+            "min": 0.6314,
+            "max": 0.6764,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.7,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.6667,
+            "std": 0.0289,
+            "ci95": [
+              0.65,
+              0.7
+            ],
+            "min": 0.65,
+            "max": 0.7,
+            "range": 0.05
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.6859,
+            0.6409,
+            0.6859
+          ],
+          "blended": {
+            "mean": 0.6709,
+            "std": 0.026,
+            "ci95": [
+              0.6409,
+              0.6859
+            ],
+            "min": 0.6409,
+            "max": 0.6859,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.65,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.6833,
+            "std": 0.0289,
+            "ci95": [
+              0.65,
+              0.7
+            ],
+            "min": 0.65,
+            "max": 0.7,
+            "range": 0.05
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.6742,
+            0.6742,
+            0.6742
+          ],
+          "blended": {
+            "mean": 0.6742,
+            "std": 0.0,
+            "ci95": [
+              0.6742,
+              0.6742
+            ],
+            "min": 0.6742,
+            "max": 0.6742,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.7,
+            "std": 0.0,
+            "ci95": [
+              0.7,
+              0.7
+            ],
+            "min": 0.7,
+            "max": 0.7,
+            "range": 0.0
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.7269,
+            0.7269,
+            0.7269
+          ],
+          "blended": {
+            "mean": 0.7269,
+            "std": 0.0,
+            "ci95": [
+              0.7269,
+              0.7269
+            ],
+            "min": 0.7269,
+            "max": 0.7269,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.75,
+            "std": 0.0,
+            "ci95": [
+              0.75,
+              0.75
+            ],
+            "min": 0.75,
+            "max": 0.75,
+            "range": 0.0
+          }
+        }
+      }
+    },
+    "p3": {
+      "file_name": "3-附件1：基于非天然氨基酸调控的高效抗体结合蛋白.pdf",
+      "confidence": 0.8182,
+      "overall_runs": [
+        0.7089,
+        0.6937,
+        0.6937
+      ],
+      "overall": {
+        "mean": 0.6988,
+        "std": 0.0088,
+        "ci95": [
+          0.6937,
+          0.7089
+        ],
+        "min": 0.6937,
+        "max": 0.7089,
+        "range": 0.0152
+      },
+      "mean_abs_dev_from_3run_mean": 0.0068,
+      "verdicts": {
+        "run1": "GO",
+        "run2": "GO",
+        "run3": "GO"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.8239,
+            0.8239,
+            0.8239
+          ],
+          "blended": {
+            "mean": 0.8239,
+            "std": 0.0,
+            "ci95": [
+              0.8239,
+              0.8239
+            ],
+            "min": 0.8239,
+            "max": 0.8239,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.85,
+            0.85,
+            0.85
+          ],
+          "invest_raw": {
+            "mean": 0.85,
+            "std": 0.0,
+            "ci95": [
+              0.85,
+              0.85
+            ],
+            "min": 0.85,
+            "max": 0.85,
+            "range": 0.0
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.6663,
+            0.6843,
+            0.6843
+          ],
+          "blended": {
+            "mean": 0.6783,
+            "std": 0.0104,
+            "ci95": [
+              0.6663,
+              0.6843
+            ],
+            "min": 0.6663,
+            "max": 0.6843,
+            "range": 0.018
+          },
+          "runs_invest_raw": [
+            0.68,
+            0.7,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.6933,
+            "std": 0.0115,
+            "ci95": [
+              0.68,
+              0.7
+            ],
+            "min": 0.68,
+            "max": 0.7,
+            "range": 0.02
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.6906,
+            0.6456,
+            0.6456
+          ],
+          "blended": {
+            "mean": 0.6606,
+            "std": 0.026,
+            "ci95": [
+              0.6456,
+              0.6906
+            ],
+            "min": 0.6456,
+            "max": 0.6906,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.65,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.6667,
+            "std": 0.0289,
+            "ci95": [
+              0.65,
+              0.7
+            ],
+            "min": 0.65,
+            "max": 0.7,
+            "range": 0.05
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.7352,
+            0.7352,
+            0.7352
+          ],
+          "blended": {
+            "mean": 0.7352,
+            "std": 0.0,
+            "ci95": [
+              0.7352,
+              0.7352
+            ],
+            "min": 0.7352,
+            "max": 0.7352,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.75,
+            "std": 0.0,
+            "ci95": [
+              0.75,
+              0.75
+            ],
+            "min": 0.75,
+            "max": 0.75,
+            "range": 0.0
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.6399,
+            0.5949,
+            0.5949
+          ],
+          "blended": {
+            "mean": 0.6099,
+            "std": 0.026,
+            "ci95": [
+              0.5949,
+              0.6399
+            ],
+            "min": 0.5949,
+            "max": 0.6399,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.6,
+            0.6
+          ],
+          "invest_raw": {
+            "mean": 0.6167,
+            "std": 0.0289,
+            "ci95": [
+              0.6,
+              0.65
+            ],
+            "min": 0.6,
+            "max": 0.65,
+            "range": 0.05
+          }
+        }
+      }
+    },
+    "p4": {
+      "file_name": "4-附件1：（简介版）中国首创的第二代肿瘤治疗电场（TTF）解决方案【水印】(1)",
+      "confidence": 0.7834,
+      "overall_runs": [
+        0.6914,
+        0.7169,
+        0.6914
+      ],
+      "overall": {
+        "mean": 0.6999,
+        "std": 0.0147,
+        "ci95": [
+          0.6914,
+          0.7169
+        ],
+        "min": 0.6914,
+        "max": 0.7169,
+        "range": 0.0255
+      },
+      "mean_abs_dev_from_3run_mean": 0.0113,
+      "verdicts": {
+        "run1": "HOLD",
+        "run2": "HOLD",
+        "run3": "HOLD"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.6882,
+            0.7332,
+            0.6882
+          ],
+          "blended": {
+            "mean": 0.7032,
+            "std": 0.026,
+            "ci95": [
+              0.6882,
+              0.7332
+            ],
+            "min": 0.6882,
+            "max": 0.7332,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.75,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.7167,
+            "std": 0.0289,
+            "ci95": [
+              0.7,
+              0.75
+            ],
+            "min": 0.7,
+            "max": 0.75,
+            "range": 0.05
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.6445,
+            0.6895,
+            0.6445
+          ],
+          "blended": {
+            "mean": 0.6595,
+            "std": 0.026,
+            "ci95": [
+              0.6445,
+              0.6895
+            ],
+            "min": 0.6445,
+            "max": 0.6895,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.7,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.6667,
+            "std": 0.0289,
+            "ci95": [
+              0.65,
+              0.7
+            ],
+            "min": 0.65,
+            "max": 0.7,
+            "range": 0.05
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.5972,
+            0.6422,
+            0.5972
+          ],
+          "blended": {
+            "mean": 0.6122,
+            "std": 0.026,
+            "ci95": [
+              0.5972,
+              0.6422
+            ],
+            "min": 0.5972,
+            "max": 0.6422,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.6,
+            0.65,
+            0.6
+          ],
+          "invest_raw": {
+            "mean": 0.6167,
+            "std": 0.0289,
+            "ci95": [
+              0.6,
+              0.65
+            ],
+            "min": 0.6,
+            "max": 0.65,
+            "range": 0.05
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.7814,
+            0.7814,
+            0.7814
+          ],
+          "blended": {
+            "mean": 0.7814,
+            "std": 0.0,
+            "ci95": [
+              0.7814,
+              0.7814
+            ],
+            "min": 0.7814,
+            "max": 0.7814,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "invest_raw": {
+            "mean": 0.8,
+            "std": 0.0,
+            "ci95": [
+              0.8,
+              0.8
+            ],
+            "min": 0.8,
+            "max": 0.8,
+            "range": 0.0
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.7292,
+            0.7292,
+            0.7292
+          ],
+          "blended": {
+            "mean": 0.7292,
+            "std": 0.0,
+            "ci95": [
+              0.7292,
+              0.7292
+            ],
+            "min": 0.7292,
+            "max": 0.7292,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.75,
+            "std": 0.0,
+            "ci95": [
+              0.75,
+              0.75
+            ],
+            "min": 0.75,
+            "max": 0.75,
+            "range": 0.0
+          }
+        }
+      }
+    },
+    "p5": {
+      "file_name": "5-bp1.pdf",
+      "confidence": 0.7791,
+      "overall_runs": [
+        0.6585,
+        0.667,
+        0.6466
+      ],
+      "overall": {
+        "mean": 0.6574,
+        "std": 0.0102,
+        "ci95": [
+          0.6466,
+          0.667
+        ],
+        "min": 0.6466,
+        "max": 0.667,
+        "range": 0.0204
+      },
+      "mean_abs_dev_from_3run_mean": 0.0072,
+      "verdicts": {
+        "run1": "HOLD",
+        "run2": "HOLD",
+        "run3": "HOLD"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.6464,
+            0.6464,
+            0.6464
+          ],
+          "blended": {
+            "mean": 0.6464,
+            "std": 0.0,
+            "ci95": [
+              0.6464,
+              0.6464
+            ],
+            "min": 0.6464,
+            "max": 0.6464,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.65,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.65,
+            "std": 0.0,
+            "ci95": [
+              0.65,
+              0.65
+            ],
+            "min": 0.65,
+            "max": 0.65,
+            "range": 0.0
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.6878,
+            0.6878,
+            0.5798
+          ],
+          "blended": {
+            "mean": 0.6518,
+            "std": 0.0624,
+            "ci95": [
+              0.5798,
+              0.6878
+            ],
+            "min": 0.5798,
+            "max": 0.6878,
+            "range": 0.108
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.7,
+            0.58
+          ],
+          "invest_raw": {
+            "mean": 0.66,
+            "std": 0.0693,
+            "ci95": [
+              0.58,
+              0.7
+            ],
+            "min": 0.58,
+            "max": 0.7,
+            "range": 0.12
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.6055,
+            0.6505,
+            0.6505
+          ],
+          "blended": {
+            "mean": 0.6355,
+            "std": 0.026,
+            "ci95": [
+              0.6055,
+              0.6505
+            ],
+            "min": 0.6055,
+            "max": 0.6505,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.6,
+            0.65,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.6333,
+            "std": 0.0289,
+            "ci95": [
+              0.6,
+              0.65
+            ],
+            "min": 0.6,
+            "max": 0.65,
+            "range": 0.05
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.78,
+            0.78,
+            0.78
+          ],
+          "blended": {
+            "mean": 0.78,
+            "std": 0.0,
+            "ci95": [
+              0.78,
+              0.78
+            ],
+            "min": 0.78,
+            "max": 0.78,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "invest_raw": {
+            "mean": 0.8,
+            "std": 0.0,
+            "ci95": [
+              0.8,
+              0.8
+            ],
+            "min": 0.8,
+            "max": 0.8,
+            "range": 0.0
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.5771,
+            0.5771,
+            0.5771
+          ],
+          "blended": {
+            "mean": 0.5771,
+            "std": 0.0,
+            "ci95": [
+              0.5771,
+              0.5771
+            ],
+            "min": 0.5771,
+            "max": 0.5771,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.58,
+            0.58,
+            0.58
+          ],
+          "invest_raw": {
+            "mean": 0.58,
+            "std": 0.0,
+            "ci95": [
+              0.58,
+              0.58
+            ],
+            "min": 0.58,
+            "max": 0.58,
+            "range": 0.0
+          }
+        }
+      }
+    },
+    "p6": {
+      "file_name": "6-bp2.pdf",
+      "confidence": 0.7991,
+      "overall_runs": [
+        0.6853,
+        0.7133,
+        0.6853
+      ],
+      "overall": {
+        "mean": 0.6946,
+        "std": 0.0162,
+        "ci95": [
+          0.6853,
+          0.7133
+        ],
+        "min": 0.6853,
+        "max": 0.7133,
+        "range": 0.028
+      },
+      "mean_abs_dev_from_3run_mean": 0.0124,
+      "verdicts": {
+        "run1": "HOLD",
+        "run2": "HOLD",
+        "run3": "HOLD"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.6897,
+            0.7347,
+            0.6897
+          ],
+          "blended": {
+            "mean": 0.7047,
+            "std": 0.026,
+            "ci95": [
+              0.6897,
+              0.7347
+            ],
+            "min": 0.6897,
+            "max": 0.7347,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.75,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.7167,
+            "std": 0.0289,
+            "ci95": [
+              0.7,
+              0.75
+            ],
+            "min": 0.7,
+            "max": 0.75,
+            "range": 0.05
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.6346,
+            0.6796,
+            0.6346
+          ],
+          "blended": {
+            "mean": 0.6496,
+            "std": 0.026,
+            "ci95": [
+              0.6346,
+              0.6796
+            ],
+            "min": 0.6346,
+            "max": 0.6796,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.7,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.6667,
+            "std": 0.0289,
+            "ci95": [
+              0.65,
+              0.7
+            ],
+            "min": 0.65,
+            "max": 0.7,
+            "range": 0.05
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.6825,
+            0.6375,
+            0.6825
+          ],
+          "blended": {
+            "mean": 0.6675,
+            "std": 0.026,
+            "ci95": [
+              0.6375,
+              0.6825
+            ],
+            "min": 0.6375,
+            "max": 0.6825,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.65,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.6833,
+            "std": 0.0289,
+            "ci95": [
+              0.65,
+              0.7
+            ],
+            "min": 0.65,
+            "max": 0.7,
+            "range": 0.05
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.7299,
+            0.7749,
+            0.7299
+          ],
+          "blended": {
+            "mean": 0.7449,
+            "std": 0.026,
+            "ci95": [
+              0.7299,
+              0.7749
+            ],
+            "min": 0.7299,
+            "max": 0.7749,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.8,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.7667,
+            "std": 0.0289,
+            "ci95": [
+              0.75,
+              0.8
+            ],
+            "min": 0.75,
+            "max": 0.8,
+            "range": 0.05
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.6852,
+            0.7302,
+            0.6852
+          ],
+          "blended": {
+            "mean": 0.7002,
+            "std": 0.026,
+            "ci95": [
+              0.6852,
+              0.7302
+            ],
+            "min": 0.6852,
+            "max": 0.7302,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.75,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.7167,
+            "std": 0.0289,
+            "ci95": [
+              0.7,
+              0.75
+            ],
+            "min": 0.7,
+            "max": 0.75,
+            "range": 0.05
+          }
+        }
+      }
+    },
+    "p7": {
+      "file_name": "7-04-1.（项目经理汇报）LPNP-mRNA免疫调节因子项目.pptx",
+      "confidence": 0.656,
+      "overall_runs": [
+        0.7262,
+        0.733,
+        0.7313
+      ],
+      "overall": {
+        "mean": 0.7302,
+        "std": 0.0035,
+        "ci95": [
+          0.7262,
+          0.733
+        ],
+        "min": 0.7262,
+        "max": 0.733,
+        "range": 0.0068
+      },
+      "mean_abs_dev_from_3run_mean": 0.0026,
+      "verdicts": {
+        "run1": "GO",
+        "run2": "GO",
+        "run3": "GO"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.8138,
+            0.8138,
+            0.7958
+          ],
+          "blended": {
+            "mean": 0.8078,
+            "std": 0.0104,
+            "ci95": [
+              0.7958,
+              0.8138
+            ],
+            "min": 0.7958,
+            "max": 0.8138,
+            "range": 0.018
+          },
+          "runs_invest_raw": [
+            0.85,
+            0.85,
+            0.83
+          ],
+          "invest_raw": {
+            "mean": 0.8433,
+            "std": 0.0115,
+            "ci95": [
+              0.83,
+              0.85
+            ],
+            "min": 0.83,
+            "max": 0.85,
+            "range": 0.02
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.682,
+            0.727,
+            0.727
+          ],
+          "blended": {
+            "mean": 0.712,
+            "std": 0.026,
+            "ci95": [
+              0.682,
+              0.727
+            ],
+            "min": 0.682,
+            "max": 0.727,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.75,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.7333,
+            "std": 0.0289,
+            "ci95": [
+              0.7,
+              0.75
+            ],
+            "min": 0.7,
+            "max": 0.75,
+            "range": 0.05
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.6328,
+            0.6778,
+            0.6328
+          ],
+          "blended": {
+            "mean": 0.6478,
+            "std": 0.026,
+            "ci95": [
+              0.6328,
+              0.6778
+            ],
+            "min": 0.6328,
+            "max": 0.6778,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.7,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.6667,
+            "std": 0.0289,
+            "ci95": [
+              0.65,
+              0.7
+            ],
+            "min": 0.65,
+            "max": 0.7,
+            "range": 0.05
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.7725,
+            0.7725,
+            0.7725
+          ],
+          "blended": {
+            "mean": 0.7725,
+            "std": 0.0,
+            "ci95": [
+              0.7725,
+              0.7725
+            ],
+            "min": 0.7725,
+            "max": 0.7725,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "invest_raw": {
+            "mean": 0.8,
+            "std": 0.0,
+            "ci95": [
+              0.8,
+              0.8
+            ],
+            "min": 0.8,
+            "max": 0.8,
+            "range": 0.0
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.7254,
+            0.6804,
+            0.7254
+          ],
+          "blended": {
+            "mean": 0.7104,
+            "std": 0.026,
+            "ci95": [
+              0.6804,
+              0.7254
+            ],
+            "min": 0.6804,
+            "max": 0.7254,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.7,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.7333,
+            "std": 0.0289,
+            "ci95": [
+              0.7,
+              0.75
+            ],
+            "min": 0.7,
+            "max": 0.75,
+            "range": 0.05
+          }
+        }
+      }
+    },
+    "p8": {
+      "file_name": "8-2025_10 Ebovir_LNP 拨投结合项目商业计划书.pptx",
+      "confidence": 0.633,
+      "overall_runs": [
+        0.6515,
+        0.6566,
+        0.6515
+      ],
+      "overall": {
+        "mean": 0.6532,
+        "std": 0.0029,
+        "ci95": [
+          0.6515,
+          0.6566
+        ],
+        "min": 0.6515,
+        "max": 0.6566,
+        "range": 0.0051
+      },
+      "mean_abs_dev_from_3run_mean": 0.0023,
+      "verdicts": {
+        "run1": "HOLD",
+        "run2": "HOLD",
+        "run3": "HOLD"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.6369,
+            0.6369,
+            0.6369
+          ],
+          "blended": {
+            "mean": 0.6369,
+            "std": 0.0,
+            "ci95": [
+              0.6369,
+              0.6369
+            ],
+            "min": 0.6369,
+            "max": 0.6369,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.65,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.65,
+            "std": 0.0,
+            "ci95": [
+              0.65,
+              0.65
+            ],
+            "min": 0.65,
+            "max": 0.65,
+            "range": 0.0
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.6771,
+            0.6771,
+            0.6771
+          ],
+          "blended": {
+            "mean": 0.6771,
+            "std": 0.0,
+            "ci95": [
+              0.6771,
+              0.6771
+            ],
+            "min": 0.6771,
+            "max": 0.6771,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.7,
+            "std": 0.0,
+            "ci95": [
+              0.7,
+              0.7
+            ],
+            "min": 0.7,
+            "max": 0.7,
+            "range": 0.0
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.6351,
+            0.6621,
+            0.6351
+          ],
+          "blended": {
+            "mean": 0.6441,
+            "std": 0.0156,
+            "ci95": [
+              0.6351,
+              0.6621
+            ],
+            "min": 0.6351,
+            "max": 0.6621,
+            "range": 0.027
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.68,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.66,
+            "std": 0.0173,
+            "ci95": [
+              0.65,
+              0.68
+            ],
+            "min": 0.65,
+            "max": 0.68,
+            "range": 0.03
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.7257,
+            0.7257,
+            0.7257
+          ],
+          "blended": {
+            "mean": 0.7257,
+            "std": 0.0,
+            "ci95": [
+              0.7257,
+              0.7257
+            ],
+            "min": 0.7257,
+            "max": 0.7257,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.75,
+            "std": 0.0,
+            "ci95": [
+              0.75,
+              0.75
+            ],
+            "min": 0.75,
+            "max": 0.75,
+            "range": 0.0
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.5879,
+            0.5879,
+            0.5879
+          ],
+          "blended": {
+            "mean": 0.5879,
+            "std": 0.0,
+            "ci95": [
+              0.5879,
+              0.5879
+            ],
+            "min": 0.5879,
+            "max": 0.5879,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.6,
+            0.6,
+            0.6
+          ],
+          "invest_raw": {
+            "mean": 0.6,
+            "std": 0.0,
+            "ci95": [
+              0.6,
+              0.6
+            ],
+            "min": 0.6,
+            "max": 0.6,
+            "range": 0.0
+          }
+        }
+      }
+    },
+    "pA": {
+      "file_name": "A_安海半导体产业化方案v1.4-YF.pdf",
+      "confidence": 0.7822,
+      "overall_runs": [
+        0.6808,
+        0.68,
+        0.6808
+      ],
+      "overall": {
+        "mean": 0.6805,
+        "std": 0.0005,
+        "ci95": [
+          0.68,
+          0.6808
+        ],
+        "min": 0.68,
+        "max": 0.6808,
+        "range": 0.0008
+      },
+      "mean_abs_dev_from_3run_mean": 0.0004,
+      "verdicts": {
+        "run1": "HOLD",
+        "run2": "HOLD",
+        "run3": "HOLD"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.6407,
+            0.6407,
+            0.6407
+          ],
+          "blended": {
+            "mean": 0.6407,
+            "std": 0.0,
+            "ci95": [
+              0.6407,
+              0.6407
+            ],
+            "min": 0.6407,
+            "max": 0.6407,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.65,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.65,
+            "std": 0.0,
+            "ci95": [
+              0.65,
+              0.65
+            ],
+            "min": 0.65,
+            "max": 0.65,
+            "range": 0.0
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.6834,
+            0.6834,
+            0.6834
+          ],
+          "blended": {
+            "mean": 0.6834,
+            "std": 0.0,
+            "ci95": [
+              0.6834,
+              0.6834
+            ],
+            "min": 0.6834,
+            "max": 0.6834,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.7,
+            "std": 0.0,
+            "ci95": [
+              0.7,
+              0.7
+            ],
+            "min": 0.7,
+            "max": 0.7,
+            "range": 0.0
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.646,
+            0.646,
+            0.646
+          ],
+          "blended": {
+            "mean": 0.646,
+            "std": 0.0,
+            "ci95": [
+              0.646,
+              0.646
+            ],
+            "min": 0.646,
+            "max": 0.646,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.65,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.65,
+            "std": 0.0,
+            "ci95": [
+              0.65,
+              0.65
+            ],
+            "min": 0.65,
+            "max": 0.65,
+            "range": 0.0
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.6898,
+            0.7348,
+            0.6898
+          ],
+          "blended": {
+            "mean": 0.7048,
+            "std": 0.026,
+            "ci95": [
+              0.6898,
+              0.7348
+            ],
+            "min": 0.6898,
+            "max": 0.7348,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.75,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.7167,
+            "std": 0.0289,
+            "ci95": [
+              0.7,
+              0.75
+            ],
+            "min": 0.7,
+            "max": 0.75,
+            "range": 0.05
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.7329,
+            0.6879,
+            0.7329
+          ],
+          "blended": {
+            "mean": 0.7179,
+            "std": 0.026,
+            "ci95": [
+              0.6879,
+              0.7329
+            ],
+            "min": 0.6879,
+            "max": 0.7329,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.7,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.7333,
+            "std": 0.0289,
+            "ci95": [
+              0.7,
+              0.75
+            ],
+            "min": 0.7,
+            "max": 0.75,
+            "range": 0.05
+          }
+        }
+      }
+    },
+    "pB": {
+      "file_name": "B_BMT技术（基石资本)v01.pptx",
+      "confidence": 0.7869,
+      "overall_runs": [
+        0.714,
+        0.7132,
+        0.714
+      ],
+      "overall": {
+        "mean": 0.7137,
+        "std": 0.0005,
+        "ci95": [
+          0.7132,
+          0.714
+        ],
+        "min": 0.7132,
+        "max": 0.714,
+        "range": 0.0008
+      },
+      "mean_abs_dev_from_3run_mean": 0.0004,
+      "verdicts": {
+        "run1": "HOLD",
+        "run2": "HOLD",
+        "run3": "HOLD"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.7307,
+            0.7307,
+            0.7307
+          ],
+          "blended": {
+            "mean": 0.7307,
+            "std": 0.0,
+            "ci95": [
+              0.7307,
+              0.7307
+            ],
+            "min": 0.7307,
+            "max": 0.7307,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.75,
+            "std": 0.0,
+            "ci95": [
+              0.75,
+              0.75
+            ],
+            "min": 0.75,
+            "max": 0.75,
+            "range": 0.0
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.639,
+            0.684,
+            0.639
+          ],
+          "blended": {
+            "mean": 0.654,
+            "std": 0.026,
+            "ci95": [
+              0.639,
+              0.684
+            ],
+            "min": 0.639,
+            "max": 0.684,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.7,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.6667,
+            "std": 0.0289,
+            "ci95": [
+              0.65,
+              0.7
+            ],
+            "min": 0.65,
+            "max": 0.7,
+            "range": 0.05
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.6843,
+            0.6843,
+            0.6843
+          ],
+          "blended": {
+            "mean": 0.6843,
+            "std": 0.0,
+            "ci95": [
+              0.6843,
+              0.6843
+            ],
+            "min": 0.6843,
+            "max": 0.6843,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.7,
+            "std": 0.0,
+            "ci95": [
+              0.7,
+              0.7
+            ],
+            "min": 0.7,
+            "max": 0.7,
+            "range": 0.0
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.7774,
+            0.7324,
+            0.7774
+          ],
+          "blended": {
+            "mean": 0.7624,
+            "std": 0.026,
+            "ci95": [
+              0.7324,
+              0.7774
+            ],
+            "min": 0.7324,
+            "max": 0.7774,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.8,
+            0.75,
+            0.8
+          ],
+          "invest_raw": {
+            "mean": 0.7833,
+            "std": 0.0289,
+            "ci95": [
+              0.75,
+              0.8
+            ],
+            "min": 0.75,
+            "max": 0.8,
+            "range": 0.05
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.7293,
+            0.7293,
+            0.7293
+          ],
+          "blended": {
+            "mean": 0.7293,
+            "std": 0.0,
+            "ci95": [
+              0.7293,
+              0.7293
+            ],
+            "min": 0.7293,
+            "max": 0.7293,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.75,
+            "std": 0.0,
+            "ci95": [
+              0.75,
+              0.75
+            ],
+            "min": 0.75,
+            "max": 0.75,
+            "range": 0.0
+          }
+        }
+      }
+    },
+    "pC": {
+      "file_name": "C_1.ZX学院商业计划书20210328.pptx",
+      "confidence": 0.8041,
+      "overall_runs": [
+        0.6256,
+        0.6179,
+        0.5882
+      ],
+      "overall": {
+        "mean": 0.6106,
+        "std": 0.0197,
+        "ci95": [
+          0.5882,
+          0.6256
+        ],
+        "min": 0.5882,
+        "max": 0.6256,
+        "range": 0.0374
+      },
+      "mean_abs_dev_from_3run_mean": 0.0149,
+      "verdicts": {
+        "run1": "HOLD",
+        "run2": "HOLD",
+        "run3": "HOLD"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.554,
+            0.464,
+            0.464
+          ],
+          "blended": {
+            "mean": 0.494,
+            "std": 0.052,
+            "ci95": [
+              0.464,
+              0.554
+            ],
+            "min": 0.464,
+            "max": 0.554,
+            "range": 0.09
+          },
+          "runs_invest_raw": [
+            0.55,
+            0.45,
+            0.45
+          ],
+          "invest_raw": {
+            "mean": 0.4833,
+            "std": 0.0577,
+            "ci95": [
+              0.45,
+              0.55
+            ],
+            "min": 0.45,
+            "max": 0.55,
+            "range": 0.1
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.6414,
+            0.6414,
+            0.5784
+          ],
+          "blended": {
+            "mean": 0.6204,
+            "std": 0.0364,
+            "ci95": [
+              0.5784,
+              0.6414
+            ],
+            "min": 0.5784,
+            "max": 0.6414,
+            "range": 0.063
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.65,
+            0.58
+          ],
+          "invest_raw": {
+            "mean": 0.6267,
+            "std": 0.0404,
+            "ci95": [
+              0.58,
+              0.65
+            ],
+            "min": 0.58,
+            "max": 0.65,
+            "range": 0.07
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.6832,
+            0.6832,
+            0.6382
+          ],
+          "blended": {
+            "mean": 0.6682,
+            "std": 0.026,
+            "ci95": [
+              0.6382,
+              0.6832
+            ],
+            "min": 0.6382,
+            "max": 0.6832,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.7,
+            0.7,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.6833,
+            "std": 0.0289,
+            "ci95": [
+              0.65,
+              0.7
+            ],
+            "min": 0.65,
+            "max": 0.7,
+            "range": 0.05
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.5066,
+            0.5516,
+            0.5066
+          ],
+          "blended": {
+            "mean": 0.5216,
+            "std": 0.026,
+            "ci95": [
+              0.5066,
+              0.5516
+            ],
+            "min": 0.5066,
+            "max": 0.5516,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.5,
+            0.55,
+            0.5
+          ],
+          "invest_raw": {
+            "mean": 0.5167,
+            "std": 0.0289,
+            "ci95": [
+              0.5,
+              0.55
+            ],
+            "min": 0.5,
+            "max": 0.55,
+            "range": 0.05
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.7331,
+            0.7331,
+            0.7331
+          ],
+          "blended": {
+            "mean": 0.7331,
+            "std": 0.0,
+            "ci95": [
+              0.7331,
+              0.7331
+            ],
+            "min": 0.7331,
+            "max": 0.7331,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.75,
+            "std": 0.0,
+            "ci95": [
+              0.75,
+              0.75
+            ],
+            "min": 0.75,
+            "max": 0.75,
+            "range": 0.0
+          }
+        }
+      }
+    },
+    "pD": {
+      "file_name": "D_210614大瞬科技投决报告.pptx",
+      "confidence": 0.7806,
+      "overall_runs": [
+        0.6474,
+        0.6678,
+        0.6678
+      ],
+      "overall": {
+        "mean": 0.661,
+        "std": 0.0118,
+        "ci95": [
+          0.6474,
+          0.6678
+        ],
+        "min": 0.6474,
+        "max": 0.6678,
+        "range": 0.0204
+      },
+      "mean_abs_dev_from_3run_mean": 0.0091,
+      "verdicts": {
+        "run1": "HOLD",
+        "run2": "HOLD",
+        "run3": "HOLD"
+      },
+      "same_verdict": true,
+      "dimensions": {
+        "team": {
+          "runs_blended": [
+            0.6399,
+            0.6399,
+            0.6399
+          ],
+          "blended": {
+            "mean": 0.6399,
+            "std": 0.0,
+            "ci95": [
+              0.6399,
+              0.6399
+            ],
+            "min": 0.6399,
+            "max": 0.6399,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.65,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.65,
+            "std": 0.0,
+            "ci95": [
+              0.65,
+              0.65
+            ],
+            "min": 0.65,
+            "max": 0.65,
+            "range": 0.0
+          }
+        },
+        "objectives": {
+          "runs_blended": [
+            0.5828,
+            0.6908,
+            0.6458
+          ],
+          "blended": {
+            "mean": 0.6398,
+            "std": 0.0542,
+            "ci95": [
+              0.5828,
+              0.6908
+            ],
+            "min": 0.5828,
+            "max": 0.6908,
+            "range": 0.108
+          },
+          "runs_invest_raw": [
+            0.58,
+            0.7,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.6433,
+            "std": 0.0603,
+            "ci95": [
+              0.58,
+              0.7
+            ],
+            "min": 0.58,
+            "max": 0.7,
+            "range": 0.12
+          }
+        },
+        "strategy": {
+          "runs_blended": [
+            0.6396,
+            0.6396,
+            0.6846
+          ],
+          "blended": {
+            "mean": 0.6546,
+            "std": 0.026,
+            "ci95": [
+              0.6396,
+              0.6846
+            ],
+            "min": 0.6396,
+            "max": 0.6846,
+            "range": 0.045
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.65,
+            0.7
+          ],
+          "invest_raw": {
+            "mean": 0.6667,
+            "std": 0.0289,
+            "ci95": [
+              0.65,
+              0.7
+            ],
+            "min": 0.65,
+            "max": 0.7,
+            "range": 0.05
+          }
+        },
+        "innovation": {
+          "runs_blended": [
+            0.7328,
+            0.7328,
+            0.7328
+          ],
+          "blended": {
+            "mean": 0.7328,
+            "std": 0.0,
+            "ci95": [
+              0.7328,
+              0.7328
+            ],
+            "min": 0.7328,
+            "max": 0.7328,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "invest_raw": {
+            "mean": 0.75,
+            "std": 0.0,
+            "ci95": [
+              0.75,
+              0.75
+            ],
+            "min": 0.75,
+            "max": 0.75,
+            "range": 0.0
+          }
+        },
+        "feasibility": {
+          "runs_blended": [
+            0.6359,
+            0.6359,
+            0.6359
+          ],
+          "blended": {
+            "mean": 0.6359,
+            "std": 0.0,
+            "ci95": [
+              0.6359,
+              0.6359
+            ],
+            "min": 0.6359,
+            "max": 0.6359,
+            "range": 0.0
+          },
+          "runs_invest_raw": [
+            0.65,
+            0.65,
+            0.65
+          ],
+          "invest_raw": {
+            "mean": 0.65,
+            "std": 0.0,
+            "ci95": [
+              0.65,
+              0.65
+            ],
+            "min": 0.65,
+            "max": 0.65,
+            "range": 0.0
+          }
+        }
+      }
+    }
+  },
+  "consolidated_table": "| proposal_id |   run1 |   run2 |   run3 |   mean |    std |            95% CI | verdict_run1 | verdict_run2 | verdict_run3 | same_verdict |\n|-------------|--------|--------|--------|--------|--------|-------------------|--------------|--------------|--------------|--------------|\n| p1          | 0.6805 | 0.6805 | 0.6805 | 0.6805 | 0.0000 |  [0.6805, 0.6805] | HOLD         | HOLD         | HOLD         |      Y       |\n| p2          | 0.6904 | 0.6904 | 0.6904 | 0.6904 | 0.0000 |  [0.6904, 0.6904] | HOLD         | HOLD         | HOLD         |      Y       |\n| p3          | 0.7089 | 0.6937 | 0.6937 | 0.6988 | 0.0088 |  [0.6937, 0.7089] | GO           | GO           | GO           |      Y       |\n| p4          | 0.6914 | 0.7169 | 0.6914 | 0.6999 | 0.0147 |  [0.6914, 0.7169] | HOLD         | HOLD         | HOLD         |      Y       |\n| p5          | 0.6585 | 0.6670 | 0.6466 | 0.6574 | 0.0102 |  [0.6466, 0.6670] | HOLD         | HOLD         | HOLD         |      Y       |\n| p6          | 0.6853 | 0.7133 | 0.6853 | 0.6946 | 0.0162 |  [0.6853, 0.7133] | HOLD         | HOLD         | HOLD         |      Y       |\n| p7          | 0.7262 | 0.7330 | 0.7313 | 0.7302 | 0.0035 |  [0.7262, 0.7330] | GO           | GO           | GO           |      Y       |\n| p8          | 0.6515 | 0.6566 | 0.6515 | 0.6532 | 0.0029 |  [0.6515, 0.6566] | HOLD         | HOLD         | HOLD         |      Y       |\n| pA          | 0.6808 | 0.6800 | 0.6808 | 0.6805 | 0.0005 |  [0.6800, 0.6808] | HOLD         | HOLD         | HOLD         |      Y       |\n| pB          | 0.7140 | 0.7132 | 0.7140 | 0.7137 | 0.0005 |  [0.7132, 0.7140] | HOLD         | HOLD         | HOLD         |      Y       |\n| pC          | 0.6256 | 0.6179 | 0.5882 | 0.6106 | 0.0197 |  [0.5882, 0.6256] | HOLD         | HOLD         | HOLD         |      Y       |\n| pD          | 0.6474 | 0.6678 | 0.6678 | 0.6610 | 0.0118 |  [0.6474, 0.6678] | HOLD         | HOLD         | HOLD         |      Y       |"
+}

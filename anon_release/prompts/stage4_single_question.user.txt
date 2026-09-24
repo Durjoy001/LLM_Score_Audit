@@ -1,0 +1,73 @@
+# Source: llm_answering.py :: build_single_prompt()
+# Extracted verbatim for the reproducibility bundle.
+# THIS IS THE PRIMARY SCORING CALL.
+# {{...}} are runtime substitutions. The variant block shown is 'default';
+# swap in stage4_variant_risk.txt / stage4_variant_implementation.txt for the others.
+
+Dimension: {{dimension}}
+
+Business adaptation framework:
+- Silently classify the proposal into the closest archetype or mixed archetype: SaaS/software, AI/data product,
+  marketplace, consumer brand/product, B2B service, professional services, education/training, healthcare/life science,
+  industrial/manufacturing, hardware/device, energy/climate, logistics/supply-chain, fintech/financial service,
+  real estate/infrastructure, agriculture/food, media/content, nonprofit/public-sector program, research commercialization,
+  internal corporate transformation, or other.
+- Tailor evidence requirements to that archetype:
+  - Software/platform: activation, retention, security, data rights, integration, support burden, cloud/unit costs.
+  - Service/business operations: repeatability, delivery capacity, staffing model, service quality, utilization, margin, customer references.
+  - Consumer/brand: customer insight, channel economics, brand differentiation, repeat purchase, distribution, working capital.
+  - Marketplace/network: liquidity, supply-demand acquisition, take rate, trust/safety, disintermediation risk.
+  - Manufacturing/hardware: bill of materials, yield, reliability, certification, supply chain, inventory, warranty.
+  - Regulated product/program: approval pathway, safety, compliance, quality system, reimbursement/procurement when relevant.
+  - Infrastructure/real estate: asset control, permits, capex, utilization, financing, operating partner, location risk.
+  - Public/nonprofit/impact: beneficiaries, theory of change, implementation partners, funding durability, measurable outcomes.
+  - Research commercialization: translational path, IP rights, validation milestones, partner route, capital intensity.
+- If the proposal does not reveal the archetype clearly, say so and keep recommendations modular rather than forcing a sector template.
+
+[Proposal facts]
+Use only this section for proposal-specific details. If relevant information is absent, say so precisely:
+{{proposal_facts_for_this_dimension}}
+
+[Optional regulatory or terminology hints]
+Use only if relevant:
+{{regulatory_or_terminology_hints}}
+
+Question:
+{{question}}
+
+Variant: default integrated perspective.
+- Evaluate the dimension by combining the current approach, strengths, issues, and recommendations.
+- Mention both strengths and limitations or uncertainties.
+- Cover at least four content types: current status, strengths, main issues, and improvement directions.
+- Where relevant, name the diligence evidence that would materially change the decision: customer/user discovery, buyer/payer/funder proof, pilots or LOIs, retention/adoption data, benchmark data, service quality metrics, unit economics, operating capacity, supply-chain readiness, IP/brand/data defensibility, use-of-funds, risk register, owner-level milestones, or compliance/procurement path.
+- In answer, clearly distinguish: a) project status and issues based on proposal facts; b) baseline comparison for what similar projects generally need; c) common pitfalls and evidence, quality, compliance, regulatory, or adoption requirements for similar projects.
+- In claims, prioritize what the proposal has stated and where information remains limited. Avoid absolute negatives; if detail is limited, say the current materials do not show more detailed information about X.
+- In general_insights, summarize b) and c) as general industry context, using wording such as 'generally', 'typically', or 'in similar projects' to avoid implying project achievement.
+
+
+{{INCLUDE: stage4_reasoning_react.txt}}
+
+Answer requirements:
+- Language: English.
+- Structure: answer must contain 3-8 numbered bullets, using "1. 2. 3." style. Keep each bullet to one or two sentences where possible.
+- Suggested content coverage:
+  1. Start from the proposal facts and summarize current status, strengths, and main issues for this dimension.
+  2. Use the inferred archetype to choose comparable baseline expectations. Clearly mark this as general industry context, not project achievement.
+  3. Add 1-3 bullets about common pitfalls, evidence requirements, quality/compliance/security/procurement concerns when applicable, adoption concerns, operating constraints, or economics for similar initiatives.
+- Relevance: analyze the project primarily from proposal facts. For information not present in the facts, describe it as an information gap or required follow-up; do not assume it exists.
+- If the proposal already provides partial information, write in a nuanced way such as "the proposal provides A/B, but lacks detail on C/D." Do not use broad absolute negatives.
+- Separate general knowledge from project facts. When using industry experience, use wording such as "typically", "generally", or "in similar projects".
+- general_insights: list 3-8 baseline, pitfall, or evidence-requirement points that do not depend on project-specific facts. The final item should be a general disclaimer such as "These are general industry considerations and do not mean the project has already met these requirements."
+- Be cautious and evidence-oriented. Avoid overly absolute conclusions, and name the supporting material types that would be needed.
+- Output only one JSON object. Do not add extra text or Markdown fences.
+
+Return exactly one JSON object with these fixed keys:
+{
+  "answer": "Main answer as numbered English bullets, covering project status, issues, and improvement directions",
+  "claims": ["Key verifiable conclusion 1", "Key verifiable conclusion 2", "..."],
+  "evidence_hints": ["Proposal fact, section, or supporting material that supports the conclusion, or a follow-up evidence trail to check"],
+  "general_insights": ["Baseline practices, common pitfalls, and evidence requirements for similar projects, written as general context rather than project facts"],
+  "topic_tags": ["Topic tags within the dimension"],
+  "confidence": 0.0,
+  "caveats": "Limitations or cautions, or empty if none"
+}

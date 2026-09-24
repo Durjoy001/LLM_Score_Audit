@@ -1,0 +1,19 @@
+# Source: llm_answering.py :: _schema_batch_structured()
+# Extracted verbatim for the reproducibility bundle.
+# Output contract appended to the batched user prompt.
+
+Return exactly one JSON object in this batch shape:
+{
+  "answers": [
+    {
+      "answer": "Main answer as numbered English bullets, covering project status, issues, and improvement directions",
+      "claims": ["Key verifiable conclusion 1", "Key verifiable conclusion 2", "..."],
+      "evidence_hints": ["Proposal fact, section, or supporting material that supports the conclusion, or a follow-up evidence trail to check"],
+      "general_insights": ["Baseline practices, common pitfalls, and evidence requirements for similar projects, written as general context rather than project facts"],
+      "topic_tags": ["Topic tags within the dimension"],
+      "confidence": 0.0,
+      "caveats": "Limitations or cautions, or empty if none"
+    }
+  ]
+}
+The answers array length must exactly match the question list length and preserve question order.

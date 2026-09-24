@@ -215,6 +215,59 @@ DIMENSIONS = {
              "No explicit statement of objective alignment is made."),
         ],
     },
+
+    # ── Team ──────────────────────────────────────────────────────────────────
+    # Added 2026-09-16, adaptive mode only: no hardcoded PLUS/MINUS content exists,
+    # so the hardcoded fallback is disabled (see create_adaptive_variants).
+    "team": {
+        "tool":       "src/tools/generate_team_rubric_scores.py",
+        "scores_dir": "src/data/team_rubric_scores",
+        "scores_key": "team_rubrics",
+        "result_file": "team_rubric_scores.json",
+        "rubrics": [
+            ("team_R1_composition",     "R1 Composition",     "doc-verifiable"),
+            ("team_R2_credentials",     "R2 Credentials",     "doc-verifiable"),
+            ("team_R3_track_record",    "R3 Track Record",    "doc-verifiable"),
+            ("team_R4_governance",      "R4 Governance",      "doc-verifiable"),
+            ("team_R5_capacity",        "R5 Capacity",        "judgment-dep"),
+            ("team_R6_complementarity", "R6 Complementarity", "judgment-dep"),
+            ("team_R7_cohesion",        "R7 Cohesion",        "judgment-dep"),
+            ("team_R8_key_person_risk", "R8 Key-Person Risk", "judgment-dep"),
+        ],
+        "plus_targets":  [],
+        "minus_targets": [],
+        "plus_injection": "",
+        "plus_marker":  "##### Project objectives",
+        "minus_strip_bullets": [],
+        "minus_inline_subs": [],
+    },
+
+    # ── Feasibility ───────────────────────────────────────────────────────────
+    "feasibility": {
+        "tool":       "src/tools/generate_feasibility_rubric_scores.py",
+        "scores_dir": "src/data/feasibility_rubric_scores",
+        "scores_key": "feasibility_rubrics",
+        "result_file": "feasibility_rubric_scores.json",
+        "rubrics": [
+            ("feasibility_R1_budget_detail",         "R1 Budget Detail",         "doc-verifiable"),
+            ("feasibility_R2_funding_secured",       "R2 Funding Secured",       "doc-verifiable"),
+            ("feasibility_R3_infrastructure",        "R3 Infrastructure",        "doc-verifiable"),
+            ("feasibility_R4_technical_readiness",   "R4 Technical Readiness",   "doc-verifiable"),
+            ("feasibility_R5_risk_mitigation",       "R5 Risk Mitigation",       "judgment-dep"),
+            ("feasibility_R6_resource_timeline_fit", "R6 Resource-Timeline Fit", "judgment-dep"),
+            ("feasibility_R7_financial_realism",     "R7 Financial Realism",     "judgment-dep"),
+            ("feasibility_R8_sustainability",        "R8 Sustainability",        "judgment-dep"),
+        ],
+        "plus_targets":  [],
+        "minus_targets": [],
+        "plus_injection": "",
+        # Deliberately NOT the next heading after the feasibility section (the pattern
+        # used for the other dimensions): that heading sits at ~11-13k chars, past the
+        # scorers' 12,000-char _trim_text window, so the injection would be invisible.
+        "plus_marker":  "##### Team and governance",
+        "minus_strip_bullets": [],
+        "minus_inline_subs": [],
+    },
 }
 
 
@@ -371,6 +424,106 @@ RUBRIC_ANCHORS: dict[str, dict[str, dict]] = {
             "score_1": "target segment is undefined or too broad to serve",
             "score_3": "segment defined but access strategy is missing",
             "score_5": "specific addressable segment with defined entry point and realistic reach estimate",
+        },
+    },
+    "team": {
+        "team_R1_composition": {
+            "name": "Team composition",
+            "score_1": "only a single lead is named or roles are unspecified",
+            "score_3": "core roles named but key technical, domain, or commercial functions are unfilled",
+            "score_5": "all critical roles filled by named individuals with stated responsibilities",
+        },
+        "team_R2_credentials": {
+            "name": "Domain credentials",
+            "score_1": "no relevant qualifications stated",
+            "score_3": "credentials stated only generically (degrees, titles)",
+            "score_5": "specific credentials in the project's domain: named institutions, publications, patents, or prior positions",
+        },
+        "team_R3_track_record": {
+            "name": "Prior execution track record",
+            "score_1": "no prior projects or ventures cited",
+            "score_3": "prior roles or projects mentioned without outcomes",
+            "score_5": "named prior ventures or projects with documented outcomes (launch, approval, exit, funded grant)",
+        },
+        "team_R4_governance": {
+            "name": "Governance and advisors",
+            "score_1": "no governance structure, board, or advisors described",
+            "score_3": "advisors or board mentioned without names or roles",
+            "score_5": "named board or advisors, defined decision-making structure, and formal agreements (collaboration, equity)",
+        },
+        "team_R5_capacity": {
+            "name": "Execution capacity",
+            "score_1": "team size or time commitment clearly insufficient for the project scope",
+            "score_3": "capacity plausible but commitment (full-time vs part-time) is unclear",
+            "score_5": "dedicated team sized to the project scope, with a hiring plan for gaps",
+        },
+        "team_R6_complementarity": {
+            "name": "Skill complementarity",
+            "score_1": "skills concentrated in one area with a critical gap",
+            "score_3": "skills mostly complementary with one notable gap",
+            "score_5": "balanced technical, domain, and commercial skills with no critical gap",
+        },
+        "team_R7_cohesion": {
+            "name": "Team cohesion",
+            "score_1": "no evidence the members have worked together",
+            "score_3": "members linked by a shared institution but no joint delivery",
+            "score_5": "core members have jointly delivered prior projects with documented outcomes",
+        },
+        "team_R8_key_person_risk": {
+            "name": "Key-person risk",
+            "score_1": "project depends on one individual with no backup",
+            "score_3": "some redundancy, but key functions rest on one person",
+            "score_5": "responsibilities distributed, with backup and retention mechanisms",
+        },
+    },
+    "feasibility": {
+        "feasibility_R1_budget_detail": {
+            "name": "Budget detail",
+            "score_1": "no budget described",
+            "score_3": "total budget stated without a breakdown",
+            "score_5": "itemised budget by category, with amounts and time period",
+        },
+        "feasibility_R2_funding_secured": {
+            "name": "Funding secured",
+            "score_1": "no funding source described",
+            "score_3": "funding sources named but not committed",
+            "score_5": "committed funding documented (grant awarded, investment closed) with amounts",
+        },
+        "feasibility_R3_infrastructure": {
+            "name": "Infrastructure and resource access",
+            "score_1": "no facilities, equipment, or data access described",
+            "score_3": "resources mentioned without confirmed access",
+            "score_5": "named facilities, equipment, data, or suppliers with confirmed access (ownership or agreement)",
+        },
+        "feasibility_R4_technical_readiness": {
+            "name": "Technical readiness",
+            "score_1": "concept only, no prototype or data",
+            "score_3": "prototype or preliminary data described without figures",
+            "score_5": "working prototype or validated pilot with stated maturity level and results",
+        },
+        "feasibility_R5_risk_mitigation": {
+            "name": "Risk mitigation",
+            "score_1": "no risks identified",
+            "score_3": "risks listed without mitigation",
+            "score_5": "key risks identified with specific mitigation and contingency plans",
+        },
+        "feasibility_R6_resource_timeline_fit": {
+            "name": "Resource-timeline fit",
+            "score_1": "timeline clearly unrealistic for the available resources",
+            "score_3": "timeline plausible but not argued",
+            "score_5": "timeline explicitly justified by resources, staffing, and dependencies",
+        },
+        "feasibility_R7_financial_realism": {
+            "name": "Financial realism",
+            "score_1": "budget clearly insufficient for the stated scope",
+            "score_3": "budget plausible but no comparables given",
+            "score_5": "budget benchmarked against comparables, with runway to the next milestone",
+        },
+        "feasibility_R8_sustainability": {
+            "name": "Operational sustainability",
+            "score_1": "no plan beyond the funded period",
+            "score_3": "sustainability asserted without a mechanism",
+            "score_5": "concrete mechanism to sustain operations (revenue, follow-on funding, institutional commitment) with evidence",
         },
     },
 }
@@ -601,6 +754,11 @@ def create_adaptive_variants(
         if plus_result and minus_result:
             save_adaptive_content(short_pid, dim, plus_result, minus_result)
             content = {"plus": plus_result, "minus": minus_result}
+        elif not cfg.get("plus_injection"):
+            raise RuntimeError(
+                f"Adaptive generation failed for {short_pid}/{dim} and this dimension "
+                f"has no hardcoded fallback content."
+            )
         else:
             print(f"  [WARN] Adaptive generation failed for {short_pid}/{dim} — using hardcoded fallback.")
             plus_path.write_text(_inject_plus(text, cfg),  encoding="utf-8")
@@ -803,11 +961,20 @@ def main():
 
         print_results(dim, effective_cfg, dim_results, args.pids)
 
+    # Merge into an existing combined file of the same mode, so running a subset of
+    # dimensions does not discard results for the others.
+    mode = "adaptive" if args.adaptive else "hardcoded"
     combined_path = RESULTS_DIR / "sensitivity_all_dimensions.json"
+    dimensions = list(args.dimensions)
+    if combined_path.exists():
+        previous = json.loads(combined_path.read_text(encoding="utf-8"))
+        if previous.get("mode") == mode:
+            all_results = {**previous.get("results", {}), **all_results}
+            dimensions = list(dict.fromkeys(previous.get("dimensions", []) + dimensions))
     combined_path.write_text(json.dumps({
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "mode":         "adaptive" if args.adaptive else "hardcoded",
-        "dimensions":   args.dimensions,
+        "mode":         mode,
+        "dimensions":   dimensions,
         "pids":         args.pids,
         "results":      all_results,
     }, indent=2, ensure_ascii=False))
